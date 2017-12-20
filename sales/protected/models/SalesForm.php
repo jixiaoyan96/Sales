@@ -19,14 +19,14 @@ class SalesForm extends CFormModel
 	public $title;
 	public $gname;
 	public $good;
+	public $titid;
 	public $detail = array(
 			array('gname'=>1,
-					'logid'=>0,
-					'task'=>0,
-					'qty'=>'',
-					'deadline'=>'',
-					'finish'=>'N',
-					'uflag'=>'N',
+					'tgname'=>0,
+					'gmoney'=>0,
+					'goodagio'=>0,
+					'money'=>0,
+					'total'=>0,
 			),
 	);
 	public $service = array();
@@ -69,6 +69,8 @@ class SalesForm extends CFormModel
 				'Use of goods'=>Yii::t('sales','Use of goods'),
 				'Goods Number'=>Yii::t('sales','Goods Number'),
 				'Goods Price'=>Yii::t('sales','Goods Price'),
+				'Use of services'=>Yii::t('sales','Use of services'),
+				'Total'=>Yii::t('sales','Total'),
 		);
 	}
 
@@ -100,7 +102,6 @@ class SalesForm extends CFormModel
 				"S", "T", "U", "V", "W", "X", "Y", "Z",
 		);
 		$charsLen = count($chars_array) - 1;
-
 		$outputstr = "";
 		for ($i=0; $i<4; $i++)
 		{
@@ -120,7 +121,6 @@ class SalesForm extends CFormModel
 		return true;
 
 	}
-
 
 	public function validateCode($attribute, $params) {
 		$code = $this->$attribute;
@@ -180,7 +180,6 @@ class SalesForm extends CFormModel
 		}
 		$this->select();
 		return true;
-
 	}
 
 
@@ -197,7 +196,6 @@ class SalesForm extends CFormModel
 			throw new CHttpException(404,'Cannot update.');
 		}
 	}
-
 
 	protected function savesales(&$connection)
 	{
@@ -232,7 +230,7 @@ class SalesForm extends CFormModel
 		$city = Yii::app()->user->city();
 		$uid = Yii::app()->user->id;
 		$code = $this->getcode();
-
+		$this->code = $code;
 
 		$command=$connection->createCommand($sql);
 		if (strpos($sql,':id')!==false)
@@ -261,4 +259,78 @@ class SalesForm extends CFormModel
 			$this->id = Yii::app()->db->getLastInsertID();
 		return true;
 	}
+
+
+	public function savegood($array){
+		$connection = Yii::app()->db;
+		$transaction=$connection->beginTransaction();
+		try {
+			$this->savegoods($connection,$array);
+			$transaction->commit();
+		}
+		catch(Exception $e) {
+			$transaction->rollback();
+			throw new CHttpException(404,'Cannot update.');
+		}
+	}
+
+	protected function savegoods($connection,$array)
+	{
+		switch ($this->scenario) {
+			case 'edit':
+				foreach ($array as $k => $v) {
+					$tabName = $this->tableNames("sa_order_good");
+					$sql = "insert into $tabName(
+							goodid, orderid, number, ismony
+						) values (
+							:goodid, :orderid, :number, :ismony
+						)";
+					$command = $connection->createCommand($sql);
+					if (strpos($sql, ':goodid') !== false)
+						$command->bindParam(':goodid', $v['tgname'], PDO::PARAM_STR);
+					if (strpos($sql, ':orderid') !== false)
+						$command->bindParam(':orderid', $this->code, PDO::PARAM_STR);
+					if (strpos($sql, ':number') !== false)
+						$command->bindParam(':number', $v['number'], PDO::PARAM_STR);
+					if (strpos($sql, ':ismony') !== false)
+						$command->bindParam(':ismony', $v['total'], PDO::PARAM_STR);
+					$command->execute();
+				}
+				return true;
+				break;
+
+			case 'new':
+				foreach ($array as $k => $v) {
+					$tabName = $this->tableNames("sa_order_good");
+					$sql = "insert into $tabName(
+							goodid, orderid, number, ismony
+						) values (
+							:goodid, :orderid, :number, :ismony
+						)";
+					$command = $connection->createCommand($sql);
+					if (strpos($sql, ':goodid') !== false)
+						$command->bindParam(':goodid', $v['tgname'], PDO::PARAM_STR);
+					if (strpos($sql, ':orderid') !== false)
+						$command->bindParam(':orderid', $this->code, PDO::PARAM_STR);
+					if (strpos($sql, ':number') !== false)
+						$command->bindParam(':number', $v['number'], PDO::PARAM_STR);
+					if (strpos($sql, ':ismony') !== false)
+						$command->bindParam(':ismony', $v['total'], PDO::PARAM_STR);
+					$command->execute();
+					break;
+
+				}
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
 }

@@ -559,7 +559,7 @@ class General {
 	{
 		$city = Yii::app()->user->city();
 		$list = array(0=>Yii::t('misc','-- None --'));
-		$sql = "select goodid, gname from sales.sa_good where goodid <= 5";
+		$sql = "select goodid, gname from sales.sa_good where pid = 0";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
@@ -568,6 +568,22 @@ class General {
 		}
 		return $list;
 	}
+
+
+	public static function getGoodstwoList($id)
+	{
+		$city = Yii::app()->user->city();
+		$list = array(0=>Yii::t('misc','-- None --'));
+		$sql = "select goodid, gname from sales.sa_good where pid = $id";
+		$rows = Yii::app()->db->createCommand($sql)->queryAll();
+		if (count($rows) > 0) {
+			foreach ($rows as $row) {
+				$list[$row['goodid']] = $row['gname'];
+			}
+		}
+		return $list;
+	}
+
 
 }
 

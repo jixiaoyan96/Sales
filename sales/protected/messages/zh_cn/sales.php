@@ -24,6 +24,7 @@ return array(
     'Goods Number'=>'商品数量',
     'Goods Price'=>'商品单价',
     'Good list'=>'商品列表',
+    'Use of services'=>'使用服务',
 
 
     //

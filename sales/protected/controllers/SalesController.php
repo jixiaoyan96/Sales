@@ -58,6 +58,7 @@ class SalesController extends Controller
             $model->attributes = $_POST['SalesForm'];
             if ($model->validate()) {
                 $model->saveData();
+                $model->savegood($_POST['SalesForm']['detail']);
 //				$model->scenario = 'edit';
                 Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
                 $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$model->id)));
@@ -97,6 +98,18 @@ class SalesController extends Controller
         $this->redirect(Yii::app()->createUrl('sales/index'));
     }
 
+    public function actionTwo(){
+        $model = new SalesForm();
+        $id = isset($_GET['id']) ? $_GET['id'] : 250;
+        $area = $model->getSecond($id);
+        $arr_area = array_column($area, 'gname', 'goodid');
+        //对获取到的转JSON格式
+        header('Content-type: application/json');
+        echo CJSON::encode($arr_area);
+        Yii::app()->end();
+    }
+
+
     protected function performAjaxValidation($model)
     {
         if(isset($_POST['ajax']) && $_POST['ajax']==='sales-form')
@@ -105,4 +118,7 @@ class SalesController extends Controller
             Yii::app()->end();
         }
     }
+
+
+
 }

@@ -22,6 +22,16 @@ class SalesList extends CListPageModel
             'region'=>Yii::t('sales','Region'),
             'status'=>Yii::t('sales','Status'),
             'goodid'=>Yii::t('sales','Goodid'),
+            'goodnumber'=>Yii::t('sales','Goodnumber'),
+            'goodmoney'=>Yii::t('sales','Goodidmoney'),
+            'goodagio'=>Yii::t('sales','Goodagio'),
+            'gname'=>Yii::t('sales','Gname'),
+            'service'=>Yii::t('sales','Service content'),
+            'Use of goods'=>Yii::t('sales','Use of goods'),
+            'Goods Number'=>Yii::t('sales','Goods Number'),
+            'Goods Price'=>Yii::t('sales','Goods Price'),
+            'Use of services'=>Yii::t('sales','Use of services'),
+            'Total'=>Yii::t('sales','Total'),
         );
     }
 

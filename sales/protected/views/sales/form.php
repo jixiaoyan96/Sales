@@ -152,10 +152,9 @@ $('#btnAddRow').on('click',function() {
 		var nid = '';
 		var ct = $('#dtltemplate').val();
 		$('#tblDetail tbody:last').append('<tr>'+ct+'</tr>');
-		$('#tblDetail tr').eq(-1).find('[id*=\"LogisticForm_\"]').each(function(index) {
+		$('#tblDetail tr').eq(-1).find('[id*=\"SalesForm_\"]').each(function(index) {
 			var id = $(this).attr('id');
 			var name = $(this).attr('name');
-
 			var oi = 0;
 			var ni = r;
 			id = id.replace('_'+oi.toString()+'_', '_'+ni.toString()+'_');
