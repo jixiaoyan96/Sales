@@ -36,11 +36,11 @@ $this->pageTitle=Yii::app()->name . ' - sales';
 	</div></div>
 	<?php 
 		$search = array(
-						'code',
+						'region',
 						'name',
 					);
 		$this->widget('ext.layout.ListPageWidget', array(
-			'title'=>Yii::t('Seles','Seles List'),
+			'title'=>Yii::t('sales','Sales List'),
 			'model'=>$model,
 				'viewhdr'=>'//sales/_listhdr',
 				'viewdtl'=>'//sales/_listdtl',

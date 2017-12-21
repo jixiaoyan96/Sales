@@ -2,18 +2,18 @@
 	<th></th>
 <?php if (!Yii::app()->user->isSingleCity()) : ?>
 	<th>
-		<?php echo TbHtml::link($this->getLabelName('oid').$this->drawOrderArrow('oid'),'#',$this->createOrderLink('sales-list','oid'))
+		<?php echo TbHtml::link($this->getLabelName('type').$this->drawOrderArrow('type'),'#',$this->createOrderLink('sales-list','type'))
 			;
 		?>
 	</th>
 <?php endif ?>
 	<th>
-		<?php echo TbHtml::link($this->getLabelName('crname').$this->drawOrderArrow('crname'),'#',$this->createOrderLink('sales-list','crname'))
+		<?php echo TbHtml::link($this->getLabelName('aim').$this->drawOrderArrow('aim'),'#',$this->createOrderLink('sales-list','aim'))
 			;
 		?>
 	</th>
 	<th>
-		<?php echo TbHtml::link($this->getLabelName('money').$this->drawOrderArrow('money'),'#',$this->createOrderLink('sales-list','money'))
+		<?php echo TbHtml::link($this->getLabelName('datatime').$this->drawOrderArrow('datatime'),'#',$this->createOrderLink('sales-list','datatime'))
 			;
 		?>
 	</th>

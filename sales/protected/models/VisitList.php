@@ -4,9 +4,9 @@ class VisitList extends CListPageModel
     /**
      * @return string the associated database table name
      */
-    public function tableName()
+    public function tableName($table)
     {
-        return 'sa' . Yii::app()->params['myTabname'] . '.sa_order';
+        return 'sa' . Yii::app()->params['myTabname'] . ".$table";
     }
 
     public function attributeLabels()
@@ -30,12 +30,14 @@ class VisitList extends CListPageModel
 
     public function retrieveDataByPage($pageNum=1)
     {
+        $uid = Yii::app()->user->id;
         $suffix = Yii::app()->params['envSuffix'];
         $city = Yii::app()->user->city_allow();
-        $tabname = $this->tableName();
-        $sql1 = "select a.id, a.code, a.name, a.time, a.money, a.lcu, a.goodid, a.address, a.region, a.city as city_name
+        $tabname = $this->tableName("sa_visit");
+        $sql1 = "select a.id, a.uname, a.type, a.aim, a.datatime, a.area, a.road, a.crtype, a.crname, a.sonname,
+                 a.charge, a.phone, a.remarks, a.city as city_name
 				from $tabname a, security$suffix.sec_city b
-				where a.city=b.code and a.city in ($city)
+				where a.city=b.code and  a.uname = '$uid'  and a.city in ($city)
 			";
         $sql2 = "select count(id)
 				from $tabname a, security$suffix.sec_city b
@@ -72,15 +74,19 @@ class VisitList extends CListPageModel
             foreach ($records as $k=>$record) {
                 $this->attr[] = array(
                     'id'=>$record['id'],
-                    'code'=>$record['code'],
-                    'name'=>$record['name'],
-                    'time'=>$record['time'],
-                    'money'=>$record['money'],
-                    'lcu'=>$record['lcu'],
-                    'address'=>$record['address'],
+                    'uname'=>$record['uname'],
+                    'type'=>$record['type'],
+                    'aim'=>$record['aim'],
+                    'datatime'=>$record['datatime'],
+                    'area'=>$record['area'],
+                    'road'=>$record['road'],
+                    'crtype'=>$record['crtype'],
+                    'crname'=>$record['crname'],
+                    'sonname'=>$record['sonname'],
+                    'charge'=>$record['charge'],
+                    'phone'=>$record['phone'],
+                    'remarks'=>$record['remarks'],
                     'city'=>$record['city_name'],
-                    'region'=>$record['region'],
-                    'goodid'=>$record['goodid'],
                 );
             }
         }

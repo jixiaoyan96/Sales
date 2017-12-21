@@ -5,7 +5,7 @@ class VisitController extends Controller
      * 拜访列表
     */
     public function actionIndex(){
-        $model = new SalesList();
+        $model = new VisitList();
         $model->retrieveDataByPage();
         $this->render('index', array(
             'model'=>$model,

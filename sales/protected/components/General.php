@@ -557,9 +557,21 @@ class General {
 
 	public static function getGoodsList()
 	{
-		$city = Yii::app()->user->city();
 		$list = array(0=>Yii::t('misc','-- None --'));
 		$sql = "select goodid, gname from sales.sa_good where pid = 0";
+		$rows = Yii::app()->db->createCommand($sql)->queryAll();
+		if (count($rows) > 0) {
+			foreach ($rows as $row) {
+				$list[$row['goodid']] = $row['gname'];
+			}
+		}
+		return $list;
+	}
+
+	public static function getTowlist()
+	{
+		$list = array(0=>Yii::t('misc','-- None --'));
+		$sql = "select goodid, gname from sales.sa_good where pid = 1";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {

@@ -71,6 +71,8 @@ class SalesForm extends CFormModel
 				'Goods Price'=>Yii::t('sales','Goods Price'),
 				'Use of services'=>Yii::t('sales','Use of services'),
 				'Total'=>Yii::t('sales','Total'),
+				'Goodagio'=>Yii::t('sales','Goodagio'),
+				'Order Total'=>Yii::t('sales','Order Total'),
 		);
 	}
 
@@ -89,6 +91,13 @@ class SalesForm extends CFormModel
 		$tab = $this->tableNames("sa_good");
 		$sql = "SELECT goodid,gname FROM $tab WHERE pid = $id";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
+		return $rows;
+	}
+
+	public function getmoney($id){
+		$tab = $this->tableNames("sa_good");
+		$sql = "SELECT gmoney FROM $tab WHERE goodid = $id";
+		$rows = Yii::app()->db->createCommand($sql)->query();
 		return $rows;
 	}
 
@@ -183,12 +192,12 @@ class SalesForm extends CFormModel
 	}
 
 
-	public function saveData()
+	public function saveData($sum)
 	{
 		$connection = Yii::app()->db;
 		$transaction=$connection->beginTransaction();
 		try {
-			$this->savesales($connection);
+			$this->savesales($connection,$sum);
 			$transaction->commit();
 		}
 		catch(Exception $e) {
@@ -197,7 +206,7 @@ class SalesForm extends CFormModel
 		}
 	}
 
-	protected function savesales(&$connection)
+	protected function savesales(&$connection,$sum)
 	{
 		$tabName = $this->tableName();
 		$sql = '';
@@ -240,7 +249,7 @@ class SalesForm extends CFormModel
 		if (strpos($sql,':name')!==false)
 			$command->bindParam(':name',$this->name,PDO::PARAM_STR);
 		if (strpos($sql,':money')!==false)
-			$command->bindParam(':money',$this->money,PDO::PARAM_STR);
+			$command->bindParam(':money',$sum,PDO::PARAM_STR);
 		if (strpos($sql,':time')!==false)
 			$Ctime = General::toMyDate($this->time);
 			$command->bindParam(':time',$Ctime,PDO::PARAM_STR);

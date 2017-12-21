@@ -23,11 +23,6 @@
 		?>
 	</th>
 	<th>
-		<?php echo TbHtml::link($this->getLabelName('goodid').$this->drawOrderArrow('goodid'),'#',$this->createOrderLink('sales-list','goodid'))
-			;
-		?>
-	</th>
-	<th>
 		<?php echo TbHtml::link($this->getLabelName('money').$this->drawOrderArrow('money'),'#',$this->createOrderLink('sales-list','money'))
 			;
 		?>

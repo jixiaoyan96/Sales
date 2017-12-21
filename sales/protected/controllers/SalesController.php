@@ -54,10 +54,15 @@ class SalesController extends Controller
     {
 
         if (isset($_POST['SalesForm'])) {
+            $s = $_POST['SalesForm']['detail'];
+            $sum=0;
+            foreach($s as $k=>$v){
+                $sum+=$v['total'];
+            }
             $model = new SalesForm($_POST['SalesForm']['scenario']);
             $model->attributes = $_POST['SalesForm'];
             if ($model->validate()) {
-                $model->saveData();
+                $model->saveData($sum);
                 $model->savegood($_POST['SalesForm']['detail']);
 //				$model->scenario = 'edit';
                 Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
@@ -109,6 +114,13 @@ class SalesController extends Controller
         Yii::app()->end();
     }
 
+    public function actiongetMoney(){
+        $model = new SalesForm();
+        $id = isset($_GET['id']) ? $_GET['id'] :"";
+        $money = $model->getmoney($id);
+        header('Content-type: application/json');
+        echo CJSON::encode($money);
+    }
 
     protected function performAjaxValidation($model)
     {

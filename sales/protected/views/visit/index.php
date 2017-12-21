@@ -36,10 +36,9 @@ $this->pageTitle=Yii::app()->name . ' - sales';
 	</div></div>
 	<?php 
 		$search = array(
-						'code',
-						'name',
-						'cont_name',
-						'cont_phone',
+						'area',
+						'crname',
+						'charge',
 					);
 		$this->widget('ext.layout.ListPageWidget', array(
 			'title'=>Yii::t('supplier','Supplier List'),

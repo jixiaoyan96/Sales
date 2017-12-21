@@ -60,7 +60,7 @@ $this->pageTitle=Yii::app()->name . ' - sales Form';
 				<?php echo  $form->labelEx($model,'code',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-7">
 					<?php echo $form->textField($model, 'code',
-							array('size'=>40,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+							array('size'=>40,'maxlength'=>100,'readonly'=>true,)
 					); ?>
 				</div>
 			</div>
@@ -99,6 +99,14 @@ $this->pageTitle=Yii::app()->name . ' - sales Form';
 			<div class="col-sm-7">
 				<?php echo $form->textField($model, 'address',
 						array('size'=>40,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+				); ?>
+			</div>
+		</div>
+		<div class="form-group">
+			<?php echo $form->labelEx($model,'Order Total',array('class'=>"col-sm-2 control-label")); ?>
+			<div class="col-sm-7">
+				<?php echo $form->textField($model, 'money',
+						array('size'=>40,'maxlength'=>100,'readonly'=>true,)
 				); ?>
 			</div>
 		</div>

@@ -41,7 +41,7 @@ class SalesList extends CListPageModel
         $city = Yii::app()->user->city_allow();
         $tabname = $this->tableName("sa_order");
         $tab = $this->tableName("sa_order_good");
-        $sql1 = "select a.id, a.code, a.name, a.time, a.money, a.lcu, a.address, a.region, a.goodid, a.city as city_name
+        $sql1 = "select a.id, a.code, a.name, a.time, a.money, a.lcu, a.address, a.region, a.city as city_name
 				from $tabname a, security$suffix.sec_city b
 				where a.city=b.code and a.city in ($city)
 			";
@@ -87,7 +87,6 @@ class SalesList extends CListPageModel
                     'address'=>$record['address'],
                     'city'=>$record['city_name'],
                     'region'=>$record['region'],
-                    'goodid'=>$record['goodid'],
                 );
             }
         }
