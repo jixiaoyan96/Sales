@@ -13,13 +13,6 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 	<h1>
 		<strong><?php echo Yii::t('supplier','Supplier Form'); ?></strong>
 	</h1>
-<!--
-	<ol class="breadcrumb">
-		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-		<li><a href="#">Layout</a></li>
-		<li class="active">Top Navigation</li>
-	</ol>
--->
 </section>
 
 <section class="content">
@@ -54,99 +47,149 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 			<?php echo $form->hiddenField($model, 'id'); ?>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'oid',array('class'=>"col-sm-2 control-label")); ?>
-				<div class="col-sm-2">
-				<?php echo $form->textField($model, 'oid',
-					array('size'=>8,'maxlength'=>20,'readonly'=>($model->scenario!='new'),)); 
-				?>
+				<?php echo $form->labelEx($model,'type',array('class'=>"col-sm-2 control-label")); ?>
+				<div class="col-sm-4">
+					<?php echo $form->textField($model, 'type',
+							array('size'=>30,'maxlength'=>500,'readonly'=>($model->scenario=='view'),
+									'append'=>TbHtml::Button('<span class="fa fa-search"></span> '.Yii::t('visit','Type'),array('name'=>'btnistype','id'=>'btnistype','disabled'=>($model->scenario=='view')))
+							)); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'crname',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,'aim',array('class'=>"col-sm-2 control-label")); ?>
+				<div class="col-sm-4">
+					<?php echo $form->textField($model, 'aim',
+							array('size'=>30,'maxlength'=>500,'readonly'=>($model->scenario=='view'),
+									'append'=>TbHtml::Button('<span class="fa fa-search"></span> '.Yii::t('visit','Aim'),array('name'=>'btnaim','id'=>'btnaim','disabled'=>($model->scenario=='view')))
+							)); ?>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<?php echo $form->labelEx($model,'datatime',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-7">
-				<?php echo $form->textField($model, 'crname',
-					array('size'=>40,'maxlength'=>250,'readonly'=>($model->scenario=='view'))
+				<?php echo $form->textField($model, 'datatime',
+					array('size'=>8,'maxlength'=>250,'readonly'=>($model->scenario=='view'))
 				); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'goodstime',array('class'=>"col-sm-2 control-label")); ?>
-				<div class="col-sm-7">
-				<?php echo $form->textField($model, 'goodstime',
-					array('size'=>40,'maxlength'=>500,'readonly'=>($model->scenario=='view'))
-				); ?>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<?php echo $form->labelEx($model,'goodsnumber',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,'area',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-5">
-				<?php echo $form->textField($model, 'goodsnumber',
+				<?php echo $form->textField($model, 'area',
 					array('maxlength'=>100,'readonly'=>($model->scenario=='view'))
 				); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'money',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,'road',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-7">
-				<?php echo $form->textField($model, 'money',
+				<?php echo $form->textField($model, 'road',
 					array('size'=>40,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
 				); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'username',array('class'=>"col-sm-2 control-label")); ?>
-				<div class="col-sm-3">
-					<?php echo $form->textField($model, 'username',
-						array('size'=>15,'maxlength'=>30,'readonly'=>($model->scenario=='view'))
+				<?php echo $form->labelEx($model,'crtype',array('class'=>"col-sm-2 control-label")); ?>
+				<div class="col-sm-7">
+					<?php echo $form->textField($model, 'crtype',
+							array('size'=>30,'maxlength'=>500,'readonly'=>($model->scenario=='view'),
+									'append'=>TbHtml::Button('<span class="fa fa-search"></span> '.Yii::t('visit','Customer type'),array('name'=>'btntype','id'=>'btntype','disabled'=>($model->scenario=='view')))
+							)); ?>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<?php echo $form->labelEx($model,'crname',array('class'=>"col-sm-2 control-label")); ?>
+				<div class="col-sm-7">
+					<?php echo $form->textField($model, 'crname',
+							array('maxlength'=>100,'readonly'=>($model->scenario=='view'))
 					); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'craddress',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,'sonname',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-7">
-					<?php echo $form->textArea($model, 'craddress',
-						array('rows'=>2,'cols'=>50,'maxlength'=>1000,'readonly'=>($model->scenario=='view'))
-					); ?>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<?php echo $form->labelEx($model,'city',array('class'=>"col-sm-2 control-label")); ?>
-				<div class="col-sm-7">
-				<?php echo $form->textField($model, 'city',
+				<?php echo $form->textField($model, 'sonname',
 					array('maxlength'=>255,'readonly'=>($model->scenario=='view'))
 				); ?>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'name',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,'charge',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-7">
-				<?php echo $form->textField($model, 'name',
+				<?php echo $form->textField($model, 'charge',
 					array('maxlength'=>100,'readonly'=>($model->scenario=='view'))
 				); ?>
 				</div>
 			</div>
-			
+
+			<div class="form-group">
+				<?php echo $form->labelEx($model,'phone',array('class'=>"col-sm-2 control-label")); ?>
+				<div class="col-sm-7">
+					<?php echo $form->textField($model, 'phone',
+							array('maxlength'=>100,'readonly'=>($model->scenario=='view'))
+					); ?>
+				</div>
+			</div>
+			<div class="form-group">
+				<?php echo $form->labelEx($model,'remarks',array('class'=>"col-sm-2 control-label")); ?>
+				<div class="col-sm-7">
+					<?php echo $form->textArea($model, 'remarks',
+							array('rows'=>2,'cols'=>50,'maxlength'=>1000,'readonly'=>($model->scenario=='view'))
+					); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 
 <?php $this->renderPartial('//site/removedialog'); ?>
+<?php $this->renderPartial('//site/lookup'); ?>
 
 <?php
+$js = Script::genLookupSearch();
+Yii::app()->clientScript->registerScript('lookupSearch',$js,CClientScript::POS_READY);
+
+$js = Script::genLookupButton('btntype', 'crtype', '', 'crtype');
+Yii::app()->clientScript->registerScript('lookType',$js,CClientScript::POS_READY);
+
+$js = Script::genLookupButton('btnistype', 'istype', '', 'type');
+Yii::app()->clientScript->registerScript('lookIstype',$js,CClientScript::POS_READY);
+
+$js = Script::genLookupButton('btnaim', 'aim', '', 'aim');
+Yii::app()->clientScript->registerScript('lookAim',$js,CClientScript::POS_READY);
+
 $js = Script::genDeleteData(Yii::app()->createUrl('visit/delete'));
 Yii::app()->clientScript->registerScript('deleteRecord',$js,CClientScript::POS_READY);
 
 $js = Script::genReadonlyField();
 Yii::app()->clientScript->registerScript('readonlyClass',$js,CClientScript::POS_READY);
+
+$js = Script::genLookupSelect();
+Yii::app()->clientScript->registerScript('lookupSelect',$js,CClientScript::POS_READY);
+
+$js = Script::genReadonlyField();
+Yii::app()->clientScript->registerScript('readonlyClass',$js,CClientScript::POS_READY);
+
+
+
+
+
+
+
+
+
+
 ?>
+
+
 
 <?php $this->endWidget(); ?>
 

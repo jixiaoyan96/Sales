@@ -13,6 +13,7 @@ return array(
         'Charge'=>'负责人',
         'Phone'=>'电话',
         'Remarks'=>'备注',
+        'Visit List'=>'拜访列表',
 );
 
 

@@ -72,7 +72,7 @@ class VisitForm extends CFormModel
 	{
 		$tabname = $this->tableName("sa_visit");
 		$city = Yii::app()->user->city_allow();
-		$sql = "SELECT * FROM $tabname WHERE where id = $index and city in ($city);
+		$sql = "SELECT * FROM $tabname WHERE  id = $index and city in ($city);
 				";
 
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();

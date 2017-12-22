@@ -1,9 +1,9 @@
 <?php
-$this->pageTitle=Yii::app()->name . ' - sales';
+$this->pageTitle=Yii::app()->name . ' - visit';
 ?>
 
 <?php $form=$this->beginWidget('TbActiveForm', array(
-'id'=>'supplier-list',
+'id'=>'visit-list',
 'enableClientValidation'=>true,
 'clientOptions'=>array('validateOnSubmit'=>true,),
 'layout'=>TbHtml::FORM_LAYOUT_INLINE,
@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name . ' - sales';
 
 <section class="content-header">
 	<h1>
-		<strong><?php echo Yii::t('sales','Sales Order'); ?></strong>
+		<strong><?php echo Yii::t('visit','Visit List'); ?></strong>
 	</h1>
 <!--
 	<ol class="breadcrumb">
@@ -29,7 +29,7 @@ $this->pageTitle=Yii::app()->name . ' - sales';
 		<?php 
 			if (Yii::app()->user->validRWFunction('T01'))
 				echo TbHtml::button('<span class="fa fa-file-o"></span> '.Yii::t('misc','Add Record'), array(
-					'submit'=>Yii::app()->createUrl('sales/new'),
+					'submit'=>Yii::app()->createUrl('visit/new'),
 				)); 
 		?>
 	</div>
@@ -41,10 +41,10 @@ $this->pageTitle=Yii::app()->name . ' - sales';
 						'charge',
 					);
 		$this->widget('ext.layout.ListPageWidget', array(
-			'title'=>Yii::t('supplier','Supplier List'),
+			'title'=>Yii::t('visit','Visit List'),
 			'model'=>$model,
-				'viewhdr'=>'//sales/_listhdr',
-				'viewdtl'=>'//sales/_listdtl',
+				'viewhdr'=>'//visit/_listhdr',
+				'viewdtl'=>'//visit/_listdtl',
 				'gridsize'=>'24',
 				'height'=>'600',
 				'search'=>$search,

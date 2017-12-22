@@ -192,7 +192,7 @@ class SalesForm extends CFormModel
 	}
 
 
-	public function saveData($sum)
+	public function saveData($sum=0)
 	{
 		$connection = Yii::app()->db;
 		$transaction=$connection->beginTransaction();
@@ -208,6 +208,7 @@ class SalesForm extends CFormModel
 
 	protected function savesales(&$connection,$sum)
 	{
+
 		$tabName = $this->tableName();
 		$sql = '';
 		switch ($this->scenario) {
@@ -241,6 +242,7 @@ class SalesForm extends CFormModel
 		$code = $this->getcode();
 		$this->code = $code;
 
+
 		$command=$connection->createCommand($sql);
 		if (strpos($sql,':id')!==false)
 			$command->bindParam(':id',$this->id,PDO::PARAM_INT);
@@ -262,8 +264,6 @@ class SalesForm extends CFormModel
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);
 		$command->execute();
-
-
 		if ($this->scenario=='new')
 			$this->id = Yii::app()->db->getLastInsertID();
 		return true;
@@ -289,11 +289,12 @@ class SalesForm extends CFormModel
 			case 'edit':
 				foreach ($array as $k => $v) {
 					$tabName = $this->tableNames("sa_order_good");
-					$sql = "insert into $tabName(
-							goodid, orderid, number, ismony
-						) values (
-							:goodid, :orderid, :number, :ismony
-						)";
+					$sql = "update $tabName set
+							goodid = :goodid,
+							orderid = :orderid,
+							number = :number,
+							ismony = :ismony,
+						where orderid = :orderid";
 					$command = $connection->createCommand($sql);
 					if (strpos($sql, ':goodid') !== false)
 						$command->bindParam(':goodid', $v['tgname'], PDO::PARAM_STR);

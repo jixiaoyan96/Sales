@@ -1,4 +1,5 @@
 <?php
+header("Content-type: text/html; charset=utf-8");
 class VisitController extends Controller
 {
     /**
@@ -17,7 +18,7 @@ class VisitController extends Controller
      */
     public function actionView($index)
     {
-        $model = new SalesForm('view');
+        $model = new VisitForm('view');
         if (!$model->retrieveData($index)) {
             throw new CHttpException(404,'The requested page does not exist.');
         } else {
@@ -30,7 +31,7 @@ class VisitController extends Controller
      */
     public function actionNew()
     {
-        $model = new SalesForm('new');
+        $model = new VisitForm('new');
         $this->render('form',array('model'=>$model,));
     }
 
@@ -39,15 +40,17 @@ class VisitController extends Controller
      */
     public function actionSave()
     {
-
-        if (isset($_POST['SalesForm'])) {
-            $model = new SalesForm($_POST['SalesForm']['scenario']);
-            $model->attributes = $_POST['SalesForm'];
+        echo "<pre>";
+        print_r($_POST['VisitForm']);
+        exit;
+        if (isset($_POST['VisitForm'])) {
+            $model = new VisitForm($_POST['VisitForm']['scenario']);
+            $model->attributes = $_POST['VisitForm'];
             if ($model->validate()) {
                 $model->saveData();
 //				$model->scenario = 'edit';
                 Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
-                $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$model->id)));
+                $this->redirect(Yii::app()->createUrl('visit/edit',array('index'=>$model->id)));
             } else {
                 $message = CHtml::errorSummary($model);
                 Dialog::message(Yii::t('dialog', 'Validation Message'), $message);
@@ -61,7 +64,7 @@ class VisitController extends Controller
      */
     public function actionEdit($index)
     {
-        $model = new SalesForm('edit');
+        $model = new VisitForm('edit');
         if (!$model->retrieveData($index)) {
             throw new CHttpException(404,'The requested page does not exist.');
         } else {
@@ -74,17 +77,24 @@ class VisitController extends Controller
     */
     public function actionDelete()
     {
-        $model = new SalesForm('delete');
-        if (isset($_POST['SupplierForm'])) {
-            $model->attributes = $_POST['SupplierForm'];
+        $model = new VisitForm('delete');
+        if (isset($_POST['VisitForm'])) {
+            $model->attributes = $_POST['VisitForm'];
             $model->saveData();
             Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Record Deleted'));
         }
 //		$this->actionIndex();
-        $this->redirect(Yii::app()->createUrl('supplier/index'));
+        $this->redirect(Yii::app()->createUrl('visit/index'));
     }
 
-
+    protected function performAjaxValidation($model)
+    {
+        if(isset($_POST['ajax']) && $_POST['ajax']==='visit-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+    }
 
 
 
