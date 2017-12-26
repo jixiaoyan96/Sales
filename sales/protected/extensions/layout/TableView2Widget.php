@@ -42,7 +42,13 @@ class TableView2Widget extends CWidget
 		$modelName = get_class($this->model);
 		return $modelName.'['.$this->attribute.']['.$this->recordptr.']['.$field.']';
 	}
-	
+
+	public function getFieldNames($field,$i)
+	{
+		$modelName = get_class($this->model);
+		return $modelName.'['.$this->attribute.']['.$i.']['.$field.']';
+	}
+
 	public function getFieldValue($field)
 	{
 		return $this->record[$field];

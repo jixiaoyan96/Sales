@@ -15,13 +15,14 @@ class VisitForm extends CFormModel
 	public $charge; //负责人
 	public $phone;
 	public $remarks; //备注
+	public $city;
 	public $service = array();
 
 	public function rules()
 	{
 		return array(
-				array('id,uname,type,aim,datatime,area,road,crtype,crname,sonname,phone,remarks','safe'),
-				array('name,code,lcu','required'),
+				array('id,uname,type,aim,datatime,area,road,crtype,crname,sonname,phone,remarks,city','safe'),
+				array('type,aim,datatime,area,road,crtype,crname,charge,phone','required'),
 		);
 	}
 
@@ -49,25 +50,6 @@ class VisitForm extends CFormModel
 	}
 
 
-	public function validateCode($attribute, $params) {
-		$code = $this->$attribute;
-		$city = Yii::app()->user->city();
-		if (!empty($code)) {
-			switch ($this->scenario) {
-				case 'new':
-					if (Sales::model()->exists('code=? and city=?',array($code,$city))) {
-						$this->addError($attribute, Yii::t('supplier','Code')." '".$code."' ".Yii::t('app','already used'));
-					}
-					break;
-				case 'edit':
-					if (Sales::model()->exists('code=? and city=? and id<>?',array($code,$city,$this->id))) {
-						$this->addError($attribute, Yii::t('supplier','Code')." '".$code."' ".Yii::t('app','already used'));
-					}
-					break;
-			}
-		}
-	}
-
 	public function retrieveData($index)
 	{
 		$tabname = $this->tableName("sa_visit");
@@ -93,6 +75,7 @@ class VisitForm extends CFormModel
 				$this->charge = $row['charge'];
 				$this->phone = $row['phone'];
 				$this->remarks = $row['remarks'];
+				$this->city = $row['city'];
 				break;
 			}
 		}
@@ -105,7 +88,7 @@ class VisitForm extends CFormModel
 		$connection = Yii::app()->db;
 		$transaction=$connection->beginTransaction();
 		try {
-			$this->savesales($connection);
+			$this->savevisit($connection);
 			$transaction->commit();
 		}
 		catch(Exception $e) {
@@ -115,30 +98,34 @@ class VisitForm extends CFormModel
 	}
 
 
-	protected function savesales(&$connection)
+	protected function savevisit(&$connection)
 	{
-		$tabName = $this->tableName();
+		$tabName = $this->tableName("sa_visit");
 		$sql = '';
 		switch ($this->scenario) {
 			case 'delete':
-				$sql = "delete from $tabName where id = :id and city = :city";
+				$sql = "delete from $tabName where id = :id";
 				break;
 			case 'new':
 				$sql = "insert into $tabName(
-							code, name, time, money, lcu, address, city
+							uname, type, aim, area, road, crtype, crname, sonname, charge, phone, remarks, city
 						) values (
-							:code, :name, :time, :money, :lcu, :address, :city
+							:uname, :type, :aim, :area, :road, :crtype, :crname, :sonname, :charge, :phone, :remarks, :city
 						)";
 				break;
 			case 'edit':
 				$sql = "update $tabName set
-							code = :code,
-							name = :name,
-							time = :time,
-							money = :money,
-							lcu = :lcu,
-							address = :address,
-							city = :city
+							uname = :uname,
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
 						where id = :id and city = :city
 						";
 				break;
@@ -147,22 +134,33 @@ class VisitForm extends CFormModel
 		$city = Yii::app()->user->city();
 		$uid = Yii::app()->user->id;
 
+
 		$command=$connection->createCommand($sql);
 		if (strpos($sql,':id')!==false)
 			$command->bindParam(':id',$this->id,PDO::PARAM_INT);
-		if (strpos($sql,':code')!==false)
-			$command->bindParam(':code',$this->code,PDO::PARAM_STR);
-		if (strpos($sql,':name')!==false)
-			$command->bindParam(':name',$this->name,PDO::PARAM_STR);
-		if (strpos($sql,':money')!==false)
-			$command->bindParam(':money',$this->money,PDO::PARAM_STR);
-		if (strpos($sql,':time')!==false)
-			$Ctime = General::toMyDate($this->time);
-			$command->bindParam(':time',$Ctime,PDO::PARAM_STR);
-		if (strpos($sql,':lcu')!==false)
-			$command->bindParam(':lcu',$uid,PDO::PARAM_STR);
-		if (strpos($sql,':address')!==false)
-			$command->bindParam(':address',$this->address,PDO::PARAM_INT);
+		if (strpos($sql,':uname')!==false)
+			$command->bindParam(':uname',$uid,PDO::PARAM_STR);
+		if (strpos($sql,':aim')!==false)
+			$command->bindParam(':aim',$this->aim,PDO::PARAM_STR);
+		if (strpos($sql,':area')!==false)
+			$command->bindParam(':area',$this->area,PDO::PARAM_STR);
+		if (strpos($sql,':datatime')!==false)
+			$Time = General::toMyDate($this->datatime);
+			$command->bindParam(':datatime',$Time,PDO::PARAM_STR);
+		if (strpos($sql,':road')!==false)
+			$command->bindParam(':road',$this->road,PDO::PARAM_STR);
+		if (strpos($sql,':crtype')!==false)
+			$command->bindParam(':crtype',$this->crtype,PDO::PARAM_STR);
+		if (strpos($sql,':crname')!==false)
+			$command->bindParam(':crname',$this->crname,PDO::PARAM_STR);
+		if (strpos($sql,':sonname')!==false)
+			$command->bindParam(':sonname',$this->sonname,PDO::PARAM_STR);
+		if (strpos($sql,':charge')!==false)
+			$command->bindParam(':charge',$this->charge,PDO::PARAM_STR);
+		if (strpos($sql,':phone')!==false)
+			$command->bindParam(':phone',$this->phone,PDO::PARAM_INT);
+		if (strpos($sql,':remarks')!==false)
+			$command->bindParam(':remarks',$this->remarks,PDO::PARAM_STR);
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);
 		$command->execute();

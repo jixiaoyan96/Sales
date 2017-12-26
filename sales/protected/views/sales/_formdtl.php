@@ -62,7 +62,7 @@
 		$(document).ready(function(){
 			$(id).change(function() {
 				$.get("<?php echo Yii::app()->createUrl('sales/two'); ?>",
-						{ id: $(id).val()},
+						{ sid: $(id).val()},
 						function(data){
 							var options = '';
 							for(i in data){

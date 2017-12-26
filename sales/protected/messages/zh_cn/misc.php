@@ -48,7 +48,8 @@ return array(
 	'Print'=>'打印',
 	'Goods'=>'下单商品',
 	'Add Goods'=>'添加新一个商品',
-	
+	'Gps'=>'位置导航',
+
 	'Invalid Station. Please register first.'=>'工作站无效。请先登记。',
 	'User ID has been logged in more than one station.'=>'帐户已被登录到另一工作站。',
 	'Session expired.'=>'系统连接已经过期。请重新登录。',

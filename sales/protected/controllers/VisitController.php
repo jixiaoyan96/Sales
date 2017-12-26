@@ -40,15 +40,11 @@ class VisitController extends Controller
      */
     public function actionSave()
     {
-        echo "<pre>";
-        print_r($_POST['VisitForm']);
-        exit;
         if (isset($_POST['VisitForm'])) {
             $model = new VisitForm($_POST['VisitForm']['scenario']);
             $model->attributes = $_POST['VisitForm'];
             if ($model->validate()) {
                 $model->saveData();
-//				$model->scenario = 'edit';
                 Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
                 $this->redirect(Yii::app()->createUrl('visit/edit',array('index'=>$model->id)));
             } else {
@@ -96,6 +92,20 @@ class VisitController extends Controller
         }
     }
 
+
+    public function actionGps(){
+        if (isset($_POST['VisitForm'])){
+            $area = $_POST['VisitForm']['area'];
+            $road = $_POST['VisitForm']['road'];
+            $this->renderPartial('gps',
+                array(
+                    'area'=>$area,
+                    'road'=>$road,));
+        }else{
+            throw new CHttpException(404,'The requested page does not exist.');
+        }
+
+    }
 
 
 }

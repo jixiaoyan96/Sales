@@ -5,7 +5,7 @@ return array(
         'Type'=>'类型',
         'Aim'=>'目的',
         'Time'=>'时间',
-        'Area'=>'区域',
+        'Area'=>'客户区域',
         'Road'=>'街道',
         'Customer type'=>'客户类型',
         'Customer name'=>'客户名称',
@@ -14,6 +14,8 @@ return array(
         'Phone'=>'电话',
         'Remarks'=>'备注',
         'Visit List'=>'拜访列表',
+        'City'=>'区域',
+        'Visit Form'=>'拜访表单',
 );
 
 

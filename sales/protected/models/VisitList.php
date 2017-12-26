@@ -25,6 +25,7 @@ class VisitList extends CListPageModel
             'charge'=>Yii::t('visit','Charge'),
             'phone'=>Yii::t('visit','Phone'),
             'remarks'=>Yii::t('visit','Remarks'),
+            'city'=>Yii::t('visit','City'),
         );
     }
 

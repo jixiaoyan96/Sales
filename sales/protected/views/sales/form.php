@@ -110,6 +110,7 @@ $this->pageTitle=Yii::app()->name . ' - sales Form';
 				); ?>
 			</div>
 		</div>
+		<?php if($model->scenario=='new'){ ?>
 		<div class="box">
 			<div class="box-body table-responsive">
 				<legend><?php echo Yii::t('sales','Good list'); ?></legend>
@@ -124,6 +125,22 @@ $this->pageTitle=Yii::app()->name . ' - sales Form';
 				?>
 			</div>
 		</div>
+		<?php }else{?>
+			<div class="box">
+				<div class="box-body table-responsive">
+					<legend><?php echo Yii::t('sales','Good list'); ?></legend>
+					<?php $this->widget('ext.layout.TableView2Widget', array(
+							'model'=>$model,
+							'attribute'=>'detail',
+							'viewhdr'=>'//sales/v_formhdr',
+							'viewdtl'=>'//sales/v_formdtl',
+							'gridsize'=>'24',
+							'height'=>'200',
+					));
+					?>
+				</div>
+			</div>
+		<?php }?>
 </section>
 
 <?php $this->renderPartial('//site/removedialog'); ?>

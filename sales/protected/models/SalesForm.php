@@ -20,6 +20,7 @@ class SalesForm extends CFormModel
 	public $gname;
 	public $good;
 	public $titid;
+	public $sum;
 	public $detail = array(
 			array('gname'=>1,
 					'tgname'=>0,
@@ -120,15 +121,17 @@ class SalesForm extends CFormModel
 	}
 
 	public function select(){
-		$tab = $this->tableNames("sa_good");
-		$sql = "SELECT goodid,gname,gmoney,pid FROM $tab WHERE pid != 0";
-		$sqlt = "SELECT goodid,gname,gmoney,pid FROM $tab WHERE goodid <= 5";
+		$tab = $this->tableNames("sa_order_good");
+		$tabn = $this->tableNames("sa_good");
+		$order = $this->code;
+		$sql = "SELECT a.number, a.ismony, a.goodagio, b.gname, b.gmoney
+				FROM $tab a
+				INNER JOIN $tabn b
+				ON a.goodid = b.goodid
+				WHERE a.orderid = '$order'";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
-		$res = Yii::app()->db->createCommand($sqlt)->queryAll();
-		$this->title = $res;
 		$this->good = $rows;
 		return true;
-
 	}
 
 	public function validateCode($attribute, $params) {
@@ -187,33 +190,39 @@ class SalesForm extends CFormModel
 				break;
 			}
 		}
+
 		$this->select();
 		return true;
 	}
 
+	public function savesum($sum=0){
+		$this->sum = $sum;
+		return true;
+	}
 
-	public function saveData($sum=0)
+
+	public function saveData()
 	{
 		$connection = Yii::app()->db;
 		$transaction=$connection->beginTransaction();
 		try {
-			$this->savesales($connection,$sum);
+			$this->savesales($connection);
 			$transaction->commit();
 		}
 		catch(Exception $e) {
+
 			$transaction->rollback();
 			throw new CHttpException(404,'Cannot update.');
 		}
 	}
 
-	protected function savesales(&$connection,$sum)
+	protected function savesales(&$connection)
 	{
-
 		$tabName = $this->tableName();
 		$sql = '';
 		switch ($this->scenario) {
 			case 'delete':
-				$sql = "delete from $tabName where id = :id and city = :city";
+				$sql = "delete from $tabName where id = :id";
 				break;
 			case 'new':
 				$sql = "insert into $tabName(
@@ -226,7 +235,6 @@ class SalesForm extends CFormModel
 				$sql = "update $tabName set
 							name = :name,
 							time = :time,
-							money = :money,
 							lcu = :lcu,
 							region = :region,
 							address = :address,
@@ -236,13 +244,10 @@ class SalesForm extends CFormModel
 				break;
 		}
 
-
 		$city = Yii::app()->user->city();
 		$uid = Yii::app()->user->id;
 		$code = $this->getcode();
 		$this->code = $code;
-
-
 		$command=$connection->createCommand($sql);
 		if (strpos($sql,':id')!==false)
 			$command->bindParam(':id',$this->id,PDO::PARAM_INT);
@@ -251,7 +256,7 @@ class SalesForm extends CFormModel
 		if (strpos($sql,':name')!==false)
 			$command->bindParam(':name',$this->name,PDO::PARAM_STR);
 		if (strpos($sql,':money')!==false)
-			$command->bindParam(':money',$sum,PDO::PARAM_STR);
+			$command->bindParam(':money',$this->sum,PDO::PARAM_STR);
 		if (strpos($sql,':time')!==false)
 			$Ctime = General::toMyDate($this->time);
 			$command->bindParam(':time',$Ctime,PDO::PARAM_STR);
@@ -263,7 +268,7 @@ class SalesForm extends CFormModel
 			$command->bindParam(':address',$this->address,PDO::PARAM_INT);
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);
-		$command->execute();
+			$command->execute();
 		if ($this->scenario=='new')
 			$this->id = Yii::app()->db->getLastInsertID();
 		return true;
@@ -285,6 +290,7 @@ class SalesForm extends CFormModel
 
 	protected function savegoods($connection,$array)
 	{
+
 		switch ($this->scenario) {
 			case 'edit':
 				foreach ($array as $k => $v) {
@@ -327,9 +333,9 @@ class SalesForm extends CFormModel
 					if (strpos($sql, ':ismony') !== false)
 						$command->bindParam(':ismony', $v['total'], PDO::PARAM_STR);
 					$command->execute();
-					break;
-
 				}
+				return true;
+				break;
 		}
 
 	}

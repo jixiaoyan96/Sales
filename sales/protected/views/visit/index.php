@@ -27,7 +27,7 @@ $this->pageTitle=Yii::app()->name . ' - visit';
 	<div class="box"><div class="box-body">
 	<div class="btn-group" role="group">
 		<?php 
-			if (Yii::app()->user->validRWFunction('T01'))
+			if (Yii::app()->user->validRWFunction('T02'))
 				echo TbHtml::button('<span class="fa fa-file-o"></span> '.Yii::t('misc','Add Record'), array(
 					'submit'=>Yii::app()->createUrl('visit/new'),
 				)); 
