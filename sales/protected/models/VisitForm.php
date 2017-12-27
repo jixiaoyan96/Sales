@@ -16,6 +16,15 @@ class VisitForm extends CFormModel
 	public $phone;
 	public $remarks; //备注
 	public $city;
+	public $detail = array(
+			array('gname'=>1,
+					'tgname'=>0,
+					'gmoney'=>0,
+					'goodagio'=>0,
+					'money'=>0,
+					'total'=>0,
+			),
+	);
 	public $service = array();
 
 	public function rules()
@@ -46,6 +55,11 @@ class VisitForm extends CFormModel
 				'charge'=>Yii::t('visit','Charge'),
 				'phone'=>Yii::t('visit','Phone'),
 				'remarks'=>Yii::t('visit','Remarks'),
+				'services'=>Yii::t('visit','Use of services'),
+				'amount'=>Yii::t('visit','Annual amount'),
+				'number'=>Yii::t('visit','Number'),
+				'of services'=>Yii::t('visit','Selection of services'),
+
 		);
 	}
 

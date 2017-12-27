@@ -16,6 +16,12 @@ return array(
         'Visit List'=>'拜访列表',
         'City'=>'区域',
         'Visit Form'=>'拜访表单',
+        'Visit Offer'=>'拜访报价',
+        'Use of services'=>'使用服务',
+        'Annual amount'=>'年金额',
+        'Number'=>'数量',
+        'Selection of services'=>'服务选择',
+
 );
 
 

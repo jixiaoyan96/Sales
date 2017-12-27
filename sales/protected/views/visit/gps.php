@@ -23,7 +23,10 @@
 <script type="text/javascript">
     var stat;//起点
     var end;  //终点
-    end  = document.getElementById("road").value;
+    stat = "成都市青羊区江信大厦";
+    var t = document.getElementById("area").value;
+    var y  = document.getElementById("road").value;
+    end = t+y;
     var map = new BMap.Map("l-map");
     map.centerAndZoom(new BMap.Point(104.06792346,30.67994285), 12);
     var transit = new BMap.DrivingRoute(map, {

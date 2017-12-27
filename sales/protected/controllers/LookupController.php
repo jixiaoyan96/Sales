@@ -24,7 +24,7 @@ class LookupController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('crtype','istype','aim','companyex','staffex','productex','template',),
+				'actions'=>array('crtype','istype','aim','seats','companyex','staffex','productex','template',),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -73,6 +73,18 @@ class LookupController extends Controller
 		$data = TbHtml::listData($result, 'id', 'value');
 		echo TbHtml::listBox('lstlookup', '', $data, array('size'=>'15', 'multiple'=>true));
 	}
+
+	public function actionseats($search)
+	{
+		$tab = $this->tableName("sa_good");
+		$searchx = str_replace("'","\'",$search);
+		$sql = "select id,gname as value from $tab
+				where pid != 0 AND gname LIKE '%".$searchx."%'";
+		$result = Yii::app()->db->createCommand($sql)->queryAll();
+		$data = TbHtml::listData($result, 'id', 'value');
+		echo TbHtml::listBox('lstlookup', '', $data, array('size'=>'15', 'multiple'=>true));
+	}
+
 
 	public function actionCompanyEx($search) {
 		$city = Yii::app()->user->city();

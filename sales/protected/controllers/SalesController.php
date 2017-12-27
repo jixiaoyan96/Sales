@@ -5,7 +5,6 @@ class SalesController extends Controller
     /**
      * 订单列表
     */
-
     public function actionIndex($pageNum=0)
     {
         $model = new SalesList();
@@ -152,6 +151,14 @@ class SalesController extends Controller
         $data = $tmpdata;
         $excel->download($data, '销售订单');
     }
+
+    public function actionPdf(){
+
+
+
+
+    }
+
 
 
 }
