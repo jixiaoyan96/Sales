@@ -167,8 +167,8 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 						'height'=>'200',
 				));
 				?>
+			</div>
 		</div>
-	</div>
 
 
 </section>
@@ -229,6 +229,7 @@ $('#btnAddRow').on('click',function() {
 });
 	";
 	Yii::app()->clientScript->registerScript('addRow',$js,CClientScript::POS_READY);
+
 }
 
 $js = Script::genLookupSearch();

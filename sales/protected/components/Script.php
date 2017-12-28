@@ -77,6 +77,24 @@ $('#$btnName').on('click',function() {
 EOF;
 		return $str;
 	}
+
+
+	public static function getLookupButtonClass($btnName, $lookupType, $codeField, $valueField) {
+		$str = <<<EOF
+$('div.bo .$btnName').on('click',function() {
+	var code = $("input[id*='$codeField']").attr("id");
+	var value = $("input[id*='$valueField']").attr("id");
+	var title = $("label[for='"+value+"']").text();
+	$('#lookuptype').val('$lookupType');
+	$('#lookupcodefield').val(code);
+	$('#lookupvaluefield').val(value);
+	$('#lookupdialog').dialog('option','title',title);
+	$('#lookupdialog').dialog('open');
+});
+EOF;
+		return $str;
+	}
+
  
 	public static function genLookupButtonEx($btnName, $lookupType, $codeField, $valueField, $otherFields=array(), $multiselect=false) {
 		$others = '';

@@ -43,6 +43,10 @@ $('#$btnName').on('click',function() {
 EOF;
 		return $str;
 	}
+
+
+
+
  
 	public function genLookupSearch() {
 		$mesg = Yii::t('dialog','No Record Found');

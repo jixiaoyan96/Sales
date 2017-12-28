@@ -2,6 +2,18 @@
 header("Content-type: text/html; charset=utf-8");
 class VisitController extends Controller
 {
+    public function filters()
+    {
+        return array(
+            'enforceRegisteredStation',
+            'enforceSessionExpiration',
+            'enforceNoConcurrentLogin',
+            'accessControl', // perform access control for CRUD operations
+            'postOnly + delete', // we only allow deletion via POST request
+        );
+    }
+
+
     /**
      * 拜访列表
     */
@@ -79,7 +91,6 @@ class VisitController extends Controller
             $model->saveData();
             Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Record Deleted'));
         }
-//		$this->actionIndex();
         $this->redirect(Yii::app()->createUrl('visit/index'));
     }
 

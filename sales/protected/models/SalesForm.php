@@ -35,10 +35,13 @@ class SalesForm extends CFormModel
 	public function rules()
 	{
 		return array(
-				array('id,code,name,money,address,lcu,time,city,region','safe'),
+				array('id,detail,code,name,money,address,lcu,time,city,region','safe'),
 				array('name','required'),
+
+				array('code','validateCode'),
 		);
 	}
+
 
 	public function tableName()
 	{
@@ -226,9 +229,9 @@ class SalesForm extends CFormModel
 				break;
 			case 'new':
 				$sql = "insert into $tabName(
-							code, name, time, money, lcu, address, city, region
+							code, name, money, lcu, address, city, region
 						) values (
-							:code, :name, :time, :money, :lcu, :address, :city, :region
+							:code, :name, :money, :lcu, :address, :city, :region
 						)";
 				break;
 			case 'edit':
@@ -257,9 +260,6 @@ class SalesForm extends CFormModel
 			$command->bindParam(':name',$this->name,PDO::PARAM_STR);
 		if (strpos($sql,':money')!==false)
 			$command->bindParam(':money',$this->sum,PDO::PARAM_STR);
-		if (strpos($sql,':time')!==false)
-			$Ctime = General::toMyDate($this->time);
-			$command->bindParam(':time',$Ctime,PDO::PARAM_STR);
 		if (strpos($sql,':lcu')!==false)
 			$command->bindParam(':lcu',$uid,PDO::PARAM_STR);
 		if (strpos($sql,':region')!==false)

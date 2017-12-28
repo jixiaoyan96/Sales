@@ -30,7 +30,7 @@ class VisitForm extends CFormModel
 	public function rules()
 	{
 		return array(
-				array('id,uname,type,aim,datatime,area,road,crtype,crname,sonname,phone,remarks,city','safe'),
+				array('id,uname,type,aim,datatime,area,road,crtype,crname,sonname,charge,phone,remarks','safe'),
 				array('type,aim,datatime,area,road,crtype,crname,charge,phone','required'),
 		);
 	}
@@ -63,14 +63,11 @@ class VisitForm extends CFormModel
 		);
 	}
 
-
 	public function retrieveData($index)
 	{
 		$tabname = $this->tableName("sa_visit");
 		$city = Yii::app()->user->city_allow();
-		$sql = "SELECT * FROM $tabname WHERE  id = $index and city in ($city);
-				";
-
+		$sql = "SELECT * FROM $tabname WHERE  id = $index and city in ($city)	";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0)
 		{
@@ -122,10 +119,10 @@ class VisitForm extends CFormModel
 				break;
 			case 'new':
 				$sql = "insert into $tabName(
-							uname, type, aim, area, road, crtype, crname, sonname, charge, phone, remarks, city
-						) values (
-							:uname, :type, :aim, :area, :road, :crtype, :crname, :sonname, :charge, :phone, :remarks, :city
-						)";
+					    uname, type, aim, area, road, crtype, crname, sonname, charge, phone, remarks, city
+				  )values (
+				  		:uname, :type, :aim, :area, :road, :crtype, :crname, :sonname, :charge, :phone, :remarks, :city
+				  )";
 				break;
 			case 'edit':
 				$sql = "update $tabName set
@@ -145,22 +142,20 @@ class VisitForm extends CFormModel
 				break;
 		}
 
+
 		$city = Yii::app()->user->city();
 		$uid = Yii::app()->user->id;
-
-
 		$command=$connection->createCommand($sql);
 		if (strpos($sql,':id')!==false)
 			$command->bindParam(':id',$this->id,PDO::PARAM_INT);
 		if (strpos($sql,':uname')!==false)
 			$command->bindParam(':uname',$uid,PDO::PARAM_STR);
+		if (strpos($sql,':type')!==false)
+			$command->bindParam(':type',$this->type,PDO::PARAM_STR);
 		if (strpos($sql,':aim')!==false)
 			$command->bindParam(':aim',$this->aim,PDO::PARAM_STR);
 		if (strpos($sql,':area')!==false)
 			$command->bindParam(':area',$this->area,PDO::PARAM_STR);
-		if (strpos($sql,':datatime')!==false)
-			$Time = General::toMyDate($this->datatime);
-			$command->bindParam(':datatime',$Time,PDO::PARAM_STR);
 		if (strpos($sql,':road')!==false)
 			$command->bindParam(':road',$this->road,PDO::PARAM_STR);
 		if (strpos($sql,':crtype')!==false)
@@ -178,7 +173,6 @@ class VisitForm extends CFormModel
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);
 		$command->execute();
-
 		if ($this->scenario=='new')
 			$this->id = Yii::app()->db->getLastInsertID();
 		return true;
