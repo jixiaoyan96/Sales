@@ -142,7 +142,6 @@ class VisitForm extends CFormModel
 				break;
 		}
 
-
 		$city = Yii::app()->user->city();
 		$uid = Yii::app()->user->id;
 		$command=$connection->createCommand($sql);
