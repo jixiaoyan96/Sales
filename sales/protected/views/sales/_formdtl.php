@@ -5,7 +5,9 @@
 		); ?>
 	</td>
 	<td>
-		<?php echo TbHtml::dropDownList($this->getFieldName('tgname'),  1,General::getTowlist(),
+		<?php echo TbHtml::dropDownList($this->getFieldName('tgname'),  1,array(
+			'Please'=>Yii::t('sales','Please choose')
+		),
 								array('class'=>'setZwo')
 		); ?>
 	</td>

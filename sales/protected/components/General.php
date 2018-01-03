@@ -558,7 +558,7 @@ class General {
 	public static function getGoodsList()
 	{
 		$list = array(0=>Yii::t('misc','-- None --'));
-		$sql = "select id, name from sales.sa_classify_v";
+		$sql = "select id, name from sa_classify_v";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
@@ -571,11 +571,11 @@ class General {
 	public static function getTowlist()
 	{
 		$list = array(0=>Yii::t('misc','-- None --'));
-		$sql = "select goodid, gname from sales.sa_good where pid = 1";
+		$sql = "select id, name from sa_goods_v where classify_id = 27";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
-				$list[$row['goodid']] = $row['gname'];
+				$list[$row['id']] = $row['name'];
 			}
 		}
 		return $list;

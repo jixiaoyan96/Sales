@@ -40,7 +40,6 @@ class SalesList extends CListPageModel
         $suffix = Yii::app()->params['envSuffix'];
         $city = Yii::app()->user->city_allow();
         $tabname = $this->tableName("sa_order");
-        $tab = $this->tableName("sa_order_good");
         $sql1 = "select a.id, a.code, a.name, a.time, a.money, a.lcu, a.address, a.region, a.city as city_name
 				from $tabname a, security$suffix.sec_city b
 				where a.city=b.code and a.city in ($city)
@@ -73,7 +72,6 @@ class SalesList extends CListPageModel
         $sql = $this->sqlWithPageCriteria($sql, $this->pageNum);
         $records = Yii::app()->db->createCommand($sql)->queryAll();
 
-        $list = array();
         $this->attr = array();
         if (count($records) > 0) {
             foreach ($records as $k=>$record) {

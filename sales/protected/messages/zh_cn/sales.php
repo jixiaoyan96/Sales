@@ -28,7 +28,7 @@ return array(
     'Total'=>'总价',
     'Order Total'=>'订单总价',
     'Sales List'=>'销售列表',
-    'Please choose'=>'请选择',
+    'Please choose'=>'--请选择--',
 
 
     //
