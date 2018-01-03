@@ -109,7 +109,7 @@ class SalesController extends Controller
         $model = new SalesForm();
         $id = isset($_GET['sid']) ? $_GET['sid'] : 250;
         $area = $model->getSecond($id);
-        $arr_area = array_column($area, 'gname', 'goodid');
+        $arr_area = array_column($area, 'name', 'id');
         //对获取到的转JSON格式
         header('Content-type: application/json');
         echo CJSON::encode($arr_area);
@@ -152,11 +152,32 @@ class SalesController extends Controller
         $excel->download($data, '销售订单');
     }
 
-    public function actionPdf(){
+    public function actionOne(){
+        if(isset($_POST['SalesForm'])){
+            $code = $_POST['SalesForm']['code'];
+            $id = $_POST['SalesForm']['id'];
+            $model = new SalesForm('new');
+            $model->code = $code;
+            $model->id = $id;
+            $this->render('goods',array('model'=>$model));
+        }
 
+    }
 
-
-
+    public function actionTow(){
+        $model = new SalesForm('edit');
+        if(isset($_POST['SalesForm'])){
+        $post = $_POST['SalesForm']['detail'];
+        $code = $_POST['SalesForm']['code'];
+        $id = $_POST['SalesForm']['id'];
+        $model->editgoods($post,$code);
+        Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
+        $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$id)));
+    } else {
+        $message = CHtml::errorSummary($model);
+        Dialog::message(Yii::t('dialog', 'Validation Message'), $message);
+        $this->render('form', array('model' => $model,));
+        }
     }
 
 

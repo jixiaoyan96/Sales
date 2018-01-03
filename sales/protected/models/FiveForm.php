@@ -1,34 +1,23 @@
 <?php
 
-class VisitForm extends CFormModel
+class FiveForm extends CFormModel
 {
 	public $id;
 	public $uname; //销售人
-	public $type; //类型
-	public $aim; //目的
-	public $datatime;
-	public $area; //区域
-	public $road; //街道
-	public $crtype; //客户类型
-	public $crname; //客户名称
-	public $sonname; //分店名字
-	public $charge; //负责人
-	public $phone;
-	public $remarks; //备注
-	public $city;
-	public $offer;
-	public $detail = array(
-			array('seats'=>'输入服务内容',
-					'number'=>0,
-					'amount'=>0,
-			),
-	);
+	public $ucod; //销售人编号
+	public $ujob; //销售人岗位
+	public $stateid;//销售状态对应ID
+	public $state; //已完成的阶段
+	public $entrytime; //入职时间
+	public $s_state; //当前阶段
+	public $mrscore; //总经理评分
+	public $drscore; //总监评分
 	public $service = array();
 
 	public function rules()
 	{
 		return array(
-				array('id,uname,type,aim,datatime,area,road,crtype,crname,sonname,charge,phone,remarks','safe'),
+				array('id,uname,ucod,ujob,stateid,state,entrytime,s_state,mrscore,drscore','safe'),
 				array('type,aim,datatime,area,road,crtype,crname,charge,phone','required'),
 		);
 	}
@@ -40,24 +29,15 @@ class VisitForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-				'id'=>Yii::t('visit','ID'),
-				'uname'=>Yii::t('visit','Visit Name'),
-				'type'=>Yii::t('visit','Type'),
-				'aim'=>Yii::t('visit','Aim'),
-				'datatime'=>Yii::t('visit','Time'),
-				'area'=>Yii::t('visit','Area'),
-				'road'=>Yii::t('visit','Road'),
-				'crtype'=>Yii::t('visit','Customer type'),
-				'crname'=>Yii::t('visit','Customer name'),
-				'sonname'=>Yii::t('visit','Name of branch store'),
-				'charge'=>Yii::t('visit','Charge'),
-				'phone'=>Yii::t('visit','Phone'),
-				'remarks'=>Yii::t('visit','Remarks'),
-				'services'=>Yii::t('visit','Use of services'),
-				'amount'=>Yii::t('visit','Annual amount'),
-				'number'=>Yii::t('visit','Number'),
-				'of services'=>Yii::t('visit','Selection of services'),
-
+				'id'=>Yii::t('five','ID'),
+				'uname'=>Yii::t('five','User Name'),
+				'ucod'=>Yii::t('five','User Code'),
+				'ujob'=>Yii::t('five','Operating Post'),
+				'state'=>Yii::t('five','Complete State'),
+				'entrytime'=>Yii::t('five','Entry Time'),
+				's_state'=>Yii::t('five','This State'),
+				'mrscore'=>Yii::t('five','General manager score'),
+				'drscore'=>Yii::t('five','Director scoring'),
 		);
 	}
 

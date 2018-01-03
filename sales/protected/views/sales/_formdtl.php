@@ -90,8 +90,9 @@ function ismo(){
 			$.get("<?php echo Yii::app()->createUrl('sales/getmoney'); ?>",
 					{ id: $(sid).val()},
 					function(data){
-						$(did).val(data[0]['gmoney']);
-						$(zid).val(data[0]['gmoney']);
+						console.dir(data)
+						$(did).val(data[0]['price']);
+						$(zid).val(data[0]['price']);
 					});
 		})
 	});

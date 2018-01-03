@@ -92,15 +92,15 @@ class SalesForm extends CFormModel
 	}
 
 	public function getSecond($id){
-		$tab = $this->tableNames("sa_good");
-		$sql = "SELECT goodid,gname FROM $tab WHERE pid = $id";
+		$tab = $this->tableNames("sa_goods_v");
+		$sql = "SELECT id,name FROM $tab WHERE classify_id = $id";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		return $rows;
 	}
 
 	public function getmoney($id){
-		$tab = $this->tableNames("sa_good");
-		$sql = "SELECT gmoney FROM $tab WHERE goodid = $id";
+		$tab = $this->tableNames("sa_goods_v");
+		$sql = "SELECT price FROM $tab WHERE id = $id";
 		$rows = Yii::app()->db->createCommand($sql)->query();
 		return $rows;
 	}
@@ -125,12 +125,12 @@ class SalesForm extends CFormModel
 
 	public function select(){
 		$tab = $this->tableNames("sa_order_good");
-		$tabn = $this->tableNames("sa_good");
+		$tabn = $this->tableNames("sa_goods_v");
 		$order = $this->code;
-		$sql = "SELECT a.number, a.ismony, a.goodagio, b.gname, b.gmoney
+		$sql = "SELECT a.number, a.ismony, a.goodagio, b.name as gname, b.price as gmoney
 				FROM $tab a
 				INNER JOIN $tabn b
-				ON a.goodid = b.goodid
+				ON a.goodid = b.id
 				WHERE a.orderid = '$order'";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		$this->good = $rows;
@@ -159,16 +159,16 @@ class SalesForm extends CFormModel
 	public function retrieveData($index)
 	{
 		$tabname = $this->tableName();
-		$tabone = $this->tableNames("sa_good");
-		$tabtwo = $this->tableNames("sa_order_good");
+		$tabone = $this->tableNames("sa_order_good");
+		$tabtwo = $this->tableNames("sa_goods_v");
 		$city = Yii::app()->user->city_allow();
-		$sql = "SELECT a.id, a.code, a.name, a.time, a.money, a.lcu, b.goodid, a.address, a.region, c.gname, a.city, a.status,
+		$sql = "SELECT a.id, a.code, a.name, a.time, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status,
 				a.goodagio
 				FROM $tabname a
-				INNER JOIN $tabtwo b
+				INNER JOIN $tabone b
 				ON a.code = b.orderid
-				INNER JOIN $tabone c
-				ON b.goodid = c.goodid
+				INNER JOIN $tabtwo c
+				ON b.goodid = c.id
 				WHERE a.id = $index and a.city in ($city)
 				";
 
@@ -193,7 +193,6 @@ class SalesForm extends CFormModel
 				break;
 			}
 		}
-
 		$this->select();
 		return true;
 	}
@@ -229,9 +228,9 @@ class SalesForm extends CFormModel
 				break;
 			case 'new':
 				$sql = "insert into $tabName(
-							code, name, money, lcu, address, city, region
+							code, name, time, money, lcu, address, city, region
 						) values (
-							:code, :name, :money, :lcu, :address, :city, :region
+							:code, :name, :time, :money, :lcu, :address, :city, :region
 						)";
 				break;
 			case 'edit':
@@ -266,6 +265,11 @@ class SalesForm extends CFormModel
 			$command->bindParam(':region',$this->region,PDO::PARAM_STR);
 		if (strpos($sql,':address')!==false)
 			$command->bindParam(':address',$this->address,PDO::PARAM_INT);
+		if($this->scenario!='delete'){
+			if (strpos($sql,':time')!==false)
+				$tIme = General::toMyDate($this->time);
+			$command->bindParam(':time',$tIme,PDO::PARAM_INT);
+		}
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);
 			$command->execute();
@@ -288,24 +292,23 @@ class SalesForm extends CFormModel
 		}
 	}
 
-	protected function savegoods($connection,$array)
+	protected function savegoods($connection,$array,$code=0)
 	{
-
 		switch ($this->scenario) {
 			case 'edit':
+				$this->GoodsDel($connection,$code);
+				$tabName = $this->tableNames("sa_order_good");
 				foreach ($array as $k => $v) {
-					$tabName = $this->tableNames("sa_order_good");
-					$sql = "update $tabName set
-							goodid = :goodid,
-							orderid = :orderid,
-							number = :number,
-							ismony = :ismony,
-						where orderid = :orderid";
+					$sql = "insert into $tabName(
+							goodid, orderid, number, ismony
+						) values (
+							:goodid, :orderid, :number, :ismony
+						)";
 					$command = $connection->createCommand($sql);
 					if (strpos($sql, ':goodid') !== false)
 						$command->bindParam(':goodid', $v['tgname'], PDO::PARAM_STR);
 					if (strpos($sql, ':orderid') !== false)
-						$command->bindParam(':orderid', $this->code, PDO::PARAM_STR);
+						$command->bindParam(':orderid', $code, PDO::PARAM_STR);
 					if (strpos($sql, ':number') !== false)
 						$command->bindParam(':number', $v['number'], PDO::PARAM_STR);
 					if (strpos($sql, ':ismony') !== false)
@@ -340,9 +343,28 @@ class SalesForm extends CFormModel
 
 	}
 
+	public function editgoods($arr,$code){
+		$connection = Yii::app()->db;
+		$transaction=$connection->beginTransaction();
+		try {
+			$this->savegoods($connection,$arr,$code);
+			$transaction->commit();
+		}
+		catch(Exception $e) {
+			$transaction->rollback();
+			throw new CHttpException(404,'Cannot update.');
+		}
+	}
 
-
-
+	public function GoodsDel($connection,$code){
+		$tabName = $this->tableNames("sa_order_good");
+		$One = "delete from $tabName where orderid = :orderid";
+		$command = $connection->createCommand($One);
+		if (strpos($One, ':orderid') !== false)
+			$command->bindParam(':orderid', $code, PDO::PARAM_STR);
+		$command->execute();
+		return true;
+	}
 
 
 

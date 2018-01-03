@@ -1,6 +1,6 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
-class VisitController extends Controller
+class FiveController extends Controller
 {
     public function filters()
     {
@@ -13,11 +13,12 @@ class VisitController extends Controller
         );
     }
 
+
     /**
-     * 拜访列表
+     * 五部列表
     */
     public function actionIndex(){
-        $model = new VisitList();
+        $model = new FiveList();
         $model->retrieveDataByPage();
         $this->render('index', array(
             'model'=>$model,
@@ -25,11 +26,11 @@ class VisitController extends Controller
     }
 
     /**
-    * 拜访详情(只读)
+    * 五部详情(只读)
      */
     public function actionView($index)
     {
-        $model = new VisitForm('view');
+        $model = new FiveForm('view');
         if (!$model->retrieveData($index)) {
             throw new CHttpException(404,'The requested page does not exist.');
         } else {
@@ -42,7 +43,7 @@ class VisitController extends Controller
      */
     public function actionNew()
     {
-        $model = new VisitForm('new');
+        $model = new FiveForm('new');
         $this->render('form',array('model'=>$model,));
     }
 
@@ -51,12 +52,11 @@ class VisitController extends Controller
      */
     public function actionSave()
     {
-        if (isset($_POST['VisitForm'])) {
-            $model = new VisitForm($_POST['VisitForm']['scenario']);
-            $model->attributes = $_POST['VisitForm'];
+        if (isset($_POST['FiveForm'])) {
+            $model = new FiveForm($_POST['FiveForm']['scenario']);
+            $model->attributes = $_POST['FiveForm'];
             if ($model->validate()) {
                 $model->saveData();
-                $model->seveoffer($_POST['VisitForm']['detail']);
                 Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
                 $this->redirect(Yii::app()->createUrl('visit/edit',array('index'=>$model->id)));
             } else {
@@ -72,7 +72,7 @@ class VisitController extends Controller
      */
     public function actionEdit($index)
     {
-        $model = new VisitForm('edit');
+        $model = new FiveForm('edit');
         if (!$model->retrieveData($index)) {
             throw new CHttpException(404,'The requested page does not exist.');
         } else {
@@ -85,9 +85,9 @@ class VisitController extends Controller
     */
     public function actionDelete()
     {
-        $model = new VisitForm('delete');
-        if (isset($_POST['VisitForm'])) {
-            $model->attributes = $_POST['VisitForm'];
+        $model = new FiveForm('delete');
+        if (isset($_POST['FiveForm'])) {
+            $model->attributes = $_POST['FiveForm'];
             $model->saveData();
             Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Record Deleted'));
         }

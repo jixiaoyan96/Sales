@@ -47,8 +47,13 @@ $this->pageTitle=Yii::app()->name . ' - sales Form';
 	<?php echo TbHtml::button('<span class="fa fa-remove"></span> '.Yii::t('misc','Delete'), array(
 			'name'=>'btnDelete','id'=>'btnDelete','data-toggle'=>'modal','data-target'=>'#removedialog',)
 		);
-	?>
-<?php endif ?>
+	?><?php endif ?>
+		<?php if ($model->scenario=='edit'): ?>
+			<?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Edit Goods'), array(
+					'submit'=>Yii::app()->createUrl('sales/one'),
+			));
+			?>
+		<?php endif ?>
 	</div>
 	</div>
 	<div class="box box-info">
@@ -106,6 +111,14 @@ $this->pageTitle=Yii::app()->name . ' - sales Form';
 			<?php echo $form->labelEx($model,'Order Total',array('class'=>"col-sm-2 control-label")); ?>
 			<div class="col-sm-7">
 				<?php echo $form->textField($model, 'money',
+						array('size'=>40,'maxlength'=>100,'readonly'=>true,)
+				); ?>
+			</div>
+		</div>
+		<div class="form-group">
+			<?php echo $form->labelEx($model,'lcu',array('class'=>"col-sm-2 control-label")); ?>
+			<div class="col-sm-7">
+				<?php echo $form->textField($model, 'lcu',
 						array('size'=>40,'maxlength'=>100,'readonly'=>true,)
 				); ?>
 			</div>

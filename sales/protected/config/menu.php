@@ -14,7 +14,7 @@ return array(
 			),
 			'Ciustomer Enqury'=>array(
 				'access'=>'T03',
-				'url'=>'/enqury/index',
+				'url'=>'/five/index',
 			),
 		),
 	),
