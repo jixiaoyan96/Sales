@@ -45,11 +45,11 @@ class SalesForm extends CFormModel
 
 	public function tableName()
 	{
-		return 'sa' . Yii::app()->params['myTabname'] . '.sa_order';
+		return 'sa_order';
 	}
 
 	public function tableNames($table){
-		return 'sa' . Yii::app()->params['myTabname'] . ".$table";
+		return "$table";
 	}
 
 	public function attributeLabels()
@@ -136,7 +136,6 @@ class SalesForm extends CFormModel
 		$this->good = $rows;
 		return true;
 	}
-
 	public function validateCode($attribute, $params) {
 		$code = $this->$attribute;
 		$city = Yii::app()->user->city();
@@ -193,6 +192,7 @@ class SalesForm extends CFormModel
 				break;
 			}
 		}
+
 		$this->select();
 		return true;
 	}
@@ -355,6 +355,7 @@ class SalesForm extends CFormModel
 			throw new CHttpException(404,'Cannot update.');
 		}
 	}
+
 
 	public function GoodsDel($connection,$code){
 		$tabName = $this->tableNames("sa_order_good");

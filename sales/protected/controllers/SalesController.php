@@ -167,16 +167,16 @@ class SalesController extends Controller
     public function actionTow(){
         $model = new SalesForm('edit');
         if(isset($_POST['SalesForm'])){
-        $post = $_POST['SalesForm']['detail'];
-        $code = $_POST['SalesForm']['code'];
-        $id = $_POST['SalesForm']['id'];
-        $model->editgoods($post,$code);
-        Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
-        $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$id)));
-    } else {
-        $message = CHtml::errorSummary($model);
-        Dialog::message(Yii::t('dialog', 'Validation Message'), $message);
-        $this->render('form', array('model' => $model,));
+            $post = $_POST['SalesForm']['detail'];
+            $code = $_POST['SalesForm']['code'];
+            $id = $_POST['SalesForm']['id'];
+            $model->editgoods($post,$code);
+            Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
+            $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$id)));
+        } else {
+            $message = CHtml::errorSummary($model);
+            Dialog::message(Yii::t('dialog', 'Validation Message'), $message);
+            $this->render('form', array('model' => $model,));
         }
     }
 

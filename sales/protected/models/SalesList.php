@@ -6,7 +6,7 @@ class SalesList extends CListPageModel
      */
     public function tableName($name)
     {
-        return 'sa' . Yii::app()->params['myTabname'] . ".$name";
+        return "$name";
     }
 
     public function attributeLabels()

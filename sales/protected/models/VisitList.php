@@ -6,7 +6,7 @@ class VisitList extends CListPageModel
      */
     public function tableName($table)
     {
-        return 'sa' . Yii::app()->params['myTabname'] . ".$table";
+        return "$table";
     }
 
     public function attributeLabels()

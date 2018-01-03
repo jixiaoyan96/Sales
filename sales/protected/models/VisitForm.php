@@ -34,7 +34,7 @@ class VisitForm extends CFormModel
 	}
 
 	public function tableName($table){
-		return 'sa' . Yii::app()->params['myTabname'] . ".$table";
+		return  "$table";
 	}
 
 	public function attributeLabels()
@@ -122,7 +122,6 @@ class VisitForm extends CFormModel
 		}
 	}
 
-
 	protected function savevisit(&$connection)
 	{
 		$tabName = $this->tableName("sa_visit");
@@ -181,7 +180,7 @@ class VisitForm extends CFormModel
 		if (strpos($sql,':charge')!==false)
 			$command->bindParam(':charge',$this->charge,PDO::PARAM_STR);
 		if (strpos($sql,':phone')!==false)
-			$command->bindParam(':phone',$this->phone,PDO::PARAM_INT);
+			$command->bindParam(':phone',$this->phone,PDO::PARAM_STR);
 		if (strpos($sql,':remarks')!==false)
 			$command->bindParam(':remarks',$this->remarks,PDO::PARAM_STR);
 		if (strpos($sql,':city')!==false)

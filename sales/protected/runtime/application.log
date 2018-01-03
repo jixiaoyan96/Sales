@@ -3718,3 +3718,338 @@ Stack trace:
 REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
 HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
 ---
+2018/01/03 11:43:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:43:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 11:43:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=1
+---
+2018/01/03 11:43:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 11:43:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 11:44:22 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 11:44:22 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 11:44:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=3
+---
+2018/01/03 11:49:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 11:50:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=1
+---
+2018/01/03 11:50:03 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (90)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 11:50:03 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (90)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 11:50:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 11:50:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:50:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'b.gmoney' in 'field list'. The SQL statement executed was: SELECT a.number, a.ismony, a.goodagio, b.name as gname, b. gmoney
+				FROM sales.sa_order_good a
+				INNER JOIN sales.sa_goods_v b
+				ON a.goodid = b.id
+				WHERE a.orderid = '1514949509de40admin'.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (135)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (200)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (86)
+2018/01/03 11:50:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'b.gmoney' in 'field list'. The SQL statement executed was: SELECT a.number, a.ismony, a.goodagio, b.name as gname, b. gmoney
+				FROM sales.sa_order_good a
+				INNER JOIN sales.sa_goods_v b
+				ON a.goodid = b.id
+				WHERE a.orderid = '1514949509de40admin'' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(135): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(200): SalesForm->select()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(86): SalesForm->retrieveData('1')
+#4 [internal function]: SalesController->actionEdit('1')
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#12 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/edit?index=1
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:50:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:50:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'b.gmoney' in 'field list'. The SQL statement executed was: SELECT a.number, a.ismony, a.goodagio, b.name as gname, b. gmoney
+				FROM sales.sa_order_good a
+				INNER JOIN sales.sa_goods_v b
+				ON a.goodid = b.id
+				WHERE a.orderid = '1514949509de40admin'.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (135)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (200)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (86)
+2018/01/03 11:50:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'b.gmoney' in 'field list'. The SQL statement executed was: SELECT a.number, a.ismony, a.goodagio, b.name as gname, b. gmoney
+				FROM sales.sa_order_good a
+				INNER JOIN sales.sa_goods_v b
+				ON a.goodid = b.id
+				WHERE a.orderid = '1514949509de40admin'' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(135): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(200): SalesForm->select()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(86): SalesForm->retrieveData('1')
+#4 [internal function]: SalesController->actionEdit('1')
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#12 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/edit?index=1
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:50:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:50:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'b.gmoney' in 'field list'. The SQL statement executed was: SELECT a.number, a.ismony, a.goodagio, b.name as gname, b. gmoney
+				FROM sales.sa_order_good a
+				INNER JOIN sales.sa_goods_v b
+				ON a.goodid = b.id
+				WHERE a.orderid = '1514949671lhKJadmin'.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (135)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (200)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (86)
+2018/01/03 11:50:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'b.gmoney' in 'field list'. The SQL statement executed was: SELECT a.number, a.ismony, a.goodagio, b.name as gname, b. gmoney
+				FROM sales.sa_order_good a
+				INNER JOIN sales.sa_goods_v b
+				ON a.goodid = b.id
+				WHERE a.orderid = '1514949671lhKJadmin'' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(135): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(200): SalesForm->select()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(86): SalesForm->retrieveData('2')
+#4 [internal function]: SalesController->actionEdit('2')
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#12 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/edit?index=2
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:51:32 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'b.gmoney' in 'field list'. The SQL statement executed was: SELECT a.number, a.ismony, a.goodagio, b.name as gname, b. gmoney
+				FROM sales.sa_order_good a
+				INNER JOIN sales.sa_goods_v b
+				ON a.goodid = b.id
+				WHERE a.orderid = '1514949671lhKJadmin'.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (135)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (200)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (86)
+2018/01/03 11:51:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'b.gmoney' in 'field list'. The SQL statement executed was: SELECT a.number, a.ismony, a.goodagio, b.name as gname, b. gmoney
+				FROM sales.sa_order_good a
+				INNER JOIN sales.sa_goods_v b
+				ON a.goodid = b.id
+				WHERE a.orderid = '1514949671lhKJadmin'' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(135): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(200): SalesForm->select()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(86): SalesForm->retrieveData('2')
+#4 [internal function]: SalesController->actionEdit('2')
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#12 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/edit?index=2
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:52:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=2
+---
+2018/01/03 11:52:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=2
+---
+2018/01/03 11:52:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 11:53:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=2
+---
+2018/01/03 11:53:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/one
+---
+2018/01/03 11:53:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 13:03:59 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.sa_order' doesn't exist. The SQL statement executed was: select count(id)
+				from sa_order a, securitydev.sec_city b
+				where a.city=b.code and a.city in ('CN','CE','SH','SZ','HK')
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesList.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (21)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 13:03:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.sa_order' doesn't exist. The SQL statement executed was: select count(id)
+				from sa_order a, securitydev.sec_city b
+				where a.city=b.code and a.city in ('CN','CE','SH','SZ','HK')
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesList.php(71): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(21): SalesList->retrieveDataByPage(1)
+#3 [internal function]: SalesController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/index')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
