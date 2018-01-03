@@ -7,8 +7,6 @@ class SalesForm extends CFormModel
 	public $name;
 	public $money;
 	public $address;
-	public $lcu;
-	public $time;
 	public $city;
 	public $goodid;
 	public $goodnumber;
@@ -21,6 +19,10 @@ class SalesForm extends CFormModel
 	public $good;
 	public $titid;
 	public $sum;
+	public $lcu; //下单名字
+	public $luu;//最后改变用户名
+	public $lcd;//生成时间
+	public $lud;//最后改变时间
 	public $detail = array(
 			array('gname'=>1,
 					'tgname'=>0,
@@ -35,7 +37,7 @@ class SalesForm extends CFormModel
 	public function rules()
 	{
 		return array(
-				array('id,detail,code,name,money,address,lcu,time,city,region','safe'),
+				array('id,detail,code,name,money,address,lcu,luu,lcd,lud,city,region','safe'),
 				array('name','required'),
 
 				array('code','validateCode'),
@@ -57,7 +59,8 @@ class SalesForm extends CFormModel
 		return array(
 				'code'=>Yii::t('sales','Code'),
 				'name'=>Yii::t('sales','Name'),
-				'time'=>Yii::t('sales','Time'),
+				'time'=>Yii::t('sales','Order Time'),
+				'ltime'=>Yii::t('sales','Last Update Time'),
 				'address'=>Yii::t('sales','Address'),
 				'money'=>Yii::t('sales','Money'),
 				'lcu'=>Yii::t('sales','Lcu'),
@@ -161,8 +164,7 @@ class SalesForm extends CFormModel
 		$tabone = $this->tableNames("sa_order_good");
 		$tabtwo = $this->tableNames("sa_goods_v");
 		$city = Yii::app()->user->city_allow();
-		$sql = "SELECT a.id, a.code, a.name, a.time, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status,
-				a.goodagio
+		$sql = "SELECT a.id, a.code, a.name, a.lcd, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status
 				FROM $tabname a
 				INNER JOIN $tabone b
 				ON a.code = b.orderid
@@ -179,7 +181,7 @@ class SalesForm extends CFormModel
 				$this->id = $row['id'];
 				$this->code = $row['code'];
 				$this->name = $row['name'];
-				$this->time = General::toDate($row['time']);
+				$this->lcd = General::toDate($row['lcd']);
 				$this->money = $row['money'];
 				$this->lcu = $row['lcu'];
 				$this->address = $row['address'];
@@ -188,7 +190,6 @@ class SalesForm extends CFormModel
 				$this->region = $row['region'];
 				$this->status = $row['status'];
 				$this->goodid = $row['goodid'];
-				$this->goodagio = $row['goodagio'];
 				break;
 			}
 		}
@@ -228,16 +229,15 @@ class SalesForm extends CFormModel
 				break;
 			case 'new':
 				$sql = "insert into $tabName(
-							code, name, time, money, lcu, address, city, region
+							code, name, lcd, money, lcu, address, city, region,luu
 						) values (
-							:code, :name, :time, :money, :lcu, :address, :city, :region
+							:code, :name, :lcd, :money, :lcu, :address, :city, :region, :luu
 						)";
 				break;
 			case 'edit':
 				$sql = "update $tabName set
 							name = :name,
-							time = :time,
-							lcu = :lcu,
+							luu = :luu,
 							region = :region,
 							address = :address,
 							city = :city
@@ -261,14 +261,16 @@ class SalesForm extends CFormModel
 			$command->bindParam(':money',$this->sum,PDO::PARAM_STR);
 		if (strpos($sql,':lcu')!==false)
 			$command->bindParam(':lcu',$uid,PDO::PARAM_STR);
+		if (strpos($sql,':luu')!==false)
+			$command->bindParam(':luu',$uid,PDO::PARAM_STR);
 		if (strpos($sql,':region')!==false)
 			$command->bindParam(':region',$this->region,PDO::PARAM_STR);
 		if (strpos($sql,':address')!==false)
 			$command->bindParam(':address',$this->address,PDO::PARAM_INT);
 		if($this->scenario!='delete'){
-			if (strpos($sql,':time')!==false)
-				$tIme = General::toMyDate($this->time);
-			$command->bindParam(':time',$tIme,PDO::PARAM_INT);
+			if (strpos($sql,':lcd')!==false)
+				$tIme = General::toMyDate($this->lcd);
+			$command->bindParam(':lcd',$tIme,PDO::PARAM_INT);
 		}
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);

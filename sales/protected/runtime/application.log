@@ -4456,3 +4456,2231 @@ Stack trace:
 REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
 HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
 ---
+2018/01/03 14:57:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/new
+---
+2018/01/03 14:57:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:09:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:09:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:09:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:09:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/one
+---
+2018/01/03 15:09:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:41:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:41:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/new
+---
+2018/01/03 15:42:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/new
+---
+2018/01/03 15:42:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/new
+---
+2018/01/03 15:42:58 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:43:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:46:09 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:46:11 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.goodagio' in 'field list'. The SQL statement executed was: SELECT a.id, a.code, a.name, a.lcd, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status,
+				a.goodagio
+				FROM sa_order a
+				INNER JOIN sa_order_good b
+				ON a.code = b.orderid
+				INNER JOIN sa_goods_v c
+				ON b.goodid = c.id
+				WHERE a.id = 1 and a.city in ('CN','CE','SH','SZ','HK')
+				.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (176)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (86)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:46:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.goodagio' in 'field list'. The SQL statement executed was: SELECT a.id, a.code, a.name, a.lcd, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status,
+				a.goodagio
+				FROM sa_order a
+				INNER JOIN sa_order_good b
+				ON a.code = b.orderid
+				INNER JOIN sa_goods_v c
+				ON b.goodid = c.id
+				WHERE a.id = 1 and a.city in ('CN','CE','SH','SZ','HK')
+				' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(176): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(86): SalesForm->retrieveData('1')
+#3 [internal function]: SalesController->actionEdit('1')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/edit?index=1
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:46:27 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.goodagio' in 'field list'. The SQL statement executed was: SELECT a.id, a.code, a.name, a.lcd, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status,
+				a.goodagio
+				FROM sa_order a
+				INNER JOIN sa_order_good b
+				ON a.code = b.orderid
+				INNER JOIN sa_goods_v c
+				ON b.goodid = c.id
+				WHERE a.id = 1 and a.city in ('CN','CE','SH','SZ','HK')
+				.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (176)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (86)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:46:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.goodagio' in 'field list'. The SQL statement executed was: SELECT a.id, a.code, a.name, a.lcd, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status,
+				a.goodagio
+				FROM sa_order a
+				INNER JOIN sa_order_good b
+				ON a.code = b.orderid
+				INNER JOIN sa_goods_v c
+				ON b.goodid = c.id
+				WHERE a.id = 1 and a.city in ('CN','CE','SH','SZ','HK')
+				' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(176): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(86): SalesForm->retrieveData('1')
+#3 [internal function]: SalesController->actionEdit('1')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/edit?index=1
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:46:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.time' in 'field list'. The SQL statement executed was: select a.id, a.code, a.name, a.time, a.money, a.lcu, a.address, a.region, a.city as city_name
+				from sa_order a, securitydev.sec_city b
+				where a.city=b.code and a.city in ('CN','CE','SH','SZ','HK')
+			 LIMIT 0, 25.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesList.php (73)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (21)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:46:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.time' in 'field list'. The SQL statement executed was: select a.id, a.code, a.name, a.time, a.money, a.lcu, a.address, a.region, a.city as city_name
+				from sa_order a, securitydev.sec_city b
+				where a.city=b.code and a.city in ('CN','CE','SH','SZ','HK')
+			 LIMIT 0, 25' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesList.php(73): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(21): SalesList->retrieveDataByPage(1)
+#3 [internal function]: SalesController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/index')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:46:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.time' in 'field list'. The SQL statement executed was: select a.id, a.code, a.name, a.time, a.money, a.lcu, a.address, a.region, a.city as city_name
+				from sa_order a, securitydev.sec_city b
+				where a.city=b.code and a.city in ('CN','CE','SH','SZ','HK')
+			 LIMIT 0, 25.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesList.php (73)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (21)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:46:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.time' in 'field list'. The SQL statement executed was: select a.id, a.code, a.name, a.time, a.money, a.lcu, a.address, a.region, a.city as city_name
+				from sa_order a, securitydev.sec_city b
+				where a.city=b.code and a.city in ('CN','CE','SH','SZ','HK')
+			 LIMIT 0, 25' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesList.php(73): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(21): SalesList->retrieveDataByPage(1)
+#3 [internal function]: SalesController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/index')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/03 15:48:29 [error] [php] Undefined index: lcd (D:\Software\PHP\WWW\Sales\sales\protected\views\sales\_listdtl.php:8)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(222): ListPageWidget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(39): ListPageWidget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\sales\index.php(43): SalesController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): SalesController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): SalesController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): SalesController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(22): SalesController->render()
+#9 unknown(0): SalesController->actionIndex()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/sales/index
+in D:\Software\PHP\WWW\Sales\sales\protected\views\sales\_listdtl.php (8)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php (222)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php (39)
+2018/01/03 15:48:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:51:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:51:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time' in 'order clause'. The SQL statement executed was: select a.id, a.code, a.name, a.lcd, a.money, a.lcu, a.address, a.region, a.city as city_name
+				from sa_order a, securitydev.sec_city b
+				where a.city=b.code and a.city in ('CN','CE','SH','SZ','HK')
+			 order by time  LIMIT 0, 25.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesList.php (73)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (21)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:51:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'time' in 'order clause'. The SQL statement executed was: select a.id, a.code, a.name, a.lcd, a.money, a.lcu, a.address, a.region, a.city as city_name
+				from sa_order a, securitydev.sec_city b
+				where a.city=b.code and a.city in ('CN','CE','SH','SZ','HK')
+			 order by time  LIMIT 0, 25' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesList.php(73): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(21): SalesList->retrieveDataByPage('1')
+#3 [internal function]: SalesController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/index')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:51:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:52:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:52:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.goodagio' in 'field list'. The SQL statement executed was: SELECT a.id, a.code, a.name, a.lcd, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status,
+				a.goodagio
+				FROM sa_order a
+				INNER JOIN sa_order_good b
+				ON a.code = b.orderid
+				INNER JOIN sa_goods_v c
+				ON b.goodid = c.id
+				WHERE a.id = 1 and a.city in ('CN','CE','SH','SZ','HK')
+				.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php (177)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (86)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:52:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.goodagio' in 'field list'. The SQL statement executed was: SELECT a.id, a.code, a.name, a.lcd, a.money, a.lcu, b.goodid, a.address, a.region, c.name as gname, a.city, a.status,
+				a.goodagio
+				FROM sa_order a
+				INNER JOIN sa_order_good b
+				ON a.code = b.orderid
+				INNER JOIN sa_goods_v c
+				ON b.goodid = c.id
+				WHERE a.id = 1 and a.city in ('CN','CE','SH','SZ','HK')
+				' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\SalesForm.php(177): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(86): SalesForm->retrieveData('1')
+#3 [internal function]: SalesController->actionEdit('1')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/sales/index.php/sales/edit?index=1
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:53:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:53:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:53:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/new
+---
+2018/01/03 15:54:06 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:54:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=2
+---
+2018/01/03 15:54:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=2
+---
+2018/01/03 15:55:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:55:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=2
+---
+2018/01/03 15:57:12 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:57:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=2
+---
+2018/01/03 15:57:52 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:57:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:57:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:58:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/one
+---
+2018/01/03 15:58:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/03 15:58:52 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:58:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:58:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/new
+---
+2018/01/03 15:59:11 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\index.php (13)
+2018/01/03 15:59:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=3
+---
+2018/01/03 15:59:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=3
+---
+2018/01/03 15:59:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 15:59:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:00:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:01:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:01:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 16:01:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 16:22:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 16:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:23:03 [error] [exception.CException] exception 'CException' with message '属性 "VisitForm.datatime" 未被定义.' in D:\Software\PHP\WWW\Sales\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\helpers\CHtml.php(2158): CComponent->__get('datatime')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\helpers\CHtml.php(1887): CHtml::resolveValue(Object(VisitForm), 'datatime')
+#2 D:\Software\PHP\WWW\Sales\sales\protected\extensions\bootstrap\helpers\TbHtml.php(2688): CHtml::activeInputField('text', Object(VisitForm), 'datatime', Array)
+#3 D:\Software\PHP\WWW\Sales\sales\protected\extensions\bootstrap\helpers\TbHtml.php(1789): TbHtml::activeTextInputField('text', Object(VisitForm), 'datatime', Array)
+#4 D:\Software\PHP\WWW\Sales\sales\protected\extensions\bootstrap\helpers\TbHtml.php(2563): TbHtml::activeTextField(Object(VisitForm), 'datatime', Array)
+#5 D:\Software\PHP\WWW\Sales\sales\protected\extensions\bootstrap\widgets\TbActiveForm.php(443): TbHtml::createActiveInput('textField', Object(VisitForm), 'datatime', Array, Array)
+#6 D:\Software\PHP\WWW\Sales\sales\protected\extensions\bootstrap\widgets\TbActiveForm.php(187): TbActiveForm->createInput('textField', Object(VisitForm), 'datatime', Array)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\views\visit\form.php(82): TbActiveForm->textField(Object(VisitForm), 'datatime', Array)
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('form', Array, true)
+#12 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(46): CController->render('form', Array)
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionNew()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#30 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('new')
+#32 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/new')
+#33 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#34 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#35 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/new
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:23:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:23:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:23:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:24:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:24:36 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sa_good' doesn't exist. The SQL statement executed was: select id,gname as value from sales.sa_good
+				where pid != 0 AND gname LIKE '%%'.
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\LookupController.php (83)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:24:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sa_good' doesn't exist. The SQL statement executed was: select id,gname as value from sales.sa_good
+				where pid != 0 AND gname LIKE '%%'' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\controllers\LookupController.php(83): CDbCommand->queryAll()
+#2 [internal function]: LookupController->actionseats('')
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LookupController), Array)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LookupController), Object(ReflectionMethod), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('seats')
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('lookup/seats')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/Sales/sales/index.php/lookup/seats?search=
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:24:40 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sa_good' doesn't exist. The SQL statement executed was: select id,gname as value from sales.sa_good
+				where pid != 0 AND gname LIKE '%%'.
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\LookupController.php (83)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:24:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sa_good' doesn't exist. The SQL statement executed was: select id,gname as value from sales.sa_good
+				where pid != 0 AND gname LIKE '%%'' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\controllers\LookupController.php(83): CDbCommand->queryAll()
+#2 [internal function]: LookupController->actionseats('')
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LookupController), Array)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LookupController), Object(ReflectionMethod), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('seats')
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('lookup/seats')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/Sales/sales/index.php/lookup/seats?search=
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:24:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:25:15 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sa_good' doesn't exist. The SQL statement executed was: select id,gname as value from sales.sa_good
+				where pid != 0 AND gname LIKE '%%'.
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\LookupController.php (83)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:25:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sa_good' doesn't exist. The SQL statement executed was: select id,gname as value from sales.sa_good
+				where pid != 0 AND gname LIKE '%%'' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\controllers\LookupController.php(83): CDbCommand->queryAll()
+#2 [internal function]: LookupController->actionseats('')
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LookupController), Array)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LookupController), Object(ReflectionMethod), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('seats')
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('lookup/seats')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/Sales/sales/index.php/lookup/seats?search=
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:33:33 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sa_good' doesn't exist. The SQL statement executed was: select id,gname as value from sales.sa_good
+				where pid != 0 AND gname LIKE '%%'.
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\LookupController.php (83)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:33:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sa_good' doesn't exist. The SQL statement executed was: select id,gname as value from sales.sa_good
+				where pid != 0 AND gname LIKE '%%'' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\controllers\LookupController.php(83): CDbCommand->queryAll()
+#2 [internal function]: LookupController->actionseats('')
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(LookupController), Array)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(LookupController), Object(ReflectionMethod), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('seats')
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('lookup/seats')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/Sales/sales/index.php/lookup/seats?search=
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:35:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:35:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:35:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:35:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:35:39 [error] [exception.CException] exception 'CException' with message '属性 "VisitForm.datatime" 未被定义.' in D:\Software\PHP\WWW\Sales\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php(82): CComponent->__set('datatime', '')
+#1 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(76): VisitForm->retrieveData('2')
+#2 [internal function]: VisitController->actionEdit('2')
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(VisitController), Array)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(VisitController), Object(ReflectionMethod), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/edit')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/edit?index=2
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:36:15 [error] [exception.CException] exception 'CException' with message '属性 "VisitForm.datatime" 未被定义.' in D:\Software\PHP\WWW\Sales\yii\framework\base\CComponent.php:174
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php(82): CComponent->__set('datatime', '')
+#1 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(76): VisitForm->retrieveData('2')
+#2 [internal function]: VisitController->actionEdit('2')
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(VisitController), Array)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(VisitController), Object(ReflectionMethod), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/edit')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/edit?index=2
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:36:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:36:56 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:36:56 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:36:56 [error] [exception.CException] exception 'CException' with message '属性 "VisitForm.datatime" 未被定义.' in D:\Software\PHP\WWW\Sales\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\validators\CRequiredValidator.php(52): CComponent->__get('datatime')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\validators\CValidator.php(214): CRequiredValidator->validateAttribute(Object(VisitForm), 'datatime')
+#2 D:\Software\PHP\WWW\Sales\yii\framework\base\CModel.php(158): CValidator->validate(Object(VisitForm), NULL)
+#3 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(57): CModel->validate()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:37:43 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:37:43 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:37:43 [error] [php] Invalid argument supplied for foreach() (D:\Software\PHP\WWW\Sales\sales\protected\views\visit\_formdtl.php:5)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(81): TableView2Widget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(30): TableView2Widget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): TableView2Widget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\visit\form.php(168): VisitController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): VisitController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): VisitController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): VisitController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(65): VisitController->render()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): VisitController->runAction()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterAccessControl()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceNoConcurrentLogin()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceSessionExpiration()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#22 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceRegisteredStation()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): VisitController->runActionWithFilters()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): VisitController->run()
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#29 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/visit/save
+in D:\Software\PHP\WWW\Sales\sales\protected\views\visit\_formdtl.php (5)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (81)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (30)
+2018/01/03 16:38:16 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:38:16 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:38:16 [error] [php] Invalid argument supplied for foreach() (D:\Software\PHP\WWW\Sales\sales\protected\views\visit\_formdtl.php:5)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(81): TableView2Widget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(30): TableView2Widget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): TableView2Widget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\visit\form.php(168): VisitController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): VisitController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): VisitController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): VisitController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(65): VisitController->render()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): VisitController->runAction()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterAccessControl()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceNoConcurrentLogin()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceSessionExpiration()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#22 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceRegisteredStation()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): VisitController->runActionWithFilters()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): VisitController->run()
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#29 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/visit/save
+in D:\Software\PHP\WWW\Sales\sales\protected\views\visit\_formdtl.php (5)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (81)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (30)
+2018/01/03 16:38:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:38:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:38:34 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:38:34 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:38:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							uname = :uname,
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+					  		luu = :luu,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (198)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (119)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 16:38:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:124
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:38:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 16:42:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 16:42:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:42:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:42:41 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:42:41 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:42:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							uname = :uname,
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+					  		luu = :luu,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (198)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (119)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 16:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:124
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 16:44:17 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:44:17 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:44:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							uname = :uname,
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+					  		luu = :luu,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (197)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (118)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 16:44:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:123
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:44:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 16:44:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:44:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=3
+---
+2018/01/03 16:44:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=3
+---
+2018/01/03 16:44:53 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:44:53 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:44:53 [error] [exception.CException] exception 'CException' with message '属性 "VisitForm.datatime" 未被定义.' in D:\Software\PHP\WWW\Sales\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\validators\CRequiredValidator.php(52): CComponent->__get('datatime')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\validators\CValidator.php(214): CRequiredValidator->validateAttribute(Object(VisitForm), 'datatime')
+#2 D:\Software\PHP\WWW\Sales\yii\framework\base\CModel.php(158): CValidator->validate(Object(VisitForm), NULL)
+#3 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(57): CModel->validate()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=3
+---
+2018/01/03 16:45:22 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:45:22 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:45:22 [error] [php] Invalid argument supplied for foreach() (D:\Software\PHP\WWW\Sales\sales\protected\views\visit\_formdtl.php:5)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(81): TableView2Widget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(30): TableView2Widget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): TableView2Widget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\visit\form.php(168): VisitController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): VisitController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): VisitController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): VisitController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(65): VisitController->render()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): VisitController->runAction()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterAccessControl()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceNoConcurrentLogin()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceSessionExpiration()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#22 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceRegisteredStation()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): VisitController->runActionWithFilters()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): VisitController->run()
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#29 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/visit/save
+in D:\Software\PHP\WWW\Sales\sales\protected\views\visit\_formdtl.php (5)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (81)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (30)
+2018/01/03 16:46:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:46:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:47:03 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:47:03 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:47:03 [error] [php] Invalid argument supplied for foreach() (D:\Software\PHP\WWW\Sales\sales\protected\views\visit\_formdtl.php:5)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(81): TableView2Widget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(30): TableView2Widget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): TableView2Widget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\visit\form.php(168): VisitController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): VisitController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): VisitController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): VisitController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(65): VisitController->render()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): VisitController->runAction()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterAccessControl()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceNoConcurrentLogin()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceSessionExpiration()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#22 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceRegisteredStation()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): VisitController->runActionWithFilters()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): VisitController->run()
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#29 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/visit/save
+in D:\Software\PHP\WWW\Sales\sales\protected\views\visit\_formdtl.php (5)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (81)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (30)
+2018/01/03 16:49:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:49:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:50:04 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:50:04 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:50:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 16:50:50 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:50:50 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:50:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 16:50:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:50:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:52:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:52:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:52:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:52:55 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:52:55 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:52:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=1
+---
+2018/01/03 16:53:32 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:53:32 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:53:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							uname = :uname,
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+					  		luu = :luu,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (197)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (118)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 16:53:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:123
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=1
+---
+2018/01/03 16:53:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 16:56:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:56:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=1
+---
+2018/01/03 16:56:19 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:56:19 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:56:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+					  		luu = :luu,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (196)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (118)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 16:56:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:123
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=1
+---
+2018/01/03 16:56:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 16:57:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:57:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:57:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=1
+---
+2018/01/03 16:57:33 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (90)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:57:33 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (90)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:57:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:57:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/new
+---
+2018/01/03 16:58:09 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:58:09 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:58:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:59:11 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:59:11 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:59:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+					  		luu = :luu,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (196)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (118)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 16:59:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:123
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:59:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 16:59:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 16:59:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:59:38 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:59:38 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 16:59:38 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (195)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (118)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 16:59:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:123
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 16:59:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 17:00:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/03 17:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=3
+---
+2018/01/03 17:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 17:01:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 17:02:59 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 17:02:59 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 17:02:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (195)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (118)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 17:02:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:123
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 17:02:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 17:04:11 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 17:04:11 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 17:04:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks,
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (195)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (118)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 17:04:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:123
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 17:04:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---
+2018/01/03 17:04:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/03 17:04:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 17:04:28 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 17:04:28 [warning] [application] Failed to set unsafe attribute "detail" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (56)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/03 17:04:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: update sa_visit set
+							type = :type,
+							aim = :aim,
+							area = :area,
+							road = :road,
+							crtype = :crtype,
+							crname = :crname,
+							sonname = :sonname,
+							charge = :charge,
+							phone = :phone,
+							remarks = :remarks,
+						where id = :id and city = :city
+						.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (195)
+in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php (118)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (58)
+2018/01/03 17:04:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\Software\PHP\WWW\Sales\sales\protected\models\VisitForm.php:123
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php(58): VisitForm->saveData()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/Sales/sales/index.php/visit/save
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=2
+---
+2018/01/03 17:04:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/save
+---

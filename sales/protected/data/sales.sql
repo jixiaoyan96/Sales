@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-01-03 11:29:20
+Date: 2018-01-03 17:05:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -99,56 +99,6 @@ CREATE TABLE `sa_five_news` (
 -- ----------------------------
 -- Records of sa_five_news
 -- ----------------------------
-
--- ----------------------------
--- Table structure for sa_good
--- ----------------------------
-DROP TABLE IF EXISTS `sa_good`;
-CREATE TABLE `sa_good` (
-  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
-  `goodid` int(64) NOT NULL COMMENT '商品ID',
-  `gname` varchar(64) NOT NULL COMMENT '商品名字',
-  `gmoney` int(64) NOT NULL COMMENT '商品价格',
-  `gtype` int(64) NOT NULL,
-  `pid` int(64) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Records of sa_good
--- ----------------------------
-INSERT INTO `sa_good` VALUES ('1', '5', '清洁', '0', '1', '0');
-INSERT INTO `sa_good` VALUES ('2', '1', '灭虫', '0', '1', '0');
-INSERT INTO `sa_good` VALUES ('3', '2', '飘盈香', '0', '1', '0');
-INSERT INTO `sa_good` VALUES ('4', '3', '甲醛', '0', '1', '0');
-INSERT INTO `sa_good` VALUES ('5', '4', '纸品', '0', '1', '0');
-INSERT INTO `sa_good` VALUES ('6', '100', '马桶', '87', '2', '5');
-INSERT INTO `sa_good` VALUES ('7', '101', '尿斗', '68', '2', '5');
-INSERT INTO `sa_good` VALUES ('8', '102', '水盆', '78', '2', '5');
-INSERT INTO `sa_good` VALUES ('9', '103', '清新机', '357', '2', '5');
-INSERT INTO `sa_good` VALUES ('10', '104', '皂液机', '88', '2', '5');
-INSERT INTO `sa_good` VALUES ('11', '105', '租赁机器', '265', '2', '5');
-INSERT INTO `sa_good` VALUES ('12', '106', '老鼠', '80', '2', '1');
-INSERT INTO `sa_good` VALUES ('13', '107', '蟑螂', '80', '2', '1');
-INSERT INTO `sa_good` VALUES ('14', '108', '果蝇', '80', '2', '1');
-INSERT INTO `sa_good` VALUES ('15', '109', '租灭蝇灯', '75', '2', '1');
-INSERT INTO `sa_good` VALUES ('16', '110', '老鼠蟑螂', '125', '2', '1');
-INSERT INTO `sa_good` VALUES ('17', '111', '老鼠果蝇', '369', '2', '1');
-INSERT INTO `sa_good` VALUES ('18', '112', '蟑螂果蝇', '257', '2', '1');
-INSERT INTO `sa_good` VALUES ('19', '113', '老鼠蟑螂果蝇', '157', '2', '1');
-INSERT INTO `sa_good` VALUES ('20', '114', '老鼠蟑螂+租灯', '358', '2', '1');
-INSERT INTO `sa_good` VALUES ('21', '115', '蟑螂果蝇+租灯', '178', '2', '1');
-INSERT INTO `sa_good` VALUES ('22', '116', '老鼠蟑螂果蝇+租灯', '287', '2', '1');
-INSERT INTO `sa_good` VALUES ('23', '117', '小机', '157', '2', '2');
-INSERT INTO `sa_good` VALUES ('24', '118', '大机', '300', '2', '2');
-INSERT INTO `sa_good` VALUES ('25', '119', '中机', '210', '2', '2');
-INSERT INTO `sa_good` VALUES ('26', '120', '迷你小机', '99', '2', '2');
-INSERT INTO `sa_good` VALUES ('27', '121', '除甲醛', '180', '2', '3');
-INSERT INTO `sa_good` VALUES ('28', '122', 'AC30', '351', '2', '3');
-INSERT INTO `sa_good` VALUES ('29', '123', 'PR10', '125', '2', '3');
-INSERT INTO `sa_good` VALUES ('30', '124', '迷你清洁炮', '157', '2', '3');
-INSERT INTO `sa_good` VALUES ('31', '125', '擦手纸', '120', '2', '4');
-INSERT INTO `sa_good` VALUES ('32', '126', '大卷厕纸', '140', '2', '4');
 
 -- ----------------------------
 -- Table structure for sa_goods_v
@@ -8188,23 +8138,22 @@ CREATE TABLE `sa_order` (
   `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
   `code` varchar(24) NOT NULL COMMENT '订单编号(自动生成)',
   `name` varchar(64) NOT NULL COMMENT '客户名字',
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '下单时间',
-  `money` float(64,0) DEFAULT NULL COMMENT '总价',
+  `money` float(64,0) NOT NULL COMMENT '总价',
   `lcu` char(14) NOT NULL COMMENT '销售姓名',
-  `address` varchar(64) DEFAULT NULL COMMENT '客户地址',
-  `city` char(5) DEFAULT NULL COMMENT '地区',
-  `region` varchar(64) DEFAULT NULL COMMENT '客户区域',
-  `status` varchar(30) DEFAULT NULL COMMENT '订单状态(0.完成,1,进行,2待确认)',
-  `goodagio` varchar(32) DEFAULT NULL COMMENT '商品折扣',
-  `goodid` int(32) DEFAULT NULL,
+  `address` varchar(64) NOT NULL COMMENT '客户地址',
+  `city` char(5) NOT NULL COMMENT '地区',
+  `region` varchar(64) NOT NULL COMMENT '客户区域',
+  `status` varchar(30) NOT NULL COMMENT '订单状态(0.完成,1,进行,2待确认)',
+  `luu` varchar(30) NOT NULL COMMENT '最后更改用户',
+  `lcd` datetime DEFAULT NULL COMMENT '创建日期',
+  `lud` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_order
 -- ----------------------------
-INSERT INTO `sa_order` VALUES ('1', '1514949509de40admin', '测试添加', '2018-01-18 00:00:00', '241', 'admin', '东郊XX路48号', 'HK', '东郊', null, null, null);
-INSERT INTO `sa_order` VALUES ('2', '1514949671lhKJadmin', '测试修改', '2017-12-31 00:00:00', '36', 'admin', '东郊XX路48号', 'HK', '西区', null, null, null);
+INSERT INTO `sa_order` VALUES ('3', '1514966352vPysadmin', '士大夫', '182', 'admin', '东郊XX路48号', 'HK', '东郊', '', 'admin', '2018-01-11 00:00:00', '2018-01-03 15:59:12');
 
 -- ----------------------------
 -- Table structure for sa_order_good
@@ -8218,16 +8167,17 @@ CREATE TABLE `sa_order_good` (
   `ismony` int(64) NOT NULL,
   `goodagio` int(64) DEFAULT '0' COMMENT '折扣',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_order_good
 -- ----------------------------
-INSERT INTO `sa_order_good` VALUES ('1', '735', '1514949509de40admin', '8', '18', '0');
-INSERT INTO `sa_order_good` VALUES ('2', '818', '1514949509de40admin', '1', '41', '0');
-INSERT INTO `sa_order_good` VALUES ('3', '731', '1514949509de40admin', '1', '182', '0');
-INSERT INTO `sa_order_good` VALUES ('6', '1007', '1514949671lhKJadmin', '1', '0', '0');
-INSERT INTO `sa_order_good` VALUES ('7', '730', '1514949671lhKJadmin', '1', '92', '0');
+INSERT INTO `sa_order_good` VALUES ('2', '32', '1514961809NUfVadmin', '1', '0', '0');
+INSERT INTO `sa_order_good` VALUES ('3', '1171', '1514961809NUfVadmin', '1', '0', '0');
+INSERT INTO `sa_order_good` VALUES ('4', '19', '1514961809NUfVadmin', '1', '0', '0');
+INSERT INTO `sa_order_good` VALUES ('6', '996', '1514966047df7Vadmin', '1', '0', '0');
+INSERT INTO `sa_order_good` VALUES ('7', '731', '1514965379APXzadmin', '2', '361', '0');
+INSERT INTO `sa_order_good` VALUES ('8', '731', '1514966352vPysadmin', '1', '182', '0');
 
 -- ----------------------------
 -- Table structure for sa_steps
@@ -8336,27 +8286,28 @@ INSERT INTO `sa_type` VALUES ('41', '东/西北菜', '2', '3');
 DROP TABLE IF EXISTS `sa_visit`;
 CREATE TABLE `sa_visit` (
   `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
-  `uname` char(64) DEFAULT NULL COMMENT '销售员名字',
-  `type` char(64) DEFAULT NULL COMMENT '类型:0=陌拜,1=日常更进，2=客户资源,3=电话上门',
-  `aim` char(64) DEFAULT NULL COMMENT '目的:0=首次,1=报价，2=客诉，3=收款，4=追款，5=签单，6=续约，7=回访，8=其他，9=更改项目.',
-  `datatime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '日期',
-  `area` char(64) DEFAULT NULL COMMENT '区域',
-  `road` char(64) DEFAULT NULL COMMENT '街道',
-  `crtype` char(64) DEFAULT NULL COMMENT '客户类型:0=粤菜,1=烧烤,2=西餐,3=火锅,4=网吧，5=影院，6=酒吧，7=其他，8=KTV，9=茶餐厅，10=江浙菜，11=美容院，12=饮品店，13=咖啡厅，14=清真菜，15=俱乐部，16=快/简餐,17=川 /辣菜,18=日本料理,19=水疗会所,20=韩国料理 ，21=面包甜点,22=星马月泰菜，23=东/西北菜',
-  `crname` char(64) DEFAULT NULL COMMENT '客户名字',
+  `uname` char(64) NOT NULL COMMENT '销售员名字',
+  `type` char(64) NOT NULL COMMENT '类型:0=陌拜,1=日常更进，2=客户资源,3=电话上门',
+  `aim` char(64) NOT NULL COMMENT '目的:0=首次,1=报价，2=客诉，3=收款，4=追款，5=签单，6=续约，7=回访，8=其他，9=更改项目.',
+  `area` char(64) NOT NULL COMMENT '区域',
+  `road` char(64) NOT NULL COMMENT '街道',
+  `crtype` char(64) NOT NULL COMMENT '客户类型:0=粤菜,1=烧烤,2=西餐,3=火锅,4=网吧，5=影院，6=酒吧，7=其他，8=KTV，9=茶餐厅，10=江浙菜，11=美容院，12=饮品店，13=咖啡厅，14=清真菜，15=俱乐部，16=快/简餐,17=川 /辣菜,18=日本料理,19=水疗会所,20=韩国料理 ，21=面包甜点,22=星马月泰菜，23=东/西北菜',
+  `crname` char(64) NOT NULL COMMENT '客户名字',
   `sonname` char(64) DEFAULT NULL COMMENT '分店名',
-  `charge` char(64) DEFAULT NULL COMMENT '负责人',
-  `phone` varchar(24) DEFAULT NULL COMMENT '电话',
+  `charge` char(64) NOT NULL COMMENT '负责人',
+  `phone` varchar(24) NOT NULL COMMENT '电话',
   `remarks` char(255) DEFAULT NULL COMMENT '备注',
-  `city` char(5) DEFAULT NULL COMMENT '地区',
+  `city` char(5) NOT NULL COMMENT '地区',
+  `luu` varchar(30) NOT NULL COMMENT '最后改变用户',
+  `lcd` datetime NOT NULL COMMENT '创建日期',
+  `lud` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_visit
 -- ----------------------------
-INSERT INTO `sa_visit` VALUES ('1', 'admin', '电话上门', '回访', '2018-01-01 00:00:00', '青羊区', '地税局', '清真菜', '湖北清真菜馆', '暂时没有', '李四', '2147483647', '测试添加', 'HK');
-INSERT INTO `sa_visit` VALUES ('2', 'admin', '陌拜', '报价', '2017-12-28 00:00:00', '成华区', '府青路25号', '西餐', '娅米西餐厅', '', '王五', '2147483647', '修改报价测试', 'HK');
+INSERT INTO `sa_visit` VALUES ('2', 'admin', '客户资源', '其他', '西区', '西区258号', '西餐', '谢文平火锅', '', '张三', '15889748631', '489498498', 'HK', 'admin', '2018-01-07 00:00:00', '2018-01-03 16:58:09');
 
 -- ----------------------------
 -- Table structure for sa_visit_offer
@@ -8369,10 +8320,10 @@ CREATE TABLE `sa_visit_offer` (
   `number` int(11) NOT NULL COMMENT '数量',
   `money` int(64) NOT NULL COMMENT '年金额',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_visit_offer
 -- ----------------------------
-INSERT INTO `sa_visit_offer` VALUES ('1', '1', '蟑螂果蝇+租灯', '2', '4582');
-INSERT INTO `sa_visit_offer` VALUES ('12', '2', '水盆', '1', '225');
+INSERT INTO `sa_visit_offer` VALUES ('1', '1', '海棉（停用）', '1', '25');
+INSERT INTO `sa_visit_offer` VALUES ('2', '2', '百洁布（停用）', '1', '25');

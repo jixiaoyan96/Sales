@@ -76,7 +76,7 @@ $this->pageTitle=Yii::app()->name . ' - sales Form';
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<?php echo $form->textField($model, 'time',
+						<?php echo $form->textField($model, 'lcd',
 								array('class'=>'form-control pull-right','readonly'=>($model->scenario=='view'),));
 						?>
 					</div>
@@ -224,7 +224,7 @@ $('#btnAddRow').on('click',function() {
 }
 if ($model->scenario!='view') {
 	$js = Script::genDatePicker(array(
-			'SalesForm_time',
+			'SalesForm_lcd',
 			'SalesForm_deadline',
 	));
 	Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);

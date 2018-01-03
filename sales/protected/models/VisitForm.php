@@ -6,7 +6,6 @@ class VisitForm extends CFormModel
 	public $uname; //销售人
 	public $type; //类型
 	public $aim; //目的
-	public $datatime;
 	public $area; //区域
 	public $road; //街道
 	public $crtype; //客户类型
@@ -17,6 +16,9 @@ class VisitForm extends CFormModel
 	public $remarks; //备注
 	public $city;
 	public $offer;
+	public $luu;//最后改变用户名
+	public $lcd;//生成时间
+	public $lud;//最后改变时间
 	public $detail = array(
 			array('seats'=>'输入服务内容',
 					'number'=>0,
@@ -28,8 +30,8 @@ class VisitForm extends CFormModel
 	public function rules()
 	{
 		return array(
-				array('id,uname,type,aim,datatime,area,road,crtype,crname,sonname,charge,phone,remarks','safe'),
-				array('type,aim,datatime,area,road,crtype,crname,charge,phone','required'),
+				array('id,uname,type,aim,luu,lcd,lud,area,road,crtype,crname,sonname,charge,phone,remarks','safe'),
+				array('type,aim,lcd,area,road,crtype,crname,charge,phone','required'),
 		);
 	}
 
@@ -44,7 +46,7 @@ class VisitForm extends CFormModel
 				'uname'=>Yii::t('visit','Visit Name'),
 				'type'=>Yii::t('visit','Type'),
 				'aim'=>Yii::t('visit','Aim'),
-				'datatime'=>Yii::t('visit','Time'),
+				'lcd'=>Yii::t('visit','Time'),
 				'area'=>Yii::t('visit','Area'),
 				'road'=>Yii::t('visit','Road'),
 				'crtype'=>Yii::t('visit','Customer type'),
@@ -77,7 +79,7 @@ class VisitForm extends CFormModel
 				$this->id = $row['id'];
 				$this->uname = $row['uname'];
 				$this->type = $row['type'];
-				$this->datatime = General::toDate($row['datatime']);
+				$this->lcd = General::toDate($row['lcd']);
 				$this->aim = $row['aim'];
 				$this->area = $row['area'];
 				$this->road = $row['road'];
@@ -132,25 +134,23 @@ class VisitForm extends CFormModel
 				break;
 			case 'new':
 				$sql = "insert into $tabName(
-					    uname, type, aim, area, road, crtype, crname, sonname, charge, phone, remarks, city ,datatime
+					    uname, type, aim, area, road, crtype, crname, sonname, charge, phone, remarks, city ,lcd, luu
 				  )values (
-				  		:uname, :type, :aim, :area, :road, :crtype, :crname, :sonname, :charge, :phone, :remarks, :city, :datatime
+				  		:uname, :type, :aim, :area, :road, :crtype, :crname, :sonname, :charge, :phone, :remarks, :city, :lcd, :luu
 				  )";
 				break;
 			case 'edit':
 				$sql = "update $tabName set
-							uname = :uname,
 							type = :type,
 							aim = :aim,
 							area = :area,
 							road = :road,
-							datatime = :datatime,
 							crtype = :crtype,
 							crname = :crname,
 							sonname = :sonname,
 							charge = :charge,
 							phone = :phone,
-							remarks = :remarks
+							remarks = :remarks,
 						where id = :id and city = :city
 						";
 				break;
@@ -185,10 +185,12 @@ class VisitForm extends CFormModel
 			$command->bindParam(':remarks',$this->remarks,PDO::PARAM_STR);
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);
+		if (strpos($sql,':luu')!==false)
+			$command->bindParam(':luu',$uid,PDO::PARAM_STR);
 		if($this->scenario!='delete'){
-			if (strpos($sql,':datatime')!==false)
-				$tIme = General::toMyDate($this->datatime);
-			$command->bindParam(':datatime',$tIme,PDO::PARAM_INT);
+			if (strpos($sql,':lcd')!==false)
+				$tIme = General::toMyDate($this->lcd);
+			$command->bindParam(':lcd',$tIme,PDO::PARAM_INT);
 		}
 		$command->execute();
 		if ($this->scenario=='new')

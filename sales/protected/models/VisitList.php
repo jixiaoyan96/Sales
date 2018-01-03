@@ -35,7 +35,7 @@ class VisitList extends CListPageModel
         $suffix = Yii::app()->params['envSuffix'];
         $city = Yii::app()->user->city_allow();
         $tabname = $this->tableName("sa_visit");
-        $sql1 = "select a.id, a.uname, a.type, a.aim, a.datatime, a.area, a.road, a.crtype, a.crname, a.sonname,
+        $sql1 = "select a.id, a.uname, a.type, a.aim, a.lcd, a.area, a.road, a.crtype, a.crname, a.sonname,
                  a.charge, a.phone, a.remarks, a.city as city_name
 				from $tabname a, security$suffix.sec_city b
 				where a.city=b.code and  a.uname = '$uid'  and a.city in ($city)
@@ -78,7 +78,7 @@ class VisitList extends CListPageModel
                     'uname'=>$record['uname'],
                     'type'=>$record['type'],
                     'aim'=>$record['aim'],
-                    'datatime'=>$record['datatime'],
+                    'lcd'=>$record['lcd'],
                     'area'=>$record['area'],
                     'road'=>$record['road'],
                     'crtype'=>$record['crtype'],

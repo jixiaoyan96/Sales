@@ -7,7 +7,8 @@ return array(
 
     'Code'=>'订单编号',
     'Name'=>'客户名称',
-    'Time'=>'时间',
+    'Order Time'=>'下单时间',
+    'Last Update Time'=>'最后更新时间',
     'Address'=>'客户地址',
     'Money'=>'价格',
     'City'=>'地址',

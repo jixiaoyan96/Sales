@@ -14,7 +14,8 @@ class SalesList extends CListPageModel
         return array(
             'code'=>Yii::t('sales','Code'),
             'name'=>Yii::t('sales','Name'),
-            'time'=>Yii::t('sales','Time'),
+            'time'=>Yii::t('sales','Order Time'),
+            'ltime'=>Yii::t('sales','Last Update Time'),
             'address'=>Yii::t('sales','Address'),
             'money'=>Yii::t('sales','Money'),
             'lcu'=>Yii::t('sales','Lcu'),
@@ -40,7 +41,7 @@ class SalesList extends CListPageModel
         $suffix = Yii::app()->params['envSuffix'];
         $city = Yii::app()->user->city_allow();
         $tabname = $this->tableName("sa_order");
-        $sql1 = "select a.id, a.code, a.name, a.time, a.money, a.lcu, a.address, a.region, a.city as city_name
+        $sql1 = "select a.id, a.code, a.name, a.lcd, a.money, a.lcu, a.address, a.region, a.city as city_name
 				from $tabname a, security$suffix.sec_city b
 				where a.city=b.code and a.city in ($city)
 			";
@@ -79,7 +80,7 @@ class SalesList extends CListPageModel
                     'id'=>$record['id'],
                     'code'=>$record['code'],
                     'name'=>$record['name'],
-                    'time'=>$record['time'],
+                    'lcd'=>$record['lcd'],
                     'money'=>$record['money'],
                     'lcu'=>$record['lcu'],
                     'address'=>$record['address'],

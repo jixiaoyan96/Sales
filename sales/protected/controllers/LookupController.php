@@ -76,10 +76,10 @@ class LookupController extends Controller
 
 	public function actionseats($search)
 	{
-		$tab = $this->tableName("sa_good");
+		$tab = $this->tableName("sa_goods_v");
 		$searchx = str_replace("'","\'",$search);
-		$sql = "select id,gname as value from $tab
-				where pid != 0 AND gname LIKE '%".$searchx."%'";
+		$sql = "select id,name as value from $tab
+				where name LIKE '%".$searchx."%'";
 		$result = Yii::app()->db->createCommand($sql)->queryAll();
 		$data = TbHtml::listData($result, 'id', 'value');
 		echo TbHtml::listBox('lstlookup', '', $data, array('size'=>'15', 'multiple'=>true));

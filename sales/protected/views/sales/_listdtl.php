@@ -5,7 +5,7 @@
 <?php endif ?>
 	<td><?php echo $this->record['name']; ?></td>
 	<td><?php echo $this->record['region']; ?></td>
-	<td><?php echo $this->record['time']; ?></td>
+	<td><?php echo $this->record['lcd']; ?></td>
 	<td><?php echo $this->record['money']; ?></td>
 	<td><?php echo $this->record['lcu']; ?></td>
 </tr>

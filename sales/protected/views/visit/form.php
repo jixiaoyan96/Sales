@@ -72,13 +72,13 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 			</div>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'datatime',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,'lcd',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-3">
 					<div class="input-group date">
 						<div class="input-group-addon">
 							<i class="fa fa-calendar"></i>
 						</div>
-						<?php echo $form->textField($model, 'datatime',
+						<?php echo $form->textField($model, 'lcd',
 								array('class'=>'form-control pull-right','readonly'=>($model->scenario=='view'),));
 						?>
 					</div>
@@ -258,7 +258,7 @@ Yii::app()->clientScript->registerScript('lookupSelect',$js,CClientScript::POS_R
 
 if ($model->scenario!='view') {
 	$js = Script::genDatePicker(array(
-			'VisitForm_datatime',
+			'VisitForm_lcd',
 			'VisitForm_deadline',
 	));
 	Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);
