@@ -16,8 +16,13 @@ return array(
 				'access'=>'T03',
 				'url'=>'/five/index',
 			),
+			'Edit Type'=>array(
+						'access'=>'T04',
+						'url'=>'/choice/index',
+				),
 		),
 	),
+
 	'Sales Admin'=>array(
 		'access'=>'TB',
 		'items'=>array(

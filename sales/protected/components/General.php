@@ -571,7 +571,7 @@ class General {
 	public static function getTowlist()
 	{
 		$list = array(0=>Yii::t('misc','-- None --'));
-		$sql = "select id, name from sa_goods_v where classify_id = 27";
+		$sql = "select id, name from sa_goods_v";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {

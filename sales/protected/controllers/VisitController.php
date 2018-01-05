@@ -56,7 +56,9 @@ class VisitController extends Controller
             $model->attributes = $_POST['VisitForm'];
             if ($model->validate()) {
                 $model->saveData();
-                $model->seveoffer($_POST['VisitForm']['detail']);
+                if($_POST['VisitForm']['scenario']=='new'){
+                    $model->seveoffer($_POST['VisitForm']['detail']);
+                }
                 Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
                 $this->redirect(Yii::app()->createUrl('visit/edit',array('index'=>$model->id)));
             } else {
@@ -116,6 +118,32 @@ class VisitController extends Controller
             throw new CHttpException(404,'The requested page does not exist.');
         }
 
+    }
+
+
+    public function actionoffer(){
+        if(isset($_POST['VisitForm'])){
+            $id = $_POST['VisitForm']['id'];
+            $model = new VisitForm('new');
+            $model->id = $id;
+            $this->render('offer',array('model'=>$model));
+        }
+    }
+
+    public function actionsaveoffer(){
+        $model = new VisitForm('edit');
+        if(isset($_POST['VisitForm'])){
+            $post = $_POST['VisitForm']['detail'];
+            $id = $_POST['VisitForm']['id'];
+            $model->id = $id;
+            $model->seveoffer($post);
+            Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
+            $this->redirect(Yii::app()->createUrl('visit/edit',array('index'=>$id)));
+        } else {
+            $message = CHtml::errorSummary($model);
+            Dialog::message(Yii::t('dialog', 'Validation Message'), $message);
+            $this->render('form', array('model' => $model,));
+        }
     }
 
 

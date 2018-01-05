@@ -32,6 +32,11 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 				'submit'=>Yii::app()->createUrl('visit/gps')));
 		?>
 		<?php endif ?>
+		<?php if ($model->scenario!='new'): ?>
+			<?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Edit offer'), array(
+					'submit'=>Yii::app()->createUrl('visit/offer')));
+			?>
+		<?php endif ?>
 <?php if ($model->scenario!='view'): ?>
 			<?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
 				'submit'=>Yii::app()->createUrl('visit/save')));
@@ -161,7 +166,7 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 				<?php $this->widget('ext.layout.TableView2Widget', array(
 						'model'=>$model,
 						'attribute'=>'detail',
-						'viewhdr'=>'//visit/_formhdr',
+						'viewhdr'=>'//visit/_formhdr_v',
 						'viewdtl'=>'//visit/_formdtl',
 						'gridsize'=>'24',
 						'height'=>'200',
@@ -169,8 +174,6 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 				?>
 			</div>
 		</div>
-
-
 </section>
 
 <?php $this->renderPartial('//site/removedialog'); ?>
@@ -243,9 +246,6 @@ Yii::app()->clientScript->registerScript('lookIstype',$js,CClientScript::POS_REA
 
 $js = Script::genLookupButton('btnaim', 'aim', '', 'aim');
 Yii::app()->clientScript->registerScript('lookAim',$js,CClientScript::POS_READY);
-
-$js = Script::genLookupButton('btnse', 'seats', '', 'seats');
-Yii::app()->clientScript->registerScript('lookSeats',$js,CClientScript::POS_READY);
 
 $js = Script::genDeleteData(Yii::app()->createUrl('visit/delete'));
 Yii::app()->clientScript->registerScript('deleteRecord',$js,CClientScript::POS_READY);

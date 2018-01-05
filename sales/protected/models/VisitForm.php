@@ -26,11 +26,10 @@ class VisitForm extends CFormModel
 			),
 	);
 	public $service = array();
-
 	public function rules()
 	{
 		return array(
-				array('id,uname,type,aim,luu,lcd,lud,area,road,crtype,crname,sonname,charge,phone,remarks','safe'),
+				array('id,uname,type,aim,luu,lcd,lud,area,road,crtype,crname,sonname,charge,phone,remarks,detail','safe'),
 				array('type,aim,lcd,area,road,crtype,crname,charge,phone','required'),
 		);
 	}
@@ -88,6 +87,7 @@ class VisitForm extends CFormModel
 				$this->sonname = $row['sonname'];
 				$this->charge = $row['charge'];
 				$this->phone = $row['phone'];
+				$this->luu = $row['luu'];
 				$this->remarks = $row['remarks'];
 				$this->city = $row['city'];
 				break;
@@ -100,9 +100,12 @@ class VisitForm extends CFormModel
 
 	public function select(){
 		$tabOne = $this->tableName("sa_visit_offer");
+		$tabTow = $this->tableName("sa_goods_v");
 		$pid = $this->id;
-		$sql = "SELECT *
-				FROM $tabOne
+		$sql = "SELECT a.*, b.name
+				FROM $tabOne a
+				INNER JOIN $tabTow b
+				ON a.goodsid = b.id
 				WHERE visitid = $pid";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		$this->offer = $rows;
@@ -135,7 +138,7 @@ class VisitForm extends CFormModel
 			case 'new':
 				$sql = "insert into $tabName(
 					    uname, type, aim, area, road, crtype, crname, sonname, charge, phone, remarks, city ,lcd, luu
-				  )values (
+				  )values(
 				  		:uname, :type, :aim, :area, :road, :crtype, :crname, :sonname, :charge, :phone, :remarks, :city, :lcd, :luu
 				  )";
 				break;
@@ -151,11 +154,11 @@ class VisitForm extends CFormModel
 							charge = :charge,
 							phone = :phone,
 							remarks = :remarks,
+							luu = :luu
 						where id = :id and city = :city
 						";
 				break;
 		}
-
 		$city = Yii::app()->user->city();
 		$uid = Yii::app()->user->id;
 		$command=$connection->createCommand($sql);
@@ -163,6 +166,8 @@ class VisitForm extends CFormModel
 			$command->bindParam(':id',$this->id,PDO::PARAM_INT);
 		if (strpos($sql,':uname')!==false)
 			$command->bindParam(':uname',$uid,PDO::PARAM_STR);
+		if (strpos($sql,':luu')!==false)
+			$command->bindParam(':luu',$uid,PDO::PARAM_STR);
 		if (strpos($sql,':type')!==false)
 			$command->bindParam(':type',$this->type,PDO::PARAM_STR);
 		if (strpos($sql,':aim')!==false)
@@ -185,8 +190,6 @@ class VisitForm extends CFormModel
 			$command->bindParam(':remarks',$this->remarks,PDO::PARAM_STR);
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);
-		if (strpos($sql,':luu')!==false)
-			$command->bindParam(':luu',$uid,PDO::PARAM_STR);
 		if($this->scenario!='delete'){
 			if (strpos($sql,':lcd')!==false)
 				$tIme = General::toMyDate($this->lcd);
@@ -219,40 +222,40 @@ class VisitForm extends CFormModel
 			case 'edit':
 				$tabName = $this->tableName("sa_visit_offer");
 				foreach ($array as $k => $v) {
+					$tabName = $this->tableName("sa_visit_offer");
 					$sql = "insert into $tabName(
-							visitid, name, number, money
+							visitid, goodsid, nmr, money
 						) values (
-							:visitid, :name, :number, :money
+							:visitid, :goodsid, :nmr, :money
 						)";
 					$command = $connection->createCommand($sql);
-					if (strpos($sql, ':name') !== false)
-						$command->bindParam(':name', $v['seats'], PDO::PARAM_STR);
+					if (strpos($sql, ':goodsid') !== false)
+						$command->bindParam(':goodsid', $v['seats'], PDO::PARAM_INT);
 					if (strpos($sql, ':visitid') !== false)
 						$command->bindParam(':visitid', $this->id, PDO::PARAM_INT);
-					if (strpos($sql, ':number') !== false)
-						$command->bindParam(':number', $v['number'], PDO::PARAM_INT);
+					if (strpos($sql, ':nmr') !== false)
+						$command->bindParam(':nmr', $v['number'], PDO::PARAM_INT);
 					if (strpos($sql, ':money') !== false)
 						$command->bindParam(':money', $v['amount'], PDO::PARAM_INT);
 					$command->execute();
 				}
 				return true;
 				break;
-
 			case 'new':
 				foreach ($array as $k => $v) {
 					$tabName = $this->tableName("sa_visit_offer");
 					$sql = "insert into $tabName(
-							visitid, name, number, money
+							visitid, goodsid, nmr, money
 						) values (
-							:visitid, :name, :number, :money
+							:visitid, :goodsid, :nmr, :money
 						)";
 					$command = $connection->createCommand($sql);
-					if (strpos($sql, ':name') !== false)
-						$command->bindParam(':name', $v['seats'], PDO::PARAM_STR);
+					if (strpos($sql, ':goodsid') !== false)
+						$command->bindParam(':goodsid', $v['seats'], PDO::PARAM_INT);
 					if (strpos($sql, ':visitid') !== false)
 						$command->bindParam(':visitid', $this->id, PDO::PARAM_INT);
-					if (strpos($sql, ':number') !== false)
-						$command->bindParam(':number', $v['number'], PDO::PARAM_INT);
+					if (strpos($sql, ':nmr') !== false)
+						$command->bindParam(':nmr', $v['number'], PDO::PARAM_INT);
 					if (strpos($sql, ':money') !== false)
 						$command->bindParam(':money', $v['amount'], PDO::PARAM_INT);
 					$command->execute();
@@ -261,7 +264,6 @@ class VisitForm extends CFormModel
 				break;
 		}
 	}
-
 
 	public function deletOne($connection){
 		$tabName = $this->tableName("sa_visit_offer");

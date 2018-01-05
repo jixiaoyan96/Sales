@@ -22,7 +22,7 @@ return array(
 	'Sales order'=>'销售订单',
 	'Stop customer visits'=>'停止客户拜访表',
 	'Pentalogy'=>'销售五部曲',
-
+	'Edit Type'=>'种类分类',
 
 
 	

@@ -50,6 +50,7 @@ return array(
 	'Add Goods'=>'添加新一个商品',
 	'Gps'=>'位置导航',
 	'Edit Goods'=>'修改商品',
+	'Edit offer'=>'修改报价',
 
 	'Invalid Station. Please register first.'=>'工作站无效。请先登记。',
 	'User ID has been logged in more than one station.'=>'帐户已被登录到另一工作站。',

@@ -13,20 +13,28 @@ class FiveController extends Controller
         );
     }
 
-
     /**
-     * 五部列表
-    */
-    public function actionIndex(){
+     * 拜访列表
+     */
+    public function actionIndex($pageNum=0)
+    {
         $model = new FiveList();
-        $model->retrieveDataByPage();
-        $this->render('index', array(
-            'model'=>$model,
-        ));
+        if (isset($_POST['FiveList'])) {
+            $model->attributes = $_POST['FiveList'];
+        } else {
+            $session = Yii::app()->session;
+            if (isset($session['criteria_t01']) && !empty($session['criteria_t01'])) {
+                $criteria = $session['criteria_t01'];
+                $model->setCriteria($criteria);
+            }
+        }
+        $model->determinePageNum($pageNum);
+        $model->retrieveDataByPage($model->pageNum);
+        $this->render('index',array('model'=>$model));
     }
 
     /**
-    * 五部详情(只读)
+     * 拜访详情(只读)
      */
     public function actionView($index)
     {
@@ -39,7 +47,7 @@ class FiveController extends Controller
     }
 
     /**
-    *添加一条新的
+     *添加一条新的
      */
     public function actionNew()
     {
@@ -48,12 +56,12 @@ class FiveController extends Controller
     }
 
     /**
-    *保存已经有的
+     *保存已经有的
      */
     public function actionSave()
     {
         if (isset($_POST['FiveForm'])) {
-            $model = new FiveForm($_POST['FiveForm']['scenario']);
+            $model = new VisitForm($_POST['FiveForm']['scenario']);
             $model->attributes = $_POST['FiveForm'];
             if ($model->validate()) {
                 $model->saveData();
@@ -68,7 +76,7 @@ class FiveController extends Controller
     }
 
     /**
-    *修改一条
+     *修改一条
      */
     public function actionEdit($index)
     {
@@ -82,7 +90,7 @@ class FiveController extends Controller
 
     /**
      *删除一条
-    */
+     */
     public function actionDelete()
     {
         $model = new FiveForm('delete');
@@ -104,19 +112,7 @@ class FiveController extends Controller
     }
 
 
-    public function actionGps(){
-        if (isset($_POST['VisitForm'])){
-            $area = $_POST['VisitForm']['area'];
-            $road = $_POST['VisitForm']['road'];
-            $this->renderPartial('gps',
-                array(
-                    'area'=>$area,
-                    'road'=>$road,));
-        }else{
-            throw new CHttpException(404,'The requested page does not exist.');
-        }
 
-    }
 
 
 }

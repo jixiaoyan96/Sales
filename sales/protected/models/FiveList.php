@@ -6,26 +6,19 @@ class FiveList extends CListPageModel
      */
     public function tableName($table)
     {
-        return 'sa' . Yii::app()->params['myTabname'] . ".$table";
+        return "$table";
     }
 
     public function attributeLabels()
     {
         return array(
-            'id'=>Yii::t('visit','ID'),
-            'uname'=>Yii::t('visit','Visit Name'),
-            'type'=>Yii::t('visit','Type'),
-            'aim'=>Yii::t('visit','Aim'),
-            'datatime'=>Yii::t('visit','Time'),
-            'area'=>Yii::t('visit','Area'),
-            'road'=>Yii::t('visit','Road'),
-            'crtype'=>Yii::t('visit','Customer type'),
-            'crname'=>Yii::t('visit','Customer name'),
-            'sonname'=>Yii::t('visit','Name of branch store'),
-            'charge'=>Yii::t('visit','Charge'),
-            'phone'=>Yii::t('visit','Phone'),
-            'remarks'=>Yii::t('visit','Remarks'),
-            'city'=>Yii::t('visit','City'),
+            'id'=>Yii::t('five','ID'),
+            'uname'=>Yii::t('five','User Name'),
+            'ucod'=>Yii::t('five','User Code'),
+            'ujob'=>Yii::t('five','User Job'),
+            'entrytime'=>Yii::t('five','Entry Time'),
+            'city'=>Yii::t('five','City'),
+
         );
     }
 
@@ -34,11 +27,10 @@ class FiveList extends CListPageModel
         $uid = Yii::app()->user->id;
         $suffix = Yii::app()->params['envSuffix'];
         $city = Yii::app()->user->city_allow();
-        $tabname = $this->tableName("sa_visit");
-        $sql1 = "select a.id, a.uname, a.type, a.aim, a.datatime, a.area, a.road, a.crtype, a.crname, a.sonname,
-                 a.charge, a.phone, a.remarks, a.city as city_name
+        $tabname = $this->tableName("sa_five");
+        $sql1 = "select a.id, a.ucod,a.uname, a.entrytime, a.ujob, a.city as city_name
 				from $tabname a, security$suffix.sec_city b
-				where a.city=b.code and  a.uname = '$uid'  and a.city in ($city)
+				where a.city=b.code and  a.uname = '$uid' and a.city in ($city)
 			";
         $sql2 = "select count(id)
 				from $tabname a, security$suffix.sec_city b
@@ -76,17 +68,9 @@ class FiveList extends CListPageModel
                 $this->attr[] = array(
                     'id'=>$record['id'],
                     'uname'=>$record['uname'],
-                    'type'=>$record['type'],
-                    'aim'=>$record['aim'],
-                    'datatime'=>$record['datatime'],
-                    'area'=>$record['area'],
-                    'road'=>$record['road'],
-                    'crtype'=>$record['crtype'],
-                    'crname'=>$record['crname'],
-                    'sonname'=>$record['sonname'],
-                    'charge'=>$record['charge'],
-                    'phone'=>$record['phone'],
-                    'remarks'=>$record['remarks'],
+                    'ucod'=>$record['ucod'],
+                    'ujob'=>$record['ujob'],
+                    'entrytime'=>$record['entrytime'],
                     'city'=>$record['city_name'],
                 );
             }
