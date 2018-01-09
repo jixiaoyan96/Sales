@@ -31,6 +31,8 @@ class SalesForm extends CFormModel
 					'number'=>0,
 					'money'=>0,
 					'total'=>0,
+					'uflag'=>'N',
+					'id'=>0,
 			),
 	);
 	public $service = array();

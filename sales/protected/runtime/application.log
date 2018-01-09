@@ -1405,3 +1405,175 @@ Stack trace:
 REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
 HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/index
 ---
+2018/01/09 11:55:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/list?index=1
+---
+2018/01/09 11:56:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/edit?index=1
+---
+2018/01/09 11:56:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/list
+---
+2018/01/09 11:56:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/choice/index
+---
+2018/01/09 11:56:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/09 11:57:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/09 11:57:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/09 11:57:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=11
+---
+2018/01/09 11:57:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/choice/index
+---
+2018/01/09 11:57:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/index
+---
+2018/01/09 11:57:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/09 11:57:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/09 12:02:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/edit?index=1
+---
+2018/01/09 12:33:50 [error] [php] Undefined index: uflag (D:\Software\PHP\WWW\Sales\sales\protected\views\sales\_formdtl.php:43)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(81): TableView2Widget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(30): TableView2Widget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): TableView2Widget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\sales\form.php(130): SalesController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): SalesController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): SalesController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): SalesController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(45): SalesController->render()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionNew()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/sales/new
+in D:\Software\PHP\WWW\Sales\sales\protected\views\sales\_formdtl.php (43)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (81)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (30)
+2018/01/09 12:34:35 [error] [php] Undefined index: id (D:\Software\PHP\WWW\Sales\sales\protected\views\sales\_formdtl.php:44)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(81): TableView2Widget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php(30): TableView2Widget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): TableView2Widget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\sales\form.php(130): SalesController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): SalesController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): SalesController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): SalesController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\SalesController.php(45): SalesController->render()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionNew()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/sales/new
+in D:\Software\PHP\WWW\Sales\sales\protected\views\sales\_formdtl.php (44)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (81)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\TableView2Widget.php (30)
+2018/01/09 12:35:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/new
+---
