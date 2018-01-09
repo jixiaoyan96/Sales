@@ -91,7 +91,7 @@ class FiveList extends CListPageModel
         $tabNo = $this->tableName("sa_five_news");
         $sql1 = "select a.ucod,a.uname, a.entrytime, a.ujob, a.city as city_name, b.*
 				from $tabname a, $tabNo b
-				where b.uid = a.id
+				where a.city = b.city  and b.uid = a.id
 			";
         $sql2 = "select count(id)
 				from $tabname a, security$suffix.sec_city b

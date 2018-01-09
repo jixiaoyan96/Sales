@@ -42,7 +42,6 @@ class SalesForm extends CFormModel
 		return array(
 				array('id,detail,code,name,money,address,lcu,luu,lcd,lud,city,region','safe'),
 				array('name','required'),
-
 				array('code','validateCode'),
 		);
 	}

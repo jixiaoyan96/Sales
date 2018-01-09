@@ -1577,3 +1577,1272 @@ Stack trace:
 REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
 HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/new
 ---
+2018/01/09 13:05:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/09 14:27:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/09 14:27:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=7
+---
+2018/01/09 14:29:39 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\VisitController.php (59)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (95)
+2018/01/09 14:29:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=7
+---
+2018/01/09 14:29:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/edit?index=7
+---
+2018/01/09 14:33:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/09 14:33:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/sales/index
+---
+2018/01/09 14:33:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/visit/index
+---
+2018/01/09 14:33:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/index
+---
+2018/01/09 14:33:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/list?index=1
+---
+2018/01/09 14:33:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/edit?index=1
+---
+2018/01/09 14:33:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/five/edit?index=1
+---
+2018/01/09 15:17:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "staff/index"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staff/index')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/index.php/staff/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:17:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staff/index
+---
+2018/01/09 15:17:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "staff/index"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staff/index')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/index.php/staff/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:17:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staff/index
+---
+2018/01/09 15:17:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 15:28:25 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select count(id)
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (64)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:28:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select count(id)
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(64): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:29:06 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select count(id)
+				from sa_staff a, securitydev.sec_city b
+				where a.city in (HK)
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (64)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:29:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select count(id)
+				from sa_staff a, securitydev.sec_city b
+				where a.city in (HK)
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(64): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:29:24 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select count(id)
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (64)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:29:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select count(id)
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(64): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:36:02 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select count(id)
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (64)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:36:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select count(id)
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(64): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:36:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select a.*, a.city as city_name
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			 LIMIT 0, 25.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (68)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:36:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select a.*, a.city as city_name
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			 LIMIT 0, 25' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(68): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:37:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select a.*, a.city as city_name
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			 LIMIT 0, 25.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (68)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:37:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'HK' in 'where clause'. The SQL statement executed was: select a.*, a.city as city_name
+				from sa_staff a, securitydev.sec_city b
+				where a.city = HK
+			 LIMIT 0, 25' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(68): CDbCommand->queryAll()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:38:02 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where a.city = HK' at line 3. The SQL statement executed was: select count(id)
+				from sa_staff a,
+				where a.city = HK
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (62)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:38:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where a.city = HK' at line 3. The SQL statement executed was: select count(id)
+				from sa_staff a,
+				where a.city = HK
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(62): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:38:20 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where a.city = 'HK'' at line 3. The SQL statement executed was: select count(id)
+				from sa_staff a,
+				where a.city = 'HK'
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (62)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:38:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where a.city = 'HK'' at line 3. The SQL statement executed was: select count(id)
+				from sa_staff a,
+				where a.city = 'HK'
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(62): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:40:35 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where a.city = 'HK'' at line 3. The SQL statement executed was: select count(id)
+				from sales.sa_staff a,
+				where a.city = 'HK'
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (62)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 15:40:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where a.city = 'HK'' at line 3. The SQL statement executed was: select count(id)
+				from sales.sa_staff a,
+				where a.city = 'HK'
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(62): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 15:52:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 15:55:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 15:56:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 15:57:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 15:57:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 15:59:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 16:00:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 16:01:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 16:01:48 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->user->validRWFunction('TB02')' at line 3. The SQL statement executed was: select count(id)
+				from sales.sa_staff
+				where Yii::app()->user->validRWFunction('TB02')
+			.
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (59)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (32)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 16:01:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '::app()->user->validRWFunction('TB02')' at line 3. The SQL statement executed was: select count(id)
+				from sales.sa_staff
+				where Yii::app()->user->validRWFunction('TB02')
+			' in D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php(59): CDbCommand->queryScalar()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(32): StaffsList->retrieveDataByPage(1)
+#3 [internal function]: StaffsController->actionIndex(0)
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/index')
+#25 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/index
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php
+---
+2018/01/09 16:02:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 16:04:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "ulist" 动作.' in D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php:484
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(271): CController->missingAction('ulist')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#3 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=1
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 16:04:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/ulist?index=1
+---
+2018/01/09 16:50:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 16:50:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index?pageNum=1
+---
+2018/01/09 16:50:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index?pageNum=1
+---
+2018/01/09 16:50:43 [error] [php] Undefined variable: tabNo (D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php:146)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): StaffsController->runAction()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterAccessControl()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceNoConcurrentLogin()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceSessionExpiration()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceRegisteredStation()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): StaffsController->runActionWithFilters()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): StaffsController->run()
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#22 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=2
+in D:\Software\PHP\WWW\Sales\sales\protected\models\StaffsList.php (146)
+in D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php (51)
+in D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php (71)
+2018/01/09 17:03:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:03:22 [error] [php] Undefined index: uname (D:\Software\PHP\WWW\Sales\sales\protected\views\five\_listdtl_v.php:4)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(222): ListPageWidget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(39): ListPageWidget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(52): StaffsController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): StaffsController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): StaffsController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): StaffsController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): StaffsController->render()
+#9 unknown(0): StaffsController->actionulist()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): StaffsController->runAction()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterAccessControl()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceNoConcurrentLogin()
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#21 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceSessionExpiration()
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#24 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceRegisteredStation()
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): StaffsController->runActionWithFilters()
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): StaffsController->run()
+#30 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#31 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#32 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=4
+in D:\Software\PHP\WWW\Sales\sales\protected\views\five\_listdtl_v.php (4)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php (222)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php (39)
+2018/01/09 17:05:56 [error] [exception.CException] exception 'CException' with message 'ListPageWidget 无法找到这个视图 "//list/_listhdr_v".' in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php:224
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(29): ListPageWidget->render('//list/_listhdr...', NULL, true)
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): CBaseController->widget('ext.layout.List...', Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('list', Array, true)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): CController->render('list', Array)
+#8 [internal function]: StaffsController->actionulist(0)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#30 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=4
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:06:10 [error] [exception.CException] exception 'CException' with message 'ListPageWidget 无法找到这个视图 "//list/_listhdr".' in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php:224
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(29): ListPageWidget->render('//list/_listhdr', NULL, true)
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): CBaseController->widget('ext.layout.List...', Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('list', Array, true)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): CController->render('list', Array)
+#8 [internal function]: StaffsController->actionulist(0)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#30 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=4
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:06:13 [error] [exception.CException] exception 'CException' with message 'ListPageWidget 无法找到这个视图 "//list/_listhdr".' in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php:224
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(29): ListPageWidget->render('//list/_listhdr', NULL, true)
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): CBaseController->widget('ext.layout.List...', Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('list', Array, true)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): CController->render('list', Array)
+#8 [internal function]: StaffsController->actionulist(0)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#30 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=4
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:06:21 [error] [exception.CException] exception 'CException' with message 'ListPageWidget 无法找到这个视图 "//list/_listhdr".' in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php:224
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(29): ListPageWidget->render('//list/_listhdr', NULL, true)
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): CBaseController->widget('ext.layout.List...', Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('list', Array, true)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): CController->render('list', Array)
+#8 [internal function]: StaffsController->actionulist(0)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#30 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=1
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs
+---
+2018/01/09 17:06:36 [error] [exception.CException] exception 'CException' with message 'ListPageWidget 无法找到这个视图 "//staffs/_listhdr".' in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php:224
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(29): ListPageWidget->render('//staffs/_listh...', NULL, true)
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): CBaseController->widget('ext.layout.List...', Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('list', Array, true)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): CController->render('list', Array)
+#8 [internal function]: StaffsController->actionulist(0)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#30 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=1
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs
+---
+2018/01/09 17:06:42 [error] [exception.CException] exception 'CException' with message 'ListPageWidget 无法找到这个视图 "//staffs/_listhdr".' in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php:224
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(29): ListPageWidget->render('//staffs/_listh...', NULL, true)
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): CBaseController->widget('ext.layout.List...', Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('list', Array, true)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): CController->render('list', Array)
+#8 [internal function]: StaffsController->actionulist(0)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#30 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist
+---
+2018/01/09 17:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:06:51 [error] [exception.CException] exception 'CException' with message 'ListPageWidget 无法找到这个视图 "//staffs/_listhdr".' in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php:224
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(29): ListPageWidget->render('//staffs/_listh...', NULL, true)
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): CBaseController->widget('ext.layout.List...', Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('list', Array, true)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): CController->render('list', Array)
+#8 [internal function]: StaffsController->actionulist(0)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#30 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=3
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:07:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/ulist?index=3
+---
+2018/01/09 17:07:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/ulist?index=3
+---
+2018/01/09 17:07:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:07:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/ulist?index=1
+---
+2018/01/09 17:08:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:08:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:08:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:08:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:10:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:10:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:17:04 [error] [exception.CException] exception 'CException' with message 'ListPageWidget 无法找到这个视图 "//staffs/list_listhdr".' in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php:224
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(29): ListPageWidget->render('//staffs/list_l...', NULL, true)
+#1 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#2 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): CBaseController->widget('ext.layout.List...', Array)
+#3 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require('D:\\Software\\PHP...')
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\Software\\PHP...', Array, true)
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\Software\\PHP...', Array, true)
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): CController->renderPartial('list', Array, true)
+#7 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): CController->render('list', Array)
+#8 [internal function]: StaffsController->actionulist(0)
+#9 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(StaffsController), Array)
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(StaffsController), Object(ReflectionMethod), Array)
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#18 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#21 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#24 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ulist')
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('staffs/ulist')
+#30 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#31 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#32 {main}
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=2
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:30:49 [error] [php] Undefined index: uname (D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list_listdtl.php:4)
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(222): ListPageWidget->renderFile()
+#1 D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php(39): ListPageWidget->render()
+#2 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(174): ListPageWidget->run()
+#3 D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list.php(37): StaffsController->widget()
+#4 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\Software\PHP\WWW\Sales\yii\framework\web\CBaseController.php(96): StaffsController->renderInternal()
+#6 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(870): StaffsController->renderFile()
+#7 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(783): StaffsController->renderPartial()
+#8 D:\Software\PHP\WWW\Sales\sales\protected\controllers\StaffsController.php(52): StaffsController->render()
+#9 unknown(0): StaffsController->actionulist()
+#10 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#11 D:\Software\PHP\WWW\Sales\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#12 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#13 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(134): StaffsController->runAction()
+#14 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#15 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#16 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterAccessControl()
+#17 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#18 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#19 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceNoConcurrentLogin()
+#20 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#21 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#22 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceSessionExpiration()
+#23 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#24 D:\Software\PHP\WWW\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#25 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CInlineFilter.php(59): StaffsController->filterEnforceRegisteredStation()
+#26 D:\Software\PHP\WWW\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#27 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#28 D:\Software\PHP\WWW\Sales\yii\framework\web\CController.php(266): StaffsController->runActionWithFilters()
+#29 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(283): StaffsController->run()
+#30 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#31 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#32 D:\Software\PHP\WWW\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/sales/index.php/staffs/ulist?index=2
+in D:\Software\PHP\WWW\Sales\sales\protected\views\staffs\list_listdtl.php (4)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php (222)
+in D:\Software\PHP\WWW\Sales\sales\protected\extensions\layout\ListPageWidget.php (39)
+2018/01/09 17:31:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/ulist?index=2
+---
+2018/01/09 17:31:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/ulist?index=2
+---
+2018/01/09 17:32:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/index
+---
+2018/01/09 17:32:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "extensions/layui/css/layui.css"。' in D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\Software\PHP\WWW\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('extensions/layu...')
+#1 D:\Software\PHP\WWW\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\Software\PHP\WWW\Sales\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Sales/sales/extensions/layui/css/layui.css
+HTTP_REFERER=http://127.0.0.1/Sales/sales/index.php/staffs/ulist?index=1
+---

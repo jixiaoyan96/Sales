@@ -28,15 +28,7 @@ return array(
 		'items'=>array(
 			'Staff list'=>array(
 				'access'=>'TB01',
-				'url'=>'/staff/index',
-			),
-			'Visit list'=>array(
-				'access'=>'TB02',
-				'url'=>'/visits/index',
-			),
-			'Ciustomer Enqury list'=>array(
-				'access'=>'TB03',
-				'url'=>'/ciustomer/index',
+				'url'=>'/staffs/index',
 			),
 		),
 	),
