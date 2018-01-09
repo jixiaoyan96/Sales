@@ -32,11 +32,6 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 				'submit'=>Yii::app()->createUrl('visit/gps')));
 		?>
 		<?php endif ?>
-		<?php if ($model->scenario!='new'): ?>
-			<?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Edit offer'), array(
-					'submit'=>Yii::app()->createUrl('visit/offer')));
-			?>
-		<?php endif ?>
 <?php if ($model->scenario!='view'): ?>
 			<?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
 				'submit'=>Yii::app()->createUrl('visit/save')));
@@ -160,26 +155,52 @@ $this->pageTitle=Yii::app()->name . ' - Visit Form';
 					); ?>
 				</div>
 			</div>
+		<?php if($model->scenario == 'new'){?>
 		<div class="box">
 			<div class="box-body table-responsive">
 				<legend><?php echo Yii::t('visit','Visit Offer'); ?></legend>
 				<?php $this->widget('ext.layout.TableView2Widget', array(
 						'model'=>$model,
 						'attribute'=>'detail',
-						'viewhdr'=>'//visit/_formhdr_v',
 						'viewdtl'=>'//visit/_formdtl',
+						'viewhdr'=>'//visit/_formhdr',
 						'gridsize'=>'24',
 						'height'=>'200',
 				));
 				?>
 			</div>
 		</div>
+		<?php }else{ ?>
+			<div class="box">
+				<div class="box-body table-responsive">
+					<legend><?php echo Yii::t('visit','Visit Offer'); ?></legend>
+					<?php $this->widget('ext.layout.TableView2Widget', array(
+							'model'=>$model,
+							'attribute'=>'detail',
+							'viewdtl'=>'//visit/_formdtl',
+							'viewhdr'=>'//visit/_formhdr_v',
+							'gridsize'=>'24',
+							'height'=>'200',
+					));
+					?>
+				</div>
+			</div>
+		<?php } ?>
 </section>
 
 <?php $this->renderPartial('//site/removedialog'); ?>
 <?php $this->renderPartial('//site/lookup'); ?>
 
 <?php
+
+$js = "
+$('table').on('change','[id^=\"VisitForm\"]',function() {
+	var n=$(this).attr('id').split('_');
+	$('#VisitForm_'+n[1]+'_'+n[2]+'_uflag').val('Y');
+});
+";
+Yii::app()->clientScript->registerScript('setFlag',$js,CClientScript::POS_READY);
+
 if ($model->scenario!='view') {
 	$js = "
 $('table').on('click','#btnDelRow', function() {
@@ -188,6 +209,7 @@ $('table').on('click','#btnDelRow', function() {
 });
 	";
 	Yii::app()->clientScript->registerScript('removeRow',$js,CClientScript::POS_READY);
+
 
 	$js = "
 $(document).ready(function(){

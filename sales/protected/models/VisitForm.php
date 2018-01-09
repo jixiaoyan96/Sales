@@ -20,9 +20,12 @@ class VisitForm extends CFormModel
 	public $lcd;//生成时间
 	public $lud;//最后改变时间
 	public $detail = array(
-			array('seats'=>'输入服务内容',
-					'number'=>0,
-					'amount'=>0,
+			array('id'=>0,
+					'visitid'=>0,
+					'goodsid'=>0,
+					'nmr'=>0,
+					'money'=>0,
+					'uflag'=>'N',
 			),
 	);
 	public $service = array();
@@ -100,15 +103,22 @@ class VisitForm extends CFormModel
 
 	public function select(){
 		$tabOne = $this->tableName("sa_visit_offer");
-		$tabTow = $this->tableName("sa_goods_v");
 		$pid = $this->id;
-		$sql = "SELECT a.*, b.name
-				FROM $tabOne a
-				INNER JOIN $tabTow b
-				ON a.goodsid = b.id
-				WHERE visitid = $pid";
+		$sql = "select * from $tabOne where visitid = $pid";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
-		$this->offer = $rows;
+		if (count($rows) > 0) {
+			$this->detail = array();
+			foreach ($rows as $row) {
+				$temp = array();
+				$temp['id'] = $row['id'];
+				$temp['visitid'] = $row['visitid'];
+				$temp['goodsid'] = $row['goodsid'];
+				$temp['nmr'] = $row['nmr'];
+				$temp['money'] = $row['money'];
+				$temp['uflag'] = 'N';
+				$this->detail[] = $temp;
+			}
+		}
 		return true;
 	}
 
@@ -119,6 +129,7 @@ class VisitForm extends CFormModel
 		$transaction=$connection->beginTransaction();
 		try {
 			$this->savevisit($connection);
+			$this->saveoffers($connection);
 			$transaction->commit();
 		}
 		catch(Exception $e) {
@@ -144,7 +155,6 @@ class VisitForm extends CFormModel
 				break;
 			case 'edit':
 				$sql = "update $tabName set
-							type = :type,
 							aim = :aim,
 							area = :area,
 							road = :road,
@@ -153,8 +163,7 @@ class VisitForm extends CFormModel
 							sonname = :sonname,
 							charge = :charge,
 							phone = :phone,
-							remarks = :remarks,
-							luu = :luu
+							remarks = :remarks
 						where id = :id and city = :city
 						";
 				break;
@@ -190,7 +199,7 @@ class VisitForm extends CFormModel
 			$command->bindParam(':remarks',$this->remarks,PDO::PARAM_STR);
 		if (strpos($sql,':city')!==false)
 			$command->bindParam(':city',$city,PDO::PARAM_STR);
-		if($this->scenario!='delete'){
+		if($this->scenario=='new'){
 			if (strpos($sql,':lcd')!==false)
 				$tIme = General::toMyDate($this->lcd);
 			$command->bindParam(':lcd',$tIme,PDO::PARAM_INT);
@@ -201,82 +210,64 @@ class VisitForm extends CFormModel
 		return true;
 	}
 
-	public function seveoffer($arr){
-		$connection = Yii::app()->db;
-		if($this->scenario=='edit'){
-			$this->deletOne($connection);
+	public function saveoffers($connection){
+		foreach ($this->detail as $row) {
+			$sql = '';
+			switch ($this->scenario) {
+				case 'delete':
+					$sql = "delete from sa_visit_offer where id = :id";
+					break;
+				case 'new':
+					if ($row['uflag']=='Y') {
+						$sql = "insert into sa_visit_offer(
+									visitid, goodsid, nmr, money
+								) values (
+									:visitid, :goodsid, :nmr, :money
+								)";
+					}
+					break;
+				case 'edit':
+					switch ($row['uflag']) {
+						case 'D':
+							$sql = "delete from sa_visit_offer where id = :id";
+							break;
+						case 'Y':
+							$sql = ($row['id']==0)
+									?
+									"insert into sa_visit_offer(
+										visitid, goodsid, nmr, money
+									) values (
+										:visitid, :goodsid, :nmr, :money
+									)
+									"
+									:
+									"update sa_visit_offer set
+										goodsid = :goodsid,
+										nmr = :nmr,
+										money = :money
+									where id = :id
+									";
+							break;
+					}
+					break;
+			}
+			if ($sql != '') {
+				$command=$connection->createCommand($sql);
+				if (strpos($sql,':id')!==false)
+					$command->bindParam(':id',$row['id'],PDO::PARAM_INT);
+				if (strpos($sql,':visitid')!==false)
+					$command->bindParam(':visitid',$this->id,PDO::PARAM_INT);
+				if (strpos($sql,':goodsid')!==false)
+					$command->bindParam(':goodsid',$row['goodsid'],PDO::PARAM_INT);
+				if (strpos($sql,':nmr')!==false)
+					$command->bindParam(':nmr',$row['nmr'],PDO::PARAM_INT);
+				if (strpos($sql,':money')!==false)
+					$command->bindParam(':money',$row['money'],PDO::PARAM_INT);
+				$command->execute();
+			}
 		}
-		$transaction=$connection->beginTransaction();
-		try {
-			$this->saveoffers($connection,$arr);
-			$transaction->commit();
-		}
-		catch(Exception $e) {
-			$transaction->rollback();
-			throw new CHttpException(404,'Cannot update.');
-		}
-	}
-
-	public function saveoffers($connection,$array){
-		switch ($this->scenario){
-			case 'edit':
-				$tabName = $this->tableName("sa_visit_offer");
-				foreach ($array as $k => $v) {
-					$tabName = $this->tableName("sa_visit_offer");
-					$sql = "insert into $tabName(
-							visitid, goodsid, nmr, money
-						) values (
-							:visitid, :goodsid, :nmr, :money
-						)";
-					$command = $connection->createCommand($sql);
-					if (strpos($sql, ':goodsid') !== false)
-						$command->bindParam(':goodsid', $v['seats'], PDO::PARAM_INT);
-					if (strpos($sql, ':visitid') !== false)
-						$command->bindParam(':visitid', $this->id, PDO::PARAM_INT);
-					if (strpos($sql, ':nmr') !== false)
-						$command->bindParam(':nmr', $v['number'], PDO::PARAM_INT);
-					if (strpos($sql, ':money') !== false)
-						$command->bindParam(':money', $v['amount'], PDO::PARAM_INT);
-					$command->execute();
-				}
-				return true;
-				break;
-			case 'new':
-				foreach ($array as $k => $v) {
-					$tabName = $this->tableName("sa_visit_offer");
-					$sql = "insert into $tabName(
-							visitid, goodsid, nmr, money
-						) values (
-							:visitid, :goodsid, :nmr, :money
-						)";
-					$command = $connection->createCommand($sql);
-					if (strpos($sql, ':goodsid') !== false)
-						$command->bindParam(':goodsid', $v['seats'], PDO::PARAM_INT);
-					if (strpos($sql, ':visitid') !== false)
-						$command->bindParam(':visitid', $this->id, PDO::PARAM_INT);
-					if (strpos($sql, ':nmr') !== false)
-						$command->bindParam(':nmr', $v['number'], PDO::PARAM_INT);
-					if (strpos($sql, ':money') !== false)
-						$command->bindParam(':money', $v['amount'], PDO::PARAM_INT);
-					$command->execute();
-				}
-				return true;
-				break;
-		}
-	}
-
-	public function deletOne($connection){
-		$tabName = $this->tableName("sa_visit_offer");
-		$oNe = "delete from $tabName where visitid = :visitid";
-		$command=$connection->createCommand($oNe);
-		if (strpos($oNe,':visitid')!==false)
-			$command->bindParam(':visitid',$this->id,PDO::PARAM_INT);
-		$command->execute();
 		return true;
 	}
-
-
-
 
 
 

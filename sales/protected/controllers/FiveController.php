@@ -33,6 +33,26 @@ class FiveController extends Controller
         $this->render('index',array('model'=>$model));
     }
 
+    //记录列表
+    public function actionlist($pageNum=0)
+    {
+        $model = new FiveList();
+        if (isset($_POST['FiveList'])) {
+            $model->attributes = $_POST['FiveList'];
+        } else {
+            $session = Yii::app()->session;
+            if (isset($session['criteria_t01']) && !empty($session['criteria_t01'])) {
+                $criteria = $session['criteria_t01'];
+                $model->setCriteria($criteria);
+            }
+        }
+        $model->determinePageNum($pageNum);
+        $model->retrieveDataByPages($model->pageNum);
+        $this->render('list',array('model'=>$model));
+    }
+
+
+
     /**
      * 拜访详情(只读)
      */
@@ -52,6 +72,7 @@ class FiveController extends Controller
     public function actionNew()
     {
         $model = new FiveForm('new');
+        $model->select();
         $this->render('form',array('model'=>$model,));
     }
 
@@ -61,12 +82,12 @@ class FiveController extends Controller
     public function actionSave()
     {
         if (isset($_POST['FiveForm'])) {
-            $model = new VisitForm($_POST['FiveForm']['scenario']);
+            $model = new FiveForm($_POST['FiveForm']['scenario']);
             $model->attributes = $_POST['FiveForm'];
             if ($model->validate()) {
                 $model->saveData();
                 Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
-                $this->redirect(Yii::app()->createUrl('visit/edit',array('index'=>$model->id)));
+                $this->redirect(Yii::app()->createUrl('Five/edit',array('index'=>$model->id)));
             } else {
                 $message = CHtml::errorSummary($model);
                 Dialog::message(Yii::t('dialog', 'Validation Message'), $message);
@@ -99,7 +120,7 @@ class FiveController extends Controller
             $model->saveData();
             Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Record Deleted'));
         }
-        $this->redirect(Yii::app()->createUrl('visit/index'));
+        $this->redirect(Yii::app()->createUrl('Five/index'));
     }
 
     protected function performAjaxValidation($model)
@@ -112,6 +133,20 @@ class FiveController extends Controller
     }
 
 
+    //下载
+    public function actiondownfile()
+    {
+        $url = $_POST['FiveForm']['url'];
+        $name = trim(strrchr($url, '/'),'/');
+
+        $file=fopen($url,"r");
+        header("Content-Type: application/octet-stream");
+        header("Accept-Ranges: bytes");
+        header("Accept-Length: ".filesize($url));
+        header("Content-Disposition: attachment; filename=$name");
+        echo fread($file,filesize($url));
+        fclose($file);
+    }
 
 
 

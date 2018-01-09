@@ -3,6 +3,7 @@
 class FiveForm extends CFormModel
 {
 	public $id;
+	public $cid;
 	public $uname; //销售人
 	public $ucod; //销售人编号
 	public $ujob; //销售人岗位
@@ -13,14 +14,18 @@ class FiveForm extends CFormModel
 	public $drscore; //总监评分
 	public $city; //总监评分
 	public $d_tm; //生成时间
+	public $url; //文件地址
+	public $uid; //文件地址
+	public $file; //文件上传
 	public $service = array();
 
 	public function rules()
 	{
 		return array(
-				array('id,uname,ucod,ujob,state,s_state,mrscore,drscore','safe'),
-				array('type,aim,datatime,area,road,crtype,crname,charge,phone','required'),
+				array('id,uname,ucod,ujob,state,s_state,mrscore,drscore,d_tm,url,uid,file','safe'),
+				array('uname','required'),
 		);
+
 	}
 
 	public function tableName($table){
@@ -33,38 +38,41 @@ class FiveForm extends CFormModel
 				'id'=>Yii::t('five','ID'),
 				'uname'=>Yii::t('five','User Name'),
 				'ucod'=>Yii::t('five','User Code'),
-				'ujob'=>Yii::t('five','Operating Post'),
-				'state'=>Yii::t('five','Complete State'),
+				'ujob'=>Yii::t('five','User Job'),
 				'entrytime'=>Yii::t('five','Entry Time'),
+				'd_tm'=>Yii::t('five','To Update Time'),
 				's_state'=>Yii::t('five','This State'),
 				'mrscore'=>Yii::t('five','General manager score'),
 				'drscore'=>Yii::t('five','Director scoring'),
+				'upf'=>Yii::t('five','Update File'),
 		);
 	}
-
 
 	public function retrieveData($index)
 	{
 		$One = $this->tableName("sa_five");
 		$Tow = $this->tableName("sa_five_news");
 		$city = Yii::app()->user->city_allow();
-		$sql = "SELECT a.id, a.uname,a.ucod,a.ujob,b.state,a.city,b.mrscore,b.drscore,b.uptime
+		$sql = "SELECT a.id, a.uname,a.ucod,a.ujob,a.city,b.*, b.state as s_state, b.id as cid
 				FROM  $One a
 				INNER JOIN $Tow b
 				ON b.uid = a.id
-				WHERE  a.id = $index and a.city in ($city)";
+				WHERE  b.id = $index and a.city in ($city)";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0)
 		{
 			foreach ($rows as $row)
 			{
 				$this->id = $row['id'];
+				$this->cid = $row['cid'];
+				$this->url = $row['url'];
 				$this->uname = $row['uname'];
 				$this->ucod = $row['ucod'];
 				$this->ujob = $row['ujob'];
 				$this->d_tm = General::toDate($row['uptime']);
-				$this->s_state = $row['state'];
+				$this->s_state = $row['s_state'];
 				$this->city = $row['city'];
+				$this->uid = $row['uid'];
 				$this->mrscore = $row['mrscore'];
 				$this->drscore = $row['drscore'];
 				break;
@@ -73,13 +81,29 @@ class FiveForm extends CFormModel
 		return true;
 	}
 
+	public function select(){
+		$id = Yii::app()->user->id;
+		$sql = "select * from sa_five WHERE uname = '$id'";
+		$rows = Yii::app()->db->createCommand($sql)->queryall();
+		foreach($rows as $k=>$v){
+			$this->uname = $v['uname'];
+			$this->ucod = $v['ucod'];
+			$this->ujob = $v['ujob'];
+			$this->uid = $v['id'];
+		}
+		return true;
+	}
+
 
 	public function saveData()
 	{
+		if($this->scenario !='delete'){
+			$this->File();
+		}
 		$connection = Yii::app()->db;
 		$transaction=$connection->beginTransaction();
 		try {
-			$this->savevisit($connection);
+			$this->savefive($connection);
 			$transaction->commit();
 		}
 		catch(Exception $e) {
@@ -88,74 +112,53 @@ class FiveForm extends CFormModel
 		}
 	}
 
-
-	protected function savevisit(&$connection)
+	protected function savefive(&$connection)
 	{
-		$tabName = $this->tableName("sa_visit");
+		$tabName = $this->tableName("sa_five_news");
 		$sql = '';
 		switch ($this->scenario) {
 			case 'delete':
-				$sql = "delete from $tabName where id = :id";
+				$sql = "delete from $tabName where id = id";
 				break;
 			case 'new':
 				$sql = "insert into $tabName(
-					    uname, type, aim, area, road, crtype, crname, sonname, charge, phone, remarks, city ,datatime
+					    uid, url, state, mrscore, drscore, luu, uptime
 				  )values (
-				  		:uname, :type, :aim, :area, :road, :crtype, :crname, :sonname, :charge, :phone, :remarks, :city, :datatime
+				  		:uid, :url, :state, :mrscore, :drscore, :luu, :uptime
 				  )";
 				break;
 			case 'edit':
 				$sql = "update $tabName set
-							uname = :uname,
-							type = :type,
-							aim = :aim,
-							area = :area,
-							road = :road,
-							datatime = :datatime,
-							crtype = :crtype,
-							crname = :crname,
-							sonname = :sonname,
-							charge = :charge,
-							phone = :phone,
-							remarks = :remarks
-						where id = :id and city = :city
+							uid = :uid,
+							url = :url,
+							state = :state,
+							mrscore = :mrscore,
+							drscore = :drscore,
+							luu = :luu
+						where id = :id
 						";
 				break;
 		}
-
-		$city = Yii::app()->user->city();
-		$uid = Yii::app()->user->id;
+		$luu = Yii::app()->user->id;
 		$command=$connection->createCommand($sql);
 		if (strpos($sql,':id')!==false)
 			$command->bindParam(':id',$this->id,PDO::PARAM_INT);
-		if (strpos($sql,':uname')!==false)
-			$command->bindParam(':uname',$uid,PDO::PARAM_STR);
-		if (strpos($sql,':type')!==false)
-			$command->bindParam(':type',$this->type,PDO::PARAM_STR);
-		if (strpos($sql,':aim')!==false)
-			$command->bindParam(':aim',$this->aim,PDO::PARAM_STR);
-		if (strpos($sql,':area')!==false)
-			$command->bindParam(':area',$this->area,PDO::PARAM_STR);
-		if (strpos($sql,':road')!==false)
-			$command->bindParam(':road',$this->road,PDO::PARAM_STR);
-		if (strpos($sql,':crtype')!==false)
-			$command->bindParam(':crtype',$this->crtype,PDO::PARAM_STR);
-		if (strpos($sql,':crname')!==false)
-			$command->bindParam(':crname',$this->crname,PDO::PARAM_STR);
-		if (strpos($sql,':sonname')!==false)
-			$command->bindParam(':sonname',$this->sonname,PDO::PARAM_STR);
-		if (strpos($sql,':charge')!==false)
-			$command->bindParam(':charge',$this->charge,PDO::PARAM_STR);
-		if (strpos($sql,':phone')!==false)
-			$command->bindParam(':phone',$this->phone,PDO::PARAM_INT);
-		if (strpos($sql,':remarks')!==false)
-			$command->bindParam(':remarks',$this->remarks,PDO::PARAM_STR);
-		if (strpos($sql,':city')!==false)
-			$command->bindParam(':city',$city,PDO::PARAM_STR);
-		if($this->scenario!='delete'){
-			if (strpos($sql,':datatime')!==false)
-				$tIme = General::toMyDate($this->datatime);
-			$command->bindParam(':datatime',$tIme,PDO::PARAM_INT);
+		if (strpos($sql,':uid')!==false)
+			$command->bindParam(':uid',$this->uid,PDO::PARAM_INT);
+		if (strpos($sql,':url')!==false)
+			$command->bindParam(':url',$this->url,PDO::PARAM_STR);
+		if (strpos($sql,':state')!==false)
+			$command->bindParam(':state',$this->s_state,PDO::PARAM_INT);
+		if (strpos($sql,':mrscore')!==false)
+			$command->bindParam(':mrscore',$this->mrscore,PDO::PARAM_INT);
+		if (strpos($sql,':drscore')!==false)
+			$command->bindParam(':drscore',$this->drscore,PDO::PARAM_INT);
+		if (strpos($sql,':luu')!==false)
+			$command->bindParam(':luu',$luu,PDO::PARAM_STR);
+		if($this->scenario == 'new'){
+			if (strpos($sql,':uptime')!==false)
+				$tIme = General::toMyDate($this->d_tm);
+			$command->bindParam(':uptime',$tIme,PDO::PARAM_INT);
 		}
 		$command->execute();
 		if ($this->scenario=='new')
@@ -163,7 +166,26 @@ class FiveForm extends CFormModel
 		return true;
 	}
 
+	public function File(){
+		$attach = CUploadedFile::getInstanceByName('FiveForm[file]');
+		$retValue = "OK";
+		if($attach->size > 10*1024*1024){
+			$retValue = Yii::t('five','File size more than 10MB, please reupload files less than 10MB');
+		}elseif($attach->type != 'audio/mp3'){
+			$retValue = Yii::t('five','File upload types do not conform, please upload legitimate Mp4 format video or MP3 audio');
+		}else{
+			file_get_contents($attach->tempName);
+			$name = Yii::app()->basePath.'/upload/'.$attach->name;
+			$attach->saveAs($name);
+			$this->url = $name;
+		}
+		if($retValue == "OK"){
+			return true;
+		}else{
+			return $retValue;
+		}
 
+	}
 
 
 }

@@ -42,7 +42,6 @@ class SalesController extends Controller
     public function actionNew()
     {
         $model = new SalesForm('new');
-        $model->select();
         $this->render('form',array('model'=>$model));
     }
 
@@ -51,22 +50,22 @@ class SalesController extends Controller
      */
     public function actionSave()
     {
+
         if (isset($_POST['SalesForm'])) {
             $model = new SalesForm($_POST['SalesForm']['scenario']);
             $model->attributes = $_POST['SalesForm'];
             if ($model->validate()) {
-                if($_POST['SalesForm']['scenario']=='new'){
                     $s = $_POST['SalesForm']['detail'];
                     $sum=0;
                     foreach($s as $k=>$v){
                         $sum+=$v['total'];
                     }
                     $model->savesum($sum);
+                    $model->saveData();
+                if($_POST['SalesForm']['scenario']!='new') {
+                    $model->code = $_POST['SalesForm']['code'];
                 }
-                $model->saveData();
-                if($_POST['SalesForm']['scenario']=='new'){
                     $model->savegood($_POST['SalesForm']['detail']);
-                }
                 Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Save Done'));
                 $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$model->id)));
             } else {
@@ -89,7 +88,6 @@ class SalesController extends Controller
             $this->render('form',array('model'=>$model));
         }
     }
-
 
     /**
      *删除一条

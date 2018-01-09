@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-01-05 15:30:21
+Date: 2018-01-09 11:50:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -63,6 +63,27 @@ INSERT INTO `sa_classify_v` VALUES ('58', '销售商品及服务费', '');
 INSERT INTO `sa_classify_v` VALUES ('59', '康尔思商品', '');
 
 -- ----------------------------
+-- Table structure for sa_customer
+-- ----------------------------
+DROP TABLE IF EXISTS `sa_customer`;
+CREATE TABLE `sa_customer` (
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
+  `crname` varchar(64) DEFAULT NULL COMMENT '客户名字',
+  `address` varchar(64) DEFAULT NULL COMMENT '客户地址',
+  `area` varchar(64) DEFAULT NULL COMMENT '客户区域',
+  `branch` varchar(64) DEFAULT NULL COMMENT '客户分店',
+  `classid` int(64) DEFAULT NULL COMMENT '客户种类',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of sa_customer
+-- ----------------------------
+INSERT INTO `sa_customer` VALUES ('1', '测试客户', '东区XX街XX号', '东区', null, '20');
+INSERT INTO `sa_customer` VALUES ('2', '测试客户2', '西区XX街XX号', '西区', null, '21');
+INSERT INTO `sa_customer` VALUES ('3', '店名例子', '西区XX接XX号', '东区', null, '25');
+
+-- ----------------------------
 -- Table structure for sa_five
 -- ----------------------------
 DROP TABLE IF EXISTS `sa_five`;
@@ -90,20 +111,23 @@ INSERT INTO `sa_five` VALUES ('1', 'admin', 'AS58791', '销售员', '1', '1,2,3,
 -- ----------------------------
 DROP TABLE IF EXISTS `sa_five_news`;
 CREATE TABLE `sa_five_news` (
-  `id` int(64) NOT NULL,
+  `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(64) NOT NULL,
-  `url` varchar(255) NOT NULL COMMENT '五部曲视频地址',
-  `state` varchar(16) DEFAULT NULL COMMENT '当前阶段',
+  `url` varchar(255) DEFAULT NULL COMMENT '五部曲视频地址',
+  `state` int(16) DEFAULT NULL COMMENT '当前阶段',
   `mrscore` int(12) DEFAULT NULL COMMENT '总经理评分',
   `drscore` int(12) DEFAULT NULL COMMENT '总监评分',
   `uptime` datetime DEFAULT NULL COMMENT '上传时间',
+  `luu` varchar(30) DEFAULT NULL COMMENT '最后改变用户',
+  `lud` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_five_news
 -- ----------------------------
-INSERT INTO `sa_five_news` VALUES ('1', '1', '', '1', null, null, '2018-01-05 15:20:39');
+INSERT INTO `sa_five_news` VALUES ('1', '1', 'D:\\Software\\PHP\\WWW\\Sales\\sales\\protected/upload/9328.mp3', '1', '100', '100', '2018-01-08 00:00:00', 'admin', '2018-01-09 10:56:48');
+INSERT INTO `sa_five_news` VALUES ('2', '1', 'D:\\Software\\PHP\\WWW\\Sales\\sales\\protected/upload/1.mp3', '2', '100', '100', '2018-01-08 00:00:00', 'admin', '2018-01-09 11:04:06');
 
 -- ----------------------------
 -- Table structure for sa_goods_v
@@ -8148,17 +8172,17 @@ CREATE TABLE `sa_order` (
   `address` varchar(64) NOT NULL COMMENT '客户地址',
   `city` char(5) NOT NULL COMMENT '地区',
   `region` varchar(64) NOT NULL COMMENT '客户区域',
-  `status` varchar(30) NOT NULL COMMENT '订单状态(0.完成,1,进行,2待确认)',
+  `status` varchar(30) DEFAULT NULL COMMENT '订单状态(0.完成,1,进行,2待确认)',
   `luu` varchar(30) NOT NULL COMMENT '最后更改用户',
   `lcd` datetime DEFAULT NULL COMMENT '创建日期',
   `lud` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_order
 -- ----------------------------
-INSERT INTO `sa_order` VALUES ('3', '1514966352vPysadmin', '着许平', '182', 'admin', '东郊XX路48号', 'HK', '西区', '', 'admin', '2018-01-11 00:00:00', '2018-01-04 15:29:42');
+INSERT INTO `sa_order` VALUES ('1', '1515469153EIiKadmin', 'Text', '182', 'admin', '东郊XX路48号', 'HK', '东郊', null, 'admin', '2018-01-03 00:00:00', '2018-01-09 11:39:13');
 
 -- ----------------------------
 -- Table structure for sa_order_good
@@ -8171,19 +8195,14 @@ CREATE TABLE `sa_order_good` (
   `number` int(64) NOT NULL,
   `ismony` int(64) NOT NULL,
   `goodagio` int(64) DEFAULT '0' COMMENT '折扣',
+  `vid` int(64) NOT NULL COMMENT '服务ID',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_order_good
 -- ----------------------------
-INSERT INTO `sa_order_good` VALUES ('2', '32', '1514961809NUfVadmin', '1', '0', '0');
-INSERT INTO `sa_order_good` VALUES ('3', '1171', '1514961809NUfVadmin', '1', '0', '0');
-INSERT INTO `sa_order_good` VALUES ('4', '19', '1514961809NUfVadmin', '1', '0', '0');
-INSERT INTO `sa_order_good` VALUES ('6', '996', '1514966047df7Vadmin', '1', '0', '0');
-INSERT INTO `sa_order_good` VALUES ('7', '731', '1514965379APXzadmin', '2', '361', '0');
-INSERT INTO `sa_order_good` VALUES ('8', '731', '1514966352vPysadmin', '1', '182', '0');
-INSERT INTO `sa_order_good` VALUES ('10', '53', '1515050421wYXAadmin', '1', '160', '0');
+INSERT INTO `sa_order_good` VALUES ('4', '59', '1515469153EIiKadmin', '0', '140', '0', '28');
 
 -- ----------------------------
 -- Table structure for sa_steps
@@ -8239,7 +8258,7 @@ CREATE TABLE `sa_type` (
   `typeid` int(64) NOT NULL,
   `pid` int(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_type
@@ -8288,6 +8307,7 @@ INSERT INTO `sa_type` VALUES ('41', '东/西北菜', '2', '3');
 INSERT INTO `sa_type` VALUES ('42', '测试修改', '1', '0');
 INSERT INTO `sa_type` VALUES ('43', '测试123', '2', '42');
 INSERT INTO `sa_type` VALUES ('44', '子类添加', '2', '42');
+INSERT INTO `sa_type` VALUES ('45', '但覅官方机构', '2', '1');
 
 -- ----------------------------
 -- Table structure for sa_visit
@@ -8296,7 +8316,7 @@ DROP TABLE IF EXISTS `sa_visit`;
 CREATE TABLE `sa_visit` (
   `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
   `uname` char(64) NOT NULL COMMENT '销售员名字',
-  `type` char(64) NOT NULL COMMENT '类型:0=陌拜,1=日常更进，2=客户资源,3=电话上门',
+  `type` varchar(64) NOT NULL COMMENT '类型:0=陌拜,1=日常更进，2=客户资源,3=电话上门',
   `aim` char(64) NOT NULL COMMENT '目的:0=首次,1=报价，2=客诉，3=收款，4=追款，5=签单，6=续约，7=回访，8=其他，9=更改项目.',
   `area` char(64) NOT NULL COMMENT '区域',
   `road` char(64) NOT NULL COMMENT '街道',
@@ -8311,16 +8331,16 @@ CREATE TABLE `sa_visit` (
   `lcd` datetime NOT NULL COMMENT '创建日期',
   `lud` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_visit
 -- ----------------------------
 INSERT INTO `sa_visit` VALUES ('2', 'admin', '客户资源', '其他', '西区', '西区258号', '西餐', '谢文平火锅', '', '张三', '15889748631', '489498498', 'HK', 'admin', '2018-01-07 00:00:00', '2018-01-03 16:58:09');
-INSERT INTO `sa_visit` VALUES ('3', 'admin', '报价', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'HK', 'admin', '2018-01-25 00:00:00', '2018-01-04 14:48:58');
-INSERT INTO `sa_visit` VALUES ('4', 'admin', '日常跟进', '其他', '成华区', '地税局', '星马越泰菜', '酒宴火锅', '无', '李四', '15875613215', 'ljsdfijiojo', 'HK', 'admin', '2018-01-17 00:00:00', '2018-01-05 10:05:51');
-INSERT INTO `sa_visit` VALUES ('5', 'admin', '日常跟进', '回访', '青羊区', '地税局', '星马越泰菜', 'XX越泰菜', '', '张三', '18897641324', '48948', 'HK', 'admin', '2018-01-17 00:00:00', '2018-01-05 10:26:59');
-INSERT INTO `sa_visit` VALUES ('6', 'admin', '测试', '测试', '测试', '测试', '测试', '测试', '测试', '测试', '测试', '测试', 'HK', '测试', '2018-01-25 00:00:00', '2018-01-05 10:53:59');
+INSERT INTO `sa_visit` VALUES ('3', 'admin', '电话上门', '其他', '东区', '地税局', '西餐', '测试', '无', '王五', '18946123456', '测试', 'HK', 'admin', '2018-01-25 00:00:00', '2018-01-06 16:40:17');
+INSERT INTO `sa_visit` VALUES ('7', 'admin', '陌拜', '首次', '西区', '西区258号', '星马越泰菜', '谢文平火锅', '暂时没有', '张三', '18897641324', '测试', 'HK', 'admin', '2018-01-03 00:00:00', '2018-01-08 09:36:39');
+INSERT INTO `sa_visit` VALUES ('10', 'admin', '客户资源', '其他', '西区', '西区258号', '西餐', '谢文平火锅', '', '张三', '15889748631', '', 'HK', 'admin', '2018-01-01 00:00:00', '2018-01-08 09:50:31');
+INSERT INTO `sa_visit` VALUES ('11', 'admin', '电话上门', '回访', '西区', '地税局', '星马越泰菜', '谢文平火锅', '', '李四', '12589489898', '测试', 'HK', 'admin', '2018-02-03 00:00:00', '2018-01-08 17:09:53');
 
 -- ----------------------------
 -- Table structure for sa_visit_offer
@@ -8328,19 +8348,19 @@ INSERT INTO `sa_visit` VALUES ('6', 'admin', '测试', '测试', '测试', '测�
 DROP TABLE IF EXISTS `sa_visit_offer`;
 CREATE TABLE `sa_visit_offer` (
   `id` int(64) unsigned NOT NULL AUTO_INCREMENT,
-  `visitid` int(64) NOT NULL COMMENT '拜访记录的ID',
-  `goodsid` int(64) NOT NULL COMMENT '报价使用的物品id',
-  `nmr` int(16) NOT NULL COMMENT '数量',
-  `money` int(64) NOT NULL COMMENT '年金额',
+  `visitid` int(64) DEFAULT NULL COMMENT '拜访记录的ID',
+  `goodsid` int(64) DEFAULT NULL COMMENT '报价使用的物品id',
+  `nmr` int(16) DEFAULT NULL COMMENT '数量',
+  `money` int(64) DEFAULT NULL COMMENT '年金额',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sa_visit_offer
 -- ----------------------------
 INSERT INTO `sa_visit_offer` VALUES ('1', '1', '0', '1', '25');
-INSERT INTO `sa_visit_offer` VALUES ('14', '5', '996', '1', '1528');
-INSERT INTO `sa_visit_offer` VALUES ('16', '6', '22', '0', '0');
-INSERT INTO `sa_visit_offer` VALUES ('17', '6', '780', '0', '0');
-INSERT INTO `sa_visit_offer` VALUES ('18', '2', '820', '1', '4242');
 INSERT INTO `sa_visit_offer` VALUES ('19', '4', '51', '0', '0');
+INSERT INTO `sa_visit_offer` VALUES ('23', '7', '2844', '0', '0');
+INSERT INTO `sa_visit_offer` VALUES ('29', '10', '3385', '1', '234');
+INSERT INTO `sa_visit_offer` VALUES ('31', '10', '3374', '1', '234');
+INSERT INTO `sa_visit_offer` VALUES ('32', '11', '757', '2', '4');

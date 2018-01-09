@@ -1,17 +1,18 @@
 <?php
-$this->pageTitle=Yii::app()->name . ' - Supplier Form';
+$this->pageTitle=Yii::app()->name . ' - five Form';
 ?>
 
 <?php $form=$this->beginWidget('TbActiveForm', array(
-'id'=>'sales-form',
+'id'=>'five-form',
 'enableClientValidation'=>true,
 'clientOptions'=>array('validateOnSubmit'=>true,),
+'htmlOptions'=>array('enctype'=>'multipart/form-data'),
 'layout'=>TbHtml::FORM_LAYOUT_HORIZONTAL,
 )); ?>
 
 <section class="content-header">
 	<h1>
-		<strong><?php echo Yii::t('supplier','Supplier Form'); ?></strong>
+		<strong><?php echo Yii::t('five','Five Form'); ?></strong>
 	</h1>
 <!--
 	<ol class="breadcrumb">
@@ -32,7 +33,7 @@ $this->pageTitle=Yii::app()->name . ' - Supplier Form';
 			}
 		?>
 		<?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
-				'submit'=>Yii::app()->createUrl('five/index')));
+				'submit'=>Yii::app()->createUrl('five/list')));
 		?>
 <?php if ($model->scenario!='view'): ?>
 			<?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
@@ -45,12 +46,22 @@ $this->pageTitle=Yii::app()->name . ' - Supplier Form';
 		);
 	?>
 <?php endif ?>
+		<?php if ($model->scenario!='new'): ?>
+		<?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Download'), array(
+				'submit'=>Yii::app()->createUrl('five/downfile')));
+		?>
+		<?php endif ?>
 	</div>
-	</div></div>
+	</div>
+	</div>
 	<div class="box box-info">
 		<div class="box-body">
 			<?php echo $form->hiddenField($model, 'scenario'); ?>
 			<?php echo $form->hiddenField($model, 'id'); ?>
+			<?php echo $form->hiddenField($model, 'url'); ?>
+			<?php echo $form->hiddenField($model, 'uid'); ?>
+			<?php echo $form->hiddenField($model, 'ucod'); ?>
+			<?php echo $form->hiddenField($model, 'ujob'); ?>
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'uname',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-7">
@@ -76,6 +87,21 @@ $this->pageTitle=Yii::app()->name . ' - Supplier Form';
 				); ?>
 				</div>
 			</div>
+
+			<div class="form-group">
+				<?php echo $form->labelEx($model,'s_state',array('class'=>"col-sm-2 control-label")); ?>
+				<div class="col-sm-7">
+					<?php echo $form->dropDownList($model, 's_state',
+							array('1'=>1,
+									'2'=>2,
+									'3'=>3,
+									'4'=>4,
+									'5'=>5,
+									)
+					); ?>
+				</div>
+			</div>
+
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'d_tm',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-7">
@@ -88,7 +114,7 @@ $this->pageTitle=Yii::app()->name . ' - Supplier Form';
 				<?php echo $form->labelEx($model,'mrscore',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-5">
 				<?php echo $form->textField($model, 'mrscore',
-					array('maxlength'=>100,'readonly'=>($model->scenario=='view'))
+					array('maxlength'=>100,'readonly'=>!Yii::app()->user->validRWFunction('T08'))
 				); ?>
 				</div>
 			</div>
@@ -96,8 +122,14 @@ $this->pageTitle=Yii::app()->name . ' - Supplier Form';
 				<?php echo $form->labelEx($model,'drscore',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-7">
 				<?php echo $form->textField($model, 'drscore',
-					array('size'=>40,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+					array('size'=>40,'maxlength'=>100,'readonly'=>!Yii::app()->user->validRWFunction('T09'))
 				); ?>
+				</div>
+			</div>
+			<div class="form-group">
+				<?php echo $form->labelEx($model,'upf',array('class'=>"col-sm-2 control-label")); ?>
+				<div class="col-sm-7">
+					<?php echo $form->FileField($model,'file'); ?>
 				</div>
 			</div>
 		</div>
@@ -107,12 +139,22 @@ $this->pageTitle=Yii::app()->name . ' - Supplier Form';
 <?php $this->renderPartial('//site/removedialog'); ?>
 
 <?php
-$js = Script::genDeleteData(Yii::app()->createUrl('sales/delete'));
+$js = Script::genDeleteData(Yii::app()->createUrl('five/delete'));
 Yii::app()->clientScript->registerScript('deleteRecord',$js,CClientScript::POS_READY);
 
 $js = Script::genReadonlyField();
 Yii::app()->clientScript->registerScript('readonlyClass',$js,CClientScript::POS_READY);
+
+if ($model->scenario!='view') {
+	$js = Script::genDatePicker(array(
+			'FiveForm_d_tm',
+	));
+	Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);
+}
+
 ?>
+
+
 
 <?php $this->endWidget(); ?>
 

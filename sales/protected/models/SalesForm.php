@@ -28,6 +28,7 @@ class SalesForm extends CFormModel
 					'tgname'=>0,
 					'gmoney'=>0,
 					'goodagio'=>0,
+					'number'=>0,
 					'money'=>0,
 					'total'=>0,
 			),
@@ -130,13 +131,28 @@ class SalesForm extends CFormModel
 		$tab = $this->tableNames("sa_order_good");
 		$tabn = $this->tableNames("sa_goods_v");
 		$order = $this->code;
-		$sql = "SELECT a.number, a.ismony, a.goodagio, b.name as gname, b.price as gmoney
+		$sql = "SELECT a.*, b.name as gname, b.price as gmoney
 				FROM $tab a
 				INNER JOIN $tabn b
 				ON a.goodid = b.id
 				WHERE a.orderid = '$order'";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
-		$this->good = $rows;
+		if (count($rows) > 0) {
+			$this->detail = array();
+			foreach ($rows as $row) {
+				$temp = array();
+				$temp['id'] = $row['id'];
+				$temp['tgname'] = $row['goodid'];
+				$temp['orderid'] = $row['orderid'];
+				$temp['number'] = $row['number'];
+				$temp['gmoney'] = $row['gmoney'];
+				$temp['total'] = $row['ismony'];
+				$temp['goodagio'] = $row['goodagio'];
+				$temp['uflag'] = 'N';
+				$temp['gname'] = $row['vid'];
+				$this->detail[] = $temp;
+			}
+		}
 		return true;
 	}
 	public function validateCode($attribute, $params) {
@@ -197,12 +213,10 @@ class SalesForm extends CFormModel
 		$this->select();
 		return true;
 	}
-
 	public function savesum($sum=0){
 		$this->sum = $sum;
 		return true;
 	}
-
 
 	public function saveData()
 	{
@@ -294,78 +308,65 @@ class SalesForm extends CFormModel
 		}
 	}
 
-	protected function savegoods($connection,$array,$code=0)
-	{
-		switch ($this->scenario) {
-			case 'edit':
-				$this->GoodsDel($connection,$code);
-				$tabName = $this->tableNames("sa_order_good");
-				foreach ($array as $k => $v) {
-					$sql = "insert into $tabName(
-							goodid, orderid, number, ismony
-						) values (
-							:goodid, :orderid, :number, :ismony
-						)";
-					$command = $connection->createCommand($sql);
-					if (strpos($sql, ':goodid') !== false)
-						$command->bindParam(':goodid', $v['tgname'], PDO::PARAM_STR);
-					if (strpos($sql, ':orderid') !== false)
-						$command->bindParam(':orderid', $code, PDO::PARAM_STR);
-					if (strpos($sql, ':number') !== false)
-						$command->bindParam(':number', $v['number'], PDO::PARAM_STR);
-					if (strpos($sql, ':ismony') !== false)
-						$command->bindParam(':ismony', $v['total'], PDO::PARAM_STR);
-					$command->execute();
-				}
-				return true;
-				break;
-
-			case 'new':
-				foreach ($array as $k => $v) {
-					$tabName = $this->tableNames("sa_order_good");
-					$sql = "insert into $tabName(
-							goodid, orderid, number, ismony
-						) values (
-							:goodid, :orderid, :number, :ismony
-						)";
-					$command = $connection->createCommand($sql);
-					if (strpos($sql, ':goodid') !== false)
-						$command->bindParam(':goodid', $v['tgname'], PDO::PARAM_STR);
-					if (strpos($sql, ':orderid') !== false)
-						$command->bindParam(':orderid', $this->code, PDO::PARAM_STR);
-					if (strpos($sql, ':number') !== false)
-						$command->bindParam(':number', $v['number'], PDO::PARAM_STR);
-					if (strpos($sql, ':ismony') !== false)
-						$command->bindParam(':ismony', $v['total'], PDO::PARAM_STR);
-					$command->execute();
-				}
-				return true;
-				break;
+	public function savegoods($connection){
+		foreach ($this->detail as $v) {
+			$sql = '';
+			switch ($this->scenario) {
+				case 'delete':
+					$sql = "delete from sa_order_good where id = :id";
+					break;
+				case 'new':
+					if ($v['uflag']=='Y') {
+						$sql = "insert into sa_order_good(
+									goodid, orderid, number, ismony, vid
+								) values (
+									:goodid, :orderid, :number, :ismony, :vid
+								)";
+					}
+					break;
+				case 'edit':
+					switch ($v['uflag']) {
+						case 'D':
+							$sql = "delete from sa_order_good where id = :id";
+							break;
+						case 'Y':
+							$sql = ($v['id']==0)
+									?
+									"insert into sa_order_good(
+									goodid, orderid, number, ismony, vid
+								) values (
+									:goodid, :orderid, :number, :ismony, :vid
+								)
+									"
+									:
+									"update sa_order_good set
+										goodsid = :goodsid,
+										number = :number,
+										ismony = :ismony
+										vid = :vid
+									where id = :id
+									";
+							break;
+					}
+					break;
+			}
+			if ($sql != '') {
+				$command = $connection->createCommand($sql);
+				if (strpos($sql, ':id') !== false)
+					$command->bindParam(':id', $v['id'], PDO::PARAM_STR);
+				if (strpos($sql, ':goodid') !== false)
+					$command->bindParam(':goodid', $v['tgname'], PDO::PARAM_STR);
+				if (strpos($sql, ':orderid') !== false)
+					$command->bindParam(':orderid', $this->code, PDO::PARAM_STR);
+				if (strpos($sql, ':number') !== false)
+					$command->bindParam(':number', $v['number'], PDO::PARAM_STR);
+				if (strpos($sql, ':ismony') !== false)
+					$command->bindParam(':ismony', $v['total'], PDO::PARAM_STR);
+				if (strpos($sql, ':vid') !== false)
+					$command->bindParam(':vid', $v['gname'], PDO::PARAM_INT);
+				$command->execute();
+			}
 		}
-
-	}
-
-	public function editgoods($arr,$code){
-		$connection = Yii::app()->db;
-		$transaction=$connection->beginTransaction();
-		try {
-			$this->savegoods($connection,$arr,$code);
-			$transaction->commit();
-		}
-		catch(Exception $e) {
-			$transaction->rollback();
-			throw new CHttpException(404,'Cannot update.');
-		}
-	}
-
-
-	public function GoodsDel($connection,$code){
-		$tabName = $this->tableNames("sa_order_good");
-		$One = "delete from $tabName where orderid = :orderid";
-		$command = $connection->createCommand($One);
-		if (strpos($One, ':orderid') !== false)
-			$command->bindParam(':orderid', $code, PDO::PARAM_STR);
-		$command->execute();
 		return true;
 	}
 

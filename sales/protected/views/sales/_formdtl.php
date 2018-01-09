@@ -1,18 +1,16 @@
 <tr>
 	<td>
-		<?php echo TbHtml::dropDownList($this->getFieldName('gname'),  1,General::getGoodsList(),
+		<?php echo TbHtml::dropDownList($this->getFieldName('gname'),$this->record['gname'],General::getGoodsList(),
 								array('class'=>'setOne')
 		); ?>
 	</td>
 	<td>
-		<?php echo TbHtml::dropDownList($this->getFieldName('tgname'),  1,array(
-			'Please'=>Yii::t('sales','Please choose')
-		),
+		<?php echo TbHtml::dropDownList($this->getFieldName('tgname'),$this->record['tgname'],General::getTowlist(),
 								array('class'=>'setZwo')
 		); ?>
 	</td>
 	<td>
-		<?php echo TbHtml::textField($this->getFieldName('number'), 1,
+		<?php echo TbHtml::textField($this->getFieldName('number'), $this->record['number'],
 				array('readonly'=>!Yii::app()->user->validRWFunction('T01'),
 						'size'=>'7', 'maxlength'=>'10',)
 		); ?>
@@ -40,8 +38,10 @@
 			echo Yii::app()->user->validRWFunction('T01')
 				? TbHtml::Button('-',array('id'=>'btnDelRow','title'=>Yii::t('misc','Delete'),'size'=>TbHtml::BUTTON_SIZE_SMALL))
 				: '&nbsp;';
-		?>
 
+		?>
+		<?php echo CHtml::hiddenField($this->getFieldName('uflag'),$this->record['uflag']); ?>
+		<?php echo CHtml::hiddenField($this->getFieldName('id'),$this->record['id']); ?>
 	</td>
 </tr>
 <script type="text/javascript">
@@ -62,7 +62,7 @@
 		var sid = '#'+'SalesForm_detail_'+r+'_tgname';
 		$(id).unbind();
 		$(document).ready(function(){
-			$(id).change(function() {
+			$(id).change(function(){
 				$.get("<?php echo Yii::app()->createUrl('sales/two'); ?>",
 						{ sid: $(id).val()},
 						function(data){
@@ -146,8 +146,6 @@ function ismo(){
 			})
 		});
 	}
-
-
 	function good(){
 		var inputArr = $('.isgood');
 		//3.循环处理input,并定义结果集
@@ -159,7 +157,4 @@ function ismo(){
 		//5.打印结果
 		console.log(result);
 	}
-
-
-
 </script>

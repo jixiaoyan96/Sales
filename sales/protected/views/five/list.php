@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name . ' - five';
 
 <section class="content-header">
 	<h1>
-		<strong><?php echo Yii::t('five','Staff List'); ?></strong>
+		<strong><?php echo Yii::t('five','Five List'); ?></strong>
 	</h1>
 <!--
 	<ol class="breadcrumb">
@@ -32,6 +32,9 @@ $this->pageTitle=Yii::app()->name . ' - five';
 					'submit'=>Yii::app()->createUrl('five/new'),
 				)); 
 		?>
+		<?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
+				'submit'=>Yii::app()->createUrl('five/index')));
+		?>
 	</div>
 	</div></div>
 	<?php 
@@ -41,8 +44,8 @@ $this->pageTitle=Yii::app()->name . ' - five';
 		$this->widget('ext.layout.ListPageWidget', array(
 			'title'=>Yii::t('five','Five List'),
 			'model'=>$model,
-				'viewhdr'=>'//five/_listhdr',
-				'viewdtl'=>'//five/_listdtl',
+				'viewhdr'=>'//five/_listhdr_v',
+				'viewdtl'=>'//five/_listdtl_v',
 				'gridsize'=>'24',
 				'height'=>'600',
 				'search'=>$search,
