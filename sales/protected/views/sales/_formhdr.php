@@ -1,27 +1,22 @@
 <tr>
 	<th>
-		<?php echo TbHtml::label($this->getLabelName('Use of services'), false); ?>
+		<?php echo TbHtml::label($this->getLabelName('task'), false); ?>
 	</th>
 	<th>
-		<?php echo TbHtml::label($this->getLabelName('Use of goods'), false); ?>
+		<?php echo TbHtml::label($this->getLabelName('qty'), false); ?>
 	</th>
 	<th>
-		<?php echo TbHtml::label($this->getLabelName('Goods Number'), false); ?>
+		<?php echo TbHtml::label($this->getLabelName('deadline'), false); ?>
 	</th>
 	<th>
-		<?php echo TbHtml::label($this->getLabelName('Goods Price'), false); ?>
+		<?php echo TbHtml::label($this->getLabelName('finish'), false); ?>
 	</th>
 	<th>
-		<?php echo TbHtml::label($this->getLabelName('Goodagio'), false); ?>
-	</th>
-	<th>
-		<?php echo TbHtml::label($this->getLabelName('Total'), false); ?>
-	</th>
-	<th>
-		<?php echo Yii::app()->user->validRWFunction('T01') ?
+		<?php echo Yii::app()->user->validRWFunction('A05') ?
 				TbHtml::Button('+',array('id'=>'btnAddRow','title'=>Yii::t('misc','Add'),'size'=>TbHtml::BUTTON_SIZE_SMALL))
 				: '&nbsp;';
 		?>
 	</th>
-
 </tr>
+
+

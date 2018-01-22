@@ -1,8 +1,8 @@
 <?php
 return array(
-	'Supplier'=>'销售订单',
-	'Supplier Form'=>'销售订单',
-	'Supplier List'=>'销售订单',
+	'Supplier'=>'供应商',
+	'Supplier Form'=>'供应商表单',
+	'Supplier List'=>'供应商列表',
 
 	'AI'=>'IA 供应商',
 	'BI'=>'IB 供应商',

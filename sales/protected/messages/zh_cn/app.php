@@ -1,39 +1,30 @@
 <?php
 return array(
-	'Sales management system'=>'销售管理系统',
-	'Sales management System - UAT'=>'销售管理系统 - 测试版',
-	'LBS Sales management'=>'LBS 销售管理',
-	'LBS Sales management - UAT'=>'LBS 销售管理 - 测试版',
+	'Daily Report System'=>'日报表系统',
+	'Daily Report System - UAT'=>'日报表系统 - 测试版',
+	'LBS Daily Management'=>'LBS 日常管理',
+	'LBS Daily Management - UAT'=>'LBS 日常管理 - 测试版',
 
-	'sales'=>'销售管理',
 	'System Change'=>'系统切换',
-	'Sales management'=>'销售管理系统',
+	'Daily Report'=>'日报表系统',
 	'Accounting'=>'会计系统',
 	'Operation'=>'营运系统',
 	'Personnel'=>'人事系统',
 
-	'Personal'=>'销售个人',
-	'Sales Admin'=>'销售管理',
-	'Sales Order'=>'销售落单',
-	'Sales Visit'=>'销售拜访',
-	'Sales Pentalogy'=>'销售五部曲',
+	//张静增加开始
+	'Quiz'=>'测验单数据',
+	'LBS Quiz Management'=>'LBS 测验系统 -测试版',
 
-	'Personal Visit'=>'拜访表',
-	'Sales order'=>'销售订单',
-	'Stop customer visits'=>'停止客户拜访表',
-	'Pentalogy'=>'销售五部曲',
-	'Edit Type'=>'种类分类',
+	'All quiz records'=>'测验单数据',
+	'Quiz questions'=>'测验问题库数据',
+	'Quiz questions add'=>'增加测验问题',
+	'Quiz questions manage'=>'测验问题详解',
+	'Quiz test manage'=>'测验题测试',
+	'Quiz test search'=>'测验题查询',
+	'Quiz test History'=>'测验历史查询',
+	'Quiz employee History'=>'员工数据查询',
 
-
-	
-	'Sales order'=>'订单表',
-	'Sales visit'=>'拜访表',
-	'Ciustomer Enqury'=>'五部曲',
-	'Staff list'=>'销售人员列表',
-	'Visit list'=>'拜访列表',
-	'Ciustomer Enqury list'=>'五部曲列表',
-
-	
+	//张静增加结束
 	'All'=>'全部',
 	'All Daily Reports'=>'日报表总汇',
 	'Customer-New'=>'新增客户',
@@ -83,10 +74,10 @@ return array(
 	'Complete'=>'完成',
 	'Fail'=>'失败',
 	'Sent'=>'送出',
-	
+	'quizExams'=>'测验系统',
 	'Last Logon Time'=>'最近登录时间',
 	'Others'=>'其他',
-
+	'Misc'=>'其他',
 	
 	'Complaint Read All'=>'投诉全閱',
 	'QC Read All'=>'品檢全閱',

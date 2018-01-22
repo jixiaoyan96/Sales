@@ -38,6 +38,12 @@ return array(
 	'Remove'=>'删除',
 	'Date'=>'日期',
 	'Download'=>'下载',
-
+	'Quiz Starting!'=>'测验开始!',
+	'Look through the result!'=>'浏览您的本次测验结果',
+	'Look through the result wrong!'=>'不答题,是不对的哦!',
+	'all checked success'=>'默认全选成功',
+	'all checked failed'=>'默认全选失败',
+	'Information Show'=>'提示',
+	'Please check your data while submitting?'=>'请检查您的数据是否已经完整',
 );
 ?>

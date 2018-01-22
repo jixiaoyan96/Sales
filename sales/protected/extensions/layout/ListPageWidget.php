@@ -1,4 +1,5 @@
 <?php
+header("Content-type: text/html; charset=utf-8");
 class ListPageWidget extends CWidget
 {
 	public $model;
@@ -8,10 +9,10 @@ class ListPageWidget extends CWidget
 	public $viewdtl;
 	public $height='100';
 	public $search=array();
-	
+
 	public $record;
 	public $recordptr;
-	
+
 	public function run()
 	{
 		$layout = '<div class="box">';
@@ -45,7 +46,7 @@ class ListPageWidget extends CWidget
 		$layout .= '</tbody>';
 		$layout .= '</table></div>';
 		$layout .= '</div>';
-		
+
 		$layout .= '<div class="box-footer clearfix">';
 		$layout .= '<div class="box-tools">'.$this->pageBar().'</div>';
 		$layout .= '<span class="pull-right">'.Yii::t('misc','Rec').': '.$this->model->totalRow.'</span>';
@@ -54,7 +55,7 @@ class ListPageWidget extends CWidget
 		echo $layout;
 	}
 
-	protected function navBar() 
+	protected function navBar()
 	{
 		$totalrow = $this->model->totalRow;
 		$pageno = $this->model->pageNum;
@@ -64,11 +65,11 @@ class ListPageWidget extends CWidget
 		$window = 10;
 		$tab = 3;
 		$width=80/$window;
-		
+
 		$link = '/'.$this->controller->uniqueId.'/'.$this->controller->action->id;
-		
+
 		$items = array();
-		
+
 		$url = Yii::app()->createUrl($link,array('pageNum'=>1));
 		$items[] = array('label'=>'1','url'=>$url,'active'=>($pageno == 1));
 		$cnt = 1;
@@ -77,95 +78,98 @@ class ListPageWidget extends CWidget
 			$items[] = array('label'=>'...','url'=>'#',);
 			$cnt++;
 		}
-		
+
 		$hadj = ($pageno > $tab && $totalpage > $window) ? 2 : 1;
 		$tadj = ($totalpage > $window) ? (($pageno < $totalpage-($window-$hadj)+1) ? 2 : 1) : 0;
 		$adj = $hadj + $tadj;
-
-		$pos = ($pageno > $tab && $totalpage > $window) 
-				? (($pageno > $totalpage-($window-$hadj)+1) ? $totalpage-($window-$hadj)+1 : $pageno-($tab-1)) 
-				: 2; 
-		while ($pos <= $totalpage && $cnt < $window-$tadj) 
+		$pos = ($pageno > $tab && $totalpage > $window)
+			? (($pageno > $totalpage-($window-$hadj)+1) ? $totalpage-($window-$hadj)+1 : $pageno-($tab-1))
+			: 2;
+		while ($pos <= $totalpage && $cnt < $window-$tadj)
 		{
 			$url = Yii::app()->createUrl($link,array('pageNum'=>$pos));
 			$items[] = array('label'=>$pos,'url'=>$url,'active'=>($pageno == $pos));
 			$pos++;
 			$cnt++;
 		}
-		
+
 		if ($totalpage > $window) {
 			if ($pageno < $totalpage-($window-$adj-$tab)-1 && $totalpage > $window) {
 				$items[] = array('label'=>'...','url'=>'#',);
 				$cnt++;
 			}
-			
+
 			$url = Yii::app()->createUrl($link,array('pageNum'=>$totalpage));
 			$items[] = array('label'=>$totalpage,'url'=>$url,'active'=>($pageno == $totalpage));
 
 			$cnt++;
 		}
-		
+
 //		return TbHtml::pagination($items, array('align'=>TbHtml::PAGINATION_ALIGN_RIGHT,'size'=>TbHtml::PAGINATION_SIZE_SMALL));
 		return TbHtml::pagination($items, array('class'=>'pagination pagination-sm no-margin'));
 	}
-	
+
 	protected function searchBar()
 	{
 		$modelName = get_class($this->model);
+
 		$link = '/'.$this->controller->uniqueId.'/'.$this->controller->action->id;
 		$list[''] = Yii::t('misc','-- Field --');
+
 		foreach ($this->search as $field)
 		{
 			$list[$field] = Yii::t('app',$this->getLabelName($field));
 		}
+
 		$layout = TbHtml::dropDownList($modelName.'[searchField]',$this->model->searchField,$list);
 		$layout .= TbHtml::textField($modelName.'[searchValue]',$this->model->searchValue,
-					array('size'=>15,
-						'placeholder'=>Yii::t('misc','Search'),
-						'append'=>TbHtml::button('<span class="fa fa-search"></span> '.Yii::t('misc','Search'), array('submit'=>Yii::app()->createUrl($link,array('pageNum'=>1)),)),
-				));
+			array('size'=>15,
+				'placeholder'=>Yii::t('misc','Search'),
+				'append'=>TbHtml::button('<span class="fa fa-search"></span> '.Yii::t('misc','Search'), array('submit'=>Yii::app()->createUrl($link,array('pageNum'=>1)),)),
+			));
+
 		return $layout;
 	}
-	
+
 	protected function pageBar()
 	{
 		$modelName = get_class($this->model);
 		$link = '/'.$this->controller->uniqueId.'/'.$this->controller->action->id;
 		$list = array(
-					'25'=>'25',
-					'50'=>'50',
-					'100'=>'100',
-					'500'=>'500',
-					'0'=>Yii::t('misc','All'),
-				);
+			'25'=>'25',
+			'50'=>'50',
+			'150'=>'150',
+			'200'=>'200',
+			'0'=>Yii::t('misc','All'),
+		);
 		$fldname = $modelName.'[noOfItem]';
 		$layout = '<div class="col-sm-3">'.Yii::t('misc','Display').': '
-				.TbHtml::dropDownList($fldname,$this->model->noOfItem,$list,
-					array('submit'=>Yii::app()->createUrl($link),)
-				).'</div>';
+			.TbHtml::dropDownList($fldname,$this->model->noOfItem,$list,
+				array('submit'=>Yii::app()->createUrl($link),)
+			).'</div>';
 		return $layout;
 	}
-	
+
 	public function getLabelName($attribute)
 	{
 		$labels = $this->model->attributeLabels();
 		return (array_key_exists($attribute, $labels)) ? $labels[$attribute] : $attribute;
 	}
-	
+
 	public function getFieldName($attribute)
 	{
 		$modelName = get_class($this->model);
 		return $modelName.'[attr]['.$this->recordptr.']['.$attribute.']';
 	}
-	
+
 	public function createOrderLink($form, $attribute)
 	{
 		$modelName = get_class($this->model);
 		$link = array(
-					'ajax'=>array(
-						'type'=>'POST',
-						'url'=>Yii::app()->createUrl('ajax/dummy'),
-						'success'=>'function() {
+			'ajax'=>array(
+				'type'=>'POST',
+				'url'=>Yii::app()->createUrl('ajax/dummy'),
+				'success'=>'function() {
 							var oldfield = $("#'.$modelName.'_orderField").val();
 							if (oldfield != "'.$attribute.'")
 								$("#'.$modelName.'_orderType").val("A");
@@ -180,31 +184,31 @@ class ListPageWidget extends CWidget
 							$("#'.$modelName.'_orderField").val("'.$attribute.'");
 							$("form#'.$form.'").submit();
 						}',
-					),
-				);
+			),
+		);
 		return $link;
 	}
-	
+
 	public function getIndex() {
 		return $this->recordptr + ($this->model->pageNum - 1) * $this->model->noOfItem;
 	}
-	
+
 	public function getLink($access, $writeurl, $readurl, $param) {
-		$rw = Yii::app()->user->validRWFunction($access); 
+		$rw = Yii::app()->user->validRWFunction($access);
 		$url = $rw ? $writeurl : $readurl;
 		return Yii::app()->createUrl($url,$param);
 	}
-	
+
 	public function drawEditButton($access, $writeurl, $readurl, $param) {
-		$rw = Yii::app()->user->validRWFunction($access); 
+		$rw = Yii::app()->user->validRWFunction($access);
 		$url = $rw ? $writeurl : $readurl;
 		$icon = $rw ? "glyphicon glyphicon-pencil" : "glyphicon glyphicon-eye-open";
 		$alt = $rw ? Yii::t('misc','Edit') : Yii::t('misc','View');
 		$lnk=Yii::app()->createUrl($url,$param);
-		
+
 		return "<a href=\"$lnk\"><span class=\"$icon\"></span></a>";
 	}
-	
+
 	public function drawOrderArrow($attribute)
 	{
 		$arrow = '';
@@ -214,7 +218,7 @@ class ListPageWidget extends CWidget
 		}
 		return $arrow;
 	}
-	
+
 	public function render($view,$data=null,$return=false)
 	{
 		$ctrl = $this->getController();

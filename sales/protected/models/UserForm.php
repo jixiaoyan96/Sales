@@ -284,6 +284,7 @@ class UserForm extends CFormModel
 			$command->bindParam(':luu',$uid,PDO::PARAM_STR);
 		$command->execute();
 
+
 		return true;
 	}
 

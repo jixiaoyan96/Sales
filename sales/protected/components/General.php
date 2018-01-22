@@ -169,7 +169,7 @@ class General {
 	{
 		$city = Yii::app()->user->city();
 		$list = array(0=>Yii::t('misc','-- None --'));
-		$sql = "select id, description from swo_task where city='".$city."' order by id";
+		$sql = "select id, description from swo_task where id>0";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
@@ -554,53 +554,6 @@ class General {
 		}
 		return $rtn;
 	}
-
-	public static function getGoodsList()
-	{
-		$list = array(0=>Yii::t('misc','-- None --'));
-		$sql = "select id, name from sa_classify_v";
-		$rows = Yii::app()->db->createCommand($sql)->queryAll();
-		if (count($rows) > 0) {
-			foreach ($rows as $row) {
-				$list[$row['id']] = $row['name'];
-			}
-		}
-		return $list;
-	}
-
-	public static function getTowlist()
-	{
-		$list = array(0=>Yii::t('misc','-- None --'));
-		$sql = "select id, name from sa_goods_v";
-		$rows = Yii::app()->db->createCommand($sql)->queryAll();
-		if (count($rows) > 0) {
-			foreach ($rows as $row) {
-				$list[$row['id']] = $row['name'];
-			}
-		}
-		return $list;
-	}
-
-
-	public static function getGoodstwoList($id)
-	{
-		$city = Yii::app()->user->city();
-		$list = array(0=>Yii::t('misc','-- None --'));
-		$sql = "select goodid, gname from sales.sa_good where pid = $id";
-		$rows = Yii::app()->db->createCommand($sql)->queryAll();
-		if (count($rows) > 0) {
-			foreach ($rows as $row) {
-				$list[$row['goodid']] = $row['gname'];
-			}
-		}
-		return $list;
-	}
-
-
 }
-
-
-
-
 
 ?>

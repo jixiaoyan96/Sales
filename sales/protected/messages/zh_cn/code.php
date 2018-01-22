@@ -47,14 +47,5 @@ return array(
 	'Currency'=>'货币',
 	
 	'Taxpayer No.'=>'纳税人登记号',
-
-		'Oid'=>'订单ID',
-		'Crname'=>'客户名称',
-		'Goodstime'=>'下单时间',
-		'Goodsnumber'=>'商品数量',
-		'Money'=>'价格',
-		'Username'=>'销售人员',
-		'Craddress'=>'客户地址',
-
 );
 ?>

@@ -10,7 +10,8 @@ $this->pageTitle=Yii::app()->name . ' - Change Password';
 	<div class="login-box-body">
 		<h2 class="page-heading text-center"><?php echo Yii::t('misc','Change Password'); ?></h2>
 
-		<?php $form=$this->beginWidget('TbActiveForm', array(
+		<?php $form=$this->beginWidget
+		('TbActiveForm', array(
 			'id'=>'password-form',
 			'enableClientValidation'=>true,
 			'clientOptions'=>array(

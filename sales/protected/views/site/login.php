@@ -11,10 +11,10 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 		<p><img src="<?php echo Yii::app()->baseUrl."/images/company.png";?>"></p>
 		<b><?php echo CHtml::encode(Yii::t('app',Yii::app()->name)); ?></b>
 	</div>
-	
 	<!-- /.login-logo -->
 	<div class="login-box-body">
-<?php $form=$this->beginWidget('TbActiveForm', array(
+<?php
+$form=$this->beginWidget('TbActiveForm', array(
 	'id'=>'login-form',
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
@@ -24,20 +24,22 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 )); ?>
 		<div class="form-group has-feedback">
 			<?php echo $form->textField($model,'username',
-				array('placeholder'=>Yii::t('user','User ID'),'class'=>'form-control')); 
-			?>			
+				array('placeholder'=>Yii::t('user','User ID'),'class'=>'form-control'));
+			?>
 			<span class="glyphicon glyphicon-user form-control-feedback"></span>
 		</div>
+
 		<div class="form-group has-feedback">
 			<?php echo $form->passwordField($model,'password',
-				array('placeholder'=>Yii::t('user','Password'),'class'=>'form-control')); 
+				array('placeholder'=>Yii::t('user','Password'),'class'=>'form-control'));
 			?>
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		</div>
+
 		<div class="row">
 			<div class="col-xs-4 pull-right">
 				<?php echo TbHtml::submitButton(Yii::t('misc','Login'),
-					array('class'=>'btn bg-blue btn-block',)); 
+					array('class'=>'btn bg-blue btn-block',));
 				?>
 			</div>
 		</div>
@@ -51,7 +53,6 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 		</p>
 		</div>
 			<!-- /.col -->
-
 <?php $this->endWidget(); ?>
 	</div>
 	<!-- /.login-box-body -->

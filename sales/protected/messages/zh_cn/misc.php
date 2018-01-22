@@ -11,6 +11,7 @@ return array(
 	'Add'=>'新增',
 	'Add New'=>'新增',
 	'Add Record'=>'新增纪录',
+	'Add Sales visit Record'=>'新增销售拜访记录',
 	'Add Another'=>'新增另一纪录',
 	'Record'=>'记录',
 	'-- None --'=>'-- 无 --',
@@ -45,13 +46,7 @@ return array(
 	'About'=>'关于',
 	'City'=>'地区',
 	'Attachment'=>'附件',
-	'Print'=>'打印',
-	'Goods'=>'下单商品',
-	'Add Goods'=>'添加新一个商品',
-	'Gps'=>'位置导航',
-	'Edit Goods'=>'修改商品',
-	'Edit offer'=>'修改报价',
-
+	'Start sales'=>'开始测验',
 	'Invalid Station. Please register first.'=>'工作站无效。请先登记。',
 	'User ID has been logged in more than one station.'=>'帐户已被登录到另一工作站。',
 	'Session expired.'=>'系统连接已经过期。请重新登录。',
@@ -60,7 +55,10 @@ return array(
 	'Copyright'=>'版权',
 	'**Please use Firefox web browser in order to use LBS Daily Management System for best result'
 	=>'**为求使用史伟莎日常管理系统达至最佳效果，请使用火狐浏览器',
-
+	//json添加开始
+'Submit sales Form'=>'提交测验结果',
+	'default all checked'=>'默认员工全选',
+	'test'=>'测试',
 );
 
 ?>

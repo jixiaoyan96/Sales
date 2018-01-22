@@ -18,7 +18,7 @@ class User extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		
+
 		return 'security'.Yii::app()->params['envSuffix'].'.sec_user';
 	}
 
@@ -66,16 +66,13 @@ class User extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('disp_name',$this->disp_name,true);
 		$criteria->compare('logon_time',$this->logon_time,true);
 		$criteria->compare('logoff_time',$this->logoff_time,true);
 		$criteria->compare('status',$this->status,true);
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -93,17 +90,15 @@ class User extends CActiveRecord
 
 	public function accessRights() {
 		$suffix = Yii::app()->params['envSuffix'];
-
 		$username = $this->username;
 		$rtn = array(
 				'read_only'=>array(),
 				'read_write'=>array(),
 				'control'=>array(),
 			);
-		$sql = "select system_id, a_read_only, a_read_write, a_control
-				from security$suffix.sec_user_access
-				where username='$username'
-			";
+		$sql = "select system_id, a_read_only, a_read_write, a_control 
+				from security$suffix.sec_user_access 
+				where username='$username'";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
@@ -117,7 +112,6 @@ class User extends CActiveRecord
 
 	public function getUserOption() {
 		$suffix = Yii::app()->params['envSuffix'];
-
 		$rtn = array();
 		$username = $this->username;
 		$sql = "select * from security$suffix.sec_user_option where Lower(username)='$username'";
@@ -132,13 +126,11 @@ class User extends CActiveRecord
 
 	public function saveUserOption($name, $key, $value)	{
 		$suffix = Yii::app()->params['envSuffix'];
-
 		$connection = Yii::app()->db;
 		$sql = "replace into security$suffix.sec_user_option 
 					(username, option_key, option_value)
 				values
-					(:username, :option_key, :option_value)
-			";
+					(:username, :option_key, :option_value)";
 		$command = $connection->createCommand($sql);
 		$command->bindParam(':username', $name, PDO::PARAM_STR);
 		$command->bindParam(':option_key', $key, PDO::PARAM_STR);

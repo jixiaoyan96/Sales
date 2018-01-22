@@ -77,24 +77,6 @@ $('#$btnName').on('click',function() {
 EOF;
 		return $str;
 	}
-
-
-	public static function getLookupButtonClass($btnName, $lookupType, $codeField, $valueField) {
-		$str = <<<EOF
-$('.$btnName').on('click',function() {
-	var code = $("input[id*='$codeField']").attr("id");
-	var value = $("input[id*='$valueField']").attr("id");
-	var title = $("label[for='"+value+"']").text();
-	$('#lookuptype').val('$lookupType');
-	$('#lookupcodefield').val(code);
-	$('#lookupvaluefield').val(value);
-	$('#lookupdialog').dialog('option','title',title);
-	$('#lookupdialog').dialog('open');
-});
-EOF;
-		return $str;
-	}
-
  
 	public static function genLookupButtonEx($btnName, $lookupType, $codeField, $valueField, $otherFields=array(), $multiselect=false) {
 		$others = '';
@@ -149,7 +131,6 @@ $('#btnLookup').on('click',function(){
 EOF;
 		return $str;
 	}
-	
 	public static function genLookupSearchEx() {
 		$mesg = Yii::t('dialog','No Record Found');
 		$link = Yii::app()->createAbsoluteUrl("lookup");
@@ -218,6 +199,10 @@ EOF;
 		return $str;
 	}
 
+	/**
+	 * @param $link //跳转方法
+	 * @return string
+	 */
 	public static function genDeleteData($link) {
 		$str = "
 $('#btnDeleteData').on('click',function() {
@@ -232,7 +217,26 @@ function deletedata() {
 		";
 		return $str;
 	}
-	
+	Public static function getInputValue(){
+		$jsValue="$('#showRate').val()";
+		return $jsValue;
+	}
+
+	public static function QuizDataCheck($link) {
+		$str = "
+$('#btnQuizCheck').on('click',function() {
+	$('#quizStart').modal('hide');
+	dataCheck();
+});
+
+function dataCheck() {
+	var elm=$('#dataCheck');
+	jQuery.yii.submitForm(elm,'$link',{});
+}
+		";
+		return $str;
+	}
+
 	public static function genFileUpload($modelname, $formname, $ctrlname) {
 		$msg = Yii::t('dialog','Are you sure to delete record?');
 		$rmlink = Yii::app()->createAbsoluteUrl($ctrlname."/fileremove");

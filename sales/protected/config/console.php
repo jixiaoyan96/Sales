@@ -13,7 +13,6 @@ return array(
 	'preload'=>array('log'),
 
 	// autoloading model and component classes
-	// 自动载入的模型和组件类
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
@@ -23,10 +22,12 @@ return array(
 	// application components
 	'components'=>array(
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=swoper_w',
+			'connectionString' => 'mysql:host=localhost;dbname=demo',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => 'root',
+			/*'username' => 'swuser',
+			'password' => 'Swisher@123',*/
+			'username'=>'root',
+			'password'=>'root',
 			'charset' => 'utf8',
 		),
 		'log'=>array(

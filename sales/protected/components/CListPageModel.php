@@ -74,7 +74,6 @@ class CListPageModel extends CFormModel
 			}
 		}
 	}
-	
 	public function getCriteria() {
 		return array(
 			'searchField'=>$this->searchField,

@@ -1,7 +1,22 @@
  <?php
 class EmailQueueCommand extends CConsoleCommand {
 	protected $webroot;
-	
+
+/*	public function index(){
+		echo 'demo study';
+	}
+
+
+	public function demo(){
+		$sql="select * from demo where id>:0;";
+		$result=Yii::app()->db->createCommand($sql)->queryAll();
+		if($result){
+			return '1';
+		}
+		else{
+			return '2';
+		}
+	}*/
 	public function run($args) {
 		$this->webroot = Yii::app()->params['webroot'];
 		$sql = "select a.id, a.ts, a.from_addr, a.to_addr, a.cc_addr, 
@@ -119,7 +134,7 @@ class EmailQueueCommand extends CConsoleCommand {
 		$cnt = $command->execute();
 		return ($cnt>0);
 	}
-
+	
 	protected function getTimeStamp($id) {
 		$ts = '';
 		$sql = "select ts from swo_email_queue where id=".$id;

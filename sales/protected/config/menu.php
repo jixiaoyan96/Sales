@@ -1,35 +1,51 @@
 <?php
 
 return array(
-	'Personal'=>array(
-		'access'=>'T',
+
+	'Quiz'=>array(
+		'access'=>'HK',
 		'items'=>array(
-			'Sales order'=>array(
-				'access'=>'T01',
-				'url'=>'/sales/index',
+			'All quiz records'=>array(
+				'access'=>'HK01',
+				'url'=>'/Sales/index',
+				'tag'=>'@',
+			),/*
+			'Quiz questions'=>array(
+				'access'=>'HK02',
+				'url'=>'/Questions/index',
+				'tag'=>'@',
+			),*/
+			'Quiz questions add'=>array(
+				'access'=>'HK03',
+				'url'=>'/Exams/index',
+				'tag'=>'@',
 			),
-			'Sales visit'=>array(
-				'access'=>'T02',
-				'url'=>'/visit/index',
+		/*	'sales questions manage'=>array(
+				'access'=>'HK04',
+				'url'=>'/sales/manage',
+				'tag'=>'@',
+			),*/
+			'Quiz test manage'=>array(
+				'access'=>'HK05',
+				'url'=>'/teststart/index',
+				'tag'=>'@',
 			),
-			'Ciustomer Enqury'=>array(
-				'access'=>'T03',
-				'url'=>'/five/index',
+	'Quiz test search'=>array(
+	'access'=>'HK06',
+	'url'=>'/testsearch/index',
+	'tag'=>'@',
 			),
-			'Edit Type'=>array(
-						'access'=>'T04',
-						'url'=>'/choice/index',
-				),
+			'Quiz test History'=>array(
+				'access'=>'HK07',
+				'url'=>'/testhistory/index',
+				'tag'=>'@',
+			),
+			'Quiz employee History'=>array(
+			'access'=>'HK08',
+				'url'=>'/Employeehistory/index',
+				'tag'=>'@',
+			),
 		),
 	),
 
-	'Sales Admin'=>array(
-		'access'=>'TB',
-		'items'=>array(
-			'Staff list'=>array(
-				'access'=>'TB01',
-				'url'=>'/staffs/index',
-			),
-		),
-	),
 );

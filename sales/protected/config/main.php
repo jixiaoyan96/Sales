@@ -6,22 +6,18 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-	'id'=>'swoperuat',
+	'id'=>'swoper_w',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'charset'=>'UTF-8',
-	'name'=>'LBS Sales management - UAT',
+	'name'=>'LBS sales Management',
 	'timeZone'=>'Asia/Hong_Kong',
 	'sourceLanguage'=> 'en',
 	'language'=>'zh_cn',
-
 	'aliases'=>array(
 		'bootstrap'=>realpath(__DIR__.'/../extensions/bootstrap'),
 		),
-
-
 	// preloading 'log' component
 	'preload'=>array('log'),
-
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -50,14 +46,13 @@ return array(
 			// enable cookie-based authentication
 			'class'=>'WebUser',
 			'allowAutoLogin'=>true,
-			'identityCookie' => ['name' => '_identity'],
+		),
+		'file'=>array(
+			'class' => 'application.components.File',
+			'key' => 'file',
+			'name'=>uniqid(),
 		),
 		// uncomment the following to enable URLs in path-format
-			'text'=>array(
-				// enable cookie-based authentication
-					'class'=>'Text',
-					'allowAutoLogin'=>true,
-			),
 
 		'urlManager'=>array(
 			'urlFormat'=>'path',
@@ -77,15 +72,24 @@ return array(
 
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=sales',
+			'connectionString' => 'mysql:host=localhost;dbname=swoper_w',
 			'emulatePrepare' => true,
+			/*'username' => 'swuser',
+			'password' => 'Swisher@123',*/
 			'username' => 'root',
 			'password' => 'root',
 			'charset' => 'utf8',
 		),
-
-
-
+		'db2'=>array(
+			'class' =>'CDbConnection' ,
+			'connectionString' => 'mysql:host=localhost;dbname=sales',
+			'emulatePrepare' => true,
+			/*'username' => 'swuser',
+			'password' => 'Swisher@123',*/
+			'username' => 'root',
+			'password' => 'root',
+			'charset' => 'utf8',
+		),
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -100,19 +104,18 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				array(
-					'class'=>'CWebLogRoute',
-//					'levels'=>'trace',
-//					'categories'=>'vardump',
-//					'showInFireBug'=>true
-				),
+	//			array(
+	//				'class'=>'CWebLogRoute',
+				//	'levels'=>'trace',
+				//	'categories'=>'vardump',
+				//	'showInFireBug'=>true
+	//			),
 			),
 		),
 		
 		'session'=>array(
 			'class'=>'CHttpSession',
 			'cookieMode'=>'allow',
-			'autoStart'=>true,
 			'cookieParams'=>array(
 				'domain'=>'127.0.0.1',
 			),
@@ -136,47 +139,52 @@ return array(
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
-		'adminEmail'=>'it@lbsgroup.com.hk',
+		'adminEmail'=>'cit@lbsgroup.om.hk',
 		'checkStation'=>false,
 		'validRegDuration'=>'3 hours',
 //		'cookieDomain'=>'swoper',
 //		'cookiePath'=>'/',
 		'concurrentLogin'=>false,
 		'noOfLoginRetry'=>5,
+		'jsonTableName'=>'_test',
 		'sessionIdleTime'=>'1 hour',
 		'feedbackCcBoss'=>array('flam','JoeY','DorisC'),
 		'bossEmail'=>array('dorischan@lbsgroup.com.hk'),
-		'version'=>'1.0.0',
+		'version'=>'1.1.2',
 		'docmanPath'=>'/docman/uat',
-		'systemId'=>'sal',
+		'systemId'=>'sales',
 		'envSuffix'=>'dev',
-		'myTabname'=>'les',
 		'systemMapping'=>array(
 				'drs'=>array(
-						'webroot'=>'http://118.89.46.224/dr-uat',
+						'webroot'=>'http://127.0.0.1/dr',
 						'name'=>'Daily Report',
 						'icon'=>'fa fa-pencil-square-o',
 					),	
 				'acct'=>array(
-						'webroot'=>'http://118.89.46.224/ac-uat',
+						'webroot'=>'http://127.0.0.1/acct',
 						'name'=>'Accounting',
 						'icon'=>'fa fa-money',
 					),
-				'ops'=>array(
-						'webroot'=>'http://118.89.46.224/op-uat',
-						'name'=>'Operation',
-						'icon'=>'fa fa-gears',
-				),
+                                'ops'=>array(
+                                                'webroot'=>'http://118.89.46.224/op-uat',
+                                                'name'=>'Operation',
+                                                'icon'=>'fa fa-gears',
+                                        ),
 				'hr'=>array(
 						'webroot'=>'http://118.89.46.224/hr-uat',
 						'name'=>'Personnel',
 						'icon'=>'fa fa-users',
 					),
-				'sal'=>array(
-						'webroot'=>'http://127.0.0.1/sales',
-						'name'=>'sales',
-						'icon'=>'fa fa-users',
-				),
+			'sales'=>array(
+				'webroot'=>'http://127.0.0.1/sales',
+				'name'=>'quizExams',
+				'icon'=>'fa fa-money',
+			),
+			'sales'=>array(
+				'webroot'=>'http://127.0.0.1/sales',
+				'name'=>'Sales',
+				'icon'=>'fa fa-money',
+			),
 			),
 	),
 );

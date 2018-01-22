@@ -31,7 +31,8 @@ class MenuWidget extends CWidget
 		$layout = '<ul class="nav navbar-nav">';
 		$layout .= $this->printMenuHtml($menuitems);
 		$layout .= '</ul>';
-		
+
 		echo $layout;
+		/*$html="<span>".$menuitems['items'][]."</span>";*/
 	}
 }
