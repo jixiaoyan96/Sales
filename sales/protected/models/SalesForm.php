@@ -4,6 +4,8 @@ class SalesForm extends CFormModel
 {
     public $id;  //拜访主键
     Public $customer_name;  //拜访客户名
+    Public $customer_second_name; //拜访客户分店名
+    Public $customer_help_count_date; //辅助统计日期
     public $customer_contact;  //联系人
     public $customer_contact_phone;  //联系方式
     Public $customer_create_date;  //生成拜访客户的日期
@@ -33,9 +35,10 @@ class SalesForm extends CFormModel
             'customer_street'=>Yii::t('quiz','customer_street'),
             'customer_notes'=>Yii::t('quiz','customer_notes'),
             'city'=>Yii::t('quiz','city'),
+            'customer_second_name'=>Yii::t('quiz','customer_second_name'),
+            'customer_help_count_date'=>Yii::t('quiz','customer_help_count_date'),
         );
     }
-
     /**
      * Declares the validation rules.
      */

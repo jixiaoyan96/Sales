@@ -7,6 +7,7 @@
  */
 header("Content-type: text/html; charset=utf-8");
  Class SalesController extends Controller{
+     Public $selectDataFirst;
     Public $urlAjaxSelect;
     Public $arr;
      public function actionIndex($pageNum=0){
@@ -61,6 +62,10 @@ header("Content-type: text/html; charset=utf-8");
          $this->render('form',array('model'=>$model,));
      }
 
+
+     Public function actionSelectKindsFirst(){
+
+     }
      public function actionView($index)
      {
          $model = new SalesForm('view');

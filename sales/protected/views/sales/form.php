@@ -50,6 +50,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         </div>
     </div>
 
+    <div class="tempDiv"></div>
     <div class="box box-info">
         <div class="box-body">
             <?php echo $form->hiddenField($model, 'scenario'); ?>
@@ -74,6 +75,24 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'customer_second_name',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'customer_second_name',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+                <?php echo $form->labelEx($model,'customer_help_count_date',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'customer_help_count_date',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+            </div>
+
 
             <div class="form-group">
                 <?php echo $form->labelEx($model,'customer_contact',array('class'=>"col-sm-2 control-label")); ?>
@@ -148,9 +167,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         </div>
     </div>
 </section>
-<script>
+    <script>
     $(function(){
+        var demo=0;
         $('.innerbtn').click(function(){
+            var data=$('.innerbtn').index(this);
+            demo=data;
+          console.log('当前为第'+demo+'个');
             $(this).next('.pop_box').slideDown('400');
         });
 
@@ -159,6 +182,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         });
 
         $('.tbody1').on("click",".alonTr .innerbtn",function(){
+            var data=$('.innerbtn').index(this);
+            demo=data;
+            console.log('当前为第'+demo+'个');
             $(this).next('.pop_box').slideDown('400');
         });
 
@@ -167,9 +193,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         });
 
 // 新增表单
-        var show_count = 20;
+        var show_count = 10;  //至多跟进10次
         var count = 1;
         $(".AddTr").click(function () {
+
             var length = $(".tabInfo .tbody1>tr").length;
             //alert(length);
             if (length < show_count)
@@ -195,11 +222,28 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         var show_count3 = 20;
         var count3 = 1;
         $(".tbody1").on("click",".dtadd",function () {
+            var SkyLength=document.getElementsByName("sky1[]").length;
+
             var length = $(".neijian .tbody2 tr").length;
             //alert(length);
             if (length < show_count3)
             {
-                $('.model2 tbody tr').clone().appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
+                $(".tempDiv").html("");
+                var divData=$('.model3 tbody tr').clone();
+                //console.log(divData);
+                $(".tempDiv").html(divData);
+                $(".tempDiv").css({'width':"100%"});
+                //$(".tempDiv").find('input').attr('name','值'+demo);
+
+                $(".tempDiv").find("input[name='newAdd1']").attr('name','service'+demo+'[]');
+                $(".tempDiv").find("input[name='newAdd2']").attr('name','money'+demo+'[]');
+                $(".tempDiv").find("input[name='newAdd3']").attr('name','count'+demo+'[]');
+                $(".tempDiv").find("input[name='newAdd4']").attr('name','all'+demo+'[]');
+                $(".tempDiv").find("input[name='newAdd5']").attr('name','total'+demo+'[]');
+                $(".tempDiv").find("input[name='newAdd6']").attr('name','return'+demo+'[]');
+
+                divData.appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
+                console.log('总计'+demo);
             }
         });
     });
@@ -224,7 +268,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             alert("至少保留一行");
         } else {
             $(opp).parent().parent().remove();//移除当前行
-
         }
     }
     // ----
@@ -239,23 +282,12 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 
         }
     }
-
-    $(function (){
-        $(".jcDate").jcDate({
-            IcoClass : "jcDateIco",
-            Event : "click",
-            Speed : 100,
-            Left : 0,
-            Top : 28,
-            format : "-",
-            Timeout : 100
-        });
-    });
     // ----
 </script>
+
 <style>
     *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;font-family: "微软雅黑";font-size: 14px;border:0 none;line-height: 24px; }
-    table{table-layout: fixed;width: 100%;}
+    table .normTbe{table-layout: fixed;width: 100%;}
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
     input:focus,textarea:focus{border:1px solid #9ab6d6;}
     .whiteBg{background: #fff;}
@@ -265,6 +297,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     .addData{width: 1140px;padding: 0 20px; margin: 0 auto;clear: both;}
     .pop_box {display: none;}
     .model2{display: none;}
+    .model3{display: none;}
     .hideTr{background: #ddd;}
     .pop_box{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999;}
     .pop_box .bg{background: #000;opacity: 0.7;filter:alpha(opacity=70);position: absolute;top:0;left: 0;right: 0;bottom: 0;}
@@ -277,13 +310,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     .btn_a1{padding-top: 15px;}
     .btn_a1 a{display: inline-block;*display: inline;*zoom: 1;width: 120px;line-height: 45px;background: #50abfd;color: #fff;}
     .btn_a1 .addtr2,.btn_a1 .dtadd{background: #ff9900;}
+    .tempDiv{width:0%;  height:0px;  border: 0px solid red}
 </style>
-
 
 <div class="addData">
         <table cellspacing="0" cellpadding="0" border="0" class="normTbe model2">
             <tbody>
-            <tr class="alonTr2">
+            <tr class="alonTr2"> <!--所有的跟进 第二条之后的服务都是demo1-->
                 <td><input type="text" name="demo1[]"/></td>
                 <td><input type="text" name="demo2[]"/></td>
                 <td><input type="text" name="demo3[]"/></td>
@@ -295,17 +328,31 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             </tr>
             </tbody>
         </table>
+    <table cellspacing="0" cellpadding="0" border="0" class="normTbe model3">
+        <tbody>
+        <tr class="alonTr2"> <!--所有的跟进 第二条之后的服务都是newAdd1-->
+            <td><input type="text" name="newAdd1[]"/></td>
+            <td><input type="text" name="newAdd2[]"/></td>
+            <td><input type="text" name="newAdd3[]"/></td>
+            <td><input type="text" name="newAdd4[]"/></td>
+            <td><input type="text" name="newAdd5[]"/></td>
+            <td><input type="text" name="newAdd6[]"/></td>
+            <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>
+            <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
         <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
             <tbody>
             <tr class="alonTr">  <!--第二层以及更多的跟进表单数据-->
-                <td><input type="text" name="sky1[]"/></td>
+                <td><input type="date" name="sky1[]"/></td>
                 <td><input type="text" name="sky2[]"/></td>
                 <td><input type="text" name="sky3[]"/></td>
                 <td><input type="text" name="sky4[]"/></td>
                 <td><input type="text" name="sky5[]"/></td>
                 <td><input type="text" name="sky6[]"/></td>
                 <td>
-                    <a href="javascript:;" class="innerbtn">添加内件</a>
+                    <a href="javascript:;" class="innerbtn">添加内件22</a>
                     <div class="pop_box">
                         <div class="bg"></div>
                         <div class="contentP">
@@ -328,7 +375,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                     </tr>
                                     </thead>
                                     <tbody class="tbody2">
-                                    <tr>
+                                    <tr>  <!--动态跟进 每次的第一项服务都是 day1-->
                                         <td><input type="text" name="day1[]"/></td>
                                         <td><input type="text" name="day2[]"/></td>
                                         <td><input type="text" name="day3[]"/></td>
@@ -341,12 +388,12 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                     </tbody>
                                 </table>
                                 <div class="btn_a1">
-                                    <a class="dtadd" href="javascript:;">新增内件</a> <a class="closepop" href="javascript:;">确定内件</a>
+                                    <a class="dtadd" href="javascript:;">新增内件2-2</a> <a class="closepop" href="javascript:;">确定内件</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <br /><a class="text_a" href="javascript:;" onClick="deltr(this)">删除</a>
+                    <br /><a class="text_a" href="javascript:;" onClick="deltr(this)">删除22</a>
                 </td>
             </tr>
             </tbody>
@@ -355,10 +402,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             <table cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
                 <thead>
                 <tr>
-                    <th><em>*</em> 件数：</th>
-                    <th><em>*</em> 单件重量：</th>
-                    <th><em>*</em> 总重量：</th>
-                    <th>长度(厘米)：</th>
+                    <th>本次跟进日期</th>
+                    <th>本次跟进目的</th>
+                    <th>总重量</th>
+                    <th>数据</th>
                     <th>宽度(厘米)：</th>
                     <th>高度(厘米)：</th>
                     <th>操作</th>
@@ -366,14 +413,14 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 </thead>
                 <tbody class="tbody1">
                 <tr>  <!--第一层的表单拜访数据-->
-                    <td><input type="text" value="10" name="heavy[]"/></td>
-                    <td><input type="text" value="5kg" name="count[]"/></td>
-                    <td><input type="text" value="10kg" name="countAll[]"/></td>
-                    <td><input type="text" value="100cm" name="leng[]"/></td>
-                    <td><input type="text" value="50cm" name="tota[]"/></td>
-                    <td><input type="text" value="50cm" name="wall[]"/></td>
+                    <td><input type="date" value="10" name="first1[]"/></td>
+                    <td><select name="first2"></select></td>
+                    <td><input type="text" value="10kg" name="first3[]"/></td>
+                    <td><input type="text" value="" name="first4[]"/></td>
+                    <td><input type="text" value="50cm" name="first5[]"/></td>
+                    <td><input type="text" value="50cm" name="first6[]"/></td>
                     <td>
-                        <a href="javascript:;" class="innerbtn">添加内件</a>
+                        <a href="javascript:;" class="innerbtn">添加服务(1</a>
                         <div class="pop_box">
                             <div class="bg"></div>
                             <div class="contentP">
@@ -409,12 +456,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                         </tbody>
                                     </table>
                                     <div class="btn_a1">
-                                        <a class="addtr2" href="javascript:;">新增内件</a> <a class="closepop" href="javascript:;">确定内件</a>
+                                        <a class="addtr2" href="javascript:;">新增内件1-1</a> <a class="closepop" href="javascript:;">确定内件</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <br /><a class="text_a" href="javascript:;" onClick="deltr(this)">删除</a>
+                        <br/>
+                        <a class="text_a" href="javascript:;" onClick="deltr(this)">删除(1</a>  <!--第一行的表单删除-->
                     </td>
                 </tr>
                 </tbody>
@@ -427,7 +475,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 
 </div><!-- itemInfo -->
 
-</div>
+
 
 <?php $this->renderPartial('//site/removedialog'); ?>
 <?php
