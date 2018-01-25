@@ -16,6 +16,7 @@ class SalesForm extends CFormModel
     Public $customer_street;   //街道
     Public $customer_notes;    //拜访主要备注
     Public $city;
+    Public $scenario;
     /**
      * Declares customized attribute labels.
      * If not declared here, an attribute would have a label that is
@@ -46,7 +47,7 @@ class SalesForm extends CFormModel
     {
         return array(
             array('customer_contact,customer_name,customer_contact_phone,customer_notes','required'),
-            array('id,customer_district,customer_create_date,customer_street,customer_kinds,visit_kinds,customer_create_sellers_id','safe'),
+            array('id,customer_help_count_date,customer_second_name,customer_district,customer_create_date,customer_street,customer_kinds,visit_kinds,customer_create_sellers_id','safe'),
             );
     }
     public function retrieveData($index)
@@ -77,7 +78,8 @@ class SalesForm extends CFormModel
 
     public function saveData()
     {
-        $connection = Yii::app()->db;
+        //var_dump($_REQUEST);die;
+        $connection = Yii::app()->db2;
         $transaction=$connection->beginTransaction();
         try {
             $this->saveUser($connection);
@@ -91,89 +93,84 @@ class SalesForm extends CFormModel
 
     protected function saveUser(&$connection)
     {
-        if($_REQUEST['QuizForm']['quiz_exams_id']==1){  //1=>forever 0=>temporary 2=>none
-            $_REQUEST['QuizForm']['quiz_start_dt']="";
-            $_REQUEST['QuizForm']['quiz_end_dt']="";
-            $this->quiz_start_dt='';
-            $this->quiz_end_dt='';
-        }
-        if(isset($_REQUEST['quiz_employee_id'])){
-            $_REQUEST['quiz_employee_id']=implode(',',$_REQUEST['quiz_employee_id']);
-        }
-        else{
-            $_REQUEST['quiz_employee_id']='';
-        }
-        if(isset($_REQUEST['quiz_exams_id'])){
-            $_REQUEST['QuizForm']['quiz_exams_id']=$_REQUEST['quiz_exams_id'];
-        }
-        else{
-            $_REQUEST['QuizForm']['quiz_exams_id']=0;
-        }
-        //$this->count_questions=$_REQUEST['count_questions'];
-        $this->quiz_exams_id=$_REQUEST['QuizForm']['quiz_exams_id'];
-        //$_REQUEST['QuizForm']['quiz_exams_id']=$_REQUEST['quiz_exams_id'];
-        $_REQUEST['QuizForm']['quiz_employee_id']=$_REQUEST['quiz_employee_id'];
-        $this->quiz_employee_id=$_REQUEST['QuizForm']['quiz_employee_id'];
-        $tableFuss=Yii::app()->params['jsonTableName'];
-        $sql = '';
+        //SalesForm 客户名称:customer_name   拜访日期 customer_create_date  客户分店名:customer_second_name   客户辅助拜访日期:customer_help_count_date
+        //客户联系人:customer_contact   客户联系方式:customer_contact_phone  客户地区:customer_district   客户街道:customer_street  客户总备注:customer_notes 城市权限:city
+        //var_dump($_REQUEST['SalesForm']);
+        $this->scenario='new';
+
+        $sql='';
         switch ($this->scenario) {
             case 'delete':
-                $sql = "delete from blog$tableFuss.sales where id = :id";
+                $sql = "delete from customer_info where id = :id";
                 break;
             case 'new':
-                $sql = "insert into blog$tableFuss.sales(
-						quiz_date, quiz_name,city_privileges,quiz_correct_rate,quiz_exams_id,quiz_exams_count,quiz_employee_id,quiz_start_dt,quiz_end_dt) values (
-						:quiz_date, :quiz_name,:city_privileges,:quiz_correct_rate,:quiz_exams_id,:quiz_exams_count,:quiz_employee_id,:quiz_start_dt,:quiz_end_dt)";
+                $sql = "insert into customer_info(
+						customer_create_sellers_id,visit_kinds,customer_kinds,customer_notes,customer_name,customer_create_date,customer_second_name,customer_help_count_date,customer_contact,customer_contact_phone,customer_district,customer_street,city) values (
+						:customer_create_sellers_id,:visit_kinds,:customer_kinds,:customer_notes,:customer_name,:customer_create_date,:customer_second_name,:customer_help_count_date,:customer_contact,:customer_contact_phone,:customer_district,:customer_street,:city)";
                 break;
             case 'edit':
-                $sql = "update blog$tableFuss.sales set
-					quiz_date = :quiz_date,
-					quiz_name = :quiz_name,
-					quiz_exams_count=:quiz_exams_count,
-					quiz_employee_id=:quiz_employee_id,
-					quiz_exams_id=:quiz_exams_id,
-					quiz_correct_rate=:quiz_correct_rate,
-					city_privileges=:city_privileges,
-					quiz_start_dt=:quiz_start_dt,
-					quiz_end_dt=:quiz_end_dt
+                $sql = "update customer_info set
+					customer_name = :customer_name,
+					customer_create_date = :customer_create_date,
+					customer_second_name=:customer_second_name,
+					customer_help_count_date=:customer_help_count_date,
+					customer_contact=:customer_contact,
+					customer_contact_phone=:customer_contact_phone,
+					customer_district=:customer_district,
+					customer_street=:customer_street,
+					city=:city
 					where id = :id";
                 break;
         }
         $uid = Yii::app()->user->id;
         $city = Yii::app()->user->city();
+        $name=Yii::app()->user->name;
+        $user_sellers_id='';
+        if(!empty($name)){
+            $sellers_set="select * from sellers_user_bind_v WHERE user_id='$name'";
+            $sellers_get=Yii::app()->db2->createCommand($sellers_set)->queryAll();
+            if(count($sellers_get)>0){
+                $user_sellers_id=$sellers_get[0]['sellers_id'];
+            }
+        }
+        //var_dump($sql);die;
         $command=$connection->createCommand($sql);
         if (strpos($sql,':id')!==false)
             $command->bindParam(':id',$this->id,PDO::PARAM_INT);
-        if (strpos($sql,':quiz_date')!==false)
-            $command->bindParam(':quiz_date',$this->quiz_date,PDO::PARAM_STR);
-        if (strpos($sql,':quiz_name')!==false)
-            $command->bindParam(':quiz_name',$this->quiz_name,PDO::PARAM_STR);
 
+        if (strpos($sql,':customer_create_sellers_id')!==false)
+            $command->bindParam(':customer_create_sellers_id',$user_sellers_id,PDO::PARAM_STR);
 
-        if (strpos($sql,':quiz_start_dt')!==false) {
-            $quizDate = General::toMyDate($this->quiz_start_dt);
-            $command->bindParam(':quiz_start_dt',$quizDate,PDO::PARAM_STR);
-        }
-        if (strpos($sql,':quiz_end_dt')!==false) {
-            $quizDateS = General::toMyDate($this->quiz_end_dt);
-            $command->bindParam(':quiz_end_dt',$quizDateS,PDO::PARAM_STR);
-        }
+        if (strpos($sql,':customer_name')!==false)
+            $command->bindParam(':customer_name',$this->customer_name,PDO::PARAM_STR);
+        if (strpos($sql,':customer_kinds')!==false)
+            $command->bindParam(':customer_kinds',$this->customer_kinds,PDO::PARAM_STR);
+        if (strpos($sql,':visit_kinds')!==false)
+            $command->bindParam(':visit_kinds',$this->visit_kinds,PDO::PARAM_STR);
+        if (strpos($sql,':customer_second_name')!==false)
+            $command->bindParam(':customer_second_name',$this->customer_second_name,PDO::PARAM_STR);
+        if (strpos($sql,':customer_create_date')!==false) {
+            $customer_create_date = General::toMyDate($this->customer_create_date);
+            $command->bindParam(':customer_create_date',$customer_create_date,PDO::PARAM_STR);}
+        if (strpos($sql,':customer_notes')!==false)
+            $command->bindParam(':customer_notes',$this->customer_notes,PDO::PARAM_STR);
+        if (strpos($sql,':customer_help_count_date')!==false)
+            $command->bindParam(':customer_help_count_date',$this->customer_help_count_date,PDO::PARAM_STR);
+        if (strpos($sql,':customer_contact')!==false)
+            $command->bindParam(':customer_contact',$this->customer_contact,PDO::PARAM_INT);
+        if (strpos($sql,':customer_contact_phone')!==false)
+            $command->bindParam(':customer_contact_phone',$this->customer_contact_phone,PDO::PARAM_STR );
+        if (strpos($sql,':customer_district')!==false)
+            $command->bindParam(':customer_district',$this->customer_district,PDO::PARAM_STR);
+        if (strpos($sql,':customer_street')!==false)
+            $command->bindParam(':customer_street',$this->customer_street,PDO::PARAM_STR);
 
-        if (strpos($sql,':city_privileges')!==false)
-            $command->bindParam(':city_privileges',$city,PDO::PARAM_STR);
-        if (strpos($sql,':quiz_exams_count')!==false)
-            $command->bindParam(':quiz_exams_count',$this->quiz_exams_count,PDO::PARAM_INT);
-        if (strpos($sql,':quiz_employee_id')!==false)
-            $command->bindParam(':quiz_employee_id',$this->quiz_employee_id,PDO::PARAM_STR );
-        if (strpos($sql,':quiz_exams_id')!==false)
-            $command->bindParam(':quiz_exams_id',$this->quiz_exams_id,PDO::PARAM_STR);
-        if (strpos($sql,':quiz_correct_rate')!==false)
-            $command->bindParam(':quiz_correct_rate',$this->quiz_correct_rate,PDO::PARAM_STR);
-
+        if (strpos($sql,':city')!==false)
+            $command->bindParam(':city',$city,PDO::PARAM_STR);
             $command->execute();
 
         if ($this->scenario=='new')
-            $this->id = Yii::app()->db->getLastInsertID();
+            $this->id = Yii::app()->db2->getLastInsertID();
         return true;
     }
 

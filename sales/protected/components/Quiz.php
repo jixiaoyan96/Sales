@@ -318,18 +318,12 @@ Class Quiz{
     //拜访类型
     Public static function getKinds(){
         $list = array(0=>Yii::t('quiz','visit kinds'));
-        $data_set="select * from sales_kinds WHERE kinds_pid=1";
+        $data_set="select * from visit_definition WHERE 1=1";
         $data_get=Yii::app()->db2->createCommand($data_set)->queryAll();
-        $data = array();  //需求数组
-        if(count($data_get)>0) {
-            for ($i = 0; $i < count($data_get); $i++) {
-                $data[$i]['kinds_id'] = $data_get[$i]['kinds_id'];
-                $data[$i]['kinds_name'] = $data_get[$i]['kinds_name'];
-            }
-        }
-            if (count($data) > 0) {
-                foreach ($data as $row) {
-                    $list[$row['kinds_id']] = $row['kinds_name'];
+
+            if (count($data_get) > 0) {
+                foreach ($data_get as $row) {
+                    $list[$row['visit_definition_id']] = $row['visit_definition_name'];
                 }
             }
             return $list;
@@ -339,18 +333,11 @@ Class Quiz{
      */
     Public static function customerKinds(){
         $list = array(0=>Yii::t('quiz','customer kinds'));
-        $data_set="select * from sales_kinds WHERE kinds_pid=3";
+        $data_set="select * from customer_kinds WHERE 1=1";
         $data_get=Yii::app()->db2->createCommand($data_set)->queryAll();
-        $data = array();  //需求数组
-        if(count($data_get)>0) {
-            for ($i = 0; $i < count($data_get); $i++) {
-                $data[$i]['kinds_id'] = $data_get[$i]['kinds_id'];
-                $data[$i]['kinds_name'] = $data_get[$i]['kinds_name'];
-            }
-        }
-        if (count($data) > 0) {
-            foreach ($data as $row) {
-                $list[$row['kinds_id']] = $row['kinds_name'];
+        if (count($data_get) > 0) {
+            foreach ($data_get as $row) {
+                $list[$row['customer_kinds_id']] = $row['customer_kinds_name'];
             }
         }
         return $list;

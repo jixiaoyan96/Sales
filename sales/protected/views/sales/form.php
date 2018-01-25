@@ -81,13 +81,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             <div class="form-group">
                 <?php echo $form->labelEx($model,'customer_second_name',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model, 'customer_second_name',
+                    <?php echo $form->textField($model,'customer_second_name',
                         array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
                 <?php echo $form->labelEx($model,'customer_help_count_date',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model, 'customer_help_count_date',
+                    <?php echo $form->textField($model,'customer_help_count_date',
                         array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
@@ -97,7 +97,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             <div class="form-group">
                 <?php echo $form->labelEx($model,'customer_contact',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model, 'customer_contact',
+                    <?php echo $form->textField($model,'customer_contact',
                         array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
@@ -113,13 +113,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     <div class="form-group">
             <?php echo $form->labelEx($model,'visit_kinds',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-            <?php echo TbHtml::dropDownList($model->visit_kinds,'',Quiz::getKinds(),
+            <?php echo $form->dropDownList($model,'visit_kinds',Quiz::getKinds(),
                 array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),'id'=>'select_questions_count')
             ); ?>
                 </div>
         <?php echo $form->labelEx($model,'customer_kinds',array('class'=>"col-sm-2 control-label")); ?>
         <div class="col-sm-3">
-            <?php echo TbHtml::dropDownList($model->customer_kinds,'',Quiz::customerKinds(),
+            <?php echo $form->dropDownList($model,'customer_kinds',Quiz::customerKinds(),
                 array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),'id'=>'select_questions_count')
             ); ?>
         </div>
@@ -169,6 +169,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 </section>
     <script>
     $(function(){
+        var AllDataCount=0;
         var demo=0;
         $('.innerbtn').click(function(){
             var data=$('.innerbtn').index(this);
@@ -178,6 +179,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         });
 
         $('.closepop').click(function(){
+            //$(".tempDiv").find("input[name='serviceMoney[]']").attr('name','serviceMoney'+demo+'[]');
+            //$('.pop_box').find("input[name=serviceMoney+demo+[]]");
+            console.log(AllDataCount);
             $('.pop_box').slideUp('400');
         });
 
@@ -222,7 +226,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         var show_count3 = 20;
         var count3 = 1;
         $(".tbody1").on("click",".dtadd",function () {
-            var SkyLength=document.getElementsByName("sky1[]").length;
+            //var SkyLength=document.getElementsByName("sky1[]").length;
 
             var length = $(".neijian .tbody2 tr").length;
             //alert(length);
@@ -233,14 +237,11 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 //console.log(divData);
                 $(".tempDiv").html(divData);
                 $(".tempDiv").css({'width':"100%"});
-                //$(".tempDiv").find('input').attr('name','值'+demo);
+               // $(".tempDiv").find("input").attr('name','值'+demo+'[]');
 
-                $(".tempDiv").find("input[name='newAdd1']").attr('name','service'+demo+'[]');
-                $(".tempDiv").find("input[name='newAdd2']").attr('name','money'+demo+'[]');
-                $(".tempDiv").find("input[name='newAdd3']").attr('name','count'+demo+'[]');
-                $(".tempDiv").find("input[name='newAdd4']").attr('name','all'+demo+'[]');
-                $(".tempDiv").find("input[name='newAdd5']").attr('name','total'+demo+'[]');
-                $(".tempDiv").find("input[name='newAdd6']").attr('name','return'+demo+'[]');
+                $(".tempDiv").find("select[name='serviceKinds[]']").attr('name','serviceKinds'+demo+'[]');
+                $(".tempDiv").find("input[name='serviceCounts[]']").attr('name','serviceCounts'+demo+'[]');
+                $(".tempDiv").find("input[name='serviceMoney[]']").attr('name','serviceMoney'+demo+'[]');
 
                 divData.appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
                 console.log('总计'+demo);
@@ -312,32 +313,81 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     .btn_a1 .addtr2,.btn_a1 .dtadd{background: #ff9900;}
     .tempDiv{width:0%;  height:0px;  border: 0px solid red}
 </style>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo  Yii::t('quiz','If you do not fill in the follow-up date and follow-up purpose, then this follow-up will not record deposited');?>
 <div class="addData">
         <table cellspacing="0" cellpadding="0" border="0" class="normTbe model2">
             <tbody>
             <tr class="alonTr2"> <!--所有的跟进 第二条之后的服务都是demo1-->
-                <td><input type="text" name="demo1[]"/></td>
+                <td>
+                    <select name="demo1[]">
+                        <option value="">选择服务)</option>
+                    <option value="清洁(马桶)">清洁(马桶)</option>
+                    <option value="清洁(尿斗)">清洁(尿斗)</option>
+                    <option value="清洁(水盆)">清洁(水盆)</option>
+                    <option value="清洁(清新机)">清洁(清新机)</option>
+                    <option value="清洁(皂液机)">清洁(皂液机)</option>
+                    <option value="清洁(租赁机器)">清洁(租赁机器)</option>
+                    <option value="灭虫(老鼠)">灭虫(老鼠)</option>
+                    <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                    <option value="灭虫(果蝇)">灭虫(果蝇)</option>
+                    <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
+                    <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
+                    <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
+                    <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
+                    <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
+                    <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
+                    <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
+                    <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
+                    <option value="飘盈香(小机)">飘盈香(小机)</option>
+                    <option value="飘盈香(中机)">飘盈香(中机)</option>
+                    <option value="飘盈香(大机)">飘盈香(大机)</option>
+                    <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
+                    <option value="甲醛(AC30)">甲醛(AC30)</option>
+                    <option value="甲醛(PR30)">甲醛(PR30)</option>
+                    <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
+                    </select>
+                </td>
                 <td><input type="text" name="demo2[]"/></td>
                 <td><input type="text" name="demo3[]"/></td>
-                <td><input type="text" name="demo4[]"/></td>
-                <td><input type="text" name="demo5[]"/></td>
-                <td><input type="text" name="demo6[]"/></td>
-                <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>
                 <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除</a></td>
             </tr>
             </tbody>
         </table>
     <table cellspacing="0" cellpadding="0" border="0" class="normTbe model3">
         <tbody>
-        <tr class="alonTr2"> <!--所有的跟进 第二条之后的服务都是newAdd1-->
-            <td><input type="text" name="newAdd1[]"/></td>
-            <td><input type="text" name="newAdd2[]"/></td>
-            <td><input type="text" name="newAdd3[]"/></td>
-            <td><input type="text" name="newAdd4[]"/></td>
-            <td><input type="text" name="newAdd5[]"/></td>
-            <td><input type="text" name="newAdd6[]"/></td>
-            <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>
+        <tr class="alonTr2"> <!--所有的跟进 第二条之后的动态增加的服务-->
+
+            <td>
+                <select name="serviceKinds[]">
+                    <option value="">服务类别选择</option>
+                    <option value="清洁(马桶)">清洁(马桶)</option>
+                    <option value="清洁(尿斗)">清洁(尿斗)</option>
+                    <option value="清洁(水盆)">清洁(水盆)</option>
+                    <option value="清洁(清新机)">清洁(清新机)</option>
+                    <option value="清洁(皂液机)">清洁(皂液机)</option>
+                    <option value="清洁(租赁机器)">清洁(租赁机器)</option>
+                    <option value="灭虫(老鼠)">灭虫(老鼠)</option>
+                    <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                    <option value="灭虫(果蝇)">灭虫(果蝇)</option>
+                    <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
+                    <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
+                    <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
+                    <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
+                    <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
+                    <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
+                    <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
+                    <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
+                    <option value="飘盈香(小机)">飘盈香(小机)</option>
+                    <option value="飘盈香(中机)">飘盈香(中机)</option>
+                    <option value="飘盈香(大机)">飘盈香(大机)</option>
+                    <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
+                    <option value="甲醛(AC30)">甲醛(AC30)</option>
+                    <option value="甲醛(PR30)">甲醛(PR30)</option>
+                    <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
+                </select>
+            </td>
+           <td> <input type="text" name="serviceCounts[]"/></td>
+            <td><input type="text" name="serviceMoney[]"/></td>
             <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除</a></td>
         </tr>
         </tbody>
@@ -345,14 +395,32 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
             <tbody>
             <tr class="alonTr">  <!--第二层以及更多的跟进表单数据-->
-                <td><input type="date" name="sky1[]"/></td>
-                <td><input type="text" name="sky2[]"/></td>
-                <td><input type="text" name="sky3[]"/></td>
-                <td><input type="text" name="sky4[]"/></td>
-                <td><input type="text" name="sky5[]"/></td>
-                <td><input type="text" name="sky6[]"/></td>
+                <td><input type="date" value="10" name="sky1[]"/></td>
                 <td>
-                    <a href="javascript:;" class="innerbtn">添加内件22</a>
+                    <select name="sky2[]">
+                        <option value="">本次跟进目的</option>
+                        <option value="首次">首次</option>
+                        <option value="报价">报价</option>
+                        <option value="客诉">客诉</option>
+                        <option value="收款">收款</option>
+                        <option value="追款">追款</option>
+                        <option value="签单">签单</option>
+                        <option value="续约">续约</option>
+                        <option value="回访">回访</option>
+                        <option value="其他">其他</option>
+                        <option value="更改项目">更改项目</option>
+                        <option value="拜访目的">拜访目的</option>
+                        <option value="陌拜">陌拜</option>
+                        <option value="日常跟进">日常跟进</option>
+                        <option value="客户资源">客户资源</option>
+                        <option value="电话上门">电话上门</option>
+                    </select>
+                </td>
+                <td><input type="text" value="" placeholder="本次跟进备注" name="sky3[]"/></td>
+                <td><input type="text" value="" placeholder="本次跟进总金额" name="sky4[]"/></td>
+
+                <td>
+                    <a href="javascript:;" class="innerbtn">添加服务22</a>
                     <div class="pop_box">
                         <div class="bg"></div>
                         <div class="contentP">
@@ -364,31 +432,60 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                 <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0";>
                                     <thead>
                                     <tr>
-                                        <th>内件商品描述</th>
+                                        <th>服务产品</th>
                                         <th>数量</th>
-                                        <th>重量</th>
-                                        <th>单价</th>
+                                        <th>价格</th>
+                                        <th>操作</th>
+   <!--                                     <th>单价</th>
                                         <th>总价</th>
                                         <th>HSCODE</th>
                                         <th>产地</th>
-                                        <th>操作</th>
+                                        <th>操作</th>-->
                                     </tr>
                                     </thead>
                                     <tbody class="tbody2">
                                     <tr>  <!--动态跟进 每次的第一项服务都是 day1-->
-                                        <td><input type="text" name="day1[]"/></td>
+                                        <td>
+                                            <select name="day1[]">
+                                                <option value="">服务类别</option>
+                                                <option value="清洁(马桶)">清洁(马桶)</option>
+                                                <option value="清洁(尿斗)">清洁(尿斗)</option>
+                                                <option value="清洁(水盆)">清洁(水盆)</option>
+                                                <option value="清洁(清新机)">清洁(清新机)</option>
+                                                <option value="清洁(皂液机)">清洁(皂液机)</option>
+                                                <option value="清洁(租赁机器)">清洁(租赁机器)</option>
+                                                <option value="灭虫(老鼠)">灭虫(老鼠)</option>
+                                                <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                                                <option value="灭虫(果蝇)">灭虫(果蝇)</option>
+                                                <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
+                                                <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
+                                                <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
+                                                <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
+                                                <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
+                                                <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
+                                                <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
+                                                <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
+                                                <option value="飘盈香(小机)">飘盈香(小机)</option>
+                                                <option value="飘盈香(中机)">飘盈香(中机)</option>
+                                                <option value="飘盈香(大机)">飘盈香(大机)</option>
+                                                <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
+                                                <option value="甲醛(AC30)">甲醛(AC30)</option>
+                                                <option value="甲醛(PR30)">甲醛(PR30)</option>
+                                                <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
+                                            </select>
+                                        </td>
                                         <td><input type="text" name="day2[]"/></td>
                                         <td><input type="text" name="day3[]"/></td>
-                                        <td><input type="text" name="day4[]"/></td>
+                           <!--             <td><input type="text" name="day4[]"/></td>
                                         <td><input type="text" name="day5[]"/></td>
                                         <td><input type="text" name="day6[]"/></td>
-                                        <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>
+                                        <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>-->
                                         <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
                                 <div class="btn_a1">
-                                    <a class="dtadd" href="javascript:;">新增内件2-2</a> <a class="closepop" href="javascript:;">确定内件</a>
+                                    <a class="dtadd" href="javascript:;">新增服务2-2</a> <a class="closepop" href="javascript:;">确定服务2-2</a>
                                 </div>
                             </div>
                         </div>
@@ -404,59 +501,88 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <tr>
                     <th>本次跟进日期</th>
                     <th>本次跟进目的</th>
-                    <th>总重量</th>
-                    <th>数据</th>
-                    <th>宽度(厘米)：</th>
-                    <th>高度(厘米)：</th>
+                    <th>本次跟进备注</th>
+                    <th>本次跟进总额</th>
                     <th>操作</th>
                 </tr>
                 </thead>
+
                 <tbody class="tbody1">
                 <tr>  <!--第一层的表单拜访数据-->
                     <td><input type="date" value="10" name="first1[]"/></td>
-                    <td><select name="first2"></select></td>
-                    <td><input type="text" value="10kg" name="first3[]"/></td>
-                    <td><input type="text" value="" name="first4[]"/></td>
-                    <td><input type="text" value="50cm" name="first5[]"/></td>
-                    <td><input type="text" value="50cm" name="first6[]"/></td>
+                    <td><select name="first2[]">
+                            <option value="">本次跟进目的</option>
+                            <option value="首次">首次</option>
+                            <option value="报价">报价</option>
+                            <option value="客诉">客诉</option>
+                            <option value="收款">收款</option>
+                            <option value="追款">追款</option>
+                            <option value="签单">签单</option>
+                            <option value="续约">续约</option>
+                            <option value="回访">回访</option>
+                            <option value="其他">其他</option>
+                            <option value="更改项目">更改项目</option>
+                        </select></td>
+                    <td ><input type="text" value="" placeholder="本次跟进备注" name="first3[]"/></td>
+                    <td><input type="text" value="" placeholder="本次跟进总金额" name="first4[]"/></td>
                     <td>
                         <a href="javascript:;" class="innerbtn">添加服务(1</a>
                         <div class="pop_box">
                             <div class="bg"></div>
                             <div class="contentP">
                                 <div class="PTit">
-                                    <h3>内件商品信息</h3>
+                                    <h3><?php echo Yii::t('quiz','Follow up service information')."(".Yii::t('quiz','If you do not select the service and fill in the service amount, no data will be stored').")";?></h3>
                                     <a href="javascript:;" class="closepop">x</a>
                                 </div>
                                 <div class="textmian">
                                     <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0";>
                                         <thead>
                                         <tr>
-                                            <th>内件商品描述</th>
+                                            <th>服务产品</th>
                                             <th>数量</th>
-                                            <th>重量</th>
-                                            <th>单价</th>
-                                            <th>总价</th>
-                                            <th>HSCODE</th>
-                                            <th>产地</th>
+                                            <th>价格</th>
                                             <th>操作</th>
                                         </tr>
                                         </thead>
                                         <tbody class="tbody2">
                                         <tr>  <!--第一个表单拜访的新增内件数据的第一条数据-->
-                                            <td><input type="text" name="count1[]"/></td>
+                                            <td>
+                                              <select name="count1[]">
+                                                  <option value="">服务类型选择</option>
+                                                  <option value="清洁(马桶)">清洁(马桶)</option>
+                                                  <option value="清洁(尿斗)">清洁(尿斗)</option>
+                                                  <option value="清洁(水盆)">清洁(水盆)</option>
+                                                  <option value="清洁(清新机)">清洁(清新机)</option>
+                                                  <option value="清洁(皂液机)">清洁(皂液机)</option>
+                                                  <option value="清洁(租赁机器)">清洁(租赁机器)</option>
+                                                  <option value="灭虫(老鼠)">灭虫(老鼠)</option>
+                                                  <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                                                  <option value="灭虫(果蝇)">灭虫(果蝇)</option>
+                                                  <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
+                                                  <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
+                                                  <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
+                                                  <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
+                                                  <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
+                                                  <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
+                                                  <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
+                                                  <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
+                                                  <option value="飘盈香(小机)">飘盈香(小机)</option>
+                                                  <option value="飘盈香(中机)">飘盈香(中机)</option>
+                                                  <option value="飘盈香(大机)">飘盈香(大机)</option>
+                                                  <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
+                                                  <option value="甲醛(AC30)">甲醛(AC30)</option>
+                                                  <option value="甲醛(PR30)">甲醛(PR30)</option>
+                                                  <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
+                                              </select>
+                                            </td>
                                             <td><input type="text" name="count2[]"/></td>
                                             <td><input type="text" name="count3[]"/></td>
-                                            <td><input type="text" name="count4[]"/></td>
-                                            <td><input type="text" name="count5[]"/></td>
-                                            <td><input type="text" name="count6[]"/></td>
-                                            <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>
                                             <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除</a></td>
                                         </tr>
                                         </tbody>
                                     </table>
                                     <div class="btn_a1">
-                                        <a class="addtr2" href="javascript:;">新增内件1-1</a> <a class="closepop" href="javascript:;">确定内件</a>
+                                        <a class="addtr2" href="javascript:;">新增服务1-1</a> <a class="closepop" href="javascript:;">确定服务1-1</a>
                                     </div>
                                 </div>
                             </div>
@@ -466,6 +592,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     </td>
                 </tr>
                 </tbody>
+
             </table>
             <div class="copybtn">
                 <a href="javascript:;" class="AddTr">新增</a>

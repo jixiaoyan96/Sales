@@ -1541,3 +1541,722 @@ REQUEST_URI=/Sales/Sales/sales/index.php/sales/new
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\layouts\main.php (37)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\layouts\column1.php (6)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (61)
+2018/01/24 11:35:47 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 11:35:47 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 11:35:47 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 11:35:47 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:42:32 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:42:32 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:42:32 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:42:32 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:42:33 [error] [php] Undefined variable: sql (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php:125)
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (125)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (85)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (103)
+2018/01/24 15:43:31 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:43:31 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:43:31 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:43:31 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:43:33 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty. The SQL statement executed was: .
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (149)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (85)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (103)
+2018/01/24 15:43:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php:90
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(103): SalesForm->saveData()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/24 15:44:15 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:44:15 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:44:15 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:44:15 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:44:16 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty. The SQL statement executed was: .
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (149)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (85)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (103)
+2018/01/24 15:44:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php:90
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(103): SalesForm->saveData()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/24 15:44:27 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:44:27 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:44:27 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:44:27 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 15:44:28 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1065 Query was empty. The SQL statement executed was: .
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (149)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (85)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (103)
+2018/01/24 15:44:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php:90
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(103): SalesForm->saveData()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/24 16:01:13 [error] [php] htmlspecialchars() expects parameter 1 to be string, object given (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\helpers\CHtml.php:85)
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\helpers\CHtml.php(140): renderAttributes()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\helpers\CHtml.php(772): tag()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\extensions\bootstrap\helpers\TbHtml.php(1061): dropDownList()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\sales\form.php(124): dropDownList()
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CBaseController.php(127): require()
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CBaseController.php(96): SalesController->renderInternal()
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(870): SalesController->renderFile()
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(783): SalesController->renderPartial()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(62): SalesController->render()
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionNew()
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#13 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#14 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#15 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/new
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\extensions\bootstrap\helpers\TbHtml.php (1061)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\sales\form.php (124)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (62)
+2018/01/24 16:02:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog_test.sales' doesn't exist. The SQL statement executed was: select id,quiz_name,quiz_start_dt,quiz_employee_id,quiz_exams_id,quiz_end_dt from blog_test.sales WHERE 1=1 .
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\components\Quiz.php (148)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\sales\form.php (122)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (62)
+2018/01/24 16:02:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'blog_test.sales' doesn't exist. The SQL statement executed was: select id,quiz_name,quiz_start_dt,quiz_employee_id,quiz_exams_id,quiz_end_dt from blog_test.sales WHERE 1=1 ' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\components\Quiz.php(148): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\sales\form.php(122): Quiz::QuestionsSelect()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CBaseController.php(127): require('D:\\phpstudy\\PHP...')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\phpstudy\\PHP...', Array, true)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\phpstudy\\PHP...', Array, true)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(783): CController->renderPartial('form', Array, true)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(62): CController->render('form', Array)
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionNew()
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('new')
+#13 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/new')
+#14 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/new
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/Sales/index
+---
+2018/01/24 16:41:39 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 16:41:39 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 16:41:39 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 16:41:39 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 16:43:14 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 16:43:14 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 16:43:14 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 16:43:14 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:13:58 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:13:58 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:13:58 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:13:58 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:14:07 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:14:07 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:14:07 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:14:07 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:15:01 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:15:01 [warning] [application] Failed to set unsafe attribute "customer_second_name" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:15:01 [warning] [application] Failed to set unsafe attribute "customer_help_count_date" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 17:15:01 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 18:35:41 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/24 18:35:41 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 10:32:19 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 10:32:19 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:24:01 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:24:01 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:24:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=16.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (57)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (123)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:24:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=16' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php(57): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(123): SalesForm->retrieveData('16')
+#3 [internal function]: SalesController->actionEdit('16')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=16
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 11:25:12 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=16.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (57)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (123)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:25:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=16' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php(57): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(123): SalesForm->retrieveData('16')
+#3 [internal function]: SalesController->actionEdit('16')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=16
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 11:29:20 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:29:20 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (101)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:29:21 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:110)
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (110)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:53:54 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:53:54 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:53:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,2018-01-24,续约)' at line 2. The SQL statement executed was: 
+              Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
+              (20,,,,2018-01-24,续约).
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (122)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:53:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,2018-01-24,续约)' at line 2. The SQL statement executed was: 
+              Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
+              (20,,,,2018-01-24,续约)' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(122): CDbCommand->execute()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 11:54:55 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:54:55 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:54:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,2018-01-24,'续约')' at line 2. The SQL statement executed was: 
+              Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
+              (21,,,,2018-01-24,'续约').
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (122)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:54:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,2018-01-24,'续约')' at line 2. The SQL statement executed was: 
+              Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
+              (21,,,,2018-01-24,'续约')' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(122): CDbCommand->execute()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 11:55:10 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:55:10 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:55:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,'2018-01-24','续约')' at line 2. The SQL statement executed was: 
+              Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
+              (22,,,,'2018-01-24','续约').
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (122)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:55:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,'2018-01-24','续约')' at line 2. The SQL statement executed was: 
+              Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
+              (22,,,,'2018-01-24','续约')' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(122): CDbCommand->execute()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 11:56:55 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:56:55 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:56:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,'2018-01-24','续约')' at line 2. The SQL statement executed was: 
+              Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
+              (23,,,,'2018-01-24','续约').
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (122)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 11:56:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',,'2018-01-24','续约')' at line 2. The SQL statement executed was: 
+              Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
+              (23,,,,'2018-01-24','续约')' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(122): CDbCommand->execute()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 12:18:11 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (111)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 12:18:11 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (111)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 12:18:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION sales.清洁 does not exist. The SQL statement executed was: 
+                                     Insert into service_history (service_history_name,service_history_count,service_history_money,service_visit_pid)
+                                     VALUES (清洁(清新机),4654$,1111,5)
+                                     .
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (135)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 12:18:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION sales.清洁 does not exist. The SQL statement executed was: 
+                                     Insert into service_history (service_history_name,service_history_count,service_history_money,service_visit_pid)
+                                     VALUES (清洁(清新机),4654$,1111,5)
+                                     ' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(135): CDbCommand->execute()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 17:00:16 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (112)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:00:16 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (112)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:00:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=48.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (57)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (242)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:00:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=48' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php(57): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(242): SalesForm->retrieveData('48')
+#3 [internal function]: SalesController->actionEdit('48')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=48
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 17:02:27 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=48.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (57)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (245)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:02:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=48' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php(57): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(245): SalesForm->retrieveData('48')
+#3 [internal function]: SalesController->actionEdit('48')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=48
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 17:02:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=48.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (57)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (245)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:02:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=48' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php(57): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(245): SalesForm->retrieveData('48')
+#3 [internal function]: SalesController->actionEdit('48')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=48
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 17:09:12 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (112)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:09:12 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (112)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:09:12 [error] [php] urlencode() expects parameter 1 to be string, object given (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CUrlManager.php:438)
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CUrlManager.php(300): CUrlRule->createUrl()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(524): CUrlManager->createUrl()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(230): CWebApplication->createUrl()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (230)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:10:19 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (112)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:10:19 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (112)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:31:44 [error] [php] Array to string conversion (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:108)
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:32:07 [error] [php] Array to string conversion (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:108)
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (108)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:35:47 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:35:47 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:38:19 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:38:19 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:45:34 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:45:34 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:45:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION sales.清洁 does not exist. The SQL statement executed was: 
+                                                        Insert into service_history (service_history_name,service_history_count,service_history_money,service_visit_pid)
+                                                         VALUES
+                                                         (清洁(皂液机),9,130,46)
+                                                        .
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (201)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:45:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION sales.清洁 does not exist. The SQL statement executed was: 
+                                                        Insert into service_history (service_history_name,service_history_count,service_history_money,service_visit_pid)
+                                                         VALUES
+                                                         (清洁(皂液机),9,130,46)
+                                                        ' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(201): CDbCommand->execute()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/new
+---
+2018/01/25 17:47:19 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:47:19 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:50:05 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:50:05 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:50:10 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=20.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (57)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (238)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:50:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=20' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php(57): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(238): SalesForm->retrieveData('20')
+#3 [internal function]: SalesController->actionEdit('20')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=20
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/index
+---
+2018/01/25 17:56:25 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=20.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (57)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (239)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 17:56:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=20' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php(57): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(239): SalesForm->retrieveData('20')
+#3 [internal function]: SalesController->actionEdit('20')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=20
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/index
+---
+2018/01/25 18:55:38 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 18:55:38 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 18:56:09 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=20.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (57)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (239)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 18:56:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sales.sales' doesn't exist. The SQL statement executed was: select * from sales where id=20' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php(57): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(239): SalesForm->retrieveData('20')
+#3 [internal function]: SalesController->actionEdit('20')
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(SalesController), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(SalesController), Object(ReflectionMethod), Array)
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/edit')
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=20
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/index
+---
