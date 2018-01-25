@@ -50,11 +50,18 @@ class SalesForm extends CFormModel
             array('id,customer_help_count_date,customer_second_name,customer_district,customer_create_date,customer_street,customer_kinds,visit_kinds,customer_create_sellers_id','safe'),
             );
     }
+
+    /**
+     * @param $index
+     * @return
+     * index是关于对customer_info的主键的修改
+     */
     public function retrieveData($index)
     {
-        $sql = "select * from sales where id=$index";
+        $sql = "select * from customer_info where customer_id=$index";
         //var_dump($sql);die;
         $rows = Yii::app()->db2->createCommand($sql)->queryAll();
+
         if (count($rows) > 0)
         {
             foreach ($rows as $row)

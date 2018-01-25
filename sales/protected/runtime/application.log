@@ -2260,3 +2260,15 @@ Stack trace:
 REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=20
 HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/index
 ---
+2018/01/25 19:42:38 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 19:42:38 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 19:47:58 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/25 19:47:58 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (113)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)

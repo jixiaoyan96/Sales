@@ -109,21 +109,21 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 </div>
             </div>
 
-          <!--  <script src="<?php /*echo Yii::app()->baseUrl;*/?>/js/jquery.js'"></script>-->
-    <div class="form-group">
-            <?php echo $form->labelEx($model,'visit_kinds',array('class'=>"col-sm-2 control-label")); ?>
+            <!--  <script src="<?php /*echo Yii::app()->baseUrl;*/?>/js/jquery.js'"></script>-->
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'visit_kinds',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-            <?php echo $form->dropDownList($model,'visit_kinds',Quiz::getKinds(),
-                array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),'id'=>'select_questions_count')
-            ); ?>
+                    <?php echo $form->dropDownList($model,'visit_kinds',Quiz::getKinds(),
+                        array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),'id'=>'select_questions_count')
+                    ); ?>
                 </div>
-        <?php echo $form->labelEx($model,'customer_kinds',array('class'=>"col-sm-2 control-label")); ?>
-        <div class="col-sm-3">
-            <?php echo $form->dropDownList($model,'customer_kinds',Quiz::customerKinds(),
-                array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),'id'=>'select_questions_count')
-            ); ?>
-        </div>
-    </div>
+                <?php echo $form->labelEx($model,'customer_kinds',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->dropDownList($model,'customer_kinds',Quiz::customerKinds(),
+                        array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),'id'=>'select_questions_count')
+                    ); ?>
+                </div>
+            </div>
 
             <div class="form-group">
                 <?php echo $form->labelEx($model,'customer_district',array('class'=>"col-sm-2 control-label")); ?>
@@ -143,17 +143,17 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             <div class="from-group">
                 <?php echo $form->labelEx($model,'customer_notes',array('class'=>'col-sm-2 control-label'))?>
                 <div class="col-sm-8">
-                <?php echo $form->textArea($model,'customer_notes',
-                    array('size'=>'20', 'maxlength'=>'20','cols'=>'30','rows'=>'6')
-                ); ?>
-                    </div>
+                    <?php echo $form->textArea($model,'customer_notes',
+                        array('size'=>'20', 'maxlength'=>'20','cols'=>'30','rows'=>'6')
+                    ); ?>
+                </div>
             </div>
 
             <?PHP /*$this->urlAjaxSelect=Yii::app()->createUrl('sales/AjaxUrl');*/?>
             <input type="hidden" id="urlGet" name="urlGet" value="<?php echo $this->urlAjaxSelect;?>"/>
             <?php echo $form->hiddenField($model, 'id'); ?>
 
-          <?php echo $form->hiddenField($model, 'city',array('id'=>'getCountValue')); ?>
+            <?php echo $form->hiddenField($model, 'city',array('id'=>'getCountValue')); ?>
             <div class="form-group">
                 <?php /*echo $form->labelEx($model,'city_privileges',array('class'=>"col-sm-2 control-label")); */?>
                 <div class="col-sm-5">
@@ -167,14 +167,14 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         </div>
     </div>
 </section>
-    <script>
+<script>
     $(function(){
         var AllDataCount=0;
         var demo=0;
         $('.innerbtn').click(function(){
             var data=$('.innerbtn').index(this);
             demo=data;
-          console.log('当前为第'+demo+'个');
+            console.log('当前为第'+demo+'个');
             $(this).next('.pop_box').slideDown('400');
         });
 
@@ -237,7 +237,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 //console.log(divData);
                 $(".tempDiv").html(divData);
                 $(".tempDiv").css({'width':"100%"});
-               // $(".tempDiv").find("input").attr('name','值'+demo+'[]');
+                // $(".tempDiv").find("input").attr('name','值'+demo+'[]');
 
                 $(".tempDiv").find("select[name='serviceKinds[]']").attr('name','serviceKinds'+demo+'[]');
                 $(".tempDiv").find("input[name='serviceCounts[]']").attr('name','serviceCounts'+demo+'[]');
@@ -315,12 +315,12 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 </style>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo  Yii::t('quiz','If you do not fill in the follow-up date and follow-up purpose, then this follow-up will not record deposited');?>
 <div class="addData">
-        <table cellspacing="0" cellpadding="0" border="0" class="normTbe model2">
-            <tbody>
-            <tr class="alonTr2"> <!--所有的跟进 第二条之后的服务都是demo1-->
-                <td>
-                    <select name="demo1[]">
-                        <option value="">选择服务</option>
+    <table cellspacing="0" cellpadding="0" border="0" class="normTbe model2">
+        <tbody>
+        <tr class="alonTr2"> <!--所有的跟进 第二条之后的服务都是demo1-->
+            <td>
+                <select name="demo1[]">
+                    <option value="">选择服务</option>
                     <option value="清洁(马桶)">清洁(马桶)</option>
                     <option value="清洁(尿斗)">清洁(尿斗)</option>
                     <option value="清洁(水盆)">清洁(水盆)</option>
@@ -345,14 +345,14 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     <option value="甲醛(AC30)">甲醛(AC30)</option>
                     <option value="甲醛(PR30)">甲醛(PR30)</option>
                     <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
-                    </select>
-                </td>
-                <td><input type="text" name="demo2[]"/></td>
-                <td><input type="text" name="demo3[]"/></td>
-                <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除</a></td>
-            </tr>
-            </tbody>
-        </table>
+                </select>
+            </td>
+            <td><input type="text" name="demo2[]"/></td>
+            <td><input type="text" name="demo3[]"/></td>
+            <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
     <table cellspacing="0" cellpadding="0" border="0" class="normTbe model3">
         <tbody>
         <tr class="alonTr2"> <!--所有的跟进 第二条之后的动态增加的服务-->
@@ -386,18 +386,131 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
                 </select>
             </td>
-           <td> <input type="text" name="serviceCounts[]"/></td>
+            <td> <input type="text" name="serviceCounts[]"/></td>
             <td><input type="text" name="serviceMoney[]"/></td>
             <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除</a></td>
         </tr>
         </tbody>
     </table>
-        <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
-            <tbody>
-            <tr class="alonTr">  <!--第二层以及更多的跟进表单数据-->
-                <td><input type="date" value="10" name="sky1[]"/></td>
-                <td>
-                    <select name="sky2[]">
+    <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
+        <tbody>
+        <tr class="alonTr">  <!--第二层以及更多的跟进表单数据-->
+            <td><input type="date" value="10" name="sky1[]"/></td>
+            <td>
+                <select name="sky2[]">
+                    <option value="">本次跟进目的</option>
+                    <option value="首次">首次</option>
+                    <option value="报价">报价</option>
+                    <option value="客诉">客诉</option>
+                    <option value="收款">收款</option>
+                    <option value="追款">追款</option>
+                    <option value="签单">签单</option>
+                    <option value="续约">续约</option>
+                    <option value="回访">回访</option>
+                    <option value="其他">其他</option>
+                    <option value="更改项目">更改项目</option>
+                    <option value="拜访目的">拜访目的</option>
+                    <option value="陌拜">陌拜</option>
+                    <option value="日常跟进">日常跟进</option>
+                    <option value="客户资源">客户资源</option>
+                    <option value="电话上门">电话上门</option>
+                </select>
+            </td>
+            <td><input type="text" value="" placeholder="本次跟进备注" name="sky3[]"/></td>
+            <td><input type="text" value="" placeholder="本次跟进总金额" name="sky4[]"/></td>
+
+            <td>
+                <a href="javascript:;" class="innerbtn">添加服务22</a>
+                <div class="pop_box">
+                    <div class="bg"></div>
+                    <div class="contentP">
+                        <div class="PTit">
+                            <h3>内件商品信息</h3>
+                            <a href="javascript:;" class="closepop">x</a>
+                        </div>
+                        <div class="textmian">
+                            <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0";>
+                                <thead>
+                                <tr>
+                                    <th>服务产品</th>
+                                    <th>数量</th>
+                                    <th>价格</th>
+                                    <th>操作</th>
+                                    <!--                                     <th>单价</th>
+                                                                         <th>总价</th>
+                                                                         <th>HSCODE</th>
+                                                                         <th>产地</th>
+                                                                         <th>操作</th>-->
+                                </tr>
+                                </thead>
+                                <tbody class="tbody2">
+                                <tr>  <!--动态跟进 每次的第一项服务都是 day1-->
+                                    <td>
+                                        <select name="day1[]">
+                                            <option value="">服务类别</option>
+                                            <option value="清洁(马桶)">清洁(马桶)</option>
+                                            <option value="清洁(尿斗)">清洁(尿斗)</option>
+                                            <option value="清洁(水盆)">清洁(水盆)</option>
+                                            <option value="清洁(清新机)">清洁(清新机)</option>
+                                            <option value="清洁(皂液机)">清洁(皂液机)</option>
+                                            <option value="清洁(租赁机器)">清洁(租赁机器)</option>
+                                            <option value="灭虫(老鼠)">灭虫(老鼠)</option>
+                                            <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                                            <option value="灭虫(果蝇)">灭虫(果蝇)</option>
+                                            <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
+                                            <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
+                                            <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
+                                            <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
+                                            <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
+                                            <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
+                                            <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
+                                            <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
+                                            <option value="飘盈香(小机)">飘盈香(小机)</option>
+                                            <option value="飘盈香(中机)">飘盈香(中机)</option>
+                                            <option value="飘盈香(大机)">飘盈香(大机)</option>
+                                            <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
+                                            <option value="甲醛(AC30)">甲醛(AC30)</option>
+                                            <option value="甲醛(PR30)">甲醛(PR30)</option>
+                                            <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" name="day2[]"/></td>
+                                    <td><input type="text" name="day3[]"/></td>
+                                    <!--             <td><input type="text" name="day4[]"/></td>
+                                                 <td><input type="text" name="day5[]"/></td>
+                                                 <td><input type="text" name="day6[]"/></td>
+                                                 <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>-->
+                                    <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="btn_a1">
+                                <a class="dtadd" href="javascript:;">新增服务2-2</a> <a class="closepop" href="javascript:;">确定服务2-2</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br /><a class="text_a" href="javascript:;" onClick="deltr(this)">删除22</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="itemInfo">
+        <table cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
+            <thead>
+            <tr>
+                <th>本次跟进日期</th>
+                <th>本次跟进目的</th>
+                <th>本次跟进备注</th>
+                <th>本次跟进总额</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+
+            <tbody class="tbody1">
+            <tr>  <!--第一层的表单拜访数据-->
+                <td><input type="date" value="10" name="first1[]"/></td>
+                <td><select name="first2[]">
                         <option value="">本次跟进目的</option>
                         <option value="首次">首次</option>
                         <option value="报价">报价</option>
@@ -409,23 +522,16 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         <option value="回访">回访</option>
                         <option value="其他">其他</option>
                         <option value="更改项目">更改项目</option>
-                        <option value="拜访目的">拜访目的</option>
-                        <option value="陌拜">陌拜</option>
-                        <option value="日常跟进">日常跟进</option>
-                        <option value="客户资源">客户资源</option>
-                        <option value="电话上门">电话上门</option>
-                    </select>
-                </td>
-                <td><input type="text" value="" placeholder="本次跟进备注" name="sky3[]"/></td>
-                <td><input type="text" value="" placeholder="本次跟进总金额" name="sky4[]"/></td>
-
+                    </select></td>
+                <td ><input type="text" value="" placeholder="本次跟进备注" name="first3[]"/></td>
+                <td><input type="text" value="" placeholder="本次跟进总金额" name="first4[]"/></td>
                 <td>
-                    <a href="javascript:;" class="innerbtn">添加服务22</a>
+                    <a href="javascript:;" class="innerbtn">添加服务(1</a>
                     <div class="pop_box">
                         <div class="bg"></div>
                         <div class="contentP">
                             <div class="PTit">
-                                <h3>内件商品信息</h3>
+                                <h3><?php echo Yii::t('quiz','Follow up service information')."(".Yii::t('quiz','If you do not select the service and fill in the service amount, no data will be stored').")";?></h3>
                                 <a href="javascript:;" class="closepop">x</a>
                             </div>
                             <div class="textmian">
@@ -436,18 +542,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                         <th>数量</th>
                                         <th>价格</th>
                                         <th>操作</th>
-   <!--                                     <th>单价</th>
-                                        <th>总价</th>
-                                        <th>HSCODE</th>
-                                        <th>产地</th>
-                                        <th>操作</th>-->
                                     </tr>
                                     </thead>
                                     <tbody class="tbody2">
-                                    <tr>  <!--动态跟进 每次的第一项服务都是 day1-->
+                                    <tr>  <!--第一个表单拜访的新增内件数据的第一条数据-->
                                         <td>
-                                            <select name="day1[]">
-                                                <option value="">服务类别</option>
+                                            <select name="count1[]">
+                                                <option value="">服务类型选择</option>
                                                 <option value="清洁(马桶)">清洁(马桶)</option>
                                                 <option value="清洁(尿斗)">清洁(尿斗)</option>
                                                 <option value="清洁(水盆)">清洁(水盆)</option>
@@ -474,131 +575,30 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                                 <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
                                             </select>
                                         </td>
-                                        <td><input type="text" name="day2[]"/></td>
-                                        <td><input type="text" name="day3[]"/></td>
-                           <!--             <td><input type="text" name="day4[]"/></td>
-                                        <td><input type="text" name="day5[]"/></td>
-                                        <td><input type="text" name="day6[]"/></td>
-                                        <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>-->
+                                        <td><input type="text" name="count2[]"/></td>
+                                        <td><input type="text" name="count3[]"/></td>
                                         <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
                                 <div class="btn_a1">
-                                    <a class="dtadd" href="javascript:;">新增服务2-2</a> <a class="closepop" href="javascript:;">确定服务2-2</a>
+                                    <a class="addtr2" href="javascript:;">新增服务1-1</a> <a class="closepop" href="javascript:;">确定服务1-1</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <br /><a class="text_a" href="javascript:;" onClick="deltr(this)">删除22</a>
+                    <br/>
+                    <a class="text_a" href="javascript:;" onClick="deltr(this)">删除(1</a>  <!--第一行的表单删除-->
                 </td>
             </tr>
             </tbody>
+
         </table>
-        <div class="itemInfo">
-            <table cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
-                <thead>
-                <tr>
-                    <th>本次跟进日期</th>
-                    <th>本次跟进目的</th>
-                    <th>本次跟进备注</th>
-                    <th>本次跟进总额</th>
-                    <th>操作</th>
-                </tr>
-                </thead>
-
-                <tbody class="tbody1">
-                <tr>  <!--第一层的表单拜访数据-->
-                    <td><input type="date" value="10" name="first1[]"/></td>
-                    <td><select name="first2[]">
-                            <option value="">本次跟进目的</option>
-                            <option value="首次">首次</option>
-                            <option value="报价">报价</option>
-                            <option value="客诉">客诉</option>
-                            <option value="收款">收款</option>
-                            <option value="追款">追款</option>
-                            <option value="签单">签单</option>
-                            <option value="续约">续约</option>
-                            <option value="回访">回访</option>
-                            <option value="其他">其他</option>
-                            <option value="更改项目">更改项目</option>
-                        </select></td>
-                    <td ><input type="text" value="" placeholder="本次跟进备注" name="first3[]"/></td>
-                    <td><input type="text" value="" placeholder="本次跟进总金额" name="first4[]"/></td>
-                    <td>
-                        <a href="javascript:;" class="innerbtn">添加服务(1</a>
-                        <div class="pop_box">
-                            <div class="bg"></div>
-                            <div class="contentP">
-                                <div class="PTit">
-                                    <h3><?php echo Yii::t('quiz','Follow up service information')."(".Yii::t('quiz','If you do not select the service and fill in the service amount, no data will be stored').")";?></h3>
-                                    <a href="javascript:;" class="closepop">x</a>
-                                </div>
-                                <div class="textmian">
-                                    <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0";>
-                                        <thead>
-                                        <tr>
-                                            <th>服务产品</th>
-                                            <th>数量</th>
-                                            <th>价格</th>
-                                            <th>操作</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody class="tbody2">
-                                        <tr>  <!--第一个表单拜访的新增内件数据的第一条数据-->
-                                            <td>
-                                              <select name="count1[]">
-                                                  <option value="">服务类型选择</option>
-                                                  <option value="清洁(马桶)">清洁(马桶)</option>
-                                                  <option value="清洁(尿斗)">清洁(尿斗)</option>
-                                                  <option value="清洁(水盆)">清洁(水盆)</option>
-                                                  <option value="清洁(清新机)">清洁(清新机)</option>
-                                                  <option value="清洁(皂液机)">清洁(皂液机)</option>
-                                                  <option value="清洁(租赁机器)">清洁(租赁机器)</option>
-                                                  <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                                                  <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
-                                                  <option value="灭虫(果蝇)">灭虫(果蝇)</option>
-                                                  <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
-                                                  <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
-                                                  <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
-                                                  <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
-                                                  <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
-                                                  <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
-                                                  <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
-                                                  <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
-                                                  <option value="飘盈香(小机)">飘盈香(小机)</option>
-                                                  <option value="飘盈香(中机)">飘盈香(中机)</option>
-                                                  <option value="飘盈香(大机)">飘盈香(大机)</option>
-                                                  <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
-                                                  <option value="甲醛(AC30)">甲醛(AC30)</option>
-                                                  <option value="甲醛(PR30)">甲醛(PR30)</option>
-                                                  <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
-                                              </select>
-                                            </td>
-                                            <td><input type="text" name="count2[]"/></td>
-                                            <td><input type="text" name="count3[]"/></td>
-                                            <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除</a></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="btn_a1">
-                                        <a class="addtr2" href="javascript:;">新增服务1-1</a> <a class="closepop" href="javascript:;">确定服务1-1</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br/>
-                        <a class="text_a" href="javascript:;" onClick="deltr(this)">删除(1</a>  <!--第一行的表单删除-->
-                    </td>
-                </tr>
-                </tbody>
-
-            </table>
-            <div class="copybtn">
-                <a href="javascript:;" class="AddTr">新增</a>
-                <a href="javascript:;" class="ture">确定</a>
-            </div>
+        <div class="copybtn">
+            <a href="javascript:;" class="AddTr">新增</a>
+            <a href="javascript:;" class="ture">确定</a>
         </div>
+    </div>
 
 </div><!-- itemInfo -->
 

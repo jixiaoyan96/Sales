@@ -175,18 +175,20 @@ header("Content-type: text/html; charset=utf-8");
                                      $second_visit_notes_info=$_REQUEST['sky3'][$b]; //跟进备注
                                      $second_visit_count_info=$_REQUEST['sky4'][$b];//跟进总额
                                      if(!empty($second_visit_date_info)){  //多条跟进数据对日期与跟进目的的判断
+                                         //echo $second_visit_date_info;die;
                                         $every_visit_insert_set_more="
 Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)
 VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$second_visit_count_info','$second_visit_date_info','$second_visit_definition_info')";
                                          Yii::app()->db2->createCommand($every_visit_insert_set_more)->execute();  //存入第一次之后的每次跟进
                                          $every_insert_id='';
                                          $every_insert_id=Yii::app()->db2->getLastInsertID(); //第一次跟进之后每次跟进的存入数据的主键id
+
                                          $valueServiceKinds='';
                                          $valueServiceCount='';
                                          $valueServiceMoney='';
-                                         $valueServiceMoney='serviceMoney'.($b+2);
-                                         $valueServiceCount='serviceCounts'.($b+2);
-                                         $valueServiceKinds='serviceKinds'.($b+2); //动态跟进服务的动态
+                                         $valueServiceMoney='serviceMoney'.($b+1);
+                                         $valueServiceCount='serviceCounts'.($b+1);
+                                         $valueServiceKinds='serviceKinds'.($b+1); //动态跟进服务的动态
 
                                          if(isset($_REQUEST[$valueServiceKinds])){  //判断每次动态跟进的服务
                                              for($c=0;$c<count($_REQUEST[$valueServiceKinds]);$c++){
@@ -215,6 +217,8 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
                                          VALUES ('$more_visit_service_kinds_set','$more_visit_service_count_set','$more_visit_service_money_set','$every_insert_id')
                                          ";
                                          Yii::app()->db2->createCommand($more_visit_service_info_first_set)->execute();
+                                     }
+                                     else{
                                          continue;
                                      }
                                  }
@@ -235,6 +239,7 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
      }
      public function actionEdit($index)
      {
+         //var_dump($_REQUEST);die;
          $model = new SalesForm('edit');
          if (!$model->retrieveData($index)) {
              throw new CHttpException(404,'The requested page does not exist.');
