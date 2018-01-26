@@ -16,7 +16,7 @@ class SalesForm extends CFormModel
     Public $customer_street;   //街道
     Public $customer_notes;    //拜访主要备注
     Public $city;
-    Public $scenario;
+    //Public $scenario;
     /**
      * Declares customized attribute labels.
      * If not declared here, an attribute would have a label that is
@@ -66,7 +66,7 @@ class SalesForm extends CFormModel
         {
             foreach ($rows as $row)
             {
-                $this->id = $row['id'];
+                $this->id = $row['customer_id'];
                 $this->customer_name = $row['customer_name'];
                 $this->customer_contact = $row['customer_contact'];
                 $this->customer_contact_phone = $row['customer_contact_phone'];
@@ -77,6 +77,8 @@ class SalesForm extends CFormModel
                 $this->customer_kinds=$row['customer_kinds'];
                 $this->visit_kinds=$row['visit_kinds'];
                 $this->customer_create_sellers_id=$row['customer_create_sellers_id'];
+                $this->customer_second_name=$row['customer_second_name'];
+                $this->customer_help_count_date=$row['customer_help_count_date'];
                 break;
             }
         }
@@ -85,17 +87,51 @@ class SalesForm extends CFormModel
 
     public function saveData()
     {
-        //var_dump($_REQUEST);die;
-        $connection = Yii::app()->db2;
-        $transaction=$connection->beginTransaction();
-        try {
-            $this->saveUser($connection);
-            $transaction->commit();
+        //var_dump($this->scenario);die;
+        if($this->scenario=='new'){
+            $connection = Yii::app()->db2;
+            $transaction=$connection->beginTransaction();
+            try {
+                $this->saveUser($connection);
+                $transaction->commit();
+            }
+            catch(Exception $e) {
+                $transaction->rollback();
+                throw new CHttpException(404,'Cannot update.');
+            }
         }
-        catch(Exception $e) {
-            $transaction->rollback();
-            throw new CHttpException(404,'Cannot update.');
+        elseif($this->scenario=='edit'){
+            $user_sellers_id='';
+            $name=Yii::app()->user->name;
+            if(!empty($name)){
+                $sellers_set="select * from sellers_user_bind_v WHERE user_id='$name'";
+                $sellers_get=Yii::app()->db2->createCommand($sellers_set)->queryAll();
+                if(count($sellers_get)>0){
+                    $user_sellers_id=$sellers_get[0]['sellers_id'];
+                }
+            }
+
+            //var_dump($user_sellers_id);die;
+            $city = Yii::app()->user->city();
+            $update_sql="update customer_info set
+					customer_create_sellers_id = '$user_sellers_id',
+					visit_kinds = '$this->visit_kinds',
+					customer_kinds='$this->customer_kinds',
+					customer_notes='$this->customer_notes',
+					customer_name='$this->customer_name',
+					customer_create_date='$this->customer_create_date',
+					customer_second_name='$this->customer_second_name',
+					customer_help_count_date='$this->customer_help_count_date',
+					customer_contact='$this->customer_contact',
+					customer_contact_phone='$this->customer_contact_phone',
+					customer_district='$this->customer_district',
+					customer_street='$this->customer_street',
+					city='$city'
+					where customer_id = $this->id";
+            Yii::app()->db2->createCommand($update_sql)->execute();
+            return true;
         }
+
     }
 
     protected function saveUser(&$connection)
@@ -103,7 +139,7 @@ class SalesForm extends CFormModel
         //SalesForm 客户名称:customer_name   拜访日期 customer_create_date  客户分店名:customer_second_name   客户辅助拜访日期:customer_help_count_date
         //客户联系人:customer_contact   客户联系方式:customer_contact_phone  客户地区:customer_district   客户街道:customer_street  客户总备注:customer_notes 城市权限:city
         //var_dump($_REQUEST['SalesForm']);
-        $this->scenario='new';
+        //$this->scenario='new';
 
         $sql='';
         switch ($this->scenario) {
@@ -117,8 +153,12 @@ class SalesForm extends CFormModel
                 break;
             case 'edit':
                 $sql = "update customer_info set
-					customer_name = :customer_name,
-					customer_create_date = :customer_create_date,
+					customer_create_sellers_id = :customer_create_sellers_id,
+					visit_kinds = :visit_kinds,
+					customer_kinds=:customer_kinds,
+					customer_notes=:customer_notes,
+					customer_name=:customer_name,
+					customer_create_date=:customer_create_date,
 					customer_second_name=:customer_second_name,
 					customer_help_count_date=:customer_help_count_date,
 					customer_contact=:customer_contact,
@@ -140,14 +180,14 @@ class SalesForm extends CFormModel
                 $user_sellers_id=$sellers_get[0]['sellers_id'];
             }
         }
-        //var_dump($sql);die;
+
         $command=$connection->createCommand($sql);
+
         if (strpos($sql,':id')!==false)
             $command->bindParam(':id',$this->id,PDO::PARAM_INT);
 
         if (strpos($sql,':customer_create_sellers_id')!==false)
             $command->bindParam(':customer_create_sellers_id',$user_sellers_id,PDO::PARAM_STR);
-
         if (strpos($sql,':customer_name')!==false)
             $command->bindParam(':customer_name',$this->customer_name,PDO::PARAM_STR);
         if (strpos($sql,':customer_kinds')!==false)
@@ -171,7 +211,6 @@ class SalesForm extends CFormModel
             $command->bindParam(':customer_district',$this->customer_district,PDO::PARAM_STR);
         if (strpos($sql,':customer_street')!==false)
             $command->bindParam(':customer_street',$this->customer_street,PDO::PARAM_STR);
-
         if (strpos($sql,':city')!==false)
             $command->bindParam(':city',$city,PDO::PARAM_STR);
             $command->execute();

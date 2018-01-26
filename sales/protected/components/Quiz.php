@@ -328,6 +328,7 @@ Class Quiz{
             }
             return $list;
     }
+
     /*
      * 客户类型
      */
@@ -342,4 +343,83 @@ Class Quiz{
         }
         return $list;
     }
+
+    /**
+     * 关于sale edit动态修改visit,service 的数据返回方法
+     */
+    Public static function editSales($edit_id){
+        $visit_info_set="SELECT * FROM visit_info WHERE visit_customer_fid=$edit_id;";
+        $visit_info_get=Yii::app()->db2->createCommand($visit_info_set)->queryAll();//循环得出拜访详情数据
+        $dataReturn=array();
+        if(count($visit_info_get)>0){
+            //var_dump($visit_info_get);die;
+            for($i=0;$i<count($visit_info_get);$i++){
+                    $visit_id='';
+                    $visit_id=$visit_info_get[$i]['visit_info_id'];
+                    $service_info_set="select * from service_history WHERE service_visit_pid='$visit_id'";
+                    $service_info_get=Yii::app()->db2->createCommand($service_info_set)->queryAll();
+                    $dataReturn[$i]['visit_info']=$visit_info_get[$i]; //拜访详情
+                if(count($service_info_get)>0){
+                    for($j=0;$j<count($service_info_get);$j++){
+                        $dataReturn[$i]['visit_info']['service_info'][]=$service_info_get[$j]; //服务详情
+                    }
+                }
+            }
+        }
+        //var_dump($dataReturn);die;
+        return $dataReturn;
+    }
+
+    Public static function visitDefinition(){
+        $list = array(
+            ''=>Yii::t('quiz','this_visit_definition'),
+            '首次'=>Yii::t('quiz','first'),
+            '报价'=>Yii::t('quiz','Quote'),
+            '客诉'=>Yii::t('quiz','Customer Complaint'),
+            '收款'=>Yii::t('quiz','Collect money'),
+            '追款'=>Yii::t('quiz','Chase money'),
+            '签单'=>Yii::t('quiz','Sign a single'),
+            '续约'=>Yii::t('quiz','Renew'),
+            '回访'=>Yii::t('quiz','Return visit'),
+            '其他'=>Yii::t('quiz','other'),
+            '更改项目'=>Yii::t('quiz','Change the project'),
+            '拜访目的'=>Yii::t('quiz','Visit purpose'),
+            '陌拜'=>Yii::t('quiz','Do not visit'),
+            '日常跟进'=>Yii::t('quiz','Daily follow-up'),
+            '客户资源'=>Yii::t('quiz','Customer Resources'),
+        );
+        return $list;
+    }
+
+    Public static function visit_history_name(){
+        $list = array(
+            ''=>Yii::t('quiz','Service type'),
+            '清洁(马桶)'=>Yii::t('quiz','Clean (toilet)'),
+            '清洁(尿斗)'=>Yii::t('quiz','Clean (Urinal)'),
+            '清洁(水盆)'=>Yii::t('quiz','Clean (basin)'),
+            '清洁(清新机)'=>Yii::t('quiz','Clean (fresh machine)'),
+            '清洁(皂液机)'=>Yii::t('quiz','Cleaning (soap dispenser)'),
+            '清洁(租赁机器)'=>Yii::t('quiz','Clean (lease machine)'),
+            '灭虫(老鼠)'=>Yii::t('quiz','Exterminator (mouse)'),
+            '灭虫(蟑螂)'=>Yii::t('quiz','Exterminator (cockroach)'),
+            '灭虫(果蝇)'=>Yii::t('quiz','Pest Control (Drosophila)'),
+            '灭虫(租灭蝇灯)'=>Yii::t('quiz','Exterminator (rent fly lamp)'),
+            '灭虫(老鼠蟑螂)'=>Yii::t('quiz','Exterminator (mouse cockroach)'),
+            '灭虫(老鼠果蝇)'=>Yii::t('quiz','Exterminator (Drosophila melanogaster)'),
+            '灭虫(老鼠蟑螂果蝇)'=>Yii::t('quiz','Pest Control (Mouse Cockroach Fruit Fly)'),
+            '灭虫(老鼠蟑螂+租灯)'=>Yii::t('quiz','Pest control (mouse cockroach + rent lamp)'),
+            '灭虫(蟑螂果蝇+租灯)'=>Yii::t('quiz','Exterminator (cockroach fruit fly + rent lamp)'),
+            '灭虫(老鼠蟑螂果蝇+租灯)'=>Yii::t('quiz','Mouse cockroach fruit fly + rent lamp'),
+            '飘盈香(迷你机)'=>Yii::t('quiz','Floating Ying Hong (mini machine)'),
+            '飘盈香(小机)'=>Yii::t('quiz','Wandering fragrance (small machine)'),
+            '飘盈香(中机)'=>Yii::t('quiz','Plenty of fragrance (machine)'),
+            '飘盈香(大机)'=>Yii::t('quiz','Plenty of fragrance (large machine)'),
+            '甲醛(除甲醛)'=>Yii::t('quiz','Formaldehyde (except formaldehyde)'),
+            '甲醛(AC30)'=>Yii::t('quiz','Formaldehyde (AC30)'),
+            '甲醛(PR30)'=>Yii::t('quiz','Formaldehyde (PR30)'),
+            '甲醛(迷你清洁炮)'=>Yii::t('quiz','Formaldehyde (mini clean gun)'),
+        );
+        return $list;
+    }
+
 }

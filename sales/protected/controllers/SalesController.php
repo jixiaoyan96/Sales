@@ -78,9 +78,10 @@ header("Content-type: text/html; charset=utf-8");
 
      public function actionDelete()
      {
+         var_dump($_REQUEST);die;
          $model = new SalesForm('delete');
-         if (isset($_POST['QuizForm'])) {
-             $model->attributes = $_POST['QuizForm'];
+         if (isset($_POST['SalesForm'])) {
+             $model->attributes = $_POST['SalesForm'];
              if ($model->isOccupied($model->id)) {
                  Dialog::message(Yii::t('dialog','Warning'), Yii::t('dialog','This record is already in use'));
                  $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$model->id)));
@@ -96,6 +97,62 @@ header("Content-type: text/html; charset=utf-8");
      Public function actionSave(){
          //var_dump($_REQUEST);die;
         // echo "<pre/>";
+         if(isset($_REQUEST['SalesForm']['id'])){ //关于修改的数据处理
+             $edit_customer_info_id=$_REQUEST['SalesForm']['id']; //客户主键
+             $edit_customer_visit_info_set="SELECT * FROM visit_info WHERE visit_customer_fid='$edit_customer_info_id'";
+             $edit_customer_visit_info_get=Yii::app()->db2->createCommand($edit_customer_visit_info_set)->queryAll(); //跟进数据详情
+             if(count($edit_customer_visit_info_get)>0) {
+                 $temporary_visit_id='visitNotes'.$edit_customer_visit_info_get[0]['visit_info_id']; //一个临时的visit_info_id值 判断是否有修改
+                 if(isset($_REQUEST[$temporary_visit_id])){ //进入修改数据详情
+                     for ($k = 0; $k < count($edit_customer_visit_info_get); $k++){  //循环跟进数据
+                         $delete_visit_id=$edit_customer_visit_info_get[$k]['visit_info_id'];  //动态跟进主键
+                         $delete_visit='delete'.$edit_customer_visit_info_get[$k]['visit_info_id']; //动态跟进删除多选框
+                         $edit_visit_notes=$edit_customer_visit_info_get[$k]['visit_notes']; //动态跟进的总备注
+                                if(isset($_REQUEST[$delete_visit])){ //如果删除则==1 如果没有删除 则!isset
+                                    $edit_delete_visit_sql_set="delete from visit_info WHERE visit_info_id='$delete_visit_id'";
+                                    Yii::app()->db2->createCommand($edit_delete_visit_sql_set)->execute();
+                                    $edit_delete_service_history_set="delete from service_history WHERE service_visit_pid='$delete_visit_id'";
+                                    Yii::app()->db2->createCommand($edit_delete_service_history_set)->execute();
+                                }
+                         else{ // 如果没有删除跟进记录 则需要进行visit和service_history的数据修改
+                                $visit_info_store=array(); //跟进的每条数据
+                                $visit_every_notes='';//跟进的备注
+                             $visit_every_money=''; //跟进的总额
+                             $visit_every_definition='';//跟进的目的
+                             $visit_every_definition='visit_definition'.$delete_visit_id;
+                             $visit_every_money='countMoney'.$delete_visit_id;
+                             $visit_every_notes='visitNotes'.$delete_visit_id;
+                             $visit_info_store=$edit_customer_visit_info_get[$k];//临时保存跟进的数据
+                             if(isset($_REQUEST[$visit_every_definition])&&isset($_REQUEST[$visit_every_money])&&isset($_REQUEST[$visit_every_notes])){ //判断是否可以进行修改visit数据
+                                    $update_visit_info="update visit_info set visit_notes='$_REQUEST[$visit_every_notes]',
+                                                      visit_service_money='$_REQUEST[$visit_every_money]',
+                                                      visit_definition='$_REQUEST[$visit_every_definition]' WHERE visit_info_id='$delete_visit_id'";
+                                 Yii::app()->db2->createCommand($update_visit_info)->execute();
+                             }
+                             $service_data_edit_set="select * from service_history WHERE service_visit_pid=$delete_visit_id";
+                             $service_data_edit_get=Yii::app()->db2->createCommand($service_data_edit_set)->queryAll();
+                             if(count($service_data_edit_get)>0) {
+                                 for ($y=0;$y<count($service_data_edit_get);$y++) {
+                                     $service_every_money = '';//跟进的每次服务金额
+                                     $service_every_count = '';//跟进的每次服务数量
+                                     $service_every_name = '';//跟进的每次服务类别
+                                     $service_history_id_edit=$service_data_edit_get[$y]['service_history_id'];
+                                     $service_every_name = 'service_history_name'.$service_history_id_edit;
+                                     $service_every_count = 'service_history_count'.$service_history_id_edit;
+                                     $service_every_money = 'service_history_money'.$service_history_id_edit;
+                                     if(isset($_REQUEST[$service_every_money])&&isset($_REQUEST[$service_every_count])&&isset($_REQUEST[$service_every_name])){ //判断是否可以进行修改visit数据
+                                         $update_service_info="update service_history set service_history_name='$_REQUEST[$service_every_name]',
+                                                      service_history_count='$_REQUEST[$service_every_count]',
+                                                      service_history_money='$_REQUEST[$service_every_money]' WHERE service_history_id='$service_history_id_edit'";
+                                         Yii::app()->db2->createCommand($update_service_info)->execute();
+                                     }
+                                 }
+                             }
+                         }
+                     }
+                 }
+             }
+         }
          $user_sellers_id='';
          $name=Yii::app()->user->name;
          if(!empty($name)){
@@ -224,11 +281,11 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
                                  }
                              }
 
-                             Dialog::message(Yii::t('dialog', 'Information'), Yii::t('dialog', 'Save Done'));
-                             $this->redirect(Yii::app()->createUrl('sales/index'));
+                            /* Dialog::message(Yii::t('dialog', 'Information'), Yii::t('dialog', 'Save Done'));
+                             $this->redirect(Yii::app()->createUrl('sales/index'));*/
 
-                           /*  Dialog::message(Yii::t('dialog', 'Information'), Yii::t('dialog', 'Save Done'));
-                             $this->redirect(Yii::app()->createUrl('sales/edit', array('index' => $model->id)));*/
+                            Dialog::message(Yii::t('dialog', 'Information'), Yii::t('dialog', 'Save Done'));
+                             $this->redirect(Yii::app()->createUrl('sales/edit', array('index' => $model->id)));
                          } else {
                              //var_dump('2');die;
                              $message = CHtml::errorSummary($model);
@@ -244,7 +301,7 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
          if (!$model->retrieveData($index)) {
              throw new CHttpException(404,'The requested page does not exist.');
          } else {
-             $this->render('form',array('model'=>$model,));
+             $this->render('edit',array('model'=>$model,));
          }
      }
      protected function performAjaxValidation($model)

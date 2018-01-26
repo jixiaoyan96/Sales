@@ -144,7 +144,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <?php echo $form->labelEx($model,'customer_notes',array('class'=>'col-sm-2 control-label'))?>
                 <div class="col-sm-8">
                 <?php echo $form->textArea($model,'customer_notes',
-                    array('size'=>'20', 'maxlength'=>'20','cols'=>'30','rows'=>'6')
+                    array('size'=>'20', 'maxlength'=>'50','cols'=>'30','rows'=>'6')
                 ); ?>
                     </div>
             </div>
@@ -328,7 +328,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     <option value="清洁(皂液机)">清洁(皂液机)</option>
                     <option value="清洁(租赁机器)">清洁(租赁机器)</option>
                     <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                    <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                    <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
                     <option value="灭虫(果蝇)">灭虫(果蝇)</option>
                     <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
                     <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
@@ -367,7 +367,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     <option value="清洁(皂液机)">清洁(皂液机)</option>
                     <option value="清洁(租赁机器)">清洁(租赁机器)</option>
                     <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                    <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                    <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
                     <option value="灭虫(果蝇)">灭虫(果蝇)</option>
                     <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
                     <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
@@ -455,7 +455,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                                 <option value="清洁(皂液机)">清洁(皂液机)</option>
                                                 <option value="清洁(租赁机器)">清洁(租赁机器)</option>
                                                 <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                                                <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                                                <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
                                                 <option value="灭虫(果蝇)">灭虫(果蝇)</option>
                                                 <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
                                                 <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
@@ -556,7 +556,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                                   <option value="清洁(皂液机)">清洁(皂液机)</option>
                                                   <option value="清洁(租赁机器)">清洁(租赁机器)</option>
                                                   <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                                                  <option value="灭虫(蟑螂">灭虫(蟑螂)</option>
+                                                  <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
                                                   <option value="灭虫(果蝇)">灭虫(果蝇)</option>
                                                   <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
                                                   <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
