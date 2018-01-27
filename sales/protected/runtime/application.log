@@ -2999,3 +2999,45 @@ in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
 2018/01/26 20:22:44 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (169)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:03:46 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (170)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:03:46 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (170)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:03:57 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (170)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:03:57 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (170)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:40:17 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (84)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:40:17 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (84)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:40:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from service_history WHERE service_visit_pid IN ('93')' at line 1. The SQL statement executed was: delete * from service_history WHERE service_visit_pid IN ('93').
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (111)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:40:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* from service_history WHERE service_visit_pid IN ('93')' at line 1. The SQL statement executed was: delete * from service_history WHERE service_visit_pid IN ('93')' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(111): CDbCommand->execute()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionDelete()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('delete')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/delete')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/delete
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/edit?index=21
+---
+2018/01/27 10:42:08 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (84)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/01/27 10:42:08 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (84)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)

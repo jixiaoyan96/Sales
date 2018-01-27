@@ -87,8 +87,8 @@ class SalesForm extends CFormModel
 
     public function saveData()
     {
-        //var_dump($this->scenario);die;
-        if($this->scenario=='new'){
+
+        if($this->scenario=='new'||$this->scenario=='delete'){
             $connection = Yii::app()->db2;
             $transaction=$connection->beginTransaction();
             try {
@@ -144,7 +144,7 @@ class SalesForm extends CFormModel
         $sql='';
         switch ($this->scenario) {
             case 'delete':
-                $sql = "delete from customer_info where id = :id";
+                $sql = "delete from customer_info where customer_id = :id";
                 break;
             case 'new':
                 $sql = "insert into customer_info(

@@ -78,15 +78,42 @@ header("Content-type: text/html; charset=utf-8");
 
      public function actionDelete()
      {
-         var_dump($_REQUEST);die;
+
          $model = new SalesForm('delete');
          if (isset($_POST['SalesForm'])) {
              $model->attributes = $_POST['SalesForm'];
              if ($model->isOccupied($model->id)) {
+                 echo '11';die;
                  Dialog::message(Yii::t('dialog','Warning'), Yii::t('dialog','This record is already in use'));
                  $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$model->id)));
              } else {
                  $model->saveData();
+                 $name=Yii::app()->user->name;
+                 $user_sellers_id='';
+                 if(!empty($name)){
+                     $sellers_set="select * from sellers_user_bind_v WHERE user_id='$name'";
+                     $sellers_get=Yii::app()->db2->createCommand($sellers_set)->queryAll();
+                     if(count($sellers_get)>0){
+                         $user_sellers_id=$sellers_get[0]['sellers_id']; //sellers_id
+                     }
+                 }
+                 $customer_id=$model->id;   //customer_id
+                 if($customer_id&&$user_sellers_id){
+                     $visit_id='';  //暂存visit_info主键
+                     $select_visit_id_set="select visit_info_id from visit_info WHERE visit_customer_fid='$customer_id' AND visit_seller_fid='$user_sellers_id'";
+                     $select_visit_id_get=Yii::app()->db2->createCommand($select_visit_id_set)->queryAll();
+                     if(count($select_visit_id_get)>0){
+                         for($k=0;$k<count($select_visit_id_get);$k++){
+                             $visit_id.=$select_visit_id_get[$k]['visit_info_id'].',';
+                         }
+                         $visit_id=rtrim($visit_id,',');//该拜访下的所有visit_id字符串集合
+                         $delete_customer_visit_service_info="delete from service_history WHERE service_visit_pid IN ('$visit_id')";
+                         Yii::app()->db2->createCommand($delete_customer_visit_service_info)->execute();//删除service_history
+                         $delete_customer_visit_info="delete from visit_info WHERE visit_customer_fid='$customer_id' AND visit_seller_fid='$user_sellers_id'";
+                         Yii::app()->db2->createCommand($delete_customer_visit_info)->execute();  //删除visit_info
+                     }
+
+                 }
                  Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Record Deleted'));
                  $this->redirect(Yii::app()->createUrl('sales/index'));
              }
