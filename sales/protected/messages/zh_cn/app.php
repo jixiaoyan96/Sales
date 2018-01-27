@@ -81,5 +81,11 @@ return array(
 	
 	'Complaint Read All'=>'投诉全閱',
 	'QC Read All'=>'品檢全閱',
+	//sales增加开始
+
+
+	'Sales'=>'销售',
+	'Sales visiting'=>'销售拜访',
+	'Sales orders'=>'销售落单',
 );
 ?>
