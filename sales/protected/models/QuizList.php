@@ -8,7 +8,6 @@
 header("Content-type: text/html; charset=utf-8");
 class QuizList extends CListPageModel
 {
-
     /**
      * Declares customized attribute labels.
      * If not declared here, an attribute would have a label that is

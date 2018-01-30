@@ -78,7 +78,6 @@ header("Content-type: text/html; charset=utf-8");
 
      public function actionDelete()
      {
-
          $model = new SalesForm('delete');
          if (isset($_POST['SalesForm'])) {
              $model->attributes = $_POST['SalesForm'];
