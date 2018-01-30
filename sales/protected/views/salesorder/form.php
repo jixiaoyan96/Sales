@@ -286,8 +286,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 </script>
 
 <style>
-    *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;font-family: "微软雅黑";font-size: 14px;border:0 none;line-height: 24px; }
-    table .normTbe{table-layout: fixed;width: 100%;}
+table .normTbe{table-layout: fixed;width: 100%;}
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
     input:focus,textarea:focus{border:1px solid #9ab6d6;}
     .whiteBg{background: #fff;}

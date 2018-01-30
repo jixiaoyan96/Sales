@@ -25,29 +25,21 @@ $this->pageTitle=Yii::app()->name . ' - Nature';
                         'submit'=>Yii::app()->createUrl('Salesorder/new'),
                     ));
                 ?>
-            </div><!--
-            <div class="btn-group" role="group">
-                <?php
-/*                if (Yii::app()->user->validRWFunction('HK07'))
-                    echo TbHtml::button('<span class="fa fa-file-o"></span> '.Yii::t('quiz','default all checked'), array(
-                        'submit'=>Yii::app()->createUrl('quiz/default'),
-                    ));
-                */?>
-            </div>-->
+            </div>
         </div>
     </div>
     <?php $this->widget('ext.layout.ListPageWidget', array(
-        'title'=>Yii::t('quiz','quiz List'),
+        'title'=>Yii::t('quiz','salesorder List'),
         'model'=>$model,
         'viewhdr'=>'//salesorder/_listhdr',
         'viewdtl'=>'//salesorder/_listdtl',
         'gridsize'=>'24',
         'height'=>'600',
         'search'=>array(
-            'quiz_date',
-            'quiz_name',
-            'quiz_correct_rate',
-            'quiz_start_dt'
+            'order_customer_name',
+            'order_info_seller_name',
+            'order_info_money_total',
+            'order_info_rural'
         ),
     ));
     ?>

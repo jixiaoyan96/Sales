@@ -141,6 +141,15 @@ return array(
     'Formaldehyde (mini clean gun)'=>'甲醛(迷你清洁炮)',
 
 
-    'Sales order list'=>'销售订单表',
+    'Sales order list'=>'订单编号',
     'Add sales order'=>'新增销售订单',
+    //salesorder 添加
+    'order_info_code_number'=>'订单编号',
+    'order_customer_name'=>'客户名字',
+    'order_info_rural'=>'客户区域',
+    'order_info_date'=>'订货日期',
+    'order_goods_code_number'=>'订货编号',
+    'order_info_money_total'=>'订货总额',
+    'order_info_seller_name'=>'销售员姓名',
+    'salesorder List'=>'销售订单列表',
     );

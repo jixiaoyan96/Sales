@@ -174,21 +174,21 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         $('.innerbtn').click(function(){
             var data=$('.innerbtn').index(this);
             demo=data;
-          console.log('当前为第'+demo+'个');
+          //console.log('当前为第'+demo+'个');
             $(this).next('.pop_box').slideDown('400');
         });
 
         $('.closepop').click(function(){
             //$(".tempDiv").find("input[name='serviceMoney[]']").attr('name','serviceMoney'+demo+'[]');
             //$('.pop_box').find("input[name=serviceMoney+demo+[]]");
-            console.log(AllDataCount);
+            //console.log(AllDataCount);
             $('.pop_box').slideUp('400');
         });
 
         $('.tbody1').on("click",".alonTr .innerbtn",function(){
             var data=$('.innerbtn').index(this);
             demo=data;
-            console.log('当前为第'+demo+'个');
+            //console.log('当前为第'+demo+'个');
             $(this).next('.pop_box').slideDown('400');
         });
 
@@ -244,7 +244,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 $(".tempDiv").find("input[name='serviceMoney[]']").attr('name','serviceMoney'+demo+'[]');
 
                 divData.appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
-                console.log('总计'+demo);
+                //console.log('总计'+demo);
             }
         });
     });
@@ -288,7 +288,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 
 <style>
     *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;border:0 none; }
-
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
     input:focus,textarea:focus{border:1px solid #9ab6d6;}
     .whiteBg{background: #fff;}
@@ -538,7 +537,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                     <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0";>
                                         <thead>
                                         <tr>
-                                            <th>服务产品</th>
+                                            <th>服务大类选择</th>
                                             <th>数量</th>
                                             <th>价格</th>
                                             <th>操作</th>
@@ -547,35 +546,73 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                         <tbody class="tbody2">
                                         <tr>  <!--第一个表单拜访的新增内件数据的第一条数据-->
                                             <td>
-                                              <select name="count1[]">
-                                                  <option value="">服务类型选择</option>
-                                                  <option value="清洁(马桶)">清洁(马桶)</option>
-                                                  <option value="清洁(尿斗)">清洁(尿斗)</option>
-                                                  <option value="清洁(水盆)">清洁(水盆)</option>
-                                                  <option value="清洁(清新机)">清洁(清新机)</option>
-                                                  <option value="清洁(皂液机)">清洁(皂液机)</option>
-                                                  <option value="清洁(租赁机器)">清洁(租赁机器)</option>
-                                                  <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                                                  <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
-                                                  <option value="灭虫(果蝇)">灭虫(果蝇)</option>
-                                                  <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
-                                                  <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
-                                                  <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
-                                                  <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
-                                                  <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
-                                                  <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
-                                                  <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
-                                                  <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
-                                                  <option value="飘盈香(小机)">飘盈香(小机)</option>
-                                                  <option value="飘盈香(中机)">飘盈香(中机)</option>
-                                                  <option value="飘盈香(大机)">飘盈香(大机)</option>
-                                                  <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
-                                                  <option value="甲醛(AC30)">甲醛(AC30)</option>
-                                                  <option value="甲醛(PR30)">甲醛(PR30)</option>
-                                                  <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
+                                              <select name="count1[]" onchange="show_sub(this.options[this.options.selectedIndex].value)">
+                                                  <option value='0'>清洁</option>
+                                                  <option value='1'>租赁机器</option>
+                                                  <option value='2'>灭虫</option>
+                                                  <option value='3'>飘盈香</option>
+                                                  <option value='4'>甲醛</option>
+                                                  <option value='5'>纸品</option>
+                                                  <option value='6'>一次性售卖</option>
                                               </select>
                                             </td>
-                                            <td><input type="text" name="count2[]"/></td>
+                                            <script type="text/javascript">
+                                                function show_sub(pin){
+                                                    var html='';
+                                                    if(pin==0){
+                                                        html="<input type='checkbox' style='width: 30px;' name='matong' value=''>马桶<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='niaodou' value=''>尿斗<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='shuipen' value=''>水盆<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='qingxin' value=''>清新机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='zaoye' value=''>皂液机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>";
+                                                    }
+                                                    else if(pin==1){
+                                                         html="<input type='checkbox' style='width: 30px;' name='fengshanji' value=''>风扇机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='TC' value=''>TC豪华<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='shuixing' value=''>水性喷机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='yasuo' value=''>压缩香罐<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                    }
+                                                    else if(pin==2){
+                                                        html="<input type='checkbox' style='width: 30px;' name='miechong' value=''>灭虫<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshu' value=''>老鼠<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='zhanglang' value=''>蟑螂<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='guoying' value=''>果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                            +
+                                                            "<input type='checkbox' style='width: 30px;' name='zumieyingdeng' value=''>租灭蝇灯<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglang' value=''>老鼠蟑螂<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                            +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshuguoying' value=''>老鼠果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='zhanglangguoying' value=''>蟑螂果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                            +
+                                                            "<input type='checkbox' style='width: 30px;' name='zhanglang' value=''>老鼠蟑螂果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudeng' value=''>老鼠蟑螂+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                            +
+                                                            "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng' value=''>蟑螂果蝇+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng' value=''>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                    }
+                                                    else if(pin==3){
+                                                        html="<input type='checkbox' style='width: 30px;' name='minixiaoji' value=''>迷你小机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='xiaoji' value=''>小机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='zhongji' value=''>中机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='daji' value=''>大机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                    }
+                                                    else if(pin==4){
+                                                        html="<input type='checkbox' style='width: 30px;' name='fengshanji' value=''>除甲醛<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='AC30' value=''>AC30<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='PR10' value=''>PR10<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='miniqingjiepao' value=''>迷你清洁炮<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                    }
+                                                    else if(pin==5){
+                                                        html="<input type='checkbox' style='width: 30px;' name='fengshanji' value=''>擦手纸<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='TC' value=''>大卷厕纸<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                    }
+                                                    else if(pin==6){
+                                                        html="<input type='checkbox' style='width: 30px;' name='wupin' value=''>物品<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>"
+                                                    }
+                                                   $("#FirstVisitServiceValue").html(html);
+                                                }
+                                                </script>
+                                            <td id="FirstVisitServiceValue"></td>
                                             <td><input type="text" name="count3[]"/></td>
                                             <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除</a></td>
                                         </tr>

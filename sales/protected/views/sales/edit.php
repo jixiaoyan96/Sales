@@ -337,15 +337,14 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 </script>
 
 <style>
-    *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;font-family: "微软雅黑";font-size: 14px;border:0 none;line-height: 24px; }
-    table .normTbe{table-layout: fixed;width: 100%;}
+    *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;border:0 none; }
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
     input:focus,textarea:focus{border:1px solid #9ab6d6;}
     .whiteBg{background: #fff;}
     .normTbe{border:1px solid black; background-color:white;}
     .normTbe td,.normTbe th{border:1px solid black;padding: 15px;text-align: center;}
     .normTbe input{width: 80%;text-align: center;}
-    .addData{width: 1140px;padding: 0 20px; margin: 0 auto;clear: both;}
+    .addData{width: auto;padding: 0 20px; margin: 0 auto;clear: both;}
     .pop_box {display: none;}
     .model2{display: none;}
     .model3{display: none;}
