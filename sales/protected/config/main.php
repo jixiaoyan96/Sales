@@ -82,7 +82,7 @@ return array(
 		),
 		'db2'=>array(
 			'class' =>'CDbConnection' ,
-			'connectionString' => 'mysql:host=localhost;dbname=sales',
+			'connectionString' => 'mysql:host=localhost;dbname=salesuat',
 			'emulatePrepare' => true,
 			/*'username' => 'swuser',
 			'password' => 'Swisher@123',*/
