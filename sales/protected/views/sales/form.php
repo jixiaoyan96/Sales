@@ -287,15 +287,15 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 </script>
 
 <style>
-    *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;font-family: "微软雅黑";font-size: 14px;border:0 none;line-height: 24px; }
-    table .normTbe{table-layout: fixed;width: 100%;}
+    *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;border:0 none; }
+
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
     input:focus,textarea:focus{border:1px solid #9ab6d6;}
     .whiteBg{background: #fff;}
     .normTbe{border:1px solid black; background-color:white;}
     .normTbe td,.normTbe th{border:1px solid black;padding: 15px;text-align: center;}
     .normTbe input{width: 80%;text-align: center;}
-    .addData{width: 1140px;padding: 0 20px; margin: 0 auto;clear: both;}
+    .addData{width: auto;padding: 0 20px; margin: 0 auto;clear: both;}
     .pop_box {display: none;}
     .model2{display: none;}
     .model3{display: none;}
@@ -395,7 +395,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
             <tbody>
             <tr class="alonTr">  <!--第二层以及更多的跟进表单数据-->
-                <td><input type="date" value="10" name="sky1[]"/></td>
+                <td><input value="" type="date" name="sky1[]" class='form-control pull-right '/></td>
                 <td>
                     <select name="sky2[]">
                         <option value="">本次跟进目的</option>
@@ -420,7 +420,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <td><input type="text" value="" placeholder="本次跟进总金额" name="sky4[]"/></td>
 
                 <td>
-                    <a href="javascript:;" class="innerbtn">添加服务22</a>
+                    <a href="javascript:;" class="innerbtn">添加服务</a>
                     <div class="pop_box">
                         <div class="bg"></div>
                         <div class="contentP">
@@ -485,18 +485,18 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                     </tbody>
                                 </table>
                                 <div class="btn_a1">
-                                    <a class="dtadd" href="javascript:;">新增服务2-2</a> <a class="closepop" href="javascript:;">确定服务2-2</a>
+                                    <a class="dtadd" href="javascript:;">新增服务</a> <a class="closepop" href="javascript:;">确定服务</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <br /><a class="text_a" href="javascript:;" onClick="deltr(this)">删除22</a>
+                    <br /><a class="text_a" href="javascript:;" onClick="deltr(this)">删除</a>
                 </td>
             </tr>
             </tbody>
         </table>
-        <div class="itemInfo">
-            <table cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
+        <div class="table-responsive" >
+            <table cellspacing="0" cellpadding="0" border="0" class="class normTbe tabInfo " >
                 <thead>
                 <tr>
                     <th>本次跟进日期</th>
@@ -509,9 +509,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 
                 <tbody class="tbody1">
                 <tr>  <!--第一层的表单拜访数据-->
-                    <td><input type="date" value="10" name="first1[]"/></td>
+                    <td><input value="" name="first1[]" id="first1" class='form-control pull-right'/></td>
                     <td><select name="first2[]">
-                            <option value="">本次跟进目的</option>
+                            <option value="">本次11跟进目的</option>
                             <option value="首次">首次</option>
                             <option value="报价">报价</option>
                             <option value="客诉">客诉</option>
@@ -526,7 +526,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     <td ><input type="text" value="" placeholder="本次跟进备注" name="first3[]"/></td>
                     <td><input type="text" value="" placeholder="本次跟进总金额" name="first4[]"/></td>
                     <td>
-                        <a href="javascript:;" class="innerbtn">添加服务(1</a>
+                        <a href="javascript:;" class="innerbtn">添加服务</a>
                         <div class="pop_box">
                             <div class="bg"></div>
                             <div class="contentP">
@@ -582,13 +582,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                         </tbody>
                                     </table>
                                     <div class="btn_a1">
-                                        <a class="addtr2" href="javascript:;">新增服务1-1</a> <a class="closepop" href="javascript:;">确定服务1-1</a>
+                                        <a class="addtr2" href="javascript:;">新增服务</a> <a class="closepop" href="javascript:;">确定服务</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <br/>
-                        <a class="text_a" href="javascript:;" onClick="deltr(this)">删除(1</a>  <!--第一行的表单删除-->
+                        <a class="text_a" href="javascript:;" onClick="deltr(this)">删除</a>  <!--第一行的表单删除-->
                     </td>
                 </tr>
                 </tbody>
@@ -599,7 +599,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <a href="javascript:;" class="ture">确定</a>
             </div>
         </div>
-
 </div><!-- itemInfo -->
 
 
@@ -607,7 +606,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 <?php $this->renderPartial('//site/removedialog'); ?>
 <?php
 $js = "
-$('#SalesForm_customer_create_date').on('change',function() {
+$('#SalesForm_customer_create_date,#first1').on('change',function() {
 	showRenewDate();
 });
 function showRenewDate() {
@@ -647,6 +646,7 @@ Yii::app()->clientScript->registerScript('readonlyClass',$js,CClientScript::POS_
 if ($model->scenario!='view') {
     $js = Script::genDatePicker(array(
         'SalesForm_customer_create_date',
+        'first1',
     ));
     Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);
 }

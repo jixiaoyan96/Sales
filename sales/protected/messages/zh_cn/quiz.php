@@ -92,7 +92,7 @@ return array(
     'city'=>'城市权限',
     'visit kinds'=>'拜访类型',
     'customer kinds'=>'客户类型',
-    'new sales dataAdd'=>'新增拜访数据',
+    'new sales dataAdd'=>'拜访数据',
     'customer_second_name'=>'客户分店名(如有)',
     'customer_help_count_date'=>'辅助统计日期',
     'If you do not fill in the follow-up date and follow-up purpose, then this follow-up will not record deposited'=>'如果没有填写跟进日期与跟进目的,那么本次跟进将不做记录存入',
