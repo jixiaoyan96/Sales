@@ -166,7 +166,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     </div>
 </section>
 
-    // ----
+
 
 
 <style>
@@ -265,8 +265,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     </select>
                 </td>
                 <td><input type="text" value="" placeholder="本次跟进备注" name="sky3[]"/></td>
-                <td><input type="text" value="" placeholder="本次跟进总金额" name="sky4[]"/></td>
-
+                <td><input type="text" value="测试金额" disabled="true" placeholder="" name="sky4[]"/></td>
                 <td>
                     <a href="javascript:;" class="innerbtn">添加服务1-2</a><!--动态跟进的动态服务添加-->
                     <div class="pop_box">
@@ -311,7 +310,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                     </tbody>
                                 </table>
                                 <div class="btn_a1">
-                                    <a class="dtadd" href="javascript:;">新增服务</a> <a class="closepop" href="javascript:;">确定服务</a>
+                                    <a class="dtadd" href="javascript:;">新增服务222</a> <a class="closepop" href="javascript:;">确定服务222</a>
                                 </div>
                             </div>
                         </div>
@@ -352,7 +351,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         </select>
                     </td>
                     <td ><input type="text" value="" placeholder="本次跟进备注" name="first3[]"/></td>
-                    <td><input type="text" value="" placeholder="本次跟进总金额" name="first4[]"/></td>
+                    <td><input type="text" value="测试金额" disabled="true" placeholder="" name="first4[]"/></td>
                     <td>
                         <a href="javascript:;" class="innerbtn">添加服务1-1</a>
                         <div class="pop_box">
@@ -390,51 +389,50 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                                 function show_sub(pin){
                                                     var html='';
                                                     if(pin==0){
-                                                        html="<input type='checkbox' style='width: 30px;' name='data1-1' value='1'>马桶<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='data1-2' value='1'>尿斗<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='data1-3' value='1'>水盆<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='data1-4' value='1'>清新机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='data1-5' value='1'>皂液机<input style='width: 60px;' name='' value='' placeholder='数量'/>";
+                                                        html="<input type='checkbox' style='width: 30px;' name='matong1' value='1'>马桶<input style='width: 60px;' name='matonginput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='niaodou1' value='1'>尿斗<input style='width: 60px;' name='niaodouinput1' value='' placeholder='数量'/>" +                                                            "<input type='checkbox' style='width: 30px;' name='data1-3' value='1'>水盆<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='qingxinji1' value='1'>清新机<input style='width: 60px;' name='qingxinjiinput1' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='zaoyeji1' value='1'>皂液机<input style='width: 60px;' name='zaoyejiinput1' value='' placeholder='数量'/>";
                                                     }
                                                     else if(pin==1){
-                                                         html="<input type='checkbox' style='width: 30px;' name='fengshanji' value='1'>风扇机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='TC' value='1'>TC豪华<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='shuixing' value='1'>水性喷机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='yasuo' value='1'>压缩香罐<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                         html="<input type='checkbox' style='width: 30px;' name='fengshanji1' value='1'>风扇机<input style='width: 60px;' name='fengshanjiinput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='TChaohua1' value='1'>TC豪华<input style='width: 60px;' name='TChaohuainput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='shuixing1' value='1'>水性喷机<input style='width: 60px;' name='shuixinginput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='yasuoxiangguan1' value='1'>压缩香罐<input style='width: 60px;' name='yasuoxiangguaninput1' value='' placeholder='数量'/>"
                                                     }
                                                     else if(pin==2){
-                                                        html="<input type='checkbox' style='width: 30px;' name='miechong' value='1'>灭虫<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='laoshu' value='1'>老鼠<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='zhanglang' value='1'>蟑螂<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='guoying' value='1'>果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                        html="<input type='checkbox' style='width: 30px;' name='miechong1' value='1'>灭虫<input style='width: 60px;' name='miechonginput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshu1' value='1'>老鼠<input style='width: 60px;' name='laoshuinput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='zhanglang1' value='1'>蟑螂<input style='width: 60px;' name='zhanglanginput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='guoying1' value='1'>果蝇<input style='width: 60px;' name='guoyinginput1' value='' placeholder='数量'/>"
                                                             +
-                                                            "<input type='checkbox' style='width: 30px;' name='zumieyingdeng' value='1'>租灭蝇灯<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglang' value='1'>老鼠蟑螂<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                            "<input type='checkbox' style='width: 30px;' name='zumieyingdeng1' value='1'>租灭蝇灯<input style='width: 60px;' name='zumieyingdenginput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglang1' value='1'>老鼠蟑螂<input style='width: 60px;' name='laoshuzhanglanginput1' value='' placeholder='数量'/>"
                                                             +
-                                                            "<input type='checkbox' style='width: 30px;' name='laoshuguoying' value='1'>老鼠果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='zhanglangguoying' value='1'>蟑螂果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshuguoying1' value='1'>老鼠果蝇<input style='width: 60px;' name='laoshuguoyinginput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='zhanglangguoying1' value='1'>蟑螂果蝇<input style='width: 60px;' name='zhanglangguoyinginput1' value='' placeholder='数量'/>"
                                                             +
-                                                            "<input type='checkbox' style='width: 30px;' name='zhanglang' value='1'>老鼠蟑螂果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudeng' value='1'>老鼠蟑螂+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                            "<input type='checkbox' style='width: 30px;' name='zhanglang1' value='1'>老鼠蟑螂果蝇<input style='width: 60px;' name='zhanglanginput1' value='' placeholder='数量'/><br/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudeng1' value='1'>老鼠蟑螂+租灯<input style='width: 60px;' name='laoshuzhanglangjiazudenginput1' value='' placeholder='数量'/>"
                                                             +
-                                                            "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                            "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng1' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' name='zhanglangguoyingjiazudenginput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng1' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='laoshuzhanglangguoyingjiazudenginput1' value='' placeholder='数量'/>"
                                                     }
                                                     else if(pin==3){
-                                                        html="<input type='checkbox' style='width: 30px;' name='minixiaoji' value='1'>迷你小机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='xiaoji' value='1'>小机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='zhongji' value='1'>中机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='daji' value='1'>大机<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                        html="<input type='checkbox' style='width: 30px;' name='minixiaoji1' value='1'>迷你小机<input style='width: 60px;' name='minixiaojiinput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='xiaoji1' value='1'>小机<input style='width: 60px;' name='xiaojiinput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='zhongji1' value='1'>中机<input style='width: 60px;' name='zhongjiinput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='daji1' value='1'>大机<input style='width: 60px;' name='dajiinput1' value='' placeholder='数量'/>"
                                                     }
                                                     else if(pin==4){
-                                                        html="<input type='checkbox' style='width: 30px;' name='fengshanji' value='1'>除甲醛<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='AC30' value='1'>AC30<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='PR10' value='1'>PR10<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='miniqingjiepao' value='1'>迷你清洁炮<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                        html="<input type='checkbox' style='width: 30px;' name='chujiaquan1' value='1'>除甲醛<input style='width: 60px;' name='chujiaquaninput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='AC301' value='1'>AC30<input style='width: 60px;' name='AC30input1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='PR101' value='1'>PR10<input style='width: 60px;' name='PR10input1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='miniqingjiepao1' value='1'>迷你清洁炮<input style='width: 60px;' name='miniqingjiepaoinput1' value='' placeholder='数量'/>"
                                                     }
                                                     else if(pin==5){
-                                                        html="<input type='checkbox' style='width: 30px;' name='fengshanji' value='1'>擦手纸<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                                                            "<input type='checkbox' style='width: 30px;' name='TC' value='1'>大卷厕纸<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                                                        html="<input type='checkbox' style='width: 30px;' name='cashouzhi1' value='1'>擦手纸<input style='width: 60px;' name='cashouzhiinput1' value='' placeholder='数量'/>" +
+                                                            "<input type='checkbox' style='width: 30px;' name='dajuancezhi1' value='1'>大卷厕纸<input style='width: 60px;' name='dajuancezhiinput1' value='' placeholder='数量'/>"
                                                     }
                                                     else if(pin==6){
                                                         html="<input type='checkbox' style='width: 30px;' name='wupin' value='1'>物品<input style='width: 60px;' name='' value='' placeholder='数量'/>"
@@ -472,6 +470,8 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 </div><!-- itemInfo -->
 
 <script type="text/javascript">
+    var AllDataCount=0;
+    var demo=0; //当前第几个跟进
         var count = 1;  //跟进数量  全局跟进变量由count来计数
         var count2 = 1; //计数 为当前第几个服务进行修改 (第一次跟进的数据)
         //清洁
@@ -513,8 +513,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         var zhipin="<input type='checkbox' style='width: 30px;' name='cashouzhi' value='1'>擦手纸<input style='width: 60px;' name='fengshanjiinput' value='' placeholder='数量'/>" +
             "<input type='checkbox' style='width: 30px;' name='dajuancezhi' value='1'>大卷厕纸<input style='width: 60px;' name='dajuancezhiinput' value='' placeholder='数量'/>";
 
-        var AllDataCount=0;
-        var demo=0; //当前第几个跟进
+
         $('.innerbtn').click(function(){
             var data=$('.innerbtn').index(this);
             demo=data;
@@ -554,8 +553,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 var divData= $(".model2 tbody tr").clone();
                 $(".tempDiv").html(divData);//暂存tr的 div
             }
+            else{
+                alert("目前单客户只能增加十个跟进");
+            }
         });
-
 
 // 新增内件
         var show_count2 = 20;
@@ -580,50 +581,86 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 $(".tempDiv").find("select[name="+selectName+"]").change(function(){
                     //this.value =>表示onchange的
                     console.log('数据服务'+this.value);
-                    if(this.value==0){        //清洁
+                    if(this.value==0){        //清洁  第一次跟进的服务添加
                         temporary.html(qingjie);
-                        temporary.find("input[name='matong']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='niaodou']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='shuipen']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='qingxinji']").attr('name','qingxinji1-'+demo);
-                        temporary.find("input[name='zaoyeji']").attr('name','zaoyeji1-'+demo);
+                        temporary.find("input[name='matong']").attr('name','matong'+demo);
+                        temporary.find("input[name='niaodou']").attr('name','niaodou'+demo);
+                        temporary.find("input[name='shuipen']").attr('name','shuipen'+demo);
+                        temporary.find("input[name='qingxinji']").attr('name','qingxinji-'+demo);
+                        temporary.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo);
+
+                        temporary.find("input[name='matonginput']").attr('name','matonginput'+demo);
+                        temporary.find("input[name='niaodouinput']").attr('name','niaodouinput'+demo);
+                        temporary.find("input[name='shuipeninput']").attr('name','shuipeninput'+demo);
+                        temporary.find("input[name='qingxinjiinput']").attr('name','qingxinjiinput'+demo);
+                        temporary.find("input[name='zaoyejiinput']").attr('name','zaoyejiinput'+demo);
                     }else if(this.value==1){ //租赁
                         temporary.html(zulin);
-                        temporary.find("input[name='fengshanji']").attr('name','fengshanji1-'+demo);
-                        temporary.find("input[name='TChaohua']").attr('name','TChaohua1-'+demo);
-                        temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji1-'+demo);
-                        temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan1-'+demo);
+                        temporary.find("input[name='fengshanji']").attr('name','fengshanji'+demo);
+                        temporary.find("input[name='TChaohua']").attr('name','TChaohua'+demo);
+                        temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji'+demo);
+                        temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan'+demo);
+
+                        temporary.find("input[name='fengshanjiinput']").attr('name','fengshanji'+demo);
+                        temporary.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo);
+                        temporary.find("input[name='shuixingpenjiinput']").attr('name','shuixingpenjiinput'+demo);
+                        temporary.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo);
                     }else if(this.value==2){ //灭虫
                         temporary.html(miechong);
-                        temporary.find("input[name='miechong']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='zhanglang']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='guoying']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='zumieyingdeng']").attr('name','qingxinji1-'+demo);
-                        temporary.find("input[name='laoshuzhanglang']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='laoshuguoying']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='zhanglangguoying']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='laoshuzhanglangguoying']").attr('name','qingxinji1-'+demo);
-                        temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','shuipen1-'+demo);
+                        temporary.find("input[name='miechong']").attr('name','miechong'+demo);
+                        temporary.find("input[name='zhanglang']").attr('name','zhanglang'+demo);
+                        temporary.find("input[name='guoying']").attr('name','guoying'+demo);
+                        temporary.find("input[name='zumieyingdeng']").attr('name','zumieyingdeng'+demo);
+                        temporary.find("input[name='laoshuzhanglang']").attr('name','laoshuzhanglang'+demo);
+                        temporary.find("input[name='laoshuguoying']").attr('name','laoshuguoying'+demo);
+                        temporary.find("input[name='zhanglangguoying']").attr('name','zhanglangguoying'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoying']").attr('name','laoshuzhanglangguoying'+demo);
+                        temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','laoshuzhanglangjiazudeng'+demo);
+                        temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','zhanglangguoyingjiazudeng'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','laoshuzhanglangguoyingjiazudeng'+demo);
+
+                        temporary.find("input[name='miechonginput']").attr('name','miechonginput'+demo);
+                        temporary.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo);
+                        temporary.find("input[name='guoyinginput']").attr('name','guoyinginput'+demo);
+                        temporary.find("input[name='zumieyingdenginput']").attr('name','zumieyingdenginput'+demo);
+                        temporary.find("input[name='laoshuzhanglanginput']").attr('name','laoshuzhanglanginput'+demo);
+                        temporary.find("input[name='laoshuguoyinginput']").attr('name','laoshuguoyinginput'+demo);
+                        temporary.find("input[name='zhanglangguoyinginput']").attr('name','zhanglangguoyinginput'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoyinginput']").attr('name','laoshuzhanglangguoyinginput'+demo);
+                        temporary.find("input[name='laoshuzhanglangjiazudenginput']").attr('name','laoshuzhanglangjiazudenginput'+demo);
+                        temporary.find("input[name='zhanglangguoyingjiazudenginput']").attr('name','zhanglangguoyingjiazudenginput'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoyingjiazudenginput']").attr('name','laoshuzhanglangguoyingjiazudenginput'+demo);
                     }else if(this.value==3){ //飘盈香
                         temporary.html(piaoyingxiang);
-                        temporary.find("input[name='minixiaoji']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='xiaoji']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='zhongji']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='daji']").attr('name','shuipen1-'+demo);
+                        temporary.find("input[name='minixiaoji']").attr('name','minixiaoji'+demo);
+                        temporary.find("input[name='xiaoji']").attr('name','xiaoji'+demo);
+                        temporary.find("input[name='zhongji']").attr('name','zhongji'+demo);
+                        temporary.find("input[name='daji']").attr('name','daji'+demo);
+
+                        temporary.find("input[name='minixiaojiinput']").attr('name','minixiaojiinput'+demo);
+                        temporary.find("input[name='xiaojiinput']").attr('name','xiaojiinput'+demo);
+                        temporary.find("input[name='zhongjiinput']").attr('name','zhongjiinput'+demo);
+                        temporary.find("input[name='dajiinput']").attr('name','dajiinput'+demo);
                     }else if(this.value==4){  //甲醛
                         temporary.html(jiaquan);
-                        temporary.find("input[name='chujiaquan']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='AC30']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='PR10']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='miniqingjiepao']").attr('name','shuipen1-'+demo);
+                        temporary.find("input[name='chujiaquan']").attr('name','chujiaquan'+demo);
+                        temporary.find("input[name='AC30']").attr('name','AC30'+demo);
+                        temporary.find("input[name='PR10']").attr('name','PR10'+demo);
+                        temporary.find("input[name='miniqingjiepao']").attr('name','miniqingjiepao'+demo);
+
+                        emporary.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo);
+                        temporary.find("input[name='AC30input']").attr('name','AC30input'+demo);
+                        temporary.find("input[name='PR10input']").attr('name','PR10input'+demo);
+                        temporary.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo);
                     }else if(this.value==5){  //纸品
                         temporary.html(zhipin);
-                        temporary.find("input[name='cashouzhi']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='dajuancezhi']").attr('name','niaodou1-'+demo);
+                        temporary.find("input[name='cashouzhi']").attr('name','cashouzhi'+demo);
+                        temporary.find("input[name='dajuancezhi']").attr('name','dajuancezhi'+demo);
+
+                        temporary.find("input[name='cashouzhiinput']").attr('name','cashouzhiinput'+demo);
+                        temporary.find("input[name='dajuancezhiinput']").attr('name','dajuancezhiinput'+demo);
                     }else if(this.value==6){  //一次性售卖
-                        temporary.html(miechong);
+                        temporary.html();
                     }
                 });
                 divData.appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));  //第一次跟进的>=2的服务细节
@@ -645,65 +682,97 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             //alert(length);
             if (length < show_count3)
             {
+
+                //console.log("动态新增第"+length+"条");
                 $(".tempDiv").html(""); //暂存数据的div
                 var divData=$('.model3 tbody tr').clone();
-                //console.log(divData);
                 $(".tempDiv").html(divData);
                 $(".tempDiv").css({'width':"100%"});
                 var temporary=$(".tempDiv tr td:eq(1)"); //第二个td的html 属性获取
-                //temporary.html("<input type='text' value='动态新增跟进的动态新增服务多选框' name='second' disabled='false'/>");
-                // $(".tempDiv").find("input").attr('name','值'+demo+'[]');
                $(".tempDiv").find("input[name='demo2[]']").attr('name','checkbox'+count2);  //checkbox接收的div
-                /*temporary.html("<input type='text' value='selectName' name='show1'/>");
-                temporary.attr('name','serviceTd'+count2+'');
-                $(".tempDiv").find("select[name="+selectName+"]").change(function(){*/
               $(".tempDiv").find("select[name='serviceKinds[]']").attr('name','serviceKinds'+demo+'[]');  //第一个多选框
                 var selectNameValue='serviceKinds'+demo+'[]';
                 $(".tempDiv").find("select[name='"+selectNameValue+"']").change(function(){  //动态修改
                     if(this.value==0){        //清洁
                         temporary.html(qingjie);
-                        temporary.find("input[name='matong']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='niaodou']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='shuipen']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='qingxinji']").attr('name','qingxinji1-'+demo);
-                        temporary.find("input[name='zaoyeji']").attr('name','zaoyeji1-'+demo);
+                        temporary.find("input[name='matonginput']").attr('name','matonginput'+demo);
+                        temporary.find("input[name='niaodouinput']").attr('name','niaodouinput'+demo);
+                        temporary.find("input[name='shuipeninput']").attr('name','shuipeninput'+demo);
+                        temporary.find("input[name='qingxinjiinput']").attr('name','qingxinjiinput'+demo);
+                        temporary.find("input[name='zaoyejiinput']").attr('name','zaoyejiinput'+demo);
+
+                        temporary.find("input[name='matong']").attr('name','matong'+demo);
+                        temporary.find("input[name='niaodou']").attr('name','niaodou'+demo);
+                        temporary.find("input[name='shuipen']").attr('name','shuipen'+demo);
+                        temporary.find("input[name='qingxinji']").attr('name','qingxinji'+demo);
+                        temporary.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo);
                     }else if(this.value==1){ //租赁
                         temporary.html(zulin);
                         temporary.find("input[name='fengshanji']").attr('name','fengshanji1-'+demo);
                         temporary.find("input[name='TChaohua']").attr('name','TChaohua1-'+demo);
                         temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji1-'+demo);
                         temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan1-'+demo);
+
+                        temporary.find("input[name='fengshanjiinput']").attr('name','fengshanjiinput'+demo);
+                        temporary.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo);
+                        temporary.find("input[name='shuixingpenjiinput']").attr('name','shuixingpenjiinput'+demo);
+                        temporary.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo);
                     }else if(this.value==2){ //灭虫
                         temporary.html(miechong);
-                        temporary.find("input[name='miechong']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='zhanglang']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='guoying']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='zumieyingdeng']").attr('name','qingxinji1-'+demo);
-                        temporary.find("input[name='laoshuzhanglang']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='laoshuguoying']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='zhanglangguoying']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='laoshuzhanglangguoying']").attr('name','qingxinji1-'+demo);
-                        temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','shuipen1-'+demo);
+                        temporary.find("input[name='miechong']").attr('name','matong'+demo);
+                        temporary.find("input[name='zhanglang']").attr('name','niaodou'+demo);
+                        temporary.find("input[name='guoying']").attr('name','shuipen'+demo);
+                        temporary.find("input[name='zumieyingdeng']").attr('name','qingxinji'+demo);
+                        temporary.find("input[name='laoshuzhanglang']").attr('name','matong'+demo);
+                        temporary.find("input[name='laoshuguoying']").attr('name','niaodou'+demo);
+                        temporary.find("input[name='zhanglangguoying']").attr('name','shuipen'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoying']").attr('name','qingxinji'+demo);
+                        temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','matong'+demo);
+                        temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','niaodou'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','shuipen'+demo);
+
+                        temporary.find("input[name='miechonginput']").attr('name','miechonginput'+demo);
+                        temporary.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo);
+                        temporary.find("input[name='guoyinginput']").attr('name','guoyinginput'+demo);
+                        temporary.find("input[name='zumieyingdenginput']").attr('name','zumieyingdenginput'+demo);
+                        temporary.find("input[name='laoshuzhanglanginput']").attr('name','laoshuzhanglanginput'+demo);
+                        temporary.find("input[name='laoshuguoyinginput']").attr('name','laoshuguoyinginput'+demo);
+                        temporary.find("input[name='zhanglangguoyinginput']").attr('name','zhanglangguoyinginput'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoyinginput']").attr('name','laoshuzhanglangguoyinginput'+demo);
+                        temporary.find("input[name='laoshuzhanglangjiazudenginput']").attr('name','laoshuzhanglangjiazudenginput'+demo);
+                        temporary.find("input[name='zhanglangguoyingjiazudenginput']").attr('name','zhanglangguoyingjiazudenginput'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoyingjiazudenginput']").attr('name','laoshuzhanglangguoyingjiazudenginput'+demo);
                     }else if(this.value==3){ //飘盈香
                         temporary.html(piaoyingxiang);
-                        temporary.find("input[name='minixiaoji']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='xiaoji']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='zhongji']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='daji']").attr('name','shuipen1-'+demo);
+                        temporary.find("input[name='minixiaoji']").attr('name','minixiaoji'+demo);
+                        temporary.find("input[name='xiaoji']").attr('name','xiaoji'+demo);
+                        temporary.find("input[name='zhongji']").attr('name','zhongji'+demo);
+                        temporary.find("input[name='daji']").attr('name','daji'+demo);
+
+                        temporary.find("input[name='minixiaojiinput']").attr('name','minixiaojiinput'+demo);
+                        temporary.find("input[name='xiaojiinput']").attr('name','xiaojiinput'+demo);
+                        temporary.find("input[name='zhongjiinput']").attr('name','zhongjiinput'+demo);
+                        temporary.find("input[name='dajiinput']").attr('name','dajiinput'+demo);
                     }else if(this.value==4){  //甲醛
                         temporary.html(jiaquan);
-                        temporary.find("input[name='chujiaquan']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='AC30']").attr('name','niaodou1-'+demo);
-                        temporary.find("input[name='PR10']").attr('name','shuipen1-'+demo);
-                        temporary.find("input[name='miniqingjiepao']").attr('name','shuipen1-'+demo);
+                        temporary.find("input[name='chujiaquan']").attr('name','chujiaquan'+demo);
+                        temporary.find("input[name='AC30']").attr('name','AC30'+demo);
+                        temporary.find("input[name='PR10']").attr('name','PR10'+demo);
+                        temporary.find("input[name='miniqingjiepao']").attr('name','shuipen'+demo);
+
+                        temporary.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo);
+                        temporary.find("input[name='AC30input']").attr('name','AC30input'+demo);
+                        temporary.find("input[name='PR10input']").attr('name','PR10input'+demo);
+                        temporary.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo);
                     }else if(this.value==5){  //纸品
                         temporary.html(zhipin);
-                        temporary.find("input[name='cashouzhi']").attr('name','matong1-'+demo);
-                        temporary.find("input[name='dajuancezhi']").attr('name','niaodou1-'+demo);
+                        temporary.find("input[name='cashouzhi']").attr('name','cashouzhi'+demo);
+                        temporary.find("input[name='dajuancezhi']").attr('name','dajuancezhi'+demo);
+
+                        temporary.find("input[name='cashouzhiinput']").attr('name','cashouzhiinput'+demo);
+                        temporary.find("input[name='dajuancezhiinput']").attr('name','dajuancezhiinput'+demo);
                     }else if(this.value==6){  //一次性售卖
-                        temporary.html(miechong);
+                        temporary.html("");
                     }
                 });
                 $(".tempDiv").find("input[name='serviceCounts[]']").attr('name','serviceCounts'+demo+'[]');  //第二个input 框
@@ -720,10 +789,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             if (length <= 1) {
                 alert("至少保留一行表单");
             } else {
+                count--;
                 $(opp).parent().parent().remove();//移除当前行
             }
         }
-        // ----
 
         function deltr2(opp) {
             var length = $(this).parent('.btn_a1').prev('.neijian').children('.tbody2 tr').length;
@@ -734,7 +803,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 $(opp).parent().parent().remove();//移除当前行
             }
         }
-        // ----
+
 
         function deltr3(opp) {
             var length = $('.neijian .tbody2 tr').length;
@@ -752,51 +821,51 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             console.log(pin);
             var html='';
             if(pin==0){
-                html="<input type='checkbox' style='width: 30px;' name='data1-1' value='1'>马桶<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='data1-2' value='1'>尿斗<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='data1-3' value='1'>水盆<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='data1-4' value='1'>清新机<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
-                    "<input type='checkbox' style='width: 30px;' name='data1-5' value='1'>皂液机<input style='width: 60px;' name='' value='' placeholder='数量'/>";
+                html="<input type='checkbox' style='width: 30px;' name='matongx[]' value='1'>马桶<input style='width: 60px;' name='matonginputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='niaodoux[]' value='1'>尿斗<input style='width: 60px;' name='niaodouinputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='datashuipenx[]' value='1'>水盆<input style='width: 60px;' name='datashuipeninputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='qingxinx[]' value='1'>清新机<input style='width: 60px;' name='qingxininputx[]' value='' placeholder='数量'/><br/>" +
+                    "<input type='checkbox' style='width: 30px;' name='dzaoyex[]' value='1'>皂液机<input style='width: 60px;' name='dzaoyeinputx[]' value='' placeholder='数量'/>";
             }
             else if(pin==1){
-                html="<input type='checkbox' style='width: 30px;' name='fengshanji' value='1'>风扇机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='TC' value='1'>TC豪华<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='shuixing' value='1'>水性喷机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='yasuo' value='1'>压缩香罐<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                html="<input type='checkbox' style='width: 30px;' name='fengshanjix[]' value='1'>风扇机<input style='width: 60px;' name='fengshanjiinputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='TChaohuax[]' value='1'>TC豪华<input style='width: 60px;' name='TChaohuainputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='shuixingpenjix[]' value='1'>水性喷机<input style='width: 60px;' name='shuixingpenjiinputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='yasuoxiangguanx[]' value='1'>压缩香罐<input style='width: 60px;' name='yasuoxiangguaninputx[]' value='' placeholder='数量'/>"
             }
             else if(pin==2){
-                html="<input type='checkbox' style='width: 30px;' name='miechong' value='1'>灭虫<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='laoshu' value='1'>老鼠<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='zhanglang' value='1'>蟑螂<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='guoying' value='1'>果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                html="<input type='checkbox' style='width: 30px;' name='miechongx[]' value='1'>灭虫<input style='width: 60px;' name='miechonginputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='laoshux[]' value='1'>老鼠<input style='width: 60px;' name='laoshuinputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='zhanglangx[]' value='1'>蟑螂<input style='width: 60px;' name='zhanglanginputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='guoyingx[]' value='1'>果蝇<input style='width: 60px;' name='guoyinginputx[]' value='' placeholder='数量'/>"
                     +
-                    "<input type='checkbox' style='width: 30px;' name='zumieyingdeng' value='1'>租灭蝇灯<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='laoshuzhanglang' value='1'>老鼠蟑螂<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                    "<input type='checkbox' style='width: 30px;' name='zumieyingdengx[]' value='1'>租灭蝇灯<input style='width: 60px;' name='zumieyingdenginputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangx[]' value='1'>老鼠蟑螂<input style='width: 60px;' name='laoshuzhanglanginputx[]' value='' placeholder='数量'/>"
                     +
-                    "<input type='checkbox' style='width: 30px;' name='laoshuguoying' value='1'>老鼠果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='zhanglangguoying' value='1'>蟑螂果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                    "<input type='checkbox' style='width: 30px;' name='laoshuguoyingx[]' value='1'>老鼠果蝇<input style='width: 60px;' name='laoshuguoyinginputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingx[]' value='1'>蟑螂果蝇<input style='width: 60px;' name='zhanglangguoyinginputx[]' value='' placeholder='数量'/>"
                     +
-                    "<input type='checkbox' style='width: 30px;' name='zhanglang' value='1'>老鼠蟑螂果蝇<input style='width: 60px;' name='' value='' placeholder='数量'/><br/>" +
-                    "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudeng' value='1'>老鼠蟑螂+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                    "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingx[]' value='1'>老鼠蟑螂果蝇<input style='width: 60px;' name='laoshuzhanglangguoyinginputx[]' value='' placeholder='数量'/><br/>" +
+                    "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudengx[]' value='1'>老鼠蟑螂+租灯<input style='width: 60px;' name='laoshuzhanglangjiazudenginputx[]' value='' placeholder='数量'/>"
                     +
-                    "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                    "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudengx[]' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' name='zhanglangguoyingjiazudenginputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudengx[]' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='laoshuzhanglangguoyingjiazudenginputx[]' value='' placeholder='数量'/>"
             }
             else if(pin==3){
-                html="<input type='checkbox' style='width: 30px;' name='minixiaoji' value='1'>迷你小机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='xiaoji' value='1'>小机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='zhongji' value='1'>中机<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='daji' value='1'>大机<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                html="<input type='checkbox' style='width: 30px;' name='minixiaojix[]' value='1'>迷你小机<input style='width: 60px;' name='minixiaojiinputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='xiaojix[]' value='1'>小机<input style='width: 60px;' name='xiaojiinputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='zhongjix[]' value='1'>中机<input style='width: 60px;' name='zhongjiinputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='dajix[]' value='1'>大机<input style='width: 60px;' name='dajiinputx[]' value='' placeholder='数量'/>"
             }
             else if(pin==4){
-                html="<input type='checkbox' style='width: 30px;' name='fengshanji' value='1'>除甲醛<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='AC30' value='1'>AC30<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='PR10' value='1'>PR10<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='miniqingjiepao' value='1'>迷你清洁炮<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                html="<input type='checkbox' style='width: 30px;' name='chujiaquanx[]' value='1'>除甲醛<input style='width: 60px;' name='chujiaquaninputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='AC30x[]' value='1'>AC30<input style='width: 60px;' name='AC30inputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='PR10x[]' value='1'>PR10<input style='width: 60px;' name='PR10inputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='miniqingjiepaox[]' value='1'>迷你清洁炮<input style='width: 60px;' name='miniqingjiepaoinputx[]' value='' placeholder='数量'/>"
             }
             else if(pin==5){
-                html="<input type='checkbox' style='width: 30px;' name='fengshanji' value='1'>擦手纸<input style='width: 60px;' name='' value='' placeholder='数量'/>" +
-                    "<input type='checkbox' style='width: 30px;' name='TC' value='1'>大卷厕纸<input style='width: 60px;' name='' value='' placeholder='数量'/>"
+                html="<input type='checkbox' style='width: 30px;' name='cashouzhix[]' value='1'>擦手纸<input style='width: 60px;' name='cashouzhiinputx[]' value='' placeholder='数量'/>" +
+                    "<input type='checkbox' style='width: 30px;' name='dajuancezhix[]' value='1'>大卷厕纸<input style='width: 60px;' name='dajuancezhiinputx[]' value='' placeholder='数量'/>"
             }
             else if(pin==6){
                 html="<input type='checkbox' style='width: 30px;' name='wupin' value='1'>物品<input style='width: 60px;' name='' value='' placeholder='数量'/>"

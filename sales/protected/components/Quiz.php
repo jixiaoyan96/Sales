@@ -422,4 +422,171 @@ Class Quiz{
         return $list;
     }
 
+    public static function salesReturn($serviceKinds,$visit_id){
+        $charInsert='';
+        if($serviceKinds==0){ //清洁
+            if(isset($_REQUEST['matong1'])){  //马桶
+                if(isset($_REQUEST['matonginput'.$visit_id])){
+                    $charInsert.='matong*'.$_REQUEST['matonginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['niaodou'.$visit_id])){  //尿斗
+                if(isset($_REQUEST['niaodouinput'.$visit_id])){
+                    $charInsert.='niaodou*'.$_REQUEST['niaodouinput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['shuipen'.$visit_id])){ //水盆
+                if(isset($_REQUEST['shuipeninput'.$visit_id])){
+                    $charInsert.='shuipen*'.$_REQUEST['shuipeninput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['qingxinji'.$visit_id])){  //清新机
+                if(isset($_REQUEST['qingxinjiinput'.$visit_id])){
+                    $charInsert.='qingxinji*'.$_REQUEST['qingxinjiinput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['zaoyeji'.$visit_id])){ //皂液机
+                if(isset($_REQUEST['zaoyejiinput'.$visit_id])){
+                    $charInsert.='zaoyeji*'.$_REQUEST['zaoyejiinput'.$visit_id].'-';
+                }
+            }
+        }
+        elseif($serviceKinds==1){  //租赁
+            if(isset($_REQUEST['fengshanji'.$visit_id])){  //风扇机
+                if(isset($_REQUEST['fengshanjiinput'.$visit_id])){
+                    $charInsert.='fengshanji*'.$_REQUEST['fengshanji'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['TChaohua'.$visit_id])){  //TC豪华
+                if(isset($_REQUEST['TChaohuainput'.$visit_id])){
+                    $charInsert.='TChaohua*'.$_REQUEST['TChaohuainput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['shuixingpenji'.$visit_id])){ //水性喷机
+                if(isset($_REQUEST['huixingpenjiinput'.$visit_id])){
+                    $charInsert.='huixingpenji*'.$_REQUEST['huixingpenjiinput'].$visit_id.'-';
+                }
+            }
+            if(isset($_REQUEST['yasuoxiangguan'.$visit_id])){  //压缩香罐
+                if(isset($_REQUEST['yasuoxiangguaninput'.$visit_id])){
+                    $charInsert.='yasuoxiangguan*'.$_REQUEST['yasuoxiangguaninput'.$visit_id].'-';
+                }
+            }
+        }
+        elseif($serviceKinds==2){  //灭虫
+            if(isset($_REQUEST['laoshu'.$visit_id])){  //老鼠
+                if(isset($_REQUEST['laoshuinput'.$visit_id])){
+                    $charInsert.='laoshu*'.$_REQUEST['laoshu'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['zhanglang'.$visit_id])){  //蟑螂
+                if(isset($_REQUEST['zhanglanginput'.$visit_id])){
+                    $charInsert.='zhanglang*'.$_REQUEST['zhanglanginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['guoying'.$visit_id])){ //果蝇
+                if(isset($_REQUEST['guoyinginput'.$visit_id])){
+                    $charInsert.='guoying*'.$_REQUEST['guoyinginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['zumieyingdeng'.$visit_id])){  //租灭蝇灯
+                if(isset($_REQUEST['zumieyingdenginput'.$visit_id])){
+                    $charInsert.='zumieyingdeng*'.$_REQUEST['zumieyingdenginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['laoshuzhanglang'.$visit_id])){  //老鼠蟑螂
+                if(isset($_REQUEST['laoshuzhanglanginput'.$visit_id])){
+                    $charInsert.='laoshuzhanglang*'.$_REQUEST['laoshuzhanglanginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['laoshuguoying'.$visit_id])){  //老鼠果蝇
+                if(isset($_REQUEST['laoshuguoyinginput'.$visit_id])){
+                    $charInsert.='laoshuguoying*'.$_REQUEST['laoshuguoyinginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['zhanglangguoying'.$visit_id])){  //蟑螂果蝇
+                if(isset($_REQUEST['zhanglangguoyinginput'.$visit_id])){
+                    $charInsert.='zhanglangguoying*'.$_REQUEST['zhanglangguoyinginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['laoshuzhanglangguoying'.$visit_id])){  //老鼠蟑螂果蝇
+                if(isset($_REQUEST['laoshuzhanglangguoyinginput'.$visit_id])){
+                    $charInsert.='laoshuzhanglangguoying*'.$_REQUEST['laoshuzhanglangguoyinginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['laoshuzhanglangjiazudeng'.$visit_id])){  //老鼠蟑螂加租灯
+                if(isset($_REQUEST['laoshuzhanglangjiazudenginput'.$visit_id])){
+                    $charInsert.='laoshuzhanglangjiazudeng*'.$_REQUEST['laoshuzhanglangjiazudenginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['zhanglangguoyingjiazudeng'.$visit_id])){  //蟑螂果蝇加租灯
+                if(isset($_REQUEST['zhanglangguoyingjiazudenginput'.$visit_id])){
+                    $charInsert.='zhanglangguoyingjiazudeng*'.$_REQUEST['zhanglangguoyingjiazudenginput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['laoshuzhanglangguoyingjiazudeng'.$visit_id])){  //老鼠蟑螂果蝇加租灯
+                if(isset($_REQUEST['laoshuzhanglangguoyingjiazudenginput'.$visit_id])){
+                    $charInsert.='laoshuzhanglangguoyingjiazudeng*'.$_REQUEST['laoshuzhanglangguoyingjiazudenginput'.$visit_id].'-';
+                }
+            }
+        }
+        elseif($serviceKinds==3){  //飘盈香
+            if(isset($_REQUEST['minixiaoji'.$visit_id])){  //迷你小机
+                if(isset($_REQUEST['minixiaojiinput'.$visit_id])){
+                    $charInsert.='minixiaoji*'.$_REQUEST['minixiaoji'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['xiaoji'.$visit_id])){  //小机
+                if(isset($_REQUEST['xiaojiinput'.$visit_id])){
+                    $charInsert.='xiaoji*'.$_REQUEST['xiaojiinput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['zhongji'.$visit_id])){ //中机
+                if(isset($_REQUEST['zhongjiinput'.$visit_id])){
+                    $charInsert.='zhongji*'.$_REQUEST['zhongjiinput'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['daji'.$visit_id])){  //大机
+                if(isset($_REQUEST['dajiinput'.$visit_id])){
+                    $charInsert.='daji*'.$_REQUEST['dajiinput'.$visit_id].'-';
+                }
+            }
+        }
+        elseif($serviceKinds==4){  //甲醛
+            if(isset($_REQUEST['chujiaquan'.$visit_id])){  //除甲醛
+                if(isset($_REQUEST['chujiaquaninput'.$visit_id])){
+                    $charInsert.='chujiaquan*'.$_REQUEST['chujiaquan'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['AC30'.$visit_id])){  //AC30
+                if(isset($_REQUEST['AC30input'.$visit_id])){
+                    $charInsert.='AC30*'.$_REQUEST['AC30input'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['PR10'.$visit_id])){ //PR10
+                if(isset($_REQUEST['PR10input'.$visit_id])){
+                    $charInsert.='PR10*'.$_REQUEST['PR10input'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['miniqingjiepao'.$visit_id])){  //迷你清洁炮
+                if(isset($_REQUEST['miniqingjiepaoinput'.$visit_id])){
+                    $charInsert.='miniqingjiepao*'.$_REQUEST['miniqingjiepaoinput'.$visit_id].'-';
+                }
+            }
+        }
+        elseif($serviceKinds==5){  //纸品
+            if(isset($_REQUEST['cashouzhi'.$visit_id])){  //擦手纸
+                if(isset($_REQUEST['cashouzhiinput'.$visit_id])){
+                    $charInsert.='cashouzhi*'.$_REQUEST['cashouzhi'.$visit_id].'-';
+                }
+            }
+            if(isset($_REQUEST['dajuancezhi'.$visit_id])){  //大卷厕纸
+                if(isset($_REQUEST['dajuancezhiinput'.$visit_id])){
+                    $charInsert.='dajuancezhi*'.$_REQUEST['dajuancezhiinput'.$visit_id].'-';
+                }
+            }
+        }
+        return $charInsert;
+    }
+
 }

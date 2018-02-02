@@ -162,13 +162,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     ); ?>
                 </div>
             </div>
-
-            <div class="form-group">
+        <div class="form-group">修改版块后台数据正在开发中</div>
+            <!--<div class="form-group">
                 <div class="col-sm-2">客户跟进明细</div>
                 <div class="col-sm-8">
                     <table class="table table-condensed">
                         <?php
-                        $dataGet=Quiz::editSales($model->id);
+/*                        $dataGet=Quiz::editSales($model->id);
                         echo "<tr><td>跟进备注</td><td>总额</td><td>跟进目的</td><td>操作</td></tr>";
                         if(count($dataGet)>0) {
                             for ($i = 0; $i < count($dataGet); $i++) {
@@ -208,10 +208,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         else{
                             echo "nothing";
                         }
-                        ?>
+                        */?>
                     </table>
                 </div>
-            </div>
+            </div>-->
 
 
         </div>
