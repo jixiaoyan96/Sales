@@ -444,7 +444,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                                 }
                                                 </script>
                                             <td id="FirstVisitServiceValue"></td>
-                                            <td><input type="text" name="count3[]"/></td>
+                                            <td><input type="text" value="" name="count3[]"/></td>
                                             <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除1-1</a></td>
                                         </tr>
                                         </tbody>
@@ -456,7 +456,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                             </div>
                         </div>
                         <br/>
-                        <a class="text_a" href="javascript:;" onClick="deltr(this)">删除</a>  <!--第一行的表单删除-->
+                       <!-- <a class="text_a" href="javascript:;" onClick="deltr(this)">删除</a>-->  <!--第一行的表单删除-->
                     </td>
                 </tr>
                 </tbody>
@@ -586,7 +586,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         temporary.find("input[name='matong']").attr('name','matong'+demo);
                         temporary.find("input[name='niaodou']").attr('name','niaodou'+demo);
                         temporary.find("input[name='shuipen']").attr('name','shuipen'+demo);
-                        temporary.find("input[name='qingxinji']").attr('name','qingxinji-'+demo);
+                        temporary.find("input[name='qingxinji']").attr('name','qingxinji'+demo);
                         temporary.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo);
 
                         temporary.find("input[name='matonginput']").attr('name','matonginput'+demo);
@@ -648,7 +648,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         temporary.find("input[name='PR10']").attr('name','PR10'+demo);
                         temporary.find("input[name='miniqingjiepao']").attr('name','miniqingjiepao'+demo);
 
-                        emporary.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo);
+                        temporary.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo);
                         temporary.find("input[name='AC30input']").attr('name','AC30input'+demo);
                         temporary.find("input[name='PR10input']").attr('name','PR10input'+demo);
                         temporary.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo);
@@ -708,10 +708,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         temporary.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo);
                     }else if(this.value==1){ //租赁
                         temporary.html(zulin);
-                        temporary.find("input[name='fengshanji']").attr('name','fengshanji1-'+demo);
-                        temporary.find("input[name='TChaohua']").attr('name','TChaohua1-'+demo);
-                        temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji1-'+demo);
-                        temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan1-'+demo);
+                        temporary.find("input[name='fengshanji']").attr('name','fengshanji'+demo);
+                        temporary.find("input[name='TChaohua']").attr('name','TChaohua'+demo);
+                        temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji'+demo);
+                        temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan'+demo);
 
                         temporary.find("input[name='fengshanjiinput']").attr('name','fengshanjiinput'+demo);
                         temporary.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo);
@@ -719,17 +719,17 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         temporary.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo);
                     }else if(this.value==2){ //灭虫
                         temporary.html(miechong);
-                        temporary.find("input[name='miechong']").attr('name','matong'+demo);
-                        temporary.find("input[name='zhanglang']").attr('name','niaodou'+demo);
-                        temporary.find("input[name='guoying']").attr('name','shuipen'+demo);
-                        temporary.find("input[name='zumieyingdeng']").attr('name','qingxinji'+demo);
-                        temporary.find("input[name='laoshuzhanglang']").attr('name','matong'+demo);
-                        temporary.find("input[name='laoshuguoying']").attr('name','niaodou'+demo);
-                        temporary.find("input[name='zhanglangguoying']").attr('name','shuipen'+demo);
-                        temporary.find("input[name='laoshuzhanglangguoying']").attr('name','qingxinji'+demo);
-                        temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','matong'+demo);
-                        temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','niaodou'+demo);
-                        temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','shuipen'+demo);
+                        temporary.find("input[name='miechong']").attr('name','miechong'+demo);
+                        temporary.find("input[name='zhanglang']").attr('name','zhanglang'+demo);
+                        temporary.find("input[name='guoying']").attr('name','guoying'+demo);
+                        temporary.find("input[name='zumieyingdeng']").attr('name','zumieyingdeng'+demo);
+                        temporary.find("input[name='laoshuzhanglang']").attr('name','laoshuzhanglang'+demo);
+                        temporary.find("input[name='laoshuguoying']").attr('name','laoshuguoying'+demo);
+                        temporary.find("input[name='zhanglangguoying']").attr('name','zhanglangguoying'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoying']").attr('name','laoshuzhanglangguoying'+demo);
+                        temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','laoshuzhanglangjiazudeng'+demo);
+                        temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','zhanglangguoyingjiazudeng'+demo);
+                        temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','laoshuzhanglangguoyingjiazudeng'+demo);
 
                         temporary.find("input[name='miechonginput']").attr('name','miechonginput'+demo);
                         temporary.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo);

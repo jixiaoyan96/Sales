@@ -422,6 +422,12 @@ Class Quiz{
         return $list;
     }
 
+    /**
+     * @param $serviceKinds分类id
+     * @param $visit_id跟进id
+     *
+     * @return string
+     */
     public static function salesReturn($serviceKinds,$visit_id){
         $charInsert='';
         if($serviceKinds==0){ //清洁

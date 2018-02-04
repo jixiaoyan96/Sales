@@ -175,11 +175,11 @@ return array(
 						'name'=>'Personnel',
 						'icon'=>'fa fa-users',
 					),
-			'sales'=>array(
+/*			'sales'=>array(
 				'webroot'=>'http://127.0.0.1/sales',
 				'name'=>'quizExams',
 				'icon'=>'fa fa-money',
-			),
+			),*/
 			'sales'=>array(
 				'webroot'=>'http://127.0.0.1/sales',
 				'name'=>'Sales',
