@@ -370,6 +370,28 @@ Class Quiz{
         return $dataReturn;
     }
 
+    Public static function editNewSales($edit_id){
+        $visit_info_set="SELECT * FROM visit_info WHERE visit_customer_fid=$edit_id;";
+        $visit_info_get=Yii::app()->db2->createCommand($visit_info_set)->queryAll();//循环得出拜访详情数据
+        $dataReturn=array();
+        if(count($visit_info_get)>0){
+            //var_dump($visit_info_get);die;
+            for($i=0;$i<count($visit_info_get);$i++){
+                $visit_id='';
+                $visit_id=$visit_info_get[$i]['visit_info_id'];
+                $service_info_set="select * from new_service_info WHERE new_visit_info_pid='$visit_id'";
+                $service_info_get=Yii::app()->db2->createCommand($service_info_set)->queryAll();
+                $dataReturn[$i]['visit_info']=$visit_info_get[$i]; //拜访详情
+                if(count($service_info_get)>0){
+                    for($j=0;$j<count($service_info_get);$j++){
+                        $dataReturn[$i]['visit_info']['service_info'][]=$service_info_get[$j]; //服务详情
+                    }
+                }
+            }
+        }
+        //var_dump($dataReturn);die;
+        return $dataReturn;
+    }
     Public static function visitDefinition(){
         $list = array(
             ''=>Yii::t('quiz','this_visit_definition'),

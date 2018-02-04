@@ -162,56 +162,28 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     ); ?>
                 </div>
             </div>
-        <div class="form-group">修改版块后台数据正在开发中</div>
-            <!--<div class="form-group">
+
+                <div></div>
+            <div class="form-group">
                 <div class="col-sm-2">客户跟进明细</div>
                 <div class="col-sm-8">
                     <table class="table table-condensed">
                         <?php
-/*                        $dataGet=Quiz::editSales($model->id);
+                        $dataGet=Quiz::editSales($model->id);
                         echo "<tr><td>跟进备注</td><td>总额</td><td>跟进目的</td><td>操作</td></tr>";
                         if(count($dataGet)>0) {
                             for ($i = 0; $i < count($dataGet); $i++) {
-                                $visit_notes=$dataGet[$i]['visit_info']['visit_notes'];
-                                $visit_id=$dataGet[$i]['visit_info']['visit_info_id'];
-                                $visit_money=$dataGet[$i]['visit_info']['visit_service_money'];
-                                $long=count($dataGet);
-                                $definition='visit_definition'; //单次跟进目的修改.$visit_id
-                                $delete='delete';               //删除操作.$visit_id
-                                echo "<tr>
-<td><input name='visitNotes$visit_id' value='$visit_notes'/></td>
-<td><input name='countMoney$visit_id' value='$visit_money'/></td>
-<td>" .TbHtml::dropDownList($definition.$visit_id,$dataGet[$i]['visit_info']['visit_definition'],Quiz::visitDefinition())."</td>
-<td>" .TbHtml::checkBox($delete.$visit_id,'',array(0=>'删除'),array('labelOptions'=>array('class'=>'labelForRadio','checked'=>'checked'))).'删除';"</td></tr>";
-                                $dataService=$dataGet[$i]['visit_info']['service_info'];
-                                if(count($dataService)>0) {
-                                    for ($j = 0; $j < count($dataService); $j++) {
-                                        $service_id=$dataService[$j]['service_history_id']; //服务主键
-                                        $service_history_name=$dataService[$j]['service_history_name']; //服务类别
-                                        $service_history_count='service_history_count'; //服务数量
-                                        $service_history_count_value=$dataService[$j]['service_history_count'];
-                                        $service_history_money='service_history_money'; //服务金额
-                                        $service_history_money_value=$dataService[$j]['service_history_money'];
-                                            echo "<tr>
-                                        <td>第.($i+1).次跟进的服务明细</td>
-                                        <td>" .TbHtml::dropDownList('service_history_name'.$service_id,$dataService[$j]['service_history_name'],Quiz::visit_history_name())."</td>
-                                        <td><input name='$service_history_count$service_id' value='$service_history_count_value'/></td>
-                                        <td><input name='$service_history_money$service_id' value='$service_history_money_value'/></td>
-                                        </tr>";
-                                    }
-                                }
-                                else{
-                                    echo "<tr><td>本次跟进尚无服务项目</td><td></td><td></td><td></td></tr>";
-                                }
+                                echo "<tr><td>数据不完善 或缺失</td><td></td><td></td><td></td></tr>";
+
                             }
                         }
                         else{
                             echo "nothing";
                         }
-                        */?>
+                        ?>
                     </table>
                 </div>
-            </div>-->
+            </div>
 
 
         </div>
