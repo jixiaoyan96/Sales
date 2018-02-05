@@ -617,4 +617,154 @@ Class Quiz{
         return $charInsert;
     }
 
+    /**
+     * @param $arrData //将数据库数据存入的拼音进行转义
+     */
+
+    public static function serviceTrans($arrData){
+        $visit_info_set="SELECT * FROM visit_info WHERE visit_customer_fid=$arrData;";
+        $visit_info_get=Yii::app()->db2->createCommand($visit_info_set)->queryAll();//循环得出拜访详情数据
+        $dataReturn=array(); //返回的数据
+        if(count($visit_info_get)>0) {  //有跟进
+            for ($i = 0; $i < count($visit_info_get); $i++) {
+                $visit_id = '';
+                $visit_id=$visit_info_get[$i]['visit_info_id'];
+                $service_info_set="select * from new_service_info WHERE new_visit_info_pid='$visit_id'";
+                $service_info_get=Yii::app()->db2->createCommand($service_info_set)->queryAll();  //服务数据结果
+                $dataReturn[$i]['visit_info']=$visit_info_get[$i]; //拜访详情
+                if (!empty($arrData)){  //判断服务的内容
+                    if(count($service_info_get)>0) {
+                        for ($j = 0; $j < count($service_info_get); $j++) {  //循环服务数据
+                            $arrData=$service_info_get[$j]['new_services_kinds'];
+                            $arrData = rtrim($arrData, '-');
+                            $newArrayData = array(); //获取字符串
+                            $transReturn = array();//返回的具体数据 服务名称+数量
+                            $newArrayData = explode('-', $arrData);
+                            if (count($newArrayData) > 0) {   //如果存入的数据长度大于1
+                                for ($k = 0; $k < count($newArrayData); $k++) {
+                                    $arrExplodeWord = array();
+                                    $arrExplodeWord = explode('*', $newArrayData[$k]); //0=>名字,1=>数量
+                                    $arrExplodeWord=Quiz::transLationWords($arrExplodeWord);
+                                    $dataReturn[$i]['visit_info']['service_info'][][0]=$arrExplodeWord[0];
+                                    if(isset($arrExplodeWord[1])){
+                                        $dataReturn[$i]['visit_info']['service_info'][][1]=$arrExplodeWord[1];
+                                    }
+                                    else{
+                                        $dataReturn[$i]['visit_info']['service_info'][][1]='数量未输入';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return $dataReturn;
+    }
+
+    /**
+     * @param $words//关于文字翻译array(0=>'类型名',1=>数量值)
+     */
+    public static function transLationWords($words){
+        if(isset($words[0])){  //
+            if(isset($words[1])){
+               switch($words[0]){
+                   case 'matong':
+                       $words[0]='马桶';
+                       break;
+                   case 'niaodou':
+                       $words[0]='尿斗';
+                       break;
+                   case 'shuipen':
+                       $words[0]='水盆';
+                       break;
+                   case 'qingxinji':
+                       $words[0]='清新机';
+                       break;
+                   case 'zaoyeji':
+                       $words[0]='皂液机';
+                       break;
+                   case 'fengshanji':
+                       $words[0]='风扇机';
+                       break;
+                   case 'TChaohua':
+                       $words[0]='TC豪华';
+                       break;
+                   case 'shuixingpenji':
+                       $words[0]='水性喷机';
+                       break;
+                   case 'yasuoxiangguan':
+                       $words[0]='压缩香罐';
+                       break;
+                   case 'laoshu':
+                       $words[0]='老鼠';
+                       break;
+                   case 'zhanglang':
+                       $words[0]='蟑螂';
+                       break;
+                   case 'guoying':
+                       $words[0]='果蝇';
+                       break;
+                   case 'zumieyingdeng':
+                       $words[0]='租灭蝇灯';
+                       break;
+                   case 'laoshuzhanglang':
+                       $words[0]='老鼠蟑螂';
+                       break;
+                   case 'laopshuguoying':
+                       $words[0]='老鼠果蝇';
+                       break;
+                   case 'zhanglangguoying':
+                       $words[0]='蟑螂果蝇';
+                       break;
+                   case 'laoshuzhanglangguoying':
+                       $words[0]='老鼠蟑螂果蝇';
+                       break;
+                   case 'laoshuzhanglangjiazudeng':
+                       $words[0]='老鼠蟑螂+租灯';
+                       break;
+                   case 'zhanglangguoyingjiazudeng':
+                       $words[0]='蟑螂果蝇+租灯';
+                       break;
+                   case 'laoshuzhanglangguoyingjiazudeng':
+                       $words[0]='老鼠蟑螂果蝇+租灯';
+                       break;
+                   case 'minixiaoji':
+                       $words[0]='迷你小机';
+                       break;
+                   case 'xiaoji':
+                       $words[0]='小机';
+                       break;
+                   case 'zhongji':
+                       $words[0]='中机';
+                       break;
+                   case 'daji':
+                       $words[0]='大机';
+                       break;
+                   case 'chujiaquan':
+                       $words[0]='除甲醛';
+                       break;
+                   case 'AC30':
+                       $words[0]='AC30';
+                       break;
+                   case 'PR10':
+                       $words[0]='PR10';
+                       break;
+                   case 'miniqingjiepao':
+                       $words[0]='迷你清洁炮';
+                       break;
+                   case 'cashouzhi':
+                       $words[0]='擦手纸';
+                       break;
+                   case 'dajuancezhi':
+                       $words[0]='大卷厕纸';
+                       break;
+                   default:
+                       break;
+               }
+            }
+        }
+        return $words;
+    }
 }
