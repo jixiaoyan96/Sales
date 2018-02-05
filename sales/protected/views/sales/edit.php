@@ -189,8 +189,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                 if(count($new[$i]['visit_info'])>0){  //visit_info 数据存入
                                     echo "<tr><td>".$new[$i]['visit_info']['visit_notes']."</td><td>".$new[$i]['visit_info']['visit_service_money']."</td><td>".$new[$i]['visit_info']['visit_definition']."</td><td></td></tr>";
                                 }
-                                if(count($new[$i]['visit_info']['service_info'])>0){ //new_service_info 数据存入
-                                    echo "<tr><td>".$new[$i]['visit_info']['visit_notes']."</td><td></td><td></td><td></td></tr>";
+                              if(count($new[$i]['service_info'])>0){ //new_service_info 数据存入
+                                  for($k=0;$k<count($new[$i]['service_info']);$k++) {
+                                      echo "<tr><td>" . $new[$i]['service_info'][$k]['name'] . "</td><td>" . $new[$i]['service_info'][$k]['count'] . "</td><td></td><td></td></tr>";
+                                  }
                                 }
                             }
                         }

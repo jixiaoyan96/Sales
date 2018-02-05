@@ -645,12 +645,12 @@ Class Quiz{
                                     $arrExplodeWord = array();
                                     $arrExplodeWord = explode('*', $newArrayData[$k]); //0=>名字,1=>数量
                                     $arrExplodeWord=Quiz::transLationWords($arrExplodeWord);
-                                    $dataReturn[$i]['visit_info']['service_info'][][0]=$arrExplodeWord[0];
+                                    $dataReturn[$i]['service_info'][$j]['name']=$arrExplodeWord[0];
                                     if(isset($arrExplodeWord[1])){
-                                        $dataReturn[$i]['visit_info']['service_info'][][1]=$arrExplodeWord[1];
+                                        $dataReturn[$i]['service_info'][$j]['count']=$arrExplodeWord[1];
                                     }
                                     else{
-                                        $dataReturn[$i]['visit_info']['service_info'][][1]='数量未输入';
+                                        $dataReturn[$i]['service_info'][$j]['count']='数量未输入';
                                     }
                                 }
                             }
