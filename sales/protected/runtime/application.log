@@ -3729,3 +3729,9 @@ REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=110
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\sales\edit.php (187)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (333)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/05 09:46:30 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/05 09:46:30 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)

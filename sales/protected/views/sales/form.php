@@ -460,7 +460,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     </td>
                 </tr>
                 </tbody>
-
             </table>
             <div class="copybtn">
                 <a href="javascript:;" class="AddTr">动态新增跟进</a>

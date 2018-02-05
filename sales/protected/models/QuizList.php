@@ -38,12 +38,12 @@ class QuizList extends CListPageModel
         }
         if(!empty($user_sellers_id)){
             $sql1 = "select a.customer_id,a.customer_name,a.customer_contact,a.customer_contact_phone,a.visit_kinds,a.customer_kinds,a.customer_create_date,b.visit_definition_name,c.customer_kinds_name
-from salesuat.customer_info as a LEFT JOIN salesuat.visit_definition as b ON a.visit_kinds=b.visit_definition_id
-LEFT JOIN salesuat.customer_kinds as c ON a.customer_kinds=c.customer_kinds_id
+from customer_info as a LEFT JOIN visit_definition as b ON a.visit_kinds=b.visit_definition_id
+LEFT JOIN customer_kinds as c ON a.customer_kinds=c.customer_kinds_id
 WHERE a.customer_create_sellers_id =$user_sellers_id ";
             $sql2 = "select count(a.customer_id)
-from salesuat.customer_info as a LEFT JOIN salesuat.visit_definition as b ON a.visit_kinds=b.visit_definition_id
-LEFT JOIN salesuat.customer_kinds as c ON a.customer_kinds=c.customer_kinds_id
+from customer_info as a LEFT JOIN visit_definition as b ON a.visit_kinds=b.visit_definition_id
+LEFT JOIN customer_kinds as c ON a.customer_kinds=c.customer_kinds_id
 WHERE a.customer_create_sellers_id =$user_sellers_id ";
         }
         else{
