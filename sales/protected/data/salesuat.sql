@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-02-05 10:04:46
+Date: 2018-02-06 17:40:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,12 +35,44 @@ CREATE TABLE `customer_info` (
   `customer_kinds` int(5) DEFAULT NULL COMMENT '客户种类',
   `city` char(5) DEFAULT NULL COMMENT '城市',
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=159 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customer_info
 -- ----------------------------
-INSERT INTO `customer_info` VALUES ('123', 'json销售拜访11', 'json销售拜访111', 'json销售拜访111', 'json销售拜访111', 'json销售拜访111', 'json销售拜访111', 'json销', 'json销售拜访111', '2018-02-08 00:00:00', '1', '4', '5', 'HK');
+INSERT INTO `customer_info` VALUES ('126', '海底捞', '海底捞1分店', 'jsoncustomer_help_count_date', '阿斯达', '13859568485', '总备注', '金牛区', '北大街', '2018-02-14 00:00:00', '1', '5', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('127', 'json测试112', 'json测试112', 'json测试112', 'json测试112', 'json测试112', 'json测试112', 'json测', 'json测试112', '2018-02-22 00:00:00', '1', '2', '11', 'HK');
+INSERT INTO `customer_info` VALUES ('128', 'json116', 'json116', 'json116', 'json116', 'json116', 'json116', 'json1', 'json116', '2018-02-07 00:00:00', '1', '4', '7', 'HK');
+INSERT INTO `customer_info` VALUES ('129', 'json116', 'json116', 'json116', 'json116', 'json116', 'json116', 'json1', 'json116', '2018-02-07 00:00:00', '1', '4', '7', 'HK');
+INSERT INTO `customer_info` VALUES ('130', 'json117', 'json117', 'json117', 'json117', 'json117', 'json117json117', 'json1', 'json117', '2018-02-07 00:00:00', '1', '4', '0', 'HK');
+INSERT INTO `customer_info` VALUES ('131', 'json117', 'json117', 'json117', 'json117', 'json117', 'json117json117', 'json1', 'json117', '2018-02-07 00:00:00', '1', '4', '0', 'HK');
+INSERT INTO `customer_info` VALUES ('132', 'json测试118', 'json测试118', 'json测试118', 'json测试118', 'json测试118', 'json测试118json测试118json测试118', 'json测', 'json测试118', '2018-02-14 00:00:00', '1', '9', '12', 'HK');
+INSERT INTO `customer_info` VALUES ('133', 'JSON', 'JSON', 'JSON', 'JSON', 'JSON', 'JSONJSONJSON', 'JSON', 'JSON', '2018-02-14 00:00:00', '1', '3', '5', 'HK');
+INSERT INTO `customer_info` VALUES ('134', 'input', 'input', 'input', 'input', 'input', 'inputinput', 'input', 'input', '2018-02-06 00:00:00', '1', '7', '8', 'HK');
+INSERT INTO `customer_info` VALUES ('135', '  var_dump', '  var_dump($charInsert);die;', '  var_dump($charInsert);die;', '  var_dump($charInse', '  var_dump($charInse', '  var_dump($charInsert);die;', '  var', '  var_dump($charInsert);die;', '2018-01-31 00:00:00', '1', '2', '6', 'HK');
+INSERT INTO `customer_info` VALUES ('136', '  var_dump', '  var_dump($charInsert);die;', '  var_dump($charInsert);die;', '  var_dump($charInse', '  var_dump($charInse', '  var_dump($charInsert);die;', '  var', '  var_dump($charInsert);die;', '2018-01-31 00:00:00', '1', '2', '6', 'HK');
+INSERT INTO `customer_info` VALUES ('137', '  var_dump', '  var_dump($charInsert);die;', '  var_dump($charInsert);die;', '  var_dump($charInse', '  var_dump($charInse', '  var_dump($charInsert);die;', '  var', '  var_dump($charInsert);die;', '2018-02-13 00:00:00', '1', '4', '8', 'HK');
+INSERT INTO `customer_info` VALUES ('138', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laosh', 'laoshu', '2018-01-31 00:00:00', '1', '2', '6', 'HK');
+INSERT INTO `customer_info` VALUES ('139', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laosh', 'laoshu', '2018-01-31 00:00:00', '1', '2', '6', 'HK');
+INSERT INTO `customer_info` VALUES ('140', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laoshu', 'laosh', 'laoshu', '2018-01-31 00:00:00', '1', '2', '6', 'HK');
+INSERT INTO `customer_info` VALUES ('141', 'var_dump($', 'var_dump($charInsert);die;', 'var_dump($charInsert);die;', 'var_dump($charInsert', 'var_dump($charInsert', 'var_dump($charInsert);die;', 'var_d', 'var_dump($charInsert);die;', '2018-02-14 00:00:00', '1', '4', '3', 'HK');
+INSERT INTO `customer_info` VALUES ('142', 'var_dump($', 'var_dump($charInsert);die;', 'var_dump($charInsert);die;', 'var_dump($charInsert', 'var_dump($charInsert', 'var_dump($charInsert);die;', 'var_d', 'var_dump($charInsert);die;', '2018-02-14 00:00:00', '1', '4', '3', 'HK');
+INSERT INTO `customer_info` VALUES ('143', 'json测试99', 'json测试99', 'json测试99', 'json测试99', 'json测试99', 'json测试99', 'json测', 'json测试99', '2018-01-31 00:00:00', '1', '5', '6', 'HK');
+INSERT INTO `customer_info` VALUES ('144', 'json测试99', 'json测试99', 'json测试99', 'json测试99', 'json测试99', 'json测试99', 'json测', 'json测试99', '2018-01-31 00:00:00', '1', '5', '6', 'HK');
+INSERT INTO `customer_info` VALUES ('145', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('146', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('147', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('148', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('149', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('150', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('151', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('152', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('153', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称json', '客户名称j', '客户名称json', '2018-02-14 00:00:00', '1', '2', '4', 'HK');
+INSERT INTO `customer_info` VALUES ('154', 'serviceKin', 'serviceKinds', 'serviceKinds', 'serviceKinds', 'serviceKinds', 'serviceKinds', 'servi', 'serviceKinds', '2018-02-21 00:00:00', '1', '3', '7', 'HK');
+INSERT INTO `customer_info` VALUES ('155', '184', '184', '184', '184', '184', '184', '184', '184', '2018-02-06 00:00:00', '1', '8', '8', 'HK');
+INSERT INTO `customer_info` VALUES ('156', '184', '184', '184', '184', '184', '184', '184', '184', '2018-02-06 00:00:00', '1', '8', '8', 'HK');
+INSERT INTO `customer_info` VALUES ('157', '184', '184', '184', '184', '184', '184', '184', '184', '2018-02-06 00:00:00', '1', '8', '8', 'HK');
+INSERT INTO `customer_info` VALUES ('158', 'btn_a1', 'btn_a1', 'btn_a1', 'btn_a1', 'btn_a1', 'btn_a1', 'btn_a', 'btn_a1', '2018-02-14 00:00:00', '1', '4', '2', 'HK');
 
 -- ----------------------------
 -- Table structure for `customer_kinds`
@@ -89,15 +121,61 @@ CREATE TABLE `new_service_info` (
   `new_visit_info_pid` int(100) DEFAULT NULL COMMENT '拜访外键',
   `new_service_money` varchar(50) DEFAULT NULL COMMENT '服务总金额',
   `new_services_kinds` varchar(200) DEFAULT NULL COMMENT '服务存入数量与类别',
+  `new_services_kind` varchar(20) DEFAULT NULL COMMENT '类别',
   PRIMARY KEY (`new_service_info_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of new_service_info
 -- ----------------------------
-INSERT INTO `new_service_info` VALUES ('9', '129', '金额未知', 'laoshu*1-');
-INSERT INTO `new_service_info` VALUES ('10', '129', '金额未知', '');
-INSERT INTO `new_service_info` VALUES ('11', '130', '金额未知', '');
+INSERT INTO `new_service_info` VALUES ('18', '134', '金额未知', 'laoshu*1-zhanglang*-', null);
+INSERT INTO `new_service_info` VALUES ('19', '135', '金额未知', 'laoshuguoying*13-', null);
+INSERT INTO `new_service_info` VALUES ('20', '135', '金额未知', 'laoshuguoying*13-', null);
+INSERT INTO `new_service_info` VALUES ('21', '136', '金额未知', '', null);
+INSERT INTO `new_service_info` VALUES ('22', '139', '', 'laoshu*1-', '2');
+INSERT INTO `new_service_info` VALUES ('23', '140', '', 'fengshanji*1-', '1');
+INSERT INTO `new_service_info` VALUES ('24', '141', '', 'fengshanji*1-', '1');
+INSERT INTO `new_service_info` VALUES ('25', '142', '856', 'laoshu*1-', '2');
+INSERT INTO `new_service_info` VALUES ('26', '142', '', 'minixiaoji*1-', '3');
+INSERT INTO `new_service_info` VALUES ('27', '143', '', 'fengshanji*88-TChaohua*65-', '1');
+INSERT INTO `new_service_info` VALUES ('28', '145', '', 'minixiaoji*85-', '3');
+INSERT INTO `new_service_info` VALUES ('29', '146', '', 'matong*47-niaodou*86-', '0');
+INSERT INTO `new_service_info` VALUES ('30', '150', '865', 'fengshanji*84-', '1');
+INSERT INTO `new_service_info` VALUES ('31', '151', '865', 'fengshanji*84-', '1');
+INSERT INTO `new_service_info` VALUES ('32', '151', '', 'minixiaoji*654-xiaoji*48-zhongji*65-', '3');
+INSERT INTO `new_service_info` VALUES ('33', '152', '', 'laoshu*88-', '2');
+INSERT INTO `new_service_info` VALUES ('34', '154', '', 'laoshu*88-', '2');
+INSERT INTO `new_service_info` VALUES ('35', '156', '', 'fengshanji*18-', '1');
+INSERT INTO `new_service_info` VALUES ('36', '157', '', 'fengshanji*18-', '1');
+INSERT INTO `new_service_info` VALUES ('37', '158', '2500', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('38', '160', '2500', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('39', '160', '', 'laoshu*18-zhanglang*-', '2');
+INSERT INTO `new_service_info` VALUES ('40', '162', '2500', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('41', '162', '', 'laoshu*18-zhanglang*-', '2');
+INSERT INTO `new_service_info` VALUES ('42', '164', '2500', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('43', '164', '', 'laoshu*18-zhanglang*-', '2');
+INSERT INTO `new_service_info` VALUES ('44', '165', '1800', '', '1');
+INSERT INTO `new_service_info` VALUES ('45', '166', '2500', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('46', '166', '', 'laoshu*18-zhanglang*-', '2');
+INSERT INTO `new_service_info` VALUES ('47', '167', '1800', '', '1');
+INSERT INTO `new_service_info` VALUES ('48', '168', '2500', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('49', '168', '', 'laoshu*18-zhanglang*-', '2');
+INSERT INTO `new_service_info` VALUES ('50', '169', '1800', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('51', '170', '2500', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('52', '170', '', 'laoshu*18-zhanglang*-', '2');
+INSERT INTO `new_service_info` VALUES ('53', '171', '2500', 'fengshanji*-', '1');
+INSERT INTO `new_service_info` VALUES ('54', '171', '', 'laoshu*18-zhanglang*-', '2');
+INSERT INTO `new_service_info` VALUES ('55', '172', '1800', '', '1');
+INSERT INTO `new_service_info` VALUES ('56', '173', '', 'laoshu*1-', '2');
+INSERT INTO `new_service_info` VALUES ('57', '174', '', '', '1');
+INSERT INTO `new_service_info` VALUES ('58', '175', '', '', '0');
+INSERT INTO `new_service_info` VALUES ('59', '176', '', '', '7');
+INSERT INTO `new_service_info` VALUES ('60', '177', '', '', '0');
+INSERT INTO `new_service_info` VALUES ('61', '178', '', '', '7');
+INSERT INTO `new_service_info` VALUES ('62', '179', '', '', '0');
+INSERT INTO `new_service_info` VALUES ('63', '180', '', 'niaodou*26-', '0');
+INSERT INTO `new_service_info` VALUES ('64', '180', '', 'chujiaquan*96-AC30*26-', '4');
+INSERT INTO `new_service_info` VALUES ('65', '181', '', '', '1');
 
 -- ----------------------------
 -- Table structure for `order_customer_info`
@@ -463,10 +541,56 @@ CREATE TABLE `visit_info` (
   `visit_date` varchar(50) DEFAULT NULL COMMENT '单次跟进日期',
   `visit_definition` varchar(20) DEFAULT NULL COMMENT '拜访目的',
   PRIMARY KEY (`visit_info_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=182 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of visit_info
 -- ----------------------------
-INSERT INTO `visit_info` VALUES ('129', '123', '1', 'json销售拜访111', '测试数据', '2018/02/28', '签单');
-INSERT INTO `visit_info` VALUES ('130', '123', '1', 'json销售拜访112', '跟进总额', '2018-02-14', '其他');
+INSERT INTO `visit_info` VALUES ('134', '126', '1', '第一次跟进备注', '测试数据', '2018/02/14', '签单');
+INSERT INTO `visit_info` VALUES ('135', '127', '1', 'json测试112', '测试数据', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('136', '127', '1', 'json测试112', '跟进总额', '2018-02-14', '拜访目的');
+INSERT INTO `visit_info` VALUES ('137', '128', '1', 'json116', '测试数据', '2018/02/21', '签单');
+INSERT INTO `visit_info` VALUES ('138', '131', '1', 'json117', '测试数据', '2018/02/21', '签单');
+INSERT INTO `visit_info` VALUES ('139', '132', '1', 'json测试118', '测试数据', '2018/02/28', '续约');
+INSERT INTO `visit_info` VALUES ('140', '132', '1', '第一次跟进备注', '测试数据', '2018/02/28', '追款');
+INSERT INTO `visit_info` VALUES ('141', '132', '1', '', '测试数据', '2018/02/28', '签单');
+INSERT INTO `visit_info` VALUES ('142', '133', '1', 'JSON', 'NaN', '2018/02/21', '续约');
+INSERT INTO `visit_info` VALUES ('143', '134', '1', 'input', 'NaN', '2018/02/22', '续约');
+INSERT INTO `visit_info` VALUES ('144', '135', '1', '  var_dump($charInsert);die;', 'NaN', '2018/02/21', '签单');
+INSERT INTO `visit_info` VALUES ('145', '136', '1', '  var_dump($charInsert);die;', 'NaN', '2018/02/21', '签单');
+INSERT INTO `visit_info` VALUES ('146', '136', '1', 'json测试99', '0', '2018/02/28', '追款');
+INSERT INTO `visit_info` VALUES ('147', '136', '1', '第一次跟进备注', '0', '2018/02/22', '回访');
+INSERT INTO `visit_info` VALUES ('148', '137', '1', '  var_dump($charInsert);die;', '1', '2018/02/28', '续约');
+INSERT INTO `visit_info` VALUES ('149', '138', '1', 'laoshu', '1', '2018/02/21', '续约');
+INSERT INTO `visit_info` VALUES ('150', '139', '1', 'laoshu', '1', '2018/02/21', '续约');
+INSERT INTO `visit_info` VALUES ('151', '140', '1', 'laoshu', '1', '2018/02/21', '续约');
+INSERT INTO `visit_info` VALUES ('152', '141', '1', 'var_dump($charInsert);die;', '1', '2018/02/22', '续约');
+INSERT INTO `visit_info` VALUES ('153', '141', '1', 'var_dump($charInsert);die;', '跟进总额', '2018-02-13', '更改项目');
+INSERT INTO `visit_info` VALUES ('154', '142', '1', 'var_dump($charInsert);die;', '1', '2018/02/22', '续约');
+INSERT INTO `visit_info` VALUES ('155', '142', '1', 'var_dump($charInsert);die;', '跟进总额', '2018-02-13', '更改项目');
+INSERT INTO `visit_info` VALUES ('156', '143', '1', 'json测试99', '1', '2018/02/28', '续约');
+INSERT INTO `visit_info` VALUES ('157', '144', '1', 'json测试99', '1', '2018/02/28', '续约');
+INSERT INTO `visit_info` VALUES ('158', '145', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('159', '146', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('160', '147', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('161', '147', '1', '', '跟进总额', '2018-02-13', '其他');
+INSERT INTO `visit_info` VALUES ('162', '148', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('163', '148', '1', '', '跟进总额', '2018-02-13', '其他');
+INSERT INTO `visit_info` VALUES ('164', '149', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('165', '149', '1', '', '跟进总额', '2018-02-13', '其他');
+INSERT INTO `visit_info` VALUES ('166', '150', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('167', '150', '1', '', '跟进总额', '2018-02-13', '其他');
+INSERT INTO `visit_info` VALUES ('168', '151', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('169', '151', '1', '', '跟进总额', '2018-02-13', '其他');
+INSERT INTO `visit_info` VALUES ('170', '152', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('171', '153', '1', '客户名称json', '1', '2018/02/21', '追款');
+INSERT INTO `visit_info` VALUES ('172', '153', '1', '', '跟进总额', '2018-02-13', '其他');
+INSERT INTO `visit_info` VALUES ('173', '154', '1', 'serviceKinds', '1', '2018/02/21', '签单');
+INSERT INTO `visit_info` VALUES ('174', '154', '1', 'serviceKinds', '跟进总额', '2018-02-13', '更改项目');
+INSERT INTO `visit_info` VALUES ('175', '155', '1', '184', '1', '2018/02/23', '其他');
+INSERT INTO `visit_info` VALUES ('176', '155', '1', '184', '跟进总额', '2018-02-20', '拜访目的');
+INSERT INTO `visit_info` VALUES ('177', '156', '1', '184', '1', '2018/02/23', '其他');
+INSERT INTO `visit_info` VALUES ('178', '156', '1', '184', '跟进总额', '2018-02-20', '拜访目的');
+INSERT INTO `visit_info` VALUES ('179', '157', '1', '184', '1', '2018/02/23', '其他');
+INSERT INTO `visit_info` VALUES ('180', '158', '1', 'json测试99', '1', '2018/02/21', '续约');
+INSERT INTO `visit_info` VALUES ('181', '158', '1', 'btn_a1', '跟进总额', '2018-02-14', '回访');

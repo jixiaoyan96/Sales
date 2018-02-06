@@ -203,8 +203,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     </table>
                 </div>
             </div>
-
-
         </div>
     </div>
 </section>
@@ -373,7 +371,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 
             <tbody class="tbody1">
             <tr>  <!--第一层的表单拜访数据-->
-                <td><input value="" name="first1[]" id="first1" class='form-control pull-right'/></td>
+                <td><input value="" name="first1[]" type="date" class='form-control pull-right'/></td>
                 <td>
                     <select name="first2[]">
                         <option value="">本次11跟进目的</option>
