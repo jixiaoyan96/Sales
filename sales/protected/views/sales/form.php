@@ -234,7 +234,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                     <option value='6'>一次性售卖</option>
                 </select>
             </td>
-           <td> <input type="text" name="serviceCounts[]"/></td>
+           <td> <input type="text" name="serviceCounts[]" value="0"/></td>
             <td><input type="text" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" name="serviceMoney[]"/></td>
             <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除1-3</a></td><!--动态跟进的动态服务删除-->
         </tr>
@@ -299,7 +299,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                                 <option value='6'>一次性售卖</option>
                                             </select>
                                         </td>
-                                        <td class="runIdFirst"><input type="text" name="day2[]"/></td>
+                                        <td class="runIdFirst"><input type="text" name="day2[]" value="0"/></td>
                                         <td><input type="text" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" name="day3[]"/></td>
                            <!--             <td><input type="text" name="day4[]"/></td>
                                         <td><input type="text" name="day5[]"/></td>
@@ -307,6 +307,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                         <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>-->
                                         <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除1-1</a></td>
                                     </tr>
+
                                     </tbody>
                                 </table>
                                 <div class="btn_a1">
@@ -522,23 +523,22 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         });
 
         $('.closepop').click(function(){
-            var inputid="";
-            var inputArray=$(this).parent('div .textmian').find("input[type='text']");  //取到所有的input text 并且放到一个数组中
-            console.log('执行1');
-            inputArray.each(  //循环input数组
+            var aa=$(this).parent(".btn_a1");
+            var bb=aa.prev("table");
+            var cc=bb.find("input[type='text']");
+            var total=0;
+           // console.log(total);
+           console.log('执行1');
+            cc.each(  //循环input数组
                 function (){
                     var input =$(this);  //循环每一个input元素
-                    inputid=inputid+parseInt(input.val());  //查看循环中的每一个input的id
+                    console.log(input.val());
+                    total=total+parseInt(input.val());  //查看循环中的每一个input的id
                 }
             );
-            console.log(inputid);
-            var aa=$("#firstServiceCountMOney").val();
-            var bb=$("input[name='demo3[]']").val();
-            //console.log(bb);
+           // console.log(total);
             var CountAll=parseInt(aa)+parseInt(bb);
-            //console.log(CountAll);
-            $("#firstCountMoney").val(CountAll);
-
+            $("#firstCountMoney").val(total);
             $('.pop_box').slideUp('400');
         });
 
@@ -551,19 +551,24 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             $(this).next('.pop_box').slideDown('400');
         });
         $('.tbody1').on("click",".alonTr .closepop",function(){
-            var inputid=0;
-            var inputArray=$(this).parent('.pop_box ').find("input[type='text']");//取到所有的input text 并且放到一个数组中
+            var aa=$(this).parent(".btn_a1");
+            var bb=aa.prev("table");
+            var cc=bb.find("input[type='text']");
+            var total=0;
             console.log('执行2');
-            console.log(inputArray);
-            inputArray.each(   //使用数组的循环函数 循环这个input数组
+            // console.log('执行1');
+            cc.each(  //循环input数组
                 function (){
-                    var input =$(this);  //循环中的每一个input元素
-                    inputid=inputid+parseInt(input.val());  //查看循环中的每一个input的id
+                    var input =$(this);  //循环每一个input元素
+                    console.log(input.val()+"数据");
+                    total=parseInt(total)+parseInt(input.val());  //查看循环中的每一个input的id
                 }
             );
-            var value=document.getElementsByName("moneyVisit"+count).value;
-            value=inputid;
-            console.log("当前需要修改的input为:moneyVisit"+count+"总价值为:"+value);
+            console.log(total);
+            var inputName="moneyShow"+demo;
+            document.getElementById("moneyShow"+demo).value=total;
+
+            console.log("当前需要修改的inputId为:"+inputName+"总价值为:"+total);
             $('.pop_box').slideUp('400');
         });
 
@@ -581,6 +586,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 //$(".model1 tbody .alonTr").clone().appendTo(".tabInfo .tbody1");  //动态新增跟进
                 var divData= $(".model1 tbody .alonTr").clone();
                 $(".tempDiv").html(divData);//暂存tr的 div
+                $(".tempDiv").find("input[name='sky4[]']").attr('id','moneyShow'+count);
                 $(".tempDiv").find("input[name='sky4[]']").attr('name','moneyVisit'+count);
                 divData.appendTo(".tabInfo .tbody1");  //动态新增跟进
             }
@@ -595,6 +601,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             var length = $(this).parent('.btn_a1').prev('.neijian').children('.tbody2 tr').length;
             if (length < show_count2)
             {
+                //存入钱的input name值为moneyVisit+demo
                 count2++;  //显示当前是第几个服务跟进
                 $(".tempDiv").html(""); //暂存tr的 div
                 var divData= $(".model2 tbody tr").clone();
@@ -607,7 +614,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                  }*/
                 $(".tempDiv").find("input[name='demo2[]']").attr('name','checkbox'+count2);  //checkbox接收的div
                 var temporary=$(".tempDiv tr td:eq(1)");
-                temporary.html("<input type='text' value='selectName' name='show1'/>");
+                temporary.html("<input type='text' value='0' name='show1'/>");
                 temporary.attr('name','serviceTd'+count2+'');
                 $(".tempDiv").find("select[name="+selectName+"]").change(function(){
                     //this.value =>表示onchange的
@@ -701,7 +708,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             }
         });
         function setHtml(obj){
-            $(".tempDiv tr td:eq(1)").html('<input type="text" value="selectName" />');
+            $(".tempDiv tr td:eq(1)").html('<input type="text" value="0" />');
         }
         // 动态跟进的新增动态服务
         var show_count3 = 20;
