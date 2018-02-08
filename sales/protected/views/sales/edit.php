@@ -168,8 +168,8 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <div class="col-sm-2">客户跟进明细</div>
                 <div class="col-sm-8">
                     <table class="table table-condensed">
-                        <?php
-                   $new=Quiz::serviceTrans($model->id);
+                     <!--   --><?php
+/*                   $new=Quiz::serviceTrans($model->id);
                         echo "<tr><td>跟进备注</td><td>总额</td><td>跟进目的</td><td>操作</td></tr>";
                         if(count($new)>0) {
                             for ($i = 0; $i < count($new); $i++) {
@@ -186,13 +186,29 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         else{
                             echo "<tr><td>该拜访未记录详细跟进信息</td><td></td><td></td><td></td></tr>";
                         }
+                        */
+                        $dataShow=Quiz::editDataShow($model->id); //跟进的主要信息
+                        echo "<tr><td>跟进日期</td><td>跟进目的</td><td>跟进总金额</td><td>服务以及金额</td><td>备注</td></tr>";
+                        if(count($dataShow)){
+                            for($i = 0; $i < count($dataShow); $i++){
+                                $date=$dataShow[$i]['visit_date'];
+                                $definition=$dataShow[$i]['visit_definition'];
+                                $contentService=$dataShow[$i]['visit_service_money'];
+                                $serviceMoney=$dataShow[$i]['serviceMoney'];
+                                $notes=$dataShow[$i]['visit_notes'];
+                                echo "<tr><td>$date</td><td>$definition</td><td>$contentService</td><td>$serviceMoney</td><td>$notes</td></tr>";
+                            }
+                        }
+
                         ?>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-</section><style>
+</section>
+
+<style>
     *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;border:0 none; }
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
     input:focus,textarea:focus{border:1px solid #9ab6d6;}
@@ -324,10 +340,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                     </td>
                                     <td class="runIdFirst"><input type="text" name="day2[]" value="0"/></td>
                                     <td><input type="text" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" name="day3[]"/></td>
-                                    <!--             <td><input type="text" name="day4[]"/></td>
-                                                 <td><input type="text" name="day5[]"/></td>
-                                                 <td><input type="text" name="day6[]"/></td>
-                                                 <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>-->
                                     <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除1-1</a></td>
                                 </tr>
 
@@ -358,7 +370,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 
             <tbody class="tbody1">
             <tr>  <!--第一层的表单拜访数据-->
-                <td><input value="" type="date" name="first1[]" id="first1" class='form-control pull-right'/></td>
+                <td><input value="" name="first1[]" id="first1" class='form-control pull-right'/></td>
                 <td>
                     <select name="first2[]">
                         <option value="">本次11跟进目的</option>
@@ -413,51 +425,51 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                             function show_sub(pin){
                                                 var html='';
                                                 if(pin==0){
-                                                    html="<input type='checkbox' style='width: 30px;' name='matong1' value='1'>马桶<input style='width: 60px;' name='matonginput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='niaodou1' value='1'>尿斗<input style='width: 60px;' name='niaodouinput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='shuipen1' value='1'>水盆<input style='width: 60px;' name='shuipeninput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='qingxinji1' value='1'>清新机<input style='width: 60px;' name='qingxinjiinput1' value='' placeholder='数量'/><br/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='zaoyeji1' value='1'>皂液机<input style='width: 60px;' name='zaoyejiinput1' value='' placeholder='数量'/>";
+                                                    html="<input type='checkbox' style='width: 30px;' name='matong1-1' value='1'>马桶<input style='width: 60px;' name='matonginput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='niaodou1-1' value='1'>尿斗<input style='width: 60px;' name='niaodouinput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='shuipen1-1' value='1'>水盆<input style='width: 60px;' name='shuipeninput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='qingxinji1-1' value='1'>清新机<input style='width: 60px;' name='qingxinjiinput1-1' value='' placeholder='数量'/><br/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='zaoyeji1-1' value='1'>皂液机<input style='width: 60px;' name='zaoyejiinput1-1' value='' placeholder='数量'/>";
                                                 }
                                                 else if(pin==1){
-                                                    html="<input type='checkbox' style='width: 30px;' name='fengshanji1' value='1'>风扇机<input style='width: 60px;' name='fengshanjiinput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='TChaohua1' value='1'>TC豪华<input style='width: 60px;' name='TChaohuainput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='shuixingpenji1' value='1'>水性喷机<input style='width: 60px;' name='shuixingpenjiinput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='yasuoxiangguan1' value='1'>压缩香罐<input style='width: 60px;' name='yasuoxiangguaninput1' value='' placeholder='数量'/>"
+                                                    html="<input type='checkbox' style='width: 30px;' name='fengshanji1-1' value='1'>风扇机<input style='width: 60px;' name='fengshanjiinput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='TChaohua1-1' value='1'>TC豪华<input style='width: 60px;' name='TChaohuainput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='shuixingpenji1-1' value='1'>水性喷机<input style='width: 60px;' name='shuixingpenjiinput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='yasuoxiangguan1-1' value='1'>压缩香罐<input style='width: 60px;' name='yasuoxiangguaninput1-1' value='' placeholder='数量'/>"
                                                 }
                                                 else if(pin==2){
                                                     html=
-                                                        "<input type='checkbox' style='width: 30px;' name='laoshu1' value='1'>老鼠<input style='width: 60px;' name='laoshuinput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='zhanglang1' value='1'>蟑螂<input style='width: 60px;' name='zhanglanginput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='guoying1' value='1'>果蝇<input style='width: 60px;' name='guoyinginput1' value='' placeholder='数量'/>"
+                                                        "<input type='checkbox' style='width: 30px;' name='laoshu1-1' value='1'>老鼠<input style='width: 60px;' name='laoshuinput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='zhanglang1-1' value='1'>蟑螂<input style='width: 60px;' name='zhanglanginput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='guoying1-1' value='1'>果蝇<input style='width: 60px;' name='guoyinginput1-1' value='' placeholder='数量'/>"
                                                         +
-                                                        "<input type='checkbox' style='width: 30px;' name='zumieyingdeng1' value='1'>租灭蝇灯<input style='width: 60px;' name='zumieyingdenginput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglang1' value='1'>老鼠蟑螂<input style='width: 60px;' name='laoshuzhanglanginput1' value='' placeholder='数量'/>"
+                                                        "<input type='checkbox' style='width: 30px;' name='zumieyingdeng1-1' value='1'>租灭蝇灯<input style='width: 60px;' name='zumieyingdenginput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglang1-1' value='1'>老鼠蟑螂<input style='width: 60px;' name='laoshuzhanglanginput1-1' value='' placeholder='数量'/>"
                                                         +
-                                                        "<input type='checkbox' style='width: 30px;' name='laoshuguoying1' value='1'>老鼠果蝇<input style='width: 60px;' name='laoshuguoyinginput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='zhanglangguoying1' value='1'>蟑螂果蝇<input style='width: 60px;' name='zhanglangguoyinginput1' value='' placeholder='数量'/>"
+                                                        "<input type='checkbox' style='width: 30px;' name='laoshuguoying1-1' value='1'>老鼠果蝇<input style='width: 60px;' name='laoshuguoyinginput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='zhanglangguoying1-1' value='1'>蟑螂果蝇<input style='width: 60px;' name='zhanglangguoyinginput1-1' value='' placeholder='数量'/>"
                                                         +
-                                                        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoying1' value='1'>老鼠蟑螂果蝇<input style='width: 60px;' name='laoshuzhanglangguoyinginput1' value='' placeholder='数量'/><br/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudeng1' value='1'>老鼠蟑螂+租灯<input style='width: 60px;' name='laoshuzhanglangjiazudenginput1' value='' placeholder='数量'/>"
+                                                        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoying1-1' value='1'>老鼠蟑螂果蝇<input style='width: 60px;' name='laoshuzhanglangguoyinginput1-1' value='' placeholder='数量'/><br/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudeng1-1' value='1'>老鼠蟑螂+租灯<input style='width: 60px;' name='laoshuzhanglangjiazudenginput1-1' value='' placeholder='数量'/>"
                                                         +
-                                                        "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng1' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' name='zhanglangguoyingjiazudenginput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng1' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='laoshuzhanglangguoyingjiazudenginput1' value='' placeholder='数量'/>"
+                                                        "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng1-1' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' name='zhanglangguoyingjiazudenginput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng1-1' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='laoshuzhanglangguoyingjiazudenginput1-1' value='' placeholder='数量'/>"
                                                 }
                                                 else if(pin==3){
-                                                    html="<input type='checkbox' style='width: 30px;' name='minixiaoji1' value='1'>迷你小机<input style='width: 60px;' name='minixiaojiinput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='xiaoji1' value='1'>小机<input style='width: 60px;' name='xiaojiinput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='zhongji1' value='1'>中机<input style='width: 60px;' name='zhongjiinput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='daji1' value='1'>大机<input style='width: 60px;' name='dajiinput1' value='' placeholder='数量'/>"
+                                                    html="<input type='checkbox' style='width: 30px;' name='minixiaoji1-1' value='1'>迷你小机<input style='width: 60px;' name='minixiaojiinput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='xiaoji1-1' value='1'>小机<input style='width: 60px;' name='xiaojiinput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='zhongji1-1' value='1'>中机<input style='width: 60px;' name='zhongjiinput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='daji1-1' value='1'>大机<input style='width: 60px;' name='dajiinput1-1' value='' placeholder='数量'/>"
                                                 }
                                                 else if(pin==4){
-                                                    html="<input type='checkbox' style='width: 30px;' name='chujiaquan1' value='1'>除甲醛<input style='width: 60px;' name='chujiaquaninput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='AC301' value='1'>AC30<input style='width: 60px;' name='AC30input1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='PR101' value='1'>PR10<input style='width: 60px;' name='PR10input1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='miniqingjiepao1' value='1'>迷你清洁炮<input style='width: 60px;' name='miniqingjiepaoinput1' value='' placeholder='数量'/>"
+                                                    html="<input type='checkbox' style='width: 30px;' name='chujiaquan1-1' value='1'>除甲醛<input style='width: 60px;' name='chujiaquaninput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='AC301-1' value='1'>AC30<input style='width: 60px;' name='AC30input1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='PR101-1' value='1'>PR10<input style='width: 60px;' name='PR10input1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='miniqingjiepao1-1' value='1'>迷你清洁炮<input style='width: 60px;' name='miniqingjiepaoinput1-1' value='' placeholder='数量'/>"
                                                 }
                                                 else if(pin==5){
-                                                    html="<input type='checkbox' style='width: 30px;' name='cashouzhi1' value='1'>擦手纸<input style='width: 60px;' name='cashouzhiinput1' value='' placeholder='数量'/>" +
-                                                        "<input type='checkbox' style='width: 30px;' name='dajuancezhi1' value='1'>大卷厕纸<input style='width: 60px;' name='dajuancezhiinput1' value='' placeholder='数量'/>"
+                                                    html="<input type='checkbox' style='width: 30px;' name='cashouzhi1-1' value='1'>擦手纸<input style='width: 60px;' name='cashouzhiinput1-1' value='' placeholder='数量'/>" +
+                                                        "<input type='checkbox' style='width: 30px;' name='dajuancezhi1-1' value='1'>大卷厕纸<input style='width: 60px;' name='dajuancezhiinput1-1' value='' placeholder='数量'/>"
                                                 }
                                                 else if(pin==6){
                                                     html="<input type='checkbox' style='width: 30px;' name='wupin' value='1'>物品<input style='width: 60px;' name='' value='' placeholder='数量'/>"
@@ -636,6 +648,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
              $(".tempDiv").find("option[value="+'i'+"]").remove();
              }*/
             $(".tempDiv").find("input[name='demo2[]']").attr('name','checkbox'+count2);  //checkbox接收的div
+            $(".tempDiv").find("input[name='demo3[]']").attr("name",'demo3-'+demo+'-'+count2);
             var temporary=$(".tempDiv tr td:eq(1)");
             temporary.html("<input type='text' value='0' name='show1'/>");
             temporary.attr('name','serviceTd'+count2+'');
@@ -644,82 +657,82 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 console.log('数据服务'+this.value);
                 if(this.value==0){        //清洁  第一次跟进的服务添加
                     temporary.html(qingjie);
-                    temporary.find("input[name='matong']").attr('name','matong'+demo);
-                    temporary.find("input[name='niaodou']").attr('name','niaodou'+demo);
-                    temporary.find("input[name='shuipen']").attr('name','shuipen'+demo);
-                    temporary.find("input[name='qingxinji']").attr('name','qingxinji'+demo);
-                    temporary.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo);
+                    temporary.find("input[name='matong']").attr('name','matong'+demo+'-'+count2);
+                    temporary.find("input[name='niaodou']").attr('name','niaodou'+demo+'-'+count2);
+                    temporary.find("input[name='shuipen']").attr('name','shuipen'+demo+'-'+count2);
+                    temporary.find("input[name='qingxinji']").attr('name','qingxinji'+demo+'-'+count2);
+                    temporary.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo+'-'+count2);
 
-                    temporary.find("input[name='matonginput']").attr('name','matonginput'+demo);
-                    temporary.find("input[name='niaodouinput']").attr('name','niaodouinput'+demo);
-                    temporary.find("input[name='shuipeninput']").attr('name','shuipeninput'+demo);
-                    temporary.find("input[name='qingxinjiinput']").attr('name','qingxinjiinput'+demo);
-                    temporary.find("input[name='zaoyejiinput']").attr('name','zaoyejiinput'+demo);
+                    temporary.find("input[name='matonginput']").attr('name','matonginput'+demo+'-'+count2);
+                    temporary.find("input[name='niaodouinput']").attr('name','niaodouinput'+demo+'-'+count2);
+                    temporary.find("input[name='shuipeninput']").attr('name','shuipeninput'+demo+'-'+count2);
+                    temporary.find("input[name='qingxinjiinput']").attr('name','qingxinjiinput'+demo+'-'+count2);
+                    temporary.find("input[name='zaoyejiinput']").attr('name','zaoyejiinput'+demo+'-'+count2);
                 }else if(this.value==1){ //租赁
                     temporary.html(zulin);
-                    temporary.find("input[name='fengshanji']").attr('name','fengshanji'+demo);
-                    temporary.find("input[name='TChaohua']").attr('name','TChaohua'+demo);
-                    temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji'+demo);
-                    temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan'+demo);
+                    temporary.find("input[name='fengshanji']").attr('name','fengshanji'+demo+'-'+count2);
+                    temporary.find("input[name='TChaohua']").attr('name','TChaohua'+demo+'-'+count2);
+                    temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji'+demo+'-'+count2);
+                    temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan'+demo+'-'+count2);
 
-                    temporary.find("input[name='fengshanjiinput']").attr('name','fengshanji'+demo);
-                    temporary.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo);
-                    temporary.find("input[name='shuixingpenjiinput']").attr('name','shuixingpenjiinput'+demo);
-                    temporary.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo);
+                    temporary.find("input[name='fengshanjiinput']").attr('name','fengshanjiinput'+demo+'-'+count2);
+                    temporary.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo+'-'+count2);
+                    temporary.find("input[name='shuixingpenjiinput']").attr('name','shuixingpenjiinput'+demo+'-'+count2);
+                    temporary.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo+'-'+count2);
                 }else if(this.value==2){ //灭虫
                     temporary.html(miechong);
-                    temporary.find("input[name='laoshu']").attr('name','laoshu'+demo);
-                    temporary.find("input[name='zhanglang']").attr('name','zhanglang'+demo);
-                    temporary.find("input[name='guoying']").attr('name','guoying'+demo);
-                    temporary.find("input[name='zumieyingdeng']").attr('name','zumieyingdeng'+demo);
-                    temporary.find("input[name='laoshuzhanglang']").attr('name','laoshuzhanglang'+demo);
-                    temporary.find("input[name='laoshuguoying']").attr('name','laoshuguoying'+demo);
-                    temporary.find("input[name='zhanglangguoying']").attr('name','zhanglangguoying'+demo);
-                    temporary.find("input[name='laoshuzhanglangguoying']").attr('name','laoshuzhanglangguoying'+demo);
-                    temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','laoshuzhanglangjiazudeng'+demo);
-                    temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','zhanglangguoyingjiazudeng'+demo);
-                    temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','laoshuzhanglangguoyingjiazudeng'+demo);
+                    temporary.find("input[name='laoshu']").attr('name','laoshu'+demo+'-'+count2);
+                    temporary.find("input[name='zhanglang']").attr('name','zhanglang'+demo+'-'+count2);
+                    temporary.find("input[name='guoying']").attr('name','guoying'+demo+'-'+count2);
+                    temporary.find("input[name='zumieyingdeng']").attr('name','zumieyingdeng'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuzhanglang']").attr('name','laoshuzhanglang'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuguoying']").attr('name','laoshuguoying'+demo+'-'+count2);
+                    temporary.find("input[name='zhanglangguoying']").attr('name','zhanglangguoying'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuzhanglangguoying']").attr('name','laoshuzhanglangguoying'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','laoshuzhanglangjiazudeng'+demo+'-'+count2);
+                    temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','zhanglangguoyingjiazudeng'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','laoshuzhanglangguoyingjiazudeng'+demo+'-'+count2);
 
-                    temporary.find("input[name='laoshuinput']").attr('name','laoshuinput'+demo);
-                    temporary.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo);
-                    temporary.find("input[name='guoyinginput']").attr('name','guoyinginput'+demo);
-                    temporary.find("input[name='zumieyingdenginput']").attr('name','zumieyingdenginput'+demo);
-                    temporary.find("input[name='laoshuzhanglanginput']").attr('name','laoshuzhanglanginput'+demo);
-                    temporary.find("input[name='laoshuguoyinginput']").attr('name','laoshuguoyinginput'+demo);
-                    temporary.find("input[name='zhanglangguoyinginput']").attr('name','zhanglangguoyinginput'+demo);
-                    temporary.find("input[name='laoshuzhanglangguoyinginput']").attr('name','laoshuzhanglangguoyinginput'+demo);
-                    temporary.find("input[name='laoshuzhanglangjiazudenginput']").attr('name','laoshuzhanglangjiazudenginput'+demo);
-                    temporary.find("input[name='zhanglangguoyingjiazudenginput']").attr('name','zhanglangguoyingjiazudenginput'+demo);
-                    temporary.find("input[name='laoshuzhanglangguoyingjiazudenginput']").attr('name','laoshuzhanglangguoyingjiazudenginput'+demo);
+                    temporary.find("input[name='laoshuinput']").attr('name','laoshuinput'+demo+'-'+count2);
+                    temporary.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo+'-'+count2);
+                    temporary.find("input[name='guoyinginput']").attr('name','guoyinginput'+demo+'-'+count2);
+                    temporary.find("input[name='zumieyingdenginput']").attr('name','zumieyingdenginput'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuzhanglanginput']").attr('name','laoshuzhanglanginput'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuguoyinginput']").attr('name','laoshuguoyinginput'+demo+'-'+count2);
+                    temporary.find("input[name='zhanglangguoyinginput']").attr('name','zhanglangguoyinginput'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuzhanglangguoyinginput']").attr('name','laoshuzhanglangguoyinginput'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuzhanglangjiazudenginput']").attr('name','laoshuzhanglangjiazudenginput'+demo+'-'+count2);
+                    temporary.find("input[name='zhanglangguoyingjiazudenginput']").attr('name','zhanglangguoyingjiazudenginput'+demo+'-'+count2);
+                    temporary.find("input[name='laoshuzhanglangguoyingjiazudenginput']").attr('name','laoshuzhanglangguoyingjiazudenginput'+demo+'-'+count2);
                 }else if(this.value==3){ //飘盈香
                     temporary.html(piaoyingxiang);
-                    temporary.find("input[name='minixiaoji']").attr('name','minixiaoji'+demo);
-                    temporary.find("input[name='xiaoji']").attr('name','xiaoji'+demo);
-                    temporary.find("input[name='zhongji']").attr('name','zhongji'+demo);
-                    temporary.find("input[name='daji']").attr('name','daji'+demo);
+                    temporary.find("input[name='minixiaoji']").attr('name','minixiaoji'+demo+'-'+count2);
+                    temporary.find("input[name='xiaoji']").attr('name','xiaoji'+demo+'-'+count2);
+                    temporary.find("input[name='zhongji']").attr('name','zhongji'+demo+'-'+count2);
+                    temporary.find("input[name='daji']").attr('name','daji'+demo+'-'+count2);
 
-                    temporary.find("input[name='minixiaojiinput']").attr('name','minixiaojiinput'+demo);
-                    temporary.find("input[name='xiaojiinput']").attr('name','xiaojiinput'+demo);
-                    temporary.find("input[name='zhongjiinput']").attr('name','zhongjiinput'+demo);
-                    temporary.find("input[name='dajiinput']").attr('name','dajiinput'+demo);
+                    temporary.find("input[name='minixiaojiinput']").attr('name','minixiaojiinput'+demo+'-'+count2);
+                    temporary.find("input[name='xiaojiinput']").attr('name','xiaojiinput'+demo+'-'+count2);
+                    temporary.find("input[name='zhongjiinput']").attr('name','zhongjiinput'+demo+'-'+count2);
+                    temporary.find("input[name='dajiinput']").attr('name','dajiinput'+demo+'-'+count2);
                 }else if(this.value==4){  //甲醛
                     temporary.html(jiaquan);
-                    temporary.find("input[name='chujiaquan']").attr('name','chujiaquan'+demo);
-                    temporary.find("input[name='AC30']").attr('name','AC30'+demo);
-                    temporary.find("input[name='PR10']").attr('name','PR10'+demo);
-                    temporary.find("input[name='miniqingjiepao']").attr('name','miniqingjiepao'+demo);
+                    temporary.find("input[name='chujiaquan']").attr('name','chujiaquan'+demo+'-'+count2);
+                    temporary.find("input[name='AC30']").attr('name','AC30'+demo+'-'+count2);
+                    temporary.find("input[name='PR10']").attr('name','PR10'+demo+'-'+count2);
+                    temporary.find("input[name='miniqingjiepao']").attr('name','miniqingjiepao'+demo+'-'+count2);
 
-                    temporary.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo);
-                    temporary.find("input[name='AC30input']").attr('name','AC30input'+demo);
-                    temporary.find("input[name='PR10input']").attr('name','PR10input'+demo);
-                    temporary.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo);
+                    temporary.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo+'-'+count2);
+                    temporary.find("input[name='AC30input']").attr('name','AC30input'+demo+'-'+count2);
+                    temporary.find("input[name='PR10input']").attr('name','PR10input'+demo+'-'+count2);
+                    temporary.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo+'-'+count2);
                 }else if(this.value==5){  //纸品
                     temporary.html(zhipin);
-                    temporary.find("input[name='cashouzhi']").attr('name','cashouzhi'+demo);
-                    temporary.find("input[name='dajuancezhi']").attr('name','dajuancezhi'+demo);
+                    temporary.find("input[name='cashouzhi']").attr('name','cashouzhi'+demo+'-'+count2);
+                    temporary.find("input[name='dajuancezhi']").attr('name','dajuancezhi'+demo+'-'+count2);
 
-                    temporary.find("input[name='cashouzhiinput']").attr('name','cashouzhiinput'+demo);
-                    temporary.find("input[name='dajuancezhiinput']").attr('name','dajuancezhiinput'+demo);
+                    temporary.find("input[name='cashouzhiinput']").attr('name','cashouzhiinput'+demo+'-'+count2);
+                    temporary.find("input[name='dajuancezhiinput']").attr('name','dajuancezhiinput'+demo+'-'+count2);
                 }else if(this.value==6){  //一次性售卖
                     temporary.html();
                 }
@@ -738,106 +751,109 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     var count3 = 1;
     $(".tbody1").on("click",".dtadd",function (){
         // demo值为最新的跟进次序值
+        count3++;
+        console.log(count3+'次的服务');
         //var SkyLength=document.getElementsByName("sky1[]").length;
         var length = $(".neijian .tbody2 tr").length;
         //alert(length);
         if (length < show_count3)
         {
 
-            //console.log("动态新增第"+length+"条");
+            console.log("动态新增第"+length+"条");
             $(".tempDiv").html(""); //暂存数据的div
             var divData=$('.model3 tbody tr').clone();
             $(".tempDiv").html(divData);
             $(".tempDiv").css({'width':"100%"});
             var temporary=$(".tempDiv tr td:eq(1)"); //第二个td的html 属性获取
             $(".tempDiv").find("input[name='demo2[]']").attr('name','checkbox'+count2);  //checkbox接收的div
-            $(".tempDiv").find("select[name='serviceKinds[]']").attr('name','serviceKinds'+demo+'[]');  //第一个多选框
-            var selectNameValue='serviceKinds'+demo+'[]';
+            $(".tempDiv").find("select[name='serviceKinds[]']").attr('name','serviceKinds'+demo+'-'+count3);  //第一个多选框
+            var selectNameValue='serviceKinds'+demo+'-'+count3;
             $(".tempDiv").find("select[name='"+selectNameValue+"']").change(function(){  //动态修改
+                console.log(this.value);
                 if(this.value==0){        //清洁
                     temporary.html(qingjie);
-                    temporary.find("input[name='matonginput']").attr('name','matonginput'+demo);
-                    temporary.find("input[name='niaodouinput']").attr('name','niaodouinput'+demo);
-                    temporary.find("input[name='shuipeninput']").attr('name','shuipeninput'+demo);
-                    temporary.find("input[name='qingxinjiinput']").attr('name','qingxinjiinput'+demo);
-                    temporary.find("input[name='zaoyejiinput']").attr('name','zaoyejiinput'+demo);
+                    temporary.find("input[name='matonginput']").attr('name','matonginput'+demo+'-'+count3);
+                    temporary.find("input[name='niaodouinput']").attr('name','niaodouinput'+demo+'-'+count3);
+                    temporary.find("input[name='shuipeninput']").attr('name','shuipeninput'+demo+'-'+count3);
+                    temporary.find("input[name='qingxinjiinput']").attr('name','qingxinjiinput'+demo+'-'+count3);
+                    temporary.find("input[name='zaoyejiinput']").attr('name','zaoyejiinput'+demo+'-'+count3);
 
-                    temporary.find("input[name='matong']").attr('name','matong'+demo);
-                    temporary.find("input[name='niaodou']").attr('name','niaodou'+demo);
-                    temporary.find("input[name='shuipen']").attr('name','shuipen'+demo);
-                    temporary.find("input[name='qingxinji']").attr('name','qingxinji'+demo);
-                    temporary.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo);
+                    temporary.find("input[name='matong']").attr('name','matong'+demo+'-'+count3);
+                    temporary.find("input[name='niaodou']").attr('name','niaodou'+demo+'-'+count3);
+                    temporary.find("input[name='shuipen']").attr('name','shuipen'+demo+'-'+count3);
+                    temporary.find("input[name='qingxinji']").attr('name','qingxinji'+demo+'-'+count3);
+                    temporary.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo+'-'+count3);
                 }else if(this.value==1){ //租赁
                     temporary.html(zulin);
-                    temporary.find("input[name='fengshanji']").attr('name','fengshanji'+demo);
-                    temporary.find("input[name='TChaohua']").attr('name','TChaohua'+demo);
-                    temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji'+demo);
-                    temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan'+demo);
+                    temporary.find("input[name='fengshanji']").attr('name','fengshanji'+demo+'-'+count3);
+                    temporary.find("input[name='TChaohua']").attr('name','TChaohua'+demo+'-'+count3);
+                    temporary.find("input[name='shuixingpenji']").attr('name','shuixingpenji'+demo+'-'+count3);
+                    temporary.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan'+demo+'-'+count3);
 
-                    temporary.find("input[name='fengshanjiinput']").attr('name','fengshanjiinput'+demo);
-                    temporary.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo);
-                    temporary.find("input[name='shuixingpenjiinput']").attr('name','shuixingpenjiinput'+demo);
-                    temporary.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo);
+                    temporary.find("input[name='fengshanjiinput']").attr('name','fengshanjiinput'+demo+'-'+count3);
+                    temporary.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo+'-'+count3);
+                    temporary.find("input[name='shuixingpenjiinput']").attr('name','shuixingpenjiinput'+demo+'-'+count3);
+                    temporary.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo+'-'+count3);
                 }else if(this.value==2){ //灭虫
                     temporary.html(miechong);
-                    temporary.find("input[name='laoshu']").attr('name','laoshu'+demo);
-                    temporary.find("input[name='zhanglang']").attr('name','zhanglang'+demo);
-                    temporary.find("input[name='guoying']").attr('name','guoying'+demo);
-                    temporary.find("input[name='zumieyingdeng']").attr('name','zumieyingdeng'+demo);
-                    temporary.find("input[name='laoshuzhanglang']").attr('name','laoshuzhanglang'+demo);
-                    temporary.find("input[name='laoshuguoying']").attr('name','laoshuguoying'+demo);
-                    temporary.find("input[name='zhanglangguoying']").attr('name','zhanglangguoying'+demo);
-                    temporary.find("input[name='laoshuzhanglangguoying']").attr('name','laoshuzhanglangguoying'+demo);
-                    temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','laoshuzhanglangjiazudeng'+demo);
-                    temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','zhanglangguoyingjiazudeng'+demo);
-                    temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','laoshuzhanglangguoyingjiazudeng'+demo);
+                    temporary.find("input[name='laoshu']").attr('name','laoshu'+demo+'-'+count3);
+                    temporary.find("input[name='zhanglang']").attr('name','zhanglang'+demo+'-'+count3);
+                    temporary.find("input[name='guoying']").attr('name','guoying'+demo+'-'+count3);
+                    temporary.find("input[name='zumieyingdeng']").attr('name','zumieyingdeng'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuzhanglang']").attr('name','laoshuzhanglang'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuguoying']").attr('name','laoshuguoying'+demo+'-'+count3);
+                    temporary.find("input[name='zhanglangguoying']").attr('name','zhanglangguoying'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuzhanglangguoying']").attr('name','laoshuzhanglangguoying'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuzhanglangjiazudeng']").attr('name','laoshuzhanglangjiazudeng'+demo+'-'+count3);
+                    temporary.find("input[name='zhanglangguoyingjiazudeng']").attr('name','zhanglangguoyingjiazudeng'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','laoshuzhanglangguoyingjiazudeng'+demo+'-'+count3);
 
-                    temporary.find("input[name='laoshuinput']").attr('name','laoshuinput'+demo);
-                    temporary.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo);
-                    temporary.find("input[name='guoyinginput']").attr('name','guoyinginput'+demo);
-                    temporary.find("input[name='zumieyingdenginput']").attr('name','zumieyingdenginput'+demo);
-                    temporary.find("input[name='laoshuzhanglanginput']").attr('name','laoshuzhanglanginput'+demo);
-                    temporary.find("input[name='laoshuguoyinginput']").attr('name','laoshuguoyinginput'+demo);
-                    temporary.find("input[name='zhanglangguoyinginput']").attr('name','zhanglangguoyinginput'+demo);
-                    temporary.find("input[name='laoshuzhanglangguoyinginput']").attr('name','laoshuzhanglangguoyinginput'+demo);
-                    temporary.find("input[name='laoshuzhanglangjiazudenginput']").attr('name','laoshuzhanglangjiazudenginput'+demo);
-                    temporary.find("input[name='zhanglangguoyingjiazudenginput']").attr('name','zhanglangguoyingjiazudenginput'+demo);
-                    temporary.find("input[name='laoshuzhanglangguoyingjiazudenginput']").attr('name','laoshuzhanglangguoyingjiazudenginput'+demo);
+                    temporary.find("input[name='laoshuinput']").attr('name','laoshuinput'+demo+'-'+count3);
+                    temporary.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo+'-'+count3);
+                    temporary.find("input[name='guoyinginput']").attr('name','guoyinginput'+demo+'-'+count3);
+                    temporary.find("input[name='zumieyingdenginput']").attr('name','zumieyingdenginput'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuzhanglanginput']").attr('name','laoshuzhanglanginput'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuguoyinginput']").attr('name','laoshuguoyinginput'+demo+'-'+count3);
+                    temporary.find("input[name='zhanglangguoyinginput']").attr('name','zhanglangguoyinginput'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuzhanglangguoyinginput']").attr('name','laoshuzhanglangguoyinginput'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuzhanglangjiazudenginput']").attr('name','laoshuzhanglangjiazudenginput'+demo+'-'+count3);
+                    temporary.find("input[name='zhanglangguoyingjiazudenginput']").attr('name','zhanglangguoyingjiazudenginput'+demo+'-'+count3);
+                    temporary.find("input[name='laoshuzhanglangguoyingjiazudenginput']").attr('name','laoshuzhanglangguoyingjiazudenginput'+demo+'-'+count3);
                 }else if(this.value==3){ //飘盈香
                     temporary.html(piaoyingxiang);
-                    temporary.find("input[name='minixiaoji']").attr('name','minixiaoji'+demo);
-                    temporary.find("input[name='xiaoji']").attr('name','xiaoji'+demo);
-                    temporary.find("input[name='zhongji']").attr('name','zhongji'+demo);
-                    temporary.find("input[name='daji']").attr('name','daji'+demo);
+                    temporary.find("input[name='minixiaoji']").attr('name','minixiaoji'+demo+'-'+count3);
+                    temporary.find("input[name='xiaoji']").attr('name','xiaoji'+demo+'-'+count3);
+                    temporary.find("input[name='zhongji']").attr('name','zhongji'+demo+'-'+count3);
+                    temporary.find("input[name='daji']").attr('name','daji'+demo+'-'+count3);
 
-                    temporary.find("input[name='minixiaojiinput']").attr('name','minixiaojiinput'+demo);
-                    temporary.find("input[name='xiaojiinput']").attr('name','xiaojiinput'+demo);
-                    temporary.find("input[name='zhongjiinput']").attr('name','zhongjiinput'+demo);
-                    temporary.find("input[name='dajiinput']").attr('name','dajiinput'+demo);
+                    temporary.find("input[name='minixiaojiinput']").attr('name','minixiaojiinput'+demo+'-'+count3);
+                    temporary.find("input[name='xiaojiinput']").attr('name','xiaojiinput'+demo+'-'+count3);
+                    temporary.find("input[name='zhongjiinput']").attr('name','zhongjiinput'+demo+'-'+count3);
+                    temporary.find("input[name='dajiinput']").attr('name','dajiinput'+demo+'-'+count3);
                 }else if(this.value==4){  //甲醛
                     temporary.html(jiaquan);
-                    temporary.find("input[name='chujiaquan']").attr('name','chujiaquan'+demo);
-                    temporary.find("input[name='AC30']").attr('name','AC30'+demo);
-                    temporary.find("input[name='PR10']").attr('name','PR10'+demo);
-                    temporary.find("input[name='miniqingjiepao']").attr('name','shuipen'+demo);
+                    temporary.find("input[name='chujiaquan']").attr('name','chujiaquan'+demo+'-'+count3);
+                    temporary.find("input[name='AC30']").attr('name','AC30'+demo+'-'+count3);
+                    temporary.find("input[name='PR10']").attr('name','PR10'+demo+'-'+count3);
+                    temporary.find("input[name='miniqingjiepao']").attr('name','shuipen'+demo+'-'+count3);
 
-                    temporary.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo);
-                    temporary.find("input[name='AC30input']").attr('name','AC30input'+demo);
-                    temporary.find("input[name='PR10input']").attr('name','PR10input'+demo);
-                    temporary.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo);
+                    temporary.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo+'-'+count3);
+                    temporary.find("input[name='AC30input']").attr('name','AC30input'+demo+'-'+count3);
+                    temporary.find("input[name='PR10input']").attr('name','PR10input'+demo+'-'+count3);
+                    temporary.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo+'-'+count3);
                 }else if(this.value==5){  //纸品
                     temporary.html(zhipin);
-                    temporary.find("input[name='cashouzhi']").attr('name','cashouzhi'+demo);
-                    temporary.find("input[name='dajuancezhi']").attr('name','dajuancezhi'+demo);
+                    temporary.find("input[name='cashouzhi']").attr('name','cashouzhi'+demo+'-'+count3);
+                    temporary.find("input[name='dajuancezhi']").attr('name','dajuancezhi'+demo+'-'+count3);
 
-                    temporary.find("input[name='cashouzhiinput']").attr('name','cashouzhiinput'+demo);
-                    temporary.find("input[name='dajuancezhiinput']").attr('name','dajuancezhiinput'+demo);
+                    temporary.find("input[name='cashouzhiinput']").attr('name','cashouzhiinput'+demo+'-'+count3);
+                    temporary.find("input[name='dajuancezhiinput']").attr('name','dajuancezhiinput'+demo+'-'+count3);
                 }else if(this.value==6){  //一次性售卖
                     temporary.html("");
                 }
             });
             $(".tempDiv").find("input[name='serviceCounts[]']").attr('name','serviceCounts'+demo+'[]');  //第二个input 框
-            $(".tempDiv").find("input[name='serviceMoney[]']").attr('name','serviceMoney'+demo+'[]');   //第三个input框
+            $(".tempDiv").find("input[name='serviceMoney[]']").attr('name','serviceMoney'+demo+'-'+count3);   //第三个input框
             divData.appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
             $(".tempDiv").html(""); //暂存数据的div
             $(".tempDiv").html(""); //清空暂存的div
@@ -874,7 +890,8 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         } else {
             count2--;
             $(opp).parent().parent().remove();//移除当前行
-
+            console.log("count3减一");
+            count3--;
         }
     }
 
@@ -890,17 +907,17 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 "<input type='checkbox' style='width: 30px;' name='qingxin' value='1'>清新机<input style='width: 60px;' name='qingxininput' value='' placeholder='数量'/><br/>" +
                 "<input type='checkbox' style='width: 30px;' name='dzaoye' value='1'>皂液机<input style='width: 60px;' name='dzaoyeinput' value='' placeholder='数量'/>";
             whileHtml=  $("."+classValue+"").html(html);
-            whileHtml.find("input[name='matonginput']").attr('name','matonginput'+demo);
-            whileHtml.find("input[name='niaodouinput']").attr('name','niaodouinput'+demo);
-            whileHtml.find("input[name='shuipeninput']").attr('name','shuipeninput'+demo);
-            whileHtml.find("input[name='qingxinjiinput']").attr('name','qingxinjiinput'+demo);
-            whileHtml.find("input[name='zaoyejiinput']").attr('name','zaoyejiinput'+demo);
+            whileHtml.find("input[name='matonginput']").attr('name','matonginput'+demo+'-'+1);
+            whileHtml.find("input[name='niaodouinput']").attr('name','niaodouinput'+demo+'-'+1);
+            whileHtml.find("input[name='shuipeninput']").attr('name','shuipeninput'+demo+'-'+1);
+            whileHtml.find("input[name='qingxinjiinput']").attr('name','qingxinjiinput'+demo+'-'+1);
+            whileHtml.find("input[name='zaoyejiinput']").attr('name','zaoyejiinput'+demo+'-'+1);
 
-            whileHtml.find("input[name='matong']").attr('name','matong'+demo);
-            whileHtml.find("input[name='niaodou']").attr('name','niaodou'+demo);
-            whileHtml.find("input[name='shuipen']").attr('name','shuipen'+demo);
-            whileHtml.find("input[name='qingxinji']").attr('name','qingxinji'+demo);
-            whileHtml.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo);
+            whileHtml.find("input[name='matong']").attr('name','matong'+demo+'-'+1);
+            whileHtml.find("input[name='niaodou']").attr('name','niaodou'+demo+'-'+1);
+            whileHtml.find("input[name='shuipen']").attr('name','shuipen'+demo+'-'+1);
+            whileHtml.find("input[name='qingxinji']").attr('name','qingxinji'+demo+'-'+1);
+            whileHtml.find("input[name='zaoyeji']").attr('name','zaoyeji'+demo+'-'+1);
 
         }
         else if(pin==1){
@@ -909,15 +926,15 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 "<input type='checkbox' style='width: 30px;' name='shuixingpenji' value='1'>水性喷机<input style='width: 60px;' name='shuixingpenjiinput' value='' placeholder='数量'/>" +
                 "<input type='checkbox' style='width: 30px;' name='yasuoxiangguan' value='1'>压缩香罐<input style='width: 60px;' name='yasuoxiangguaninput' value='' placeholder='数量'/>"
             whileHtml=  $("."+classValue+"").html(html);
-            whileHtml.find("input[name='fengshanji']").attr('name','fengshanji'+demo);
-            whileHtml.find("input[name='TChaohua']").attr('name','TChaohua'+demo);
-            whileHtml.find("input[name='shuixingpenji']").attr('name','shuixingpenji'+demo);
-            whileHtml.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan'+demo);
+            whileHtml.find("input[name='fengshanji']").attr('name','fengshanji'+demo+'-'+1);
+            whileHtml.find("input[name='TChaohua']").attr('name','TChaohua'+demo+'-'+1);
+            whileHtml.find("input[name='shuixingpenji']").attr('name','shuixingpenji'+demo+'-'+1);
+            whileHtml.find("input[name='yasuoxiangguan']").attr('name','yasuoxiangguan'+demo+'-'+1);
 
-            whileHtml.find("input[name='fengshanjiinput']").attr('name','fengshanjiinput'+demo);
-            whileHtml.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo);
-            whileHtml.find("input[name='shuixingpenjiinput']").attr('name','shuixingpenjiinput'+demo);
-            whileHtml.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo);
+            whileHtml.find("input[name='fengshanjiinput']").attr('name','fengshanjiinput'+demo+'-'+1);
+            whileHtml.find("input[name='TChaohuainput']").attr('name','TChaohuainput'+demo+'-'+1);
+            whileHtml.find("input[name='shuixingpenjiinput']").attr('name','shuixingpenjiinput'+demo+'-'+1);
+            whileHtml.find("input[name='yasuoxiangguaninput']").attr('name','yasuoxiangguaninput'+demo+'-'+1);
 
         }
         else if(pin==2){
@@ -937,29 +954,29 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' name='zhanglangguoyingjiazudenginput' value='' placeholder='数量'/>" +
                 "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='laoshuzhanglangguoyingjiazudenginput' value='' placeholder='数量'/>"
             whileHtml=  $("."+classValue+"").html(html);
-            whileHtml.find("input[name='laoshu']").attr('name','laoshu'+demo);
-            whileHtml.find("input[name='zhanglang']").attr('name','zhanglang'+demo);
-            whileHtml.find("input[name='guoying']").attr('name','guoying'+demo);
-            whileHtml.find("input[name='zumieyingdeng']").attr('name','zumieyingdeng'+demo);
-            whileHtml.find("input[name='laoshuzhanglang']").attr('name','laoshuzhanglang'+demo);
-            whileHtml.find("input[name='laoshuguoying']").attr('name','laoshuguoying'+demo);
-            whileHtml.find("input[name='zhanglangguoying']").attr('name','zhanglangguoying'+demo);
-            whileHtml.find("input[name='laoshuzhanglangguoying']").attr('name','laoshuzhanglangguoying'+demo);
-            whileHtml.find("input[name='laoshuzhanglangjiazudeng']").attr('name','laoshuzhanglangjiazudeng'+demo);
-            whileHtml.find("input[name='zhanglangguoyingjiazudeng']").attr('name','zhanglangguoyingjiazudeng'+demo);
-            whileHtml.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','laoshuzhanglangguoyingjiazudeng'+demo);
+            whileHtml.find("input[name='laoshu']").attr('name','laoshu'+demo+'-'+1);
+            whileHtml.find("input[name='zhanglang']").attr('name','zhanglang'+demo+'-'+1);
+            whileHtml.find("input[name='guoying']").attr('name','guoying'+demo+'-'+1);
+            whileHtml.find("input[name='zumieyingdeng']").attr('name','zumieyingdeng'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuzhanglang']").attr('name','laoshuzhanglang'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuguoying']").attr('name','laoshuguoying'+demo+'-'+1);
+            whileHtml.find("input[name='zhanglangguoying']").attr('name','zhanglangguoying'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuzhanglangguoying']").attr('name','laoshuzhanglangguoying'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuzhanglangjiazudeng']").attr('name','laoshuzhanglangjiazudeng'+demo+'-'+1);
+            whileHtml.find("input[name='zhanglangguoyingjiazudeng']").attr('name','zhanglangguoyingjiazudeng'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuzhanglangguoyingjiazudeng']").attr('name','laoshuzhanglangguoyingjiazudeng'+demo+'-'+1);
 
-            whileHtml.find("input[name='laoshuinput']").attr('name','laoshuinput'+demo);
-            whileHtml.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo);
-            whileHtml.find("input[name='guoyinginput']").attr('name','guoyinginput'+demo);
-            whileHtml.find("input[name='zumieyingdenginput']").attr('name','zumieyingdenginput'+demo);
-            whileHtml.find("input[name='laoshuzhanglanginput']").attr('name','laoshuzhanglanginput'+demo);
-            whileHtml.find("input[name='laoshuguoyinginput']").attr('name','laoshuguoyinginput'+demo);
-            whileHtml.find("input[name='zhanglangguoyinginput']").attr('name','zhanglangguoyinginput'+demo);
-            whileHtml.find("input[name='laoshuzhanglangguoyinginput']").attr('name','laoshuzhanglangguoyinginput'+demo);
-            whileHtml.find("input[name='laoshuzhanglangjiazudenginput']").attr('name','laoshuzhanglangjiazudenginput'+demo);
-            whileHtml.find("input[name='zhanglangguoyingjiazudenginput']").attr('name','zhanglangguoyingjiazudenginput'+demo);
-            whileHtml.find("input[name='laoshuzhanglangguoyingjiazudenginput']").attr('name','laoshuzhanglangguoyingjiazudenginput'+demo);
+            whileHtml.find("input[name='laoshuinput']").attr('name','laoshuinput'+demo+'-'+1);
+            whileHtml.find("input[name='zhanglanginput']").attr('name','zhanglanginput'+demo+'-'+1);
+            whileHtml.find("input[name='guoyinginput']").attr('name','guoyinginput'+demo+'-'+1);
+            whileHtml.find("input[name='zumieyingdenginput']").attr('name','zumieyingdenginput'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuzhanglanginput']").attr('name','laoshuzhanglanginput'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuguoyinginput']").attr('name','laoshuguoyinginput'+demo+'-'+1);
+            whileHtml.find("input[name='zhanglangguoyinginput']").attr('name','zhanglangguoyinginput'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuzhanglangguoyinginput']").attr('name','laoshuzhanglangguoyinginput'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuzhanglangjiazudenginput']").attr('name','laoshuzhanglangjiazudenginput'+demo+'-'+1);
+            whileHtml.find("input[name='zhanglangguoyingjiazudenginput']").attr('name','zhanglangguoyingjiazudenginput'+demo+'-'+1);
+            whileHtml.find("input[name='laoshuzhanglangguoyingjiazudenginput']").attr('name','laoshuzhanglangguoyingjiazudenginput'+demo+'-'+1);
 
 
         }
@@ -969,15 +986,15 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 "<input type='checkbox' style='width: 30px;' name='zhongji' value='1'>中机<input style='width: 60px;' name='zhongjiinput' value='' placeholder='数量'/>" +
                 "<input type='checkbox' style='width: 30px;' name='daji' value='1'>大机<input style='width: 60px;' name='dajiinput' value='' placeholder='数量'/>"
             whileHtml=  $("."+classValue+"").html(html);
-            whileHtml.find("input[name='minixiaoji']").attr('name','minixiaoji'+demo);
-            whileHtml.find("input[name='xiaoji']").attr('name','xiaoji'+demo);
-            whileHtml.find("input[name='zhongji']").attr('name','zhongji'+demo);
-            whileHtml.find("input[name='daji']").attr('name','daji'+demo);
+            whileHtml.find("input[name='minixiaoji']").attr('name','minixiaoji'+demo+'-'+1);
+            whileHtml.find("input[name='xiaoji']").attr('name','xiaoji'+demo+'-'+1);
+            whileHtml.find("input[name='zhongji']").attr('name','zhongji'+demo+'-'+1);
+            whileHtml.find("input[name='daji']").attr('name','daji'+demo+'-'+1);
 
-            whileHtml.find("input[name='minixiaojiinput']").attr('name','minixiaojiinput'+demo);
-            whileHtml.find("input[name='xiaojiinput']").attr('name','xiaojiinput'+demo);
-            whileHtml.find("input[name='zhongjiinput']").attr('name','zhongjiinput'+demo);
-            whileHtml.find("input[name='dajiinput']").attr('name','dajiinput'+demo);
+            whileHtml.find("input[name='minixiaojiinput']").attr('name','minixiaojiinput'+demo+'-'+1);
+            whileHtml.find("input[name='xiaojiinput']").attr('name','xiaojiinput'+demo+'-'+1);
+            whileHtml.find("input[name='zhongjiinput']").attr('name','zhongjiinput'+demo+'-'+1);
+            whileHtml.find("input[name='dajiinput']").attr('name','dajiinput'+demo+'-'+1);
 
         }
         else if(pin==4){
@@ -986,26 +1003,26 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 "<input type='checkbox' style='width: 30px;' name='PR10' value='1'>PR10<input style='width: 60px;' name='PR10input' value='' placeholder='数量'/>" +
                 "<input type='checkbox' style='width: 30px;' name='miniqingjiepao' value='1'>迷你清洁炮<input style='width: 60px;' name='miniqingjiepaoinput' value='' placeholder='数量'/>"
             whileHtml=  $("."+classValue+"").html(html);
-            whileHtml.find("input[name='chujiaquan']").attr('name','chujiaquan'+demo);
-            whileHtml.find("input[name='AC30']").attr('name','AC30'+demo);
-            whileHtml.find("input[name='PR10']").attr('name','PR10'+demo);
-            whileHtml.find("input[name='miniqingjiepao']").attr('name','shuipen'+demo);
+            whileHtml.find("input[name='chujiaquan']").attr('name','chujiaquan'+demo+'-'+1);
+            whileHtml.find("input[name='AC30']").attr('name','AC30'+demo+'-'+1);
+            whileHtml.find("input[name='PR10']").attr('name','PR10'+demo+'-'+1);
+            whileHtml.find("input[name='miniqingjiepao']").attr('name','shuipen'+demo+'-'+1);
 
-            whileHtml.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo);
-            whileHtml.find("input[name='AC30input']").attr('name','AC30input'+demo);
-            whileHtml.find("input[name='PR10input']").attr('name','PR10input'+demo);
-            whileHtml.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo);
+            whileHtml.find("input[name='chujiaquaninput']").attr('name','chujiaquaninput'+demo+'-'+1);
+            whileHtml.find("input[name='AC30input']").attr('name','AC30input'+demo+'-'+1);
+            whileHtml.find("input[name='PR10input']").attr('name','PR10input'+demo+'-'+1);
+            whileHtml.find("input[name='miniqingjiepaoinput']").attr('name','miniqingjiepaoinput'+demo+'-'+1);
 
         }
         else if(pin==5){
             html="<input type='checkbox' style='width: 30px;' name='cashouzhi' value='1'>擦手纸<input style='width: 60px;' name='cashouzhiinput' value='' placeholder='数量'/>" +
                 "<input type='checkbox' style='width: 30px;' name='dajuancezhi' value='1'>大卷厕纸<input style='width: 60px;' name='dajuancezhiinput' value='' placeholder='数量'/>"
             whileHtml=  $("."+classValue+"").html(html);
-            whileHtml.find("input[name='cashouzhi']").attr('name','cashouzhi'+demo);
-            whileHtml.find("input[name='dajuancezhi']").attr('name','dajuancezhi'+demo);
+            whileHtml.find("input[name='cashouzhi']").attr('name','cashouzhi'+demo+'-'+1);
+            whileHtml.find("input[name='dajuancezhi']").attr('name','dajuancezhi'+demo+'-'+1);
 
-            whileHtml.find("input[name='cashouzhiinput']").attr('name','cashouzhiinput'+demo);
-            whileHtml.find("input[name='dajuancezhiinput']").attr('name','dajuancezhiinput'+demo);
+            whileHtml.find("input[name='cashouzhiinput']").attr('name','cashouzhiinput'+demo+'-'+1);
+            whileHtml.find("input[name='dajuancezhiinput']").attr('name','dajuancezhiinput'+demo+'-'+1);
 
         }
         else if(pin==6){
@@ -1019,7 +1036,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     }
 
 </script>
-
 
 
 

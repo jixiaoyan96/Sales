@@ -198,7 +198,7 @@ header("Content-type: text/html; charset=utf-8");
          }
          $visit_insert_id='';//增加的id  可以为visit service customer_info_id
          //销售员id
-            
+
                      if (isset($_POST['SalesForm'])) {
                          $model = new SalesForm($_POST['SalesForm']['scenario']);
                          $model->attributes = $_POST['SalesForm'];
@@ -213,7 +213,7 @@ header("Content-type: text/html; charset=utf-8");
                                  $insert_first_visit_info_set="
               Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)VALUES
               ('$this_visit_insert_id','$user_sellers_id','$first_visit_notes','$first_visit_total','$first_visit_date','$first_visit_definition')";
-                                 Yii::app()->db2->createCommand($insert_first_visit_info_set)->execute();
+                                 Yii::app()->db2->createCommand($insert_first_visit_info_set)->execute(); //存入第一次跟进主要信息
                                  $insert_first_visit_info_set_id=Yii::app()->db2->getLastInsertID(); //存入第一次跟进的id
                                 $fiest_visit_service_char_insert='';//第一次跟进的所有服务的结果拼接值
                                  $charInsert=''; //获取类别和数量的结果集(第一次跟进的第一次服务)
@@ -221,21 +221,20 @@ header("Content-type: text/html; charset=utf-8");
                                         if($_REQUEST['count1'][1]<=5){ //是否符合选择的参数
                                             $visit_service_id=$_REQUEST['count1'][1]; //select获取的大类值
                                             $visit_service_money=isset($_REQUEST['count3'][0])?$_REQUEST['count3'][0]:1; //服务的金额
-                                            $charInsert=Quiz::salesReturn($visit_service_id,1);
-                                            $fiest_visit_service_char_insert=$charInsert;
+                                            $charInsert=Quiz::salesReturn($visit_service_id,1,1); //第一个1 表示第几次跟进 第二个1 表示 第几次服务  所以目前是第一次跟进的第一个服务
+                                            $first_visit_service_char_insert=$charInsert;
                                             $insert_service_char_set="Insert into new_service_info(new_services_kind,new_visit_info_pid,new_service_money,new_services_kinds)VALUES
-                                            ('$visit_service_id','$insert_first_visit_info_set_id','$visit_service_money','$fiest_visit_service_char_insert')";
+                                            ('$visit_service_id','$insert_first_visit_info_set_id','$visit_service_money','$first_visit_service_char_insert')";
                                             Yii::app()->db2->createCommand($insert_service_char_set)->execute();
                                         }
                                  }
                                  $charMoreFirst=''; //第一次跟进之后的服务增加
-                                
                                  for($i=2;$i<15;$i++){  //第一次跟进的服务跟进只能是7次或以下 即第一次加上剩余的六次服务 所以以第二次开始为列
                                         if(isset($_REQUEST['firstVisitserviceValue'.$i])){  //是否可选
                                             $selectMore=$_REQUEST['firstVisitserviceValue'.$i]; //服务大类
-                                            $charInsert=Quiz::salesReturn($selectMore,1);
+                                            $charInsert=Quiz::salesReturn($selectMore,1,$i);
                                             $charMoreFirst=$charInsert;     //获取字符串
-                                            $moneyGet=isset($_REQUEST['demo3'][$i-1])?$_REQUEST['demo3'][$i-1]:1;//获取金额
+                                            $moneyGet=isset($_REQUEST['demo3-1'.'-'.$i])?$_REQUEST['demo3-1'.'-'.$i]:1;//获取金额
                                             $insert_service_char_set="Insert into new_service_info(new_services_kind,new_visit_info_pid,new_service_money,new_services_kinds)VALUES
                                             ('$selectMore','$insert_first_visit_info_set_id','$moneyGet','$charMoreFirst')";
                                             Yii::app()->db2->createCommand($insert_service_char_set)->execute();
@@ -245,13 +244,13 @@ header("Content-type: text/html; charset=utf-8");
                                          continue;
                                      }
                                  }
-                                 var_dump($_REQUEST['firstVisitserviceValue2']);die;
                              }
                              $more_second_visit_count=count($_REQUEST['sky1']);  //多条跟进的visit次数
-                             //注意一点sky和day都是同样的数组长度
+                             //注意一点:sky和day都是同样的数组长度 且均为0下标不管
+
                              if($more_second_visit_count>0) {  //每次跟进的数据存入
-                                 for ($b = 0; $b < $more_second_visit_count; $b++) {
-                                     $s=$b+2;
+                                 for ($b = 1; $b < $more_second_visit_count; $b++) {
+                                     $s=$b+1; //$s是对前端的一种计数 显示的映射值 对跟进的计数n
                                      //关于第一次之后的跟进的服务存入的思路:form表单里面第二次跟进 在后台处理时 应该为第0次跟进 form表单的第三跟进 在后台处理 应该为第1次
                                      //即 'serviceKinds'.$b+2.'[]' ***'serviceCounts'.$b+2.'[]'***'serviceMoney'.$b+2.'[]'
                                      $second_visit_date_info='';
@@ -261,8 +260,7 @@ header("Content-type: text/html; charset=utf-8");
                                      $second_visit_date_info=$_REQUEST['sky1'][$b];  //跟进日期
                                      $second_visit_definition_info=$_REQUEST['sky2'][$b]; //跟进目的
                                      $second_visit_notes_info=$_REQUEST['sky3'][$b]; //跟进备注
-                                     $second_visit_count_info=isset($_REQUEST['sky4'][$b])?$_REQUEST['sky4'][$b]:1;//跟进总额
-                                     $second_visit_count_info='跟进总额';
+                                     $second_visit_count_info=isset($_REQUEST['moneyVisit'.$s])?$_REQUEST['moneyVisit'.$s]:1;//跟进总额
                                      if(!empty($second_visit_date_info)){  //多条跟进数据对日期与跟进目的的判断  进行多条跟进
                                         $every_visit_insert_set_more="
 Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_service_money,visit_date,visit_definition)
@@ -272,37 +270,34 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
                                          $every_insert_id=Yii::app()->db2->getLastInsertID(); //第一次跟进之后每次跟进的存入数据的主键id
                                          //存入>=2的每次跟进的第一条服务
                                          $every_first_service_kinds_choose='';
-                                         if(isset($_REQUEST['day1'][$b])){
+                                         if(isset($_REQUEST['day1'][$b])){  //存入动态跟进的第一条服务
                                              $more_visit_service_kinds_set=$_REQUEST['day1'][$b];  //选择的大类主id
-                                             $money_get_more=$_REQUEST['day3'][$b];
-                                             $every_first_service_kinds_choose=Quiz::salesReturn($more_visit_service_kinds_set,$s);
+                                             $money_get_more=$_REQUEST['day3'][$b];  //服务金额
+                                             $every_first_service_kinds_choose=Quiz::salesReturn($more_visit_service_kinds_set,$s,1);
+
                                              $insert_service_char_every_set="Insert into new_service_info(new_services_kind,new_visit_info_pid,new_service_money,new_services_kinds)VALUES
                                             ($more_visit_service_kinds_set,'$every_insert_id','$money_get_more','$every_first_service_kinds_choose')";
                                              Yii::app()->db2->createCommand($insert_service_char_every_set)->execute();
                                          }
-                                         //$more_visit_service_money_set=$_REQUEST['day3'][$b];
                                          $every_first_service_kinds_choose='';
-                                         if(isset($_REQUEST['serviceKinds'.$s])) {  //判断是否有该跟进下的服务选项  $b为第几个跟进的计数排序
-                                             if(count($_REQUEST['serviceKinds'.$s])>0) { //之后的多次服务的存入
-                                                 for ($j = 0; $j < count($_REQUEST['serviceKinds'.$s]); $j++) {
+                                                 for ($j = 0; $j < 10; $j++) {
+                                                     if(isset($_REQUEST['serviceKinds'.$s.'-'.$j])){  //判断是否有该跟进下的服务选项  $b为第几个跟进的计数排序
                                                      $more_char_insert = '';
-                                                     $service_money_get=isset($_REQUEST['serviceMoney'.$s][$j])?$_REQUEST['serviceMoney'.$s][$j]:1;
-                                                     $kinds_choose_id=$_REQUEST['serviceKinds'.$s][$j];
-
-                                                     $more_char_insert=Quiz::salesReturn($kinds_choose_id,$s);  //单次
+                                                     $service_money_get=isset($_REQUEST['serviceMoney'.$s.'-'.$j])?$_REQUEST['serviceMoney'.$s.'-'.$j]:1;
+                                                     $kinds_choose_id=$_REQUEST['serviceKinds'.$s.'-'.$j]; //服务大类
+                                                     $more_char_insert=Quiz::salesReturn($kinds_choose_id,$s,$j);  //服务详情
                                                      $insert_service_char_set="Insert into new_service_info(new_services_kind,new_visit_info_pid,new_service_money,new_services_kinds)VALUES
                                             ('$kinds_choose_id','$every_insert_id','$service_money_get','$more_char_insert')";
                                                      Yii::app()->db2->createCommand($insert_service_char_set)->execute();
-                                                     $more_char_insert='';
                                                  }
                                              }
-                                         }
                                      }
                                      else{
 
                                          continue;
                                      }
                                  }
+
                             /* Dialog::message(Yii::t('dialog', 'Information'), Yii::t('dialog', 'Save Done'));
                              $this->redirect(Yii::app()->createUrl('sales/index'));*/
                             Dialog::message(Yii::t('dialog', 'Information'), Yii::t('dialog', 'Save Done'));
