@@ -301,10 +301,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                         </td>
                                         <td class="runIdFirst"><input type="text" name="day2[]" value="0"/></td>
                                         <td><input type="text" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" name="day3[]"/></td>
-                           <!--             <td><input type="text" name="day4[]"/></td>
-                                        <td><input type="text" name="day5[]"/></td>
-                                        <td><input type="text" name="day6[]"/></td>
-                                        <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>-->
                                         <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除1-1</a></td>
                                     </tr>
 
@@ -1015,12 +1011,6 @@ function showRenewDate() {
 	if (period=='') $('#StaffForm_ctrt_renew_dt').val('');
 }
 
-function formatDate(val) {
-	var day = '00'+val.getDate();
-	var month = '00'+(val.getMonth()+1);
-	var year = val.getFullYear();
-	return year + '/' + month.slice(-2) + '/' +day.slice(-2);
-}
 
 function IsDate(val) {
 	var d = new Date(val);
@@ -1029,6 +1019,12 @@ function IsDate(val) {
 
 function IsNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
+function formatDate(val) {
+	var day = '00'+val.getDate();
+	var month = '00'+(val.getMonth()+1);
+	var year = val.getFullYear();
+	return year + '/' + month.slice(-2) + '/' +day.slice(-2);
+}
 }
 ";
 

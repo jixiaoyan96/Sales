@@ -169,20 +169,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <div class="col-sm-8">
                     <table class="table table-condensed">
                         <?php
-                        /*
-                         * array(2) {
-                         *  [0]=> array(1) {
-                         * ["visit_info"]=> array(8) {
-                         * ["visit_info_id"]=> string(3) "129"
-                         * ["visit_customer_fid"]=> string(3) "123"
-                         * ["visit_seller_fid"]=> string(1) "1"
-                         * ["visit_notes"]=> string(19) "json销售拜访111"
-                         * ["visit_service_money"]=> string(12) "测试数据"
-                         * ["visit_date"]=> string(10) "2018/02/28"
-                         *  ["visit_definition"]=> string(6) "签单"
-                         *  ["service_info"]=> array(4) { [0]=> array(1) { [0]=> string(6) "老鼠" }
-                         * [1]=> array(1) { [1]=> string(1) "1" } [2]=> array(1) { [0]=> string(0) "" } [3]=> array(1) { [1]=> string(15) "数量未输入" } } } } [1]=> array(1) { ["visit_info"]=> array(7) { ["visit_info_id"]=> string(3) "130" ["visit_customer_fid"]=> string(3) "123" ["visit_seller_fid"]=> string(1) "1" ["visit_notes"]=> string(19) "json销售拜访112" ["visit_service_money"]=> string(12) "跟进总额" ["visit_date"]=> string(10) "2018-02-14" ["visit_definition"]=> string(6) "其他" } } }*/
-                        $new=Quiz::serviceTrans($model->id);
+                   $new=Quiz::serviceTrans($model->id);
                         echo "<tr><td>跟进备注</td><td>总额</td><td>跟进目的</td><td>操作</td></tr>";
                         if(count($new)>0) {
                             for ($i = 0; $i < count($new); $i++) {
@@ -371,7 +358,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 
             <tbody class="tbody1">
             <tr>  <!--第一层的表单拜访数据-->
-                <td><input value="" name="first1[]" id="first1" class='form-control pull-right'/></td>
+                <td><input value="" type="date" name="first1[]" id="first1" class='form-control pull-right'/></td>
                 <td>
                     <select name="first2[]">
                         <option value="">本次11跟进目的</option>
