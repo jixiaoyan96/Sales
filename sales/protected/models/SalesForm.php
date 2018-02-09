@@ -88,7 +88,7 @@ class SalesForm extends CFormModel
     public function saveData()
     {
 
-        if($this->scenario=='new'||$this->scenario=='delete'){
+     /*   if($this->scenario=='new'||$this->scenario=='delete'){*/
             $connection = Yii::app()->db2;
             $transaction=$connection->beginTransaction();
             try {
@@ -99,37 +99,36 @@ class SalesForm extends CFormModel
                 $transaction->rollback();
                 throw new CHttpException(404,'Cannot update.');
             }
-        }
-        elseif($this->scenario=='edit'){
-            $user_sellers_id='';
-            $name=Yii::app()->user->name;
-            if(!empty($name)){
-                $sellers_set="select * from sellers_user_bind_v WHERE user_id='$name'";
-                $sellers_get=Yii::app()->db2->createCommand($sellers_set)->queryAll();
-                if(count($sellers_get)>0){
-                    $user_sellers_id=$sellers_get[0]['sellers_id'];
-                }
-            }
-            //var_dump($user_sellers_id);die;
-            $city = Yii::app()->user->city();
-            $update_sql="update customer_info set
-					customer_create_sellers_id = '$user_sellers_id',
-					visit_kinds = '$this->visit_kinds',
-					customer_kinds='$this->customer_kinds',
-					customer_notes='$this->customer_notes',
-					customer_name='$this->customer_name',
-					customer_create_date='$this->customer_create_date',
-					customer_second_name='$this->customer_second_name',
-					customer_help_count_date='$this->customer_help_count_date',
-					customer_contact='$this->customer_contact',
-					customer_contact_phone='$this->customer_contact_phone',
-					customer_district='$this->customer_district',
-					customer_street='$this->customer_street',
-					city='$city'
-					where customer_id = '$this->id'";
-            Yii::app()->db2->createCommand($update_sql)->execute();
-            return true;
-        }
+            /* }
+             elseif($this->scenario=='edit'){
+                 $user_sellers_id='';
+                 $name=Yii::app()->user->name;
+                 if(!empty($name)){
+                     $sellers_set="select * from sellers_user_bind_v WHERE user_id='$name'";
+                     $sellers_get=Yii::app()->db2->createCommand($sellers_set)->queryAll();
+                     if(count($sellers_get)>0){
+                         $user_sellers_id=$sellers_get[0]['sellers_id'];
+                     }
+                 }
+                 $city = Yii::app()->user->city();
+                 $update_sql="update customer_info set
+                         customer_create_sellers_id = '$user_sellers_id',
+                         visit_kinds = '$this->visit_kinds',
+                         customer_kinds='$this->customer_kinds',
+                         customer_notes='$this->customer_notes',
+                         customer_name='$this->customer_name',
+                         customer_create_date='$this->customer_create_date',
+                         customer_second_name='$this->customer_second_name',
+                         customer_help_count_date='$this->customer_help_count_date',
+                         customer_contact='$this->customer_contact',
+                         customer_contact_phone='$this->customer_contact_phone',
+                         customer_district='$this->customer_district',
+                         customer_street='$this->customer_street',
+                         city='$city'
+                         where customer_id = '$this->id'";
+                 Yii::app()->db2->createCommand($update_sql)->execute();
+                 return true;
+             }*/
     }
 
     protected function saveUser(&$connection)
@@ -164,7 +163,7 @@ class SalesForm extends CFormModel
 					customer_district=:customer_district,
 					customer_street=:customer_street,
 					city=:city
-					where id = :id";
+					where customer_id = :id";
                 break;
         }
         $uid = Yii::app()->user->id;
@@ -178,12 +177,9 @@ class SalesForm extends CFormModel
                 $user_sellers_id=$sellers_get[0]['sellers_id'];
             }
         }
-
         $command=$connection->createCommand($sql);
-
         if (strpos($sql,':id')!==false)
             $command->bindParam(':id',$this->id,PDO::PARAM_INT);
-
         if (strpos($sql,':customer_create_sellers_id')!==false)
             $command->bindParam(':customer_create_sellers_id',$user_sellers_id,PDO::PARAM_STR);
         if (strpos($sql,':customer_name')!==false)

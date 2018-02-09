@@ -4313,3 +4313,72 @@ in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
 2018/02/08 17:42:05 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 18:44:39 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 18:44:39 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 09:45:30 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 09:45:30 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 09:46:41 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 09:46:41 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 09:47:00 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 09:47:00 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 10:17:47 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 10:17:47 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 10:17:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'. The SQL statement executed was: update customer_info set
+					customer_create_sellers_id = :customer_create_sellers_id,
+					visit_kinds = :visit_kinds,
+					customer_kinds=:customer_kinds,
+					customer_notes=:customer_notes,
+					customer_name=:customer_name,
+					customer_create_date=:customer_create_date,
+					customer_second_name=:customer_second_name,
+					customer_help_count_date=:customer_help_count_date,
+					customer_contact=:customer_contact,
+					customer_contact_phone=:customer_contact_phone,
+					customer_district=:customer_district,
+					customer_street=:customer_street,
+					city=:city
+					where id = :id.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (211)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (95)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (208)
+2018/02/09 10:17:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php:100
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(208): SalesForm->saveData()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/edit?index=213
+---
+2018/02/09 10:18:41 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/09 10:18:41 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)

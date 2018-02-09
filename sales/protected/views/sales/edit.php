@@ -1112,7 +1112,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 <?php $this->renderPartial('//site/removedialog'); ?>
 <?php
 $js = "
-$('#SalesForm_customer_create_date').on('change',function() {
+$('#SalesForm_customer_create_date,#first1').on('change',function() {
 	showRenewDate();
 });
 function showRenewDate() {
@@ -1152,6 +1152,7 @@ Yii::app()->clientScript->registerScript('readonlyClass',$js,CClientScript::POS_
 if ($model->scenario!='view') {
     $js = Script::genDatePicker(array(
         'SalesForm_customer_create_date',
+        'first1',
     ));
     Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);
 }
