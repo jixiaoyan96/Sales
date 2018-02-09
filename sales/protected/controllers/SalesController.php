@@ -10,6 +10,7 @@ header("Content-type: text/html; charset=utf-8");
      Public $selectDataFirst;
     Public $urlAjaxSelect;
     Public $arr;
+     Public $selectData;
      public function actionIndex($pageNum=0){
          $city=Yii::app()->user->city_allow();
          $model=new QuizList();
@@ -58,6 +59,7 @@ header("Content-type: text/html; charset=utf-8");
 
             //进入新增页面
      Public function actionNew(){
+
          $model = new SalesForm('new');
          $this->render('form',array('model'=>$model,));
      }
@@ -320,6 +322,22 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
          } else {
              $this->render('edit',array('model'=>$model,));
          }
+     }
+     public function actionServiceDetailShow(){
+         $Id=isset($_REQUEST['ValueId'])?$_REQUEST['ValueId']:0;
+         $service_info_detail_set="select * from new_service_info WHERE new_visit_info_pid ='$Id'";
+         $service_info_detail_get=Yii::app()->db2->createCommand($service_info_detail_set)->queryAll();
+         $dataArray=array();
+        if(count($service_info_detail_get)>0){
+            for($i=0;$i<count($service_info_detail_get);$i++){
+                $dataArray[]=$service_info_detail_get[$i]; //读取服务数据
+            }
+        }
+        echo json_encode($service_info_detail_get);
+     }
+
+         public function actionServiceDetailEdit(){
+         echo '进入修改方法';die;
      }
      protected function performAjaxValidation($model)
      {

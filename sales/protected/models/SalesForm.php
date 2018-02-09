@@ -110,7 +110,6 @@ class SalesForm extends CFormModel
                     $user_sellers_id=$sellers_get[0]['sellers_id'];
                 }
             }
-
             //var_dump($user_sellers_id);die;
             $city = Yii::app()->user->city();
             $update_sql="update customer_info set
@@ -127,11 +126,10 @@ class SalesForm extends CFormModel
 					customer_district='$this->customer_district',
 					customer_street='$this->customer_street',
 					city='$city'
-					where customer_id = $this->id";
+					where customer_id = '$this->id'";
             Yii::app()->db2->createCommand($update_sql)->execute();
             return true;
         }
-
     }
 
     protected function saveUser(&$connection)

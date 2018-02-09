@@ -661,36 +661,6 @@ Class Quiz{
                 }
             }
         }
-      /*  array(2) {
-            [0]=> array(2) {
-                ["visit_info"]=> array(7) {
-                    ["visit_info_id"]=> string(3) "183"
-                    ["visit_customer_fid"]=> string(3) "160"
-                    ["visit_seller_fid"]=> string(1) "1"
-                    ["visit_notes"]=> string(4) "cehi"
-                    ["visit_service_money"]=> string(1) "1"
-                    ["visit_date"]=> string(10) "2018/02/22"
-                    ["visit_definition"]=> string(6) "续约"                  }
-                ["service_info"]=> array(4) {
-                    [0]=> array(2) {
-                        ["name"]=> string(6) "老鼠"
-                        ["count"]=> string(2) "47"
-                                    }
-                    [1]=> array(2) {
-                        ["name"]=> string(6) "蟑螂"
-                        ["count"]=> string(3) "474"
-                                   }
-                    [2]=> array(2) {
-                        ["name"]=> string(6) "果蝇"
-                        ["count"]=> string(3) "474"
-                                   }
-                    [3]=> array(2) {
-                        ["name"]=> string(12) "租灭蝇灯"
-                        ["count"]=> string(2) "47"
-                                   }
-                                            }
-                            }
-                  }*/
         return $dataReturn;
     }
 

@@ -4231,3 +4231,85 @@ in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
 2018/02/08 13:51:36 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (204)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 14:28:33 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (204)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 14:28:33 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (204)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:06:54 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:06:54 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:06:55 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:06:55 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:06:56 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:06:56 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:08:44 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:08:44 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:11:18 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:11:18 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:41:43 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 15:41:43 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 16:44:28 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 16:44:28 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 16:44:29 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 16:44:29 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 16:46:47 [error] [php] include(ActiveForm.php): failed to open stream: No such file or directory (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\YiiBase.php:423)
+Stack trace:
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\sales\edit.php(271): spl_autoload_call()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CBaseController.php(127): require()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CBaseController.php(96): SalesController->renderInternal()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(870): SalesController->renderFile()
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(783): SalesController->renderPartial()
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(322): SalesController->render()
+#6 unknown(0): SalesController->actionEdit()
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
+#13 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#14 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/Sales/sales/index.php/sales/edit?index=213
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\views\sales\edit.php (271)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (322)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 17:42:05 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
+2018/02/08 17:42:05 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)

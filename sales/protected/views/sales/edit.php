@@ -184,22 +184,22 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                             }
                         }
                         else{
-                            echo "<tr><td>该拜访未记录详细跟进信息</td><td></td><td></td><td></td></tr>";
+                            echo "<tr><td>该拜访未记录详细跟进信息</td><td></td><td></td><td></td></tr>";onclick='showDetailService($id);'
                         }
                         */
                         $dataShow=Quiz::editDataShow($model->id); //跟进的主要信息
-                        echo "<tr><td>跟进日期</td><td>跟进目的</td><td>跟进总金额</td><td>服务以及金额</td><td>备注</td></tr>";
+                        echo "<tr><td>跟进日期</td><td>跟进目的</td><td>跟进总金额</td><td>服务以及金额</td><td>备注</td><td>操作</td></tr>";
                         if(count($dataShow)){
                             for($i = 0; $i < count($dataShow); $i++){
+                                $id=$dataShow[$i]['visit_info_id'];
                                 $date=$dataShow[$i]['visit_date'];
                                 $definition=$dataShow[$i]['visit_definition'];
                                 $contentService=$dataShow[$i]['visit_service_money'];
                                 $serviceMoney=$dataShow[$i]['serviceMoney'];
                                 $notes=$dataShow[$i]['visit_notes'];
-                                echo "<tr><td>$date</td><td>$definition</td><td>$contentService</td><td>$serviceMoney</td><td>$notes</td></tr>";
+                                echo "<tr><td>$date</td><td>$definition</td><td>$contentService</td><td>$serviceMoney</td><td>$notes</td><td><a onclick='showDetailService($id);'>查看明细</a></td></tr>";
                             }
                         }
-
                         ?>
                     </table>
                 </div>
@@ -207,7 +207,77 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         </div>
     </div>
 </section>
+<?php $this->selectData=Yii::app()->createUrl('Sales/ServiceDetailShow');?>
+<input type="hidden" id="urlGetSelect" name="urlGetSelect" value="<?php echo $this->selectData;?>"/>
+<?php Yii::app()->createUrl('Sales/ServiceDetailEdit');?>
+<script type="text/javascript">
+    function showDetailService(temp){
+        var urlGetSelect=$("#urlGetSelect").val();
+        //console.log(urlGetSelect);
+        $.ajax({
+            type: "post",
+            url: urlGetSelect,
+            data: "ValueId="+temp,
+            dataType: "text",
+            async:true,
+            success: function(data){
+                console.log(temp);
+                console.log(data);
+                console.log(data[0]['new_service_money']);
+                $("#demoEdit").html(data);
+                $('.detail_box').css({"display":'block'});
+                /* var item;
+                $("#demoEdit").html('');
+                $.each(data,function(i,result){
+                    item +='<div>'+result['new_service_money']+'</div>';
+                });
+                $("#demoEdit").html(item);*/
+            },
+            error:function(data){
+                console.log('2');
+            }
+        });
+    };
+    $(function(){
+        $('.closeDetail').click(function(){
+            $('.detail_box').slideUp('400');
+        });
+    });
+    </script>
 
+<style>
+    .detail_box {display: none;}
+    .detail_box{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999;}
+    .detail_box .bg{background: #000;opacity: 0.7;filter:alpha(opacity=70);position: absolute;top:0;left: 0;right: 0;bottom: 0;}
+    .detail_box .contentP{position: relative;margin:0 auto;margin-top: 10%; background: #fff;width: 80%;}
+    .detail_box .PTit{height: 45px;background: #eee;}
+    .detail_box .PTit h3{line-height: 45px;float: left;padding-left: 15px;font-weight: normal;font-size: 16px;}
+    .detail_box .PTit a{display: block;width: 45px;line-height: 45px;text-align: center;background: #ddd;float: right;font-size: 20px;}
+    .detail_box .PTit a:hover{background: #50abfd;color: #fff;}
+    .detail_box .textmian{padding: 15px;}
+</style>
+<div class="detail_box">
+    <div class="bg"></div>
+    <div class="contentP">
+        <div class="PTit">
+            <h3>关于跟进详情的修改</h3>
+            <a href="javascript:;" class="closeDetail">x</a>
+        </div>
+        <div class="textmian">
+                <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0">
+                    <thead>
+                    <input type="hidden" />
+                    </thead>
+                    <div id="demoEdit">
+
+                    </div>
+                </table>
+                <div class="btn_a1">
+                    <input type="submit" value="保存数据"/>
+                </div>
+        </div>
+    </div>
+</div>
 <style>
     *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;border:0 none; }
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
