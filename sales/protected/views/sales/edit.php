@@ -209,7 +209,8 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 </section>
 <?php $this->selectData=Yii::app()->createUrl('Sales/ServiceDetailShow');?>
 <input type="hidden" id="urlGetSelect" name="urlGetSelect" value="<?php echo $this->selectData;?>"/>
-<?php Yii::app()->createUrl('Sales/ServiceDetailEdit');?>
+<?php $this->editUrl=Yii::app()->createUrl('Sales/ServiceDetailEdit');?>
+<input type="hidden" id="editUrl" name="urlGetSelect" value="<?php echo $this->editUrl;?>"/>
 <script type="text/javascript">
     function showDetailService(temp){
         var urlGetSelect=$("#urlGetSelect").val();
@@ -218,26 +219,47 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             type: "post",
             url: urlGetSelect,
             data: "ValueId="+temp,
-            dataType: "text",
+            dataType: "json",
             async:true,
             success: function(data){
                 console.log(temp);
                 console.log(data);
-                console.log(data[0]['new_service_money']);
-                $("#demoEdit").html(data);
+                //console.log(data[0]['new_service_money']);
+                var html="<tr><td>服务大类</td><td>服务明细</td><td>服务金额</td><td>操作</td></tr>";
+                for(var i=0;i<data.length;i++){
+                    var inputCount=data[i]['new_service_money'];
+                    var inputServiceId=data[i]['new_service_info_id'];
+                    html+="<tr>"+"<td>"+data[i]['new_services_kind']+"</td>"+"<td>"+data[i]['new_services_kinds']+"</td>"+"<td>"+"<input type='text' value="+inputCount+">"+"</td>"+"<td onclick='submitValue("+inputCount+","+inputServiceId+");'>保存修改</td>"+"</tr>";
+                }
+                $("#demoEdit").html("<table class='table table-striped'>"+html+"</table>");
                 $('.detail_box').css({"display":'block'});
-                /* var item;
-                $("#demoEdit").html('');
-                $.each(data,function(i,result){
-                    item +='<div>'+result['new_service_money']+'</div>';
-                });
-                $("#demoEdit").html(item);*/
+                 
             },
             error:function(data){
-                console.log('2');
+                $("#demoEdit").html('数据出错');
+                $('.detail_box').css({"display":'block'});
             }
         });
     };
+    function submitValue(temp,inputServiceId){
+        var inputValue=$(this).parent("tr").find("input[type='text']").val();
+        var urlGet=$("#editUrl").val();
+        console.log("填入的金额:"+inputValue);
+        $.ajax({
+            type: "post",
+            url: urlGet,
+            data: {"ValueCount":temp,"id":inputServiceId},
+            dataType: "text",
+            async:true,
+            success: function(data){
+                console.log('修改进入'+data);
+              $(this).parent("tr").find("input[type='text']").val("111");
+            },
+            error:function(data){
+                console.log('修改错误');
+            }
+        });
+    }
     $(function(){
         $('.closeDetail').click(function(){
             $('.detail_box').slideUp('400');
@@ -250,34 +272,13 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     .detail_box{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999;}
     .detail_box .bg{background: #000;opacity: 0.7;filter:alpha(opacity=70);position: absolute;top:0;left: 0;right: 0;bottom: 0;}
     .detail_box .contentP{position: relative;margin:0 auto;margin-top: 10%; background: #fff;width: 80%;}
-    .detail_box .PTit{height: 45px;background: #eee;}
-    .detail_box .PTit h3{line-height: 45px;float: left;padding-left: 15px;font-weight: normal;font-size: 16px;}
+    .detail_box .PTit{height: 45px;background: #eee;padding-left: 40%;}
+    .detail_box .PTit h4{line-height: 45px;float: left;padding-left: 15px;font-weight: normal;font-size: 16px;}
     .detail_box .PTit a{display: block;width: 45px;line-height: 45px;text-align: center;background: #ddd;float: right;font-size: 20px;}
     .detail_box .PTit a:hover{background: #50abfd;color: #fff;}
     .detail_box .textmian{padding: 15px;}
 </style>
-<div class="detail_box">
-    <div class="bg"></div>
-    <div class="contentP">
-        <div class="PTit">
-            <h3>关于跟进详情的修改</h3>
-            <a href="javascript:;" class="closeDetail">x</a>
-        </div>
-        <div class="textmian">
-                <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0">
-                    <thead>
-                    <input type="hidden" />
-                    </thead>
-                    <div id="demoEdit">
 
-                    </div>
-                </table>
-                <div class="btn_a1">
-                    <input type="submit" value="保存数据"/>
-                </div>
-        </div>
-    </div>
-</div>
 <style>
     *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;border:0 none; }
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
@@ -291,7 +292,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     .model2{display: none;}
     .model3{display: none;}
     .hideTr{background: #ddd;}
-    .pop_box{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999;}
+    .pop_box{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999;  overflow-y:scroll;overflow-x:hidden;  }
     .pop_box .bg{background: #000;opacity: 0.7;filter:alpha(opacity=70);position: absolute;top:0;left: 0;right: 0;bottom: 0;}
     .pop_box .contentP{position: relative;margin:0 auto;margin-top: 10%; background: #fff;width: 80%;}
     .pop_box .PTit{height: 45px;background: #eee;}
@@ -305,6 +306,32 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     .tempDiv{width:0%;  height:0px;  border: 0px solid red}
 </style>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo  Yii::t('quiz','If you do not fill in the follow-up date and follow-up purpose, then this follow-up will not record deposited');?>
+<div class="detail_box">
+    <div class="bg"></div>
+    <div class="contentP">
+        <div class='PTit'>
+            <h4>关于跟进详情的修改</h4>
+            <a href="javascript:;" class="closeDetail">x</a>
+        </div>
+        <div class="textmian">
+            <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0">
+     
+
+                    <thead>
+                  
+                    </thead>
+                    <div id="demoEdit">
+
+                    </div>
+            </table>
+            <div class="btn_a1">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="addData">
     <table cellspacing="0" cellpadding="0" border="0" class="normTbe model2">
         <tbody>

@@ -11,6 +11,7 @@ header("Content-type: text/html; charset=utf-8");
     Public $urlAjaxSelect;
     Public $arr;
      Public $selectData;
+     Public $editUrl;
      public function actionIndex($pageNum=0){
          $city=Yii::app()->user->city_allow();
          $model=new QuizList();
@@ -84,7 +85,6 @@ header("Content-type: text/html; charset=utf-8");
          if (isset($_POST['SalesForm'])) {
              $model->attributes = $_POST['SalesForm'];
              if ($model->isOccupied($model->id)) {
-                 echo '11';die;
                  Dialog::message(Yii::t('dialog','Warning'), Yii::t('dialog','This record is already in use'));
                  $this->redirect(Yii::app()->createUrl('sales/edit',array('index'=>$model->id)));
              } else {
@@ -150,7 +150,8 @@ header("Content-type: text/html; charset=utf-8");
                                     $edit_delete_service_history_set="delete from service_history WHERE service_visit_pid='$delete_visit_id'";
                                     Yii::app()->db2->createCommand($edit_delete_service_history_set)->execute();
                                 }
-                         else{ // 如果没有删除跟进记录 则需要进行visit和service_history的数据修改
+                         else{ 
+                            // 如果没有删除跟进记录 则需要进行visit和service_history的数据修改
                                 $visit_info_store=array(); //跟进的每条数据
                                 $visit_every_notes='';//跟进的备注
                              $visit_every_money=''; //跟进的总额
@@ -330,14 +331,42 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
          $dataArray=array();
         if(count($service_info_detail_get)>0){
             for($i=0;$i<count($service_info_detail_get);$i++){
-                $dataArray[]=$service_info_detail_get[$i]; //读取服务数据
+                    $charShowKind=Quiz::returnChinese($service_info_detail_get[$i]['new_services_kind']);
+                    $service_info_detail_get[$i]['new_services_kind']=$charShowKind; //存入返回的服务类型
+                    $kindsArray=array();//存入需要翻译的数据
+                    $charKindsShow=rtrim($service_info_detail_get[$i]['new_services_kinds'],'-');
+                    $getData='';  //关于服务数据获取  服务名,数量/服务名,数量
+                    $kindsArray=explode('-', $charKindsShow);//0=>服务*数量,1=>服务*数量
+                    if(count($kindsArray)>0){
+                    for($k=0;$k<count($kindsArray);$k++){
+                                $tempArray=array(); //暂时存入服务 0=>类型名,1=>类型数量
+                               $tempArray=explode('*',$kindsArray[$k]);
+                               $tempArray=Quiz::transLationWords($tempArray); //0=>类型名,1=>类型数量
+                               $getData.=$tempArray[0].','.$tempArray[1].'/';
+                    }
+                }
+                $service_info_detail_get[$i]['new_services_kinds']=$getData;
             }
         }
         echo json_encode($service_info_detail_get);
      }
 
          public function actionServiceDetailEdit(){
-         echo '进入修改方法';die;
+             $value=$_REQUEST['ValueCount'];
+             $Id=$_REQUEST['id'];
+             $serviceMoneySet="select new_service_money from new_service_info WHERE new_service_info_id='$Id'";
+             $serviceMoneyGet=Yii::app()->db2->createCommand($serviceMoneySet)->queryAll();
+             if(count($serviceMoneyGet)>0){
+                 if($value==$serviceMoneyGet[0]['new_service_money']){
+                     echo $value;die;
+                 }
+                 else{
+                     $serviceUpdateSet="update new_service_info set new_service_money='$value' WHERE new_service_info_id='$Id'";
+                     Yii::app()->db2->createCommand($serviceUpdateSet)->queryAll();
+                     echo $serviceMoneyGet[0]['new_service_money'];die;
+                 }
+             }
+
      }
      protected function performAjaxValidation($model)
      {

@@ -792,17 +792,7 @@ Class Quiz{
         }
         return $visit_info_get;
     }
-/*array(1) {
-[0]=> array(8) {
-["visit_info_id"]=> string(3) "260"
-["visit_customer_fid"]=> string(3) "211"
-["visit_seller_fid"]=> string(1) "1"
-["visit_notes"]=> string(8) "json2333"
-["visit_service_money"]=> string(4) "5700"
-["visit_date"]=> string(10) "2018/02/21"
-["visit_definition"]=> string(6) "追款"
-["serviceMoney"]=> string(12) "清洁,2100/"
-} */
+
 /**
      * @throws CHttpException
      *   <option value="7">选择服务大类</option>

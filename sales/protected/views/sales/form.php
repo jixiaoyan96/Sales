@@ -182,7 +182,8 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     .model2{display: none;}
     .model3{display: none;}
     .hideTr{background: #ddd;}
-    .pop_box{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999;}
+    .pop_box{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999;overflow-y:scroll;
+        overflow-x:hidden; }
     .pop_box .bg{background: #000;opacity: 0.7;filter:alpha(opacity=70);position: absolute;top:0;left: 0;right: 0;bottom: 0;}
     .pop_box .contentP{position: relative;margin:0 auto;margin-top: 10%; background: #fff;width: 80%;}
     .pop_box .PTit{height: 45px;background: #eee;}
