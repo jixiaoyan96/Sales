@@ -4313,243 +4313,41 @@ in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
 2018/02/08 17:42:05 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (205)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/08 18:44:39 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+2018/02/12 10:44:14 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/08 18:44:39 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+2018/02/12 10:44:14 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 09:45:30 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 09:45:30 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 09:46:41 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 09:46:41 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 09:47:00 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 09:47:00 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:17:47 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:17:47 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:17:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'. The SQL statement executed was: update customer_info set
-					customer_create_sellers_id = :customer_create_sellers_id,
-					visit_kinds = :visit_kinds,
-					customer_kinds=:customer_kinds,
-					customer_notes=:customer_notes,
-					customer_name=:customer_name,
-					customer_create_date=:customer_create_date,
-					customer_second_name=:customer_second_name,
-					customer_help_count_date=:customer_help_count_date,
-					customer_contact=:customer_contact,
-					customer_contact_phone=:customer_contact_phone,
-					customer_district=:customer_district,
-					customer_street=:customer_street,
-					city=:city
-					where id = :id.
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (211)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php (95)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (208)
-2018/02/09 10:17:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\SalesForm.php:100
+2018/02/12 12:07:15 [error] [php] session_regenerate_id(): Session object destruction failed (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CHttpSession.php:182)
 Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(208): SalesForm->saveData()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionSave()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('save')
-#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/save')
-#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/Sales/Sales/sales/index.php/sales/save
-HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/edit?index=213
----
-2018/02/09 10:18:41 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:18:41 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:21:43 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:21:43 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:21:50 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:21:50 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:21:58 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:21:58 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:29:04 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:29:04 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:31:36 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:31:36 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:32:11 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:32:11 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:39:27 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:39:27 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:39:35 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:39:35 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:39:51 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:39:51 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:39:56 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:39:56 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:52:57 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 10:52:57 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 11:01:12 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (85)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 11:01:12 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (85)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 14:12:18 [error] [php] Array to string conversion (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:335)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (335)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 14:12:19 [error] [php] Array to string conversion (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:335)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (335)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 14:19:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "127.0.0.1" 动作.' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php:484
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(271): CController->missingAction('127.0.0.1')
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('127.0.0.1')
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/127.0.0.1...')
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/Sales/Sales/sales/index.php/sales/127.0.0.1/Sales/Sales/sales/index.php/sales/ServiceDetailEdit
-HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/edit?index=213
----
-2018/02/09 14:19:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "127.0.0.1" 动作.' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php:484
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(271): CController->missingAction('127.0.0.1')
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('127.0.0.1')
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/127.0.0.1...')
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/Sales/Sales/sales/index.php/sales/127.0.0.1/Sales/Sales/sales/index.php/sales/ServiceDetailEdit
-HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/edit?index=213
----
-2018/02/09 15:05:38 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:344)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (344)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 15:05:46 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:344)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (344)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 15:10:38 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 15:10:38 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 15:19:23 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:344)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (344)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 15:22:24 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 15:22:24 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 15:22:26 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 15:22:26 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (206)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:40:08 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
+#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\auth\CWebUser.php(228): WebUser->changeIdentity()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\LoginForm.php(79): WebUser->login()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SiteController.php(115): LoginForm->login()
+#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SiteController.php(54): SiteController->actionLogin()
+#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\filters\CFilterChain.php(134): SiteController->runAction()
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\components\Controller.php(71): CFilterChain->run()
+#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\filters\CInlineFilter.php(59): SiteController->filterEnforceNoConcurrentLogin()
+#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\components\Controller.php(95): CFilterChain->run()
+#11 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\filters\CInlineFilter.php(59): SiteController->filterEnforceSessionExpiration()
+#12 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#13 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\components\Controller.php(51): CFilterChain->run()
+#14 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\filters\CInlineFilter.php(59): SiteController->filterEnforceRegisteredStation()
+#15 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(292): CFilterChain->run()
+#17 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SiteController->runActionWithFilters()
+#18 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SiteController->run()
+#19 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#20 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#21 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/Sales/Sales/sales/index.php
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\models\LoginForm.php (79)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SiteController.php (115)
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SiteController.php (54)
+2018/02/12 15:53:41 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
 Stack trace:
 #0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
 #1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
@@ -4560,191 +4358,25 @@ Stack trace:
 REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:40:18 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (86)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:40:18 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (86)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:40:55 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+2018/02/12 15:56:54 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (207)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:40:55 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+2018/02/12 15:56:54 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (207)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:41:53 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
+2018/02/12 15:56:55 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (207)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:41:53 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
+2018/02/12 15:56:55 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (207)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:41:58 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
+2018/02/12 16:40:35 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error. The SQL statement executed was: update new_service_info set new_service_money='14' WHERE new_service_info_id='201'.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (365)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:42:01 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:42:04 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:42:11 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:42:22 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:43:20 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:43:38 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:44:19 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:49:43 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:50:39 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 16:50:56 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:07:28 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:07:35 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:09:07 [warning] [application] Failed to set unsafe attribute "scenario" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (207)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:09:07 [warning] [application] Failed to set unsafe attribute "city" of "SalesForm".
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (207)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:14:14 [error] [php] Undefined offset: 1 (D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php:345)
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): SalesController->runAction()
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): SalesController->runActionWithFilters()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): SalesController->run()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CWebApplication->run()
-REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailShow
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (345)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:45:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'new_service_info_pid' in 'where clause'. The SQL statement executed was: select new_service_money from new_service_info WHERE new_service_info_pid='203'.
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (358)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:45:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'new_service_info_pid' in 'where clause'. The SQL statement executed was: select new_service_money from new_service_info WHERE new_service_info_pid='203'' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+2018/02/12 16:40:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[HY000]: General error. The SQL statement executed was: update new_service_info set new_service_money='14' WHERE new_service_info_id='201'' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
 Stack trace:
 #0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(358): CDbCommand->queryAll()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(365): CDbCommand->queryAll()
 #2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionServiceDetailEdit()
 #3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
 #4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
@@ -4755,43 +4387,24 @@ Stack trace:
 #9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
 #10 {main}
 REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailEdit
-HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/edit?index=215
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/edit?index=214
 ---
-2018/02/09 17:46:56 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'new_service_info_pid' in 'where clause'. The SQL statement executed was: select new_service_money from new_service_info WHERE new_service_info_pid='213'.
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (67)
+2018/02/12 16:41:59 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error. The SQL statement executed was: update new_service_info set new_service_money='1414' WHERE new_service_info_id='201'.
+in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (365)
 in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:46:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'new_service_info_pid' in 'where clause'. The SQL statement executed was: select new_service_money from new_service_info WHERE new_service_info_pid='213'' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
+2018/02/12 16:41:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[HY000]: General error. The SQL statement executed was: update new_service_info set new_service_money='1414' WHERE new_service_info_id='201'' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
 Stack trace:
 #0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(67): CDbCommand->queryAll()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionNew()
+#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(365): CDbCommand->queryAll()
+#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionServiceDetailEdit()
 #3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
 #4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
 #5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('new')
-#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/new')
+#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('ServiceDetailEd...')
+#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('Sales/ServiceDe...')
 #8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
 #9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
 #10 {main}
-REQUEST_URI=/Sales/Sales/sales/index.php/sales/new
-HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/index
----
-2018/02/09 17:47:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[HY000]: General error. The SQL statement executed was: update new_service_info set new_service_money=10 WHERE new_service_info_id='213'.
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php (74)
-in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php (13)
-2018/02/09 17:47:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[HY000]: General error. The SQL statement executed was: update new_service_info set new_service_money=10 WHERE new_service_info_id='213'' in D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php:528
-Stack trace:
-#0 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
-#1 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\protected\controllers\SalesController.php(74): CDbCommand->queryAll()
-#2 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\actions\CInlineAction.php(50): SalesController->actionNew()
-#3 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
-#4 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
-#5 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
-#6 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(283): CController->run('new')
-#7 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('sales/new')
-#8 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
-#9 D:\phpstudy\PHPTutorial\WWW\Sales\Sales\sales\index.php(13): CApplication->run()
-#10 {main}
-REQUEST_URI=/Sales/Sales/sales/index.php/sales/new
-HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/index
+REQUEST_URI=/Sales/Sales/sales/index.php/Sales/ServiceDetailEdit
+HTTP_REFERER=http://127.0.0.1/Sales/Sales/sales/index.php/sales/edit?index=214
 ---

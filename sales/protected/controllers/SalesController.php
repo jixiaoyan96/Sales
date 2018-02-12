@@ -60,7 +60,6 @@ header("Content-type: text/html; charset=utf-8");
 
             //进入新增页面
      Public function actionNew(){
-
          $model = new SalesForm('new');
          $this->render('form',array('model'=>$model,));
      }
@@ -358,15 +357,29 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
              $serviceMoneyGet=Yii::app()->db2->createCommand($serviceMoneySet)->queryAll();
              if(count($serviceMoneyGet)>0){
                  if($value==$serviceMoneyGet[0]['new_service_money']){
-                     echo $value;die;
+                     echo '1';
                  }
-                 else{
+             else{
+                     $visit_count=0;
                      $serviceUpdateSet="update new_service_info set new_service_money='$value' WHERE new_service_info_id='$Id'";
-                     Yii::app()->db2->createCommand($serviceUpdateSet)->queryAll();
-                     echo $serviceMoneyGet[0]['new_service_money'];die;
+                     Yii::app()->db2->createCommand($serviceUpdateSet)->execute();
+                     $service_each_set="select new_visit_info_pid from new_service_info WHERE new_service_info_id='$Id'";
+                     $service_each_get=Yii::app()->db2->createCommand($service_each_set)->queryAll();
+                     $visit_id=$service_each_get[0]['new_visit_info_pid']; //获取visit_id
+                     $visit_each_set="select new_service_money from new_service_info WHERE new_visit_info_pid='$visit_id'";
+                     $visit_each_get=Yii::app()->db2->createCommand($visit_each_set)->queryAll();
+                     if(count($visit_each_get)>0){
+                         for($i=0;$i<count($visit_each_get);$i++){
+                            $visit_count+=intval($visit_each_get[$i]['new_service_money']);
+                         }
+                     }
+                     if($visit_count!=0){
+                         $visit_money_set="update visit_info set visit_service_money='$visit_count' WHERE visit_info_id='$visit_id'";
+                         Yii::app()->db2->createCommand($visit_money_set)->execute();
+                     }
+                     echo '2';
                  }
              }
-
      }
      protected function performAjaxValidation($model)
      {

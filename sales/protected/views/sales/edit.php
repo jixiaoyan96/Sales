@@ -212,6 +212,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 <?php $this->editUrl=Yii::app()->createUrl('Sales/ServiceDetailEdit');?>
 <input type="hidden" id="editUrl" name="urlGetSelect" value="<?php echo $this->editUrl;?>"/>
 <script type="text/javascript">
+
     function showDetailService(temp){
         var urlGetSelect=$("#urlGetSelect").val();
         //console.log(urlGetSelect);
@@ -222,38 +223,37 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             dataType: "json",
             async:true,
             success: function(data){
-                console.log(temp);
-                console.log(data);
+                //console.log(temp);
+                //console.log(data);
                 //console.log(data[0]['new_service_money']);
                 var html="<tr><td>服务大类</td><td>服务明细</td><td>服务金额</td><td>操作</td></tr>";
                 for(var i=0;i<data.length;i++){
                     var inputCount=data[i]['new_service_money'];
                     var inputServiceId=data[i]['new_service_info_id'];
-                    html+="<tr>"+"<td>"+data[i]['new_services_kind']+"</td>"+"<td>"+data[i]['new_services_kinds']+"</td>"+"<td>"+"<input type='text' value="+inputCount+">"+"</td>"+"<td onclick='submitValue("+inputCount+","+inputServiceId+");'>保存修改</td>"+"</tr>";
+                    html+="<tr>"+"<td>"+data[i]['new_services_kind']+"</td>"+"<td>"+data[i]['new_services_kinds']+"</td>"+
+                        "<td>"+"<input type='number' value="+inputCount+" >"+"</td>"+"<td class='everyTdInput' onclick='submitValue(this,"+inputCount+","+inputServiceId+");'>保存修改</td>"+"</tr>";
                 }
                 $("#demoEdit").html("<table class='table table-striped'>"+html+"</table>");
                 $('.detail_box').css({"display":'block'});
-                 
             },
             error:function(data){
                 $("#demoEdit").html('数据出错');
                 $('.detail_box').css({"display":'block'});
             }
         });
-    };
-    function submitValue(temp,inputServiceId){
-        var inputValue=$(this).parent("tr").find("input[type='text']").val();
+    }
+    function submitValue(obj,temp,inputServiceId){
         var urlGet=$("#editUrl").val();
+        var inputValue=$(obj).prev("td").find("input[type='text']").val();  //获取同等td下的上一个td的input表单值
         console.log("填入的金额:"+inputValue);
         $.ajax({
             type: "post",
             url: urlGet,
-            data: {"ValueCount":temp,"id":inputServiceId},
+            data: {"ValueCount":inputValue,"id":inputServiceId},
             dataType: "text",
             async:true,
             success: function(data){
                 console.log('修改进入'+data);
-              $(this).parent("tr").find("input[type='text']").val("111");
             },
             error:function(data){
                 console.log('修改错误');
@@ -265,6 +265,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             $('.detail_box').slideUp('400');
         });
     });
+
     </script>
 
 <style>
