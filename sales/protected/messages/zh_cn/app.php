@@ -87,5 +87,6 @@ return array(
 	'Sales'=>'销售',
 	'Sales visiting'=>'销售拜访',
 	'Sales orders'=>'销售落单',
+	'Sales video'=>'五部曲',
 );
 ?>

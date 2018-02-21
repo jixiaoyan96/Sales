@@ -15,6 +15,11 @@ return array(
 				'url'=>'/Salesorder/index',
 				'tag'=>'@',
 			),
+			'Sales video'=>array(
+			'access'=>'HK03',
+				'url'=>'/Salesvideo/index',
+				'tag'=>'@',
+			),
 		),
 	),
 

@@ -63,88 +63,47 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         array('size'=>10,'maxlength'=>10,'id'=>'quiz_name','readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
-                <?php echo $form->labelEx($model,'customer_create_date',array('class'=>"col-sm-2 control-label")); ?>
+
+                <?php echo $form->labelEx($model,'order_info_date',array('class'=>"col-sm-2 control-label")); ?>
+
                 <div class="col-sm-3">
                     <div class="input-group date">
                         <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                         </div>
-                        <?php echo $form->textField($model, 'customer_create_date',
-                            array('class'=>'form-control pull-right','readonly'=>($model->scenario=='view'),));
+                        <?php echo $form->textField($model, 'order_info_date',
+                            array('class'=>'form-control pull-right','readonly'=>($model->scenario=='view'),'placeholder'=>'默认为当前时间'));
                         ?>
                     </div>
                 </div>
             </div>
 
-
-
             <div class="form-group">
-                <?php echo $form->labelEx($model,'customer_second_name',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'order_info_seller_name',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model,'customer_second_name',
+                    <?php echo $form->textField($model,'order_info_seller_name',
                         array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
-                <?php echo $form->labelEx($model,'customer_help_count_date',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'order_info_money_total',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model,'customer_help_count_date',
-                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
-                    ); ?>
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <?php echo $form->labelEx($model,'customer_contact',array('class'=>"col-sm-2 control-label")); ?>
-                <div class="col-sm-3">
-                    <?php echo $form->textField($model,'customer_contact',
-                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
-                    ); ?>
-                </div>
-                <?php echo $form->labelEx($model,'customer_contact_phone',array('class'=>"col-sm-2 control-label")); ?>
-                <div class="col-sm-3">
-                    <?php echo $form->textField($model, 'customer_contact_phone',
-                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
-                    ); ?>
-                </div>
-            </div>
-
-            <!--  <script src="<?php /*echo Yii::app()->baseUrl;*/?>/js/jquery.js'"></script>-->
-            <div class="form-group">
-                <?php echo $form->labelEx($model,'visit_kinds',array('class'=>"col-sm-2 control-label")); ?>
-                <div class="col-sm-3">
-                    <?php echo $form->dropDownList($model,'visit_kinds',Quiz::getKinds(),
-                        array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),'id'=>'select_questions_count')
-                    ); ?>
-                </div>
-                <?php echo $form->labelEx($model,'customer_kinds',array('class'=>"col-sm-2 control-label")); ?>
-                <div class="col-sm-3">
-                    <?php echo $form->dropDownList($model,'customer_kinds',Quiz::customerKinds(),
-                        array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),'id'=>'select_questions_count')
+                    <?php echo $form->textField($model,'order_info_money_total',
+                        array('size'=>50,'maxlength'=>100,'id'=>'order_count_all','readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
             </div>
 
             <div class="form-group">
-                <?php echo $form->labelEx($model,'customer_district',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'order_info_rural',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model, 'customer_district',
-                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'),'id'=>'getCountValue2')
-                    );?>
+                    <?php echo $form->textField($model,'order_info_rural',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
                 </div>
-                <?php echo $form->labelEx($model,'customer_street',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'order_info_rural_location',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model, 'customer_street',
-                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'),'id'=>'getCountValue2')
-                    );?>
-                </div>
-            </div>
-
-            <div class="from-group">
-                <?php echo $form->labelEx($model,'customer_notes',array('class'=>'col-sm-2 control-label'))?>
-                <div class="col-sm-8">
-                    <?php echo $form->textArea($model,'customer_notes',
-                        array('size'=>'20', 'maxlength'=>'50','cols'=>'30','rows'=>'6')
+                    <?php echo $form->textField($model,'order_info_rural_location',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
             </div>
@@ -167,445 +126,177 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         </div>
     </div>
 </section>
+
+<a id="aa">点击打印第二部分内容</a>
 <script>
+
+    (function ($) {
+        var printAreaCount = 0;
+        $.fn.printArea = function () {
+            var ele = $(this);
+            var idPrefix = "printArea_";
+            removePrintArea(idPrefix + printAreaCount);
+            printAreaCount++;
+            var iframeId = idPrefix + printAreaCount;
+            var iframeStyle = 'position:absolute;width:0px;height:0px;left:-500px;top:-500px;';
+            iframe = document.createElement('IFRAME');
+            $(iframe).attr({
+                style: iframeStyle,
+                id: iframeId
+            });
+            document.body.appendChild(iframe);
+            var doc = iframe.contentWindow.document;
+            $(document).find("link").filter(function () {
+                return $(this).attr("rel").toLowerCase() == "stylesheet";
+            }).each(
+                function () {
+                    doc.write('<link type="text/css" rel="stylesheet" href="'
+                        + $(this).attr("href") + '" >');
+                });
+            doc.write('<div class="' + $(ele).attr("class") + '">' + $(ele).html()
+                + '</div>');
+            doc.close();
+            var frameWindow = iframe.contentWindow;
+            frameWindow.close();
+            frameWindow.focus();
+            frameWindow.print();
+        };
+        var removePrintArea = function (id) {
+            $("iframe#" + id).remove();
+        };
+    })(jQuery);
+
+
+
+
+
+    //在计算单个订单总价的同时 进行计算所有订单的价格的总和
     $(function(){
+        $("#aa").click(function(){
+            $(".addData").printArea();
+        });
+        function hello(){
+            var total= $("input[class='totalCount']");
+            var Count=0;
+                for(var i=0;i<total.length;i++){
+                    var temp=total.eq(i).val();
+                    Count+=parseInt(temp);
+                }
+            $("#order_count_all").val(Count);
+        }
+        window.setInterval(function(){
+            hello();
+        }, 1000);
+        timestamp =(new Date()).valueOf();
+        $("#firstCodeGet").val(timestamp);
         var AllDataCount=0;
         var demo=0;
-        $('.innerbtn').click(function(){
-            var data=$('.innerbtn').index(this);
-            demo=data;
-            console.log('当前为第'+demo+'个');
-            $(this).next('.pop_box').slideDown('400');
-        });
-
-        $('.closepop').click(function(){
-            //$(".tempDiv").find("input[name='serviceMoney[]']").attr('name','serviceMoney'+demo+'[]');
-            //$('.pop_box').find("input[name=serviceMoney+demo+[]]");
-            console.log(AllDataCount);
-            $('.pop_box').slideUp('400');
-        });
-
-        $('.tbody1').on("click",".alonTr .innerbtn",function(){
-            var data=$('.innerbtn').index(this);
-            demo=data;
-            console.log('当前为第'+demo+'个');
-            $(this).next('.pop_box').slideDown('400');
-        });
-
-        $('.tbody1').on("click",".alonTr .closepop",function(){
-            $('.pop_box').slideUp('400');
-        });
-
 // 新增表单
         var show_count = 10;  //至多跟进10次
         var count = 1;
         $(".AddTr").click(function () {
             var length = $(".tabInfo .tbody1>tr").length;
-            //alert(length);
             if (length < show_count)
             {
-                $(".model1 tbody .alonTr").clone().appendTo(".tabInfo .tbody1");
+                timestampS =(new Date()).valueOf();
+                $("#tempDiv").html();
+                var aa=$(".model1 tbody .alonTr").clone();
+                $("#tempDiv").html(aa);
+                var valueG= aa.find("input[class='firstCodeGet2']");
+                valueG.val(timestampS);
+                aa.appendTo(".tabInfo .tbody1");
+                $("#tempDiv").html();
             }
         });
-
-
-// 新增内件
-        var show_count2 = 20;
-        var count2 = 1;
-        $(".addtr2").click(function () {
-            var length = $(this).parent('.btn_a1').prev('.neijian').children('.tbody2 tr').length;
-            //alert(length);
-            if (length < show_count2)
-            {
-                $(".model2 tbody tr").clone().appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
-            }
-        });
-
-        // 动态的新增内件
-        var show_count3 = 20;
-        var count3 = 1;
-        $(".tbody1").on("click",".dtadd",function () {
-            //var SkyLength=document.getElementsByName("sky1[]").length;
-
-            var length = $(".neijian .tbody2 tr").length;
-            //alert(length);
-            if (length < show_count3)
-            {
-                $(".tempDiv").html("");
-                var divData=$('.model3 tbody tr').clone();
-                //console.log(divData);
-                $(".tempDiv").html(divData);
-                $(".tempDiv").css({'width':"100%"});
-                // $(".tempDiv").find("input").attr('name','值'+demo+'[]');
-
-                $(".tempDiv").find("select[name='serviceKinds[]']").attr('name','serviceKinds'+demo+'[]');
-                $(".tempDiv").find("input[name='serviceCounts[]']").attr('name','serviceCounts'+demo+'[]');
-                $(".tempDiv").find("input[name='serviceMoney[]']").attr('name','serviceMoney'+demo+'[]');
-
-                divData.appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
-                console.log('总计'+demo);
-            }
-        });
+        var timestamp =(new Date()).valueOf();
     });
-
-
-    function deltr(opp) {
+    function deltr(opp){
         var length = $(".tabInfo .tbody1>tr").length;
-        //alert(length);
         if (length <= 1) {
             alert("至少保留一行表单");
         } else {
             $(opp).parent().parent().remove();//移除当前行
-
         }
     }
-    // ----
-
-    function deltr2(opp) {
-        var length = $(this).parent('.btn_a1').prev('.neijian').children('.tbody2 tr').length;
-        //alert(length);
-        if (length <= 1) {
-            alert("至少保留一行");
-        } else {
-            $(opp).parent().parent().remove();//移除当前行
-        }
+    function firstTotal(temp){
+       /* var valueG= $(temp).parent("td").prev("td").find("input[type='text']").val();
+        var valueF= $(temp).parent("td").prev("td").prev("td").find("input[type='text']").val();
+        var total=parseInt(obj)+parseInt(valueG)+parseInt(valueF);
+        $(temp).parent("td").next("td").find("input[type='text']").val(total);*/
+        var total=$(temp).parent("td").parent("tr").children("td").find("input[type='text']");
+        var totalValue=0;
+        totalValue=parseInt(total.eq(2).val())*parseInt(total.eq(4).val())-parseInt(total.eq(3).val());
+        $(temp).parent("td").parent("tr").children("td").find("input[type='text']").eq(5).val(totalValue);
     }
-    // ----
-
-    function deltr3(opp) {
-        var length = $('.neijian .tbody2 tr').length;
-        //alert(length);
-        if (length <= 1) {
-            alert("至少保留一行");
-        } else {
-            $(opp).parent().parent().remove();//移除当前行
-
-        }
-    }
-    // ----
 </script>
 
 <style>
 table .normTbe{table-layout: fixed;width: 100%;}
-    input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
     input:focus,textarea:focus{border:1px solid #9ab6d6;}
     .whiteBg{background: #fff;}
     .normTbe{border:1px solid black; background-color:white;}
     .normTbe td,.normTbe th{border:1px solid black;padding: 15px;text-align: center;}
     .normTbe input{width: 80%;text-align: center;}
-    .addData{width: 1140px;padding: 0 20px; margin: 0 auto;clear: both;}
-    .pop_box {display: none;}
-    .model2{display: none;}
-    .model3{display: none;}
+    .addData{width: auto;padding: 0 20px; margin: 0 auto;clear: both;}
     .hideTr{background: #ddd;}
-    .pop_box{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 999;}
-    .pop_box .bg{background: #000;opacity: 0.7;filter:alpha(opacity=70);position: absolute;top:0;left: 0;right: 0;bottom: 0;}
-    .pop_box .contentP{position: relative;margin:0 auto;margin-top: 10%; background: #fff;width: 80%;}
-    .pop_box .PTit{height: 45px;background: #eee;}
-    .pop_box .PTit h3{line-height: 45px;float: left;padding-left: 15px;font-weight: normal;font-size: 16px;}
-    .pop_box .PTit a{display: block;width: 45px;line-height: 45px;text-align: center;background: #ddd;float: right;font-size: 20px;}
-    .pop_box .PTit a:hover{background: #50abfd;color: #fff;}
-    .pop_box .textmian{padding: 15px;}
-    .btn_a1{padding-top: 15px;}
-    .btn_a1 a{display: inline-block;*display: inline;*zoom: 1;width: 120px;line-height: 45px;background: #50abfd;color: #fff;}
-    .btn_a1 .addtr2,.btn_a1 .dtadd{background: #ff9900;}
     .tempDiv{width:0%;  height:0px;  border: 0px solid red}
 </style>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo  Yii::t('quiz','If you do not fill in the follow-up date and follow-up purpose, then this follow-up will not record deposited');?>
-<div class="addData">
-    <table cellspacing="0" cellpadding="0" border="0" class="normTbe model2">
-        <tbody>
-        <tr class="alonTr2"> <!--所有的跟进 第二条之后的服务都是demo1-->
-            <td>
-                <select name="demo1[]">
-                    <option value="">选择服务</option>
-                    <option value="清洁(马桶)">清洁(马桶)</option>
-                    <option value="清洁(尿斗)">清洁(尿斗)</option>
-                    <option value="清洁(水盆)">清洁(水盆)</option>
-                    <option value="清洁(清新机)">清洁(清新机)</option>
-                    <option value="清洁(皂液机)">清洁(皂液机)</option>
-                    <option value="清洁(租赁机器)">清洁(租赁机器)</option>
-                    <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                    <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
-                    <option value="灭虫(果蝇)">灭虫(果蝇)</option>
-                    <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
-                    <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
-                    <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
-                    <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
-                    <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
-                    <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
-                    <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
-                    <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
-                    <option value="飘盈香(小机)">飘盈香(小机)</option>
-                    <option value="飘盈香(中机)">飘盈香(中机)</option>
-                    <option value="飘盈香(大机)">飘盈香(大机)</option>
-                    <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
-                    <option value="甲醛(AC30)">甲醛(AC30)</option>
-                    <option value="甲醛(PR30)">甲醛(PR30)</option>
-                    <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
-                </select>
-            </td>
-            <td><input type="text" name="demo2[]"/></td>
-            <td><input type="text" name="demo3[]"/></td>
-            <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除</a></td>
-        </tr>
-        </tbody>
-    </table>
-    <table cellspacing="0" cellpadding="0" border="0" class="normTbe model3">
-        <tbody>
-        <tr class="alonTr2"> <!--所有的跟进 第二条之后的动态增加的服务-->
 
-            <td>
-                <select name="serviceKinds[]">
-                    <option value="">服务类别选择</option>
-                    <option value="清洁(马桶)">清洁(马桶)</option>
-                    <option value="清洁(尿斗)">清洁(尿斗)</option>
-                    <option value="清洁(水盆)">清洁(水盆)</option>
-                    <option value="清洁(清新机)">清洁(清新机)</option>
-                    <option value="清洁(皂液机)">清洁(皂液机)</option>
-                    <option value="清洁(租赁机器)">清洁(租赁机器)</option>
-                    <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                    <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
-                    <option value="灭虫(果蝇)">灭虫(果蝇)</option>
-                    <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
-                    <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
-                    <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
-                    <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
-                    <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
-                    <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
-                    <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
-                    <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
-                    <option value="飘盈香(小机)">飘盈香(小机)</option>
-                    <option value="飘盈香(中机)">飘盈香(中机)</option>
-                    <option value="飘盈香(大机)">飘盈香(大机)</option>
-                    <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
-                    <option value="甲醛(AC30)">甲醛(AC30)</option>
-                    <option value="甲醛(PR30)">甲醛(PR30)</option>
-                    <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
-                </select>
-            </td>
-            <td> <input type="text" name="serviceCounts[]"/></td>
-            <td><input type="text" name="serviceMoney[]"/></td>
-            <td><a class="text_a" href="javascript:;" onClick="deltr3(this)">删除</a></td>
-        </tr>
-        </tbody>
-    </table>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo  Yii::t('quiz','please follow the rules to fill the field!');?>
+<div class="addData">
     <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
         <tbody>
         <tr class="alonTr">  <!--第二层以及更多的跟进表单数据-->
-            <td><input type="date" value="10" name="sky1[]"/></td>
+            <td><input type="text" class="firstCodeGet2" value="" placeholder="订货编号" name="orderCode[]"/></td>
+            <td ><input type="text" value="" placeholder="货品名字" name="orderName[]" /></td>
+            <td><input type="text" value="0" placeholder="货品单价" onblur="firstTotal(this);" name="orderPrice[]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
+            <td><input type="text" value="0" placeholder="货品优惠" onblur="firstTotal(this);" name="orderFree[]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
+            <td ><input type="text" value="0" placeholder="货品数量" onblur="firstTotal(this);" name="orderCount[]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
+            <td><input type="text" class="totalCount" value="0" placeholder="货品总价" name="orderTotal[]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
             <td>
-                <select name="sky2[]">
-                    <option value="">本次跟进目的</option>
-                    <option value="首次">首次</option>
-                    <option value="报价">报价</option>
-                    <option value="客诉">客诉</option>
-                    <option value="收款">收款</option>
-                    <option value="追款">追款</option>
-                    <option value="签单">签单</option>
-                    <option value="续约">续约</option>
-                    <option value="回访">回访</option>
-                    <option value="其他">其他</option>
-                    <option value="更改项目">更改项目</option>
-                    <option value="拜访目的">拜访目的</option>
-                    <option value="陌拜">陌拜</option>
-                    <option value="日常跟进">日常跟进</option>
-                    <option value="客户资源">客户资源</option>
-                    <option value="电话上门">电话上门</option>
-                </select>
-            </td>
-            <td><input type="text" value="" placeholder="本次跟进备注" name="sky3[]"/></td>
-            <td><input type="text" value="" placeholder="本次跟进总金额" name="sky4[]"/></td>
-
-            <td>
-                <a href="javascript:;" class="innerbtn">添加服务22</a>
-                <div class="pop_box">
-                    <div class="bg"></div>
-                    <div class="contentP">
-                        <div class="PTit">
-                            <h3>内件商品信息</h3>
-                            <a href="javascript:;" class="closepop">x</a>
-                        </div>
-                        <div class="textmian">
-                            <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0";>
-                                <thead>
-                                <tr>
-                                    <th>服务产品</th>
-                                    <th>数量</th>
-                                    <th>价格</th>
-                                    <th>操作</th>
-                                    <!--                                     <th>单价</th>
-                                                                         <th>总价</th>
-                                                                         <th>HSCODE</th>
-                                                                         <th>产地</th>
-                                                                         <th>操作</th>-->
-                                </tr>
-                                </thead>
-                                <tbody class="tbody2">
-                                <tr>  <!--动态跟进 每次的第一项服务都是 day1-->
-                                    <td>
-                                        <select name="day1[]">
-                                            <option value="">服务类别</option>
-                                            <option value="清洁(马桶)">清洁(马桶)</option>
-                                            <option value="清洁(尿斗)">清洁(尿斗)</option>
-                                            <option value="清洁(水盆)">清洁(水盆)</option>
-                                            <option value="清洁(清新机)">清洁(清新机)</option>
-                                            <option value="清洁(皂液机)">清洁(皂液机)</option>
-                                            <option value="清洁(租赁机器)">清洁(租赁机器)</option>
-                                            <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                                            <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
-                                            <option value="灭虫(果蝇)">灭虫(果蝇)</option>
-                                            <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
-                                            <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
-                                            <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
-                                            <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
-                                            <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
-                                            <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
-                                            <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
-                                            <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
-                                            <option value="飘盈香(小机)">飘盈香(小机)</option>
-                                            <option value="飘盈香(中机)">飘盈香(中机)</option>
-                                            <option value="飘盈香(大机)">飘盈香(大机)</option>
-                                            <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
-                                            <option value="甲醛(AC30)">甲醛(AC30)</option>
-                                            <option value="甲醛(PR30)">甲醛(PR30)</option>
-                                            <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
-                                        </select>
-                                    </td>
-                                    <td><input type="text" name="day2[]"/></td>
-                                    <td><input type="text" name="day3[]"/></td>
-                                    <!--             <td><input type="text" name="day4[]"/></td>
-                                                 <td><input type="text" name="day5[]"/></td>
-                                                 <td><input type="text" name="day6[]"/></td>
-                                                 <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>-->
-                                    <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除</a></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <div class="btn_a1">
-                                <a class="dtadd" href="javascript:;">新增服务2-2</a> <a class="closepop" href="javascript:;">确定服务2-2</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <br /><a class="text_a" href="javascript:;" onClick="deltr(this)">删除22</a>
             </td>
         </tr>
         </tbody>
     </table>
-    <div class="itemInfo">
+    <div id="itemInfo">
         <table cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
             <thead>
             <tr>
-                <th>本次跟进日期</th>
-                <th>本次跟进目的</th>
-                <th>本次跟进备注</th>
-                <th>本次跟进总额</th>
+                <th>订货编号</th>
+                <th>货品名字</th>
+                <th>货品单价</th>
+                <th>货品优惠</th>
+                <th>货品数量</th>
+                <th>货品总价</th>
                 <th>操作</th>
             </tr>
             </thead>
-
             <tbody class="tbody1">
             <tr>  <!--第一层的表单拜访数据-->
-                <td><input type="date" value="10" name="first1[]"/></td>
-                <td><select name="first2[]">
-                        <option value="">本次跟进目的</option>
-                        <option value="首次">首次</option>
-                        <option value="报价">报价</option>
-                        <option value="客诉">客诉</option>
-                        <option value="收款">收款</option>
-                        <option value="追款">追款</option>
-                        <option value="签单">签单</option>
-                        <option value="续约">续约</option>
-                        <option value="回访">回访</option>
-                        <option value="其他">其他</option>
-                        <option value="更改项目">更改项目</option>
-                    </select></td>
-                <td ><input type="text" value="" placeholder="本次跟进备注" name="first3[]"/></td>
-                <td><input type="text" value="" placeholder="本次跟进总金额" name="first4[]"/></td>
+                <td><input type="text" id="firstCodeGet" value="" placeholder="订货编号" name="orderCode[]"/></td>
+                <td ><input type="text" value="" placeholder="货品名字" name="orderName[]"/></td>
+                <td><input type="text" value="0" placeholder="货品单价11" onblur="firstTotal(this);" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
+                <td><input type="text" value="0" placeholder="货品优惠" name="orderFree[]" onblur="firstTotal(this);" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
+                <td ><input type="text" value="0" placeholder="货品数量" name="orderCount[]" onblur="firstTotal(this);" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
+                <td><input class="totalCount" type="text" value="0" placeholder="货品总价" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" name="orderTotal[]"/></td>
                 <td>
-                    <a href="javascript:;" class="innerbtn">添加服务(1</a>
-                    <div class="pop_box">
-                        <div class="bg"></div>
-                        <div class="contentP">
-                            <div class="PTit">
-                                <h3><?php echo Yii::t('quiz','Follow up service information')."(".Yii::t('quiz','If you do not select the service and fill in the service amount, no data will be stored').")";?></h3>
-                                <a href="javascript:;" class="closepop">x</a>
-                            </div>
-                            <div class="textmian">
-                                <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0";>
-                                    <thead>
-                                    <tr>
-                                        <th>服务产品</th>
-                                        <th>数量</th>
-                                        <th>价格</th>
-                                        <th>操作</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody class="tbody2">
-                                    <tr>  <!--第一个表单拜访的新增内件数据的第一条数据-->
-                                        <td>
-                                            <select name="count1[]">
-                                                <option value="">服务类型选择</option>
-                                                <option value="清洁(马桶)">清洁(马桶)</option>
-                                                <option value="清洁(尿斗)">清洁(尿斗)</option>
-                                                <option value="清洁(水盆)">清洁(水盆)</option>
-                                                <option value="清洁(清新机)">清洁(清新机)</option>
-                                                <option value="清洁(皂液机)">清洁(皂液机)</option>
-                                                <option value="清洁(租赁机器)">清洁(租赁机器)</option>
-                                                <option value="灭虫(老鼠)">灭虫(老鼠)</option>
-                                                <option value="灭虫(蟑螂)">灭虫(蟑螂)</option>
-                                                <option value="灭虫(果蝇)">灭虫(果蝇)</option>
-                                                <option value="灭虫(租灭蝇灯)">灭虫(租灭蝇灯)</option>
-                                                <option value="灭虫(老鼠蟑螂)">灭虫(老鼠蟑螂)</option>
-                                                <option value="灭虫(老鼠果蝇)">灭虫(老鼠果蝇)</option>
-                                                <option value="灭虫(老鼠蟑螂果蝇)">灭虫(老鼠蟑螂果蝇)</option>
-                                                <option value="灭虫(老鼠蟑螂+租灯)">灭虫(老鼠蟑螂+租灯)</option>
-                                                <option value="灭虫(蟑螂果蝇+租灯)">灭虫(蟑螂果蝇+租灯)</option>
-                                                <option value="灭虫(老鼠蟑螂果蝇+租灯)">灭虫(老鼠蟑螂果蝇+租灯)</option>
-                                                <option value="飘盈香(迷你机)">飘盈香(迷你机)</option>
-                                                <option value="飘盈香(小机)">飘盈香(小机)</option>
-                                                <option value="飘盈香(中机)">飘盈香(中机)</option>
-                                                <option value="飘盈香(大机)">飘盈香(大机)</option>
-                                                <option value="甲醛(除甲醛)">甲醛(除甲醛)</option>
-                                                <option value="甲醛(AC30)">甲醛(AC30)</option>
-                                                <option value="甲醛(PR30)">甲醛(PR30)</option>
-                                                <option value="甲醛(迷你清洁炮)">甲醛(迷你清洁炮)</option>
-                                            </select>
-                                        </td>
-                                        <td><input type="text" name="count2[]"/></td>
-                                        <td><input type="text" name="count3[]"/></td>
-                                        <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除</a></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <div class="btn_a1">
-                                    <a class="addtr2" href="javascript:;">新增服务1-1</a> <a class="closepop" href="javascript:;">确定服务1-1</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br/>
                     <a class="text_a" href="javascript:;" onClick="deltr(this)">删除(1</a>  <!--第一行的表单删除-->
                 </td>
             </tr>
             </tbody>
-
         </table>
         <div class="copybtn">
             <a href="javascript:;" class="AddTr">新增</a>
             <a href="javascript:;" class="ture">确定</a>
         </div>
     </div>
-
-</div><!-- itemInfo -->
-
-
+</div>
 
 <?php $this->renderPartial('//site/removedialog'); ?>
 <?php
 $js = "
-$('#SalesForm_customer_create_date').on('change',function() {
+$('#SalesorderForm_order_info_date').on('change',function() {
 	showRenewDate();
 });
 function showRenewDate() {
@@ -644,7 +335,7 @@ Yii::app()->clientScript->registerScript('readonlyClass',$js,CClientScript::POS_
 
 if ($model->scenario!='view') {
     $js = Script::genDatePicker(array(
-        'SalesForm_customer_create_date',
+        'SalesorderForm_order_info_date',
     ));
     Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);
 }

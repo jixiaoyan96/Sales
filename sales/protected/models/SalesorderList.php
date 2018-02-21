@@ -36,7 +36,6 @@ class SalesorderList extends CListPageModel
 				from order_info
 				where 1=1 ";
         $clause = "";
-
         //searchField =>字段名   searchValue =>字段值  日期  名字 描述
         if (!empty($this->searchField) && !empty($this->searchValue)) {
             $svalue = str_replace("'", "\'", $this->searchValue);

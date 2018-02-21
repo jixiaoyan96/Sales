@@ -59,6 +59,7 @@ return array(
 'Submit sales Form'=>'提交测验结果',
 	'default all checked'=>'默认员工全选',
 	'test'=>'测试',
+	'Add Sales video Record'=>'新增销售五部曲记录',
 );
 
 ?>

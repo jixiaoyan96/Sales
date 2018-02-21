@@ -24,7 +24,6 @@ class QuizList extends CListPageModel
             'customer_kinds_name' => Yii::t('quiz', 'customer_kinds_name'),
         );
     }
-
     public function retrieveDataByPage($pageNum = 1)
     {
         $name=Yii::app()->user->name;
@@ -57,9 +56,7 @@ WHERE a.customer_create_sellers_id =$user_sellers_id ";
         $clause = "";
         //searchField =>字段名   searchValue =>字段值  日期  名字 描述
         if (!empty($this->searchField) && !empty($this->searchValue)) {
-
             $svalue = str_replace("'", "\'", $this->searchValue);
-
             switch ($this->searchField) {
                 case 'customer_name':
                     $clause .= General::getSqlConditionClause('customer_name', $svalue);
@@ -80,39 +77,35 @@ WHERE a.customer_create_sellers_id =$user_sellers_id ";
             $order .= " order by " . $this->orderField . " ";
             if ($this->orderType == 'D') $order .= "desc ";
         }
-
         $sql = $sql2 . $clause;
         $this->totalRow = Yii::app()->db2->createCommand($sql)->queryScalar();
-
         $sql = $sql1 . $clause . $order;
         $sql = $this->sqlWithPageCriteria($sql, $this->pageNum);
         $records = Yii::app()->db2->createCommand($sql)->queryAll();
-
         // $list = array();
         $this->attr = array();
         if (count($records) > 0) {
-           // $startrow = ($this->noOfItem != 0) ? ($this->pageNum - 1) * $this->noOfItem : 0;
-           // $itemcnt = 0;
+            // $startrow = ($this->noOfItem != 0) ? ($this->pageNum - 1) * $this->noOfItem : 0;
+            // $itemcnt = 0;
             foreach ($records as $k => $record) {
-              //  if ($k >= $startrow && ($itemcnt <= $this->noOfItem || $this->noOfItem == 0)) {
-                    $this->attr[] = array(
-                        'id' => $record['customer_id'],
-                        'customer_name' => $record['customer_name'],
-                        'customer_contact' => $record['customer_contact'],
-                        'customer_contact_phone' => $record['customer_contact_phone'],
-                        'customer_create_date' => $record['customer_create_date'],
-                        'visit_definition_name' => $record['visit_definition_name'],
-                        'customer_kinds_name' => $record['customer_kinds_name'],
-                    );
-                  //  $itemcnt++;
+                //  if ($k >= $startrow && ($itemcnt <= $this->noOfItem || $this->noOfItem == 0)) {
+                $this->attr[] = array(
+                    'id' => $record['customer_id'],
+                    'customer_name' => $record['customer_name'],
+                    'customer_contact' => $record['customer_contact'],
+                    'customer_contact_phone' => $record['customer_contact_phone'],
+                    'customer_create_date' => $record['customer_create_date'],
+                    'visit_definition_name' => $record['visit_definition_name'],
+                    'customer_kinds_name' => $record['customer_kinds_name'],
+                );
+                //  $itemcnt++;
 //				}
-             //   }
+                //   }
             }
             $session = Yii::app()->session;
             $session['criteria_c01'] = $this->getCriteria();
             return true;
         }
-
     }
 }
 ?>

@@ -152,4 +152,14 @@ return array(
     'order_info_money_total'=>'订货总额',
     'order_info_seller_name'=>'销售员姓名',
     'salesorder List'=>'销售订单列表',
+    'order_info_rural_location'=>'订单地址',
+    'please follow the rules to fill the field!'=>'请遵守规则填写字段',
+    //五部曲
+    'Sales info List'=>'五部曲销售列表',
+    'sales video List'=>'音视频列表',
+    'video_info_date'=>'音视频日期',
+    'seller_notes'=>'销售备注',
+    'video form'=>'音视频信息',
+    'video_info_url'=>'音视频地址',
+    'video view info'=>'查看音视频信息',
     );

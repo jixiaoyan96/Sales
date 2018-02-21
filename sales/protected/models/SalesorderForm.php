@@ -8,20 +8,13 @@
  header("Content-type: text/html; charset=utf-8");
 class SalesorderForm extends CFormModel{
 public $id;  //拜访主键
-Public $customer_name;  //拜访客户名
-Public $customer_second_name; //拜访客户分店名
-Public $customer_help_count_date; //辅助统计日期
-public $customer_contact;  //联系人
-public $customer_contact_phone;  //联系方式
-Public $customer_create_date;  //生成拜访客户的日期
-Public $visit_kinds;   //拜访目的
-Public $customer_kinds;  //客户类型
-Public $customer_create_sellers_id; //拜访的销售员信息外键
-Public $customer_district;  //地区
-Public $customer_street;   //街道
-Public $customer_notes;    //拜访主要备注
+Public $customer_name;  //订单客户名
+Public $order_info_date;  //生成订单订货日期
+Public $order_info_rural;  //区域
+Public $order_info_rural_location; //地址
 Public $city;
-//Public $scenario;
+Public $order_info_money_total;    //订货总额
+Public $order_info_seller_name; //销售员姓名
 /**
  * Declares customized attribute labels.
  * If not declared here, an attribute would have a label that is
@@ -30,19 +23,12 @@ Public $city;
 public function attributeLabels()
 {
     return array(
+        'order_info_seller_name'=>Yii::t('quiz','order_info_seller_name'),
+        'order_info_money_total'=>Yii::t('quiz','order_info_money_total'),
         'customer_name'=>Yii::t('quiz','customer_name'),
-        'customer_contact'=>Yii::t('quiz','customer_contact'),
-        'customer_contact_phone'=>Yii::t('quiz','customer_contact_phone'),
-        'customer_create_date'=>Yii::t('quiz','customer_create_date'),
-        'visit_kinds'=>Yii::t('quiz','visit_kinds'),
-        'customer_kinds'=>Yii::t('quiz','customer_kinds'),
-        'customer_create_sellers_id'=>Yii::t('quiz','customer_create_sellers_id'),
-        'customer_district'=>Yii::t('quiz','customer_district'),
-        'customer_street'=>Yii::t('quiz','customer_street'),
-        'customer_notes'=>Yii::t('quiz','customer_notes'),
-        'city'=>Yii::t('quiz','city'),
-        'customer_second_name'=>Yii::t('quiz','customer_second_name'),
-        'customer_help_count_date'=>Yii::t('quiz','customer_help_count_date'),
+        'order_info_rural'=>Yii::t('quiz','order_info_rural'),
+        'order_info_date'=>Yii::t('quiz','order_info_date'),
+        'order_info_rural_location'=>Yii::t('quiz','order_info_rural_location'),
     );
 }
 /**
@@ -51,8 +37,8 @@ public function attributeLabels()
 public function rules()
 {
     return array(
-        array('customer_contact,customer_name,customer_contact_phone,customer_notes','required'),
-        array('id,customer_help_count_date,customer_second_name,customer_district,customer_create_date,customer_street,customer_kinds,visit_kinds,customer_create_sellers_id','safe'),
+        array('order_info_rural_location,customer_name','required'),
+        array('id,order_info_date,order_info_rural','safe'),
     );
 }
 
