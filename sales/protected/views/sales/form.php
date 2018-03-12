@@ -529,6 +529,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             cc.each(  //循环input数组
                 function (){
                     var input =$(this);  //循环每一个input元素
+                    if(input.val()==''){
+                        input.val(0);
+                    }
                     console.log(input.val());
                     total=total+parseInt(input.val());  //查看循环中的每一个input的id
                 }
@@ -557,6 +560,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             cc.each(  //循环input数组
                 function (){
                     var input =$(this);  //循环每一个input元素
+                    if(input.val()==''){
+                        input.val(0);
+                    }
                     console.log(input.val()+"数据");
                     total=parseInt(total)+parseInt(input.val());  //查看循环中的每一个input的id
                 }
@@ -564,7 +570,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             console.log(total);
             var inputName="moneyShow"+demo;
             document.getElementById("moneyShow"+demo).value=total;
-
             console.log("当前需要修改的inputId为:"+inputName+"总价值为:"+total);
             $('.pop_box').slideUp('400');
         });

@@ -27,17 +27,17 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
                     'submit'=>Yii::app()->createUrl('Salesvideo/index')));
                 ?>
-             <!--   <?php /*if ($model->scenario!='view'): */?>
-                    <?php /*echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
-                        'submit'=>Yii::app()->createUrl('Salesvideo/save')));
-                    */?>
-                <?php /*endif */?>
-                <?php /*if ($model->scenario=='edit'): */?>
-                    <?php /*echo TbHtml::button('<span class="fa fa-remove"></span> '.Yii::t('misc','Delete'), array(
+              <?php if ($model->scenario!='view'): ?>
+                    <?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
+                        'submit'=>Yii::app()->createUrl('Salesvideo/SaveNew')));
+                    ?>
+                <?php endif ?>
+                <?php if ($model->scenario=='edit'): ?>
+                    <?php echo TbHtml::button('<span class="fa fa-remove"></span> '.Yii::t('misc','Delete'), array(
                             'name'=>'btnDelete','id'=>'btnDelete','data-toggle'=>'modal','data-target'=>'#removedialog',)
                     );
-                    */?>
-                --><?php /*endif */?>
+                    ?>
+                <?php endif ?>
             </div>
         </div>
     </div>
@@ -47,30 +47,71 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             <?php echo $form->hiddenField($model, 'scenario'); ?>
             <?php echo $form->hiddenField($model, 'id'); ?>
 
-           <div class="form-group">
-                 <?php echo $form->labelEx($model,'video_info_date',array('class'=>"col-sm-2 control-label")); ?>
-                <div class="col-sm-3">
-                    <div class="input-group date">
-                        <div class="input-group-addon">
-                            <i class="fa fa-calendar"></i>
-                        </div>
-                        <?php echo $form->textField($model, 'video_info_date',
-                            array('class'=>'form-control pull-right','readonly'=>($model->scenario=='view'),'id'=>'video_info_date',));
-                        ?>
-                    </div>
-                </div>
-            </div>
             <div class="form-group">
                 <?php echo $form->labelEx($model,'seller_notes',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-8">
-                    <?php echo $form->textArea($model,'seller_notes',
-                        array('size'=>'20', 'maxlength'=>'50','cols'=>'30','rows'=>'6','id'=>'seller_notes',)
+                    <?php echo $form->textField($model, 'seller_notes',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
             </div>
+
+            <div class="form-group">
+               <?php echo $form->labelEx($model,'video_info_date',array('class'=>"col-sm-2 control-label"));?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_date',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+                <?php echo $form->labelEx($model,'video_info_user_position',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_user_position',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'video_info_user_name',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_user_name',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+                <?php echo $form->labelEx($model,'video_info_statue',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->dropDownList($model,'video_info_statue',Quiz::sellersVideoStatue(),
+                        array('disabled'=>!Yii::app()->user->validRWFunction('HK01'),)
+                    ); ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'video_info_manager_grades',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_manager_grades',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>true)
+                    ); ?>
+                </div>
+                <?php echo $form->labelEx($model,'video_info_directer_grades',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_directer_grades',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>true)
+                    ); ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'video_primary',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_primary',
+                        array('size'=>50,'maxlength'=>100,'id'=>'insert_id','readonly'=>true)
+                    ); ?>
+                </div>
+                <?php echo $form->labelEx($model,'video not exist....',array('class'=>"col-sm-5 control-label","id"=>"insert_info_show")); ?>
+            </div>
             <div class="form-froup">
                 <div class="demo clearfix" style="width:600px;margin:120px auto">
-                    <a onclick="showVideoUploadBox($('#btn_video'))" id="btn_video" class="item"><i class="icon_emot_photo_video icon_video"></i><span>视频</span></a>
+                    <a onclick="showVideoUploadBox($('#btn_video'))" id="btn_video" class="item"><i class="icon_emot_photo_video icon_video"></i><span>点击上传</span></a>
                 </div>
             </div>
         </div>
@@ -126,13 +167,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     .disabled:hover{background: #ffc09f none repeat scroll 0 0;opacity:1;filter:alpha(opacity=100);cursor:default}
 </style>
 
-
-<!--<div class="demo clearfix" style="width:600px;margin:120px auto">
-    <a onclick="showVideoUploadBox($('#btn_video'))" id="btn_video" class="item"><i class="icon_emot_photo_video icon_video"></i><span>视频</span></a>
-</div>-->
-<!---------视频上传--------->
 <div class="video_box_outside" id="video_box_outside" tabindex="2001">
     <div class="video_box">
+
         <a class="photo_upload_close"href="javascript:void(0);"onclick="fadeout_div('#video_box_outside')"></a>
         <div id="video_upload_area">
             <div  class="video_notice">支持上传10M以内的视频</div>
@@ -185,6 +222,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl;?>/js/js/plugins/plupload/plupload.full.min.js"></script>
 <input id="baseUrl" type="hidden" value="<?php echo Yii::app()->baseUrl;?>"/>
 <input id="ajaxUrl" type="hidden" value="<?php echo Yii::app()->createUrl('salesvideo/VideoAjax');?>"/>
+<input id="successSubmit" type="hidden" value="<?php echo Yii::app()->createUrl('Salesvideo/Click');?>">
 <script type="text/javascript">
     var url=$("#baseUrl").val();
     var ajaxUrl=$("#ajaxUrl").val();
@@ -222,15 +260,20 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 $("#percent").css({"width": percent + "%"});
                 $("#percentnum").text(percent + "%");
                 $("#video_success").hide();
-
             },
             FileUploaded: function(up, file, info) { //文件上传成功的时候触发
-
                 $("#video_loading").hide();
                 $("#video_success").show();
                 var data = eval("(" + info.response + ")");//解析返回的json数据
+                $("#insert_id").val(data.id);  //将上传的主键值存入需要的键
+                $("#insert_info_show").html("视频已上传,路径:"+data.url);
                 console.log(info.response);
                 $("#video_iput").html("<input type='hidden' id='video_file' value='" + data.pic + "'/><input type='hidden' id='video_name' value='" + data.name + "'/>");
+                alert("视频上传成功");
+
+                /*window.setTimeout(function(){
+                    windowHref();
+                }, 2000);*/
             },
             Error: function(up, err) { //上传出错的时候触发
                 alert(err.message);
@@ -238,7 +281,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         }
     });
     uploader_video.init();
-
+    function windowHref(){
+        var aa=$("#successSubmit").val();
+        window.location.href=aa;
+    }
     function showVideoUploadBox(obj) { //显示上传弹出层
         var left = obj.offset().left;
         var top = obj.offset().top + 26;

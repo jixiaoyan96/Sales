@@ -29,15 +29,15 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <?php
                 if ($model->scenario!='new' && $model->scenario!='view') {
                     echo TbHtml::button('<span class="fa fa-file-o"></span> '.Yii::t('misc','Add Another'), array(
-                        'submit'=>Yii::app()->createUrl('sales/new')));
+                        'submit'=>Yii::app()->createUrl('salesorder/new')));
                 }
                 ?>
                 <?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
-                    'submit'=>Yii::app()->createUrl('sales/index')));
+                    'submit'=>Yii::app()->createUrl('salesorder/index')));
                 ?>
                 <?php if ($model->scenario!='view'): ?>
                     <?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
-                        'submit'=>Yii::app()->createUrl('sales/save')));
+                        'submit'=>Yii::app()->createUrl('salesorder/save')));
                     ?>
                 <?php endif ?>
                 <?php if ($model->scenario=='edit'): ?>
@@ -57,9 +57,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             <?php echo $form->hiddenField($model, 'id'); ?>
 
             <div class="form-group">
-                <?php echo $form->labelEx($model,'customer_name',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'order_customer_name',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model, 'customer_name',
+                    <?php echo $form->textField($model, 'order_customer_name',
                         array('size'=>10,'maxlength'=>10,'id'=>'quiz_name','readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
@@ -79,30 +79,30 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             </div>
 
             <div class="form-group">
-                <?php echo $form->labelEx($model,'order_info_seller_name',array('class'=>"col-sm-2 control-label")); ?>
+             <?php echo $form->labelEx($model,'order_customer_phone',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model,'order_info_seller_name',
-                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    <?php echo $form->textField($model,'order_customer_phone',
+                        array('size'=>50,'maxlength'=>100,'placeholder'=>'联系方式','readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
-                <?php echo $form->labelEx($model,'order_info_money_total',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'order_customer_total_money',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model,'order_info_money_total',
+                    <?php echo $form->textField($model,'order_customer_total_money',
                         array('size'=>50,'maxlength'=>100,'id'=>'order_count_all','readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
             </div>
 
             <div class="form-group">
-                <?php echo $form->labelEx($model,'order_info_rural',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'order_customer_rural',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model,'order_info_rural',
+                    <?php echo $form->textField($model,'order_customer_rural',
                         array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
-                <?php echo $form->labelEx($model,'order_info_rural_location',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'order_customer_street',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->textField($model,'order_info_rural_location',
+                    <?php echo $form->textField($model,'order_customer_street',
                         array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
@@ -276,10 +276,10 @@ table .normTbe{table-layout: fixed;width: 100%;}
             <tr>  <!--第一层的表单拜访数据-->
                 <td><input type="text" id="firstCodeGet" value="" placeholder="订货编号" name="orderCode[]"/></td>
                 <td ><input type="text" value="" placeholder="货品名字" name="orderName[]"/></td>
-                <td><input type="text" value="0" placeholder="货品单价11" onblur="firstTotal(this);" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
+                <td><input type="text" value="0" placeholder="货品单价11" name="orderPrice[]" onblur="firstTotal(this);" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
                 <td><input type="text" value="0" placeholder="货品优惠" name="orderFree[]" onblur="firstTotal(this);" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
                 <td ><input type="text" value="0" placeholder="货品数量" name="orderCount[]" onblur="firstTotal(this);" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
-                <td><input class="totalCount" type="text" value="0" placeholder="货品总价" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" name="orderTotal[]"/></td>
+                <td><input class="totalCount" type="text" value="0" placeholder="货品总价" name="orderTotal[]" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"/></td>
                 <td>
                     <a class="text_a" href="javascript:;" onClick="deltr(this)">删除(1</a>  <!--第一行的表单删除-->
                 </td>

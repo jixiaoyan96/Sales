@@ -29,12 +29,13 @@ class SalesorderList extends CListPageModel
     }
     public function retrieveDataByPage($pageNum = 1)
     {
+        $city = Yii::app()->user->city_allow();
         $sql1 = "select *
 				from order_info
-				where 1=1 ";
+				where 1=1 AND city in($city)";
         $sql2 = "select count(order_info_id)
 				from order_info
-				where 1=1 ";
+				where 1=1 AND city in($city)";
         $clause = "";
         //searchField =>字段名   searchValue =>字段值  日期  名字 描述
         if (!empty($this->searchField) && !empty($this->searchValue)) {

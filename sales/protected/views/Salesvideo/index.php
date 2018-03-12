@@ -33,9 +33,33 @@ $this->pageTitle=Yii::app()->name . ' - Nature';
                     ));
                 ?>
             </div>
+            <div class="btn-group" role="group">
+                <?php
+                if (Yii::app()->user->validRWFunction('HK07'))
+                    echo TbHtml::button('<span class="fa fa-file-o"></span> '.Yii::t('misc','lookThrough sellers video'), array(
+                        'submit'=>Yii::app()->createUrl('Salesvideo/sellersIndex'),
+                    ));
+                ?>
+            </div>
+            <div class="btn-group" role="group">
+                <?php
+                if (Yii::app()->user->validRWFunction('HK01'))
+                    echo TbHtml::button('<span class="fa fa-file-o">当前员工的入职时间:</span> '.Quiz::StartWorkDate(), array(
+                        'submit'=>'#')
+                    );
+                ?>
+            </div>
         </div>
     </div>
-    <?php $this->widget('ext.layout.ListPageWidget', array(
+    <?php $this->widget('ext.layout.QuizStartWidget', array(
+        'title'=>Yii::t('quiz','sales video List'),
+        'model'=>$model,
+        'viewhdr'=>'//Salesvideo/_listhdr',
+        'viewdtl'=>'//Salesvideo/_listdtl',
+    ));
+
+    ?>
+   <!-- --><?php /*$this->widget('ext.layout.ListPageWidget', array(
         'title'=>Yii::t('quiz','sales video List'),
         'model'=>$model,
         'viewhdr'=>'//Salesvideo/_listhdr',
@@ -47,7 +71,7 @@ $this->pageTitle=Yii::app()->name . ' - Nature';
             'seller_notes',
         ),
     ));
-    ?>
+    */?>
 </section>
 <?php
 echo $form->hiddenField($model,'pageNum');
@@ -61,3 +85,47 @@ echo $form->hiddenField($model,'orderType');
 $js = Script::genTableRowClick();
 Yii::app()->clientScript->registerScript('rowClick',$js,CClientScript::POS_READY);
 ?>
+
+<?php
+$js = "
+$('#startDate,#endDate').on('change',function() {
+	showRenewDate();
+});
+function showRenewDate() {
+	var sdate = $('#StaffForm_ctrt_start_dt').val();
+	var period = $('#StaffForm_ctrt_period').val();
+	if (IsDate(sdate) && IsNumeric(period)) {
+		var d = new Date(sdate);
+		d.setMonth(d.getMonth() + Number(period));
+		$('#StaffForm_ctrt_renew_dt').val(formatDate(d));
+	}
+	if (period=='') $('#StaffForm_ctrt_renew_dt').val('');
+}
+
+function formatDate(val) {
+	var day = '00'+val.getDate();
+	var month = '00'+(val.getMonth()+1);
+	var year = val.getFullYear();
+	return year + '/' + month.slice(-2) + '/' +day.slice(-2);
+}
+
+function IsDate(val) {
+	var d = new Date(val);
+	return (!isNaN(d.valueOf()));
+}
+
+function IsNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+";
+
+if ($model->scenario!='view') {
+    $js = Script::genDatePicker(array(
+        'startDate',
+        'endDate',
+    ));
+    Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);
+}
+
+?>
+

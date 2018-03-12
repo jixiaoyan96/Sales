@@ -45,5 +45,6 @@ return array(
 	'all checked failed'=>'默认全选失败',
 	'Information Show'=>'提示',
 	'Please check your data while submitting?'=>'请检查您的数据是否已经完整',
+	'video save done'=>'视频保存成功',
 );
 ?>

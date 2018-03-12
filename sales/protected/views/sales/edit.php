@@ -29,8 +29,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <?php
                 if ($model->scenario!='new' && $model->scenario!='view') {
                     echo TbHtml::button('<span class="fa fa-file-o"></span> '.Yii::t('misc','Add Another'), array(
-                        'submit'=>Yii::app()->createUrl('sales/new')));
-                }
+                        'submit'=>Yii::app()->createUrl('sales/new')));}
                 ?>
                 <?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
                     'submit'=>Yii::app()->createUrl('sales/index')));
@@ -42,8 +41,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <?php endif ?>
                 <?php if ($model->scenario=='edit'): ?>
                     <?php echo TbHtml::button('<span class="fa fa-remove"></span> '.Yii::t('misc','Delete'), array(
-                            'name'=>'btnDelete','id'=>'btnDelete','data-toggle'=>'modal','data-target'=>'#removedialog',)
-                    );
+                            'name'=>'btnDelete','id'=>'btnDelete','data-toggle'=>'modal','data-target'=>'#removedialog',));
                     ?>
                 <?php endif ?>
             </div>
@@ -166,8 +164,8 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <div></div>
             <div class="form-group">
                 <div class="col-sm-2">客户跟进明细</div>
-                <div class="col-sm-8">
-                    <table class="table table-condensed">
+                <div class="col-sm-10 table-responsive">
+                    <table class="table table-condensed ">
                      <!--   --><?php
 /*                   $new=Quiz::serviceTrans($model->id);
                         echo "<tr><td>跟进备注</td><td>总额</td><td>跟进目的</td><td>操作</td></tr>";
@@ -188,18 +186,34 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                         }
                         */
                         $dataShow=Quiz::editDataShow($model->id); //跟进的主要信息
-                        echo "<tr><td>跟进日期</td><td>跟进目的</td><td>跟进总金额</td><td>服务以及金额</td><td>备注</td><td>操作</td></tr>";
-                        if(count($dataShow)){
+                        echo "<tr><td>跟进日期</td><td>跟进目的</td><td>跟进总金额</td><td>服务以及金额</td><td>备注</td><td colspan='3'>操作</td></tr>";
+                        if(count($dataShow)>0){
                             for($i = 0; $i < count($dataShow); $i++){
-                                $id=$dataShow[$i]['visit_info_id'];
+                                $service_id=$dataShow[$i]['service_primary_key'];
+                                $id=$dataShow[$i]['visit_info_id'];//拜访主键
                                 $date=$dataShow[$i]['visit_date'];
                                 $definition=$dataShow[$i]['visit_definition'];
                                 $contentService=$dataShow[$i]['visit_service_money'];
                                 $serviceMoney=$dataShow[$i]['serviceMoney'];
                                 $notes=$dataShow[$i]['visit_notes'];
-                                echo "<tr><td>$date</td><td>$definition</td><td>$contentService</td><td>$serviceMoney</td><td>$notes</td><td><a onclick='showDetailService($id);'>查看明细</a></td></tr>";
-                            }
-                        }
+                                $url=Yii::app()->createUrl('Sales/DeleteDetail',array('index'=>$service_id,'pid'=>$id));
+                                echo "<tr><td>$date</td>
+                        <td> <select id='selectVisitEdit'>
+                            <option value='$definition' selected='selected'>$definition</option>
+                            <option value='首次'>首次</option>
+                            <option value='报价'>报价</option>
+                            <option value='客诉'>客诉</option>
+                            <option value='收款'>收款</option>
+                            <option value='追款'>追款</option>
+                            <option value='签单'>签单</option>
+                            <option value='续约'>续约</option>
+                            <option value='回访'>回访</option>
+                            <option value='其他'>其他</option>
+                            <option value='更改项目'>更改项目</option>
+                        </select></td><td>$contentService</td><td>$serviceMoney</td><td><input type='text' value='$notes'></td><td><a onclick='showDetailService($id);' 
+						class='btn btn-default'>查看明细</a></td><td><a href='$url' class='btn btn-default'>删除</td><td><a onclick='editVisitInfo(this,$id);'
+						class='btn btn-default'>保存</a></td></tr>";
+                            }}
                         ?>
                     </table>
                 </div>
@@ -211,9 +225,38 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 <input type="hidden" id="urlGetSelect" name="urlGetSelect" value="<?php echo $this->selectData;?>"/>
 <?php $this->editUrl=Yii::app()->createUrl('Sales/ServiceDetailEdit');?>
 <input type="hidden" id="editUrl" name="urlGetSelect" value="<?php echo $this->editUrl;?>"/>
+<input type="hidden" id="" name="" value="<?php echo $model->id;?>"/>
+<input type="hidden" id="ajaxUrlSubmit" name="ajaxUrlGet" value="<?php echo Yii::app()->createUrl('Sales/AjaxSubmit',array('index'=>$model->id));?>"/>
+<input type="hidden" id="visitEditSubmit" value="<?php echo Yii::app()->createUrl('Sales/VisitDetailEdit');?>">
+<input type="hidden" id="delServiceInfoUrl" value="<?php echo Yii::app()->createUrl('Sales/delServiceInfo');?>">
+<input type="hidden" id="serviceDetailEdit" value="<?php echo Yii::app()->createUrl('Sales/DetailEdit');?>">
 <script type="text/javascript">
-
+    //修改关于跟进备注的信息
+   // temp 为this value为主键
+   var detailInfoZj=new Array(0);
+    function editVisitInfo(temp,value){
+   var tempEle= $(temp).parents("td").parents("tr").find("td").eq(4).find("input[type='text']").val(); //备注修改后的值
+   var tempSelec= $(temp).parents("td").parents("tr").find("td").eq(1).find("option:selected").text(); //select后的值
+        console.log(tempSelec);
+        var urlGetSelect=$("#visitEditSubmit").val(); //select 数据修改
+        $.ajax({
+            type: "post",
+            url: urlGetSelect,
+            data: {"id":value,"notes":tempEle,"definition":tempSelec},
+            dataType: "json",
+            async:true,
+            success: function(data){
+                window.setTimeout(function(){
+                    windowHref();
+                }, 2000);
+            },
+            error:function(data){
+                alert("数据出错");
+            }
+        });
+    }
     function showDetailService(temp){
+        detailInfoZj=Array(0);
         var urlGetSelect=$("#urlGetSelect").val();
         //console.log(urlGetSelect);
         $.ajax({
@@ -223,17 +266,24 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             dataType: "json",
             async:true,
             success: function(data){
-                //console.log(temp);
-                //console.log(data);
-                //console.log(data[0]['new_service_money']);
-                var html="<tr><td>服务大类</td><td>服务明细</td><td>服务金额</td><td>操作</td></tr>";
-                for(var i=0;i<data.length;i++){
+                var html="<tr><td>服务大类</td><td>服务明细</td><td>服务金额</td><td colspan='2'>操作</td></tr>";
+                for(var i=0;i<data.length;i++){ //i为服务记录的计数
                     var inputCount=data[i]['new_service_money'];
                     var inputServiceId=data[i]['new_service_info_id'];
-                    html+="<tr>"+"<td>"+data[i]['new_services_kind']+"</td>"+"<td>"+data[i]['new_services_kinds']+"</td>"+
-                        "<td>"+"<input type='number' value="+inputCount+" >"+"</td>"+"<td class='everyTdInput' onclick='submitValue(this,"+inputCount+","+inputServiceId+");'>保存修改</td>"+"</tr>";
-                }
-                $("#demoEdit").html("<table class='table table-striped'>"+html+"</table>");
+                    var servicePrimaryId=data[i]['new_services_kind_id'];
+                    var info_service_detail=data[i]['service_kinds_info']; //单个服务明细
+                    detailInfoZj.push(info_service_detail);
+                    console.log(info_service_detail);
+                    //services_kind_id 为跟进的 服务种类0-6
+                    html+="<tr>"+
+                        "<td>"+data[i]['new_services_kind']+"</td>"+
+                        "<td>"+
+                        data[i]['new_services_kinds']+"<a class='btn btn-default' onclick='editDetail(this,"+inputServiceId+","+servicePrimaryId+","+i+");'>修改明细</a>"+
+                        "</td>"+
+                        "<td class='showData'>"+"<input type='number' value="+inputCount+" >"+"</td>"+
+                        "<td class='everyTdInput' onclick='submitValue(this,"+inputCount+","+inputServiceId+");'><a class='btn btn-default'>保存金额</a></td>" +
+                        "<td onclick='delInfo("+inputServiceId+");'><a class='btn btn-default'>删除</td>"+"</tr>";}
+                $("#demoEdit").html("<table class='table'>"+html+"</table>");
                 $('.detail_box').css({"display":'block'});
             },
             error:function(data){
@@ -242,23 +292,157 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             }
         });
     }
-    function submitValue(obj,temp,inputServiceId){
-        var urlGet=$("#editUrl").val();
-        var inputValue=$(obj).prev("td").find("input[type='text']").val();  //获取同等td下的上一个td的input表单值
-        console.log("填入的金额:"+inputValue);
+    function delInfo(pid){
+        var urlGet=$("#delServiceInfoUrl").val();
         $.ajax({
             type: "post",
             url: urlGet,
-            data: {"ValueCount":inputValue,"id":inputServiceId},
-            dataType: "text",
-            async:true,
+            data: {"id":pid},
+            dataType: "json",
+            async:false,
             success: function(data){
-                console.log('修改进入'+data);
+                console.log(data);
+                window.setTimeout(function(){
+                    windowHref();
+                }, 2000);
             },
             error:function(data){
                 console.log('修改错误');
             }
         });
+    }
+    //重选服务类型  下拉触发
+    function editServiceKinds(aa,temp,bb){
+        var aaa=$(aa).parents("td").next("td");
+        console.log(bb);
+        changel(aaa,bb,-1,temp);
+    }
+    //修改服务种类和金额  修改明细触发
+    function editDetail(obj,temp,id,i){
+        var string;
+        if(id==0){
+            string='清洁';
+        }else if(id==1){
+            string='租赁机器';
+        }else if(id==2){
+            string='灭虫';
+        }else if(id==3){
+            string='飘盈香';
+        }else if(id==4){
+            string='甲醛';
+        }else if(id==5){
+            string='纸品';
+        }else{
+            string='nothing';
+        }
+            var aa=$(obj).parents("td");
+            var bb=$(obj).parents("td").prev("td").html("<select onchange='editServiceKinds(this,"+temp+",value);' name='selectValue'><option value="+id+" selected='selected'>"+string+"</option><option value='7'>选择服务大类</option><option value='0'>清洁</option><option value='1'>租赁机器</option><option value='2'>灭虫</option><option value='3'>飘盈香</option><option value='4'>甲醛</option><option value='5'>纸品</option><option value='6'>一次性售卖</option></select>");
+            changel(aa,id,i,temp);
+    }
+    function saveServiceEdit(obj,temp,serviceId){  //保存服务详情的按钮
+        console.log(serviceId);
+       var checkboxArray= $(obj).parents("td").find("input[type='checkbox']:checked");
+        var result='';
+        if(checkboxArray.length>0) {
+            for (var i = 0; i < checkboxArray.length; i++) {
+                var strTemp = '';
+                var checkboxStr = '';
+                var checkboxStr = checkboxArray.eq(i).attr("name");
+                strTemp = checkboxArray.eq(i).attr("name") + "input";
+                var inputArray = $(obj).parents("td").find("input[name=" + strTemp + "]").val();
+                if (inputArray != '') {
+                    result += checkboxStr + '*' + inputArray + '-';
+                }
+            }
+        }else{
+            var checkboxArray= $(obj).parents("td").find("input[type='checkbox']").eq(0).attr("name");
+            result=checkboxArray+'*'+'默认值'+'-';
+        }
+        var urlGet=$("#serviceDetailEdit").val();
+        $.ajax({
+            type: "post",
+            url: urlGet,
+            data: {"result":result,"id":temp,"serviceId":serviceId},
+            dataType: "json",
+            async:false,
+            success: function(data){
+              alert("成功进入修改详情"+temp);
+            },
+            error:function(data){
+                console.log('修改错误');
+            }
+        });
+        var inputArray=$(obj).parents("td").find("input[type='text']");
+        var selectValue=$(obj).parents("td").prev("td").find("select").val();
+        //console.log(checkboxArray);
+    }
+    function changel(aa,id,i,temp){
+        //id为保存的类型 i为判断的类型
+ if(id==0){
+        aa.html(qingjie+"&nbsp;<a class='btn btn-default' onclick='saveServiceEdit(this,"+temp+","+id+");'>保存</a>");
+    }
+    else if(id==1){
+            aa.html(zulin+"&nbsp;<a class='btn btn-default' onclick='saveServiceEdit(this,"+temp+","+id+");'>保存</a>");
+        }
+    else if(id==2){
+        aa.html(miechong+"&nbsp;<a class='btn btn-default' onclick='saveServiceEdit(this,"+temp+","+id+");'>保存</a>");
+    }
+    else if(id==3){
+        aa.html(piaoyingxiang+"&nbsp;<a class='btn btn-default' onclick='saveServiceEdit(this,"+temp+","+id+");'>保存</a>");
+    }
+    else if(id==4){
+        aa.html(jiaquan+"&nbsp;<a class='btn btn-default' onclick='saveServiceEdit(this,"+temp+","+id+");'>保存</a>");
+    }
+    else if(id==5){
+        aa.html(zhipin+"&nbsp;<a class='btn btn-default' onclick='saveServiceEdit(this,"+temp+","+id+");'>保存</a>");
+    }else{
+        aa.html("无相关传值");
+    }
+        if(i<0){
+
+        }else {
+            var tempValue = detailInfoZj[i];
+            for (var k = 0; k < tempValue.length; k++) {
+                var str = '';
+                str = tempValue[k]; //暂存字符串
+                var strs = str.split('*');
+                var StrValue = strs[0];
+                var inputStr = StrValue + "input";
+                var inputNum = strs[1];
+                console.log(StrValue);
+                aa.find("[name=" + StrValue + "]:checkbox").attr("checked", true);
+                aa.find("input[name=" + inputStr + "]").val(inputNum);
+                //   var str=new Array();
+                // str.split('*');
+            }
+        }
+    }
+    function submitValue(obj,temp,inputServiceId){
+        var urlGet=$("#editUrl").val();
+        var ajaxSubmitUrl=$("#ajaxUrlSubmit").val();
+        var inputValue=$(obj).parents("tr").find(".showData").find("input[type='number']").val();
+        //获取同等td下的上一个td的input表单值
+        console.log(inputValue);
+        $.ajax({
+            type: "post",
+            url: urlGet,
+            data: {"ValueCount":inputValue,"id":inputServiceId},
+            dataType: "json",
+            async:false,
+            success: function(data){
+                window.setTimeout(function(){
+                    windowHref();
+                }, 2000);
+            },
+            error:function(data){
+                alert("请查看您提交的数据的格式");
+                console.log('修改错误');
+            }
+        });
+    }
+    function windowHref(){
+        var aa=$("#ajaxUrlSubmit").val();
+        window.location.href=aa;
     }
     $(function(){
         $('.closeDetail').click(function(){
@@ -281,6 +465,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 </style>
 
 <style>
+    @-moz-document url-prefix() {
+        fieldset { display: table-cell; }
+    }
     *{padding: 0px;margin: 0px;font-style: normal;list-style-type: none;text-decoration: none;border:0 none; }
     input,button,select,textarea{outline: none;resize:none;padding: 3px 5px;border:1px solid #ddd;}
     input:focus,textarea:focus{border:1px solid #9ab6d6;}
@@ -314,7 +501,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             <h4>关于跟进详情的修改</h4>
             <a href="javascript:;" class="closeDetail">x</a>
         </div>
-        <div class="textmian">
+        <div class="textmian ">
             <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0">
      
 
@@ -440,7 +627,6 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                                     <td><input type="text" onkeyup="value=value.replace(/[^\d]/g,'') " ng-pattern="/[^a-zA-Z]/" name="day3[]"/></td>
                                     <td><a class="text_a" href="javascript:;" onClick="deltr2(this)">删除1-1</a></td>
                                 </tr>
-
                                 </tbody>
                             </table>
                             <div class="btn_a1">
@@ -609,43 +795,43 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
     var count = 1;  //跟进数量  全局跟进变量由count来计数
     var count2 = 1; //计数 为当前第几个服务进行修改 (第一次跟进的数据)
     //清洁
-    var qingjie="<input type='checkbox' style='width: 30px;' name='matong' value='1'>马桶<input style='width:60px;' name='matonginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='niaodou' value='1'>尿斗<input style='width:60px;' name='niaodouinput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='shuipen' value='1'>水盆<input style='width:60px;' name='shuipeninput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='qingxinji' value='1'>清新机<input style='width:60px;' name='qingxinjiinput' value='' placeholder='数量'/><br/>" +
-        "<input type='checkbox' style='width: 30px;' name='zaoyeji' value='1'>皂液机<input style='width:60px;' name='zaoyejiinput' value='' placeholder='数量'/>";
+    var qingjie="<input type='checkbox' style='width: 30px;' name='matong' value='1'>马桶<input style='width:60px;' type='text' name='matonginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='niaodou' value='1'>尿斗<input style='width:60px;' type='text' name='niaodouinput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='shuipen' value='1'>水盆<input style='width:60px;' type='text' name='shuipeninput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='qingxinji' value='1'>清新机<input style='width:60px;' type='text' name='qingxinjiinput' value='' placeholder='数量'/><br/>" +
+        "<input type='checkbox' style='width: 30px;' name='zaoyeji' value='1'>皂液机<input style='width:60px;' type='text' name='zaoyejiinput' value='' placeholder='数量'/>";
     //租赁
-    var   zulin="<input type='checkbox' style='width: 30px;' name='fengshanji' value='1'>风扇机<input style='width:60px;' name='fengshanjiinput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='TChaohua' value='1'>TC豪华<input style='width:60px;' name='TChaohuainput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='shuixingpenji' value='1'>水性喷机<input style='width:60px;' name='shuixingpenjiinput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='yasuoxiangguan' value='1'>压缩香罐<input style='width:60px;' name='yasuoxiangguaninput' value='' placeholder='数量'/>";
+    var   zulin="<input type='checkbox' style='width: 30px;' name='fengshanji' value='1'>风扇机<input style='width:60px;' type='text' name='fengshanjiinput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='TChaohua' value='1'>TC豪华<input style='width:60px;' type='text' name='TChaohuainput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='shuixingpenji' value='1'>水性喷机<input style='width:60px;' type='text' name='shuixingpenjiinput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='yasuoxiangguan' value='1'>压缩香罐<input style='width:60px;' type='text' name='yasuoxiangguaninput' value='' placeholder='数量'/>";
     //灭虫
     var miechong=
         "<input type='checkbox' style='width: 30px;' name='laoshu' value='1'>老鼠<input style='width:60p" +
-        "x;' name='laoshuinput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='zhanglang' value='1'>蟑螂<input style='width: 60px;' name='zhanglanginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='guoying' value='1'>果蝇<input style='width: 60px;' name='guoyinginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='zumieyingdeng' value='1'>租灭蝇灯<input style='width: 60px;' name='zumieyingdenginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglang' value='1'>老鼠蟑螂<input style='width: 60px;' name='laoshuzhanglanginput' value='' placeholder='数量'/><br/>"+
-        "<input type='checkbox' style='width: 30px;' name='laoshuguoying' value='1'>老鼠果蝇<input style='width: 60px;' name='laoshuguoyinginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='zhanglangguoying' value='1'>蟑螂果蝇<input style='width: 60px;' name='zhanglangguoyinginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoying' value='1'>老鼠蟑螂果蝇<input style='width: 60px;' name='zhanglanginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudeng' value='1'>老鼠蟑螂+租灯<input style='width: 60px;' name='laoshuzhanglangjiazudenginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' name='zhanglangguoyingjiazudenginput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' name='laoshuzhanglangguoyingjiazudenginput' value='' placeholder='数量'/>";
+        "x;' type='text' name='laoshuinput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='zhanglang' value='1'>蟑螂<input style='width: 60px;' type='text' name='zhanglanginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='guoying' value='1'>果蝇<input style='width: 60px;' type='text' name='guoyinginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='zumieyingdeng' value='1'>租灭蝇灯<input style='width: 60px;' type='text' name='zumieyingdenginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglang' value='1'>老鼠蟑螂<input style='width: 60px;' type='text' name='laoshuzhanglanginput' value='' placeholder='数量'/><br/>"+
+        "<input type='checkbox' style='width: 30px;' name='laoshuguoying' value='1'>老鼠果蝇<input style='width: 60px;' type='text' name='laoshuguoyinginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='zhanglangguoying' value='1'>蟑螂果蝇<input style='width: 60px;' type='text' name='zhanglangguoyinginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoying' value='1'>老鼠蟑螂果蝇<input style='width: 60px;' type='text' name='zhanglanginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangjiazudeng' value='1'>老鼠蟑螂+租灯<input style='width: 60px;' type='text' name='laoshuzhanglangjiazudenginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='zhanglangguoyingjiazudeng' value='1'>蟑螂果蝇+租灯<input style='width: 60px;' type='text' name='zhanglangguoyingjiazudenginput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='laoshuzhanglangguoyingjiazudeng' value='1'>老鼠蟑螂果蝇+租灯<input style='width: 60px;' type='text' name='laoshuzhanglangguoyingjiazudenginput' value='' placeholder='数量'/>";
     //飘盈香
-    var piaoyingxiang="<input type='checkbox' style='width: 30px;' name='minixiaoji' value='1'>迷你小机<input style='width: 60px;' name='minixiaojiinput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='xiaoji' value='1'>小机<input style='width: 60px;' name='xiaojiinput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='zhongji' value='1'>中机<input style='width: 60px;' name='zhongjiinput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='daji' value='1'>大机<input style='width: 60px;' name='dajiinput' value='' placeholder='数量'/>";
+    var piaoyingxiang="<input type='checkbox' style='width: 30px;' name='minixiaoji' value='1'>迷你小机<input style='width: 60px;' type='text' name='minixiaojiinput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='xiaoji' value='1'>小机<input style='width: 60px;' name='xiaojiinput' type='text' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='zhongji' value='1'>中机<input style='width: 60px;' name='zhongjiinput' type='text' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='daji' value='1'>大机<input style='width: 60px;' type='text' name='dajiinput' value='' placeholder='数量'/>";
     //甲醛
-    var jiaquan="<input type='checkbox' style='width: 30px;' name='chujiaquan' value='1'>除甲醛<input style='width: 60px;' name='chujiaquaninput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='AC30' value='1'>AC30<input style='width: 60px;' name='AC30input' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='PR10' value='1'>PR10<input style='width: 60px;' name='PR10input' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='miniqingjiepao' value='1'>迷你清洁炮<input style='width: 60px;' name='miniqingjiepaoinput' value='' placeholder='数量'/>";
+    var jiaquan="<input type='checkbox' style='width: 30px;' name='chujiaquan' value='1'>除甲醛<input style='width: 60px;' type='text' name='chujiaquaninput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='AC30' value='1'>AC30<input style='width: 60px;' type='text' name='AC30input' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='PR10' value='1'>PR10<input style='width: 60px;' type='text' name='PR10input' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='miniqingjiepao' value='1'>迷你清洁炮<input style='width: 60px;' type='text' name='miniqingjiepaoinput' value='' placeholder='数量'/>";
     //厕纸
-    var zhipin="<input type='checkbox' style='width: 30px;' name='cashouzhi' value='1'>擦手纸<input style='width: 60px;' name='fengshanjiinput' value='' placeholder='数量'/>" +
-        "<input type='checkbox' style='width: 30px;' name='dajuancezhi' value='1'>大卷厕纸<input style='width: 60px;' name='dajuancezhiinput' value='' placeholder='数量'/>";
+    var zhipin="<input type='checkbox' style='width: 30px;' name='cashouzhi' value='1'>擦手纸<input style='width: 60px;' type='text' name='fengshanjiinput' value='' placeholder='数量'/>" +
+        "<input type='checkbox' style='width: 30px;' name='dajuancezhi' value='1'>大卷厕纸<input style='width: 60px;' type='text' name='dajuancezhiinput' value='' placeholder='数量'/>";
 
 
     $('.innerbtn').click(function(){
@@ -665,6 +851,9 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         cc.each(  //循环input数组
             function (){
                 var input =$(this);  //循环每一个input元素
+                if(input.val()==''){
+                    input.val(0);
+                }
                 console.log(input.val());
                 total=total+parseInt(input.val());  //查看循环中的每一个input的id
             }
@@ -693,7 +882,11 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
         cc.each(  //循环input数组
             function (){
                 var input =$(this);  //循环每一个input元素
+                if(input.val()==''){
+                    input.val(0);
+                }
                 console.log(input.val()+"数据");
+
                 total=parseInt(total)+parseInt(input.val());  //查看循环中的每一个input的id
             }
         );

@@ -6,6 +6,12 @@ class VideoForm extends CFormModel
     Public $video_info_url;  //五部曲地址
     Public $seller_notes; //销售备注
     Public $video_info_date; //五部曲日期
+    Public $video_info_manager_grades; //五部曲总经理评价
+    Public $video_info_directer_grades; //五部曲总监评价
+    Public $video_info_statue; //五部曲进展状态
+    Public $video_info_user_position; //五部曲职位
+    Public $video_info_user_name; //五部曲姓名
+    Public $video_primary;
     //Public $scenario;
     /**
      * Declares customized attribute labels.
@@ -19,6 +25,14 @@ class VideoForm extends CFormModel
             'customer_contact'=>Yii::t('quiz','customer_contact'),
             'seller_notes'=>Yii::t('quiz','seller_notes'),
             'video_info_date'=>Yii::t('quiz','video_info_date'),
+            'video_play'=>Yii::t('quiz','video_play'),
+            'video_info_manager_grades'=>Yii::t('quiz','video_info_manager_grades'),
+            'video_info_directer_grades'=>Yii::t('quiz','video_info_directer_grades'),
+            'video_info_statue'=>Yii::t('quiz','video_info_statue'),
+            'video_info_user_position'=>Yii::t('quiz','video_info_user_position'),
+            'video_info_user_name'=>Yii::t('quiz','video_info_user_name'),
+            'video not exist....'=>Yii::t('quiz','video not exist....'),
+            'video_primary'=>Yii::t("quiz","video_primary"),
         );
     }
     /**
@@ -27,8 +41,8 @@ class VideoForm extends CFormModel
     public function rules()
     {
         return array(
-            array('seller_notes','required'),
-            array('id','safe'),
+            array('seller_notes,video_info_date,video_primary','required'),
+            array('id,video_info_manager_grades,video_info_directer_grades,video_info_statue,video_info_user_position,video_info_user_name','safe'),
         );
     }
     /**
@@ -49,7 +63,12 @@ class VideoForm extends CFormModel
                 $this->id = $row['video_info_id'];
                 $this->seller_notes = $row['seller_notes'];
                 $this->video_info_url = $row['video_info_url'];
-
+                $this->video_info_date=$row['video_info_date'];
+                $this->video_info_manager_grades = $row['video_info_manager_grades'];
+                $this->video_info_directer_grades = $row['video_info_directer_grades'];
+                $this->video_info_statue = $row['video_info_statue'];
+                $this->video_info_user_position = $row['video_info_user_position'];
+                $this->video_info_user_name = $row['video_info_user_name'];
                 break;
             }
         }
@@ -58,7 +77,6 @@ class VideoForm extends CFormModel
 
     public function saveData()
     {
-
         /*   if($this->scenario=='new'||$this->scenario=='delete'){*/
         $connection = Yii::app()->db2;
         $transaction=$connection->beginTransaction();
@@ -70,37 +88,37 @@ class VideoForm extends CFormModel
             $transaction->rollback();
             throw new CHttpException(404,'Cannot update.');
         }
-
     }
 
     protected function saveUser(&$connection)
     {
+
         $sql='';
         switch ($this->scenario) {
             case 'delete':
                 $sql = "delete from video_info where video_info_id = :id";
                 break;
             case 'new':
-                $sql = "insert into customer_info(
-						customer_create_sellers_id,visit_kinds,customer_kinds,customer_notes,customer_name,customer_create_date,customer_second_name,customer_help_count_date,customer_contact,customer_contact_phone,customer_district,customer_street,city) values (
-						:customer_create_sellers_id,:visit_kinds,:customer_kinds,:customer_notes,:customer_name,:customer_create_date,:customer_second_name,:customer_help_count_date,:customer_contact,:customer_contact_phone,:customer_district,:customer_street,:city)";
+                $sql = "update video_info set
+					seller_notes=:seller_notes,
+                    video_info_date=:video_info_date,
+                    video_info_manager_grades=:video_info_manager_grades,
+                    video_info_directer_grades=:video_info_directer_grades,
+                    video_info_statue=:video_info_statue,
+                    video_info_user_position=:video_info_user_position,
+                    video_info_user_name=:video_info_user_name
+					where video_info_id = :id";
                 break;
             case 'edit':
-                $sql = "update customer_info set
-					customer_create_sellers_id = :customer_create_sellers_id,
-					visit_kinds = :visit_kinds,
-					customer_kinds=:customer_kinds,
-					customer_notes=:customer_notes,
-					customer_name=:customer_name,
-					customer_create_date=:customer_create_date,
-					customer_second_name=:customer_second_name,
-					customer_help_count_date=:customer_help_count_date,
-					customer_contact=:customer_contact,
-					customer_contact_phone=:customer_contact_phone,
-					customer_district=:customer_district,
-					customer_street=:customer_street,
-					city=:city
-					where customer_id = :id";
+                $sql = "update video_info set
+					seller_notes=:seller_notes,
+                    video_info_date=:video_info_date,
+                    video_info_manager_grades=:video_info_manager_grades,
+                    video_info_directer_grades=:video_info_directer_grades,
+                    video_info_statue=:video_info_statue,
+                    video_info_user_position=:video_info_user_position,
+                    video_info_user_name=:video_info_user_name
+					where video_info_id = :id";
                 break;
         }
         $uid = Yii::app()->user->id;
@@ -119,35 +137,24 @@ class VideoForm extends CFormModel
             $command->bindParam(':id',$this->id,PDO::PARAM_INT);
         if (strpos($sql,':customer_create_sellers_id')!==false)
             $command->bindParam(':customer_create_sellers_id',$user_sellers_id,PDO::PARAM_STR);
-        if (strpos($sql,':customer_name')!==false)
-            $command->bindParam(':customer_name',$this->customer_name,PDO::PARAM_STR);
-        if (strpos($sql,':customer_kinds')!==false)
-            $command->bindParam(':customer_kinds',$this->customer_kinds,PDO::PARAM_STR);
-        if (strpos($sql,':visit_kinds')!==false)
-            $command->bindParam(':visit_kinds',$this->visit_kinds,PDO::PARAM_STR);
-        if (strpos($sql,':customer_second_name')!==false)
-            $command->bindParam(':customer_second_name',$this->customer_second_name,PDO::PARAM_STR);
-        if (strpos($sql,':customer_create_date')!==false) {
-            $customer_create_date = General::toMyDate($this->customer_create_date);
-            $command->bindParam(':customer_create_date',$customer_create_date,PDO::PARAM_STR);}
-        if (strpos($sql,':customer_notes')!==false)
-            $command->bindParam(':customer_notes',$this->customer_notes,PDO::PARAM_STR);
-        if (strpos($sql,':customer_help_count_date')!==false)
-            $command->bindParam(':customer_help_count_date',$this->customer_help_count_date,PDO::PARAM_STR);
-        if (strpos($sql,':customer_contact')!==false)
-            $command->bindParam(':customer_contact',$this->customer_contact,PDO::PARAM_INT);
-        if (strpos($sql,':customer_contact_phone')!==false)
-            $command->bindParam(':customer_contact_phone',$this->customer_contact_phone,PDO::PARAM_STR );
-        if (strpos($sql,':customer_district')!==false)
-            $command->bindParam(':customer_district',$this->customer_district,PDO::PARAM_STR);
-        if (strpos($sql,':customer_street')!==false)
-            $command->bindParam(':customer_street',$this->customer_street,PDO::PARAM_STR);
-        if (strpos($sql,':city')!==false)
-            $command->bindParam(':city',$city,PDO::PARAM_STR);
+        if (strpos($sql,':seller_notes')!==false)
+            $command->bindParam(':seller_notes',$this->seller_notes,PDO::PARAM_STR);
+        if (strpos($sql,':video_info_date')!==false)
+            $command->bindParam(':video_info_date',$this->video_info_date,PDO::PARAM_STR);
+        if (strpos($sql,':video_info_manager_grades')!==false)
+            $command->bindParam(':video_info_manager_grades',$this->video_info_manager_grades,PDO::PARAM_STR);
+        if (strpos($sql,':video_info_directer_grades')!==false)
+            $command->bindParam(':video_info_directer_grades',$this->video_info_directer_grades,PDO::PARAM_STR);
+        if (strpos($sql,':video_info_statue')!==false)
+            $command->bindParam(':video_info_statue',$this->video_info_statue,PDO::PARAM_STR);
+        if (strpos($sql,':video_info_user_position')!==false)
+            $command->bindParam(':video_info_user_position',$this->video_info_user_position,PDO::PARAM_STR);
+        if (strpos($sql,':video_info_user_name')!==false)
+            $command->bindParam(':video_info_user_name',$this->video_info_user_name,PDO::PARAM_INT);
         $command->execute();
-
-        if ($this->scenario=='new')
-            $this->id = Yii::app()->db2->getLastInsertID();
+        if($this->scenario=='new'){
+            $this->id=$this->video_primary;
+        }
         return true;
     }
 

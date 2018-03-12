@@ -26,6 +26,14 @@ $this->pageTitle=Yii::app()->name . ' - Nature';
                     ));
                 ?>
             </div>
+            <div class="btn-group" role="group">
+                <?php
+                if (Yii::app()->user->validRWFunction('HK01'))
+                    echo TbHtml::button('<span class="fa fa-file-o"></span> '.Yii::t('quiz','browse customer order history'), array(
+                        'submit'=>Yii::app()->createUrl('Salesorder/printIndex'),
+                    ));
+                ?>
+            </div>
         </div>
     </div>
     <?php $this->widget('ext.layout.ListPageWidget', array(

@@ -209,26 +209,22 @@ $('#btnDeleteData').on('click',function() {
 	$('#removedialog').modal('hide');
 	deletedata();
 });
-
 function deletedata() {
 	var elm=$('#btnDelete');
 	jQuery.yii.submitForm(elm,'$link',{});
-}
-		";
+}";
 		return $str;
 	}
 	Public static function getInputValue(){
 		$jsValue="$('#showRate').val()";
 		return $jsValue;
 	}
-
 	public static function QuizDataCheck($link) {
 		$str = "
 $('#btnQuizCheck').on('click',function() {
 	$('#quizStart').modal('hide');
 	dataCheck();
 });
-
 function dataCheck() {
 	var elm=$('#dataCheck');
 	jQuery.yii.submitForm(elm,'$link',{});

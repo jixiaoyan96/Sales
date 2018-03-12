@@ -58,6 +58,9 @@ header("Content-type: text/html; charset=utf-8");
         var_dump("aa".$name.$pwd.$countSelect);
      }
 
+     public function ajaxConfirm(){
+
+     }
             //进入新增页面
      Public function actionNew(){
          $model = new SalesForm('new');
@@ -68,6 +71,7 @@ header("Content-type: text/html; charset=utf-8");
      Public function actionSelectKindsFirst(){
 
      }
+
      public function actionView($index)
      {
          $model = new SalesForm('view');
@@ -118,7 +122,14 @@ header("Content-type: text/html; charset=utf-8");
              }
          }
      }
-
+     public function actionDetailEdit(){
+        $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
+        $result=isset($_REQUEST['result'])?$_REQUEST['result']:'默认字符串';
+         $serviceId=isset($_REQUEST['serviceId'])?$_REQUEST['serviceId']:'2';
+      $service_info_set="update new_service_info set new_services_kinds='$result',new_services_kind='$serviceId' WHERE new_service_info_id='$id'";
+     Yii::app()->db2->createCommand($service_info_set)->execute();
+         echo json_encode(0);
+     }
      /**
       * @throws CHttpException
       *   <option value="7">选择服务大类</option>
@@ -269,9 +280,9 @@ Insert into visit_info (visit_customer_fid,visit_seller_fid,visit_notes,visit_se
 VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$second_visit_count_info','$second_visit_date_info','$second_visit_definition_info')";
                                          Yii::app()->db2->createCommand($every_visit_insert_set_more)->execute();  //存入第一次之后的每次跟进
                                          $every_insert_id='';
+                                         $every_first_service_kinds_choose='';
                                          $every_insert_id=Yii::app()->db2->getLastInsertID(); //第一次跟进之后每次跟进的存入数据的主键id
                                          //存入>=2的每次跟进的第一条服务
-                                         $every_first_service_kinds_choose='';
                                          if(isset($_REQUEST['day1'][$b])){  //存入动态跟进的第一条服务
                                              $more_visit_service_kinds_set=$_REQUEST['day1'][$b];  //选择的大类主id
                                              $money_get_more=$_REQUEST['day3'][$b];  //服务金额
@@ -311,11 +322,15 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
                              $this->render('form', array('model' => $model,));
                          }
                      }
+     }}
+
+     public function actionAjaxSubmit($index){
+         Dialog::message(Yii::t('dialog','Information'), Yii::t('quiz','edit success'));
+         $this->redirect(Yii::app()->createUrl('sales/Edit',array('index'=>$index)));
      }
-     }
+
      public function actionEdit($index)
      {
-         //var_dump($_REQUEST);die;
          $model = new SalesForm('edit');
          if (!$model->retrieveData($index)) {
              throw new CHttpException(404,'The requested page does not exist.');
@@ -323,6 +338,7 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
              $this->render('edit',array('model'=>$model,));
          }
      }
+
      public function actionServiceDetailShow(){
          $Id=isset($_REQUEST['ValueId'])?$_REQUEST['ValueId']:0;
          $service_info_detail_set="select * from new_service_info WHERE new_visit_info_pid ='$Id'";
@@ -330,19 +346,23 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
          $dataArray=array();
         if(count($service_info_detail_get)>0){
             for($i=0;$i<count($service_info_detail_get);$i++){
+                $service_info_detail_get[$i]['new_services_kind_id']=$service_info_detail_get[$i]['new_services_kind'];
                     $charShowKind=Quiz::returnChinese($service_info_detail_get[$i]['new_services_kind']);
                     $service_info_detail_get[$i]['new_services_kind']=$charShowKind; //存入返回的服务类型
                     $kindsArray=array();//存入需要翻译的数据
                     $charKindsShow=rtrim($service_info_detail_get[$i]['new_services_kinds'],'-');
                     $getData='';  //关于服务数据获取  服务名,数量/服务名,数量
                     $kindsArray=explode('-', $charKindsShow);//0=>服务*数量,1=>服务*数量
+                $tempArray=array(); //暂时存入服务 0=>类型名,1=>类型数量
+                $str=array();  //存入的是数据库数据
                     if(count($kindsArray)>0){
-                    for($k=0;$k<count($kindsArray);$k++){
-                                $tempArray=array(); //暂时存入服务 0=>类型名,1=>类型数量
+                    for($k=0;$k<count($kindsArray);$k++){  //多少个服务
                                $tempArray=explode('*',$kindsArray[$k]);
+                        $str[]=$kindsArray[$k];
                                $tempArray=Quiz::transLationWords($tempArray); //0=>类型名,1=>类型数量
-                               $getData.=$tempArray[0].','.$tempArray[1].'/';
+                               $getData.=$tempArray[0].','.$tempArray[1].'/'; //类型名,类型数量
                     }
+                        $service_info_detail_get[$i]['service_kinds_info']=$str; //分别存入需要的数组
                 }
                 $service_info_detail_get[$i]['new_services_kinds']=$getData;
             }
@@ -350,6 +370,59 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
         echo json_encode($service_info_detail_get);
      }
 
+     /**
+      * @param $index
+      * 删除拜访详情记录的操作
+      * $index为详细的跟进详情  $pid为跟进的主键
+      */
+        public function actionDeleteDetail($index,$pid){
+            $id=isset($index)?$index:0;
+            $pid=isset($pid)?$pid:0;
+            $select_visit_info="select visit_customer_fid from visit_info WHERE visit_info_id='$pid'";
+            $select_visit_info_get=Yii::app()->db2->createCommand($select_visit_info)->queryAll();
+         $delete_info_detail_set="delete from new_service_info WHERE new_visit_info_pid='$pid'";
+            Yii::app()->db2->createCommand($delete_info_detail_set)->execute();
+            $delete_info_visit_set="delete from visit_info WHERE visit_info_id='$pid'";
+            Yii::app()->db2->createCommand($delete_info_visit_set)->execute();
+            $primary_id=0;
+            if(count($select_visit_info_get)>0){
+                $primary_id=isset($select_visit_info_get[0]['visit_customer_fid'])?$select_visit_info_get[0]['visit_customer_fid']:0;
+            }
+            $model = new SalesForm('edit');
+            if (!$model->retrieveData($primary_id)) {
+                throw new CHttpException(404,'The requested page does not exist.');
+            } else {
+                Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Record Deleted'));
+                $this->render('edit', array('model' => $model,));
+            }
+        }
+
+
+        public function actiondelServiceInfo(){
+            $pid=isset($_REQUEST['id'])?$_REQUEST['id']:0;  //服务主键
+            $select_visit_info_set="select * from new_service_info where new_service_info_id='$pid'";
+            $select_visit_info_get=Yii::app()->db2->createCommand($select_visit_info_set)->queryAll();
+            $visit_primary_key=isset($select_visit_info_get[0]['new_visit_info_pid'])?$select_visit_info_get[0]['new_visit_info_pid']:0;//关于跟进的主键
+            $visit_count_set="select count(new_service_info_id) from new_service_info where new_visit_info_pid='$visit_primary_key'";
+            $visit_count_get=Yii::app()->db2->createCommand($visit_count_set)->queryAll();
+            if($visit_count_get[0]['count(new_service_info_id)']<=1){
+                $delete_info_visit_set="delete from visit_info where visit_info_id='$visit_primary_key'";
+                Yii::app()->db2->createCommand($delete_info_visit_set)->execute();
+            }
+            $del_service_set="delete from new_service_info where new_service_info_id='$pid'";
+            Yii::app()->db2->createCommand($del_service_set)->execute();
+            echo json_encode($pid);
+        }
+
+     public function actionVisitDetailEdit(){
+         //一共三个参数 id notes definition  跟进逐渐 跟进备注 跟进目的
+         $id=isset($_REQUEST['id'])?$_REQUEST['id']:0;
+         $notes=isset($_REQUEST['notes'])?$_REQUEST['notes']:0;
+         $definition=isset($_REQUEST['definition'])?$_REQUEST['definition']:0;
+         $update_info_set="update visit_info set visit_notes='$notes',visit_definition='$definition' where visit_info_id='$id'";
+         Yii::app()->db2->createCommand($update_info_set)->execute();
+         echo json_encode($id);
+     }
          public function actionServiceDetailEdit(){
              $value=$_REQUEST['ValueCount'];
              $Id=$_REQUEST['id'];
@@ -357,7 +430,8 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
              $serviceMoneyGet=Yii::app()->db2->createCommand($serviceMoneySet)->queryAll();
              if(count($serviceMoneyGet)>0){
                  if($value==$serviceMoneyGet[0]['new_service_money']){
-                     echo '1';
+                     $arr=array(0=>'1');
+                     echo json_encode($arr);
                  }
              else{
                      $visit_count=0;
@@ -377,7 +451,8 @@ VALUES ('$this_visit_insert_id','$user_sellers_id','$second_visit_notes_info','$
                          $visit_money_set="update visit_info set visit_service_money='$visit_count' WHERE visit_info_id='$visit_id'";
                          Yii::app()->db2->createCommand($visit_money_set)->execute();
                      }
-                     echo '2';
+                 $arr=array(0=>'2');
+                 echo json_encode($arr);
                  }
              }
      }

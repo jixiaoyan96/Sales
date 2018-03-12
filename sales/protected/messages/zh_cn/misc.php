@@ -53,13 +53,14 @@ return array(
 	'Message'=>'讯息',
 	'All rights reserved'=>'版权所有',
 	'Copyright'=>'版权',
-	'**Please use Firefox web browser in order to use LBS Daily Management System for best result'
-	=>'**为求使用史伟莎日常管理系统达至最佳效果，请使用火狐浏览器',
+	'**Please use Firefox web browser in order to use LBS Daily Management System for best result' =>'**为求使用史伟莎日常管理系统达至最佳效果，请使用火狐浏览器',
 	//json添加开始
-'Submit sales Form'=>'提交测验结果',
+	'Submit sales Form'=>'提交测验结果',
 	'default all checked'=>'默认员工全选',
 	'test'=>'测试',
 	'Add Sales video Record'=>'新增销售五部曲记录',
+	'lookThrough sellers video'=>'查看各销售员记录',
+	'lookThrough video list'=>'查看该账号五部曲视频记录',
 );
 
 ?>

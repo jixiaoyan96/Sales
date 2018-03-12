@@ -28,16 +28,19 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
                 <?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
                     'submit'=>Yii::app()->createUrl('Salesvideo/index')));
                 ?>
-              <!--  <?php /*if ($model->scenario!='view'): */?>
-                    <?php /*echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
-                        'submit'=>Yii::app()->createUrl('quiz/save')));
-                    */?>
-                --><?php /*endif */?>
+             <?php if ($model->scenario!='view'): ?>
+                    <?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
+                        'submit'=>Yii::app()->createUrl('Salesvideo/save')));
+                    ?>
+                <?php endif ?>
                 <?php if ($model->scenario=='edit'): ?>
                     <?php echo TbHtml::button('<span class="fa fa-remove"></span> '.Yii::t('misc','Delete'), array(
                             'name'=>'btnDelete','id'=>'btnDelete','data-toggle'=>'modal','data-target'=>'#removedialog',)
                     );
-                    ?>
+                    ?><?php /*echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Download'), array(
+                            'name'=>'btnDelete','id'=>'btnDelete','data-toggle'=>'modal',)
+                    );
+                    */?>
                 <?php endif ?>
             </div>
         </div>
@@ -51,7 +54,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 
             <div class="form-group">
                 <?php echo $form->labelEx($model,'seller_notes',array('class'=>"col-sm-2 control-label")); ?>
-                <div class="col-sm-5">
+                <div class="col-sm-8">
                     <?php echo $form->textField($model, 'seller_notes',
                         array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
                     ); ?>
@@ -59,13 +62,58 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
             </div>
 
             <div class="form-group">
+                <?php echo $form->labelEx($model,'video_info_date',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_date',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+                <?php echo $form->labelEx($model,'video_info_user_position',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_user_position',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'video_info_user_name',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_user_name',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+                <?php echo $form->labelEx($model,'video_info_statue',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->dropDownList($model,'video_info_statue',Quiz::sellersVideoStatue(),
+                        array('readonly'=>!Yii::app()->user->validRWFunction('HK01'),)
+                    ); ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'video_info_manager_grades',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_manager_grades',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>!Yii::app()->user->validRWFunction('HK07'))
+                    ); ?>
+                </div>
+                <?php echo $form->labelEx($model,'video_info_directer_grades',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3">
+                    <?php echo $form->textField($model, 'video_info_directer_grades',
+                        array('size'=>50,'maxlength'=>100,'readonly'=>!Yii::app()->user->validRWFunction('HK07'))
+                    ); ?>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2"> <?php echo $form->labelEx($model,'video_play',array('class'=>"col-sm-2 control-label")); ?></div>
                 <div class="col-sm-8">
-                    <video width="320" height="240" controls autoplay>
+                 <video controls>
                          <source src="<?php echo $model->video_info_url;?>" >
                     </video>
                 </div>
             </div>
-
             <input type="hidden" id="urlGet" name="urlGet" value="<?php echo $this->urlAjaxSelect;?>"/>
         </div>
     </div>
@@ -73,7 +121,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer Type Form';
 <?php $this->renderPartial('//site/removedialog'); ?>
 <?php
 $js = "
-$('#QuizForm_quiz_start_dt,#QuizForm_quiz_end_dt').on('change',function() {
+$('#QuizForm_quiz_start_dt,#VideoForm_video_info_date').on('change',function() {
 	showRenewDate();
 });
 function showRenewDate() {
@@ -112,8 +160,7 @@ Yii::app()->clientScript->registerScript('readonlyClass',$js,CClientScript::POS_
 
 if ($model->scenario!='view') {
     $js = Script::genDatePicker(array(
-        'QuizForm_quiz_start_dt',
-        'QuizForm_quiz_end_dt',
+        'VideoForm_video_info_date',
     ));
     Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);
 }

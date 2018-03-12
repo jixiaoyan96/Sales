@@ -310,7 +310,7 @@ Class Quiz{
         }
         else {
             $finalResult=array();
-            $finalResult[0]=array('id'=>'0','test_exams_contents'=>'亲,您的参数神秘消失了!请及时通知技术人员!','test_exams_answer_right'=>'正解A','test_exams_answer_faultf'=>'错解B','test_exams_answer_faults'=>'错解C','test_exams_answer_faultt'=>'错解D');
+            $finalResult[0]=array('id'=>'0','test_exams_contents'=>'亲,您的数据出错了!','test_exams_answer_right'=>'正解A','test_exams_answer_faultf'=>'错解B','test_exams_answer_faults'=>'错解C','test_exams_answer_faultt'=>'错解D');
         }
         return $finalResult;
     }
@@ -343,7 +343,10 @@ Class Quiz{
         }
         return $list;
     }
-
+    Public static function sellersVideoStatue(){
+        $list = array(0=>Yii::t('quiz','video_info_statue'),1=>'第一部',2=>'第二部',3=>'第三部',4=>'第四部',5=>'第五部',);
+        return $list;
+    }
     /**
      * 关于sale edit动态修改visit,service 的数据返回方法
      */
@@ -458,7 +461,6 @@ Class Quiz{
                     $charInsert.='matong*'.$_REQUEST['matonginput'.$visit_id.'-'.$service_id].'-';
                 }
             }
-
             if(isset($_REQUEST['niaodou'.$visit_id.'-'.$service_id])&&$_REQUEST['niaodou'.$visit_id.'-'.$service_id]==1){  //尿斗
                 if(isset($_REQUEST['niaodouinput'.$visit_id.'-'.$service_id])){
                     $charInsert.='niaodou*'.$_REQUEST['niaodouinput'.$visit_id.'-'.$service_id].'-';
@@ -769,9 +771,9 @@ Class Quiz{
         return $words;
     }
     public static function editDataShow($customer_info_id){
-        $visit_info_set="SELECT * FROM visit_info WHERE visit_customer_fid=$customer_info_id;";
+//$Id_main=isset($customer_info_id)?$customer_info_id:0;
+        $visit_info_set="SELECT * FROM visit_info WHERE visit_customer_fid='$customer_info_id'";
         $visit_info_get=Yii::app()->db2->createCommand($visit_info_set)->queryAll();   //跟进主要信息
-
         if(count($visit_info_get)>0){
             for($i=0;$i<count($visit_info_get);$i++){
                 $visit_info_get[$i]['serviceMoney']='';
@@ -786,9 +788,13 @@ Class Quiz{
                     $charTemp=Quiz::returnChinese($visit_service_info_get[$j]['new_services_kind']); //类型
                         $moneyTemp=$visit_service_info_get[$j]['new_service_money']; //金额
                         $visit_info_get[$i]['serviceMoney'].=$charTemp.','.$moneyTemp.'/';
+                        $visit_info_get[$i]['service_primary_key']=$visit_service_info_get[$j]['new_service_info_id'];
                     }
-                }
-            }
+                }else{
+                    $visit_info_get[$i]['serviceMoney']='无信息';
+                    $visit_info_get[$i]['service_primary_key']='none';
+                }       
+                     }
         }
         return $visit_info_get;
     }
@@ -830,5 +836,76 @@ Class Quiz{
                 break;
         }
         return $char;
+    }
+
+    /**
+     * @param $id
+     * 统一入口
+     */
+
+    public static function printData($id){
+        $dataStore=array();  //'mainData=>array'客户主要信息'' 'order_info'=>'array()'订单详细信息
+        $countleng=0;  //存入的长度
+        if(isset($id)&&!empty($id)){
+            $dataStore['mainData']=array();
+            $dataStore['order_info']=array();
+            $dataStore['length']=0;
+            $tempStr=''; //存储订单外键
+            $main_data_set="select * from order_customer_info WHERE order_customer_info_id='$id'";
+            $main_data_get=Yii::app()->db2->createCommand($main_data_set)->queryAll();
+            if(count($main_data_get)>0){
+                $dataStore['mainData']['order_customer_name']=isset($main_data_get[0]['order_customer_name'])?$main_data_get[0]['order_customer_name']:0;
+                $dataStore['mainData']['order_customer_rural']=isset($main_data_get[0]['order_customer_rural'])?$main_data_get[0]['order_customer_rural']:0;
+                $dataStore['mainData']['order_customer_street']=isset($main_data_get[0]['order_customer_street'])?$main_data_get[0]['order_customer_street']:0;
+                $dataStore['mainData']['order_customer_total_money']=isset($main_data_get[0]['order_customer_total_money'])?$main_data_get[0]['order_customer_total_money']:0;
+                $dataStore['mainData']['order_info_date']=isset($main_data_get[0]['order_info_date'])?$main_data_get[0]['order_info_date']:0;
+                $tempStr=isset($main_data_get[0]['order_detail'])?$main_data_get[0]['order_detail']:''; //订单明细
+                if(isset($tempStr)&&!empty($tempStr)){
+                    $order_data_set="select * from order_info WHERE order_info_id IN ($tempStr)";
+                    $order_data_get=Yii::app()->db2->createCommand($order_data_set)->queryAll();
+                    if(count($order_data_get)>0){
+                        $countleng=count($order_data_get);
+                        $dataStore['length']=$countleng;
+                        for($i=0;$i<count($order_data_get);$i++){
+                            $dataStore['order_info'][$i]['order_info_code_number']=isset($order_data_get[$i]['order_info_code_number'])?$order_data_get[$i]['order_info_code_number']:0;;
+                            $dataStore['order_info'][$i]['order_goods_code_number']=isset($order_data_get[$i]['order_goods_code_number'])?$order_data_get[$i]['order_goods_code_number']:0;;
+                            $dataStore['order_info'][$i]['order_count']=isset($order_data_get[$i]['order_count'])?$order_data_get[$i]['order_count']:0;;
+                            $dataStore['order_info'][$i]['order_per_price']=isset($order_data_get[$i]['order_per_price'])?$order_data_get[$i]['order_per_price']:0;;
+                            $dataStore['order_info'][$i]['order_free']=isset($order_data_get[$i]['order_free'])?$order_data_get[$i]['order_free']:0;;
+                            $dataStore['order_info'][$i]['order_info_money_total']=isset($order_data_get[$i]['order_info_money_total'])?$order_data_get[$i]['order_info_money_total']:0;;
+                        }
+                    }else{
+                        $countleng=0;
+                        $dataStore['length']=0;
+                        $dataStore['order_info']=array();
+                    }
+                }else{
+                    $dataStore['order_info']=array();
+                }
+            }else{
+                $dataStore['mainData']=array();
+            }
+
+            return $dataStore;
+        }else{
+            return $dataStore;
+        }
+    }
+    public static function printDetail($id){
+        $kid=isset($id)?$id:0;
+        $returnData=array();
+        $detail_set="Select * from order_info WHERE order_info_id='$kid'";
+        $detail_get=Yii::app()->db2->createCommand($detail_set)->queryAll();
+        if(count($detail_get)>0){
+            $returnData=$detail_get[0];
+        }
+        return $returnData;
+    }
+    public static function StartWorkDate(){
+        $name=Yii::app()->user->name;
+        $sql_set="select * from sellers_user_bind_v WHERE user_id='$name'";
+        $sql_get=Yii::app()->db2->createCommand($sql_set)->queryAll();
+        $result=isset($sql_get[0]['user_time'])?$sql_get[0]['user_time']:0;
+        return $result;
     }
 }
