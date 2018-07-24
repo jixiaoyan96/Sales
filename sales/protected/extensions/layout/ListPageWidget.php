@@ -1,5 +1,4 @@
 <?php
-header("Content-type: text/html; charset=utf-8");
 class ListPageWidget extends CWidget
 {
 	public $model;
@@ -9,22 +8,36 @@ class ListPageWidget extends CWidget
 	public $viewdtl;
 	public $height='100';
 	public $search=array();
-
+	public $hasNavBar = true;
+	public $hasSearchBar = true;
+	public $hasPageBar = true;
+	public $searchlinkparam = array();
+	
+	public $advancedSearch = false;
+	
 	public $record;
 	public $recordptr;
-
+	
 	public function run()
 	{
+		$modelName = get_class($this->model);
+		
 		$layout = '<div class="box">';
 		$layout .= '<div class="box-header"><h3 class="box-title"><strong>'.$this->title.'</strong></h3>';
 		$layout .= '</div>';
 		$layout .= '<div class="box-body table-responsive">';
-		$layout .= '<div class="box-tools">';
-		$layout .= $this->navBar();
-		$layout .= '<span class="pull-right">';
-		$layout .= $this->searchBar();
-		$layout .= '</span>';
+		if ($this->hasSearchBar || $this->hasNavBar) {
+			$layout .= '<div class="box-tools">';
+			if ($this->hasNavBar) {
+				$layout .= $this->navBar();
+			}
+			if ($this->hasSearchBar) {
+				$layout .= '<span class="pull-right">';
+				$layout .= $this->searchBar();
+				$layout .= '</span>';
+			}
 		$layout .= '</div>';
+		}
 		$layout .= '<div><table id="tblData" class="table table-hover">';
 		$layout .= '<thead>';
 		$layout .= $this->render($this->viewhdr, null, true);
@@ -46,16 +59,74 @@ class ListPageWidget extends CWidget
 		$layout .= '</tbody>';
 		$layout .= '</table></div>';
 		$layout .= '</div>';
-
+		
 		$layout .= '<div class="box-footer clearfix">';
-		$layout .= '<div class="box-tools">'.$this->pageBar().'</div>';
+		if ($this->hasSearchBar) {
+			$layout .= '<div class="box-tools">'.$this->pageBar().'</div>';
+		}
 		$layout .= '<span class="pull-right">'.Yii::t('misc','Rec').': '.$this->model->totalRow.'</span>';
 		$layout .= '</div>';
 
 		echo $layout;
+
+		$link = '/'.$this->controller->uniqueId.'/'.$this->controller->action->id;
+		$url = Yii::app()->createUrl($link);
+		$formurl = Yii::app()->createAbsoluteUrl($link);
+		$fldid = get_class($this->model).'_noOfItem';
+
+
+		if ($this->hasSearchBar && $this->advancedSearch) {
+			$fldlist = array('NA'=>Yii::t('misc','-- None --'));
+			foreach ($this->model->searchColumns() as $field=>$value) {
+				$fldlist[$field] = Yii::t('app',$this->getLabelName($field));
+			}
+			$this->controller->renderPartial('//site/filter',array('model'=>$this->model, 'fieldlist'=>$fldlist, 'formurl'=>$formurl));
+		}
+		
+		$js = "
+$('#$fldid').on('change', function(){Loading.show();jQuery.yii.submitForm(this,'$url',{});return false;});
+		";
+		Yii::app()->clientScript->registerScript('ListPageRefresh',$js,CClientScript::POS_READY);
+
+		if ($this->hasSearchBar) {
+			$droplistid = $modelName.'_searchField';
+			$textid = $modelName.'_searchValue';
+			
+			$param = array('pageNum'=>1);
+			if (!empty($this->searchlinkparam)) $param = array_merge($param, $this->searchlinkparam);
+			$path = Yii::app()->createAbsoluteUrl($link, $param);
+			
+			$js = <<<EOF
+$('#btnSearch').on('click', function(){
+	if ($('#$droplistid').val()=='ex_advanced') {
+		$('#filterdialog').modal('show');
+	} else {
+		jQuery.yii.submitForm(this,'$path',{});
+	}
+});
+EOF;
+			Yii::app()->clientScript->registerScript('ListPageSearchButton',$js,CClientScript::POS_READY);
+			
+			if ($this->advancedSearch) {
+				$static = json_encode($this->model->staticSearchColumns());
+				$js = <<<EOF
+$('#$droplistid').on('change', function(){
+	var static = JSON.parse('$static');
+	var selection = $(this).val();
+	if (selection=='ex_advanced' || static.indexOf(selection)!=-1) {
+		$('#$textid').val('');
+		$('#$textid').attr('readonly',true);
+	} else {
+		$('#$textid').attr('readonly',false);
+	}
+});
+EOF;
+				Yii::app()->clientScript->registerScript('ListPageAdvancedSrch',$js,CClientScript::POS_READY);
+			}
+		}
 	}
 
-	protected function navBar()
+	protected function navBar() 
 	{
 		$totalrow = $this->model->totalRow;
 		$pageno = $this->model->pageNum;
@@ -65,12 +136,15 @@ class ListPageWidget extends CWidget
 		$window = 10;
 		$tab = 3;
 		$width=80/$window;
-
+		
 		$link = '/'.$this->controller->uniqueId.'/'.$this->controller->action->id;
-
+		
 		$items = array();
-
-		$url = Yii::app()->createUrl($link,array('pageNum'=>1));
+		
+		$param = array('pageNum'=>1);
+		if (!empty($this->searchlinkparam)) $param = array_merge($param, $this->searchlinkparam);
+//		$url = Yii::app()->createUrl($link,$param);
+		$url = "javascript:Loading.show();window.location.href='".Yii::app()->createUrl($link,$param)."';";
 		$items[] = array('label'=>'1','url'=>$url,'active'=>($pageno == 1));
 		$cnt = 1;
 
@@ -78,98 +152,119 @@ class ListPageWidget extends CWidget
 			$items[] = array('label'=>'...','url'=>'#',);
 			$cnt++;
 		}
-
+		
 		$hadj = ($pageno > $tab && $totalpage > $window) ? 2 : 1;
 		$tadj = ($totalpage > $window) ? (($pageno < $totalpage-($window-$hadj)+1) ? 2 : 1) : 0;
 		$adj = $hadj + $tadj;
-		$pos = ($pageno > $tab && $totalpage > $window)
-			? (($pageno > $totalpage-($window-$hadj)+1) ? $totalpage-($window-$hadj)+1 : $pageno-($tab-1))
-			: 2;
-		while ($pos <= $totalpage && $cnt < $window-$tadj)
+
+		$pos = ($pageno > $tab && $totalpage > $window) 
+				? (($pageno > $totalpage-($window-$hadj)+1) ? $totalpage-($window-$hadj)+1 : $pageno-($tab-1)) 
+				: 2; 
+		while ($pos <= $totalpage && $cnt < $window-$tadj) 
 		{
-			$url = Yii::app()->createUrl($link,array('pageNum'=>$pos));
+			$param = array('pageNum'=>$pos);
+			if (!empty($this->searchlinkparam)) $param = array_merge($param, $this->searchlinkparam);
+//			$url = Yii::app()->createUrl($link,$param);
+			$url = "javascript:Loading.show();window.location.href='".Yii::app()->createUrl($link,$param)."';";
 			$items[] = array('label'=>$pos,'url'=>$url,'active'=>($pageno == $pos));
 			$pos++;
 			$cnt++;
 		}
-
+		
 		if ($totalpage > $window) {
 			if ($pageno < $totalpage-($window-$adj-$tab)-1 && $totalpage > $window) {
 				$items[] = array('label'=>'...','url'=>'#',);
 				$cnt++;
 			}
-
-			$url = Yii::app()->createUrl($link,array('pageNum'=>$totalpage));
-			$items[] = array('label'=>$totalpage,'url'=>$url,'active'=>($pageno == $totalpage));
+			
+			$param = array('pageNum'=>$totalpage);
+			if (!empty($this->searchlinkparam)) $param = array_merge($param, $this->searchlinkparam);
+//			$url = Yii::app()->createUrl($link,$param);
+			$url = "javascript:Loading.show();window.location.href='".Yii::app()->createUrl($link,$param)."';";
+			$items[] = array('label'=>$totalpage,'url'=>$url,'active'=>($pageno == $totalpage),);
 
 			$cnt++;
 		}
-
+		
 //		return TbHtml::pagination($items, array('align'=>TbHtml::PAGINATION_ALIGN_RIGHT,'size'=>TbHtml::PAGINATION_SIZE_SMALL));
 		return TbHtml::pagination($items, array('class'=>'pagination pagination-sm no-margin'));
 	}
-
-	protected function searchBar()
-	{
+	
+	protected function searchBar() {
 		$modelName = get_class($this->model);
-
 		$link = '/'.$this->controller->uniqueId.'/'.$this->controller->action->id;
+		$param = array('pageNum'=>1);
+		if (!empty($this->searchlinkparam)) $param = array_merge($param, $this->searchlinkparam);
 		$list[''] = Yii::t('misc','-- Field --');
-
-		foreach ($this->search as $field)
-		{
-			$list[$field] = Yii::t('app',$this->getLabelName($field));
+		$labelplus = '';
+		if ($this->advancedSearch) {
+			$list['ex_advanced'] = Yii::t('misc','<< Advanced >>');
+			$labelplus = ' <span class="fa fa-plus"></span>';
 		}
-
-		$layout = TbHtml::dropDownList($modelName.'[searchField]',$this->model->searchField,$list);
+		$flag = true;
+		$columns = $this->model->searchColumns();
+		if (!$this->advancedSearch && empty($columns)) {
+			$columns = $this->search ;
+			$flag = false;
+		}
+		foreach ($columns as $field=>$value) {
+			$val = ($flag) ? $field : $value;
+			$list[$val] = Yii::t('app',$this->getLabelName($val));
+		}
+		$layout = TbHtml::dropDownList($modelName.'[searchField]',$this->model->searchField,$list,array('id'=>$modelName.'_searchField'));
 		$layout .= TbHtml::textField($modelName.'[searchValue]',$this->model->searchValue,
-			array('size'=>15,
-				'placeholder'=>Yii::t('misc','Search'),
-				'append'=>TbHtml::button('<span class="fa fa-search"></span> '.Yii::t('misc','Search'), array('submit'=>Yii::app()->createUrl($link,array('pageNum'=>1)),)),
-			));
-
+					array('size'=>15,'id'=>$modelName.'_searchValue','readonly'=>($this->model->isAdvancedSearch()||$this->model->isStaticSearch()),
+						'placeholder'=>Yii::t('misc','Search'),
+//						'append'=>TbHtml::button('<span class="fa fa-search"></span> '.Yii::t('misc','Search'), array('submit'=>Yii::app()->createUrl($link,$param),)),
+						'append'=>TbHtml::button('<span class="fa fa-search"></span> '.Yii::t('misc','Search').$labelplus, array('id'=>'btnSearch',)),
+				));
 		return $layout;
 	}
-
+	
 	protected function pageBar()
 	{
 		$modelName = get_class($this->model);
 		$link = '/'.$this->controller->uniqueId.'/'.$this->controller->action->id;
 		$list = array(
-			'25'=>'25',
-			'50'=>'50',
-			'150'=>'150',
-			'200'=>'200',
-			'0'=>Yii::t('misc','All'),
-		);
+					'25'=>'25',
+					'50'=>'50',
+					'100'=>'100',
+					'500'=>'500',
+					'0'=>Yii::t('misc','All'),
+				);
 		$fldname = $modelName.'[noOfItem]';
+/*
 		$layout = '<div class="col-sm-3">'.Yii::t('misc','Display').': '
-			.TbHtml::dropDownList($fldname,$this->model->noOfItem,$list,
-				array('submit'=>Yii::app()->createUrl($link),)
-			).'</div>';
+				.TbHtml::dropDownList($fldname,$this->model->noOfItem,$list,
+					array('submit'=>Yii::app()->createUrl($link),)
+				).'</div>';
+*/
+		$layout = '<div class="col-sm-3">'.Yii::t('misc','Display').': '
+				.TbHtml::dropDownList($fldname,$this->model->noOfItem,$list
+				).'</div>';
 		return $layout;
 	}
-
+	
 	public function getLabelName($attribute)
 	{
 		$labels = $this->model->attributeLabels();
 		return (array_key_exists($attribute, $labels)) ? $labels[$attribute] : $attribute;
 	}
-
+	
 	public function getFieldName($attribute)
 	{
 		$modelName = get_class($this->model);
 		return $modelName.'[attr]['.$this->recordptr.']['.$attribute.']';
 	}
-
+	
 	public function createOrderLink($form, $attribute)
 	{
 		$modelName = get_class($this->model);
 		$link = array(
-			'ajax'=>array(
-				'type'=>'POST',
-				'url'=>Yii::app()->createUrl('ajax/dummy'),
-				'success'=>'function() {
+					'ajax'=>array(
+						'type'=>'POST',
+						'url'=>Yii::app()->createUrl('ajax/dummy'),
+						'success'=>'function() {
 							var oldfield = $("#'.$modelName.'_orderField").val();
 							if (oldfield != "'.$attribute.'")
 								$("#'.$modelName.'_orderType").val("A");
@@ -184,31 +279,31 @@ class ListPageWidget extends CWidget
 							$("#'.$modelName.'_orderField").val("'.$attribute.'");
 							$("form#'.$form.'").submit();
 						}',
-			),
-		);
+					),
+				);
 		return $link;
 	}
-
+	
 	public function getIndex() {
 		return $this->recordptr + ($this->model->pageNum - 1) * $this->model->noOfItem;
 	}
-
+	
 	public function getLink($access, $writeurl, $readurl, $param) {
-		$rw = Yii::app()->user->validRWFunction($access);
+		$rw = Yii::app()->user->validRWFunction($access); 
 		$url = $rw ? $writeurl : $readurl;
 		return Yii::app()->createUrl($url,$param);
 	}
-
+	
 	public function drawEditButton($access, $writeurl, $readurl, $param) {
-		$rw = Yii::app()->user->validRWFunction($access);
+		$rw = Yii::app()->user->validRWFunction($access); 
 		$url = $rw ? $writeurl : $readurl;
 		$icon = $rw ? "glyphicon glyphicon-pencil" : "glyphicon glyphicon-eye-open";
 		$alt = $rw ? Yii::t('misc','Edit') : Yii::t('misc','View');
 		$lnk=Yii::app()->createUrl($url,$param);
-
+		
 		return "<a href=\"$lnk\"><span class=\"$icon\"></span></a>";
 	}
-
+	
 	public function drawOrderArrow($attribute)
 	{
 		$arrow = '';
@@ -218,7 +313,7 @@ class ListPageWidget extends CWidget
 		}
 		return $arrow;
 	}
-
+	
 	public function render($view,$data=null,$return=false)
 	{
 		$ctrl = $this->getController();

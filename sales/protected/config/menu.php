@@ -2,22 +2,57 @@
 
 return array(
 
-	'Sales'=>array(
+	'Data Entry'=>array(
 		'access'=>'HK',
 		'items'=>array(
-			'Sales visiting'=>array(
+			'Sales Visit'=>array(
 				'access'=>'HK01',
-				'url'=>'/Sales/index',
-				'tag'=>'@',
+				'url'=>'/visit/index',
 			),
+/*
 			'Sales orders'=>array(
 				'access'=>'HK02',
 				'url'=>'/Salesorder/index',
+			),
+*/
+			'Five Steps'=>array(
+			'access'=>'HK03',
+				'url'=>'/fivestep/index',
+			),
+		),
+	),
+
+	'Report'=>array(
+		'access'=>'HB',
+		'items'=>array(
+			'Report Manager'=>array(
+				'access'=>'HB01',
+				'url'=>'/queue/index',
+			),
+		),
+	),
+	
+	'System Setting'=>array(
+		'access'=>'HC',
+		'items'=>array(
+			'Visit Type'=>array(
+				'access'=>'HC01',
+				'url'=>'/visittype/index',
 				'tag'=>'@',
 			),
-			'Sales video'=>array(
-			'access'=>'HK03',
-				'url'=>'/Salesvideo/index',
+			'Visit Objective'=>array(
+				'access'=>'HC02',
+				'url'=>'/visitobj/index',
+				'tag'=>'@',
+			),
+			'Customer Type'=>array(
+				'access'=>'HC03',
+				'url'=>'/custtype/index',
+				'tag'=>'@',
+			),
+			'Customer District'=>array(
+				'access'=>'HC04',
+				'url'=>'/district/index',
 				'tag'=>'@',
 			),
 		),

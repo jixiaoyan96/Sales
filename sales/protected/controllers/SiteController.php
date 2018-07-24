@@ -11,6 +11,7 @@ class SiteController extends Controller
 			'accessControl - error,login,index,home', // perform access control for CRUD operations
 		);
 	}
+
 	public function accessRules()
 	{
 		return array(
@@ -26,7 +27,8 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
-	public function actions()
+
+	 public function actions()
 	{
 		return array(
 			// captcha action renders the CAPTCHA image displayed on the contact page
@@ -35,12 +37,13 @@ class SiteController extends Controller
 				'backColor'=>0xFFFFFF,
 			),
 			// page action renders "static" pages stored under 'protected/views/site/pages'
-			// They can be accessed via: sales.php?r=site/page&view=FileName
+			// They can be accessed via: index.php?r=site/page&view=FileName
 			'page'=>array(
 				'class'=>'CViewAction',
 			),
 		);
 	}
+
 
 	/**
 	 * This is the default 'index' action that is invoked
@@ -48,19 +51,16 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/sales.php'
+		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		if (Yii::app()->user->isGuest) {
+		if (Yii::app()->user->isGuest)
 			$this->actionLogin();
-		}else {
+		else {
 			$uname = Yii::app()->user->name; 
 			Yii::app()->session['system'] = Yii::app()->params['systemId'];
 			Yii::app()->user->saveUserOption($uname, 'system', Yii::app()->params['systemId']);
 			$this->render('index');
 		}
-	}
-	public function actionDemo(){
-		$model=$_POST['aa'];
 	}
 
 	public function actionHome($url='') {
@@ -94,29 +94,29 @@ class SiteController extends Controller
 			}
 		}
 	}
+
 	/**
 	 * Displays the login page
 	 */
 	public function actionLogin()
 	{
 		$model=new LoginForm;
+
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
-			// /验证用户输入，如果有效，则重定向到上一页
 			if($model->validate() && $model->login())
 			{
-				//$name = Yii::app()->user->name;
-				//$_SESSION['quiz_session_login_id']=$_REQUEST['LoginForm']['username'];
-				$show=Yii::app()->user->setUrlAfterLogin();
+				Yii::app()->user->setUrlAfterLogin();
 				$this->redirect(Yii::app()->user->returnUrl);
 			}
 			else
@@ -138,9 +138,16 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionRemotelogout()
+	{
+		Yii::app()->user->logout();
+	}
+
 	public function actionPassword()
 	{
 		$model=new PasswordForm;
+
 		// collect user input data
 		if(isset($_POST['PasswordForm']))
 		{
@@ -161,12 +168,7 @@ class SiteController extends Controller
 		$this->render('password',array('model'=>$model));
 	}
 
-
-	Public function actionGetdata(){
-		var_dump($_POST);die;
-	}
-
-/*
+/*	
 	public function actionLanguage($locale)
 	{
 		$session = Yii::app()->session;
@@ -177,22 +179,32 @@ class SiteController extends Controller
 		$this->actionHome();
 	}
 */
-
 	public function actionLanguage() {
 		$model=new LanguageForm;
 
 		// collect user input data
 		if(isset($_POST['LanguageForm'])) {
 			$model->attributes=$_POST['LanguageForm'];
+			
 			$session = Yii::app()->session;
 			$session['lang'] = $model->language;
 			Yii::app()->language = $model->language;
 			$uname = Yii::app()->user->name; 
 			Yii::app()->user->saveUserOption($uname, 'lang', $model->language);
+			
 			$this->redirect(Yii::app()->baseUrl);
 		}
 		// display the login form
 		$model->language = Yii::app()->language;
 		$this->render('language',array('model'=>$model));
+	}
+	
+	public function actionNotify($id=-1) {
+		$rtn = array();
+		if ($id >= 0) {
+			$model = new Notification();
+			$rtn = $model->getNewMessageById($id);
+		}
+		echo json_encode($rtn);
 	}
 }

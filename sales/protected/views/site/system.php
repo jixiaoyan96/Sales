@@ -8,6 +8,7 @@
 					'id'=>'btnSys'.$id,
 					'class'=>'btn btn-block',
 				));
+
 			$content .= "<div class=\"row\">$button</div>";
 		}
 	}

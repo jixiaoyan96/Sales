@@ -18,7 +18,5 @@ return array(
 	'Lock'=>'锁定',
 	'Email'=>'电邮',
 	'Apply Template'=>'权限范本套用',
-	'Signature'=>'签名档',
-	'Misc'=>'杂项',
 );
 ?>

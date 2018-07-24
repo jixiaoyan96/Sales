@@ -5,7 +5,8 @@
 	<?php 
 		Yii::app()->bootstrap->bootstrapPath = Yii::app()->basePath.'/../../bootstrap-3.3.7-dist';
 		Yii::app()->bootstrap->adminLtePath = Yii::app()->basePath.'/../../AdminLTE-2.3.7';
-		Yii::app()->bootstrap->register(); ?>
+		Yii::app()->bootstrap->register(); 
+	?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="language" content="<?php echo Yii::app()->language; ?>" />
