@@ -45,10 +45,17 @@ return array(
 	'Payment Receive Daily Report'=>'每日收款择要',
 	'No Record'=>'没有相关记录',
 	'Account Name'=>'账户名称',
+
+    'Start_Dt'=>'入职日期',
+    'Name'=>'员工名字',
+    'GanWwei'=>'员工岗位',
+    'Staffs_Desc'=>'员工编号',
+    'Five'=>'欠缺五部曲阶段',
 	
 	'Transaction List'=>'交易记录',
 	'Consolidated Notification Report'=>'综合通知报表',
 	'Subject'=>'主题',
+    'Staffs'=>'员工',
 	'Title'=>'标题',
 	'Content'=>'内容',
 	'User'=>'帐户',

@@ -25,10 +25,15 @@ return array(
 	'Report'=>array(
 		'access'=>'HB',
 		'items'=>array(
+            'Five Steps'=>array(
+                'access'=>'HB02',
+                'url'=>'report/five',
+            ),
 			'Report Manager'=>array(
 				'access'=>'HB01',
 				'url'=>'/queue/index',
 			),
+
 		),
 	),
 	

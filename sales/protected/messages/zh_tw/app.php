@@ -31,6 +31,7 @@ return array(
 'Report'=>'報表',
 // 'Operation Daily Report'=>'每日營業擇要報告',
 'Report Manager'=>'報表管理員',
+'Report Five'=>'五部曲報表',
 'Sales Visit List'=>'銷售拜訪報表',
 
 'System Setting'=>'系統設置',
