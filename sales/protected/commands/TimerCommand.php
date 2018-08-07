@@ -13,13 +13,13 @@ class TimerCommand extends CConsoleCommand {
                 $record['start_time'] = date_format(date_create($record['start_time']), "Y/m/d");
                 $sql1="select a.*, b.name as city_name, f.name as staff_name, f.code as staff_code, 
 				d.field_value as mgr_score, e.field_value as dir_score, g.field_value as sup_score
-				from sale$suffix.sal_fivestep a 
+				from sales$suffix.sal_fivestep a 
 				inner join hr$suffix.hr_binding c on a.username = c.user_id
 				inner join hr$suffix.hr_employee f on c.employee_id = f.id
 				left outer join security$suffix.sec_city b on a.city=b.code
-				left outer join sale$suffix.sal_fivestep_info d on a.id=d.five_id and d.field_id='mgr_score'
-				left outer join sale$suffix.sal_fivestep_info e on a.id=e.five_id and e.field_id='dir_score'
-				left outer join sale$suffix.sal_fivestep_info g on a.id=g.five_id and g.field_id='sup_score'
+				left outer join sales$suffix.sal_fivestep_info d on a.id=d.five_id and d.field_id='mgr_score'
+				left outer join sales$suffix.sal_fivestep_info e on a.id=e.five_id and e.field_id='dir_score'
+				left outer join sales$suffix.sal_fivestep_info g on a.id=g.five_id and g.field_id='sup_score'
 where f.name= '".$record['name']."'";
                 $arr = Yii::app()->db->createCommand($sql1)->queryAll();
                 if($record['start_time'] == "$firstDay"){
@@ -46,7 +46,7 @@ where f.name= '".$record['name']."'";
                         'lcu' => $lcu,
                         'lcd' => date('Y-m-d H:i:s'),
                     ));
-                }elseif (empty($arr&&$record['start_time'] == "$secondDay")){
+                }elseif (empty($arr)&&$record['start_time'] == "$secondDay"){
                     $sql = "select approver_type,username from account$suffix.acc_approver where city='".$record['city']."' and approver_type='regionMgr'";
                     $rows = Yii::app()->db->createCommand($sql)->queryAll();
                     $zjl = $rows[0]['username'];
