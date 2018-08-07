@@ -6,27 +6,27 @@ class TimerCommand extends CConsoleCommand {
         $firstDay = date("Y/m/d");
         $firstDay = date("Y/m/d", strtotime("$firstDay - 30 day"));
         $secondDay = date("Y/m/d", strtotime("$firstDay - 60 day"));
-        $sql="select * from hruat$suffix.hr_employee WHERE  position in (SELECT id FROM hruat$suffix.hr_dept where dept_class='sales')";
+        $sql="select * from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales')";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         if (count($records) > 0) {
             foreach ($records as $k=>$record) {
                 $record['start_time'] = date_format(date_create($record['start_time']), "Y/m/d");
                 $sql1="select a.*, b.name as city_name, f.name as staff_name, f.code as staff_code, 
 				d.field_value as mgr_score, e.field_value as dir_score, g.field_value as sup_score
-				from salesuat.sal_fivestep a 
-				inner join hrdev.hr_binding c on a.username = c.user_id
-				inner join hrdev.hr_employee f on c.employee_id = f.id
-				left outer join securitydev.sec_city b on a.city=b.code
-				left outer join salesuat.sal_fivestep_info d on a.id=d.five_id and d.field_id='mgr_score'
-				left outer join salesuat.sal_fivestep_info e on a.id=e.five_id and e.field_id='dir_score'
-				left outer join salesuat.sal_fivestep_info g on a.id=g.five_id and g.field_id='sup_score'
+				from sale$suffix.sal_fivestep a 
+				inner join hr$suffix.hr_binding c on a.username = c.user_id
+				inner join hr$suffix.hr_employee f on c.employee_id = f.id
+				left outer join security$suffix.sec_city b on a.city=b.code
+				left outer join sale$suffix.sal_fivestep_info d on a.id=d.five_id and d.field_id='mgr_score'
+				left outer join sale$suffix.sal_fivestep_info e on a.id=e.five_id and e.field_id='dir_score'
+				left outer join sale$suffix.sal_fivestep_info g on a.id=g.five_id and g.field_id='sup_score'
 where f.name= '".$record['name']."'";
                 $arr = Yii::app()->db->createCommand($sql1)->queryAll();
                 if($record['start_time'] == "$firstDay"){
-                    $sql = "select approver_type,username from account.acc_approver where city='".$record['city']."' and approver_type='regionMgr'";
+                    $sql = "select approver_type,username from account$suffix.acc_approver where city='".$record['city']."' and approver_type='regionMgr'";
                     $rows = Yii::app()->db->createCommand($sql)->queryAll();
                     $zjl = $rows[0]['username'];
-                    $sql1 = "SELECT email FROM securitydev.sec_user WHERE username='$zjl'";
+                    $sql1 = "SELECT email FROM security$suffix.sec_user WHERE username='$zjl'";
                     $rs = Yii::app()->db->createCommand($sql1)->queryAll();
 
                     $from_addr = "it@lbsgroup.com.hk";
@@ -47,10 +47,10 @@ where f.name= '".$record['name']."'";
                         'lcd' => date('Y-m-d H:i:s'),
                     ));
                 }elseif (empty($arr&&$record['start_time'] == "$secondDay")){
-                    $sql = "select approver_type,username from account.acc_approver where city='".$record['city']."' and approver_type='regionMgr'";
+                    $sql = "select approver_type,username from account$suffix.acc_approver where city='".$record['city']."' and approver_type='regionMgr'";
                     $rows = Yii::app()->db->createCommand($sql)->queryAll();
                     $zjl = $rows[0]['username'];
-                    $sql1 = "SELECT email FROM securitydev.sec_user WHERE username='$zjl'";
+                    $sql1 = "SELECT email FROM security$suffix.sec_user WHERE username='$zjl'";
                     $rs = Yii::app()->db->createCommand($sql1)->queryAll();
 
                     $from_addr = "it@lbsgroup.com.hk";
