@@ -5,7 +5,7 @@ class JobQueueCommand extends CConsoleCommand {
 	public function run($args) {
 		$this->webroot = Yii::app()->params['webroot'];
 		$sql = "select a.id, a.ts, a.rpt_type, a.username, a.rpt_desc, a.req_dt  
-					from sal_queue a
+					from gr_queue a
 				where a.status='P' order by a.req_dt limit 1";
 		$row = Yii::app()->db->createCommand($sql)->queryRow();
 		if ($row===false) return;
@@ -26,17 +26,18 @@ class JobQueueCommand extends CConsoleCommand {
 				
 			$rpt_desc = $param['RPT_DESC'];
 			$mesg = "ID:$id NAME:$rpt_desc FORMAT:$format USER:$uid\n";
+			if ($format!='EXCEL' && $format!='EMAIL') echo $mesg;
 				
 			$out = $this->genReport($param['RPT_ID'], $param, $format);
 			
 			if (!empty($out)) {
 				$this->saveOutput($id, $ts, $out, 'C');
-				echo $mesg;
+				if ($format=='EXCEL' || $format=='EMAIL') echo $mesg;
 				echo "\t-Done (default)\n";
 			} else {
-					$this->markStatus($id, $ts, 'F');
-					echo $mesg;
-					echo "\t-FAIL\n";
+				$this->markStatus($id, $ts, 'F');
+				if ($format=='EXCEL' || $format=='EMAIL') echo $mesg;
+				echo "\t-FAIL\n";
 			}
 		}
 	}
@@ -44,9 +45,9 @@ class JobQueueCommand extends CConsoleCommand {
 	protected function updateQueueUser($id, $users) {
 		if (!empty($users)) {
 			foreach ($users as $username) {
-				$sql = "select id from sal_queue_user where queue_id=$id and username='$username' limit 1";
+				$sql = "select id from gr_queue_user where queue_id=$id and username='$username' limit 1";
 				if (Yii::app()->db->createCommand($sql)->queryRow()===false) {
-					$sql = "insert into sal_queue_user (queue_id, username)
+					$sql = "insert into gr_queue_user (queue_id, username)
 							values(:queue_id, :username)
 					";
 
@@ -63,7 +64,7 @@ class JobQueueCommand extends CConsoleCommand {
 	
 	protected function getQueueParam($qid) {
 		$rtn = array();
-		$sql = "select * from sal_queue_param where queue_id=".$qid;
+		$sql = "select * from gr_queue_param where queue_id=".$qid;
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
@@ -76,7 +77,7 @@ class JobQueueCommand extends CConsoleCommand {
 	}
 	
 	protected function markStatus($id, $ts, $sts) {
-		$sql = "update sal_queue set status=:status where id=:id and ts=:ts";
+		$sql = "update gr_queue set status=:status where id=:id and ts=:ts";
 		$command=Yii::app()->db->createCommand($sql);
 		if (strpos($sql,':id')!==false)
 			$command->bindParam(':id',$id,PDO::PARAM_INT);
@@ -90,7 +91,7 @@ class JobQueueCommand extends CConsoleCommand {
 	
 	protected function saveOutput($id, $ts, $outstring, $sts) {
 		try {
-			$sql = "update sal_queue set status=:sts, fin_dt=now(), rpt_content=:content where id=:id and ts=:ts";
+			$sql = "update gr_queue set status=:sts, fin_dt=now(), rpt_content=:content where id=:id and ts=:ts";
 			$command=Yii::app()->db->createCommand($sql);
 			if (strpos($sql,':id')!==false)
 				$command->bindParam(':id',$id,PDO::PARAM_INT);
@@ -110,7 +111,7 @@ class JobQueueCommand extends CConsoleCommand {
 	
 	protected function getTimeStamp($id) {
 		$ts = '';
-		$sql = "select ts from sal_queue where id=".$id;
+		$sql = "select ts from gr_queue where id=".$id;
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {

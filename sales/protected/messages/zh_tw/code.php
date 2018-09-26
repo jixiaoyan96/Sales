@@ -1,26 +1,37 @@
 <?php
 return array(
+'Account Type'=>'賬戶類別',
+'Account Type Form'=>'賬戶類別表單',
+'Account Type List'=>'賬戶類別列表',
 'Report Category'=>'報表類別',
+
+'Account'=>'賬戶',
+'Account Form'=>'賬戶表單',
+'Account List'=>'賬戶列表',
+'Account No.'=>'賬戶號碼',
+'Account Name'=>'賬戶名稱',
+'Bank'=>'銀行名稱',
+'Remarks'=>'備註',
+'Open Balance'=>'初始金額',
+'Balance Date'=>'初始日期',
+
+'Transaction Type'=>'交易類別',
+'Transaction Type List'=>'交易類別列表',
+'Transaction Type Form'=>'交易類別表單',
+'Adjustment'=>'調整類別',
 
 'Description'=>'名稱',
 'Code'=>'編號',
 'Name'=>'名稱',
 'Type'=>'類別',
 
-'Visit Type'=>'拜訪類型',
-'Visit Type List'=>'拜訪類型列表',
-'Visit Type Form'=>'拜訪類型表單',
+'In'=>'收款',
+'Out'=>'付款',
 
-'Visit Objective'=>'拜訪目的',
-'Visit Objective List'=>'拜訪目的列表',
-'Visit Objective Form'=>'拜訪目的表單',
-
-'Customer Type'=>'客戶類別',
-'Customer Type List'=>'客戶類別列表',
-'Customer Type Form'=>'客戶類別表單',
-
-'Customer District'=>'客戶區域',
-'Customer District List'=>'客戶區域列表',
-'Customer District Form'=>'客戶區域表單',
+'Approver Form'=>'審核人員表單',
+'Region A.Manager'=>'區域副經理',
+'Region Manager'=>'區域經理',
+'Region A.Director'=>'區域副總監',
+'Region Director'=>'區域總監',
 );
 ?>

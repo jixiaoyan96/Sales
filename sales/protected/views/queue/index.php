@@ -26,9 +26,10 @@ $this->pageTitle=Yii::app()->name . ' - Report Manager';
 	<div class="box"><div class="box-body">
 	<div class="btn-group" role="group">
 		<?php 
-			echo TbHtml::button('<span class="fa fa-refresh"></span> '.Yii::t('misc','Refresh'), array(
-				'submit'=>Yii::app()->createUrl('queue/index'), 
-			)); 
+			if (Yii::app()->user->validRWFunction('YB01'))
+				echo TbHtml::button('<span class="fa fa-refresh"></span> '.Yii::t('misc','Refresh'), array(
+					'submit'=>Yii::app()->createUrl('queue/index'), 
+				)); 
 		?>
 	</div>
 	</div></div>

@@ -6,9 +6,6 @@
 		Yii::app()->bootstrap->bootstrapPath = Yii::app()->basePath.'/../../bootstrap-3.3.7-dist';
 		Yii::app()->bootstrap->adminLtePath = Yii::app()->basePath.'/../../AdminLTE-2.3.7';
 		Yii::app()->bootstrap->register(); 
-
-		$sfile = Yii::app()->baseUrl.'/js/dms.js';
-		Yii::app()->clientScript->registerScriptFile($sfile,CClientScript::POS_HEAD);
 	?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,53 +18,17 @@
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-<?php 
-$rights = array('CN04',);
-$grant = array();
-foreach ($rights as $right) {
-	if (Yii::app()->user->validFunction($right)) $grant[] = Yii::app()->params['systemId'].'_'.$right;
-}
-?>
-	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-	<script>
-		var OneSignal = window.OneSignal || [];
-		var useragentid = '';
-		OneSignal.push(function() {
-			OneSignal.init({
-				appId: <?php echo '"'.Yii::app()->params['onesignal'].'"'; ?>,
-				autoRegister: false,
-				notifyButton: {
-					enable: false 
-				},
-				persistNotification: false
-			});
-		});
-		OneSignal.push(function() {
-			OneSignal.sendTags({
-					userId: <?php echo "'".Yii::app()->user->id."'"; ?>,
-					<?php 
-						foreach ($rights as $right) {
-							if (Yii::app()->user->validFunction($right)) 
-								echo Yii::app()->params['systemId'].'_'.$right.": 'Y',";
-							else
-								echo Yii::app()->params['systemId'].'_'.$right.": '',";
-						}
-					?>
-			});
-		});
-		OneSignal.push(function() {
-			OneSignal.getUserId().then(function(userId) {                
-				if (userId == null){
-					<?php echo !empty($grant) ? 'OneSignal.registerForPushNotifications({modalPrompt: true});' : 'var x = true;'; ?>
-				} else {
-					useragentid = userId;
-				}
-			});
-		});
-	</script>
+    <style type="">
+        .table-condensed th.datepicker-switch{text-align: center}
+        .table-condensed th.next{text-align: right}
+        .table-condensed td>span:first-child{margin-left: 0px;}
+        .table-condensed td>span{margin-left: 4px;}
+        .main-header{max-height:none;}
+        select[readonly],input[readonly]{pointer-events: none;}
+    </style>
 </head>
 
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-purple layout-top-nav">
 <div class="wrapper">
 
 	<header class="main-header">
@@ -108,8 +69,6 @@ foreach ($rights as $right) {
 		</nav>
 	</header>
 
-	<?php $this->widget('ext.widgets.loading.LoadingWidget'); ?>
-	
 	<!-- Full Width Column -->
 	<div class="content-wrapper">
 		<div class="container">
@@ -139,7 +98,7 @@ foreach ($rights as $right) {
 if (!Yii::app()->user->isGuest) {
 	$checkurl = Yii::app()->createUrl("ajax/checksession");
 	$loginurl = Yii::app()->createUrl("site/logout");
-	$js = <<<EOF
+	$js = "
 var checkLogin = function() {
     $.ajax({
 		type: 'GET', 
@@ -154,14 +113,14 @@ var checkLogin = function() {
 			}
 		},
 		error: function(xhr, status, error) {
-			skip = 1;
+			skill=1;
 		}
 	});
 };
 var logincheckinterval = setInterval(checkLogin, 30000);
-EOF;
+	";
 	Yii::app()->clientScript->registerScript('checksession',$js,CClientScript::POS_READY);
-	$js = <<<EOF
+	$js = "
 $(function () {
   $('[data-toggle=\"tooltip\"]').tooltip()
 });
@@ -169,31 +128,19 @@ $(function () {
 $('#btnSysChange').on('click',function() {
 	$('#syschangedialog').modal('show');
 });
-EOF;
-	$incl_js = false;
+	";
 	foreach (Yii::app()->params['systemMapping'] as $id=>$value) {
 		if (Yii::app()->user->validSystem($id)) {
 			$oid = 'btnSys'.$id;
 			$url = $value['webroot'];
-			if (!isset($value['script'])) {
-				$temp = '$("#'.$oid.'").on("click",function(){$("#syschangedialog").modal("hide");window.location="'.$url.'";});';
-			} else {
-				$func_name = $value['script'];
-				$lang = Yii::app()->language;
-				$homeurl = Yii::app()->createUrl("");
-				$incl_js = true;
-				$temp = '$("#'.$oid.'").on("click",function(){$("#syschangedialog").modal("hide");'.$func_name.'("'.$id.'","'.$url.'","'.$homeurl.'");});';
-			}
+			$temp = '
+$("#'.$oid.'").on("click",function(){$("#syschangedialog").modal("hide");window.location="'.$url.'";});
+				';
 			$js .= $temp;
 		}
 	}
-	
-	if ($incl_js) {
-		$sfile = Yii::app()->baseUrl.'/js/systemlink.js';
-		Yii::app()->clientScript->registerScriptFile($sfile,CClientScript::POS_HEAD);
-	}
 	Yii::app()->clientScript->registerScript('systemchange',$js,CClientScript::POS_READY);
+    Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/js/message.js", CClientScript::POS_END);
 }
 ?>
-</script>
 </html>

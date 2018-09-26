@@ -2,11 +2,8 @@
 return array(
 	'Are you sure?' => '确定保存?',
 	'Are you sure to cancel?'=>'确定取消?',
-	'Are you sure to void?'=>'确定撤消?',
 	'Cancel Record'=>'取消记录',
 	'Cancel'=>'取消',
-	'Void Record'=>'撤消记录',
-	'Void'=>'撤消',
 	'Incorrect old password.' => '旧密码不正确',
 	'Incorrect username or password.' => '用户名称或密码不正确',
 	'Account is locked.'=>'帐户被锁定',
@@ -32,7 +29,6 @@ return array(
 	'This record is already in use'=>'这纪录正被使用',
 	'Unable to login.'=>'无法登录',
 	'Report submitted. Please go to Report Manager to retrieve the output.'=>'报表请求已经提交. 请到报表管理员读取报表.',
-	'Job submitted. Please go to Import Manager to retrieve the result.'=>'工作请求已经提交. 请到数据导入管理员查看结果.',
 	'Hold down <kbd>Ctrl</kbd> button to select multiple options'=>'按住<kbd>CTRL</kbd>键选择多个选项',
 	'Save Done and Sent Notification' => '记录保存完成并发出电邮通知',
 	'Save Done but Fail in Sent Notification' => '记录保存完成但发出电邮通知不成功',
@@ -49,7 +45,6 @@ return array(
 	'Submission Done'=>'提交完成',
 	'Request Signed'=>'签字完成',
 	'Cancel Done'=>'取消完成',
-	'Void Done'=>'撤消完成',
 	'Reimbursement Approved'=>'报销单申请审核完成',
 	'Unable to open this record. Maybe you don\'t have corresponding access right.'=>'无法打开此记录。也许你没有相应的访问权限。',
 	'Flow Info'=>'流程信息',
@@ -58,8 +53,5 @@ return array(
 	'No File Record'=>'没有文件记录',
 	'Transaction Detail'=>'交易内容',
 	'Confirmation Done'=>'确认完成',
-	'Request Checking Done'=>'要求覆核完成',
-	'Checking and Submission Done'=>'覆核并提交完成',
-	'Reimbursement Returned'=>'报销单申请退回',
 );
 ?>

@@ -19,7 +19,17 @@
 		</thead>
 		<tbody>
 <?php
-	echo $doc->genTableFileList($ronly);
+if($model->scenario=='new'){
+    if($model->docMasterId[strtolower($doc->docType)]>0){
+        $doc->masterId = $model->docMasterId[strtolower($doc->docType)];
+    }
+}
+if(get_class($model)=="HistoryForm"&&empty($model->id)){
+    if($model->docMasterId[strtolower($doc->docType)]>0){
+        $doc->masterId = $model->docMasterId[strtolower($doc->docType)];
+    }
+}
+echo $doc->genTableFileList($ronly);
 ?>
 		</tbody>
 	</table>
@@ -34,7 +44,7 @@ if (!$ronly) {
 		'name'=>$doc->inputName,
 		'model'=>$model,
 		'attribute'=>'files',
-		'accept'=>'jpeg|jpg|gif|png|xlsx|xls|docx|doc|pdf|tif',
+		'accept'=>'jpg|gif|png|xlsx|xls|docx|doc|pdf|jpeg|tif',
 		'remove'=>Yii::t('dialog','Remove'),
 		'file'=>' $file',
 		'options'=>array(

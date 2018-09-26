@@ -41,7 +41,7 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 				?>
 			</div>
 		</div>
-		
+
 		<div class="row">
 		<p>&nbsp;</p>
 		<p class="text-center">

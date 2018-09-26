@@ -46,10 +46,12 @@ class City extends CActiveRecord
 	public function getAncestorInChargeList($code) {
 		$rtn = array();
 		$list = $this->getAncestorList($code);
-		$rows = $this->findAll(array("condition"=>"code in ($list)"));
-		if (!empty($rows)) {
-			foreach ($rows as $row) {
-				if (!empty($row->incharge)) $rtn[] = $row->incharge;
+		if (!empty($list)) {
+			$rows = $this->findAll(array("condition"=>"code in ($list)"));
+			if (!empty($rows)) {
+				foreach ($rows as $row) {
+					if (!empty($row->incharge)) $rtn[] = $row->incharge;
+				}
 			}
 		}
 		return $rtn;
@@ -62,6 +64,19 @@ class City extends CActiveRecord
 			foreach ($rows as $row) {
 				$rtn[] = $row->code;
 				$descendant = $this->getDescendant($row->code);
+				if (!empty($descendant)) $rtn = array_merge($rtn,$descendant);
+			}
+		}
+		return $rtn;
+	}
+
+	public function getCityList($code) {
+		$rtn = array();
+		$rows = $this->findAll(array("condition"=>"region='$code'"));
+		if (!empty($rows)) {
+			foreach ($rows as $row) {
+				$rtn[$row->code] = $row->name;
+				$descendant = $this->getCityList($row->code);
 				if (!empty($descendant)) $rtn = array_merge($rtn,$descendant);
 			}
 		}
@@ -81,12 +96,5 @@ class City extends CActiveRecord
 	
 	public function isNoDescendant($code) {
 		return !$this->exists("region='$code'");
-	}
-	
-	public function getCurrency($code) {
-		$table = 'security'.Yii::app()->params['envSuffix'].'.sec_city_info';		
-		$sql = "select field_value from $table where code='$code' and field_id='currency'";
-		$row = Yii::app()->db->createCommand($sql)->queryRow();
-		return ($row!==false) ? $row['field_value'] : '';
 	}
 }

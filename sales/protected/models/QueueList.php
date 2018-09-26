@@ -18,11 +18,11 @@ class QueueList extends CListPageModel
 	{
 		$uid = Yii::app()->user->id;
 		$sql1 = "select a.*
-				from sal_queue a 
+				from gr_queue a 
 				where a.username='".$uid."' 
 			";
 		$sql2 = "select count(a.id)
-				from sal_queue a 
+				from gr_queue a 
 				where a.username='".$uid."' 
 			";
 		$clause = "";
@@ -82,7 +82,7 @@ class QueueList extends CListPageModel
 			}
 		}
 		$session = Yii::app()->session;
-		$session['criteria_HB01'] = $this->getCriteria();
+		$session['criteria_xb01'] = $this->getCriteria();
 		return true;
 	}
 

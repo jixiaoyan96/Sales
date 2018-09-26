@@ -1,19 +1,19 @@
 <?php
-	$hidden1 = TbHtml::hiddenField('lookuptype', '');
-	$hidden2 = TbHtml::hiddenField('lookupcodefield', '');
-	$hidden3 = TbHtml::hiddenField('lookupvaluefield', '');
-	$hidden4 = TbHtml::hiddenField('lookupotherfield', '');
-	$hidden5 = TbHtml::hiddenField('lookupparamfield', '');
-	
-	$search = TbHtml::textField('txtlookup', '', array('class'=>'form-control','maxlength'=>500,
-				'append'=>TbHtml::button(Yii::t('misc','Search'),array('name'=>'btnLookup','id'=>'btnLookup')),
-			)); 
-	$list = CHtml::listBox('lstlookup', '', array(), array('class'=>'form-control','size'=>10,)
-			);
+$hidden1 = TbHtml::hiddenField('lookuptype', '');
+$hidden2 = TbHtml::hiddenField('lookupcodefield', '');
+$hidden3 = TbHtml::hiddenField('lookupvaluefield', '');
+$hidden4 = TbHtml::hiddenField('lookupotherfield', '');
+$hidden5 = TbHtml::hiddenField('lookupparamfield', '');
 
-	$mesg = TbHtml::label(Yii::t('dialog','Hold down <kbd>Ctrl</kbd> button to select multiple options'), false);
-			
-	$content = "
+$search = TbHtml::textField('txtlookup', '', array('class'=>'form-control','maxlength'=>500,
+    'append'=>TbHtml::button(Yii::t('misc','Search'),array('name'=>'btnLookup','id'=>'btnLookup')),
+));
+$list = CHtml::listBox('lstlookup', '', array(), array('class'=>'form-control','size'=>10,)
+);
+
+$mesg = TbHtml::label(Yii::t('dialog','Hold down <kbd>Ctrl</kbd> button to select multiple options'), false);
+
+$content = "
 <div class=\"row\">
 	$hidden1
 	$hidden2
@@ -37,16 +37,16 @@
 <div id='fieldvalue' style='display: none'></div>
 	";
 
-	$this->widget('bootstrap.widgets.TbModal', array(
-					'id'=>'lookupdialog',
-					'header'=>Yii::t('dialog','Lookup'),
-					'content'=>$content,
-					'footer'=>array(
-						TbHtml::button(Yii::t('dialog','Select'), array('id'=>'btnLookupSelect','data-dismiss'=>'modal','color'=>TbHtml::BUTTON_COLOR_PRIMARY)),
-						TbHtml::button(Yii::t('dialog','Close'), array('id'=>'btnLookupCancel','data-dismiss'=>'modal','color'=>TbHtml::BUTTON_COLOR_PRIMARY)),
-					),
-					'show'=>false,
-				));
+$this->widget('bootstrap.widgets.TbModal', array(
+    'id'=>'lookupdialog',
+    'header'=>Yii::t('dialog','Lookup'),
+    'content'=>$content,
+    'footer'=>array(
+        TbHtml::button(Yii::t('dialog','Select'), array('id'=>'btnLookupSelect','data-dismiss'=>'modal','color'=>TbHtml::BUTTON_COLOR_PRIMARY)),
+        TbHtml::button(Yii::t('dialog','Close'), array('id'=>'btnLookupCancel','data-dismiss'=>'modal','color'=>TbHtml::BUTTON_COLOR_PRIMARY)),
+    ),
+    'show'=>false,
+));
 ?>
 
 

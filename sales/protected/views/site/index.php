@@ -14,9 +14,3 @@ if (isset($url) && !empty($url)) {
 	}
 }
 ?>
-
-<?php if (Yii::app()->user->validFunction('CN04')): ?>
-<section class="content">
-<?php $this->renderPartial('//site/notification'); ?>
-</section>
-<?php endif; ?>
