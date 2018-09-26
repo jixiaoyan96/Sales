@@ -9263,3 +9263,1620 @@ REQUEST_URI=/sales/index.php/fivestep/showmedia?index=24
 in D:\xampp\htdocs\sales\protected\models\FivestepForm.php (418)
 in D:\xampp\htdocs\sales\protected\controllers\FivestepController.php (296)
 in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+2018/09/26 09:59:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 09:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:24 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_point_ex' doesn't exist. The SQL statement executed was: select a.year,a.year,d.code AS employee_code,d.name AS employee_name,d.city AS s_city,SUM(a.start_num) AS start_num,SUM(a.end_num) AS end_num 
+                from gr_credit_point_ex a
+                LEFT JOIN gr_credit_point e ON a.point_id = e.id
+                LEFT JOIN gr_credit_type f ON e.credit_type = f.id
+                LEFT JOIN hrdev.hr_employee d ON a.employee_id = d.id
+                where f.category = '1' and a.year = '2018' 
+			GROUP BY a.employee_id,a.year .
+in D:\xampp\htdocs\sales\protected\models\RankGroupList.php (86)
+in D:\xampp\htdocs\sales\protected\controllers\RankGroupController.php (49)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+2018/09/26 10:00:24 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_point_ex' doesn't exist. The SQL statement executed was: select a.year,a.year,d.code AS employee_code,d.name AS employee_name,d.city AS s_city,SUM(a.start_num) AS start_num,SUM(a.end_num) AS end_num 
+                from gr_credit_point_ex a
+                LEFT JOIN gr_credit_point e ON a.point_id = e.id
+                LEFT JOIN gr_credit_type f ON e.credit_type = f.id
+                LEFT JOIN hrdev.hr_employee d ON a.employee_id = d.id
+                where f.category = '1' and a.year = '2018' 
+			GROUP BY a.employee_id,a.year ' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sales\protected\models\RankGroupList.php(86): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\sales\protected\controllers\RankGroupController.php(49): RankGroupList->retrieveDataByPage(1)
+#3 [internal function]: RankGroupController->actionIndex(0)
+#4 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(RankGroupController), Array)
+#5 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(RankGroupController), Object(ReflectionMethod), Array)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('rankGroup/index')
+#22 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/sales/index.php/rankGroup/index
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:32 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_point_ex' doesn't exist. The SQL statement executed was: select a.year,a.year,d.code AS employee_code,d.name AS employee_name,d.city AS s_city,SUM(a.start_num) AS start_num,SUM(a.end_num) AS end_num 
+                from gr_credit_point_ex a
+                LEFT JOIN gr_credit_point e ON a.point_id = e.id
+                LEFT JOIN gr_credit_type f ON e.credit_type = f.id
+                LEFT JOIN hrdev.hr_employee d ON a.employee_id = d.id
+                where f.category = '1' and a.year = '2018' 
+			GROUP BY a.employee_id,a.year .
+in D:\xampp\htdocs\sales\protected\models\RankGroupList.php (86)
+in D:\xampp\htdocs\sales\protected\controllers\RankGroupController.php (49)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+2018/09/26 10:00:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_point_ex' doesn't exist. The SQL statement executed was: select a.year,a.year,d.code AS employee_code,d.name AS employee_name,d.city AS s_city,SUM(a.start_num) AS start_num,SUM(a.end_num) AS end_num 
+                from gr_credit_point_ex a
+                LEFT JOIN gr_credit_point e ON a.point_id = e.id
+                LEFT JOIN gr_credit_type f ON e.credit_type = f.id
+                LEFT JOIN hrdev.hr_employee d ON a.employee_id = d.id
+                where f.category = '1' and a.year = '2018' 
+			GROUP BY a.employee_id,a.year ' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sales\protected\models\RankGroupList.php(86): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\sales\protected\controllers\RankGroupController.php(49): RankGroupList->retrieveDataByPage(1)
+#3 [internal function]: RankGroupController->actionIndex(0)
+#4 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(RankGroupController), Array)
+#5 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(RankGroupController), Object(ReflectionMethod), Array)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('rankGroup/index')
+#22 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/sales/index.php/rankGroup/index
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_type' doesn't exist. The SQL statement executed was: SELECT *
+FROM `gr_credit_type`.
+in D:\xampp\htdocs\sales\protected\models\CreditTypeForm.php (132)
+in D:\xampp\htdocs\sales\protected\views\site\integralAddForm.php (39)
+in D:\xampp\htdocs\sales\protected\views\creditRequest\form.php (101)
+2018/09/26 10:00:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_type' doesn't exist. The SQL statement executed was: SELECT *
+FROM `gr_credit_type`' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sales\protected\models\CreditTypeForm.php(132): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\sales\protected\views\site\integralAddForm.php(39): CreditTypeForm->getCreditTypeList()
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\sales\protected\views\creditRequest\form.php(101): CController->renderPartial('//site/integral...', Array)
+#7 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#8 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('form', Array, true)
+#11 D:\xampp\htdocs\sales\protected\controllers\CreditRequestController.php(144): CController->render('form', Array)
+#12 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): CreditRequestController->actionNew()
+#13 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#20 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#23 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#24 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('new')
+#28 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('creditRequest/n...')
+#29 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/sales/index.php/creditRequest/new
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/rankCity/index
+---
+2018/09/26 10:00:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:52 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_type' doesn't exist. The SQL statement executed was: SELECT *
+FROM `gr_credit_type`.
+in D:\xampp\htdocs\sales\protected\models\CreditTypeForm.php (132)
+in D:\xampp\htdocs\sales\protected\views\site\integralAddForm.php (39)
+in D:\xampp\htdocs\sales\protected\views\creditRequest\form.php (101)
+2018/09/26 10:00:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_type' doesn't exist. The SQL statement executed was: SELECT *
+FROM `gr_credit_type`' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sales\protected\models\CreditTypeForm.php(132): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\sales\protected\views\site\integralAddForm.php(39): CreditTypeForm->getCreditTypeList()
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\sales\protected\views\creditRequest\form.php(101): CController->renderPartial('//site/integral...', Array)
+#7 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#8 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('form', Array, true)
+#11 D:\xampp\htdocs\sales\protected\controllers\CreditRequestController.php(144): CController->render('form', Array)
+#12 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): CreditRequestController->actionNew()
+#13 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#15 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#20 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#23 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#24 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('new')
+#28 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('creditRequest/n...')
+#29 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/sales/index.php/creditRequest/new
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:55 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_gift_type' doesn't exist. The SQL statement executed was: select count(id)
+				from gr_gift_type
+				where city IN ('HK','CE','SZ','SH') 
+			.
+in D:\xampp\htdocs\sales\protected\models\GiftList.php (54)
+in D:\xampp\htdocs\sales\protected\controllers\GiftController.php (57)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+2018/09/26 10:00:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_gift_type' doesn't exist. The SQL statement executed was: select count(id)
+				from gr_gift_type
+				where city IN ('HK','CE','SZ','SH') 
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\xampp\htdocs\sales\protected\models\GiftList.php(54): CDbCommand->queryScalar()
+#2 D:\xampp\htdocs\sales\protected\controllers\GiftController.php(57): GiftList->retrieveDataByPage(1)
+#3 [internal function]: GiftController->actionIndex(0)
+#4 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(GiftController), Array)
+#5 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(GiftController), Object(ReflectionMethod), Array)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('gift/index')
+#22 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/sales/index.php/gift/index
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:00:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:00 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_request' doesn't exist. The SQL statement executed was: select count(a.id) from gr_credit_request a
+                LEFT JOIN gr_credit_type b ON a.credit_type = b.id
+                LEFT JOIN hrdev.hr_employee d ON a.employee_id = d.id
+                where (d.city IN ('HK','CE','SZ','SH') AND a.state = 1) 
+			.
+in D:\xampp\htdocs\sales\protected\models\ConfirmCreditList.php (64)
+in D:\xampp\htdocs\sales\protected\controllers\ConfirmCreditController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+2018/09/26 10:01:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_credit_request' doesn't exist. The SQL statement executed was: select count(a.id) from gr_credit_request a
+                LEFT JOIN gr_credit_type b ON a.credit_type = b.id
+                LEFT JOIN hrdev.hr_employee d ON a.employee_id = d.id
+                where (d.city IN ('HK','CE','SZ','SH') AND a.state = 1) 
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\xampp\htdocs\sales\protected\models\ConfirmCreditList.php(64): CDbCommand->queryScalar()
+#2 D:\xampp\htdocs\sales\protected\controllers\ConfirmCreditController.php(59): ConfirmCreditList->retrieveDataByPage(1)
+#3 [internal function]: ConfirmCreditController->actionIndex(0)
+#4 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(ConfirmCreditController), Array)
+#5 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(ConfirmCreditController), Object(ReflectionMethod), Array)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('confirmCredit/i...')
+#22 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/sales/index.php/confirmCredit/index
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/cutlist
+---
+2018/09/26 10:01:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/cutlist
+---
+2018/09/26 10:01:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/cutlist
+---
+2018/09/26 10:01:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/cutlist
+---
+2018/09/26 10:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/creditslist
+---
+2018/09/26 10:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/creditslist
+---
+2018/09/26 10:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/creditslist
+---
+2018/09/26 10:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/creditslist
+---
+2018/09/26 10:01:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/creditslist
+---
+2018/09/26 10:01:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:10 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_queue' doesn't exist. The SQL statement executed was: select count(a.id)
+				from gr_queue a 
+				where a.username='test' 
+			.
+in D:\xampp\htdocs\sales\protected\models\QueueList.php (56)
+in D:\xampp\htdocs\sales\protected\controllers\QueueController.php (39)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+2018/09/26 10:01:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'salesuat.gr_queue' doesn't exist. The SQL statement executed was: select count(a.id)
+				from gr_queue a 
+				where a.username='test' 
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 D:\xampp\htdocs\sales\protected\models\QueueList.php(56): CDbCommand->queryScalar()
+#2 D:\xampp\htdocs\sales\protected\controllers\QueueController.php(39): QueueList->retrieveDataByPage(1)
+#3 [internal function]: QueueController->actionIndex(0)
+#4 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(QueueController), Array)
+#5 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(QueueController), Object(ReflectionMethod), Array)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\sales\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#24 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('queue/index')
+#25 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/sales/index.php/queue/index
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/index.php/report/yearlist
+---
+2018/09/26 10:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:01:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:04:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:05:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:05:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:05:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:05:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:05:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:05:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:05:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:06:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:06:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:06:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:06:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:06:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/font-awesome.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/font-awesom...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/font-awesome.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:06:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "css/ionicons.min.css"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('css/ionicons.mi...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/css/ionicons.min.css
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:06:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/moment.min.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/moment.min.j...')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/moment.min.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---
+2018/09/26 10:06:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '无法解析请求 "js/message.js"。' in D:\xampp\htdocs\yii\framework\web\CWebApplication.php:287
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('js/message.js')
+#1 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/sales/js/message.js
+HTTP_REFERER=http://192.168.3.210/sales/
+---

@@ -3,8 +3,8 @@
 	<div class="col-md-8">
 		<div class="box box-primary direct-chat direct-chat-primary">
 			<div class="box-header with-border">
-				<h3 class="box-title"><?php echo Yii::t('sales','Notification'); ?></h3>
-				
+				<h3 class="box-title"><?php echo Yii::t('sales','Notifications'); ?></h3>
+
 				<div class="box-tools pull-right">
 					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 				</div>
@@ -35,9 +35,9 @@
 			<!-- /.box-body -->
 
             <div class="box-footer">
-				<small><?php 
-							//echo str_replace('{hr}', $time_range, Yii::t('sales','Latest notifications within {hr} hours')); 
-							echo str_replace('{hr}', $time_range/24, Yii::t('sales','Latest notifications within {hr} days')); 
+				<small><?php
+							//echo str_replace('{hr}', $time_range, Yii::t('sales','Latest notifications within {hr} hours'));
+							echo str_replace('{hr}', $time_range/24, Yii::t('sales','Latest notifications within {hr} days'));
 						?>
 				</small>
 			</div>
