@@ -6,7 +6,7 @@ class TimerCommand extends CConsoleCommand {
         $firstDay = date("Y/m/d");
         $firstDay = date("Y/m/d", strtotime("$firstDay - 30 day"));
         $secondDay = date("Y/m/d", strtotime("$firstDay - 60 day"));
-        $sql="select * from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales')";
+        $sql="select * from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND staff_status = 0";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         if (count($records) > 0) {
             foreach ($records as $k=>$record) {
