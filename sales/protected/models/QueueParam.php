@@ -16,6 +16,6 @@ class QueueParam extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'gr_queue_param';
+		return 'sal_queue_param';
 	}
 }

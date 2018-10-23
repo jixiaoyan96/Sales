@@ -331,20 +331,6 @@ class TbActiveForm extends CActiveForm
     }
 
     /**
-     * Generates a dropdown list for a model attribute.
-     * @param CModel $model the data model.
-     * @param string $attribute the attribute.
-     * @param array $data data for generating the list options (value=>display).
-     * @param array $htmlOptions additional HTML attributes.
-     * @return string the generated drop down list.
-     * @see TbHtml::activeDropDownListTwo
-     */
-    public function dropDownListTwo($model, $attribute, $data, $htmlOptions = array())
-    {
-        return $this->createInput(TbHtml::INPUT_TYPE_DROPDOWNLIST_TWO, $model, $attribute, $htmlOptions, $data);
-    }
-
-    /**
      * Generates a list box for a model attribute.
      * @param CModel $model the data model.
      * @param string $attribute the attribute.

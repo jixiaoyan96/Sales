@@ -27,7 +27,8 @@ class SiteController extends Controller
 	/**
 	 * Declares class-based actions.
 	 */
-	public function actions()
+
+	 public function actions()
 	{
 		return array(
 			// captcha action renders the CAPTCHA image displayed on the contact page
@@ -42,6 +43,7 @@ class SiteController extends Controller
 			),
 		);
 	}
+
 
 	/**
 	 * This is the default 'index' action that is invoked
@@ -137,6 +139,11 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->homeUrl);
 	}
 
+	public function actionRemotelogout()
+	{
+		Yii::app()->user->logout();
+	}
+
 	public function actionPassword()
 	{
 		$model=new PasswordForm;
@@ -190,5 +197,14 @@ class SiteController extends Controller
 		// display the login form
 		$model->language = Yii::app()->language;
 		$this->render('language',array('model'=>$model));
+	}
+	
+	public function actionNotify($id=-1) {
+		$rtn = array();
+		if ($id >= 0) {
+			$model = new Notification();
+			$rtn = $model->getNewMessageById($id);
+		}
+		echo json_encode($rtn);
 	}
 }

@@ -58,7 +58,7 @@ class VisitController extends Controller
 	public function actionReport() {
 		$model = new VisitList;
 		$model->submitReport();
-		Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Report submitted. Please go to  to retrieve the output.'));
+		Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Report submitted. Please go to Report Manager to retrieve the output.'));
 		$this->redirect(Yii::app()->createUrl('visit/index'));
 	}
 	

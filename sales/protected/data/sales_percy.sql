@@ -195,19 +195,3 @@ CLOSE cur1;
 RETURN obj_desc;
 END //
 DELIMITER ;
-
-DROP TABLE IF EXISTS sal_push_message;
-CREATE TABLE sal_push_message(
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `msg_type` varchar(10) DEFAULT NULL,
-  `message_en` text,
-  `message_cn` text,
-  `message_tw` text,
-  `status` char(1) NOT NULL DEFAULT 'P',
-  `response` text,
-  `lcu` varchar(30) DEFAULT NULL,
-  `luu` varchar(30) DEFAULT NULL,
-  `lcd` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `lud` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -22,10 +22,10 @@ return array(
 	// application components
 	'components'=>array(
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=sales',
+			'connectionString' => 'mysql:host=localhost;dbname=salesuat',
 			'emulatePrepare' => true,
 			'username' => 'swuser',
-			'password' => 'swisher168',
+			'password' => 'Swisher@168',
 			'charset' => 'utf8',
 		),
 		'log'=>array(
@@ -43,8 +43,10 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		'systemEmail'=>'it@lbsgroup.com.hk',
-		'webroot'=>'http://192.168.0.162/sales',
-		'envSuffix'=>'dev',
+		'webroot'=>'http://118.89.46.224/sa-uat',
+		'envSuffix'=>'uat',
 		'systemId'=>'sal',
+		'onesignal'=>'3183638f-c26a-409c-a80a-00736ae8a772',
+		'onesignalKey'=>'ODk5Yjk0ZjAtYTc1ZS00ODM1LTg1OWQtNWM1OTgyNzkxOGQy',
 	),
 );

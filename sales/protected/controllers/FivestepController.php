@@ -108,7 +108,6 @@ class FivestepController extends Controller
 		}
 		$model->determinePageNum($pageNum);
 		$model->retrieveDataByPage($model->pageNum);
-//		print_r($model);
 		$this->render('index',array('model'=>$model));
 	}
 

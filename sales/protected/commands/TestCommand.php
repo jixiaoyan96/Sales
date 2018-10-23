@@ -1,77 +1,63 @@
-<?php
+ <?php
 class TestCommand extends CConsoleCommand {
-	protected $webroot;
+	protected $rptId;
+	protected $rptName;
+	protected $reqUser;
+	protected $format;
+	protected $data = array();
+	protected $multiuser = false;
+	protected $users = array();
 	
-	public function run($args) {
+	public function actionTest() {
+		$sql = "select * from acc_request where id=172";
+		$row = Yii::app()->db->createCommand($sql)->queryRow();
+		if ($row!==false) {
+			
+			$value = (float)$row['amount'];
+			
+			$y = $value * 100;
+			
+			$z = (int)$y;
+			
+		$remain = $y % 100;
 		
-$zip = new clsTbsZip(); 		
+		$dollar = $value - ($remain / 100);
+		$cent = $remain % 10;
+		$tencent = ($remain - $cent) / 10;
+		$x = (string)$row['amount'];
+		var_dump($value);
+		var_dump($z);
+		var_dump($y);
+		var_dump($remain);
+		var_dump($dollar);
+		var_dump($cent);
+		var_dump($tencent);
+		var_dump($x);
+		
+			$dollar = General::dollarToChinese($row['amount']);
+			var_dump($row['amount']);
+			var_dump($dollar);
+		}
+	}
+	
+	public function actionTest2() {
+		$sql = "select * from acc_request where id=172";
+		$row = Yii::app()->db->createCommand($sql)->queryRow();
+		if ($row!==false) {
+			var_dump($row['amount']);
 
-$path1 = Yii::app()->basePath.'/commands/template/tc1.docx';
-$path2 = Yii::app()->basePath.'/commands/template/tc2.docx';
-$path3 = Yii::app()->basePath.'/commands/template/tc3.docx';
-$path4 = Yii::app()->basePath.'/commands/template/tc4.docx';
-
-// Open the first document
-$zip->Open($path4);
-$content4 = $zip->FileRead('word/document.xml');
-$zip->Close();
-
-// Extract the content of the first document
-$p = strpos($content4, '<w:body');
-if ($p===false) exit("Tag <w:body> not found in document 1.");
-$p = strpos($content4, '>', $p);
-$content4 = substr($content4, $p+1);
-$p = strpos($content4, '</w:body>');
-if ($p===false) exit("Tag </w:body> not found in document 1.");
-$content4 = substr($content4, 0, $p);
-
-// Open the first document
-$zip->Open($path3);
-$content3 = $zip->FileRead('word/document.xml');
-$zip->Close();
-
-// Extract the content of the first document
-$p = strpos($content3, '<w:body');
-if ($p===false) exit("Tag <w:body> not found in document 1.");
-$p = strpos($content3, '>', $p);
-$content3 = substr($content3, $p+1);
-$p = strpos($content3, '</w:body>');
-if ($p===false) exit("Tag </w:body> not found in document 1.");
-$content3 = substr($content3, 0, $p);
-$content3 .= $content4;
-
-// Open the first document
-$zip->Open($path2);
-$content2 = $zip->FileRead('word/document.xml');
-$zip->Close();
-
-// Extract the content of the first document
-$p = strpos($content2, '<w:body');
-if ($p===false) exit("Tag <w:body> not found in document 1.");
-$p = strpos($content2, '>', $p);
-$content2 = substr($content2, $p+1);
-$p = strpos($content2, '</w:body>');
-if ($p===false) exit("Tag </w:body> not found in document 1.");
-$content2 = substr($content2, 0, $p);
-$content2 .= $content3;
-
-
-// Insert into the second document
-$zip->Open($path1);
-$content1 = $zip->FileRead('word/document.xml');
-$p = strpos($content1, '</w:body>');
-if ($p===false) exit("Tag </w:body> not found in document 2.");
-$content1 = substr_replace($content1, $content2, $p, 0);
-$content1 = str_replace('${staffname}','Percy Lee',$content1);
-$content1 = str_replace('${staffcode}','123456',$content1);
-$content1 = str_replace('${staffgender}','Male',$content1);
-$content1 = str_replace('${staffidno}','H12340494944',$content1);
-$content1 = str_replace('${staffprov}','HK',$content1);
-$content1 = str_replace('${staffaddress}','香港九龍新蒲崗大有街36號華興工業大廈9樓C座',$content1);
-$zip->FileReplace('word/document.xml', $content1, TBSZIP_STRING);
-
-// Save the merge into a third file
-$zip->Flush(TBSZIP_FILE, 'merge.docx');
+			list($dollar, $remain) = split("\.",$row['amount']);
+			$y = (int)$dollar;
+			var_dump($y);
+			
+			$cent = $remain % 10;
+			var_dump($cent);
+		
+			$tencent = ($remain - $cent) / 10;
+			var_dump($tencent);
+		
+		}
 	}
 }
+
 ?>

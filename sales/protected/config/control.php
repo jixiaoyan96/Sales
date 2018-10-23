@@ -1,8 +1,9 @@
 <?php
 
 return array(
-	'Application for credit'=>array('access'=>'ZR01',),//代申請學分
-	'All city ranking'=>array('access'=>'ZR02',),//所有城市排行
-    'Import credits'=>array('access'=>'ZR03',),//導入學分
-    'Cancel the credits'=>array('access'=>'ZR04',),//學分取消
+	'Manager Score Right'=>array('access'=>'CN01',),
+	'Director Score Right'=>array('access'=>'CN02',),
+	'Supervisor Score Right'=>array('access'=>'CN05',),
+	'Visit (Read All)'=>array('access'=>'CN03',),
+	'Web Push Notification'=>array('access'=>'CN04',),
 );

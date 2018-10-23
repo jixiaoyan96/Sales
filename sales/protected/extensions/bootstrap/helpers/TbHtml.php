@@ -53,7 +53,6 @@ class TbHtml extends CHtml // required in order to access the protected methods 
     const INPUT_TYPE_RADIOBUTTON = 'radioButton';
     const INPUT_TYPE_CHECKBOX = 'checkBox';
     const INPUT_TYPE_DROPDOWNLIST = 'dropDownList';
-    const INPUT_TYPE_DROPDOWNLIST_TWO = 'dropDownListTwo';
     const INPUT_TYPE_LISTBOX = 'listBox';
     const INPUT_TYPE_CHECKBOXLIST = 'checkBoxList';
     const INPUT_TYPE_INLINECHECKBOXLIST = 'inlineCheckBoxList';
@@ -2036,78 +2035,6 @@ EOD;
     }
 
     /**
-     * Generates a drop down list for a model attribute.
-     * @param CModel $model the data model.
-     * @param string $attribute the attribute.
-     * @param array $data data for generating the list options (value=>display).
-     * @param array $htmlOptions additional HTML attributes
-     * @return string the generated drop down list.
-     */
-    public static function activeDropDownListTwo($model, $attribute, $data, $htmlOptions = array())
-    {
-        $displaySize = TbArray::popValue('displaySize', $htmlOptions);
-
-        // In case we do need to create a div container for the input element (i.e. has addon or defined col)
-        $containerOptions = array();
-
-        // Get the intended input width before the rest of the options are normalized
-        self::addSpanClass($htmlOptions);
-        self::addColClass($htmlOptions);
-        $col = self::popColClasses($htmlOptions);
-
-        $htmlOptions = self::normalizeInputOptions($htmlOptions);
-        self::addCssClass('form-control', $htmlOptions);
-        if (!empty($displaySize)) {
-            $htmlOptions['size'] = $displaySize;
-        }
-
-        if (!empty($col)) {
-            self::addCssClass($col, $containerOptions);
-        }
-
-        $output = '';
-
-        if (!empty($containerOptions)) {
-            $output .= self::openTag('div', $containerOptions);
-        }
-        //$output .= parent::activeDropDownList($model, $attribute, $data, $htmlOptions);
-        self::resolveNameID($model,$attribute,$htmlOptions);
-        $selection=self::resolveValue($model,$attribute);
-        $options="\n";
-        foreach ($data as $key =>$list){
-            if (!key_exists("name",$list)){
-                continue;
-            }
-            $arr = $list;
-            unset($arr["name"]);
-            $options.="<option value='$key' ";
-            foreach ($arr as $k => $v){
-                $options.="$k='$v' ";
-            }
-            if ($key == $selection){
-                $options.="selected ";
-            }
-            $options.=">".$list["name"]."</option>";
-        }
-        self::clientChange('change',$htmlOptions);
-        if($model->hasErrors($attribute))
-            self::addErrorCss($htmlOptions);
-        if(isset($htmlOptions['multiple']))
-        {
-            if(substr($htmlOptions['name'],-2)!=='[]')
-                $htmlOptions['name'].='[]';
-        }
-        $output .=self::tag('select',$htmlOptions,$options);
-        //$output .= parent::activeDropDownList($model, $attribute, $data, $htmlOptions);
-
-        if (!empty($containerOptions)) {
-            $output .= '</div>';
-        }
-
-        return $output;
-    }
-
-    /**
      * Generates a list box for a model attribute.
      * @param CModel $model the data model.
      * @param string $attribute the attribute.
@@ -2656,8 +2583,6 @@ EOD;
                 return self::activeCheckBox($model, $attribute, $htmlOptions);
             case self::INPUT_TYPE_DROPDOWNLIST:
                 return self::activeDropDownList($model, $attribute, $data, $htmlOptions);
-            case self::INPUT_TYPE_DROPDOWNLIST_TWO:
-                return self::activeDropDownListTwo($model, $attribute, $data, $htmlOptions);
             case self::INPUT_TYPE_LISTBOX:
                 return self::activeListBox($model, $attribute, $data, $htmlOptions);
             case self::INPUT_TYPE_CHECKBOXLIST:

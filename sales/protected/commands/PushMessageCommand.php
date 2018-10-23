@@ -74,7 +74,8 @@ class PushMessageCommand extends CConsoleCommand {
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json; charset=utf-8',
-												   'Authorization: Basic ODk5Yjk0ZjAtYTc1ZS00ODM1LTg1OWQtNWM1OTgyNzkxOGQy'));
+												   'Authorization: Basic '.Yii::app()->params['onesignalKey']));
+//												   'Authorization: Basic ODk5Yjk0ZjAtYTc1ZS00ODM1LTg1OWQtNWM1OTgyNzkxOGQy'));
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($ch, CURLOPT_HEADER, FALSE);
 		curl_setopt($ch, CURLOPT_POST, TRUE);

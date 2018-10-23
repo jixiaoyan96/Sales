@@ -28,6 +28,43 @@ foreach ($rights as $right) {
 	if (Yii::app()->user->validFunction($right)) $grant[] = Yii::app()->params['systemId'].'_'.$right;
 }
 ?>
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+	<script>
+		var OneSignal = window.OneSignal || [];
+		var useragentid = '';
+		OneSignal.push(function() {
+			OneSignal.init({
+				appId: <?php echo '"'.Yii::app()->params['onesignal'].'"'; ?>,
+				autoRegister: false,
+				notifyButton: {
+					enable: false 
+				},
+				persistNotification: false
+			});
+		});
+		OneSignal.push(function() {
+			OneSignal.sendTags({
+					userId: <?php echo "'".Yii::app()->user->id."'"; ?>,
+					<?php 
+						foreach ($rights as $right) {
+							if (Yii::app()->user->validFunction($right)) 
+								echo Yii::app()->params['systemId'].'_'.$right.": 'Y',";
+							else
+								echo Yii::app()->params['systemId'].'_'.$right.": '',";
+						}
+					?>
+			});
+		});
+		OneSignal.push(function() {
+			OneSignal.getUserId().then(function(userId) {                
+				if (userId == null){
+					<?php echo !empty($grant) ? 'OneSignal.registerForPushNotifications({modalPrompt: true});' : 'var x = true;'; ?>
+				} else {
+					useragentid = userId;
+				}
+			});
+		});
+	</script>
 </head>
 
 <body class="hold-transition skin-blue layout-top-nav">

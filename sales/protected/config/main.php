@@ -1,12 +1,12 @@
 <?php
 
 // uncomment the following to define a path alias
-//Yii::setPathOfAlias('local','path/to/local-folder');
+// Yii::setPathOfAlias('local','path/to/local-folder');
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-	'id'=>'swoper',
+	'id'=>'swoperuat',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'charset'=>'UTF-8',
 	'name'=>'LBS Daily Management - UAT',
@@ -17,6 +17,7 @@ return array(
 	'aliases'=>array(
 		'bootstrap'=>realpath(__DIR__.'/../extensions/bootstrap'),
 		),
+
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -41,9 +42,6 @@ return array(
 //			'ipFilters'=>array('192.168.1.104','::1'),
 //
 //		),
-//		'gii'=>array(
-//			'generatorPaths'=>array('bootstrap.gii'),
-//		),
 	),
 
 	// application components
@@ -52,8 +50,14 @@ return array(
 			// enable cookie-based authentication
 			'class'=>'WebUser',
 			'allowAutoLogin'=>true,
+			'identityCookie' => ['name' => '_identity'],
 		),
 		// uncomment the following to enable URLs in path-format
+			'text'=>array(
+				// enable cookie-based authentication
+					'class'=>'Text',
+					'allowAutoLogin'=>true,
+			),
 
 		'urlManager'=>array(
 			'urlFormat'=>'path',
@@ -73,12 +77,16 @@ return array(
 
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=salesuat',
+			'class'=>'CDbConnection',
+			'connectionString' => 'mysql:host=localhost;dbname=sales',
 			'emulatePrepare' => true,
 			'username' => 'swuser',
 			'password' => 'swisher168',
 			'charset' => 'utf8',
 		),
+
+
+
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
@@ -93,20 +101,21 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				array(
-					'class'=>'CWebLogRoute',
-				//	'levels'=>'trace',
-				//	'categories'=>'vardump',
-				//	'showInFireBug'=>true
-				),
+//				array(
+//					'class'=>'CWebLogRoute',
+//					'levels'=>'trace',
+//					'categories'=>'vardump',
+//					'showInFireBug'=>true
+//				),
 			),
 		),
 		
 		'session'=>array(
 			'class'=>'CHttpSession',
 			'cookieMode'=>'allow',
+			'autoStart'=>true,
 			'cookieParams'=>array(
-				'domain'=>'192.168.3.210',
+				'domain'=>'118.89.46.224'
 			),
 		),
 		
@@ -136,40 +145,53 @@ return array(
 		'concurrentLogin'=>false,
 		'noOfLoginRetry'=>5,
 		'sessionIdleTime'=>'1 hour',
-		'feedbackCcBoss'=>array('boss1','boss2'),
-		'bossEmail'=>array('kcleepercy@gmail.com','kcleepercy@yahoo.com.hk'),
-		'version'=>'1.1.0',
-		'docmanPath'=>'/docman/upload/sal/dev',
+		'feedbackCcBoss'=>array('flam','JoeY'),
+		'bossEmail'=>array('dorischan@lbsgroup.com.hk'),
+		'version'=>'1.0.0',
+		'docmanPath'=>'/docman/upload/sal/uat',
 		'systemId'=>'sal',
-		'envSuffix'=>'dev',
+		'envSuffix'=>'uat',
 //		'onesignal'=>'d619380e-fa8e-462c-be6d-8be2f5a4563b',		// production
 		'onesignal'=>'3183638f-c26a-409c-a80a-00736ae8a772',
 		'systemMapping'=>array(
 				'drs'=>array(
-						'webroot'=>'http://192.168.3.210/dr',
+						'webroot'=>'http://118.89.46.224/dr-uat',
 						'name'=>'Daily Report',
 						'icon'=>'fa fa-pencil-square-o',
 					),	
 				'acct'=>array(
-						'webroot'=>'http:///192.168.3.210/acct',
+						'webroot'=>'http://118.89.46.224/ac-uat',
 						'name'=>'Accounting',
 						'icon'=>'fa fa-money',
 					),
-//				'ops'=>array(
-//						'webroot'=>'http://192.168.3.210/operation',
-//						'name'=>'Operation',
-//						'icon'=>'fa fa-gears',
-//					),
+				'ops'=>array(
+						'webroot'=>'http://118.89.46.224/op-uat',
+						'name'=>'Operation',
+						'icon'=>'fa fa-gears',
+				),
 				'hr'=>array(
-						'webroot'=>'http://192.168.3.210/hr',
+						'webroot'=>'http://118.89.46.224/hr-uat',
 						'name'=>'Personnel',
 						'icon'=>'fa fa-users',
 					),
 				'sal'=>array(
-						'webroot'=>'http://192.168.3.210/sales',
+						'webroot'=>'http://118.89.46.224/sa-uat',
 						'name'=>'Sales',
-						'icon'=>'fa fa-gears',
-					),
+						'icon'=>'fa fa-suitcase',
+				),
+                                'quiz'=>array(
+                                               'webroot'=>'http://118.89.46.224/qz-uat',
+                                                'name'=>'Quiz',
+                                                'icon'=>'fa fa-question',
+                                ),
+                                'sp'=>array(
+
+                                               'webroot'=>'http://118.89.46.224/sp-uat',
+                                                'name'=>'Academic Credit',
+                                                'icon'=>'fa fa-cube',
+                                ),
+
+
 			),
 	),
 );
