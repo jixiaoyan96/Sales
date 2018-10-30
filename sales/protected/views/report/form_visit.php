@@ -95,7 +95,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
             <div class="form-group">
                 <?php echo $form->labelEx($model,'销售人员',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3" style="width: 800px;">
-                <label  style="width: 75px" ><input name="Fruits" type="checkbox" value="" id="all"/>全选 </label><br id="label"/>
+                <label  style="width: 75px" ><input name="Fruit" type="checkbox" value="" id="all"/>全选 </label><br id="label"/>
                 <?php foreach ($saleman as $v) {?>
                 <label style="width: 75px" class="a"><input name="ReportVisitForm[sale][]" type="checkbox" value="<?php echo $v['name'];?>" /><?php echo $v['name'];?> </label>
                 <?php }?>
@@ -142,24 +142,15 @@ $(document).ready(function(){
  
     });
   
-  
-       $("#all").click(function(){           
-             var userids=this.checked;             
-             $("input[name=Fruit]").each(function(){
-                 this.checked=userids;
-             });
-         });
+        $("#all").on('click',function() {  
+              $("input[name='ReportVisitForm[sale][]']").prop("checked", this.checked);  
+        });  
+            
+        $("input[name='ReportVisitForm[sale][]']").on('click',function() {  
+              var subs = $("input[name='ReportVisitForm[sale][]']");  
+              $("#all").prop("checked" ,subs.length == subs.filter(":checked").length ? true :false);  
+        });
 
-     
-        $("input[name=Fruit]").click(function(){           
-             var length=$("input[name=Fruit]:checked"). length;           
-             var len=$("input[name=Fruit]").length;
-             if(length==len){
-                 $("#all").get(0).checked=true;
-             }else{
-                 $("#all").get(0).checked=false;
-             }
-           });
 });
 
 EOF;

@@ -63,8 +63,8 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
             <?php if(!empty($arr)){?>
             <div>
                 <h3>部门总数据</h3>
-                <span><b>总金额:<?php echo $arr['money'];?> </b></span>
-                <br/>
+                <h4><b>签单总金额:<?php echo $arr['money'];?> </b></h4>
+
                 <table class="tftable" border="1">
                     <tr><th rowspan="5" width="100">拜访类型</th><th width="70">陌拜</th><td width="50"><?php echo $arr['mobai'];?>个</td><th width="70">日常跟进</th><td width="50"><?php echo $arr['richanggengjin'];?>个</td><th width="70">客户资源</th><td width="50"><?php echo $arr['kehuziyuan'];?>个</td><th width="70">电话上门</th><td width="50"><?php echo $arr['dianhuashangmen'];?>个</td></tr>
                 </table>
@@ -94,8 +94,8 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
             <?php if(!empty($one)){ foreach ($one as $arr){?>
             <div>
                 <h3><?php echo $arr['name'];?>的数据</h3>
-                <span><b>总金额：<?php echo $arr['money'];?> </b></span>
-                <br/>
+                <h4><b>签单总金额：<?php echo $arr['money'];?> </b></h4>
+
                 <table class="tftable" border="1">
                     <tr><th rowspan="5" width="100">拜访类型</th><th width="70">陌拜</th><td width="50"><?php echo $arr['mobai'];?>个</td><th width="70">日常跟进</th><td width="50"><?php echo $arr['richanggengjin'];?>个</td><th width="70">客户资源</th><td width="50"><?php echo $arr['kehuziyuan'];?>个</td><th width="70">电话上门</th><td width="50"><?php echo $arr['dianhuashangmen'];?>个</td></tr>
                 </table>
