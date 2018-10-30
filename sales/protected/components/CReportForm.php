@@ -9,6 +9,7 @@ class CReportForm extends CFormModel
 	public $format;
 	public $uid;
 	public $city;
+	public $cityname;
 	public $target_dt;
 	public $fields;
 	public $email;
@@ -16,9 +17,11 @@ class CReportForm extends CFormModel
 	public $touser;
 	public $ccuser;
 	public $year;
+    public $sale;
 	public $month;
 	public $type;
     public $five;
+    public $bumen;
 	public $rpt_array;
     public $gangwei;
 	public $paper_sz = 'A4';

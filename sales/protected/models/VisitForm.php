@@ -304,6 +304,7 @@ class VisitForm extends CFormModel
 			";
 		$sql .= ($this->isReadAll()) ? " and a.city in ($citylist)" : " and a.username='$user' ";
 		$row = Yii::app()->db->createCommand($sql)->queryRow();
+
 		if ($row!==false) {
 			$this->id = $row['id'];
 			$this->visit_dt = General::toDate($row['visit_dt']);
@@ -332,6 +333,7 @@ class VisitForm extends CFormModel
 		
 		$sql = "select * from sal_visit_info where visit_id = $index";
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
+
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
 				$fldid = $row['field_id'];

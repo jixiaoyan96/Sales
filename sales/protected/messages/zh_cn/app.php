@@ -22,7 +22,7 @@ return array(
 
 	'Sales Visit'=>'销售拜访',
 	'Five Steps'=>'销售五部曲',
-
+    'Visit Steps'=>'销售数据分类汇总',
 	'Visit Type'=>'拜访类型',
 	'Visit Objective'=>'拜访目的',
 	'Customer Type'=>'客户类别',

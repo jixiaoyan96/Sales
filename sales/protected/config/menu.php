@@ -22,6 +22,16 @@ return array(
 		),
 	),
 
+    'Class'=>array(
+        'access'=>'HA',
+        'items'=>array(
+            'Visit Steps'=>array(
+                'access'=>'HA01',
+                'url'=>'report/visit',
+            ),
+        ),
+    ),
+
 	'Report'=>array(
 		'access'=>'HB',
 		'items'=>array(

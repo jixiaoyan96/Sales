@@ -52,7 +52,7 @@ class VisitList extends CListPageModel
 				d.name as visit_type_name, g.name as cust_type_name,
 				h.name as district_name, VisitObjDesc(a.visit_obj) as visit_obj_name, i.cust_vip
 				from sal_visit a 
-				inner join hr$suffix.hr_binding c on a.username = c.user_id
+				inner join hr$suffix.hr_binding c on a.username = c.user_id 
 				inner join hr$suffix.hr_employee f on c.employee_id = f.id
 				inner join sal_visit_type d on a.visit_type = d.id
 				inner join sal_cust_type g on a.cust_type = g.id

@@ -325,20 +325,20 @@ class FivestepController extends Controller
 	}
 	
 	public static function allowReadWrite() {
-		return Yii::app()->user->validRWFunction('HK03');
+		return Yii::app()->user->validRWFunction('HB02');
 	}
 	
 	public static function allowReadOnly() {
-		return Yii::app()->user->validFunction('HK03');
+		return Yii::app()->user->validFunction('HB02');
 	}
 
-	public static function allowApproval() {
-		return Yii::app()->user->validFunction('CN01') && $this->allowReadWrite();
-	}
-	
-	public static function allowGenralUse() {
-		return !Yii::app()->user->validFunction('CN01') && $this->allowReadWrite();
-	}
+//	public static function allowApproval() {
+//		return Yii::app()->user->validFunction('CN01') && $this->allowReadWrite();
+//	}
+//
+//	public static function allowGenralUse() {
+//		return !Yii::app()->user->validFunction('CN01') && $this->allowReadWrite();
+//	}
 	
 	protected function hashDirectory($basedir, $filename) {
 		$hashcode = hash('md5',$filename);
