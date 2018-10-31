@@ -10762,3 +10762,192 @@ in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
 in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
 in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
 in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 14:38:58 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 14:40:26 [error] [php] Undefined index: yinghang (D:\xampp\htdocs\sales\protected\views\report\fenxi.php:86)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CController.php(870): ReportController->renderFile()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(783): ReportController->renderPartial()
+#2 D:\xampp\htdocs\sales\protected\controllers\ReportController.php(96): ReportController->render()
+#3 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): ReportController->actionFenxi()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): ReportController->runAction()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterAccessControl()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#11 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceNoConcurrentLogin()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#13 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#14 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceSessionExpiration()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 D:\xampp\htdocs\sales\protected\components\Controller.php(51): CFilterChain->run()
+#17 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceRegisteredStation()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(266): ReportController->runActionWithFilters()
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): ReportController->run()
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#23 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 D:\xampp\htdocs\sales\index.php(13): CWebApplication->run()
+REQUEST_URI=/sales/report/fenxi
+in D:\xampp\htdocs\sales\protected\views\report\fenxi.php (86)
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (96)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+2018/10/31 14:51:47 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 14:51:49 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 14:52:04 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 15:09:06 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 15:09:49 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 15:12:07 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 15:13:02 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 15:14:37 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/10/31 15:20:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'saledev.sal_visit_info' doesn't exist. The SQL statement executed was: select * from saledev.sal_visit_info where visit_id = '3'.
+in D:\xampp\htdocs\sa-uat\protected\models\ReportVisitForm.php (342)
+in D:\xampp\htdocs\sa-uat\protected\models\ReportVisitForm.php (218)
+in D:\xampp\htdocs\sa-uat\protected\controllers\ReportController.php (85)
+2018/10/31 15:20:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'saledev.sal_visit_info' doesn't exist. The SQL statement executed was: select * from saledev.sal_visit_info where visit_id = '3'' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-uat\protected\models\ReportVisitForm.php(342): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\sa-uat\protected\models\ReportVisitForm.php(218): ReportVisitForm->moneys(Array)
+#3 D:\xampp\htdocs\sa-uat\protected\controllers\ReportController.php(85): ReportVisitForm->fenxi(Array)
+#4 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): ReportController->actionFenxi()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('fenxi')
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('report/fenxi')
+#24 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/sa-uat/report/fenxi
+HTTP_REFERER=http://192.168.3.108/sa-uat/report/visit
+---
+2018/10/31 15:31:19 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\ReportController.php (59)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2018/10/31 15:53:38 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'securitydev.sal_visit_info' doesn't exist. The SQL statement executed was: select * from securitydev.sal_visit_info where visit_id = '3'.
+in D:\xampp\htdocs\sa-uat\protected\models\ReportVisitForm.php (342)
+in D:\xampp\htdocs\sa-uat\protected\models\ReportVisitForm.php (218)
+in D:\xampp\htdocs\sa-uat\protected\controllers\ReportController.php (85)
+2018/10/31 15:53:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'securitydev.sal_visit_info' doesn't exist. The SQL statement executed was: select * from securitydev.sal_visit_info where visit_id = '3'' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-uat\protected\models\ReportVisitForm.php(342): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\sa-uat\protected\models\ReportVisitForm.php(218): ReportVisitForm->moneys(Array)
+#3 D:\xampp\htdocs\sa-uat\protected\controllers\ReportController.php(85): ReportVisitForm->fenxi(Array)
+#4 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): ReportController->actionFenxi()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('fenxi')
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('report/fenxi')
+#24 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/sa-uat/report/fenxi
+HTTP_REFERER=http://192.168.3.108/sa-uat/report/visit
+---
+2018/10/31 15:54:51 [error] [exception.CHttpException.999] exception 'CHttpException' with message '帐户已被登录到另一工作站。' in D:\xampp\htdocs\sa-uat\protected\components\Controller.php:76
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#2 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('fenxi')
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('report/fenxi')
+#12 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/sa-uat/report/fenxi
+HTTP_REFERER=http://192.168.3.108/sa-uat/report/visit
+---
+2018/10/31 15:54:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message '您未被授权执行这个动作' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), '\xE6\x82\xA8\xE6\x9C\xAA\xE8\xA2\xAB\xE6\x8E\x88\xE6\x9D\x83...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('fenxi')
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('report/fenxi')
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/sa-uat/report/fenxi
+HTTP_REFERER=http://192.168.3.108/sa-uat/site/login
+---

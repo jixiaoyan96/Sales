@@ -325,11 +325,11 @@ class FivestepController extends Controller
 	}
 	
 	public static function allowReadWrite() {
-		return Yii::app()->user->validRWFunction('HB02');
+		return Yii::app()->user->validRWFunction('HK03');
 	}
 	
 	public static function allowReadOnly() {
-		return Yii::app()->user->validFunction('HB02');
+		return Yii::app()->user->validFunction('HK03');
 	}
 
 //	public static function allowApproval() {

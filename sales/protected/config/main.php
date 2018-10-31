@@ -180,7 +180,7 @@ return array(
 //                'icon'=>'fa fa-users',
 //            ),
 				'sal'=>array(
-						'webroot'=>'http://192.168.3.108/sales',
+						'webroot'=>'http://192.168.3.108/sa-uat',
 						'name'=>'Sales',
 						'icon'=>'fa fa-suitcase',
 				),

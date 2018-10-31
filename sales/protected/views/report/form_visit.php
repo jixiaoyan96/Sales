@@ -126,7 +126,7 @@ $(document).ready(function(){
    
       $(document).on("change","#ReportVisitForm_city",function () {   
             txt=$(this).find("option:selected").val();
-      $.post("/sales/report/city",{txt:txt},function(result){        
+      $.post("/sa-uat/report/city",{txt:txt},function(result){        
             $("label").remove(".a");
             var result=$.parseJSON( result)
             var dataLen = result.length ; //返回数组的长度
@@ -170,8 +170,8 @@ $js = Script::genLookupSelect();
 Yii::app()->clientScript->registerScript('lookupSelect',$js,CClientScript::POS_READY);
 
 $js = Script::genDatePicker(array(
-			'ReportY02Form_start_dt',
-			'ReportY02Form_end_dt',
+			'ReportVisitForm_start_dt',
+			'ReportVisitForm_end_dt',
 		));
 Yii::app()->clientScript->registerScript('datePick',$js,CClientScript::POS_READY);
 ?>
