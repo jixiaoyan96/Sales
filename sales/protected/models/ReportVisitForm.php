@@ -338,7 +338,7 @@ class ReportVisitForm extends CReportForm
         $suffix = Yii::app()->params['envSuffix'];
         for($i=0;$i<count($records);$i++){
 	        if(strpos($records[$i]['visit_obj_name'],'签单')!==false||strpos($records[$i]['visit_obj_name'],'续约')!==false){
-	            $sql="select * from security$suffix.sal_visit_info where visit_id = '".$records[$i]['id']."'";
+	            $sql="select * from sal_visit_info where visit_id = '".$records[$i]['id']."'";
                 $rows = Yii::app()->db->createCommand($sql)->queryAll();
                foreach ($rows as $v){
                    $arr[$v['field_id']]=$v['field_value'];
