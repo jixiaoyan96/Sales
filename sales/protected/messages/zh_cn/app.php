@@ -16,6 +16,7 @@ return array(
 
 	'Data Entry'=>'数据输入',
 	'Misc'=>'其他',
+    'Class'=>'数据汇总',
 
 	'Import'=>'数据导入',
 	'Import Manager'=>'数据导入管理员',
