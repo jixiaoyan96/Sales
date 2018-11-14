@@ -129,7 +129,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 					?>
 				</div>
 			</div>
-				
+
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'visit_obj',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-8">
@@ -141,7 +141,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 //						} else {
 							echo $form->dropDownList($model, 'visit_obj', $typelist,
 								array('class'=>'select2','multiple'=>'multiple')
-							); 
+							);
 //						}
 					?>
 				</div>

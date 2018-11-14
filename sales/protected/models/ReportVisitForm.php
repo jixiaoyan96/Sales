@@ -61,11 +61,32 @@ class ReportVisitForm extends CReportForm
         $city=Yii::app()->user->city();
         $sql="select code,name from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND staff_status = 0 AND city='".$city."'";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
-//        $sql = "select approver_type, username from account$suffix.acc_approver where city='$city' and (approver_type='regionMgr' or approver_type='regionSuper')";
-//        $rows = Yii::app()->db->createCommand($sql)->queryAll();
-//        print_r("<pre/>");
-//        print_r($rows);
-//        $a=General::dedupToEmailList($rows);
+        $sql = "select approver_type, username from account$suffix.acc_approver where city='$city' and (approver_type='regionMgr' or approver_type='regionSuper')";
+        $rows = Yii::app()->db->createCommand($sql)->queryAll();
+        //print_r("<pre/>");
+        $sql1="select employee_name from hr$suffix.hr_binding WHERE  user_id = '".$rows[0]['username']."'";
+        $name = Yii::app()->db->createCommand($sql1)->queryAll();
+        $sql2="select employee_name from hr$suffix.hr_binding WHERE  user_id = '".$rows[1]['username']."'";
+        $names = Yii::app()->db->createCommand($sql2)->queryAll();
+        if(!empty($rows)){
+            $arr[] = $name[0]['employee_name'];
+        }
+        if(!empty($rows)){
+            $arr[] = $names[0]['employee_name'];
+        }
+        $a=General::dedupToEmailList($arr);
+        $sql3="select code,name from hr$suffix.hr_employee WHERE name='".$a[0]."'";
+        $zhuguan = Yii::app()->db->createCommand($sql3)->queryAll();
+        if(!empty($a[1])){
+            $sql4="select code,name from hr$suffix.hr_employee WHERE name='".$a[1]."'";
+            $jinli = Yii::app()->db->createCommand($sql4)->queryAll();
+        }
+        if(empty($jinli)){
+            $records=array_merge($records,$zhuguan);
+        }else{
+            $records=array_merge($records,$zhuguan,$jinli);
+        }
+      //  print_r($records);
         return $records;
     }
 
@@ -218,10 +239,10 @@ class ReportVisitForm extends CReportForm
         $meney=$this->moneys($records);
         $arr['address']=$record;
         $arr['money']=$meney;
-
-        return $arr;
 //        print_r('<pre/>');
-//        print_r($arr);
+//        print_r($records);
+        return $arr;
+
     }
 
     public function fenxione($model){
@@ -321,7 +342,7 @@ class ReportVisitForm extends CReportForm
 
         //foreach ()
 //        print_r('<pre/>');
-//        print_r($att);
+      //  print_r($records);
         return $att;
     }
 
@@ -329,9 +350,42 @@ class ReportVisitForm extends CReportForm
         for($i=0;$i<count($records);$i++){
             if(strpos($records[$i][$name],$names)!==false){
                 $sum=$sum+1;
+                $sql="select * from sal_visit_info where visit_id = '".$records[$i]['id']."'";
+                $rows = Yii::app()->db->createCommand($sql)->queryAll();
+                foreach ($rows as $v){
+                    $arr[$v['field_id']]=$v['field_value'];
+                }
+                if(empty($arr['svc_A7'])){
+                    $arr['svc_A7']=0;
+                }
+                if(empty($arr['svc_B6'])){
+                    $arr['svc_B6']=0;
+                }
+                if(empty($arr['svc_C7'])){
+                    $arr['svc_C7']=0;
+                }
+                if(empty($arr['svc_D6'])){
+                    $arr['svc_A7']=0;
+                }
+                if(empty($arr['svc_E7'])){
+                    $arr['svc_E7']=0;
+                }
+                if(empty($arr['svc_F4'])){
+                    $arr['svc_F4']=0;
+                }
+                if(empty($arr['svc_G3'])){
+                    $arr['svc_G3']=0;
+                }
+                $moneyone[]=$arr['svc_A7']+$arr['svc_B6']+$arr['svc_C7']+$arr['svc_D6']+$arr['svc_E7']+$arr['svc_F4']+$arr['svc_G3'];
             }
         }
-        return $sum;
+        if(!empty($moneyone)){
+            $money=array_sum($moneyone);
+        }else{
+            $money=0;
+        }
+        $messz=$sum."个".$money."元" ;
+        return $messz;
     }
 
     public function moneys($records){
@@ -366,8 +420,47 @@ class ReportVisitForm extends CReportForm
                 }
                 $sum[]=$arr['svc_A7']+$arr['svc_B6']+$arr['svc_C7']+$arr['svc_D6']+$arr['svc_E7']+$arr['svc_F4']+$arr['svc_G3'];
             }
+        }
+        if(!empty($sum)){
+            $money=array_sum($sum);
+        }else{
+            $money=0;
+        }
+        return $money;
+    }
 
-
+    public function moneyone($records){
+        $suffix = Yii::app()->params['envSuffix'];
+        for($i=0;$i<count($records);$i++){
+            if(strpos($records[$i]['visit_obj_name'],'签单')!==false){
+                $sql="select * from sal_visit_info where visit_id = '".$records[$i]['id']."'";
+                $rows = Yii::app()->db->createCommand($sql)->queryAll();
+                foreach ($rows as $v){
+                    $arr[$v['field_id']]=$v['field_value'];
+                }
+                if(empty($arr['svc_A7'])){
+                    $arr['svc_A7']=0;
+                }
+                if(empty($arr['svc_B6'])){
+                    $arr['svc_B6']=0;
+                }
+                if(empty($arr['svc_C7'])){
+                    $arr['svc_C7']=0;
+                }
+                if(empty($arr['svc_D6'])){
+                    $arr['svc_A7']=0;
+                }
+                if(empty($arr['svc_E7'])){
+                    $arr['svc_E7']=0;
+                }
+                if(empty($arr['svc_F4'])){
+                    $arr['svc_F4']=0;
+                }
+                if(empty($arr['svc_G3'])){
+                    $arr['svc_G3']=0;
+                }
+                $sum[]=$arr['svc_A7']+$arr['svc_B6']+$arr['svc_C7']+$arr['svc_D6']+$arr['svc_E7']+$arr['svc_F4']+$arr['svc_G3'];
+            }
         }
         if(!empty($sum)){
             $money=array_sum($sum);
