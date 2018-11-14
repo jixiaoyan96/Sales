@@ -384,7 +384,7 @@ class ReportVisitForm extends CReportForm
         }else{
             $money=0;
         }
-        $messz=$sum."个".$money."元" ;
+        $messz=$sum."/".$money;
         return $messz;
     }
 

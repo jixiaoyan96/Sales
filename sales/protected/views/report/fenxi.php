@@ -63,6 +63,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
             <?php if(!empty($arr)){?>
             <div>
                 <h3>部门总数据</h3>
+                <h4>注：数据为 (个数/金额)</h4>
                 <h4><b>签单总金额:<?php echo $arr['money'];?> </b></h4>
 
                 <table class="tftable" border="1">
