@@ -63,8 +63,8 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
             <?php if(!empty($arr)){?>
             <div>
                 <h3>部门总数据</h3>
-                <h4>注：数据为 (个数/金额)</h4>
-                <h4><b>签单总金额:<?php echo $arr['money'];?> </b></h4>
+                <h4>注：个数/金额</h4>
+                <h4><b>签单总金额:<?php echo $arr['money']['money'];?> 签单总数：<?php echo $arr['money']['sum'];?></b></h4>
 
                 <table class="tftable" border="1">
                     <tr><th rowspan="5" width="100">拜访类型</th><th >陌拜</th><td ><?php echo $arr['mobai'];?></td><th >日常跟进</th><td ><?php echo $arr['richanggengjin'];?></td><th >客户资源</th><td ><?php echo $arr['kehuziyuan'];?></td><th >电话上门</th><td ><?php echo $arr['dianhuashangmen'];?></td></tr>

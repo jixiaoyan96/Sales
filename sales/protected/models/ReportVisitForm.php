@@ -390,6 +390,7 @@ class ReportVisitForm extends CReportForm
 
     public function moneys($records){
         $suffix = Yii::app()->params['envSuffix'];
+        $a=0;
         for($i=0;$i<count($records);$i++){
 	        if(strpos($records[$i]['visit_obj_name'],'签单')!==false||strpos($records[$i]['visit_obj_name'],'续约')!==false){
 	            $sql="select * from sal_visit_info where visit_id = '".$records[$i]['id']."'";
@@ -419,12 +420,15 @@ class ReportVisitForm extends CReportForm
                     $arr['svc_G3']=0;
                 }
                 $sum[]=$arr['svc_A7']+$arr['svc_B6']+$arr['svc_C7']+$arr['svc_D6']+$arr['svc_E7']+$arr['svc_F4']+$arr['svc_G3'];
+               $a=$a+1;
             }
         }
         if(!empty($sum)){
-            $money=array_sum($sum);
+            $money['money']=array_sum($sum);
+            $money['sum']=$a;
         }else{
-            $money=0;
+            $money['money']=0;
+            $money['sum']=0;
         }
         return $money;
     }
