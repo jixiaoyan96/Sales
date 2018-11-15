@@ -25,7 +25,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit';
 				)); 
 		?>
 		<?php echo TbHtml::button('<span class="fa fa-file-text-o"></span> '.Yii::t('sales','Report'), array(
-				'submit'=>Yii::app()->createUrl('visit/report'))); 
+				'submit'=>Yii::app()->createUrl('visit/report')));
 		?>
 	</div>
 	</div></div>
