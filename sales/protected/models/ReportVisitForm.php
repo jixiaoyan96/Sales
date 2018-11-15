@@ -348,7 +348,7 @@ class ReportVisitForm extends CReportForm
 
     public function shul($sum,$records,$name,$names){
         for($i=0;$i<count($records);$i++){
-            if(strpos($records[$i][$name],$names)!==false){
+            if(strpos($records[$i][$name],$names)!==false&&(strpos($records[$i]['visit_obj_name'],'签单')!==false||strpos($records[$i]['visit_obj_name'],'续约')!==false)){
                 $sum=$sum+1;
                 $sql="select * from sal_visit_info where visit_id = '".$records[$i]['id']."'";
                 $rows = Yii::app()->db->createCommand($sql)->queryAll();

@@ -61,9 +61,9 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
                 .tftable3 tr:hover {background-color:#ffffff;}
             </style>
             <?php if(!empty($arr)){?>
-            <div>
+            <div>   <h4>注: &nbsp; 5/30000 表示签约或拜访5单 总金额30000</h4>
                 <h3>部门总数据</h3>
-                <h4>注：个数/金额</h4>
+
                 <h4><b>签单总金额:<?php echo $arr['money']['money'];?> 签单总数：<?php echo $arr['money']['sum'];?></b></h4>
 
                 <table class="tftable" border="1">
