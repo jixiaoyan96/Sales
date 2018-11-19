@@ -6,6 +6,7 @@ class ReportController extends Controller
         'visit'=>'HA01',
         'city'=>'HA01',
         'fenxi'=>'HA01',
+        'xiazai'=>'HA01',
         'overtimelist'=>'YB02',
         'pennantexlist'=>'YB05',
         'pennantculist'=>'YB06',
@@ -103,18 +104,38 @@ class ReportController extends Controller
         $model = new ReportVisitForm;
         $fenxi=$_POST['ReportVisitForm'];
         if($fenxi['bumen']=='yes'){
-            $arr=$model->fenxi($fenxi);
+            $model['all']=$model->fenxi($fenxi);
         }else{
-            $arr=array();
+            $model['all']=array();
         }
         //print_r('<pre/>');
         if(!empty($fenxi['sale'])){
-            $one=$model->fenxione($fenxi);
+            $model['one']=$model->fenxione($fenxi);
         }else{
-            $one=array();
+            $model['one']=array();
         }
-       //print_r($arr);
-        $this->render('fenxi',array('model'=>$model,'arr'=>$arr,'one'=>$one));
+//        print_r('<pre/>');
+       //print_r($fenxi);
+        $this->render('fenxi',array('model'=>$model,'fenxi'=>$fenxi));
+    }
+
+    public function actionXiaZai(){
+        $model = new ReportVisitForm;
+        $arr = $_POST['RptFive'];
+        if($arr['bumen']=='yes'){
+            $model['all']=$model->fenxi($arr);
+        }else{
+            $model['all']=array();
+        }
+
+        if(!empty($arr['sale'])){
+            $model['one']=$model->fenxione($arr);
+        }else{
+            $model['one']=array();
+        }
+        $model->retrieveDatas($model);
+//        print_r('<pre/>');
+//        print_r($model);
     }
 
     public static function allowExecute() {

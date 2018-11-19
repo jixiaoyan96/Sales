@@ -19,6 +19,8 @@ class CReportForm extends CFormModel
 	public $year;
     public $sale;
 	public $month;
+    public $all;
+    public $one;
 	public $type;
     public $five;
     public $bumen;

@@ -37,6 +37,8 @@ class ReportVisitForm extends CReportForm
         $this->staffs = '';
         $this->bumen = '';
         $this->sale = '';
+        $this->all = '';
+        $this->one = '';
 		$this->staffs_desc = Yii::t('misc','All');
 	}
 
@@ -472,5 +474,433 @@ class ReportVisitForm extends CReportForm
             $money=0;
         }
         return $money;
+    }
+
+    public function retrieveDatas($model){
+        Yii::$enableIncludePath = false;
+        $phpExcelPath = Yii::getPathOfAlias('ext.phpexcel');
+        //spl_autoload_unregister(array('YiiBase','autoload'));
+        include($phpExcelPath . DIRECTORY_SEPARATOR . 'PHPExcel.php');
+        $objPHPExcel = new PHPExcel;
+        $objReader  = PHPExcel_IOFactory::createReader('Excel2007');
+        $path = Yii::app()->basePath.'/commands/template/sale.xlsx';
+        $objPHPExcel = $objReader->load($path);
+//        print_r("<pre>");
+//        print_r($model);
+        if(!empty($model['all'])){
+            $i=3;
+            $ex=$i;
+            $i1=$i+1;
+            $i2=$i+2;
+            $i3=$i+3;
+            $i4=$i+4;
+            $i5=$i+5;
+            $i6=$i+6;
+            $i7=$i+7;
+            $i8=$i+8;
+            $i9=$i+9;
+            $i10=$i+10;
+            $i11=$i+11;
+            $i12=$i+12;
+
+            $objPHPExcel->getActiveSheet()->setCellValue('A'.$i,'部门总数据') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('A'.$i1,'签单总金额：'.$model['all']['money']['money'].'签单总数'.$model['all']['money']['sum']) ;
+            $objPHPExcel->getActiveSheet()->mergeCells('A'.$i.':O'.$i);
+            $objPHPExcel->getActiveSheet()->mergeCells('A'.$i1.':O'.$i1);
+            $objPHPExcel->getActiveSheet()->setCellValue('A'.$i2,'拜访类型') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i2,'陌拜') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i2,$model['all']['mobai']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i2,'日常跟进') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i2,$model['all']['richanggengjin']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i2,'客户资源') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i2,$model['all']['kehuziyuan']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i2,'电话上门') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i2,$model['all']['dianhuashangmen']) ;
+
+            $objPHPExcel->getActiveSheet()->setCellValue('A'.$i3,'拜访目的') ;
+            $objPHPExcel->getActiveSheet()->mergeCells('A'.$i3.':A'.$i4);
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i3,'首次') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i3,$model['all']['shouci']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i3,'客诉') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i3,$model['all']['keshu']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i3,'续约') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i3,$model['all']['xuyue']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i3,'回访') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i3,$model['all']['huifang']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('J'.$i3,'报价') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('K'.$i3,$model['all']['baojia']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('L'.$i3,'追款') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('M'.$i3,$model['all']['zuikuan']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('N'.$i3,'减价') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('O'.$i3,$model['all']['jianjia']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i4,'停服务') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i4,$model['all']['tingfuwu']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i4,'更换项目') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i4,$model['all']['genghuanxiangmu']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i4,'增加项目') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i4,$model['all']['zengjiaxiangmu']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i4,'救客') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i4,$model['all']['jiuke']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('J'.$i4,'其他') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('K'.$i4,$model['all']['qitaa']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('L'.$i4,'签单') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('M'.$i4,$model['all']['qiandan']) ;
+
+            $objPHPExcel->getActiveSheet()->setCellValue('A'.$i5,'客服类别（餐饮）') ;
+            $objPHPExcel->getActiveSheet()->mergeCells('A'.$i5.':A'.$i7);
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i5,'东/西北菜') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i5,$model['all']['dongbeicai']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i5,'泰国菜') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i5,$model['all']['taiguocai']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i5,'粤菜') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i5,$model['all']['yuecai']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i5,'面包甜点') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i5,$model['all']['mianbao']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('J'.$i5,'川湘菜') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('K'.$i5,$model['all']['chuancai']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('L'.$i5,'火锅') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('M'.$i5,$model['all']['huoguo']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('N'.$i5,'西餐') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('O'.$i5,$model['all']['xican']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i6,'咖啡厅') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i6,$model['all']['kafeiting']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i6,'浙江菜') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i6,$model['all']['zejiangcai']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i6,'自助餐') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i6,$model['all']['zizhu']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i6,'饮品店') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i6,$model['all']['yingping']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('J'.$i6,'日韩料理') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('K'.$i6,$model['all']['riliao']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('L'.$i6,'烧烤') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('M'.$i6,$model['all']['saokao']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('N'.$i6,'越南菜') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('O'.$i6,$model['all']['yuenancai']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i7,'小吃快餐') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i7,$model['all']['xiaochi']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i7,'清真菜') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i7,$model['all']['qingzhencai']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i7,'茶餐厅') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i7,$model['all']['chacanting']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i7,'其他') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i7,$model['all']['qitab']) ;
+
+            $objPHPExcel->getActiveSheet()->setCellValue('A'.$i8,'客服类别（非餐饮）') ;
+            $objPHPExcel->getActiveSheet()->mergeCells('A'.$i8.':A'.$i11);
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i8,'4S店') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i8,$model['all']['sisdian']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i8,'健身会所') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i8,$model['all']['jianshenhuisuo']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i8,'房地产') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i8,$model['all']['fangdican']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i8,'美容/发馆') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i8,$model['all']['meifa']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('J'.$i8,'银行') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('K'.$i8,$model['all']['yinhang']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('L'.$i8,'俱乐部') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('M'.$i8,$model['all']['julebu']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('N'.$i8,'培训机构') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('O'.$i8,$model['all']['peixunjigou']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i9,'KTV') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i9,$model['all']['ktv']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i9,'其他') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i9,$model['all']['qitac']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i9,'学校') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i9,$model['all']['xuexiao']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i9,'水疗会所') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i9,$model['all']['shuiliao']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('J'.$i9,'超市') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('K'.$i9,$model['all']['chaoshi']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('L'.$i9,'网吧') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('M'.$i9,$model['all']['wangba']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('N'.$i9,'影院') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('O'.$i9,$model['all']['yingyuan']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i10,'体育馆') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i10,$model['all']['tiyuguan']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i10,'写字楼') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i10,$model['all']['xiezilou']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i10,'工厂') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i10,$model['all']['gongcang']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.$i10,'游泳馆') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.$i10,$model['all']['youyong']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('J'.$i10,'酒吧') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('K'.$i10,$model['all']['jiuba']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('L'.$i10,'物业') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('M'.$i10,$model['all']['wuye']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('N'.$i10,'酒店') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('O'.$i10,$model['all']['jiudian']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.$i11,'便利店') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.$i11,$model['all']['bianlidian']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.$i11,'医院') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.$i11,$model['all']['yiyuan']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.$i11,'影楼') ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.$i11,$model['all']['yinglou']) ;
+
+//            区域的
+            $objPHPExcel->getActiveSheet()->setCellValue('A'.$i12,'区域') ;
+            $a=$i12;
+            for($o=1;$o<count($model['all']['address']);$o++){
+                if($o%7==1){
+                    $objPHPExcel->getActiveSheet()->setCellValue('B'.$i12,$model['all']['address'][$o]['name']) ;
+                    $objPHPExcel->getActiveSheet()->setCellValue('C'.$i12,$model['all']['address'][$o][0]) ;
+                }
+                if($o%7==2){
+                    $objPHPExcel->getActiveSheet()->setCellValue('D'.$i12,$model['all']['address'][$o]['name']) ;
+                    $objPHPExcel->getActiveSheet()->setCellValue('E'.$i12,$model['all']['address'][$o][0]) ;
+                }
+                if($o%7==3){
+                    $objPHPExcel->getActiveSheet()->setCellValue('F'.$i12,$model['all']['address'][$o]['name']) ;
+                    $objPHPExcel->getActiveSheet()->setCellValue('G'.$i12,$model['all']['address'][$o][0]) ;
+                }
+                if($o%7==4){
+                    $objPHPExcel->getActiveSheet()->setCellValue('H'.$i12,$model['all']['address'][$o]['name']) ;
+                    $objPHPExcel->getActiveSheet()->setCellValue('I'.$i12,$model['all']['address'][$o][0]) ;
+                }
+                if($o%7==5){
+                    $objPHPExcel->getActiveSheet()->setCellValue('J'.$i12,$model['all']['address'][$o]['name']) ;
+                    $objPHPExcel->getActiveSheet()->setCellValue('K'.$i12,$model['all']['address'][$o][0]) ;
+                }
+                if($o%7==6){
+                    $objPHPExcel->getActiveSheet()->setCellValue('L'.$i12,$model['all']['address'][$o]['name']) ;
+                    $objPHPExcel->getActiveSheet()->setCellValue('M'.$i12,$model['all']['address'][$o][0]) ;
+                }
+                if($o%7==0){
+                    $objPHPExcel->getActiveSheet()->setCellValue('N'.$i12,$model['all']['address'][$o]['name']) ;
+                    $objPHPExcel->getActiveSheet()->setCellValue('O'.$i12,$model['all']['address'][$o][0]) ;
+                    $i12=$i12+1;
+                }
+            }
+            $objPHPExcel->getActiveSheet()->mergeCells('A'.$a.':A'.$i12);
+            $styleArray = array(
+                'borders' => array(
+                    'allborders' => array(
+                        //'style' => PHPExcel_Style_Border::BORDER_THICK,//边框是粗的
+                        'style' => PHPExcel_Style_Border::BORDER_THIN,//细边框
+                        'color' => array('argb' => '0xCC000000'),
+                    ),
+                ),
+            );
+            $objPHPExcel->getActiveSheet()->getStyle('A'.$ex.':O'.$i12)->applyFromArray($styleArray);
+        }
+        if(!empty($model['one'])){
+            if(!empty($model['all'])){
+                $i=21;
+            }else{
+                $i=3;
+            }
+
+            foreach ($model['one'] as $arr){
+                $ex=$i;
+                $i1=$i+1;
+                $i2=$i+2;
+                $i3=$i+3;
+                $i4=$i+4;
+                $i5=$i+5;
+                $i6=$i+6;
+                $i7=$i+7;
+                $i8=$i+8;
+                $i9=$i+9;
+                $i10=$i+10;
+                $i11=$i+11;
+                $i12=$i+12;
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$i,$arr['name']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$i1,'签单总金额：'.$arr['money']['money'].'签单总数'.$arr['money']['sum']) ;
+                $objPHPExcel->getActiveSheet()->mergeCells('A'.$i.':O'.$i);
+                $objPHPExcel->getActiveSheet()->mergeCells('A'.$i1.':O'.$i1);
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$i2,'拜访类型') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i2,'陌拜') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i2,$arr['mobai']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i2,'日常跟进') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i2,$arr['richanggengjin']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i2,'客户资源') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i2,$arr['kehuziyuan']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i2,'电话上门') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i2,$arr['dianhuashangmen']) ;
+
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$i3,'拜访目的') ;
+                $objPHPExcel->getActiveSheet()->mergeCells('A'.$i3.':A'.$i4);
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i3,'首次') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i3,$arr['shouci']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i3,'客诉') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i3,$arr['keshu']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i3,'续约') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i3,$arr['xuyue']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i3,'回访') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i3,$arr['huifang']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$i3,'报价') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$i3,$arr['baojia']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$i3,'追款') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('M'.$i3,$arr['zuikuan']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('N'.$i3,'减价') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('O'.$i3,$arr['jianjia']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i4,'停服务') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i4,$arr['tingfuwu']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i4,'更换项目') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i4,$arr['genghuanxiangmu']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i4,'增加项目') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i4,$arr['zengjiaxiangmu']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i4,'救客') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i4,$arr['jiuke']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$i4,'其他') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$i4,$arr['qitaa']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$i4,'签单') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('M'.$i4,$arr['qiandan']) ;
+
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$i5,'客服类别（餐饮）') ;
+                $objPHPExcel->getActiveSheet()->mergeCells('A'.$i5.':A'.$i7);
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i5,'东/西北菜') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i5,$arr['dongbeicai']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i5,'泰国菜') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i5,$arr['taiguocai']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i5,'粤菜') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i5,$arr['yuecai']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i5,'面包甜点') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i5,$arr['mianbao']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$i5,'川湘菜') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$i5,$arr['chuancai']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$i5,'火锅') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('M'.$i5,$arr['huoguo']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('N'.$i5,'西餐') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('O'.$i5,$arr['xican']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i6,'咖啡厅') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i6,$arr['kafeiting']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i6,'浙江菜') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i6,$arr['zejiangcai']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i6,'自助餐') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i6,$arr['zizhu']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i6,'饮品店') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i6,$arr['yingping']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$i6,'日韩料理') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$i6,$arr['riliao']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$i6,'烧烤') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('M'.$i6,$arr['saokao']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('N'.$i6,'越南菜') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('O'.$i6,$arr['yuenancai']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i7,'小吃快餐') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i7,$arr['xiaochi']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i7,'清真菜') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i7,$arr['qingzhencai']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i7,'茶餐厅') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i7,$arr['chacanting']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i7,'其他') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i7,$arr['qitab']) ;
+
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$i8,'客服类别（非餐饮）') ;
+                $objPHPExcel->getActiveSheet()->mergeCells('A'.$i8.':A'.$i11);
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i8,'4S店') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i8,$arr['sisdian']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i8,'健身会所') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i8,$arr['jianshenhuisuo']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i8,'房地产') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i8,$arr['fangdican']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i8,'美容/发馆') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i8,$arr['meifa']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$i8,'银行') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$i8,$arr['yinhang']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$i8,'俱乐部') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('M'.$i8,$arr['julebu']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('N'.$i8,'培训机构') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('O'.$i8,$arr['peixunjigou']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i9,'KTV') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i9,$arr['ktv']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i9,'其他') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i9,$arr['qitac']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i9,'学校') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i9,$arr['xuexiao']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i9,'水疗会所') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i9,$arr['shuiliao']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$i9,'超市') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$i9,$arr['chaoshi']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$i9,'网吧') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('M'.$i9,$arr['wangba']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('N'.$i9,'影院') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('O'.$i9,$arr['yingyuan']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i10,'体育馆') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i10,$arr['tiyuguan']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i10,'写字楼') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i10,$arr['xiezilou']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i10,'工厂') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i10,$arr['gongcang']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('H'.$i10,'游泳馆') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('I'.$i10,$arr['youyong']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('J'.$i10,'酒吧') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('K'.$i10,$arr['jiuba']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('L'.$i10,'物业') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('M'.$i10,$arr['wuye']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('N'.$i10,'酒店') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('O'.$i10,$arr['jiudian']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('B'.$i11,'便利店') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('C'.$i11,$arr['bianlidian']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('D'.$i11,'医院') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('E'.$i11,$arr['yiyuan']) ;
+                $objPHPExcel->getActiveSheet()->setCellValue('F'.$i11,'影楼') ;
+                $objPHPExcel->getActiveSheet()->setCellValue('G'.$i11,$arr['yinglou']) ;
+
+//            区域的
+                $objPHPExcel->getActiveSheet()->setCellValue('A'.$i12,'区域');
+                $a=$i12;
+                for($o=1;$o<count($arr['address']);$o++){
+                    if($o%7==1){
+                        $objPHPExcel->getActiveSheet()->setCellValue('B'.$i12,$arr['address'][$o]['name']) ;
+                        $objPHPExcel->getActiveSheet()->setCellValue('C'.$i12,$arr['address'][$o][0]) ;
+                    }
+                    if($o%7==2){
+                        $objPHPExcel->getActiveSheet()->setCellValue('D'.$i12,$arr['address'][$o]['name']) ;
+                        $objPHPExcel->getActiveSheet()->setCellValue('E'.$i12,$arr['address'][$o][0]) ;
+                    }
+                    if($o%7==3){
+                        $objPHPExcel->getActiveSheet()->setCellValue('F'.$i12,$arr['address'][$o]['name']) ;
+                        $objPHPExcel->getActiveSheet()->setCellValue('G'.$i12,$arr['address'][$o][0]) ;
+                    }
+                    if($o%7==4){
+                        $objPHPExcel->getActiveSheet()->setCellValue('H'.$i12,$arr['address'][$o]['name']) ;
+                        $objPHPExcel->getActiveSheet()->setCellValue('I'.$i12,$arr['address'][$o][0]) ;
+                    }
+                    if($o%7==5){
+                        $objPHPExcel->getActiveSheet()->setCellValue('J'.$i12,$arr['address'][$o]['name']) ;
+                        $objPHPExcel->getActiveSheet()->setCellValue('K'.$i12,$arr['address'][$o][0]) ;
+                    }
+                    if($o%7==6){
+                        $objPHPExcel->getActiveSheet()->setCellValue('L'.$i12,$arr['address'][$o]['name']) ;
+                        $objPHPExcel->getActiveSheet()->setCellValue('M'.$i12,$arr['address'][$o][0]) ;
+                    }
+                    if($o%7==0){
+                        $objPHPExcel->getActiveSheet()->setCellValue('N'.$i12,$arr['address'][$o]['name']) ;
+                        $objPHPExcel->getActiveSheet()->setCellValue('O'.$i12,$arr['address'][$o][0]) ;
+                        $i12=$i12+1;
+                    }
+                }
+                $objPHPExcel->getActiveSheet()->mergeCells('A'.$a.':A'.$i12);
+                $styleArray = array(
+                    'borders' => array(
+                        'allborders' => array(
+                            //'style' => PHPExcel_Style_Border::BORDER_THICK,//边框是粗的
+                            'style' => PHPExcel_Style_Border::BORDER_THIN,//细边框
+                            'color' => array('argb' => '0xCC000000'),
+                        ),
+                    ),
+                );
+                $objPHPExcel->getActiveSheet()->getStyle('A'.$ex.':O'.$i12)->applyFromArray($styleArray);
+                $i=$i+18;
+            }
+        }
+
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+        ob_start();
+        $objWriter->save('php://output');
+        $output = ob_get_clean();
+        spl_autoload_register(array('YiiBase','autoload'));
+        $time=time();
+        $str="templates/sale_".$time.".xlsx";
+        header("Pragma: public");
+        header("Expires: 0");
+        header("Cache-Control:must-revalidate, post-check=0, pre-check=0");
+        header("Content-Type:application/force-download");
+        header("Content-Type:application/vnd.ms-execl");
+        header("Content-Type:application/octet-stream");
+        header("Content-Type:application/download");;
+        header('Content-Disposition:attachment;filename="'.$str.'"');
+        header("Content-Transfer-Encoding:binary");
+        echo $output;
     }
 }
