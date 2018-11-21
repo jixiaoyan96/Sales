@@ -71,31 +71,9 @@ class ReportController extends Controller
         $sql="select code,name from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND staff_status = 0 AND city='".$city."'";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
 
-        $sql = "select approver_type, username from account$suffix.acc_approver where city='$city' and (approver_type='regionMgr' or approver_type='regionSuper')";
-        $rows = Yii::app()->db->createCommand($sql)->queryAll();
-        //print_r("<pre/>");
-        $sql1="select employee_name from hr$suffix.hr_binding WHERE  user_id = '".$rows[0]['username']."'";
+        $sql1="select a.name from hr$suffix.hr_employee a, hr$suffix.hr_binding b, security$suffix.sec_user_access c where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and (c.a_control like '%CN01%' or c.a_control like '%CN05%')";
         $name = Yii::app()->db->createCommand($sql1)->queryAll();
-        $sql2="select employee_name from hr$suffix.hr_binding WHERE  user_id = '".$rows[1]['username']."'";
-        $names = Yii::app()->db->createCommand($sql2)->queryAll();
-        if(!empty($rows)){
-            $arr[] = $name[0]['employee_name'];
-        }
-        if(!empty($rows)){
-            $arr[] = $names[0]['employee_name'];
-        }
-        $a=General::dedupToEmailList($arr);
-        $sql3="select code,name from hr$suffix.hr_employee WHERE name='".$a[0]."'";
-        $zhuguan = Yii::app()->db->createCommand($sql3)->queryAll();
-        if(!empty($a[1])){
-            $sql4="select code,name from hr$suffix.hr_employee WHERE name='".$a[1]."'";
-            $jinli = Yii::app()->db->createCommand($sql4)->queryAll();
-        }
-        if(empty($jinli)){
-            $records=array_merge($records,$zhuguan);
-        }else{
-            $records=array_merge($records,$zhuguan,$jinli);
-        }
+        $records=array_merge($records,$name);
         echo (json_encode($records,JSON_UNESCAPED_UNICODE));
 
     }
