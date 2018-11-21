@@ -115,21 +115,21 @@ class ReportController extends Controller
             $model['one']=array();
         }
 //        print_r('<pre/>');
-       //print_r($fenxi);
-        $this->render('fenxi',array('model'=>$model,'fenxi'=>$fenxi));
+//       print_r($fenxi);
+       $this->render('fenxi',array('model'=>$model,'fenxi'=>$fenxi));
     }
 
     public function actionXiaZai(){
         $model = new ReportVisitForm;
         $arr = $_POST['RptFive'];
         if($arr['bumen']=='yes'){
-            $model['all']=$model->fenxi($arr);
+            $model['all']=$model->fenxis($arr);
         }else{
             $model['all']=array();
         }
 
         if(!empty($arr['sale'])){
-            $model['one']=$model->fenxione($arr);
+            $model['one']=$model->fenxiones($arr);
         }else{
             $model['one']=array();
         }

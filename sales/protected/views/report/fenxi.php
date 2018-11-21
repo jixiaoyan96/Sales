@@ -41,9 +41,10 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
             <input type="text" name="RptFive[start_dt]" value="<?php echo $fenxi['start_dt']?>" style="display:none"/>
             <input type="text" name="RptFive[end_dt]" value="<?php echo $fenxi['end_dt']?>" style="display:none"/>
             <input type="text" name="RptFive[bumen]" value="<?php echo $fenxi['bumen']?>" style="display:none"/>
-            <?php foreach ($fenxi['sale'] as $v) {?>
+
+            <?php if(!empty($fenxi['sale'])){foreach ($fenxi['sale'] as $v) {?>
                 <input name="RptFive[sale][]" type="checkbox" value="<?php echo $v?>" style="display:none" checked />
-            <?php }?>
+            <?php } }?>
 
 
 
