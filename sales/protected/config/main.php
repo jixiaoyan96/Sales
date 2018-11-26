@@ -115,7 +115,7 @@ return array(
 			'cookieMode'=>'allow',
 			//'autoStart'=>true,
 			'cookieParams'=>array(
-                'domain'=>'192.168.0.116',
+                'domain'=>'192.168.3.191',
 			),
 		),
 
@@ -155,43 +155,43 @@ return array(
 		'onesignal'=>'3183638f-c26a-409c-a80a-00736ae8a772',
 		'systemMapping'=>array(
             'drs'=>array(
-                'webroot'=>'http://192.168.0.116/dr',
+                'webroot'=>'http://192.168.3.191/dr',
                 'name'=>'Daily Report',
                 'icon'=>'fa fa-pencil-square-o',
             ),
             'acct'=>array(
-                'webroot'=>'http://192.168.0.116/acct',
+                'webroot'=>'http://192.168.3.191/acct',
                 'name'=>'Accounting',
                 'icon'=>'fa fa-money',
             ),
 //				'ops'=>array(
-//						'webroot'=>'http://192.168.0.116/operation',
+//						'webroot'=>'http://192.168.3.191/operation',
 //						'name'=>'Operation',
 //						'icon'=>'fa fa-gears',
 //					),
             'hr'=>array(
-                'webroot'=>'http://192.168.0.116/hr',
+                'webroot'=>'http://192.168.3.191/hr',
                 'name'=>'Personnel',
                 'icon'=>'fa fa-users',
             ),
 //            'sal'=>array(
-//                'webroot'=>'http://192.168.0.116/sales',
+//                'webroot'=>'http://192.168.3.191/sales',
 //                'name'=>'Sales',
 //                'icon'=>'fa fa-users',
 //            ),
 				'sal'=>array(
-						'webroot'=>'http://192.168.0.116/sales',
+						'webroot'=>'http://192.168.3.191/sales',
 						'name'=>'Sales',
 						'icon'=>'fa fa-suitcase',
 				),
 //                                'quiz'=>array(
-//                                               'webroot'=>'http://192.168.0.116/qz-uat',
+//                                               'webroot'=>'http://192.168.3.191/qz-uat',
 //                                                'name'=>'Quiz',
 //                                                'icon'=>'fa fa-question',
 //                                ),
 //                                'sp'=>array(
 //
-//                                               'webroot'=>'http://192.168.0.116/sp-uat',
+//                                               'webroot'=>'http://192.168.3.191/sp-uat',
 //                                                'name'=>'Academic Credit',
 //                                                'icon'=>'fa fa-cube',
 //                                ),

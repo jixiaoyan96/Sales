@@ -77,10 +77,10 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
                 .tftable3 tr:hover {background-color:#ffffff;}
             </style>
             <?php if(!empty($model['all'])){?>
-            <div>   <h4>注: &nbsp; 5/30000 表示签约或拜访5单 总金额30000</h4>
+            <div>   <h4>注: &nbsp; 10/5/30000 表示 总拜访量10个，签单5个，签单金额30000</h4>
                 <h3>部门总数据</h3>
 
-                <h4><b>签单总金额:<?php echo $model['all']['money']['money'];?> 签单总数：<?php echo $model['all']['money']['sum'];?></b></h4>
+                <h4><b>总拜访量:<?php echo $model['all']['money']['all'];?> 签单量：<?php echo $model['all']['money']['sum'];?>  签单金额:<?php echo $model['all']['money']['money'];?> </b></h4>
 
                 <table class="tftable" border="1">
                     <tr><th rowspan="5" width="100">拜访类型</th><th >陌拜</th><td ><?php echo $model['all']['mobai'];?></td><th >日常跟进</th><td ><?php echo $model['all']['richanggengjin'];?></td><th >客户资源</th><td ><?php echo $model['all']['kehuziyuan'];?></td><th >电话上门</th><td ><?php echo $model['all']['dianhuashangmen'];?></td></tr>
@@ -111,7 +111,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
             <?php if(!empty($model['one'])){ foreach ($model['one'] as $arr){?>
             <div>
                 <h3><?php echo $arr['name'];?>的数据</h3>
-                <h4><b>签单总金额:<?php echo $arr['money']['money'];?> 签单总数：<?php echo $arr['money']['sum'];?></b></h4>
+                <h4><b>总拜访量:<?php echo $model['all']['money']['all'];?> 签单量：<?php echo $model['all']['money']['sum'];?>  签单金额:<?php echo $model['all']['money']['money'];?> </b></h4>
 
                 <table class="tftable" border="1">
                     <tr><th rowspan="5" width="100">拜访类型</th><th >陌拜</th><td ><?php echo $arr['mobai'];?></td><th >日常跟进</th><td ><?php echo $arr['richanggengjin'];?></td><th >客户资源</th><td ><?php echo $arr['kehuziyuan'];?></td><th >电话上门</th><td ><?php echo $arr['dianhuashangmen'];?></td></tr>
@@ -128,7 +128,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
                     <tr><th rowspan="3" width="100">客服类别（餐饮）</th><th >东/西北菜</th><td ><?php echo $arr['dongbeicai'];?></td><th >泰国菜</th><td ><?php echo $arr['taiguocai'];?></td><th >粤菜</th><td ><?php echo $arr['yuecai'];?></td><th >面包甜点</th><td ><?php echo $arr['mianbao'];?></td><th >川湘菜</th><td ><?php echo $arr['chuancai'];?></td><th >火锅</th><td ><?php echo $arr['huoguo'];?></td><th >西餐</th><td ><?php echo $arr['xican'];?></td></tr>
                     <tr><th>咖啡厅</th><td><?php echo $arr['kafeiting'];?></td><th>浙江菜</th><td><?php echo $arr['zejiangcai'];?></td><th>自助餐</th><td><?php echo $arr['zizhu'];?></td><th>饮品店</th><td><?php echo $arr['yingping'];?></td><th>日韩料理</th><td><?php echo $arr['riliao'];?></td><th>烧烤</th><td><?php echo $arr['saokao'];?></td><th>越南菜</th><td><?php echo $arr['yuenancai'];?></td></tr>
                     <tr><th>小吃快餐</th><td><?php echo $arr['xiaochi'];?></td><th>清真菜</th><td><?php echo $arr['qingzhencai'];?></td><th>茶餐厅</th><td><?php echo $arr['chacanting'];?></td><th>其他</th><td><?php echo $arr['qitab'];?></td></tr>
-                    <tr><th rowspan="5" width="100">客服类别（非餐饮）</th><th>4S店</th><td><?php echo $arr['sisdian'];?></td><th>健身会所</th><td><?php echo $arr['jianshenhuisuo'];?></td><th>房地产</th><td><?php echo $arr['fangdican'];?></td><th>美容/发馆</th><td><?php echo $arr['meifa'];?></td><th >银行</th ><td>xx</td><th >俱乐部</th><td><?php echo $arr['julebu'];?></td><th >培训机构</th><td><?php echo $arr['peixunjigou'];?></td> </tr>
+                    <tr><th rowspan="5" width="100">客服类别（非餐饮）</th><th>4S店</th><td><?php echo $arr['sisdian'];?></td><th>健身会所</th><td><?php echo $arr['jianshenhuisuo'];?></td><th>房地产</th><td><?php echo $arr['fangdican'];?></td><th>美容/发馆</th><td><?php echo $arr['meifa'];?></td><th >银行</th ><td><?php echo $arr['yinhang'];?></td><th >俱乐部</th><td><?php echo $arr['julebu'];?></td><th >培训机构</th><td><?php echo $arr['peixunjigou'];?></td> </tr>
                     <tr><th>KTV</th><td><?php echo $arr['ktv'];?></td><th>其他</th><td><?php echo $arr['qitac'];?></td><th>学校</th><td><?php echo $arr['xuexiao'];?></td><th>水疗会所</th><td><?php echo $arr['shuiliao'];?></td><th>超市</th><td><?php echo $arr['chaoshi'];?></td><th >网吧</th><td><?php echo $arr['wangba'];?></td><th >影院</th><td><?php echo $arr['yingyuan'];?></td></tr>
                     <tr><th>体育馆</th><td><?php echo $arr['tiyuguan'];?></td><th>写字楼</th><td><?php echo $arr['xiezilou'];?></td><th>工厂</th><td><?php echo $arr['gongcang'];?></td><th>游泳馆</th><td><?php echo $arr['youyong'];?></td><th>酒吧</th><td><?php echo $arr['jiuba'];?></td><th>物业</th><td><?php echo $arr['wuye'];?></td><th>酒店</th><td><?php echo $arr['jiudian'];?></td></tr>
                     <tr><th>便利店</th><td><?php echo $arr['bianlidian'];?></td><th>医院</th><td><?php echo $arr['yiyuan'];?></td><th>影楼</th><td><?php echo $arr['yinglou'];?></td></tr>
