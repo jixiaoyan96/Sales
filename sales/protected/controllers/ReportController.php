@@ -68,12 +68,12 @@ class ReportController extends Controller
     public function actionCity(){
         $city=$_POST['txt'];
         $suffix = Yii::app()->params['envSuffix'];
-        $sql="select code,name from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND staff_status = 0 AND city='".$city."'";
-        $records = Yii::app()->db->createCommand($sql)->queryAll();
+//        $sql="select code,name from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND staff_status = 0 AND city='".$city."'";
+//        $records = Yii::app()->db->createCommand($sql)->queryAll();
 
-        $sql1="select a.name from hr$suffix.hr_employee a, hr$suffix.hr_binding b, security$suffix.sec_user_access c where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and (c.a_control like '%CN01%' or c.a_control like '%CN05%') and a.city='".$city."'";
-        $name = Yii::app()->db->createCommand($sql1)->queryAll();
-        $records=array_merge($records,$name);
+        $sql1="select a.name from hr$suffix.hr_employee a, hr$suffix.hr_binding b, security$suffix.sec_user_access c where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and c.a_read_write like '%HK01%'  and a.city='".$city."'";
+        $records = Yii::app()->db->createCommand($sql1)->queryAll();
+//        $records=array_merge($records,$name);
         echo (json_encode($records,JSON_UNESCAPED_UNICODE));
 
     }
