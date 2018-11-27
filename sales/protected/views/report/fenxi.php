@@ -92,7 +92,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
                 </table>
 
                 <table class="tftable2" border="1">
-                    <tr><th rowspan="4" width="100">区域</th><?php for($i=0;$i<count($model['all']['address']);$i++){?><th ><?php echo $model['all']['address'][$i]['name'];?></th><td ><?php echo $model['all']['address'][$i]['0'];?></td><?php if($i==6||$i==13||$i==19||$i==27){ echo "</tr>";}?><?php }?>
+                    <tr><th rowspan="6" width="100">区域</th><?php for($i=0;$i<count($model['all']['address']);$i++){?><th ><?php echo $model['all']['address'][$i]['name'];?></th><td ><?php echo $model['all']['address'][$i]['0'];?></td><?php if($i==6||$i==13||$i==20||$i==27||$i==34||$i==41){ echo "</tr>";}?><?php }?>
                     <tr></tr>
                 </table>
 
@@ -111,7 +111,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
             <?php if(!empty($model['one'])){ foreach ($model['one'] as $arr){?>
             <div>
                 <h3><?php echo $arr['name'];?>的数据</h3>
-                <h4><b>总拜访量:<?php echo $model['all']['money']['all'];?> 签单量：<?php echo $model['all']['money']['sum'];?>  签单金额:<?php echo $model['all']['money']['money'];?> </b></h4>
+                <h4><b>总拜访量:<?php echo $arr['money']['all'];?> 签单量：<?php echo $arr['money']['sum'];?>  签单金额:<?php echo $arr['money']['money'];?> </b></h4>
 
                 <table class="tftable" border="1">
                     <tr><th rowspan="5" width="100">拜访类型</th><th >陌拜</th><td ><?php echo $arr['mobai'];?></td><th >日常跟进</th><td ><?php echo $arr['richanggengjin'];?></td><th >客户资源</th><td ><?php echo $arr['kehuziyuan'];?></td><th >电话上门</th><td ><?php echo $arr['dianhuashangmen'];?></td></tr>
@@ -121,8 +121,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
                     <tr><th>停服务</th><td><?php echo $arr['tingfuwu'];?></td><th>更换项目</th><td><?php echo $arr['genghuanxiangmu'];?></td><th>增加项目</th><td><?php echo $arr['zengjiaxiangmu'];?></td><th>救客</th><td><?php echo $arr['jiuke'];?></td><th>其他</th><td><?php echo $arr['qitaa'];?></td><th>签单</th><td><?php echo $arr['qiandan'];?></td></tr>
                 </table>
                 <table class="tftable2" border="1">
-                    <tr><th rowspan="6" width="100">区域</th><?php for($i=0;$i<count($arr['address']);$i++){?><th ><?php echo $arr['address'][$i]['name'];?></th><td ><?php echo $arr['address'][$i]['0'];?></td><?php if($i%7==0){ echo "</tr><tr>";}?><?php }?></tr>
-
+                    <tr><th rowspan="6" width="100">区域</th><?php for($i=0;$i<count($arr['address']);$i++){?><th ><?php echo $arr['address'][$i]['name'];?></th><td ><?php echo $arr['address'][$i]['0'];?></td><?php if($i==6||$i==13||$i==20||$i==27||$i==34||$i==41){ echo "</tr><tr>";}?><?php }?></tr>
                 </table>
                 <table class="tftable3" border="1">
                     <tr><th rowspan="3" width="100">客服类别（餐饮）</th><th >东/西北菜</th><td ><?php echo $arr['dongbeicai'];?></td><th >泰国菜</th><td ><?php echo $arr['taiguocai'];?></td><th >粤菜</th><td ><?php echo $arr['yuecai'];?></td><th >面包甜点</th><td ><?php echo $arr['mianbao'];?></td><th >川湘菜</th><td ><?php echo $arr['chuancai'];?></td><th >火锅</th><td ><?php echo $arr['huoguo'];?></td><th >西餐</th><td ><?php echo $arr['xican'];?></td></tr>
