@@ -63,7 +63,8 @@ class ReportVisitForm extends CReportForm
         $city=Yii::app()->user->city();
 //        $sql="select code,name from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND staff_status = 0 AND city='".$city."'";
 //        $records = Yii::app()->db->createCommand($sql)->queryAll();
-        $sql1="select a.name from hr$suffix.hr_employee a, hr$suffix.hr_binding b, security$suffix.sec_user_access c where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and c.a_read_write like '%HK01%'  and a.city='".$city."'";
+        $sql1="select a.name from hr$suffix.hr_employee a, hr$suffix.hr_binding b, security$suffix.sec_user_access c,security$suffix.sec_user d 
+        where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and c.a_read_write like '%HK01%' and c.username=d.username and d.status='A' and a.city='".$city."'";
         $records = Yii::app()->db->createCommand($sql1)->queryAll();
 //        $records=array_merge($records,$name);
         //print_r($name);
