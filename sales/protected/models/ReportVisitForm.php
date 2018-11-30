@@ -32,7 +32,7 @@ class ReportVisitForm extends CReportForm
 		$this->city = "";
         $this->cityname ="";
 		$this->fields = 'start_dt,end_dt,staffs,staffs_desc';
-		$this->start_dt = date("Y/m/d");
+		$this->start_dt = date('Y/m/01', strtotime(date("Y/m/d")));
         $this->end_dt = date("Y/m/d");
         $this->staffs = '';
         $this->bumen = '';
@@ -605,7 +605,7 @@ class ReportVisitForm extends CReportForm
                     $arr['svc_C7']=0;
                 }
                 if(empty($arr['svc_D6'])){
-                    $arr['svc_A7']=0;
+                    $arr['svc_D6']=0;
                 }
                 if(empty($arr['svc_E7'])){
                     $arr['svc_E7']=0;
@@ -651,7 +651,7 @@ class ReportVisitForm extends CReportForm
                     $arr['svc_C7']=0;
                 }
                 if(empty($arr['svc_D6'])){
-                    $arr['svc_A7']=0;
+                    $arr['svc_D6']=0;
                 }
                 if(empty($arr['svc_E7'])){
                     $arr['svc_E7']=0;
@@ -699,7 +699,7 @@ class ReportVisitForm extends CReportForm
                     $arr['svc_C7']=0;
                 }
                 if(empty($arr['svc_D6'])){
-                    $arr['svc_A7']=0;
+                    $arr['svc_D6']=0;
                 }
                 if(empty($arr['svc_E7'])){
                     $arr['svc_E7']=0;

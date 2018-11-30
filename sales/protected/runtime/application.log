@@ -3386,3 +3386,15 @@ in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
 in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (60)
 in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
 in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/11/27 17:16:55 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (60)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/11/30 15:40:58 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/11/30 15:41:19 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (60)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
