@@ -147,5 +147,6 @@ return array(
 	'Latest notifications within {hr} hours'=>'{hr}小时内的最新通知',
 	'Latest notifications within {hr} days'=>'{hr}日内的最新通知',
 	'This record has no contract amount entered'=>'此记录没有输入任何合同金额',
+	'Upload Error. (Please be reminded that file should not be larger than 30MB)'=>'上传错误。(请注意，文件不应大于30MB)',
 );
 ?>
