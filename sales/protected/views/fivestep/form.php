@@ -322,6 +322,7 @@ $link = Yii::app()->createUrl('fivestep/ajaxsave');
 $link2 = Yii::app()->createAbsoluteUrl('fivestep/edit');
 $title_v = Yii::t('dialog','Validation Message');
 $title_e = Yii::t('dialog','Error');
+$msg_err = Yii::t('sales','Upload Error. (Please be reminded that file should not be larger than 30MB)');
 $js = <<<EOF
 $('#btnSave').on('click', function() {
 //	var form = document.getElementById('fivestep-form');
@@ -370,11 +371,11 @@ $('#btnSave').on('click', function() {
 					$('#dialogMessage').modal('show');
 					break;
 				default:
-					alert("Error occured.please try again");
+					alert("$msg_err");
 			}
 		},
 		error: function(result) { // if error occured
-			alert("Error occured.please try again");
+			alert("$msg_err");
 		}
 	});
 });
