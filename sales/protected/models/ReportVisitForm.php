@@ -89,6 +89,8 @@ class ReportVisitForm extends CReportForm
 				where a.city='".$model['city']."' and visit_dt<='".$end_dt."' and visit_dt>='".$start_dt."'  
 			";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
+                print_r('<pre/>');
+        print_r($records);
         $sql1 = "select name
 				from sal_cust_district
 				where city='".$model['city']."' ";
@@ -220,8 +222,7 @@ class ReportVisitForm extends CReportForm
         $meney=$this->moneys($records);
         $arr['address']=$record;
         $arr['money']=$meney;
-//        print_r('<pre/>');
-//        print_r($records);
+
         return $arr;
 
     }
