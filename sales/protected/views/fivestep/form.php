@@ -371,7 +371,7 @@ $('#btnSave').on('click', function() {
 					$('#dialogMessage').modal('show');
 					break;
 				default:
-					alert("$msg_err");
+				alert("$msg_err");
 			}
 		},
 		error: function(result) { // if error occured
