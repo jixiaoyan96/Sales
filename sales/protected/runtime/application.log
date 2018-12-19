@@ -3436,3 +3436,44 @@ Stack trace:
 REQUEST_URI=/sales/site/notify?id=28
 HTTP_REFERER=http://192.168.3.191/sales/index.php
 ---
+2018/12/18 10:15:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'securityuat.sal_push_message' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `sal_push_message`.
+in D:\xampp\htdocs\sales\protected\views\site\notification.php (14)
+in D:\xampp\htdocs\sales\protected\views\site\index.php (20)
+in D:\xampp\htdocs\sales\protected\controllers\SiteController.php (62)
+2018/12/18 10:15:05 [error] [exception.CDbException] exception 'CDbException' with message '数据库中无法找到 active record class "Notification" 对应的 table "sal_push_message".' in D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php:2312
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(388): CActiveRecordMetaData->__construct(Object(Notification))
+#1 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(403): CActiveRecord::model('Notification')
+#2 D:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(78): CActiveRecord->getMetaData()
+#3 D:\xampp\htdocs\sales\protected\views\site\notification.php(14): CActiveRecord->__construct()
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#7 D:\xampp\htdocs\sales\protected\views\site\index.php(20): CController->renderPartial('//site/notifica...')
+#8 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#9 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#12 D:\xampp\htdocs\sales\protected\controllers\SiteController.php(62): CController->render('index')
+#13 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#15 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#16 D:\xampp\htdocs\sales\protected\components\Controller.php(71): CFilterChain->run()
+#17 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#18 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#19 D:\xampp\htdocs\sales\protected\components\Controller.php(95): CFilterChain->run()
+#20 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\xampp\htdocs\sales\protected\components\Controller.php(51): CFilterChain->run()
+#23 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#24 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#26 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('')
+#28 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#29 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 D:\xampp\htdocs\sales\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/sales/index.php
+HTTP_REFERER=http://192.168.3.191/sales/
+---

@@ -78,7 +78,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'class'=>'CDbConnection',
-			'connectionString' => 'mysql:host=localhost;dbname=securityuat',
+			'connectionString' => 'mysql:host=localhost;dbname=salesuat',
 			'emulatePrepare' => true,
 			'username' => 'swuser',
 			'password' => 'swisher168',
