@@ -88,10 +88,11 @@ class ReportController extends Controller
             $model['all']=array();
         }
         //print_r('<pre/>');
-        if(!empty($fenxi['sale'])){
+        $city_allow = City::model()->getDescendantList($fenxi['city']);
+        if(!empty($city_allow)){
             $model['one']=$model->fenxione($fenxi);
         }else{
-            $model['one']=array();
+           $model['one']=array();
         }
 //        print_r('<pre/>');
 //       print_r($fenxi);
@@ -107,7 +108,8 @@ class ReportController extends Controller
             $model['all']=array();
         }
 
-        if(!empty($arr['sale'])){
+        $city_allow = City::model()->getDescendantList($arr['city']);
+        if(!empty($city_allow)){
             $model['one']=$model->fenxiones($arr);
         }else{
             $model['one']=array();
