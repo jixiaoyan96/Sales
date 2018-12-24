@@ -3802,3 +3802,11 @@ in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
 in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (60)
 in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
 in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/12/24 10:20:14 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (60)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)
+2018/12/24 10:20:20 [warning] [application] Failed to set unsafe attribute "scenario" of "ReportVisitForm".
+in D:\xampp\htdocs\sales\protected\controllers\ReportController.php (60)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sales\protected\components\Controller.php (95)

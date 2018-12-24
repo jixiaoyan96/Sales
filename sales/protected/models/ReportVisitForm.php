@@ -236,7 +236,7 @@ class ReportVisitForm extends CReportForm
         $end_dt=str_replace("/","-",$model['end_dt']);
         $suffix = Yii::app()->params['envSuffix'];
         $a=0;
-        $sqls="select code from security$suffix.sec_city where region='".$model['city']."'";
+        $sqls="select name,code from security$suffix.sec_city where region='".$model['city']."'";
         $recity = Yii::app()->db->createCommand($sqls)->queryAll();
         if(empty($recity)){
             foreach ($model['sale'] as $v) {
@@ -417,7 +417,7 @@ class ReportVisitForm extends CReportForm
                 $meney=$this->moneys($records);
                 $arr['address']=$record;
                 $arr['money']=$meney;
-                $arr['name']=$city;
+                $arr['name']=$v['name'];
                 $att[]=$arr;
 
             }
@@ -594,7 +594,7 @@ class ReportVisitForm extends CReportForm
         $end_dt=str_replace("/","-",$model['end_dt']);
         $suffix = Yii::app()->params['envSuffix'];
         $a=0;
-        $sqls="select code from security$suffix.sec_city where region='".$model['city']."'";
+        $sqls="select name,code from security$suffix.sec_city where region='".$model['city']."'";
         $recity = Yii::app()->db->createCommand($sqls)->queryAll();
         if(empty($recity)){
             foreach ($model['sale'] as $v) {
@@ -775,7 +775,7 @@ class ReportVisitForm extends CReportForm
                 $meney=$this->moneys($records);
                 $arr['address']=$record;
                 $arr['money']=$meney;
-                $arr['name']=$city;
+                $arr['name']=$v['name'];
                 $att[]=$arr;
 
             }
