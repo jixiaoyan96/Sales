@@ -7,6 +7,9 @@ class ReportController extends Controller
         'city'=>'HA01',
         'fenxi'=>'HA01',
         'xiazai'=>'HA01',
+        'staff'=>'HA02',
+        'sale'=>'HA02',
+        'down'=>'HA02',
         'overtimelist'=>'YB02',
         'pennantexlist'=>'YB05',
         'pennantculist'=>'YB06',
@@ -65,6 +68,25 @@ class ReportController extends Controller
         $this->render('form_visit',array('model'=>$model,'city'=>$city,'saleman'=>$saleman));
     }
 
+    public function actionStaff() {
+        $model = new ReportVisitForm;
+        if (isset($_POST['ReportVisitForm'])) {
+            $model->attributes = $_POST['ReportVisitForm'];
+        }
+        //$city=$model->city();
+        //$saleman=$model->saleman();
+        $this->render('form_staff',array('model'=>$model));
+    }
+
+    public function actionSale(){
+        $model = new ReportVisitForm;
+        $fenxi=$_POST['ReportVisitForm'];
+        $model['all']=$model->sale($fenxi);
+//        print_r('<pre/>');
+//       print_r($model);
+        $this->render('sale',array('model'=>$model,'fenxi'=>$fenxi));
+    }
+
     public function actionCity(){
         $city=$_POST['txt'];
         $suffix = Yii::app()->params['envSuffix'];
@@ -115,6 +137,15 @@ class ReportController extends Controller
             $model['one']=array();
         }
         $model->retrieveDatas($model);
+//        print_r('<pre/>');
+//        print_r($model);
+    }
+
+    public function actionDown(){
+        $model = new ReportVisitForm;
+        $arr = $_POST['RptFive'];
+        $model['all']=$model->sales($arr);
+        $model->retrieveData($model);
 //        print_r('<pre/>');
 //        print_r($model);
     }

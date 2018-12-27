@@ -29,6 +29,10 @@ return array(
                 'access'=>'HA01',
                 'url'=>'report/visit',
             ),
+            'Sale Staff'=>array(
+                'access'=>'HA02',
+                'url'=>'report/staff',
+            ),
         ),
     ),
 
