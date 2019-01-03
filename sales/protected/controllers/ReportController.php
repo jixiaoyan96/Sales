@@ -111,7 +111,7 @@ class ReportController extends Controller
         }
         //print_r('<pre/>');
         $city_allow = City::model()->getDescendantList($fenxi['city']);
-        if(!empty($city_allow)){
+        if(!empty($city_allow)||!empty($model['sale'])){
             $model['one']=$model->fenxione($fenxi);
         }else{
            $model['one']=array();
@@ -131,7 +131,7 @@ class ReportController extends Controller
         }
 
         $city_allow = City::model()->getDescendantList($arr['city']);
-        if(!empty($city_allow)){
+        if(!empty($city_allow)||!empty($model['sale'])){
             $model['one']=$model->fenxiones($arr);
         }else{
             $model['one']=array();

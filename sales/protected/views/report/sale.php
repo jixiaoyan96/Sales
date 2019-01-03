@@ -25,8 +25,8 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
             <div class="btn-group pull-right" role="group">
                 <?php echo TbHtml::button('<span class="fa fa-download"></span> '.Yii::t('misc','Xiazai'), array(
                     'submit'=>Yii::app()->createUrl('report/down')));
-                ?>
-            </div>
+            ?>
+        </div>
         </div>
     </div>
 
@@ -34,7 +34,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
         <div class="box-body">
             <?php
             echo $form->hiddenField($model, 'scenario');
-            echo $form->hiddenField($model, 'id');
+            echo $form->hiddenField($model, 'id');  
             echo $form->hiddenField($model, 'city');
             ?>
 <!--            <input type="text" name="RptFive[city]" value="--><?php //echo $fenxi['city']?><!--" style="display:none"/>-->
