@@ -192,7 +192,7 @@ class ReportVisitForm extends CReportForm
         $arr['yuenancai']=$this->shul($yuenancai,$records,'cust_type_name','越南菜');
         $arr['mianbao']=$this->shul($mianbao,$records,'cust_type_name','面包甜点');
         $arr['yingping']=$this->shul($yingping,$records,'cust_type_name','饮品店');
-        $arr['qitab']=$this->shul($qitab,$records,'cust_type_name','其他');
+        $arr['qitab']=$this->shul($qitab,$records,'cust_type_name','其他(餐饮)');
         $arr['sisdian']=$this->shul($sisdian,$records,'cust_type_name','4S店');
         $arr['ktv']=$this->shul($ktv,$records,'cust_type_name','KTV');
         $arr['meifa']=$this->shul($ktv,$records,'cust_type_name','美发');
@@ -200,7 +200,7 @@ class ReportVisitForm extends CReportForm
         $arr['bianlidian']=$this->shul($bianlidian,$records,'cust_type_name','便利店');
         $arr['julebu']=$this->shul($julebu,$records,'cust_type_name','俱乐部');
         $arr['jianshenhuisuo']=$this->shul($jianshenhuisuo,$records,'cust_type_name','健身/舞蹈会所');
-        $arr['qitac']=$this->shul($qitac,$records,'cust_type_name','其他2');
+        $arr['qitac']=$this->shul($qitac,$records,'cust_type_name','其他(非餐饮)');
         $arr['xiezilou']=$this->shul($xiezilou,$records,'cust_type_name','写字楼');
         $arr['yiyuan']=$this->shul($yiyuan,$records,'cust_type_name','医院');
         $arr['peixunjigou']=$this->shul($peixunjigou,$records,'cust_type_name','培训机构');
@@ -289,7 +289,7 @@ class ReportVisitForm extends CReportForm
                 $arr['yuenancai']=$this->shul($a,$records,'cust_type_name','越南菜');
                 $arr['mianbao']=$this->shul($a,$records,'cust_type_name','面包甜点');
                 $arr['yingping']=$this->shul($a,$records,'cust_type_name','饮品店');
-                $arr['qitab']=$this->shul($a,$records,'cust_type_name','其他');
+                $arr['qitab']=$this->shul($a,$records,'cust_type_name','其他(餐饮)');
                 $arr['sisdian']=$this->shul($a,$records,'cust_type_name','4S店');
                 $arr['ktv']=$this->shul($a,$records,'cust_type_name','KTV');
                 $arr['meifa']=$this->shul($a,$records,'cust_type_name','美发');
@@ -297,7 +297,7 @@ class ReportVisitForm extends CReportForm
                 $arr['bianlidian']=$this->shul($a,$records,'cust_type_name','便利店');
                 $arr['julebu']=$this->shul($a,$records,'cust_type_name','俱乐部');
                 $arr['jianshenhuisuo']=$this->shul($a,$records,'cust_type_name','健身/舞蹈会所');
-                $arr['qitac']=$this->shul($a,$records,'cust_type_name','其他2');
+                $arr['qitac']=$this->shul($a,$records,'cust_type_name','其他(非餐饮)');
                 $arr['xiezilou']=$this->shul($a,$records,'cust_type_name','写字楼');
                 $arr['yiyuan']=$this->shul($a,$records,'cust_type_name','医院');
                 $arr['peixunjigou']=$this->shul($a,$records,'cust_type_name','培训机构');
@@ -382,7 +382,7 @@ class ReportVisitForm extends CReportForm
                 $arr['yuenancai']=$this->shul($a,$records,'cust_type_name','越南菜');
                 $arr['mianbao']=$this->shul($a,$records,'cust_type_name','面包甜点');
                 $arr['yingping']=$this->shul($a,$records,'cust_type_name','饮品店');
-                $arr['qitab']=$this->shul($a,$records,'cust_type_name','其他');
+                $arr['qitab']=$this->shul($a,$records,'cust_type_name','其他(餐饮)');
                 $arr['sisdian']=$this->shul($a,$records,'cust_type_name','4S店');
                 $arr['ktv']=$this->shul($a,$records,'cust_type_name','KTV');
                 $arr['meifa']=$this->shul($a,$records,'cust_type_name','美发');
@@ -390,7 +390,7 @@ class ReportVisitForm extends CReportForm
                 $arr['bianlidian']=$this->shul($a,$records,'cust_type_name','便利店');
                 $arr['julebu']=$this->shul($a,$records,'cust_type_name','俱乐部');
                 $arr['jianshenhuisuo']=$this->shul($a,$records,'cust_type_name','健身/舞蹈会所');
-                $arr['qitac']=$this->shul($a,$records,'cust_type_name','其他2');
+                $arr['qitac']=$this->shul($a,$records,'cust_type_name','其他(非餐饮)');
                 $arr['xiezilou']=$this->shul($a,$records,'cust_type_name','写字楼');
                 $arr['yiyuan']=$this->shul($a,$records,'cust_type_name','医院');
                 $arr['peixunjigou']=$this->shul($a,$records,'cust_type_name','培训机构');
@@ -549,7 +549,7 @@ class ReportVisitForm extends CReportForm
         $arr['yuenancai']=$this->shuls($yuenancai,$records,'cust_type_name','越南菜');
         $arr['mianbao']=$this->shuls($mianbao,$records,'cust_type_name','面包甜点');
         $arr['yingping']=$this->shuls($yingping,$records,'cust_type_name','饮品店');
-        $arr['qitab']=$this->shuls($qitab,$records,'cust_type_name','其他');
+        $arr['qitab']=$this->shuls($qitab,$records,'cust_type_name','其他(餐饮)');
         $arr['sisdian']=$this->shuls($sisdian,$records,'cust_type_name','4S店');
         $arr['ktv']=$this->shuls($ktv,$records,'cust_type_name','KTV');
         $arr['meifa']=$this->shuls($ktv,$records,'cust_type_name','美发');
@@ -557,7 +557,7 @@ class ReportVisitForm extends CReportForm
         $arr['bianlidian']=$this->shuls($bianlidian,$records,'cust_type_name','便利店');
         $arr['julebu']=$this->shuls($julebu,$records,'cust_type_name','俱乐部');
         $arr['jianshenhuisuo']=$this->shuls($jianshenhuisuo,$records,'cust_type_name','健身/舞蹈会所');
-        $arr['qitac']=$this->shuls($qitac,$records,'cust_type_name','其他2');
+        $arr['qitac']=$this->shuls($qitac,$records,'cust_type_name','其他(非餐饮)');
         $arr['xiezilou']=$this->shuls($xiezilou,$records,'cust_type_name','写字楼');
         $arr['yiyuan']=$this->shuls($yiyuan,$records,'cust_type_name','医院');
         $arr['peixunjigou']=$this->shuls($peixunjigou,$records,'cust_type_name','培训机构');
@@ -647,7 +647,7 @@ class ReportVisitForm extends CReportForm
                 $arr['yuenancai']=$this->shul($a,$records,'cust_type_name','越南菜');
                 $arr['mianbao']=$this->shul($a,$records,'cust_type_name','面包甜点');
                 $arr['yingping']=$this->shul($a,$records,'cust_type_name','饮品店');
-                $arr['qitab']=$this->shul($a,$records,'cust_type_name','其他');
+                $arr['qitab']=$this->shul($a,$records,'cust_type_name','其他(餐饮)');
                 $arr['sisdian']=$this->shul($a,$records,'cust_type_name','4S店');
                 $arr['ktv']=$this->shul($a,$records,'cust_type_name','KTV');
                 $arr['meifa']=$this->shul($a,$records,'cust_type_name','美发');
@@ -655,7 +655,7 @@ class ReportVisitForm extends CReportForm
                 $arr['bianlidian']=$this->shul($a,$records,'cust_type_name','便利店');
                 $arr['julebu']=$this->shul($a,$records,'cust_type_name','俱乐部');
                 $arr['jianshenhuisuo']=$this->shul($a,$records,'cust_type_name','健身/舞蹈会所');
-                $arr['qitac']=$this->shul($a,$records,'cust_type_name','其他2');
+                $arr['qitac']=$this->shul($a,$records,'cust_type_name','其他(非餐饮)');
                 $arr['xiezilou']=$this->shul($a,$records,'cust_type_name','写字楼');
                 $arr['yiyuan']=$this->shul($a,$records,'cust_type_name','医院');
                 $arr['peixunjigou']=$this->shul($a,$records,'cust_type_name','培训机构');
@@ -740,7 +740,7 @@ class ReportVisitForm extends CReportForm
                 $arr['yuenancai']=$this->shul($a,$records,'cust_type_name','越南菜');
                 $arr['mianbao']=$this->shul($a,$records,'cust_type_name','面包甜点');
                 $arr['yingping']=$this->shul($a,$records,'cust_type_name','饮品店');
-                $arr['qitab']=$this->shul($a,$records,'cust_type_name','其他');
+                $arr['qitab']=$this->shul($a,$records,'cust_type_name','其他(餐饮)');
                 $arr['sisdian']=$this->shul($a,$records,'cust_type_name','4S店');
                 $arr['ktv']=$this->shul($a,$records,'cust_type_name','KTV');
                 $arr['meifa']=$this->shul($a,$records,'cust_type_name','美发');
@@ -748,7 +748,7 @@ class ReportVisitForm extends CReportForm
                 $arr['bianlidian']=$this->shul($a,$records,'cust_type_name','便利店');
                 $arr['julebu']=$this->shul($a,$records,'cust_type_name','俱乐部');
                 $arr['jianshenhuisuo']=$this->shul($a,$records,'cust_type_name','健身/舞蹈会所');
-                $arr['qitac']=$this->shul($a,$records,'cust_type_name','其他2');
+                $arr['qitac']=$this->shul($a,$records,'cust_type_name','其他(非餐饮)');
                 $arr['xiezilou']=$this->shul($a,$records,'cust_type_name','写字楼');
                 $arr['yiyuan']=$this->shul($a,$records,'cust_type_name','医院');
                 $arr['peixunjigou']=$this->shul($a,$records,'cust_type_name','培训机构');
@@ -908,7 +908,7 @@ class ReportVisitForm extends CReportForm
         $arr['yuenancai']=$this->shul($yuenancai,$records,'cust_type_name','越南菜');
         $arr['mianbao']=$this->shul($mianbao,$records,'cust_type_name','面包甜点');
         $arr['yingping']=$this->shul($yingping,$records,'cust_type_name','饮品店');
-        $arr['qitab']=$this->shul($qitab,$records,'cust_type_name','其他');
+        $arr['qitab']=$this->shul($qitab,$records,'cust_type_name','其他(餐饮)');
         $arr['sisdian']=$this->shul($sisdian,$records,'cust_type_name','4S店');
         $arr['ktv']=$this->shul($ktv,$records,'cust_type_name','KTV');
         $arr['meifa']=$this->shul($ktv,$records,'cust_type_name','美发');
@@ -916,7 +916,7 @@ class ReportVisitForm extends CReportForm
         $arr['bianlidian']=$this->shul($bianlidian,$records,'cust_type_name','便利店');
         $arr['julebu']=$this->shul($julebu,$records,'cust_type_name','俱乐部');
         $arr['jianshenhuisuo']=$this->shul($jianshenhuisuo,$records,'cust_type_name','健身/舞蹈会所');
-        $arr['qitac']=$this->shul($qitac,$records,'cust_type_name','其他2');
+        $arr['qitac']=$this->shul($qitac,$records,'cust_type_name','其他(非餐饮)');
         $arr['xiezilou']=$this->shul($xiezilou,$records,'cust_type_name','写字楼');
         $arr['yiyuan']=$this->shul($yiyuan,$records,'cust_type_name','医院');
         $arr['peixunjigou']=$this->shul($peixunjigou,$records,'cust_type_name','培训机构');
@@ -1064,7 +1064,7 @@ class ReportVisitForm extends CReportForm
         $arr['yuenancai']=$this->shuls($yuenancai,$records,'cust_type_name','越南菜');
         $arr['mianbao']=$this->shuls($mianbao,$records,'cust_type_name','面包甜点');
         $arr['yingping']=$this->shuls($yingping,$records,'cust_type_name','饮品店');
-        $arr['qitab']=$this->shuls($qitab,$records,'cust_type_name','其他');
+        $arr['qitab']=$this->shuls($qitab,$records,'cust_type_name','其他(餐饮)');
         $arr['sisdian']=$this->shuls($sisdian,$records,'cust_type_name','4S店');
         $arr['ktv']=$this->shuls($ktv,$records,'cust_type_name','KTV');
         $arr['meifa']=$this->shuls($ktv,$records,'cust_type_name','美发');
@@ -1072,7 +1072,7 @@ class ReportVisitForm extends CReportForm
         $arr['bianlidian']=$this->shuls($bianlidian,$records,'cust_type_name','便利店');
         $arr['julebu']=$this->shuls($julebu,$records,'cust_type_name','俱乐部');
         $arr['jianshenhuisuo']=$this->shuls($jianshenhuisuo,$records,'cust_type_name','健身/舞蹈会所');
-        $arr['qitac']=$this->shuls($qitac,$records,'cust_type_name','其他2');
+        $arr['qitac']=$this->shuls($qitac,$records,'cust_type_name','其他(非餐饮)');
         $arr['xiezilou']=$this->shuls($xiezilou,$records,'cust_type_name','写字楼');
         $arr['yiyuan']=$this->shuls($yiyuan,$records,'cust_type_name','医院');
         $arr['peixunjigou']=$this->shuls($peixunjigou,$records,'cust_type_name','培训机构');
