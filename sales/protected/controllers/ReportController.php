@@ -80,22 +80,27 @@ class ReportController extends Controller
 
     public function actionSale(){
         $model = new ReportVisitForm;
-        $fenxi=$_POST['ReportVisitForm'];
-        $model['all']=$model->sale($fenxi);
+        if (isset($_POST['ReportVisitForm'])) {
+            $fenxi = $_POST['ReportVisitForm'];
+            $model['all'] = $model->sale($fenxi);
+        }
 //        print_r('<pre/>');
 //       print_r($model);
         $this->render('sale',array('model'=>$model,'fenxi'=>$fenxi));
     }
 
-    public function actionCity(){
-        $city=$_POST['txt'];
+    public function actionCity()
+    {
+        if (isset($_POST['txt'])) {
+        $city = $_POST['txt'];
         $suffix = Yii::app()->params['envSuffix'];
 //        $sql="select code,name from hr$suffix.hr_employee WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND staff_status = 0 AND city='".$city."'";
 //        $records = Yii::app()->db->createCommand($sql)->queryAll();
 
-        $sql1="select a.name from hr$suffix.hr_employee a, hr$suffix.hr_binding b, security$suffix.sec_user_access c,security$suffix.sec_user d 
-        where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and c.a_read_write like '%HK01%' and c.username=d.username and d.status='A' and a.city='".$city."'";
+        $sql1 = "select a.name from hr$suffix.hr_employee a, hr$suffix.hr_binding b, security$suffix.sec_user_access c,security$suffix.sec_user d 
+        where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and c.a_read_write like '%HK01%' and c.username=d.username and d.status='A' and a.city='" . $city . "'";
         $records = Yii::app()->db->createCommand($sql1)->queryAll();
+    }
 //        $records=array_merge($records,$name);
         echo (json_encode($records,JSON_UNESCAPED_UNICODE));
 
@@ -103,20 +108,23 @@ class ReportController extends Controller
 
     public function actionFenxi(){
         $model = new ReportVisitForm;
-        $fenxi=$_POST['ReportVisitForm'];
-        if($fenxi['bumen']=='yes'){
-            $model['all']=$model->fenxi($fenxi);
-        }else{
-            $model['all']=array();
-        }
-        //print_r('<pre/>');
-        $city_allow = City::model()->getDescendantList($fenxi['city']);
-        if(!empty($city_allow)||!empty($fenxi['sale'])){
-            $model['one']=$model->fenxione($fenxi);
+        if(isset($_POST['ReportVisitForm'])){
+            $fenxi=$_POST['ReportVisitForm'];
+            if($fenxi['bumen']=='yes'){
+                $model['all']=$model->fenxi($fenxi);
+            }else{
+                $model['all']=array();
+            }
+            //print_r('<pre/>');
+            $city_allow = City::model()->getDescendantList($fenxi['city']);
+            if(!empty($city_allow)||!empty($fenxi['sale'])){
+                $model['one']=$model->fenxione($fenxi);
 
-        }else{
-           $model['one']=array();
+            }else{
+                $model['one']=array();
+            }
         }
+
 //        print_r('<pre/>');
 //       print_r($fenxi);
        $this->render('fenxi',array('model'=>$model,'fenxi'=>$fenxi));
@@ -124,19 +132,22 @@ class ReportController extends Controller
 
     public function actionXiaZai(){
         $model = new ReportVisitForm;
-        $arr = $_POST['RptFive'];
-        if($arr['bumen']=='yes'){
-            $model['all']=$model->fenxis($arr);
-        }else{
-            $model['all']=array();
+        if(isset($_POST['RptFive'])){
+            $arr = $_POST['RptFive'];
+            if($arr['bumen']=='yes'){
+                $model['all']=$model->fenxis($arr);
+            }else{
+                $model['all']=array();
+            }
+
+            $city_allow = City::model()->getDescendantList($arr['city']);
+            if(!empty($city_allow)||!empty($fenxi['sale'])){
+                $model['one']=$model->fenxiones($arr);
+            }else{
+                $model['one']=array();
+            }
         }
 
-        $city_allow = City::model()->getDescendantList($arr['city']);
-        if(!empty($city_allow)||!empty($fenxi['sale'])){
-            $model['one']=$model->fenxiones($arr);
-        }else{
-            $model['one']=array();
-        }
         $model->retrieveDatas($model);
 //        print_r('<pre/>');
 //        print_r($model);
@@ -144,9 +155,11 @@ class ReportController extends Controller
 
     public function actionDown(){
         $model = new ReportVisitForm;
-        $arr = $_POST['RptFive'];
-        $model['all']=$model->sales($arr);
-        $model->retrieveData($model);
+        if(isset($_POST['RptFive'])){
+            $arr = $_POST['RptFive'];
+            $model['all']=$model->sales($arr);
+            $model->retrieveData($model);
+        }
 //        print_r('<pre/>');
 //        print_r($model);
     }
