@@ -148,7 +148,7 @@ class ReportController extends Controller
             }
         }
 
-        $model->retrieveDatas($model);
+       $model->retrieveDatas($model);
 //        print_r('<pre/>');
 //        print_r($model);
     }
