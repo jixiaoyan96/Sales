@@ -28,6 +28,6 @@
 	<td <?php echo $cls_str;?>><?php echo $this->record['district']; ?></td>
 	<td <?php echo $cls_str;?>><?php echo $this->record['street']; ?></td>
 <?php if (VisitForm::isReadAll()) : ?>
-	<td <?php echo $cls_str;?>><?php echo $this->record['staff']; ?></td>
+	<td <?php echo $cls_str;?>><?php echo $this->record['staff']; if($this->record['shift']=='Y'){echo "(旧)";}?></td>
 <?php endif ?>
 </tr>
