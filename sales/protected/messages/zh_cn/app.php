@@ -13,6 +13,9 @@ return array(
 	'Sales'=>'销售系统',
         'Quiz'=>'培训测验系统',
         'Academic Credit'=>'学分系统',
+	'Online Library'=>'网上文库',
+
+	'System Use'=>'系统使用',
 
 	'Data Entry'=>'数据输入',
 	'Misc'=>'其他',
@@ -28,7 +31,7 @@ return array(
 	'Visit Objective'=>'拜访目的',
 	'Customer Type'=>'客户类别',
 	'Customer District'=>'客户区域',
-    'Sale Staff'=>'销售个人数据汇总',
+	'Sale Staff'=>'销售个人数据汇总',
 	
 	'Report'=>'报表',
 //	'Operation Daily Report'=>'每日营业择要报告',

@@ -6,7 +6,7 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-	'id'=>'swoper',
+	'id'=>'swoperuat',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'charset'=>'UTF-8',
 	'name'=>'LBS Daily Management - UAT',
@@ -78,10 +78,10 @@ return array(
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'class'=>'CDbConnection',
-			'connectionString' => 'mysql:host=localhost;dbname=salesuat',
+  	     	         'connectionString' => 'mysql:host=localhost;dbname=salesuat',
 			'emulatePrepare' => true,
 			'username' => 'swuser',
-			'password' => 'swisher168',
+			'password' => 'Swisher@168',
 			'charset' => 'utf8',
 		),
 
@@ -115,7 +115,7 @@ return array(
 			'cookieMode'=>'allow',
 			//'autoStart'=>true,
 			'cookieParams'=>array(
-                'domain'=>'192.168.3.58',
+                'domain'=>'118.89.46.224',
 			),
 		),
 
@@ -150,53 +150,48 @@ return array(
 		'version'=>'1.0.0',
 		'docmanPath'=>'/docman/upload/sal/uat',
 		'systemId'=>'sal',
-		'envSuffix'=>'dev',
+		'envSuffix'=>'uat',
 //		'onesignal'=>'d619380e-fa8e-462c-be6d-8be2f5a4563b',		// production
 		'onesignal'=>'3183638f-c26a-409c-a80a-00736ae8a772',
+/*
 		'systemMapping'=>array(
-            'drs'=>array(
-                'webroot'=>'http://192.168.3.58/dr',
-                'name'=>'Daily Report',
-                'icon'=>'fa fa-pencil-square-o',
-            ),
-            'acct'=>array(
-                'webroot'=>'http://192.168.3.58/acct',
-                'name'=>'Accounting',
-                'icon'=>'fa fa-money',
-            ),
-//				'ops'=>array(
-//						'webroot'=>'http://192.168.3.58/operation',
-//						'name'=>'Operation',
-//						'icon'=>'fa fa-gears',
-//					),
-            'hr'=>array(
-                'webroot'=>'http://192.168.3.58/hr',
-                'name'=>'Personnel',
-                'icon'=>'fa fa-users',
-            ),
-//            'sal'=>array(
-//                'webroot'=>'http://192.168.3.58/sales',
-//                'name'=>'Sales',
-//                'icon'=>'fa fa-users',
-//            ),
-				'sal'=>array(
-						'webroot'=>'http://192.168.3.58/sales',
-						'name'=>'Sales',
-						'icon'=>'fa fa-suitcase',
+                                'drs'=>array(
+                                                'webroot'=>'http://118.89.46.224/dr-uat',
+                                                'name'=>'Daily Report',
+                                                'icon'=>'fa fa-pencil-square-o',
+                                        ),
+                                'acct'=>array(
+                                                'webroot'=>'http://118.89.46.224/ac-uat',
+                                                'name'=>'Accounting',
+                                                'icon'=>'fa fa-money',
+                                        ),
+                                'ops'=>array(
+                                                'webroot'=>'http://118.89.46.224/op-uat',
+                                                'name'=>'Operation',
+                                                'icon'=>'fa fa-gears',
+                                        ),
+                                'hr'=>array(
+                                                'webroot'=>'http://118.89.46.224/hr-uat',
+                                                'name'=>'Personnel',
+                                                'icon'=>'fa fa-users',
+                                        ),
+                                'sal'=>array(
+                                               'webroot'=>'http://118.89.46.224/sa-uat',
+                                                'name'=>'Sales',
+                                                'icon'=>'fa fa-suitcase',
+                                ),
+                                'quiz'=>array(
+                                               'webroot'=>'http://118.89.46.224/qz-uat',
+                                                'name'=>'Quiz',
+                                                'icon'=>'fa fa-pencil',
+                                ),
+				'sp'=>array(
+                                               'webroot'=>'http://118.89.46.224/sp-uat',
+                                                'name'=>'Academic Credit',
+                                                'icon'=>'fa fa-cube',
 				),
-//                                'quiz'=>array(
-//                                               'webroot'=>'http://192.168.3.58/qz-uat',
-//                                                'name'=>'Quiz',
-//                                                'icon'=>'fa fa-question',
-//                                ),
-//                                'sp'=>array(
-//
-//                                               'webroot'=>'http://192.168.3.58/sp-uat',
-//                                                'name'=>'Academic Credit',
-//                                                'icon'=>'fa fa-cube',
-//                                ),
-
 
 			),
+*/
 	),
 );

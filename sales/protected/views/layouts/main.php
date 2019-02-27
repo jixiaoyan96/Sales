@@ -48,9 +48,10 @@ foreach ($rights as $right) {
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse pull-left" id="navbar-collapse">
 				<?php
+					$sysmap = General::systemMapping();
 					$sysId = Yii::app()->session['system'];
-					$sysTitle = Yii::app()->params['systemMapping'][$sysId]['name'];
-					$sysIcon = Yii::app()->params['systemMapping'][$sysId]['icon'];
+					$sysTitle = $sysmap[$sysId]['name'];
+					$sysIcon = $sysmap[$sysId]['icon'];
 					echo "<button id='btnSysChange' type='button' 
 						class='btn btn-default navbar-btn navbar-left' data-toggle='tooltip' data-placement='bottom' title='".Yii::t('app','System Change')."'>"
 						.Yii::t('app',$sysTitle)."</button>";
@@ -134,7 +135,7 @@ $('#btnSysChange').on('click',function() {
 });
 EOF;
 	$incl_js = false;
-	foreach (Yii::app()->params['systemMapping'] as $id=>$value) {
+	foreach (General::systemMapping() as $id=>$value) {
 		if (Yii::app()->user->validSystem($id)) {
 			$oid = 'btnSys'.$id;
 			$url = $value['webroot'];
