@@ -28,7 +28,8 @@ return array(
 	'VIP'=>'重点客户',
 	'Star'=>'星标',
 	'Report'=>'生成报表',
-	
+	'Sale Shift'=>'销售转移',
+    'Sale List'=>'转移列表',
 	'Catering'=>'餐饮',
 	'Non-catering'=>'非餐饮',
 	

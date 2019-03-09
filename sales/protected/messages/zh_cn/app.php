@@ -32,6 +32,7 @@ return array(
 	'Customer Type'=>'客户类别',
 	'Customer District'=>'客户区域',
 	'Sale Staff'=>'销售个人数据汇总',
+	'Sales transfer'=>'离职销售人员数据转移	',
 	
 	'Report'=>'报表',
 //	'Operation Daily Report'=>'每日营业择要报告',

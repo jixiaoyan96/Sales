@@ -80,10 +80,10 @@ return array(
 			'class'=>'CDbConnection',
   	     	         'connectionString' => 'mysql:host=localhost;dbname=salesuat',
 			'emulatePrepare' => true,
-			'username' => 'swuser',
-			'password' => 'Swisher@168',
-			'charset' => 'utf8',
-		),
+            'username' => 'swuser',
+            'password' => 'swisher168',
+            'charset' => 'utf8',
+        ),
 
 
 

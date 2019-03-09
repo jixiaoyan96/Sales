@@ -33,6 +33,10 @@ return array(
                 'access'=>'HA02',
                 'url'=>'report/staff',
             ),
+            'Sales transfer'=>array(
+                'access'=>'HA03',
+                    'url'=>'/shift/index',
+            ),
         ),
     ),
 
@@ -47,7 +51,6 @@ return array(
 				'access'=>'HB01',
 				'url'=>'/queue/index',
 			),
-
 		),
 	),
 	
