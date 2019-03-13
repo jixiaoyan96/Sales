@@ -5329,3 +5329,81 @@ Stack trace:
 #23 {main}
 REQUEST_URI=/sa-uat/
 ---
+2019/03/13 09:57:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message '您未被授权执行这个动作' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), '\xE6\x82\xA8\xE6\x9C\xAA\xE8\xA2\xAB\xE6\x8E\x88\xE6\x9D\x83...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('shift/index')
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/sa-uat/shift/index
+HTTP_REFERER=http://192.168.3.102/sa-uat/index.php
+---
+2019/03/13 09:57:17 [error] [exception.CHttpException.403] exception 'CHttpException' with message '您未被授权执行这个动作' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), '\xE6\x82\xA8\xE6\x9C\xAA\xE8\xA2\xAB\xE6\x8E\x88\xE6\x9D\x83...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('shift/index')
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/sa-uat/shift/index
+HTTP_REFERER=http://192.168.3.102/sa-uat/shift/index
+---
+2019/03/13 09:57:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message '您未被授权执行这个动作' in D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:170
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(133): CAccessControlFilter->accessDenied(Object(WebUser), '\xE6\x82\xA8\xE6\x9C\xAA\xE8\xA2\xAB\xE6\x8E\x88\xE6\x9D\x83...')
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('index')
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('shift/index')
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/sa-uat/shift/index
+HTTP_REFERER=http://192.168.3.102/sa-uat/shift/index
+---

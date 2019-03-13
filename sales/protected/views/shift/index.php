@@ -19,17 +19,21 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit';
 	<div class="box"><div class="box-body">
 	<div class="btn-group" role="group">
         <div class="btn-group" role="group">
-            <?php echo TbHtml::button(Yii::t('misc','Batch allocation'), array(
+            <?php
+            if (Yii::app()->user->validRWFunction('HA03'))
+              echo TbHtml::button(Yii::t('misc','Batch allocation'), array(
                 'submit'=>Yii::app()->createUrl('shift/zhuan')));
             ?>
         </div>
         <div class="btn-group">
+            <?php  if (Yii::app()->user->validRWFunction('HA03')){?>
             <select class="form-control" name="ShiftList[visit_shift]" id="VisitForm_visit_type">
                 <option value="">-- 请选择分配人员 --</option>
                 <?php foreach ($saleman as $v) {?>
                 <option value="<?php echo $v['id'];?>"><?php echo $v['name'];?> </option>
                 <?php }?>
             </select>
+            <?php }?>
         </div>
 	</div>
 	</div></div>

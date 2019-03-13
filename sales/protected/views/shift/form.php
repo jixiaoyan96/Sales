@@ -29,6 +29,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 //			'name'=>'btnVisit','id'=>'btnVisit',)
 //		);
 	?>
+        <?php  if (Yii::app()->user->validRWFunction('HA03')){?>
         <div class="btn-group">
             <select class="form-control" name="ShiftForm[visit_shift]" id="ShiftForm_visit_type">
                 <option value="">-- 请选择分配人员 --</option>
@@ -37,9 +38,12 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
                 <?php }?>
             </select>
             </div>
+        <?php }?>
 <?php //endif ?>
-        <?php echo TbHtml::button(Yii::t('misc','Distribution'), array(
-            'submit'=>Yii::app()->createUrl('shift/zhuanone')));
+        <?php
+        if (Yii::app()->user->validRWFunction('HA03'))
+            echo TbHtml::button(Yii::t('misc','Distribution'), array(
+                'submit'=>Yii::app()->createUrl('shift/zhuanone')));
         ?>
 	</div>
 	<div class="btn-group pull-right" role="group">
