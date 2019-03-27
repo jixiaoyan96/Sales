@@ -9,7 +9,9 @@ class FivestepCommand extends CConsoleCommand
 	          where b.status='I'";
         $arr=Yii::app()->db->createCommand($sql)->queryRow();
         foreach ($arr as $a){
-            unlink($a['filename']);
+            if(file_exists($a['filename'])){
+                unlink($a['filename']);
+            }
             $sql1="delete from sales$suffix.sal_fivestep where id = '".$a['id']."'";
             $command=Yii::app()->db->createCommand($sql1)->execute();
             $sql2="delete from sales$suffix.sal_fivestep_info where five_id = '".$a['id']."'";
