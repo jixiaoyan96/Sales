@@ -122,13 +122,16 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					<?php
 						echo $form->numberField($model, 'sup_score', 
 							array('size'=>5,'min'=>1,'max'=>100,
-							'readonly'=>($model->isReadOnly() || $model->username==Yii::app()->user->id || !$model->isSuperRight() || !empty($model->sup_score_user)),
+                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 							)
 						); 
 						echo $form->hiddenField($model, 'sup_score_user');
 						echo $form->hiddenField($model, 'sup_score_dt');
 					?>
 				</div>
+                <?php
+                echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc','id'=>'btnSignQc',));
+                ?>
 <?php if (!empty($model->sup_score_user)): ?>
 				<div class="col-sm-4">
 					<?php
@@ -145,7 +148,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 				<div class="col-sm-7">
 					<?php echo $form->textArea($model, 'sup_remarks', 
 						array('rows'=>3,'cols'=>60,'maxlength'=>5000,
-							'readonly'=>($model->isReadOnly() || $model->username==Yii::app()->user->id || !$model->isSuperRight() || !empty($model->sup_score_user)),
+                            'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 					)); ?>
 				</div>
 			</div>
@@ -156,13 +159,16 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					<?php
 						echo $form->numberField($model, 'mgr_score', 
 							array('size'=>5,'min'=>1,'max'=>100,
-							'readonly'=>($model->isReadOnly() || $model->username==Yii::app()->user->id || !$model->isManagerRight() || !empty($model->mgr_score_user)),
+                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 							)
 						); 
 						echo $form->hiddenField($model, 'mgr_score_user');
 						echo $form->hiddenField($model, 'mgr_score_dt');
 					?>
 				</div>
+                <?php
+                echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc2','id'=>'btnSignQc2',));
+                ?>
 <?php if (!empty($model->mgr_score_user)): ?>
 				<div class="col-sm-4">
 					<?php
@@ -179,7 +185,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 				<div class="col-sm-7">
 					<?php echo $form->textArea($model, 'mgr_remarks', 
 						array('rows'=>3,'cols'=>60,'maxlength'=>5000,
-							'readonly'=>($model->isReadOnly() || $model->username==Yii::app()->user->id || !$model->isManagerRight() || !empty($model->mgr_score_user)),
+                            'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 					)); ?>
 				</div>
 			</div>
@@ -190,14 +196,16 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					<?php
 						echo $form->numberField($model, 'dir_score', 
 							array('size'=>5,'min'=>1,'max'=>100,
-							'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)),
+                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 							)
 						); 
 						echo $form->hiddenField($model, 'dir_score_user');
 						echo $form->hiddenField($model, 'dir_score_dt');
 					?>
 				</div>
-
+                <?php
+                echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc3','id'=>'btnSignQc3',));
+                ?>
 <?php if (!empty($model->dir_score_user)): ?>
 				<div class="col-sm-4">
 					<?php
@@ -214,7 +222,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 				<div class="col-sm-7">
 					<?php echo $form->textArea($model, 'dir_remarks', 
 						array('rows'=>3,'cols'=>60,'maxlength'=>5000,
-							'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)),
+							'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 					)); ?>
 				</div>
 			</div>
@@ -403,6 +411,16 @@ $link3 = Yii::app()->createAbsoluteUrl('fivestep/index');
 $js = <<<EOF
 $('#btnBack').on('click', function() {
 	window.location = '$link3';
+});
+
+$('#btnSignQc').on('click',function(){
+$("#FivestepForm_sup_score").val("-1");
+});
+$('#btnSignQc2').on('click',function(){
+$("#FivestepForm_mgr_score").val("-1");
+});
+$('#btnSignQc3').on('click',function(){
+$("#FivestepForm_dir_score").val("-1");
 });
 EOF;
 Yii::app()->clientScript->registerScript('backurl',$js,CClientScript::POS_READY);

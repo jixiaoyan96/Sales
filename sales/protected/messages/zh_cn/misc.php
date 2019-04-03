@@ -83,6 +83,8 @@ return array(
 	'Clear'=>'清除',
 	
 	'Misc'=>'其他',
+
+    'Asked redo'=>'要求重做',
 );
 
 ?>

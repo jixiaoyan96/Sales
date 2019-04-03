@@ -79,7 +79,7 @@ class FivestepForm extends CFormModel
 			array('rec_dt, username, step','required'),
 			array('filename', 'file', 'types'=>'mp4, m4a, mp3, 3gp, mov, wav', 'allowEmpty'=>false, 'on'=>'new'),
 			array('sup_score, mgr_score, dir_score','numerical','allowEmpty'=>true,'integerOnly'=>true),
-			array('sup_score, mgr_score, dir_score','in','range'=>range(1,100)),
+			array('sup_score, mgr_score, dir_score','in','range'=>range(-1,100)),
 			array('id, status, city, city_name, remarks, staff_name, staff_code, dept_name, post_name, sup_score, mgr_score, dir_score,
 				sup_score_dt, mgr_score_dt, dir_score_dt, sup_score_user, mgr_score_user, dir_score_user, filename, filetype, 
 				sup_remarks, mgr_remarks, dir_remarks','safe'), 
@@ -396,7 +396,29 @@ class FivestepForm extends CFormModel
 		}
 		return $rtn;
 	}
-	
+
+	public function toEmail($name){
+        $suffix = Yii::app()->params['envSuffix'];
+        $sql = "select * from security$suffix.sec_user where username='".$name."'";
+        $rows = Yii::app()->db->createCommand($sql)->queryRow();
+        $from_addr = "it@lbsgroup.com.hk";
+        $subject = "五部曲提醒";
+        $description = "五部曲提醒";
+        $message = "姓名：" . $rows['disp_name'] . ",您的五部曲评分为不合格，请重新上传";
+        $lcu = "admin";
+        $aaa = Yii::app()->db->createCommand()->insert("swoper$suffix.swo_email_queue", array(
+            'request_dt' => date('Y-m-d H:i:s'),
+            'from_addr' => $from_addr,
+            'to_addr' => $rows['email'],
+            'subject' => $subject,//郵件主題
+            'description' => $description,//郵件副題
+            'message' => $message,//郵件內容（html）
+            'status' => "P",
+            'lcu' => $lcu,
+            'lcd' => date('Y-m-d H:i:s'),
+        ));
+    }
+
 	public function isReadOnly() {
 		return (
 					$this->scenario=='view' || 
@@ -411,7 +433,11 @@ class FivestepForm extends CFormModel
 					($this->isManagerRight() && $this->isDirectorRight() && $this->isSuperRight() && !empty($this->mgr_score_user) && !empty($this->dir_score_user) && !empty($this->sup_score_user))
 				);
 	}
-	
+
+	public function isIncompetent($model){
+	    return ($model['dir_score']==-1||$model['mgr_score']==-1||$model['sup_score']==-1);
+    }
+
 	public function getMediaFile($raw=false) {
 		$content = '';
 		if (!empty($this->filename)) {

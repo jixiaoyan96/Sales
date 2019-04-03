@@ -272,6 +272,9 @@ class FivestepController extends Controller
 		if (!$model->retrieveData($index)) {
 			throw new CHttpException(404,'The requested page does not exist.');
 		} else {
+            if($model['sup_score']==-1||$model['mgr_score']==-1||$model['dir_score']==-1){
+                $model->toEmail($model['username']);
+            }
 			$this->render('form',array('model'=>$model,));
 		}
 	}
