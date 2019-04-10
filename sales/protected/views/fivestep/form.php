@@ -122,7 +122,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					<?php
 						echo $form->numberField($model, 'sup_score', 
 							array('size'=>5,'min'=>1,'max'=>100,
-                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isManagerRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 							)
 						); 
 						echo $form->hiddenField($model, 'sup_score_user');
@@ -130,7 +130,10 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					?>
 				</div>
                 <?php
-                echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc','id'=>'btnSignQc',));
+                if(Yii::app()->user->validFunction('CN01')){
+                    echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc','id'=>'btnSignQc',));
+                }
+
                 ?>
 <?php if (!empty($model->sup_score_user)): ?>
 				<div class="col-sm-4">
@@ -148,7 +151,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 				<div class="col-sm-7">
 					<?php echo $form->textArea($model, 'sup_remarks', 
 						array('rows'=>3,'cols'=>60,'maxlength'=>5000,
-                            'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+                            'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isManagerRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 					)); ?>
 				</div>
 			</div>
@@ -167,7 +170,10 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					?>
 				</div>
                 <?php
-                echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc2','id'=>'btnSignQc2',));
+                if(Yii::app()->user->validFunction('CN02')){
+                    echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc2','id'=>'btnSignQc2',));
+                }
+
                 ?>
 <?php if (!empty($model->mgr_score_user)): ?>
 				<div class="col-sm-4">
@@ -196,7 +202,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					<?php
 						echo $form->numberField($model, 'dir_score', 
 							array('size'=>5,'min'=>1,'max'=>100,
-                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isSuperRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 							)
 						); 
 						echo $form->hiddenField($model, 'dir_score_user');
@@ -204,7 +210,10 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					?>
 				</div>
                 <?php
-                echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc3','id'=>'btnSignQc3',));
+                if(Yii::app()->user->validFunction('CN05')){
+                    echo TbHtml::button(Yii::t('misc','Asked redo'), array('name'=>'btnSignQc3','id'=>'btnSignQc3',));
+                }
+
                 ?>
 <?php if (!empty($model->dir_score_user)): ?>
 				<div class="col-sm-4">
@@ -222,7 +231,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 				<div class="col-sm-7">
 					<?php echo $form->textArea($model, 'dir_remarks', 
 						array('rows'=>3,'cols'=>60,'maxlength'=>5000,
-							'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+							'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isSuperRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
 					)); ?>
 				</div>
 			</div>
@@ -333,6 +342,18 @@ $title_e = Yii::t('dialog','Error');
 $msg_err = Yii::t('sales','Upload Error. (Please be reminded that file should not be larger than 30MB)');
 $js = <<<EOF
 $('#btnSave').on('click', function() {
+if($("#FivestepForm_sup_score").val() == "-1" && $("#FivestepForm_sup_remarks").val()==""){
+alert("请输入销售经理意见");
+   throw SyntaxError(); //如果验证不通过，则不执行后面
+    }
+    if($("#FivestepForm_mgr_score").val() == "-1" && $("#FivestepForm_mgr_remarks").val()==""){
+alert("请输入总经理意见");
+   throw SyntaxError(); //如果验证不通过，则不执行后面
+    }
+if($("#FivestepForm_dir_score").val() == "-1" && $("#FivestepForm_dir_remarks").val()==""){
+alert("请输入总监意见");
+   throw SyntaxError(); //如果验证不通过，则不执行后面
+    }
 //	var form = document.getElementById('fivestep-form');
 	var form = $('form')[0];
 	var formdata = new FormData(form);
