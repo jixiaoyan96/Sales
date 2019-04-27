@@ -785,3 +785,438 @@ REQUEST_URI=/sa-uat/fivestep/showmedia?index=26
 in D:\xampp\htdocs\sa-uat\protected\models\FivestepForm.php (444)
 in D:\xampp\htdocs\sa-uat\protected\controllers\FivestepController.php (299)
 in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+2019/04/11 09:42:25 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoperuat.swo_email_queue' doesn't exist. The SQL statement executed was: INSERT INTO `swoperuat`.`swo_email_queue` (`request_dt`, `from_addr`, `to_addr`, `subject`, `description`, `message`, `status`, `lcu`, `lcd`) VALUES (:request_dt, :from_addr, :to_addr, :subject, :description, :message, :status, :lcu, :lcd).
+in D:\xampp\htdocs\sa-uat\protected\models\FivestepForm.php (419)
+in D:\xampp\htdocs\sa-uat\protected\controllers\FivestepController.php (276)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+2019/04/11 09:42:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoperuat.swo_email_queue' doesn't exist. The SQL statement executed was: INSERT INTO `swoperuat`.`swo_email_queue` (`request_dt`, `from_addr`, `to_addr`, `subject`, `description`, `message`, `status`, `lcu`, `lcd`) VALUES (:request_dt, :from_addr, :to_addr, :subject, :description, :message, :status, :lcu, :lcd)' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:354
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(1178): CDbCommand->execute(Array)
+#1 D:\xampp\htdocs\sa-uat\protected\models\FivestepForm.php(419): CDbCommand->insert('swoperuat.swo_e...', Array)
+#2 D:\xampp\htdocs\sa-uat\protected\controllers\FivestepController.php(276): FivestepForm->toEmail('testuser')
+#3 [internal function]: FivestepController->actionEdit('50')
+#4 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(FivestepController), Array)
+#5 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(FivestepController), Object(ReflectionMethod), Array)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#24 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('fivestep/edit')
+#25 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/sa-uat/fivestep/edit?index=50
+HTTP_REFERER=http://192.168.3.102/sa-uat/fivestep/index
+---
+2019/04/11 09:42:28 [error] [php] file_get_contents(/docman/upload/sal/uat/0/0/088a7257312b1708a4f4d47b2feb5b35.mp3): failed to open stream: No such file or directory (D:\xampp\htdocs\sa-uat\protected\models\FivestepForm.php:444)
+Stack trace:
+#0 unknown(0): FivestepController->actionShowmedia()
+#1 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): FivestepController->runAction()
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): FivestepController->filterAccessControl()
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): FivestepController->filterEnforceNoConcurrentLogin()
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#12 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): FivestepController->filterEnforceSessionExpiration()
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#15 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): FivestepController->filterEnforceRegisteredStation()
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#18 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(266): FivestepController->runActionWithFilters()
+#20 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): FivestepController->run()
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#22 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#23 D:\xampp\htdocs\sa-uat\index.php(13): CWebApplication->run()
+REQUEST_URI=/sa-uat/fivestep/showmedia?index=26
+in D:\xampp\htdocs\sa-uat\protected\models\FivestepForm.php (444)
+in D:\xampp\htdocs\sa-uat\protected\controllers\FivestepController.php (299)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+2019/04/23 16:16:56 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/23 16:22:25 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/23 16:22:40 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/23 16:22:54 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/23 16:23:00 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/23 16:23:08 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/23 16:27:03 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/24 10:32:50 [error] [php] Undefined variable: rows (D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php:308)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs()
+#1 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CInlineAction->runWithParamsInternal()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): VisitController->runAction()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterAccessControl()
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterAccessControl()
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#12 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceNoConcurrentLogin()
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#15 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceSessionExpiration()
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#18 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): VisitController->filterEnforceRegisteredStation()
+#20 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\xampp\htdocs\yii\framework\web\CController.php(266): VisitController->runActionWithFilters()
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): VisitController->run()
+#24 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#25 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\xampp\htdocs\sa-uat\index.php(13): CWebApplication->run()
+REQUEST_URI=/sa-uat/visit/edit?index=22
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (308)
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (119)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+2019/04/25 15:30:22 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:33:59 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:34:03 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:36:37 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:41:03 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:41:57 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:41:57 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: insert into sal_custcache(
+							username, cust_name, cust_alt_name, cust_person, cust_person_role, cust_tel,visit_id,
+							district, street, cust_type
+						) values (
+							:username, :cust_name, :cust_alt_name, :cust_person, :cust_person_role, :cust_tel,:visit_id,
+							:district, :street, :cust_type
+						)
+						on duplicate key update
+							cust_alt_name=:cust_alt_name, visit_id=:visit_id, cust_person=:cust_person, cust_person_role=:cust_person_role, 
+							cust_tel=:cust_tel, district=:district, street=:street,
+							cust_type=:cust_type
+						.
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (580)
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (382)
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (71)
+2019/04/25 15:41:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php:390
+Stack trace:
+#0 D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php(71): VisitForm->saveData()
+#1 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#24 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#25 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/sa-uat/visit/save
+HTTP_REFERER=http://192.168.3.221/sa-uat/visit/edit?index=22
+---
+2019/04/25 15:42:19 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:42:19 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: insert into sal_custcache(
+							username, cust_name, cust_alt_name, cust_person, cust_person_role, cust_tel,visit_id,
+							district, street, cust_type
+						) values (
+							:username, :cust_name, :cust_alt_name, :cust_person, :cust_person_role, :cust_tel,:visit_id,
+							:district, :street, :cust_type
+						)
+						on duplicate key update
+							cust_alt_name=:cust_alt_name, visit_id=:visit_id, cust_person=:cust_person, cust_person_role=:cust_person_role, 
+							cust_tel=:cust_tel, district=:district, street=:street,
+							cust_type=:cust_type
+						.
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (580)
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (382)
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (71)
+2019/04/25 15:42:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php:390
+Stack trace:
+#0 D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php(71): VisitForm->saveData()
+#1 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#24 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#25 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/sa-uat/visit/save
+HTTP_REFERER=http://192.168.3.221/sa-uat/visit/edit?index=22
+---
+2019/04/25 15:44:39 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:47:04 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:47:04 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'visits_id' in 'field list'. The SQL statement executed was: insert into sal_custcache(
+							username, cust_name, cust_alt_name, cust_person, cust_person_role, cust_tel,
+							district, street, cust_type
+						) values (
+							:username, :cust_name, :cust_alt_name, :cust_person, :cust_person_role, :cust_tel,
+							:district, :street, :cust_type
+						)
+						on duplicate key update
+							cust_alt_name=:cust_alt_name, visits_id=:visits_id, cust_person=:cust_person, cust_person_role=:cust_person_role, 
+							cust_tel=:cust_tel, district=:district, street=:street,
+							cust_type=:cust_type
+						.
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (580)
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (382)
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (71)
+2019/04/25 15:47:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php:390
+Stack trace:
+#0 D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php(71): VisitForm->saveData()
+#1 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#24 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#25 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/sa-uat/visit/save
+HTTP_REFERER=http://192.168.3.221/sa-uat/visit/edit?index=22
+---
+2019/04/25 15:54:31 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:54:33 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:54:59 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 15:54:59 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'visits_id' in 'field list'. The SQL statement executed was: insert into sal_custcache(
+							username, cust_name, cust_alt_name, cust_person, cust_person_role, cust_tel,visits_id,
+							district, street, cust_type
+						) values (
+							:username, :cust_name, :cust_alt_name, :cust_person, :cust_person_role, :cust_tel,:visit_id,
+							:district, :street, :cust_type
+						)
+						on duplicate key update
+							cust_alt_name=:cust_alt_name, visit_id=:visit_id, cust_person=:cust_person, cust_person_role=:cust_person_role, 
+							cust_tel=:cust_tel, district=:district, street=:street,
+							cust_type=:cust_type
+						.
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (580)
+in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php (382)
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (71)
+2019/04/25 15:54:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Cannot update.' in D:\xampp\htdocs\sa-uat\protected\models\VisitForm.php:390
+Stack trace:
+#0 D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php(71): VisitForm->saveData()
+#1 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): VisitController->actionSave()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#3 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#11 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#12 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#14 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#16 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#18 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#22 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('save')
+#24 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/save')
+#25 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#26 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#27 {main}
+REQUEST_URI=/sa-uat/visit/save
+HTTP_REFERER=http://192.168.3.221/sa-uat/visit/edit?index=22
+---
+2019/04/25 16:17:47 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 16:17:55 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 16:17:58 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 16:18:52 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/25 16:19:19 [warning] [application] Failed to set unsafe attribute "scenario" of "VisitForm".
+in D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php (68)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (71)
+in D:\xampp\htdocs\sa-uat\protected\components\Controller.php (95)
+2019/04/27 10:03:47 [error] [exception.CException] exception 'CException' with message '属性 "VisitForm.cust_name111" 未被定义.' in D:\xampp\htdocs\yii\framework\base\CComponent.php:131
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2161): CComponent->__get('cust_name111')
+#1 D:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1887): CHtml::resolveValue(Object(VisitForm), 'cust_name111')
+#2 D:\xampp\htdocs\sa-uat\protected\extensions\bootstrap\helpers\TbHtml.php(2688): CHtml::activeInputField('text', Object(VisitForm), 'cust_name111', Array)
+#3 D:\xampp\htdocs\sa-uat\protected\extensions\bootstrap\helpers\TbHtml.php(1789): TbHtml::activeTextInputField('text', Object(VisitForm), 'cust_name111', Array)
+#4 D:\xampp\htdocs\sa-uat\protected\extensions\bootstrap\helpers\TbHtml.php(2563): TbHtml::activeTextField(Object(VisitForm), 'cust_name111', Array)
+#5 D:\xampp\htdocs\sa-uat\protected\extensions\bootstrap\widgets\TbActiveForm.php(443): TbHtml::createActiveInput('textField', Object(VisitForm), 'cust_name111', Array, Array)
+#6 D:\xampp\htdocs\sa-uat\protected\extensions\bootstrap\widgets\TbActiveForm.php(187): TbActiveForm->createInput('textField', Object(VisitForm), 'cust_name111', Array)
+#7 D:\xampp\htdocs\sa-uat\protected\views\visit\form.php(155): TbActiveForm->textField(Object(VisitForm), 'cust_name111', Array)
+#8 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#9 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#11 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('form', Array, true)
+#12 D:\xampp\htdocs\sa-uat\protected\controllers\VisitController.php(122): CController->render('form', Array)
+#13 [internal function]: VisitController->actionEdit('22')
+#14 D:\xampp\htdocs\yii\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(VisitController), Array)
+#15 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(VisitController), Object(ReflectionMethod), Array)
+#16 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#17 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#18 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#21 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#23 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#24 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#25 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#26 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(71): CFilterChain->run()
+#27 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#28 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#29 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(95): CFilterChain->run()
+#30 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#31 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#32 D:\xampp\htdocs\sa-uat\protected\components\Controller.php(51): CFilterChain->run()
+#33 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#34 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#35 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#36 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#37 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('edit')
+#38 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('visit/edit')
+#39 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#40 D:\xampp\htdocs\sa-uat\index.php(13): CApplication->run()
+#41 {main}
+REQUEST_URI=/sa-uat/visit/edit?index=22
+HTTP_REFERER=http://192.168.3.221/sa-uat/visit/index
+---

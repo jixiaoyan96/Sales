@@ -148,20 +148,20 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 			</div>
 
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'cust_name',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,'客户名称（包括分店名）',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-5">
 					<?php 
 						if ($model->isReadOnly() || $model->status=='Y') {
-							echo $form->textField($model, 'cust_name', array('readonly'=>true)); 
+							echo $form->textField($model, 'cust_name', array('readonly'=>true));
 						} else {
 							$list = empty($model->cust_name) ? array() : array($model->cust_name=>$model->cust_name);
-							echo $form->dropDownList($model, 'cust_name', $list, 
+							echo $form->dropDownList($model, 'cust_name', $list,
 								array('class'=>'select2')
 							);
 						}
 					?>
 				</div>
-				
+
 				<?php  ?>
 				<div class="col-sm-3">
 					<?php 
@@ -175,12 +175,12 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 				</div>
 			</div>
 
-			<div class="form-group">
-				<?php echo $form->labelEx($model,'cust_alt_name',array('class'=>"col-sm-2 control-label")); ?>
-				<div class="col-sm-5">
-					<?php echo $form->textField($model, 'cust_alt_name', array('readonly'=>$model->isReadOnly())); ?>
-				</div>
-			</div>
+<!--			<div class="form-group">-->
+<!--				--><?php //echo $form->labelEx($model,'cust_alt_name',array('class'=>"col-sm-2 control-label")); ?>
+<!--				<div class="col-sm-5">-->
+<!--					--><?php //echo $form->textField($model, 'cust_alt_name', array('readonly'=>$model->isReadOnly())); ?>
+<!--				</div>-->
+<!--			</div>-->
 
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'cust_type',array('class'=>"col-sm-2 control-label")); ?>
@@ -195,6 +195,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 						}
 					?>
 				</div>
+
 				<div class="col-sm-3">
 					<?php
 						$typelist = $model->getCustTypeList((empty($model->cust_type_group) ? 1 : $model->cust_type_group));
@@ -457,6 +458,7 @@ $('#VisitForm_cust_name').select2({
 $('#VisitForm_cust_name').on('change', function(){
 	var name = $(this).val();
 	var data = "name="+name;
+	alert(data);
 	$.ajax({
 		type: 'GET',
 		url: '$link2',
@@ -470,6 +472,56 @@ $('#VisitForm_cust_name').on('change', function(){
 			$('#VisitForm_street').val(data.street);
 			$('#VisitForm_cust_alt_name').val(data.cust_alt_name);
 			$('#VisitForm_cust_vip').prop('checked', data.cust_vip=='Y');
+		    $('#VisitForm_service_svc_A').val(data.svc_A);
+		    $('#VisitForm_service_svc_A1').val(data.svc_A1);
+		    $('#VisitForm_service_svc_A2').val(data.svc_A2);
+		    $('#VisitForm_service_svc_A3').val(data.svc_A3);
+		    $('#VisitForm_service_svc_A4').val(data.svc_A4);
+		    $('#VisitForm_service_svc_A5').val(data.svc_A5);
+		    $('#VisitForm_service_svc_A6').val(data.svc_A6);
+		    $('#VisitForm_service_svc_A7').val(data.svc_A7);
+		    $('#VisitForm_service_svc_A8').val(data.svc_A8);
+		    $('#VisitForm_service_svc_B').val(data.svc_B);
+		    $('#VisitForm_service_svc_B1').val(data.svc_B1);
+		    $('#VisitForm_service_svc_B2').val(data.svc_B2);
+		    $('#VisitForm_service_svc_B3').val(data.svc_B3);
+		    $('#VisitForm_service_svc_B4').val(data.svc_B4);
+		    $('#VisitForm_service_svc_B5').val(data.svc_B5);
+		    $('#VisitForm_service_svc_B6').val(data.svc_B6);
+		    $('#VisitForm_service_svc_B7').val(data.svc_B7);
+		    $('#VisitForm_service_svc_C').val(data.svc_C);
+		    $('#VisitForm_service_svc_C1').val(data.svc_C1);		   
+		    $('#VisitForm_service_svc_C2').prop('checked', data.svc_C2=='Y');
+		    $('#VisitForm_service_svc_C3').prop('checked', data.svc_C3=='Y');
+		    $('#VisitForm_service_svc_C4').prop('checked', data.svc_C4=='Y');
+		    $('#VisitForm_service_svc_C5').prop('checked', data.svc_C5=='Y');		    
+		    $('#VisitForm_service_svc_C6').val(data.svc_C6);
+		    $('#VisitForm_service_svc_C7').val(data.svc_C7);
+		    $('#VisitForm_service_svc_C8').val(data.svc_C8);
+		    $('#VisitForm_service_svc_D').val(data.svc_D);
+		    $('#VisitForm_service_svc_D1').val(data.svc_D1);
+		    $('#VisitForm_service_svc_D2').val(data.svc_D2);
+		    $('#VisitForm_service_svc_D3').val(data.svc_D3);
+		    $('#VisitForm_service_svc_D4').val(data.svc_D4);
+		    $('#VisitForm_service_svc_D5').val(data.svc_D5);
+		    $('#VisitForm_service_svc_D6').val(data.svc_D6);
+		    $('#VisitForm_service_svc_D7').val(data.svc_D7);
+		    $('#VisitForm_service_svc_E').val(data.svc_E);
+		    $('#VisitForm_service_svc_E1').val(data.svc_E1);
+		    $('#VisitForm_service_svc_E2').val(data.svc_E2);
+		    $('#VisitForm_service_svc_E3').val(data.svc_E3);
+		    $('#VisitForm_service_svc_E4').val(data.svc_E4);
+		    $('#VisitForm_service_svc_E5').val(data.svc_E5);
+		    $('#VisitForm_service_svc_E6').val(data.svc_E6);
+		    $('#VisitForm_service_svc_E7').val(data.svc_E7);
+		    $('#VisitForm_service_svc_E8').val(data.svc_E8);
+		    $('#VisitForm_service_svc_F1').val(data.svc_F1);
+		    $('#VisitForm_service_svc_F2').val(data.svc_F2);
+		    $('#VisitForm_service_svc_F3').val(data.svc_F3);
+		    $('#VisitForm_service_svc_F4').val(data.svc_F4);
+		    $('#VisitForm_service_svc_G1').val(data.svc_G1);
+		    $('#VisitForm_service_svc_G2').val(data.svc_G2);
+		    $('#VisitForm_service_svc_G3').val(data.svc_G3);
 		},
 		error: function(data) { // if error occured
 			var x = 1;

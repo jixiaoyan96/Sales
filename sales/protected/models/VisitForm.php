@@ -304,7 +304,8 @@ class VisitForm extends CFormModel
 			";
 		$sql .= ($this->isReadAll()) ? " and a.city in ($citylist)" : " and a.username='$user' ";
 		$row = Yii::app()->db->createCommand($sql)->queryRow();
-
+//        print_r('<pre/>');
+//        print_r($row);
 		if ($row!==false) {
 			$this->id = $row['id'];
 			$this->visit_dt = General::toDate($row['visit_dt']);
@@ -541,23 +542,25 @@ class VisitForm extends CFormModel
 			case 'new' :
 			case 'edit':
 				$sql = "insert into sal_custcache(
-							username, cust_name, cust_alt_name, cust_person, cust_person_role, cust_tel,
+							username, cust_name, cust_alt_name, cust_person, cust_person_role, cust_tel,visit_id,
 							district, street, cust_type
 						) values (
-							:username, :cust_name, :cust_alt_name, :cust_person, :cust_person_role, :cust_tel,
+							:username, :cust_name, :cust_alt_name, :cust_person, :cust_person_role, :cust_tel,:visit_id,
 							:district, :street, :cust_type
 						)
 						on duplicate key update
-							cust_alt_name=:cust_alt_name, cust_person=:cust_person, cust_person_role=:cust_person_role, 
+							cust_alt_name=:cust_alt_name, visit_id=:visit_id, cust_person=:cust_person, cust_person_role=:cust_person_role, 
 							cust_tel=:cust_tel, district=:district, street=:street,
 							cust_type=:cust_type
 						";
 		}
-		
+
 		if (!empty($sql)) {
 			$command=$connection->createCommand($sql);
-			if (strpos($sql,':username')!==false)
-				$command->bindParam(':username',$this->username,PDO::PARAM_STR);
+            if (strpos($sql,':username')!==false)
+                $command->bindParam(':username',$this->username,PDO::PARAM_STR);
+            if (strpos($sql,':visit_id')!==false)
+                $command->bindParam(':visit_id', $this->id,PDO::PARAM_INT);
 			if (strpos($sql,':cust_name')!==false)
 				$command->bindParam(':cust_name',$this->cust_name,PDO::PARAM_STR);
 			if (strpos($sql,':cust_alt_name')!==false)

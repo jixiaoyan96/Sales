@@ -115,7 +115,7 @@ return array(
 			'cookieMode'=>'allow',
 			//'autoStart'=>true,
 			'cookieParams'=>array(
-                'domain'=>'192.168.3.102',
+                'domain'=>'192.168.3.221',
 			),
 		),
 

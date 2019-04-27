@@ -118,7 +118,6 @@ class VisitController extends Controller
 		$model = new VisitForm('edit');
 		if (!$model->retrieveData($index)) {
 			throw new CHttpException(404,'The requested page does not exist.');
-
 		} else {
 			$this->render('form',array('model'=>$model,));
 		}
@@ -156,7 +155,16 @@ class VisitController extends Controller
 				where a.username='$uid' and a.cust_name='$name'
 			";
 		$row = Yii::app()->db->createCommand($sql)->queryRow();
-		$rtn = ($row===false) ? '' : json_encode($row);
+        if(!empty($row)){
+            $sql1="select field_id,field_value from sal_visit_info where visit_id='".$row['visit_id']."'";
+            $arr = Yii::app()->db->createCommand($sql1)->queryALL();
+            foreach ($arr as $a){
+                $sale[$a['field_id']]=$a['field_value'];
+            }
+            $rows=array_merge($row,$sale);
+        }
+        //print_r('<pre/>');
+		$rtn = ($row===false) ? '' : json_encode($rows);
 		echo $rtn;
 	}
 	
