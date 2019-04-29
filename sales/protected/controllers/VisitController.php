@@ -149,7 +149,7 @@ class VisitController extends Controller
 	
 	public function actionReadcust($name) {
 		$uid = Yii::app()->user->id;
-		$sql = "select a.cust_person, a.cust_person_role, a.cust_tel, a.district, a.street, a.cust_type, b.cust_vip  
+		$sql = "select a.cust_person, a.cust_person_role, a.cust_tel, a.district, a.street, a.cust_type, b.cust_vip  ,a.visit_id
 				from sal_custcache a
 				left outer join sal_custstar b on a.username=b.username and a.cust_name=b.cust_name
 				where a.username='$uid' and a.cust_name='$name'

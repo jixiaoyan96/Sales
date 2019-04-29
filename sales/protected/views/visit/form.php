@@ -463,7 +463,6 @@ $('#VisitForm_cust_name').on('change', function(){
 		url: '$link2',
 		data: data,
 		success: function(data) {
-		alert(data);
 			$('#VisitForm_cust_person').val(data.cust_person);
 			$('#VisitForm_cust_person_role').val(data.cust_person_role);
 			$('#VisitForm_cust_tel').val(data.cust_tel);
