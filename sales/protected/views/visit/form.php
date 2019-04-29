@@ -458,12 +458,12 @@ $('#VisitForm_cust_name').select2({
 $('#VisitForm_cust_name').on('change', function(){
 	var name = $(this).val();
 	var data = "name="+name;
-	alert(data);
 	$.ajax({
 		type: 'GET',
 		url: '$link2',
 		data: data,
 		success: function(data) {
+		alert(data);
 			$('#VisitForm_cust_person').val(data.cust_person);
 			$('#VisitForm_cust_person_role').val(data.cust_person_role);
 			$('#VisitForm_cust_tel').val(data.cust_tel);
