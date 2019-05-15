@@ -28,7 +28,8 @@ return array(
 'VIP'=>'重點客戶',
 'Star'=>'星標',
 'Report'=>'生成報表',
-
+'Sale Shift'=>'銷售轉移',
+    'Sale List'=>'轉移列表',
 'Catering'=>'餐飲',
 'Non-catering'=>'非餐飲',
 
@@ -45,8 +46,10 @@ return array(
 'Department'=>'部門',
 'Manager Score'=>'總經理評分',
 'Director Score'=>'總監評分',
+'Supervisor Score'=>'銷售經理評分',
 'Manager Comment'=>'總經理意見',
 'Director Comment'=>'總監意見',
+'Supervisor Comment'=>'銷售經理意見',
 '5 Steps'=>'5部曲',
 'Media'=>'媒體',
 'Step 1'=>'部曲 1',
@@ -61,9 +64,13 @@ return array(
 
 'A new 5 step record is pending for scoring'=>'一個新的五部曲記錄正在等待評分',
 'Pending for Scoring'=>'等待評分',
+'Supervisor, Manager and Director have scored a 5 step record'=>'銷售經理,總經理及總監已給五部曲記錄評分',
 'Manager and Director have scored a 5 step record'=>'總經理及總監已給五部曲記錄評分',
+'Supervisor and Director have scored a 5 step record'=>'銷售經理及總監已給五部曲記錄評分',
+'Supervisor and Manager have scored a 5 step record'=>'銷售經理及總經理已給五部曲記錄評分',
 'Director has scored a 5 step record'=>'總監已給五部曲記錄評分',
 'Manager has scored a 5 step record'=>'總經理已給五部曲記錄評分',
+'Supervisor has scored a 5 step record'=>'銷售經理已給五部曲記錄評分',
 "Please click <a href=\"{url}\" onClick=\"return popup(this,'Sales');\">here</a> to carry out your job."
 =>"請點擊<a href=\"{url}\" onClick=\"return popup(this,'Sales');\">這裡</a>來執行你的工作。",
 "Please click <a href=\"{url}\" onClick=\"return popup(this,'Sales');\">here</a> to read the result."
@@ -136,5 +143,11 @@ return array(
 'Return'=>'退回',
 'Return Reason'=>'退回原因',
 'Paid Account cannot be blank'=>'付款賬戶不能為無',
+'Notification'=>'通知',
+    'Notifications'=>'簽約大神榜',
+'Latest notifications within {hr} hours'=>'{hr}小時內的最新通知',
+'Latest notifications within {hr} days'=>'{hr}日內的最新通知',
+'This record has no contract amount entered'=>'此記錄沒有輸入任何合同金額',
+    'Upload Error. (Please be reminded that file should not be larger than 30MB)'=>'上傳錯誤(請注意，文件不應大於30MB)',
 );
 ?>

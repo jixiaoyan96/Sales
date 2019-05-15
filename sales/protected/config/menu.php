@@ -4,6 +4,7 @@ return array(
 
 	'Data Entry'=>array(
 		'access'=>'HK',
+		'icon'=>'fa-edit',
 		'items'=>array(
 			'Sales Visit'=>array(
 				'access'=>'HK01',
@@ -24,6 +25,7 @@ return array(
 
     'Class'=>array(
         'access'=>'HA',
+		'icon'=>'fa-database',
         'items'=>array(
             'Visit Steps'=>array(
                 'access'=>'HA01',
@@ -42,6 +44,7 @@ return array(
 
 	'Report'=>array(
 		'access'=>'HB',
+		'icon'=>'fa-file-text-o',
 		'items'=>array(
             'Five Steps'=>array(
                 'access'=>'HB02',
@@ -56,6 +59,7 @@ return array(
 	
 	'System Setting'=>array(
 		'access'=>'HC',
+		'icon'=>'fa-gear',
 		'items'=>array(
 			'Visit Type'=>array(
 				'access'=>'HC01',

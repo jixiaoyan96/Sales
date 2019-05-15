@@ -2,6 +2,8 @@
 
 class VisitController extends Controller 
 {
+	public $function_id='HK01';
+
 	public function filters()
 	{
 		return array(

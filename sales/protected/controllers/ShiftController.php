@@ -2,6 +2,8 @@
 
 class ShiftController extends Controller
 {
+	public $function_id='HA03';
+
 	public function filters()
 	{
 		return array(
@@ -150,10 +152,10 @@ class ShiftController extends Controller
 //	}
 	
 	public static function allowReadWrite() {
-		return Yii::app()->user->validRWFunction('HK03');
+		return Yii::app()->user->validRWFunction('HA03');
 	}
 	
 	public static function allowReadOnly() {
-		return Yii::app()->user->validFunction('HK03');
+		return Yii::app()->user->validFunction('HA03');
 	}
 }

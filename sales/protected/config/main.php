@@ -6,7 +6,7 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
-	'id'=>'swoperuat',
+	'id'=>'swoper',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'charset'=>'UTF-8',
 	'name'=>'LBS Daily Management - UAT',
@@ -78,7 +78,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'class'=>'CDbConnection',
-  	     	         'connectionString' => 'mysql:host=localhost;dbname=salesuat',
+  	     	         'connectionString' => 'mysql:host=localhost;dbname=sales',
 			'emulatePrepare' => true,
             'username' => 'swuser',
             'password' => 'swisher168',
@@ -115,7 +115,7 @@ return array(
 			'cookieMode'=>'allow',
 			//'autoStart'=>true,
 			'cookieParams'=>array(
-                'domain'=>'192.168.3.221',
+                'domain'=>'192.168.0.128',
 			),
 		),
 
@@ -140,8 +140,6 @@ return array(
 		'adminEmail'=>'it@lbsgroup.com.hk',
 		'checkStation'=>false,
 		'validRegDuration'=>'3 hours',
-//		'cookieDomain'=>'swoper',
-//		'cookiePath'=>'/',
 		'concurrentLogin'=>false,
 		'noOfLoginRetry'=>5,
 		'sessionIdleTime'=>'1 hour',
@@ -150,48 +148,10 @@ return array(
 		'version'=>'1.0.0',
 		'docmanPath'=>'/docman/upload/sal/uat',
 		'systemId'=>'sal',
-		'envSuffix'=>'uat',
+		'envSuffix'=>'dev',
 //		'onesignal'=>'d619380e-fa8e-462c-be6d-8be2f5a4563b',		// production
 		'onesignal'=>'3183638f-c26a-409c-a80a-00736ae8a772',
-/*
-		'systemMapping'=>array(
-                                'drs'=>array(
-                                                'webroot'=>'http://192.168.3.102/dr-uat',
-                                                'name'=>'Daily Report',
-                                                'icon'=>'fa fa-pencil-square-o',
-                                        ),
-                                'acct'=>array(
-                                                'webroot'=>'http://192.168.3.102/ac-uat',
-                                                'name'=>'Accounting',
-                                                'icon'=>'fa fa-money',
-                                        ),
-                                'ops'=>array(
-                                                'webroot'=>'http://192.168.3.102/op-uat',
-                                                'name'=>'Operation',
-                                                'icon'=>'fa fa-gears',
-                                        ),
-                                'hr'=>array(
-                                                'webroot'=>'http://192.168.3.102/hr-uat',
-                                                'name'=>'Personnel',
-                                                'icon'=>'fa fa-users',
-                                        ),
-                                'sal'=>array(
-                                               'webroot'=>'http://192.168.3.102/sa-uat',
-                                                'name'=>'Sales',
-                                                'icon'=>'fa fa-suitcase',
-                                ),
-                                'quiz'=>array(
-                                               'webroot'=>'http://192.168.3.102/qz-uat',
-                                                'name'=>'Quiz',
-                                                'icon'=>'fa fa-pencil',
-                                ),
-				'sp'=>array(
-                                               'webroot'=>'http://192.168.3.102/sp-uat',
-                                                'name'=>'Academic Credit',
-                                                'icon'=>'fa fa-cube',
-				),
-
-			),
-*/
+		'appname'=>'LBS DMS (UAT)',
+		'appcolor'=>'skin-blue-light',
 	),
 );

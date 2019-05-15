@@ -57,7 +57,9 @@ return array(
 'Confirm'=>'確認',
 'OK'=>'確認',
 'Void'=>'撤消',
-
+    'Xiazai'=>'下載',
+    'Batch allocation'=>'批量分配',
+    'Distribution'=>'分配',
 'Invalid Station. Please register first.'=>'工作站無效。請先登記。 ',
 'User ID has been logged in more than one station.'=>'帳戶已被登錄到另一工作站。 ',
 'Session expired.'=>'系統連接已經過期。請重新登錄。 ',
@@ -75,12 +77,14 @@ return array(
 'less or equal'=>'小過或等於',
 'less than'=>'小過',
 '-- Advanced --'=>'-- 進階 --',
-//'<< Advanced >>'=>'<< 進階搜尋 >>',
+// '<< Advanced >>'=>'<< 進階搜尋 >>',
 '<< Advanced >>'=>'<< 高級搜索 >>',
 'Advanced'=>'進階',
 'Clear'=>'清除',
 
 'Misc'=>'其他',
+
+    'Asked redo'=>'要求重做',
 );
 
 ?>

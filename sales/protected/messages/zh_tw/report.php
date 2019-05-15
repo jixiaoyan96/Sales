@@ -46,9 +46,16 @@ return array(
 'No Record'=>'沒有相關記錄',
 'Account Name'=>'賬戶名稱',
 
+    'Start_Dt'=>'入職日期',
+    'Name'=>'員工名字',
+    'GanWwei'=>'員工崗位',
+    'Staffs_Desc'=>'員工編號',
+    'Five'=>'欠缺五部曲階段',
+
 'Transaction List'=>'交易記錄',
 'Consolidated Notification Report'=>'綜合通知報表',
 'Subject'=>'主題',
+    'Staffs'=>'員工',
 'Title'=>'標題',
 'Content'=>'內容',
 'User'=>'帳戶',

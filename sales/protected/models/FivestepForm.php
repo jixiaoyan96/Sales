@@ -406,6 +406,7 @@ class FivestepForm extends CFormModel
         $description = "五部曲提醒";
         $message = "姓名：" . $rows['disp_name'] . ",您的五部曲评分为不合格，请重新上传";
         $lcu = "admin";
+			$suffix = $suffix=='dev' ? '_w' : $suffix;
         $aaa = Yii::app()->db->createCommand()->insert("swoper$suffix.swo_email_queue", array(
             'request_dt' => date('Y-m-d H:i:s'),
             'from_addr' => $from_addr,
@@ -417,6 +418,20 @@ class FivestepForm extends CFormModel
             'lcu' => $lcu,
             'lcd' => date('Y-m-d H:i:s'),
         ));
+		
+		$connection = Yii::app()->db;
+		SystemNotice::addNotice($connection, array(
+				'note_type'=>'notice',
+				'subject'=>$subject,
+				'description'=>$description,
+				'message'=>$message,
+				'username'=>json_encode(array($name)),
+				'system_id'=>Yii::app()->user->system(),
+				'form_id'=>'FiveStepForm',
+				'rec_id'=>$this->id,
+			)
+		);
+
     }
 
 	public function isReadOnly() {

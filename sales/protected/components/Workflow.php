@@ -149,7 +149,9 @@ class Workflow {
 	}
 
 	public function transit($stateCode) {
+//		var_dump($stateCode);
 		$targetState = $this->getStateId($this->proc_id, $stateCode);
+//		var_dump($targetState);
 		if ($this->isValidMove($this->proc_id, $this->current_state, $targetState)) {
 			$suffix = Yii::app()->params['envSuffix'];
 			$reqId = $this->request_id;
@@ -169,6 +171,8 @@ class Workflow {
 		} else {
 			return false;
 		}
+//				var_dump($this->current_state);
+
 		return true;
 	}
 	
@@ -219,38 +223,54 @@ class Workflow {
 			$func = array($this, $name);
 			$params = call_user_func_array($func, array());
 			
-			$suffix = $suffix=='dev' ? '_w' : $suffix;
 			$sql = "insert into swoper$suffix.swo_email_queue
 						(from_addr, to_addr, cc_addr, subject, description, message, status, lcu)
 					values
 						(:from_addr, :to_addr, :cc_addr, :subject, :description, :message, 'P', 'admin')
 					";
 			foreach ($params as $record) {
-				if (!isset($record['send']) || $record['send']=='Y') {
-					$command = $this->connection->createCommand($sql);
-					if (strpos($sql,':from_addr')!==false)
-						$command->bindParam(':from_addr',$record['from_addr'],PDO::PARAM_STR);
-					if (strpos($sql,':to_addr')!==false)
-						$command->bindParam(':to_addr',$record['to_addr'],PDO::PARAM_STR);
-					if (strpos($sql,':cc_addr')!==false)
-						$command->bindParam(':cc_addr',$record['cc_addr'],PDO::PARAM_STR);
-					if (strpos($sql,':subject')!==false)
-						$command->bindParam(':subject',$record['subject'],PDO::PARAM_STR);
-					if (strpos($sql,':description')!==false)
-						$command->bindParam(':description',$record['description'],PDO::PARAM_STR);
-					if (strpos($sql,':message')!==false)
-						$command->bindParam(':message',$record['message'],PDO::PARAM_STR);
-					$command->execute();
-				}
+				if (!empty($record['to_addr']) || !empty($record['cc_addr'])) {
+					if (!isset($record['send']) || $record['send']=='Y') {
+						$command = $this->connection->createCommand($sql);
+						if (strpos($sql,':from_addr')!==false)
+							$command->bindParam(':from_addr',$record['from_addr'],PDO::PARAM_STR);
+						if (strpos($sql,':to_addr')!==false)
+							$command->bindParam(':to_addr',$record['to_addr'],PDO::PARAM_STR);
+						if (strpos($sql,':cc_addr')!==false)
+							$command->bindParam(':cc_addr',$record['cc_addr'],PDO::PARAM_STR);
+						if (strpos($sql,':subject')!==false)
+							$command->bindParam(':subject',$record['subject'],PDO::PARAM_STR);
+						if (strpos($sql,':description')!==false)
+							$command->bindParam(':description',$record['description'],PDO::PARAM_STR);
+						if (strpos($sql,':message')!==false)
+							$command->bindParam(':message',$record['message'],PDO::PARAM_STR);
+						$command->execute();
+					}
 				
-				$this->notification($record);
+					$this->notification($record);
+				}
 			}
 		}
 	}
 
 	protected function notification($param) {
+		$argv = array(
+				'system_id'=>$param['system_id'],
+				'note_type'=>$param['note_type'],
+				'subject'=>$param['subject'],
+				'description'=>$param['description'],
+				'message'=>$param['message'],
+				'username'=>$param['username'],
+				'form_id'=>$param['form_id'],
+				'rec_id'=>$param['rec_id'],
+			);
+		$connection = $this->connection;
+		SystemNotice::addNotice($connection, $argv);
+	}
+
+/*
+	protected function notification($param) {
 		$suffix = Yii::app()->params['envSuffix'];
-		$suffix = $suffix=='dev' ? '_w' : $suffix;
 		$sql = "insert into swoper$suffix.swo_notification
 					(system_id, note_type, subject, description, message, lcu, luu)
 				values
@@ -289,6 +309,7 @@ class Workflow {
 			$command->execute();
 		}
 	}
+*/
 	
 	public function getRequestData($code) {
 		$suffix = Yii::app()->params['envSuffix'];
@@ -403,7 +424,7 @@ class Workflow {
 		$rows = $this->connection->createCommand($sql)->queryAll();
 		if (!empty($rows)) {
 			foreach ($rows as $row) {
-				$rtn[$row['username']] = $row['email'];
+				if (!empty($row['email'])) $rtn[$row['username']] = $row['email'];
 			}
 		}
 		return $rtn;
@@ -440,7 +461,7 @@ class Workflow {
 			foreach ($rows as $row) {
 				if ($l==0) $l = $row['log_id'];
 				if ($l!=$row['log_id']) break;
-				$rtn[$row['username']] = $row['email'];
+				if (!empty($row['email'])) $rtn[$row['username']] = $row['email'];
 			}
 		}
 		return $rtn;

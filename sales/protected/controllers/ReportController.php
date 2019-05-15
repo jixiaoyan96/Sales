@@ -41,7 +41,9 @@ class ReportController extends Controller
     }
 
     public function actionFive() {
-        $model = new ReportH02Form;
+		$this->function_id = self::$actions['five'];
+		Yii::app()->session['active_func'] = $this->function_id;
+		$model = new ReportH02Form;
         if (isset($_POST['ReportH02Form'])) {
             $model->attributes = $_POST['ReportH02Form'];
 
@@ -58,6 +60,8 @@ class ReportController extends Controller
     }
 
     public function actionVisit() {
+		$this->function_id = self::$actions['visit'];
+		Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
         if (isset($_POST['ReportVisitForm'])) {
             $model->attributes = $_POST['ReportVisitForm'];
@@ -69,6 +73,8 @@ class ReportController extends Controller
     }
 
     public function actionStaff() {
+		$this->function_id = self::$actions['staff'];
+		Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
         if (isset($_POST['ReportVisitForm'])) {
             $model->attributes = $_POST['ReportVisitForm'];
@@ -79,6 +85,8 @@ class ReportController extends Controller
     }
 
     public function actionSale(){
+		$this->function_id = self::$actions['sale'];
+		Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
         if (isset($_POST['ReportVisitForm'])) {
             $fenxi = $_POST['ReportVisitForm'];
@@ -107,6 +115,8 @@ class ReportController extends Controller
     }
 
     public function actionFenxi(){
+		$this->function_id = self::$actions['fenxi'];
+		Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
         if(isset($_POST['ReportVisitForm'])){
             $fenxi=$_POST['ReportVisitForm'];
@@ -131,6 +141,8 @@ class ReportController extends Controller
     }
 
     public function actionXiaZai(){
+		$this->function_id = self::$actions['xiazai'];
+		Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
         if(isset($_POST['RptFive'])){
             $arr = $_POST['RptFive'];
@@ -154,6 +166,8 @@ class ReportController extends Controller
     }
 
     public function actionDown(){
+		$this->function_id = self::$actions['down'];
+		Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
         if(isset($_POST['RptFive'])){
             $arr = $_POST['RptFive'];

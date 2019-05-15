@@ -2,6 +2,8 @@
 
 class CusttypeController extends Controller 
 {
+	public $function_id='HC03';
+
 	public function filters()
 	{
 		return array(

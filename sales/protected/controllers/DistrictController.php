@@ -2,6 +2,8 @@
 
 class DistrictController extends Controller 
 {
+	public $function_id='HC04';
+
 	public function filters()
 	{
 		return array(

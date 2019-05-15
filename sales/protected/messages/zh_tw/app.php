@@ -4,6 +4,11 @@ return array(
 'Daily Report System - UAT'=>'日報表系統 - 測試版',
 'LBS Daily Management'=>'LBS 日常管理',
 'LBS Daily Management - UAT'=>'LBS 日常管理 - 測試版',
+'LBS DMS (UAT)'=>'LBS 日常管理 (測試)',
+'LBS DMS'=>'LBS 日常管理',
+'MAIN NAVIGATION'=>'系統菜單',
+'Region'=>'地區',
+'Last Update Date '=>'更新日期 ',
 
 'System Change'=>'系統切換',
 'Daily Report'=>'日報表系統',
@@ -11,30 +16,32 @@ return array(
 'Operation'=>'營運系統',
 'Personnel'=>'人事系統',
 'Sales'=>'銷售系統',
-'Quiz'=>'培训測驗系統',
-'Academic Credit'=>'學分系統',
+        'Quiz'=>'培訓測驗系統',
+        'Academic Credit'=>'學分系統',
 'Online Library'=>'網上文庫',
 
 'System Use'=>'系統使用',
 
 'Data Entry'=>'數據輸入',
 'Misc'=>'其他',
+    'Class'=>'數據匯總',
 
 'Import'=>'數據導入',
 'Import Manager'=>'數據導入管理員',
 
 'Sales Visit'=>'銷售拜訪',
 'Five Steps'=>'銷售五部曲',
-
+    'Visit Steps'=>'銷售數據分類匯總',
 'Visit Type'=>'拜訪類型',
 'Visit Objective'=>'拜訪目的',
 'Customer Type'=>'客戶類別',
 'Customer District'=>'客戶區域',
+'Sale Staff'=>'銷售個人數據匯總',
+'Sales transfer'=>'離職銷售人員數據轉移 ',
 
 'Report'=>'報表',
 // 'Operation Daily Report'=>'每日營業擇要報告',
 'Report Manager'=>'報表管理員',
-'Report Five'=>'五部曲報表',
 'Sales Visit List'=>'銷售拜訪報表',
 
 'System Setting'=>'系統設置',
@@ -46,6 +53,7 @@ return array(
 
 'Manager Score Right'=>'總經理評分權限',
 'Director Score Right'=>'總監評分權限',
+'Supervisor Score Right'=>'銷售經理評分權限',
 'Visit (Read All)'=>'拜訪 (全部閱讀)',
 'Web Push Notification'=>'網頁推送通知',
 

@@ -2,6 +2,8 @@
 
 class FivestepController extends Controller 
 {
+	public $function_id='HK03';
+
 	private $_allowedFiles = array(
 			'bmp'  => 'image/bmp',
 			'gif'  => 'image/gif',
