@@ -17,6 +17,7 @@ class VisitForm extends CFormModel
 	public $cust_tel;
 	public $district;
 	public $street;
+	public $quote;
 	public $remarks;
 	public $status;
 	public $status_dt;

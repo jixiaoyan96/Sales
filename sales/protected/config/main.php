@@ -78,7 +78,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'class'=>'CDbConnection',
-  	     	         'connectionString' => 'mysql:host=localhost;dbname=sales',
+  	     	         'connectionString' => 'mysql:host=localhost;dbname=salesuat',
 			'emulatePrepare' => true,
             'username' => 'swuser',
             'password' => 'swisher168',
@@ -115,7 +115,7 @@ return array(
 			'cookieMode'=>'allow',
 			//'autoStart'=>true,
 			'cookieParams'=>array(
-                'domain'=>'192.168.0.128',
+                'domain'=>'192.168.3.221',
 			),
 		),
 

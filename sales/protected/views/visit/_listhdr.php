@@ -45,7 +45,7 @@
 		?>
 	</th>
 	<th>
-		<?php echo TbHtml::link($this->getLabelName('street').$this->drawOrderArrow('street'),'#',$this->createOrderLink('visit-list','street'))
+		<?php echo TbHtml::link($this->getLabelName('quote').$this->drawOrderArrow('quote'),'#',$this->createOrderLink('visit-list','quote'))
 			;
 		?>
 	</th>

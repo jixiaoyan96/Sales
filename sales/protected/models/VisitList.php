@@ -10,7 +10,7 @@ class VisitList extends CListPageModel
 			'city_name'=>Yii::t('sales','City'),
 			'cust_name'=>Yii::t('sales','Customer Name'),
 			'district'=>Yii::t('sales','District'),
-			'street'=>Yii::t('sales','Street'),
+			'quote'=>Yii::t('sales','Quote'),
 			'visit_type'=>Yii::t('sales','Type'),
 			'visit_obj'=>Yii::t('sales','Objective'),
 			'cust_type'=>Yii::t('sales','Customer Type'),
@@ -123,9 +123,42 @@ class VisitList extends CListPageModel
 //Yii::app()->end();
 		$records = Yii::app()->db->createCommand($sql)->queryAll();
 		$list = array();
+
 		$this->attr = array();
 		if (count($records) > 0) {
 			foreach ($records as $k=>$record) {
+                $sql = "select field_id, field_value from sal_visit_info where field_id in ('svc_A','svc_B','svc_C','svc_D','svc_E','svc_F4','svc_G3') and visit_id = '".$record['id']."'";
+                $rows = Yii::app()->db->createCommand($sql)->queryAll();
+                foreach ($rows as $a) {
+                    for ($i = 0; $i < count($rows); $i++) {
+                         $list[$a['field_id']]=$a['field_value'];
+                    }
+                }
+                $quote ="";
+                if(!empty($list['svc_A'])){
+                    $quote.=$list['svc_A']."(清洁) / -";
+                }
+                if(!empty($list['svc_B'])){
+                    $quote.=$list['svc_B']."(机器) / -";
+                }
+                if(!empty($list['svc_C'])){
+                    $quote.=$list['svc_C']."(灭虫) / -";
+                }
+                if(!empty($list['svc_D'])){
+                    $quote.=$list['svc_D']."(飘盈香) / -";
+                }
+                if(!empty($list['svc_E'])){
+                    $quote.=$list['svc_E']."(甲醛) / -";
+                }
+                if(!empty($list['svc_F4'])){
+                    $quote.=$list['svc_F4']."(纸品) / -";
+                }
+                if(!empty($list['svc_G3'])){
+                    $quote.=$list['svc_G3']."(一次性售卖) / -";
+                }
+                $quote = explode("-", $quote);
+//                print_r("<pre>");
+//                print_r($quote);
 				$this->attr[] = array(
 					'id'=>$record['id'],
 					'username'=>$record['username'],
@@ -136,7 +169,7 @@ class VisitList extends CListPageModel
 					'city'=>$record['city'],
 					'staff'=>$record['staff'],
 					'district'=>$record['district_name'],
-					'street'=>$record['street'],
+					'quote'=>$quote,
 					'visit_type'=>$record['visit_type_name'],
 					'visit_obj'=>$record['visit_obj_name'],
 					'cust_type'=>$record['cust_type_name'],

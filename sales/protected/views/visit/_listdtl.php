@@ -26,7 +26,7 @@
 	<td <?php echo $cls_str;?>><?php echo $this->record['visit_type']; ?></td>
 	<td <?php echo $cls_str;?>><?php echo $this->record['visit_obj']; ?></td>
 	<td <?php echo $cls_str;?>><?php echo $this->record['district']; ?></td>
-	<td <?php echo $cls_str;?>><?php echo $this->record['street']; ?></td>
+	<td <?php echo $cls_str;?> ><?php for ($i=0;$i<count($this->record['quote']);$i++) {if($i==3||$i==6){echo "<br/>";} echo $this->record['quote'][$i]; } ?>  </td>
 <?php if (VisitForm::isReadAll()) : ?>
 	<td <?php echo $cls_str;?>><?php echo $this->record['staff']; if($this->record['shift']=='Y'){echo "(旧)";}?></td>
 <?php endif ?>

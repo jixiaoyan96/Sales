@@ -87,7 +87,7 @@ return array(
 	'Staff'=>'员工',
 	'Others'=>'其他',
 	'Void'=>'撤消',
-	
+	'Quote'=>'报价',
 	'Description'=>'名称',
 	'Code'=>'编号',
 	'Name'=>'名称',
