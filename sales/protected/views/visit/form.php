@@ -415,8 +415,14 @@ $('#VisitForm_visit_obj').select2({
 	maximumSelectionLength: 10,
 	allowClear: true,
 	language: '$lang',
-	disabled: $disabled
+	disabled: $disabled,
+	templateSelection: formatState
 });
+
+function formatState(state) {
+	var rtn = $('<span style="color:black">'+state.text+'</span>');
+	return rtn;
+}
 
 $('#VisitForm_visit_obj').on('select2:opening select2:closing', function( event ) {
     var searchfield = $(this).parent().find('.select2-search__field');
