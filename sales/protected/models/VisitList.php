@@ -156,6 +156,7 @@ class VisitList extends CListPageModel
                 if(!empty($list['svc_G3'])){
                     $quote.=$list['svc_G3']."(一次性售卖) / -";
                 }
+                $quote = substr($quote,0,strlen($quote)-3);
                 $quote = explode("-", $quote);
 //                print_r("<pre>");
 //                print_r($quote);
