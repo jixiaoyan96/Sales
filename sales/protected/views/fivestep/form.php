@@ -122,7 +122,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					<?php
 						echo $form->numberField($model, 'sup_score', 
 							array('size'=>5,'min'=>1,'max'=>100,
-                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isSuperRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isSuperRight() || $model->isIncompetent($model)),
 							)
 						); 
 						echo $form->hiddenField($model, 'sup_score_user');
@@ -151,7 +151,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 				<div class="col-sm-7">
 					<?php echo $form->textArea($model, 'sup_remarks', 
 						array('rows'=>3,'cols'=>60,'maxlength'=>5000,
-                            'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isSuperRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+                            'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isSuperRight() ||$model->isIncompetent($model)),
 					)); ?>
 				</div>
 			</div>
@@ -162,7 +162,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					<?php
 						echo $form->numberField($model, 'mgr_score', 
 							array('size'=>5,'min'=>1,'max'=>100,
-                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isManagerRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isManagerRight() || $model->isIncompetent($model)),
 							)
 						); 
 						echo $form->hiddenField($model, 'mgr_score_user');
@@ -191,7 +191,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 				<div class="col-sm-7">
 					<?php echo $form->textArea($model, 'mgr_remarks', 
 						array('rows'=>3,'cols'=>60,'maxlength'=>5000,
-                            'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isManagerRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+                            'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isManagerRight() || $model->isIncompetent($model)),
 					)); ?>
 				</div>
 			</div>
@@ -202,7 +202,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 					<?php
 						echo $form->numberField($model, 'dir_score', 
 							array('size'=>5,'min'=>1,'max'=>100,
-                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+                                'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || $model->isIncompetent($model)),
 							)
 						); 
 						echo $form->hiddenField($model, 'dir_score_user');
@@ -231,7 +231,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 				<div class="col-sm-7">
 					<?php echo $form->textArea($model, 'dir_remarks', 
 						array('rows'=>3,'cols'=>60,'maxlength'=>5000,
-							'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || !empty($model->dir_score_user)||$model->isIncompetent($model)),
+							'readonly'=>($model->isReadOnly() ||  $model->username==Yii::app()->user->id || !$model->isDirectorRight() || $model->isIncompetent($model)),
 					)); ?>
 				</div>
 			</div>
