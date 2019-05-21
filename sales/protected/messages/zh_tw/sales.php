@@ -29,7 +29,7 @@ return array(
 'Star'=>'星標',
 'Report'=>'生成報表',
 'Sale Shift'=>'銷售轉移',
-    'Sale List'=>'轉移列表',
+'Sale List'=>'轉移列表',
 'Catering'=>'餐飲',
 'Non-catering'=>'非餐飲',
 
@@ -144,10 +144,10 @@ return array(
 'Return Reason'=>'退回原因',
 'Paid Account cannot be blank'=>'付款賬戶不能為無',
 'Notification'=>'通知',
-    'Notifications'=>'簽約大神榜',
+'Notifications'=>'簽約大神榜',
 'Latest notifications within {hr} hours'=>'{hr}小時內的最新通知',
 'Latest notifications within {hr} days'=>'{hr}日內的最新通知',
 'This record has no contract amount entered'=>'此記錄沒有輸入任何合同金額',
-    'Upload Error. (Please be reminded that file should not be larger than 30MB)'=>'上傳錯誤(請注意，文件不應大於30MB)',
+'Upload Error. (Please be reminded that file should not be larger than 30MB)'=>'上傳錯誤(請注意，文件不應大於30MB)',
 );
 ?>

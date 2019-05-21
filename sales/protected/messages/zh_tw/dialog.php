@@ -61,7 +61,7 @@ return array(
 'Request Checking Done'=>'要求覆核完成',
 'Checking and Submission Done'=>'覆核並提交完成',
 'Reimbursement Returned'=>'報銷單申請退回',
-    'Please check the assigned person and information'=>'請勾選指定的人員和信息',
-    'Data transfer successful'=>'數據轉移成功',
+'Please check the assigned person and information'=>'請勾選指定的人員和信息',
+'Data transfer successful'=>'數據轉移成功',
 );
 ?>

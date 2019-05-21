@@ -16,22 +16,22 @@ return array(
 'Operation'=>'營運系統',
 'Personnel'=>'人事系統',
 'Sales'=>'銷售系統',
-        'Quiz'=>'培訓測驗系統',
-        'Academic Credit'=>'學分系統',
+'Quiz'=>'培訓測驗系統',
+'Academic Credit'=>'學分系統',
 'Online Library'=>'網上文庫',
 
 'System Use'=>'系統使用',
 
 'Data Entry'=>'數據輸入',
 'Misc'=>'其他',
-    'Class'=>'數據匯總',
+'Class'=>'數據匯總',
 
 'Import'=>'數據導入',
 'Import Manager'=>'數據導入管理員',
 
 'Sales Visit'=>'銷售拜訪',
 'Five Steps'=>'銷售五部曲',
-    'Visit Steps'=>'銷售數據分類匯總',
+'Visit Steps'=>'銷售數據分類匯總',
 'Visit Type'=>'拜訪類型',
 'Visit Objective'=>'拜訪目的',
 'Customer Type'=>'客戶類別',
