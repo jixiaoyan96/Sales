@@ -26,7 +26,7 @@ class VisitList extends CListPageModel
 			'visit_dt'=>"date_format(a.visit_dt,'%Y/%m/%d')",
 //			'status_dt'=>"date_format(a.status_dt,'%Y/%m/%d')",
 			'cust_name'=>'a.cust_name',
-			'visit_type'=>'d.name',
+//			'visit_type'=>'d.name',
 			'visit_obj'=>'VisitObjDesc(a.visit_obj)',
 			'cust_type'=>'g.name',
 			'district'=>'h.name',
@@ -49,12 +49,12 @@ class VisitList extends CListPageModel
 		$citylist = Yii::app()->user->city_allow();
 		$user = Yii::app()->user->id;
 		$sql1 = "select a.*, b.name as city_name, concat(f.code,' - ',f.name) as staff,  
-				d.name as visit_type_name, g.name as cust_type_name,
+				(select d.name from sal_visit_type d where a.visit_type = d.id) as visit_type_name,
+				g.name as cust_type_name,
 				h.name as district_name, VisitObjDesc(a.visit_obj) as visit_obj_name, i.cust_vip
-				from sal_visit a 
+				from sal_visit a force index (idx_visit_02)
 				inner join hr$suffix.hr_binding c on a.username = c.user_id 
 				inner join hr$suffix.hr_employee f on c.employee_id = f.id
-				inner join sal_visit_type d on a.visit_type = d.id
 				inner join sal_cust_type g on a.cust_type = g.id
 				inner join sal_cust_district h on a.district = h.id
 				left outer join security$suffix.sec_city b on a.city=b.code
@@ -62,10 +62,9 @@ class VisitList extends CListPageModel
 				where a.city in ($citylist)
 			";
 		$sql2 = "select count(a.id)
-				from sal_visit a 
+				from sal_visit a force index (idx_visit_02)
 				inner join hr$suffix.hr_binding c on a.username = c.user_id 
 				inner join hr$suffix.hr_employee f on c.employee_id = f.id
-				inner join sal_visit_type d on a.visit_type = d.id
 				inner join sal_cust_type g on a.cust_type = g.id
 				inner join sal_cust_district h on a.district = h.id
 				left outer join security$suffix.sec_city b on a.city=b.code
@@ -74,6 +73,10 @@ class VisitList extends CListPageModel
 			";
 		if (!(VisitForm::isReadAll())) {
 			$x = " and a.username='$user' ";
+			$sql1 .= $x;
+			$sql2 .= $x;
+		} else {
+			$x = " and a.username is not null ";
 			$sql1 .= $x;
 			$sql2 .= $x;
 		}
@@ -101,7 +104,7 @@ class VisitList extends CListPageModel
 //				case 'status_dt': $orderf = 'a.status_dt'; break;
 				case 'district': $orderf = 'h.name'; break;
 				case 'street': $orderf = 'a.street'; break;
-				case 'visit_type': $orderf = 'd.name'; break;
+				case 'visit_type': $orderf = 'visit_type_name'; break;
 				case 'visit_obj': $orderf = 'visit_obj_name'; break;
 				case 'cust_type': $orderf = 'g.name'; break;
 				default: $orderf = $this->orderField; break;
@@ -109,9 +112,10 @@ class VisitList extends CListPageModel
 			$order .= " order by ".$orderf." ";
 			if ($this->orderType=='D') $order .= "desc ";
 		} else {
-			$order = Yii::app()->user->isSingleCity()
-					? " order by a.visit_dt desc, f.code"
-					: " order by a.visit_dt desc, b.name, f.code";
+//			$order = Yii::app()->user->isSingleCity()
+//					? " order by a.visit_dt desc, f.code"
+//					: " order by a.visit_dt desc, b.name, f.code";
+			$order = " order by a.visit_dt desc, a.city, a.username";
 		}
 
 		$sql = $sql2.$clause;
