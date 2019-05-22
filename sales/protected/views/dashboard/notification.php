@@ -1,6 +1,3 @@
-<div class="row"></div>
-<div class="row">
-	<div class="col-md-8">
 		<div class="box box-primary direct-chat direct-chat-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title"><?php echo Yii::t('sales','Notifications'); ?></h3>
@@ -44,8 +41,6 @@
 			<!-- /.box-footer -->
 		</div>
 		<!-- /.box -->
-	</div>
-</div>
 
 <?php
 $link = Yii::app()->createAbsoluteUrl("dashboard/notify");
