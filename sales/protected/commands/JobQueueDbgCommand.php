@@ -1,11 +1,11 @@
 <?php
-class JobQueueCommand extends CConsoleCommand {
+class JobQueueDbgCommand extends CConsoleCommand {
 	protected $webroot;
 	
 	public function run($args) {
 		$this->webroot = Yii::app()->params['webroot'];
 		$sql = "select a.id, a.ts, a.rpt_type, a.username, a.rpt_desc, a.req_dt  
-					from acc_queue a
+					from sal_queue a
 				where a.status='X' order by a.req_dt limit 1";
 		$row = Yii::app()->db->createCommand($sql)->queryRow();
 		if ($row===false) return;
@@ -44,9 +44,9 @@ class JobQueueCommand extends CConsoleCommand {
 	protected function updateQueueUser($id, $users) {
 		if (!empty($users)) {
 			foreach ($users as $username) {
-				$sql = "select id from acc_queue_user where queue_id=$id and username='$username' limit 1";
+				$sql = "select id from sal_queue_user where queue_id=$id and username='$username' limit 1";
 				if (Yii::app()->db->createCommand($sql)->queryRow()===false) {
-					$sql = "insert into acc_queue_user (queue_id, username)
+					$sql = "insert into sal_queue_user (queue_id, username)
 							values(:queue_id, :username)
 					";
 
@@ -63,7 +63,7 @@ class JobQueueCommand extends CConsoleCommand {
 	
 	protected function getQueueParam($qid) {
 		$rtn = array();
-		$sql = "select * from acc_queue_param where queue_id=".$qid;
+		$sql = "select * from sal_queue_param where queue_id=".$qid;
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
@@ -76,7 +76,7 @@ class JobQueueCommand extends CConsoleCommand {
 	}
 	
 	protected function markStatus($id, $ts, $sts) {
-		$sql = "update acc_queue set status=:status where id=:id and ts=:ts";
+		$sql = "update sal_queue set status=:status where id=:id and ts=:ts";
 		$command=Yii::app()->db->createCommand($sql);
 		if (strpos($sql,':id')!==false)
 			$command->bindParam(':id',$id,PDO::PARAM_INT);
@@ -90,7 +90,7 @@ class JobQueueCommand extends CConsoleCommand {
 	
 	protected function saveOutput($id, $ts, $outstring, $sts) {
 		try {
-			$sql = "update acc_queue set status=:sts, fin_dt=now(), rpt_content=:content where id=:id and ts=:ts";
+			$sql = "update sal_queue set status=:sts, fin_dt=now(), rpt_content=:content where id=:id and ts=:ts";
 			$command=Yii::app()->db->createCommand($sql);
 			if (strpos($sql,':id')!==false)
 				$command->bindParam(':id',$id,PDO::PARAM_INT);
@@ -110,7 +110,7 @@ class JobQueueCommand extends CConsoleCommand {
 	
 	protected function getTimeStamp($id) {
 		$ts = '';
-		$sql = "select ts from acc_queue where id=".$id;
+		$sql = "select ts from sal_queue where id=".$id;
 		$rows = Yii::app()->db->createCommand($sql)->queryAll();
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
