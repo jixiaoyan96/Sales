@@ -7053,3 +7053,196 @@ Stack trace:
 REQUEST_URI=/sa-new/ajax/notify
 HTTP_REFERER=http://192.168.3.221/sa-new/index.php
 ---
+2019/05/23 11:53:11 [error] [exception.CException] exception 'CException' with message 'DashboardWidget 无法找到这个视图 "//dashboard/sample".' in D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php:44
+Stack trace:
+#0 D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php(25): DashboardWidget->render('//dashboard/sam...', NULL, true)
+#1 D:\xampp\htdocs\yii\framework\web\CBaseController.php(174): DashboardWidget->run()
+#2 D:\xampp\htdocs\sa-new\protected\views\site\index.php(23): CBaseController->widget('ext.layout.Dash...', Array)
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#7 D:\xampp\htdocs\sa-new\protected\controllers\SiteController.php(62): CController->render('index')
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('')
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#24 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/sa-new/index.php
+HTTP_REFERER=http://192.168.3.221/sa-new/
+---
+2019/05/23 11:53:16 [error] [exception.CException] exception 'CException' with message 'DashboardWidget 无法找到这个视图 "//dashboard/sample".' in D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php:44
+Stack trace:
+#0 D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php(25): DashboardWidget->render('//dashboard/sam...', NULL, true)
+#1 D:\xampp\htdocs\yii\framework\web\CBaseController.php(174): DashboardWidget->run()
+#2 D:\xampp\htdocs\sa-new\protected\views\site\index.php(23): CBaseController->widget('ext.layout.Dash...', Array)
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#7 D:\xampp\htdocs\sa-new\protected\controllers\SiteController.php(62): CController->render('index')
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('')
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#24 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/sa-new/
+HTTP_REFERER=http://192.168.3.221/sa-new/index.php
+---
+2019/05/23 11:53:17 [error] [exception.CException] exception 'CException' with message 'DashboardWidget 无法找到这个视图 "//dashboard/sample".' in D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php:44
+Stack trace:
+#0 D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php(25): DashboardWidget->render('//dashboard/sam...', NULL, true)
+#1 D:\xampp\htdocs\yii\framework\web\CBaseController.php(174): DashboardWidget->run()
+#2 D:\xampp\htdocs\sa-new\protected\views\site\index.php(23): CBaseController->widget('ext.layout.Dash...', Array)
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#7 D:\xampp\htdocs\sa-new\protected\controllers\SiteController.php(62): CController->render('index')
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('')
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#24 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/sa-new/index.php
+HTTP_REFERER=http://192.168.3.221/sa-new/
+---
+2019/05/23 11:53:18 [error] [exception.CException] exception 'CException' with message 'DashboardWidget 无法找到这个视图 "//dashboard/sample".' in D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php:44
+Stack trace:
+#0 D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php(25): DashboardWidget->render('//dashboard/sam...', NULL, true)
+#1 D:\xampp\htdocs\yii\framework\web\CBaseController.php(174): DashboardWidget->run()
+#2 D:\xampp\htdocs\sa-new\protected\views\site\index.php(23): CBaseController->widget('ext.layout.Dash...', Array)
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#7 D:\xampp\htdocs\sa-new\protected\controllers\SiteController.php(62): CController->render('index')
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('')
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#24 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/sa-new/index.php
+HTTP_REFERER=http://192.168.3.221/sa-new/
+---
+2019/05/23 11:53:21 [error] [exception.CException] exception 'CException' with message 'DashboardWidget 无法找到这个视图 "//dashboard/sample".' in D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php:44
+Stack trace:
+#0 D:\xampp\htdocs\sa-new\protected\extensions\layout\DashboardWidget.php(25): DashboardWidget->render('//dashboard/sam...', NULL, true)
+#1 D:\xampp\htdocs\yii\framework\web\CBaseController.php(174): DashboardWidget->run()
+#2 D:\xampp\htdocs\sa-new\protected\views\site\index.php(23): CBaseController->widget('ext.layout.Dash...', Array)
+#3 D:\xampp\htdocs\yii\framework\web\CBaseController.php(127): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\yii\framework\web\CBaseController.php(96): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#5 D:\xampp\htdocs\yii\framework\web\CController.php(870): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(783): CController->renderPartial('index', NULL, true)
+#7 D:\xampp\htdocs\sa-new\protected\controllers\SiteController.php(62): CController->render('index')
+#8 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceNoConcurrentLogin(Object(CFilterChain))
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceSessionExpiration(Object(CFilterChain))
+#16 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): Controller->filterEnforceRegisteredStation(Object(CFilterChain))
+#19 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#21 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('')
+#23 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('')
+#24 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#25 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/sa-new/index.php
+---
+2019/05/23 11:53:54 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoperdev.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoperdev.swo_notification a, swoperdev.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (134)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/05/23 11:53:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoperdev.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoperdev.swo_notification a, swoperdev.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(134): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.221/sa-new/index.php
+---
