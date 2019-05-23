@@ -6,4 +6,5 @@ return array(
 	'Supervisor Score Right'=>array('access'=>'CN05',),
 	'Visit (Read All)'=>array('access'=>'CN03',),
 	'Web Push Notification'=>array('access'=>'CN04',),
+    'Sales List'=>array('access'=>'CN06',),
 );
