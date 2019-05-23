@@ -16,8 +16,8 @@ return array(
 	'Operation'=>'营运系统',
 	'Personnel'=>'人事系统',
 	'Sales'=>'销售系统',
-        'Quiz'=>'培训测验系统',
-        'Academic Credit'=>'学分系统',
+    'Quiz'=>'培训测验系统',
+    'Academic Credit'=>'学分系统',
 	'Online Library'=>'网上文库',
 
 	'System Use'=>'系统使用',
@@ -56,6 +56,7 @@ return array(
 	'Supervisor Score Right'=>'销售经理评分权限',
 	'Visit (Read All)'=>'拜访 (全部阅读)',
 	'Web Push Notification'=>'網頁推送通知',
+	'Sales List'=>'销售排行榜单',
 	
 	'User'=>'帐户',
 	'Group'=>'群组',
