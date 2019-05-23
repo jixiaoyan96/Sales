@@ -56,7 +56,7 @@ return array(
 'Supervisor Score Right'=>'銷售經理評分權限',
 'Visit (Read All)'=>'拜訪 (全部閱讀)',
 'Web Push Notification'=>'網頁推送通知',
-'Sales List'=>'销售排行榜单',
+'Sales List'=>'銷售排行榜單',
 
 'User'=>'帳戶',
 'Group'=>'群組',
