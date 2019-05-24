@@ -41,7 +41,6 @@
 //print_r($models);
 
 ?>
-<div class="col-md-6">
 <div class="box box-primary direct-chat direct-chat-primary" >
     <div class="box-header with-border">
         <h3 class="box-title">销售个人签单排行榜</h3>
@@ -77,7 +76,6 @@
         <small>每出现签单时即时刷新数据</small>
     </div>
     <!-- /.box-footer -->
-</div>
 </div>
 <!-- /.box -->
 
