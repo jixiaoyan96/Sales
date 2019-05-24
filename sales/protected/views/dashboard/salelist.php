@@ -45,34 +45,41 @@ array_multisort($last_names,SORT_DESC,$arr);
 
 
 ?>
-<div class="box">
 
     <div class="box box-primary direct-chat direct-chat-primary">
-        <div class="box-header with-border">  <h3 class="box-title">地区销售人均签单排行榜</h3></div>
+        <div class="box-header with-border">
+            <h3 class="box-title">地区销售人均签单排行榜</h3>
 
-        <table border="1" style="width: 49%;text-align: center;">
-            <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>人均签单比例</b></td>
-            <?php for($i=0;$i<count($arr);$i++) {?>
-                <tr> <?php if($i<(count($arr)/2)){?><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><?php echo $i+1;?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $arr[$i]['city'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $arr[$i]['renjun'];}?></td>
+<!--            <div class="box-tools pull-right">-->
+<!--                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
+<!--            </div>-->
+        </div>
+        <!-- /.box-header -->
 
-               </tr>
-            <?php }?>
-        </table>
-        <table  border="1" style="width: 49%;float: right;margin-top:-224px ;text-align: center;" >
-            <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>人均签单比例</b></td>
-                <?php for($i=0;$i<count($arr);$i++) {?>
-            <tr>
-                <?php if($i>(count($arr)/2-1)){?>  <td><?php echo $i+1;?></td><td><?php echo $arr[$i]['city'];?></td><td><?php echo $arr[$i]['renjun'];}?></td>
-            </tr>
-            <?php }?>
-        </table>
-        <br>
-        <div class="box-footer"><small>每出现签单时即时刷新数据</small></div>
+        <div class="box-body">
+            <div id='notify' class="direct-chat-messages">
+                <table border="1" style="width: 49%;text-align: center;">
+                    <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>人均签单比例</b></td>
+                        <?php for($i=0;$i<count($arr);$i++) {?>
+                    <tr> <?php if($i<(count($arr)/2)){?><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><?php echo $i+1;?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $arr[$i]['city'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $arr[$i]['renjun'];}?></td>
+
+                    </tr>
+                    <?php }?>
+                </table>
+                <table  border="1" style="width: 49%;float: right;margin-top:-224px ;text-align: center;" >
+                    <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>人均签单比例</b></td>
+                        <?php for($i=0;$i<count($arr);$i++) {?>
+                    <tr>
+                        <?php if($i>(count($arr)/2-1)){?>  <td><?php echo $i+1;?></td><td><?php echo $arr[$i]['city'];?></td><td><?php echo $arr[$i]['renjun'];}?></td>
+                    </tr>
+                    <?php }?>
+                </table>
+            </div>
+        </div>
+        <!-- /.box-body -->
+
+        <div class="box-footer">
+            <small>每出现签单时即时刷新数据</small>
+        </div>
+        <!-- /.box-footer -->
     </div>
-    <div>
-
-    </div>
-    <!-- /.box-body -->
-</div>
-<!-- /.box -->
-</div>
