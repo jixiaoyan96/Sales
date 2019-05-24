@@ -57,7 +57,7 @@ return array(
 	'Visit (Read All)'=>'拜访 (全部阅读)',
 	'Web Push Notification'=>'網頁推送通知',
 	'Sales List'=>'销售排行榜单',
-    'Sale People'=>'销售排行榜单',
+    'Sale People'=>'个人销售排行榜单',
 	'User'=>'帐户',
 	'Group'=>'群组',
 	'Access Template'=>'权限范本',

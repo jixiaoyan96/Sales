@@ -60,7 +60,7 @@
                 </tr>
                 <?php }?>
             </table>
-            <table  border="1" style="width: 49%;float: right;margin-top:-224px ;text-align: center;" >
+            <table  border="1" style="width: 49%;float: right;margin-top:-245px ;text-align: center;" >
                 <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td>
                     <?php for($i=0;$i<count($models);$i++) {?>
                 <tr>
