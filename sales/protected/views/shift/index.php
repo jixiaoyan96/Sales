@@ -90,10 +90,11 @@ function star(id) {
 }
 $(document).ready(function(){ 
        $("#chkboxAll").on('click',function() {     
-              $("input[name='VisitList[sale][]']").prop("checked", this.checked);  
+       
+              $("input[name='ShiftList[id][]']").prop("checked", this.checked);  
         });          
-        $("input[name='VisitList[sale][]']").on('click',function() {  
-              var subs = $("input[name='VisitList[sale][]']");  
+        $("input[name='ShiftList[id][]']").on('click',function() {  
+              var subs = $("input[name='ShiftList[id][]']");  
               $("#chkboxAll").prop("checked" ,subs.length == subs.filter(":checked").length ? true :false);  
         });
 });
