@@ -11,6 +11,9 @@
     foreach ($people as $a){
         $sql1="select id from sal_visit where username='".$a['username']."' and  visit_obj like '%10%'";
         $id = Yii::app()->db->createCommand($sql1)->queryAll();
+        //区域
+        $sql="select name from security$suffix.sec_city where code=(select region from security$suffix.sec_city where name='".$a['name']."')";
+        $rows = Yii::app()->db->createCommand($sql)->queryAll();
         //单数
         //$sums=count($id);
         $money=0;
@@ -24,9 +27,13 @@
             }
             //总金额
             $money+=$summoney;
-
         }
         $moneys+=$money;
+        if(!empty($rows)){
+            $model['quyu']=$rows[0]['name'];
+        }else{
+            $model['quyu']='空';
+        }
         $model['name']=$a['employee_name'];
         $model['user']=$a['username'];
         $model['city']=$a['name'];;
@@ -43,7 +50,7 @@
 ?>
 <div class="box box-primary direct-chat direct-chat-primary" >
     <div class="box-header with-border">
-        <h3 class="box-title">销售个人签单排行榜</h3>
+        <h3 class="box-title">销售个人签单总金额排行榜</h3>
 
 <!--        <div class="box-tools pull-right">-->
 <!--            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
@@ -54,17 +61,17 @@
     <div class="box-body">
         <div id='notify' class="direct-chat-messages">
             <table border="1" style="width: 49%;text-align: center;">
-                <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td>
+                <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td>
                     <?php for($i=0;$i<count($models);$i++) {?>
-                <tr> <?php if($i<(count($models)/2)){?><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><?php echo $i+1;?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['city'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['name'];?></td><td  style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['money'];}?></td>
+                <tr> <?php if($i<(count($models)/2)){?><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><?php echo $i+1;?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['city'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['quyu'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['name'];?></td><td  style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['money'];}?></td>
                 </tr>
                 <?php }?>
             </table>
             <table  border="1" style="width: 49%;float: right;margin-top:-245px ;text-align: center;" >
-                <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td>
+                <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td>
                     <?php for($i=0;$i<count($models);$i++) {?>
                 <tr>
-                    <?php if($i>(count($models)/2-1)){?>  <td><?php echo $i+1;?></td><td><?php echo $models[$i]['city'];?></td><td><?php echo $models[$i]['name'];?></td><td><?php echo $models[$i]['money'];}?></td>
+                    <?php if($i>(count($models)/2-1)){?>  <td><?php echo $i+1;?></td><td><?php echo $models[$i]['city'];?></td><td><?php echo $models[$i]['quyu'];?></td><td><?php echo $models[$i]['name'];?></td><td><?php echo $models[$i]['money'];}?></td>
                 </tr>
                 <?php }?>
             </table>
