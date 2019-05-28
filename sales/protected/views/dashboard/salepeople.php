@@ -48,32 +48,28 @@
 //print_r($models);
 
 ?>
-<div class="box box-primary direct-chat direct-chat-primary" >
+
+
+<div class="box box-primary" >
     <div class="box-header with-border">
         <h3 class="box-title">销售个人签单总金额排行榜</h3>
 
-<!--        <div class="box-tools pull-right">-->
-<!--            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
-<!--        </div>-->
+
+        <!--            <div class="box-tools pull-right">-->
+        <!--                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>-->
+        <!--            </div>-->
     </div>
     <!-- /.box-header -->
 
     <div class="box-body">
-        <div id='notify' class="direct-chat-messages" style="position: relative">
-            <table border="1" style="width: 49%;text-align: center;position: absolute;">
-                <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td>
-                    <?php for($i=0;$i<count($models);$i++) {?>
-                <tr> <?php if($i<(count($models)/2)){?><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><?php echo $i+1;?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['city'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['quyu'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['name'];?></td><td  style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['money'];}?></td>
-                </tr>
-                <?php }?>
-            </table>
-            <table  border="1" style="width: 49%; ;margin-left:397px;text-align: center;position: absolute;" >
-                <tr style="height: 35px"><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td>
+        <div id='notify' class="direct-chat-messages" style="height: 250px;">
+            <table class="table table-bordered small">
+                <tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td>
                     <?php for($i=0;$i<count($models);$i++) {?>
                 <tr>
-                    <?php if($i>(count($models)/2-1)){?>  <td><?php echo $i+1;?></td><td><?php echo $models[$i]['city'];?></td><td><?php echo $models[$i]['quyu'];?></td><td><?php echo $models[$i]['name'];?></td><td><?php echo $models[$i]['money'];}?></td>
+                   <td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><?php echo $i+1;?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['city'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['quyu'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['name'];?></td><td  style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $models[$i]['money'];?></td>
                 </tr>
-                <?php }?>
+            <?php }?>
             </table>
         </div>
     </div>

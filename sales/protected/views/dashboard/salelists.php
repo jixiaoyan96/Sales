@@ -90,10 +90,10 @@ array_multisort($last_name,SORT_DESC,$arrs);
         <div class="box-body">
             <div id='notify' class="direct-chat-messages" style="height: 250px;">
                 <table class="table table-bordered small">
-                    <tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>人均签单量</b></td>
-                        <?php for($i=0;$i<count($arr);$i++) {?>
+                    <tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>人均签单金额</b></td>
+                            <?php for($i=0;$i<count($arrs);$i++) {?>
                     <tr>
-                        <td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><?php echo $i+1;?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $arr[$i]['city'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $arr[$i]['quyu'];?><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><b><?php echo $arr[$i]['renjun'];?></b></td></td>
+                        <td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><?php echo $i+1;?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $arrs[$i]['city'];?></td><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"><?php echo $arrs[$i]['quyu'];?><td style="color:<?php if($i==0){echo '#FF0000';}if($i==1){echo '#871F78';}if($i==2){echo '#0000FF';}?>"  ><b><?php echo $arrs[$i]['money'];?></b></td></td>
                     </tr>
                     <?php }?>
                 </table>

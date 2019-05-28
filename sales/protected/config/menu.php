@@ -39,6 +39,10 @@ return array(
                 'access'=>'HA03',
                     'url'=>'/shift/index',
             ),
+            'Sales lead'=>array(
+                'access'=>'HA04',
+                'url'=>'/shift/index',
+            ),
         ),
     ),
 
