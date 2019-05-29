@@ -78,7 +78,7 @@ array_multisort($last_name,SORT_DESC,$arrs);
 
     <div class="box box-primary" >
         <div class="box-header with-border">
-            <h3 class="box-title">地区销售人均签单量排行榜</h3>
+            <h3 class="box-title">地区销售人均签单金额排行榜</h3>
 
 
 <!--            <div class="box-tools pull-right">-->
