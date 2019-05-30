@@ -56,7 +56,7 @@ class ReportController extends Controller
                 Dialog::message(Yii::t('dialog','Validation Message'), $message);
             }
         }
-        $this->render('form_y02',array('model'=>$model));
+        $this->render('form_five',array('model'=>$model));
     }
 
     public function actionVisit() {
