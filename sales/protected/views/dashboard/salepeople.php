@@ -1,6 +1,6 @@
 <div class="box box-primary" >
     <div class="box-header with-border">
-        <h3 class="box-title">销售个人签单总金额排行榜</h3>
+        <h3 class="box-title">销售个人签单总金额排行榜(<?php echo date('m', strtotime(date('Y-m-01') )); ?>月)</h3>
 
 
         <!--            <div class="box-tools pull-right">-->

@@ -1,6 +1,6 @@
 <div class="box box-primary" >
     <div class="box-header with-border">
-        <h3 class="box-title">地区销售人均签单量排行榜</h3>
+        <h3 class="box-title">地区销售人均签单量排行榜(<?php echo date('m', strtotime(date('Y-m-01') )); ?>月)</h3>
 
 
         <!--            <div class="box-tools pull-right">-->

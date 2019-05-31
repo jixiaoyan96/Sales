@@ -45,15 +45,16 @@ class DashboardController extends Controller
 public function actionSalepeople() {
     $suffix = Yii::app()->params['envSuffix'];
     $models=array();
+    $time= date('Y-m-d', strtotime(date('Y-m-01') ));
     $sql="select distinct  a.username ,c.employee_name ,b.name  FROM sal_visit a 
           inner join hr$suffix.hr_binding c on a.username = c.user_id 
           inner join security$suffix.sec_city b on a.city = b.code 
+          where visit_dt >='".$time."'
           ";
     //人名
     $people = Yii::app()->db->createCommand($sql)->queryAll();
-
     foreach ($people as $a){
-        $sql1="select id from sal_visit where username='".$a['username']."' and  visit_obj like '%10%'";
+        $sql1="select id from sal_visit where username='".$a['username']."' and  visit_obj like '%10%' and visit_dt >='".$time."'";
         $id = Yii::app()->db->createCommand($sql1)->queryAll();
         //区域
         $sql="select name from security$suffix.sec_city where code=(select region from security$suffix.sec_city where name='".$a['name']."')";
@@ -93,6 +94,7 @@ public function actionSalepeople() {
 
     public function actionSalelist() {
         $suffix = Yii::app()->params['envSuffix'];
+        $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         //城市
 //    $sql = "select code,name from security$suffix.sec_city where name not in ('华南2','台中','台北','台南','桃園','澳門','瑞诺','长沙','香港','高雄','中国','华东','中央支援组','华南','华南1','华西/华北',)";
 //    $rows = Yii::app()->db->createCommand($sql)->queryAll();
@@ -121,11 +123,11 @@ public function actionSalepeople() {
             $sql="select name from security$suffix.sec_city where code=(select region from security$suffix.sec_city where code='".$a['code']."')";
             $rows = Yii::app()->db->createCommand($sql)->queryAll();
             //人数
-            $sql1="select distinct  username FROM sal_visit  WHERE city='".$a['code']."'";
+            $sql1="select distinct  username FROM sal_visit  WHERE city='".$a['code']."'and visit_dt >='".$time."'";
             $people = Yii::app()->db->createCommand($sql1)->queryAll();
             $peoples=count($people);
             //总单数
-            $sql2="select id from sal_visit where city='".$a['code']."' and  visit_obj like '%10%'";
+            $sql2="select id from sal_visit where city='".$a['code']."' and  visit_obj like '%10%' and visit_dt >='".$time."'";
             $sum = Yii::app()->db->createCommand($sql2)->queryAll();
             $sums=count($sum);
             //人均签单数
@@ -165,6 +167,7 @@ public function actionSalepeople() {
 
 
     public function actionSalelists() {
+        $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         $suffix = Yii::app()->params['envSuffix'];
         //城市
 //    $sql = "select code,name from security$suffix.sec_city where name not in ('华南2','台中','台北','台南','桃園','澳門','瑞诺','长沙','香港','高雄','中国','华东','中央支援组','华南','华南1','华西/华北',)";
@@ -194,11 +197,11 @@ public function actionSalepeople() {
             $sql="select name from security$suffix.sec_city where code=(select region from security$suffix.sec_city where code='".$a['code']."')";
             $rows = Yii::app()->db->createCommand($sql)->queryAll();
             //人数
-            $sql1="select distinct  username FROM sal_visit  WHERE city='".$a['code']."'";
+            $sql1="select distinct  username FROM sal_visit  WHERE city='".$a['code']."' and visit_dt >='".$time."'";
             $people = Yii::app()->db->createCommand($sql1)->queryAll();
             $peoples=count($people);
             //总单数
-            $sql2="select id from sal_visit where city='".$a['code']."' and  visit_obj like '%10%'";
+            $sql2="select id from sal_visit where city='".$a['code']."' and  visit_obj like '%10%' and visit_dt >='".$time."'";
             $sum = Yii::app()->db->createCommand($sql2)->queryAll();
             $sums=count($sum);
             //人均签单数
