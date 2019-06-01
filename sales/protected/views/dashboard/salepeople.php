@@ -32,9 +32,9 @@ $js = <<<EOF
 		type: 'GET',
 		url: '$link',
 		success: function(data) {
+			var line = '<table class="table table-bordered small">';
+			line += '<tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td></tr>';
 			if (data !== undefined && data.length != 0) {
-				var line = '<table class="table table-bordered small">';
-                line += '<tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>姓名</b></td><td><b>签单总金额</b></td></tr>';
 				
 				for (var i=0; i < data.length; i++) {
 					line += '<tr>';
@@ -49,9 +49,9 @@ $js = <<<EOF
 					line += '</tr>';
 				}	
 				
-				line += '</table>';
-				$('#salepeople').html(line);
 			}
+			line += '</table>';
+			$('#salepeople').html(line);
 		},
 		error: function(xhr, status, error) { // if error occured
 			var err = eval("(" + xhr.responseText + ")");
