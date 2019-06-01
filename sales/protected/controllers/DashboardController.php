@@ -49,12 +49,12 @@ public function actionSalepeople() {
     $sql="select distinct  a.username ,c.employee_name ,b.name  FROM sal_visit a 
           inner join hr$suffix.hr_binding c on a.username = c.user_id 
           inner join security$suffix.sec_city b on a.city = b.code 
-          where visit_dt >='".$time."'
+          where a.lud >='2019-06-01'
           ";
     //人名
     $people = Yii::app()->db->createCommand($sql)->queryAll();
     foreach ($people as $a){
-        $sql1="select id from sal_visit where username='".$a['username']."' and  visit_obj like '%10%' and visit_dt >='".$time."'";
+        $sql1="select id from sal_visit where username='".$a['username']."' and  visit_obj like '%10%' and lud >='".$time."'";
         $id = Yii::app()->db->createCommand($sql1)->queryAll();
         //区域
         $sql="select name from security$suffix.sec_city where code=(select region from security$suffix.sec_city where name='".$a['name']."')";
@@ -123,11 +123,11 @@ public function actionSalepeople() {
             $sql="select name from security$suffix.sec_city where code=(select region from security$suffix.sec_city where code='".$a['code']."')";
             $rows = Yii::app()->db->createCommand($sql)->queryAll();
             //人数
-            $sql1="select distinct  username FROM sal_visit  WHERE city='".$a['code']."'and visit_dt >='".$time."'";
+            $sql1="select distinct  username FROM sal_visit  WHERE city='".$a['code']."'and lud >='".$time."'";
             $people = Yii::app()->db->createCommand($sql1)->queryAll();
             $peoples=count($people);
             //总单数
-            $sql2="select id from sal_visit where city='".$a['code']."' and  visit_obj like '%10%' and visit_dt >='".$time."'";
+            $sql2="select id from sal_visit where city='".$a['code']."' and  visit_obj like '%10%' and lud >='".$time."'";
             $sum = Yii::app()->db->createCommand($sql2)->queryAll();
             $sums=count($sum);
             //人均签单数
@@ -197,11 +197,11 @@ public function actionSalepeople() {
             $sql="select name from security$suffix.sec_city where code=(select region from security$suffix.sec_city where code='".$a['code']."')";
             $rows = Yii::app()->db->createCommand($sql)->queryAll();
             //人数
-            $sql1="select distinct  username FROM sal_visit  WHERE city='".$a['code']."' and visit_dt >='".$time."'";
+            $sql1="select distinct  username FROM sal_visit  WHERE city='".$a['code']."' and lud >='".$time."'";
             $people = Yii::app()->db->createCommand($sql1)->queryAll();
             $peoples=count($people);
             //总单数
-            $sql2="select id from sal_visit where city='".$a['code']."' and  visit_obj like '%10%' and visit_dt >='".$time."'";
+            $sql2="select id from sal_visit where city='".$a['code']."' and  visit_obj like '%10%' and lud >='".$time."'";
             $sum = Yii::app()->db->createCommand($sql2)->queryAll();
             $sums=count($sum);
             //人均签单数
