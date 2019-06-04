@@ -176,11 +176,34 @@ foreach ($models as $key=>$item) {
 				group by a.city, a.username 
 			";
                 $records = Yii::app()->db->createCommand($sql)->queryAll();
-                $money=empty($records)?0.00:$records[0]['money'];
+                $lastcity = '';
+                $num = 0;
+                $amt = 0;
+                $money = 0;
+                foreach ($records as $record) {
+                    if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$record['city']."'")===false) {
+                        if ($lastcity!=$record['city']) {
+                            if ($lastcity!='') {
+                                $tmp = $amt/($num==0?1:$num);
+                                $models[$record['city']]['money'] = number_format((float)$tmp, 2, '.', '');
+                            }
+                            $num = 0;
+                            $amt = 0;
+                            $lastcity = $record['city'];
+                        }
+                    }
+                    $num++;
+                    $amt += $record['money'];
+                    $money=$amt/count($records);
+
+                }
                 $temp = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
                 $models[$code] = array('city'=>$name, 'money'=>$money, 'quyu'=>$temp);
-//                print_r('<pre>');
-//                print_r($models);
+
+//
+//        print_r('<pre>');
+//        print_r($monry);
+
             }
         }
 
@@ -217,6 +240,7 @@ foreach ($models as $key=>$item) {
         array_multisort($arraycol,SORT_DESC,$result);
 //        print_r('<pre>');
 //        print_r($result);
+
         echo json_encode($result);
     }
 }
