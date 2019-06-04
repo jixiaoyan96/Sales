@@ -194,7 +194,7 @@ foreach ($models as $key=>$item) {
                     }
                     $num++;
                     $amt += $record['money'];
-                    $money=$amt/count($records);
+                    $money=round($amt/count($records),2);
 
                 }
                 $temp = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
