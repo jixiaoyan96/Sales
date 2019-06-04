@@ -85,111 +85,138 @@ class DashboardController extends Controller
 
 
     public function actionSalelist() {
-		$suffix = Yii::app()->params['envSuffix'];
-		$models = array();
-		$cities = General::getCityListWithNoDescendant();
-		foreach ($cities as $code=>$name) {
-		if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$code."'")===false) {
-                    $sql = "select a.name as city_name, b.name as region_name 
+        $suffix = Yii::app()->params['envSuffix'];
+        $models = array();
+        $cities = General::getCityListWithNoDescendant();
+        $time= date('Y-m-d', strtotime(date('Y-m-01') ));
+        foreach ($cities as $code=>$name) {
+            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$code."'")===false) {
+                $sql = "select a.name as city_name, b.name as region_name 
 						from security$suffix.sec_city a
 						left outer join security$suffix.sec_city b on a.region=b.code
 						where a.code='$code'
 					";
-                    $row = Yii::app()->db->createCommand($sql)->queryRow();
-                    $temp = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
-                    $models[$code] = array('city'=>$name, 'renjun'=>0, 'quyu'=>$temp);
-                }
+                $row = Yii::app()->db->createCommand($sql)->queryRow();
+                $temp = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
 
-		}
+                //人数
+                $sql1="select distinct  username FROM sal_visit  WHERE city='$code' and visit_dt >='".$time."'";
+                $people = Yii::app()->db->createCommand($sql1)->queryAll();
+                $peoples=count($people);
+                //总单数
+                $sql2="select id from sal_visit where city='$code' and  visit_obj like '%10%' and visit_dt >='".$time."'";
+                $sum = Yii::app()->db->createCommand($sql2)->queryAll();
+                $sums=count($sum);
+                //人均签单数
+                $sale=$sums/($peoples==0?1:$peoples);
+                $sale=round($sale,2);
+                $models[$code] = array('city'=>$name, 'renjun'=>$sale, 'quyu'=>$temp);
 
-		$time= date('Y-m-d', strtotime(date('Y-m-01') ));
-		$sql = "select a.city, a.username, count(a.username) as renjun
-				from sal_visit a force index (idx_visit_02), sal_visit_info b
-				where a.id=b.visit_id and b.field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') 
-				and a.visit_dt >= '$time' and  a.visit_obj like '%10%'
-				group by a.city, a.username 
-			";
-		$records = Yii::app()->db->createCommand($sql)->queryAll();
-		$lastcity = '';
-		$num = 0;
-		$cnt = 0;
-		foreach ($records as $record) {
-			if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/", "'".$record['city']."'")===false) {
-				if ($lastcity!=$record['city']) {
-					if ($lastcity!='') {
-						$models[$record['city']]['renjun'] = round($cnt/($num==0?1:$num), 2);
-					}
-					$num = 0;
-					$cnt = 0;
-					$lastcity = $record['city'];
-				}
-				$num++;
-				$cnt += $record['renjun'];
-			}
-		}
-		
-		$result = array();
-		foreach ($models as $key=>$item) {
-			$result[] = $item;
-		}
-		
+            }
+        }
+
+//
+//$sql = "select a.city, a.username, count(a.username) as renjun
+//				from sal_visit a force index (idx_visit_02), sal_visit_info b
+//				where a.id=b.visit_id and b.field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3')
+//				and a.visit_dt >= '$time' and  a.visit_obj like '%10%'
+//				group by a.city, a.username
+//			";
+//$records = Yii::app()->db->createCommand($sql)->queryAll();
+//$lastcity = '';
+//$num = 0;
+//$cnt = 0;
+
+//
+//foreach ($records as $record) {
+//    if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/", "'".$record['city']."'")===false) {
+//        if ($lastcity!=$record['city']) {
+//            if ($lastcity!='') {
+//                $models[$record['city']]['renjun'] = round($cnt/($num==0?1:$num), 2);
+//            }
+//            $num = 0;
+//            $cnt = 0;
+//            $lastcity = $record['city'];
+//        }
+//        $num++;
+//        $cnt += $record['renjun'];
+//    }
+//}
+//
+//$result = array();
+foreach ($models as $key=>$item) {
+    $result[] = $item;
+}
+
         $arraycol = array_column($result,'renjun');
         array_multisort($arraycol,SORT_DESC,$result);
+//print_r('<pre>');
+//print_r($models);
         echo json_encode($result);
     }
 
     public function actionSalelists() {
-
-		$suffix = Yii::app()->params['envSuffix'];
-		$models = array();
-		$cities = General::getCityListWithNoDescendant();
-		foreach ($cities as $code=>$name) {
-			if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$code."'")===false) {
-				$sql = "select a.name as city_name, b.name as region_name 
+        $suffix = Yii::app()->params['envSuffix'];
+        $models = array();
+        $time= date('Y-m-d', strtotime(date('Y-m-01') ));
+        $cities = General::getCityListWithNoDescendant();
+        foreach ($cities as $code=>$name) {
+            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$code."'")===false) {
+                $sql = "select a.name as city_name, b.name as region_name 
 						from security$suffix.sec_city a
 						left outer join security$suffix.sec_city b on a.region=b.code
 						where a.code='$code'
 					";
-				$row = Yii::app()->db->createCommand($sql)->queryRow();
-				$temp = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
-				$models[$code] = array('city'=>$name, 'money'=>number_format((float)0, 2, '.', ''), 'quyu'=>$temp);
-			}
-		}
+                $row = Yii::app()->db->createCommand($sql)->queryRow();
 
-		$time= date('Y-m-d', strtotime(date('Y-m-01') ));
-		$sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money
+                $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money
 				from sal_visit a force index (idx_visit_02), sal_visit_info b
 				where a.id=b.visit_id and b.field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') 
-				and a.visit_dt >= '$time' and  a.visit_obj like '%10%'
+				and a.visit_dt >= '$time' and  a.visit_obj like '%10%' and a.city='$code'
 				group by a.city, a.username 
 			";
-		$records = Yii::app()->db->createCommand($sql)->queryAll();
-		$lastcity = '';
-		$num = 0;
-		$amt = 0;
-		foreach ($records as $record) {
-			if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$record['city']."'")===false) {
-				if ($lastcity!=$record['city']) {
-					if ($lastcity!='') {
-						$tmp = $amt/($num==0?1:$num);
-						$models[$record['city']]['money'] = number_format((float)$tmp, 2, '.', '');
-					}
-					$num = 0;
-					$amt = 0;
-					$lastcity = $record['city'];
-				}
-			}
-			$num++;
-			$amt += $record['money'];
-		}
-		
-		$result = array();
-		foreach ($models as $key=>$item) {
-			$result[] = $item;
-		}
-		
+                $records = Yii::app()->db->createCommand($sql)->queryAll();
+                $money=empty($records)?0.00:$records[0]['money'];
+                $temp = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
+                $models[$code] = array('city'=>$name, 'money'=>$money, 'quyu'=>$temp);
+//                print_r('<pre>');
+//                print_r($models);
+            }
+        }
+
+
+
+
+//$lastcity = '';
+//$num = 0;
+//$amt = 0;
+//foreach ($records as $record) {
+//    if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$record['city']."'")===false) {
+//        if ($lastcity!=$record['city']) {
+//            if ($lastcity!='') {
+//                $tmp = $amt/($num==0?1:$num);
+//                $models[$record['city']]['money'] = number_format((float)$tmp, 2, '.', '');
+//            }
+//            $num = 0;
+//            $amt = 0;
+//            $lastcity = $record['city'];
+//        }
+//    }
+//    $num++;
+//    $amt += $record['money'];
+//
+//}
+
+        $result = array();
+        foreach ($models as $key=>$item) {
+            $result[] = $item;
+
+        }
+
         $arraycol = array_column($result,'money');
         array_multisort($arraycol,SORT_DESC,$result);
+//        print_r('<pre>');
+//        print_r($result);
         echo json_encode($result);
     }
 }

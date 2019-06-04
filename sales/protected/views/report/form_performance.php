@@ -26,7 +26,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
     <div class="box"><div class="box-body">
             <div class="btn-group" role="group">
                 <?php echo TbHtml::button(Yii::t('misc','Submit'), array(
-                    'submit'=>Yii::app()->createUrl('report/fenxi')));
+                    'submit'=>Yii::app()->createUrl('report/performancelist')));
                 ?>
             </div>
         </div></div>
@@ -52,7 +52,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
             <?php endif ?>
 
             <div class="form-group">
-                <?php echo $form->labelEx($model,'开始日期',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'start date',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
                     <div class="input-group date">
                         <div class="input-group-addon">
@@ -66,7 +66,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
             </div>
 
             <div class="form-group">
-                <?php echo $form->labelEx($model,'结束日期',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'end date',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
                     <div class="input-group date">
                         <div class="input-group-addon">
@@ -78,12 +78,8 @@ $this->pageTitle=Yii::app()->name . ' - Report';
                     </div>
                 </div>
             </div>
-
-
-
-
             <div class="form-group">
-                <?php echo $form->labelEx($model,'地区',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'city',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
                     <?php echo $form->dropDownList($model, 'city',
                         $city,
@@ -93,13 +89,21 @@ $this->pageTitle=Yii::app()->name . ' - Report';
             </div>
 
 
+
             <div class="form-group">
-                <?php echo $form->labelEx($model,'以什么排序为主',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'sort',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->dropDownList($model, 'classify',
+                    <?php echo $form->dropDownList($model, 'bumen',
                         array(
-                            'yes'=>'是',
-                            'no'=>"否",
+                            'singular'=>'单数',
+                            'money'=>'金额',
+                            'svc_A7'=>'清洁',
+                            'svc_C7'=>'灭虫',
+                            'svc_E7'=>'甲醛',
+                            'svc_F4'=>'纸品',
+                            'svc_D6'=>'飘盈香',
+                            'svc_B6'=>'租赁机器',
+                            'svc_G3'=>"一次性售卖",
                         )
                     ); ?>
                 </div>

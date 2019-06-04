@@ -10,7 +10,8 @@ return array(
 	'Start Date'=>'开始日期',
 	'End Date'=>'结束日期',
 	'Dear All'=>'各位',
-	
+	'Sort'=>'按什么为主排序',
+
 	'Reimbursement Form'=>'费用报销单',
 	'Ref. No.'=>'编号',
 	'Detail'=>'摘要',

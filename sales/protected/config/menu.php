@@ -41,7 +41,7 @@ return array(
             ),
             'Sales lead'=>array(
                 'access'=>'HA04',
-                'url'=>'/shift/index',
+                'url'=>'/report/performance',
             ),
         ),
     ),

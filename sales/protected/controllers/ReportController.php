@@ -10,6 +10,8 @@ class ReportController extends Controller
         'staff'=>'HA02',
         'sale'=>'HA02',
         'down'=>'HA02',
+        'performance'=>'HA04',
+        'performancelist'=>'HA04',
         'overtimelist'=>'YB02',
         'pennantexlist'=>'YB05',
         'pennantculist'=>'YB06',
@@ -95,6 +97,31 @@ class ReportController extends Controller
 //        print_r('<pre/>');
 //       print_r($model);
         $this->render('sale',array('model'=>$model,'fenxi'=>$fenxi));
+    }
+
+    public function actionPerformance() {
+        $this->function_id = self::$actions['performance'];
+        Yii::app()->session['active_func'] = $this->function_id;
+        $model = new ReportVisitForm;
+        if (isset($_POST['ReportVisitForm'])) {
+            $model->attributes = $_POST['ReportVisitForm'];
+
+        }
+        $city=$model->city();
+        $saleman=$model->saleman();
+        $this->render('form_performance',array('model'=>$model,'city'=>$city,'saleman'=>$saleman));
+    }
+
+    public function actionPerformancelist() {
+        $this->function_id = self::$actions['visit'];
+        Yii::app()->session['active_func'] = $this->function_id;
+        $model = new ReportVisitForm;
+        if (isset($_POST['ReportVisitForm'])) {
+            $model->attributes = $_POST['ReportVisitForm'];
+
+        }
+        $city=$model->city();
+        $this->render('performancelist',array('model'=>$model,'city'=>$city,));
     }
 
     public function actionCity()

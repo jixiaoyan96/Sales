@@ -3,7 +3,8 @@ return array(
 	'Sales Visit'=>'销售拜访',
 	'Visit List'=>'拜访列表',
 	'Sales Visit Form'=>'销售拜访表单',
-	
+    'Sales Performance Form'=>'销售业绩汇总表单',
+
 	'Visit Date'=>'拜访日期',
 	'Planned Visit Date'=>'计划拜访日期',
 	'Actual Visit Date'=>'实际拜访日期',

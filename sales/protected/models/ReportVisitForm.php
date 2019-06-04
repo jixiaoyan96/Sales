@@ -8,7 +8,11 @@ class ReportVisitForm extends CReportForm
 	
 	protected function labelsEx() {
 		return array(
-				'staffs'=>Yii::t('report','Staffs'),
+			'staffs'=>Yii::t('report','Staffs'),
+            'start date'=>Yii::t('report','Start Date'),
+            'end date'=>Yii::t('report','End Date'),
+            'city'=>Yii::t('report','City'),
+            'sort'=>Yii::t('report','Sort'),
 			);
 	}
 	
