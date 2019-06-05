@@ -1,3 +1,8 @@
+<style>
+    .select2-container.select2-container-disabled .select2-choice {
+        background-color: #ddd;
+        border-color: #a8a8a8;
+    }</style>
 <?php
 $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 ?>
@@ -122,9 +127,9 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 						$typelist = $model->getVisitTypeList();
 						if ($model->isReadOnly()) {
 							echo $form->hiddenField($model, 'visit_type');
-							echo TbHtml::textField('visit_type_name', $typelist[$model->visit_type], array('readonly'=>true));
+							echo TbHtml::textField('visit_type_name', $typelist[$model->visit_type], array('readonly'=>($model->isReadOnly()||$model->status!='N')));
 						} else {
-							echo $form->dropDownList($model, 'visit_type', $typelist); 
+							echo $form->dropDownList($model, 'visit_type', $typelist, array('readonly'=>($model->isReadOnly()||$model->status!='N')));
 						}
 					?>
 				</div>
@@ -132,7 +137,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'visit_obj',array('class'=>"col-sm-2 control-label")); ?>
-				<div class="col-sm-8">
+				<div class="col-sm-8" <?php if($model->isReadOnly() || $model->status=='Y'){echo "style='pointer-events:none;'";}?>>
 					<?php
 						$typelist = $model->getVisitObjList();
 //						if ($model->isReadOnly() || $model->status=='Y') {
@@ -140,13 +145,12 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 //							echo TbHtml::textField('visit_obj_name', $typelist[$model->visit_obj], array('readonly'=>true));
 //						} else {
 							echo $form->dropDownList($model, 'visit_obj', $typelist,
-								array('class'=>'select2','multiple'=>'multiple')
+								array('class'=>'select2','multiple'=>'multiple','disabled'=>'disabled')
 							);
 //						}
 					?>
 				</div>
 			</div>
-
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'客户名称（包括分店名）',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-5">
@@ -424,6 +428,7 @@ function formatState(state) {
 	return rtn;
 }
 
+
 $('#VisitForm_visit_obj').on('select2:opening select2:closing', function( event ) {
     var searchfield = $(this).parent().find('.select2-search__field');
     searchfield.prop('disabled', true);
@@ -538,23 +543,23 @@ EOF;
 	Yii::app()->clientScript->registerScript('select2',$js,CClientScript::POS_READY);
 }
 
-//if ($model->scenario=='edit' && !$model->isReadOnly() && $model->status=='N') {
-//	$link3 = Yii::app()->createAbsoluteUrl("visit/visited");
-//	$js = <<<EOF
-//$('#btnVisit').on('click', function() {
-//	if (navigator.geolocation) {
-//		navigator.geolocation.getCurrentPosition(function(position) {
-//			var lat = position.coords.latitude;
-//			var long = position.coords.longitude;
-//			$('#VisitForm_latitude').val(lat);
-//			$('#VisitForm_latitude').val(long);
-//		});
-//	}
-//	jQuery.yii.submitForm(this,'$link3',{});
-//});
-//EOF;
-//	Yii::app()->clientScript->registerScript('visited',$js,CClientScript::POS_READY);
-//}
+if ($model->scenario=='edit' && !$model->isReadOnly() && $model->status=='N') {
+	$link3 = Yii::app()->createAbsoluteUrl("visit/visited");
+	$js = <<<EOF
+$('#btnVisit').on('click', function() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			var lat = position.coords.latitude;
+			var long = position.coords.longitude;
+			$('#VisitForm_latitude').val(lat);
+			$('#VisitForm_latitude').val(long);
+		});
+	}
+	jQuery.yii.submitForm(this,'$link3',{});
+});
+EOF;
+	Yii::app()->clientScript->registerScript('visited',$js,CClientScript::POS_READY);
+}
 
 if (!$model->isReadOnly() && $model->status=='N') {
 	$js = Script::genDatePicker(array(

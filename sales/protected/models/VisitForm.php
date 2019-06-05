@@ -346,7 +346,7 @@ class VisitForm extends CFormModel
 				}
 			}
 		}
-		
+
 		return true;
 	}
 	
