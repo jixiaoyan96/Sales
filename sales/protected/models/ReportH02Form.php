@@ -35,6 +35,7 @@ class ReportH02Form extends CReportForm
         $this->end_dt = date("Y/m/d");
 		$this->five = "";
         $this->staffs = '';
+        $this->sort = '';
         $this->gangwei = '';
 		$this->staffs_desc = Yii::t('misc','All');
 	}

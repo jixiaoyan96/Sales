@@ -113,14 +113,16 @@ class ReportController extends Controller
     }
 
     public function actionPerformancelist() {
-        $this->function_id = self::$actions['visit'];
+        $this->function_id = self::$actions['performancelist'];
         Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
-        if (isset($_POST['ReportVisitForm'])) {
-            $model->attributes = $_POST['ReportVisitForm'];
 
+        if (isset($_POST['ReportVisitForm'])) {
+            $post= $_POST['ReportVisitForm'];
         }
-        $city=$model->city();
+        $city=$model->Summary($post);
+//        print_r('<pre/>');
+//        print_r($post);
         $this->render('performancelist',array('model'=>$model,'city'=>$city,));
     }
 

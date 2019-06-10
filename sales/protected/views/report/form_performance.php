@@ -3,7 +3,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
 ?>
 <?php $form=$this->beginWidget('TbActiveForm', array(
     'id'=>'report-form',
-    'action'=>Yii::app()->createUrl('report/fenxi'),
+    'action'=>Yii::app()->createUrl('report/performancelist'),
     'enableClientValidation'=>true,
     'clientOptions'=>array('validateOnSubmit'=>true,),
     'layout'=>TbHtml::FORM_LAYOUT_HORIZONTAL,
@@ -93,7 +93,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
             <div class="form-group">
                 <?php echo $form->labelEx($model,'sort',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
-                    <?php echo $form->dropDownList($model, 'bumen',
+                    <?php echo $form->dropDownList($model, 'sort',
                         array(
                             'singular'=>'单数',
                             'money'=>'金额',
@@ -103,7 +103,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
                             'svc_F4'=>'纸品',
                             'svc_D6'=>'飘盈香',
                             'svc_B6'=>'租赁机器',
-                            'svc_G3'=>"一次性售卖",
+                            'svc_G3'=>"一次性售卖"
                         )
                     ); ?>
                 </div>
