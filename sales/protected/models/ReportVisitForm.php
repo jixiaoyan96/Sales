@@ -2451,18 +2451,77 @@ class ReportVisitForm extends CReportForm
             }
             }
 
-            $people['svc_A7']=$svc_A7s."(".$svc_A7.")";
-            $people['svc_B6']=$svc_B6s."(".$svc_B6.")";;
-            $people['svc_C7']=$svc_C7s."(".$svc_C7.")";;
-            $people['svc_D6']=$svc_D6s."(".$svc_D6.")";;
-            $people['svc_E7']=$svc_E7s."(".$svc_E7.")";;
-            $people['svc_F4']=$svc_F4s."(".$svc_F4.")";;
-            $people['svc_G3']=$svc_G3s."(".$svc_G3.")";;
+            $people['svc_A7']=$svc_A7s;
+            $people['svc_B6']=$svc_B6s;
+            $people['svc_C7']=$svc_C7s;
+            $people['svc_D6']=$svc_D6s;
+            $people['svc_E7']=$svc_E7s;
+            $people['svc_F4']=$svc_F4s;
+            $people['svc_G3']=$svc_G3s;
+            $people['svc_A7s']=$svc_A7;
+            $people['svc_B6s']=$svc_B6;
+            $people['svc_C7s']=$svc_C7;
+            $people['svc_D6s']=$svc_D6;
+            $people['svc_E7s']=$svc_E7;
+            $people['svc_F4s']=$svc_F4;
+            $people['svc_G3s']=$svc_G3;
             $models[$code]=$people;
 
         }
+        $arraycol = array_column($models,$model['sort']);
+        array_multisort($arraycol,SORT_DESC,$models);
+        //        print_r('<pre/>');
+//        print_r($model);
+        return $models;
+    }
 
-        print_r('<pre/>');
-        print_r($models);
+    public function performanceDatas($model){
+        Yii::$enableIncludePath = false;
+        $phpExcelPath = Yii::getPathOfAlias('ext.phpexcel');
+        spl_autoload_unregister(array('YiiBase','autoload'));
+        include($phpExcelPath . DIRECTORY_SEPARATOR . 'PHPExcel.php');
+        $objPHPExcel = new PHPExcel;
+        $objReader  = PHPExcel_IOFactory::createReader('Excel2007');
+        $path = Yii::app()->basePath.'/commands/template/performance.xlsx';
+        $objPHPExcel = $objReader->load($path);
+        for($i=0;$i<count($model['all']);$i++){
+            $objPHPExcel->getActiveSheet()->setCellValue('A'.($i+3), $model['all'][$i]['names']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('B'.($i+3), $model['all'][$i]['cityname']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('C'.($i+3), $model['all'][$i]['singular']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('D'.($i+3), $model['all'][$i]['money']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('E'.($i+3), $model['all'][$i]['svc_A7']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('F'.($i+3), $model['all'][$i]['svc_A7s']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('G'.($i+3), $model['all'][$i]['svc_B6']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('H'.($i+3), $model['all'][$i]['svc_B6s']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('I'.($i+3), $model['all'][$i]['svc_C7']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('J'.($i+3), $model['all'][$i]['svc_C7s']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('K'.($i+3), $model['all'][$i]['svc_D6']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('L'.($i+3), $model['all'][$i]['svc_D6s']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('M'.($i+3), $model['all'][$i]['svc_E7']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('N'.($i+3), $model['all'][$i]['svc_E7s']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('O'.($i+3), $model['all'][$i]['svc_F4']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('P'.($i+3), $model['all'][$i]['svc_F4s']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('Q'.($i+3), $model['all'][$i]['svc_G3']) ;
+            $objPHPExcel->getActiveSheet()->setCellValue('R'.($i+3), $model['all'][$i]['svc_G3s']) ;
+        }
+//        print_r('<pre/>');
+//        print_r($model['all']);
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+        ob_start();
+        $objWriter->save('php://output');
+        $output = ob_get_clean();
+        spl_autoload_register(array('YiiBase','autoload'));
+        $time=time();
+        $str="templates/performance_".$time.".xlsx";
+        header("Pragma: public");
+        header("Expires: 0");
+        header("Cache-Control:must-revalidate, post-check=0, pre-check=0");
+        header("Content-Type:application/force-download");
+        header("Content-Type:application/vnd.ms-execl");
+        header("Content-Type:application/octet-stream");
+        header("Content-Type:application/download");;
+        header('Content-Disposition:attachment;filename="'.$str.'"');
+        header("Content-Transfer-Encoding:binary");
+        echo $output;
     }
 }

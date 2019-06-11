@@ -24,7 +24,7 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
 
             <div class="btn-group pull-right" role="group">
                 <?php echo TbHtml::button('<span class="fa fa-download"></span> '.Yii::t('misc','Xiazai'), array(
-                    'submit'=>Yii::app()->createUrl('report/xiazai')));
+                    'submit'=>Yii::app()->createUrl('report/performancedown')));
                 ?>
             </div>
         </div>
@@ -37,28 +37,26 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
 //            echo $form->hiddenField($model, 'id');
 //            echo $form->hiddenField($model, 'city');
 //            ?>
-<!--            <input type="text" name="RptFive[city]" value="--><?php //echo $fenxi['city']?><!--" style="display:none"/>-->
-<!--            <input type="text" name="RptFive[start_dt]" value="--><?php //echo $fenxi['start_dt']?><!--" style="display:none"/>-->
-<!--            <input type="text" name="RptFive[end_dt]" value="--><?php //echo $fenxi['end_dt']?><!--" style="display:none"/>-->
-<!--            <input type="text" name="RptFive[bumen]" value="--><?php //echo $fenxi['bumen']?><!--" style="display:none"/>-->
+            <input type="text" name="RptFive[city]" value="<?php echo $post['city']?>" style="display:none"/>
+            <input type="text" name="RptFive[start_dt]" value="<?php echo $post['start_dt']?>" style="display:none"/>
+            <input type="text" name="RptFive[end_dt]" value="<?php echo $post['end_dt']?>" style="display:none"/>
+            <input type="text" name="RptFive[sort]" value="<?php echo $post['sort']?>" style="display:none"/>
 
-            <table class="table table-bordered small">
+            <table class="table table-bordered small" style="text-align: center;">
               <tbody>
                 <tr>
-                    <td style="width: 9%;"><b>人名</b></td><td style="width: 9%;"><b>城市</b></td style="width: 9%;"><td><b>单数</b></td><td style="width: 9%;"><b>金额</b></td><td style="background-color: #9acfea;width: 9%;"><b>清洁</b></td><td style="background-color: #9acfea;width: 9%;"><b>纸品</b></td><td style="background-color: #9acfea;width: 9%;"><b>灭虫</b></td><td style="background-color: #9acfea;width: 9%;"><b>甲醛</b></td><td style="background-color: #9acfea;width: 9%;"><b>飘盈香</b></td><td style="background-color: #9acfea;width: 9%;"><b>租赁机器</b></td><td style="background-color: #9acfea;width: 9%;"><b>一次性售卖</b></td>
+                    <td style="width: 9%;"><h4><b>人名</b></h4></td><td style="width: 9%;"><h4><b>城市</b></h4></td style="width: 9%;"><td><h4><b>单数</b></h4></td><td style="width: 9%;"><h4><b>金额</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>清洁</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>租赁机器</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>灭虫</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>飘盈香</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>	甲醛</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>纸品</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>一次性售卖</b></h4></td>
                 </tr>
+                <?php foreach ($array as $a){ ?>
                 <tr>
-                    <td>xxxx</td> <td>xxxx</td> <td>xxxx</td> <td>xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td>
+                    <td><?php echo $a['names'];?></td> <td><?php echo $a['cityname'];?></td> <td><?php echo $a['singular'];?></td> <td><?php echo $a['money'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_A7'];?></td><td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_A7s'];?></td> <td style="background-color: #9acfea;"><?php echo $a['svc_B6'];?></td> <td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_B6s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_C7'];?></td> <td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_C7s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_D6'];?></td> <td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_D6s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_E7'];?></td><td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_E7s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_F4'];?></td> <td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_F4s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_G3'];?></td><td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_G3s'];?></td>
                 </tr>
-                <tr>
-                    <td>xxxx</td> <td>xxxx</td> <td>xxxx</td> <td>xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td> <td style="background-color: #9acfea">xxxx</td>
-                </tr>
+                <?php }?>
               </tbody>
             </table>
 
         </div>
     </div>
-
 
 
 </section>

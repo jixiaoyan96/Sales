@@ -12,6 +12,7 @@ class ReportController extends Controller
         'down'=>'HA02',
         'performance'=>'HA04',
         'performancelist'=>'HA04',
+        'performancedown'=>'HA04',
         'overtimelist'=>'YB02',
         'pennantexlist'=>'YB05',
         'pennantculist'=>'YB06',
@@ -108,8 +109,8 @@ class ReportController extends Controller
 
         }
         $city=$model->city();
-        $saleman=$model->saleman();
-        $this->render('form_performance',array('model'=>$model,'city'=>$city,'saleman'=>$saleman));
+
+        $this->render('form_performance',array('model'=>$model,'city'=>$city));
     }
 
     public function actionPerformancelist() {
@@ -120,11 +121,26 @@ class ReportController extends Controller
         if (isset($_POST['ReportVisitForm'])) {
             $post= $_POST['ReportVisitForm'];
         }
-        $city=$model->Summary($post);
+        $array=$model->Summary($post);
 //        print_r('<pre/>');
 //        print_r($post);
-        $this->render('performancelist',array('model'=>$model,'city'=>$city,));
+        $this->render('performancelist',array('model'=>$model,'array'=>$array,'post'=>$post));
     }
+
+
+    public function actionPerformancedown(){
+        $this->function_id = self::$actions['down'];
+        Yii::app()->session['active_func'] = $this->function_id;
+        $model = new ReportVisitForm;
+        if(isset($_POST['RptFive'])){
+            $arr = $_POST['RptFive'];
+            $model['all']=$model->Summary($arr);
+            $model->performanceDatas($model);
+        }
+//        print_r('<pre/>');
+//        print_r($model);
+    }
+
 
     public function actionCity()
     {
