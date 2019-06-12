@@ -17,9 +17,10 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
 <section class="content">
     <div class="box"><div class="box-body">
             <div class="btn-group" role="group">
-                <?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
-                    'submit'=>Yii::app()->createUrl('report/performance')));
-                ?>
+<!--                --><?php //echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
+//                    'submit'=>Yii::app()->createUrl('report/performance')));
+//                ?>
+                <input class="btn btn-default" type="button" name="Submit" onclick="javascript:history.back(-1);" value="返回">
             </div>
 
             <div class="btn-group pull-right" role="group">
@@ -45,7 +46,7 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
             <table class="table table-bordered small" style="text-align: center;">
               <tbody>
                 <tr>
-                    <td style="width: 9%;"><h4><b>人名</b></h4></td><td style="width: 9%;"><h4><b>城市</b></h4></td style="width: 9%;"><td><h4><b>单数</b></h4></td><td style="width: 9%;"><h4><b>金额</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>清洁</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>租赁机器</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>灭虫</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>飘盈香</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>	甲醛</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>纸品</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>一次性售卖</b></h4></td>
+                    <td style="width: 9%;"><h4><b>姓名</b></h4></td><td style="width: 9%;"><h4><b>城市</b></h4></td style="width: 9%;"><td><h4><b>签单数量</b></h4></td><td style="width: 9%;"><h4><b>签单总金额</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>清洁</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>租赁机器</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>灭虫</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>飘盈香</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>	甲醛</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>纸品</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>一次性售卖</b></h4></td>
                 </tr>
                 <?php foreach ($array as $a){ ?>
                 <tr>

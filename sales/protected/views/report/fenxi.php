@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 
 <section class="content-header">
     <h1>
-        <strong><?php echo Yii::t('sales','Sales Visit Form'); ?></strong>
+        <strong><?php echo Yii::t('sales','Sales Fenxi Form'); ?></strong>
     </h1>
 </section>
 

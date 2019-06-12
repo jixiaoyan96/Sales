@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
 
 <section class="content-header">
     <h1>
-        <strong><?php echo Yii::t('app','Visit Steps'); ?></strong>
+        <strong><?php echo Yii::t('app','Sales lead'); ?></strong>
     </h1>
     <!--
         <ol class="breadcrumb">
@@ -95,8 +95,8 @@ $this->pageTitle=Yii::app()->name . ' - Report';
                 <div class="col-sm-3">
                     <?php echo $form->dropDownList($model, 'sort',
                         array(
-                            'singular'=>'单数',
-                            'money'=>'金额',
+                            'singular'=>'签单数量',
+                            'money'=>'签单总金额',
                             'svc_A7'=>'清洁(按金额)',
                             'svc_C7'=>'灭虫(按金额)',
                             'svc_E7'=>'甲醛(按金额)',

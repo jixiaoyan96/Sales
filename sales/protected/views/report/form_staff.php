@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
 
 <section class="content-header">
     <h1>
-        <strong><?php echo Yii::t('app','Visit Steps'); ?></strong>
+        <strong><?php echo Yii::t('app','Sale Staff'); ?></strong>
     </h1>
     <!--
         <ol class="breadcrumb">

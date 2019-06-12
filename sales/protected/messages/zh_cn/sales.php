@@ -3,7 +3,9 @@ return array(
 	'Sales Visit'=>'销售拜访',
 	'Visit List'=>'拜访列表',
 	'Sales Visit Form'=>'销售拜访表单',
-    'Sales Performance Form'=>'销售业绩分类汇总表',
+    'Sales Performance Form'=>'销售签单业绩分类汇总表',
+	'Sales Fenxi Form'=>'销售拜访数据汇总表单',
+	'Sales Visit one Form'=>'销售拜访数据汇总（个人）表单',
 
 	'Visit Date'=>'拜访日期',
 	'Planned Visit Date'=>'计划拜访日期',
