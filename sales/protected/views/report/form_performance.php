@@ -110,7 +110,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
                             'svc_F4s'=>'纸品(按单数)',
                             'svc_D6s'=>'飘盈香(按单数)',
                             'svc_B6s'=>'租赁机器(按单数)',
-                            'svc_Gs3'=>"一次性售卖(按单数)"
+                            'svc_G3s'=>"一次性售卖(按单数)"
                         )
                     ); ?>
                 </div>

@@ -2470,8 +2470,8 @@ class ReportVisitForm extends CReportForm
         }
         $arraycol = array_column($models,$model['sort']);
         array_multisort($arraycol,SORT_DESC,$models);
-        //        print_r('<pre/>');
-//        print_r($model);
+             //   print_r('<pre/>');
+       // print_r($models);
         return $models;
     }
 
