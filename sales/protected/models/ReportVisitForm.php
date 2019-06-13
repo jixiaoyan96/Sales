@@ -2377,17 +2377,17 @@ class ReportVisitForm extends CReportForm
         $city_allow = City::model()->getDescendantList($city);
         $city_allow .= (empty($city_allow)) ? "'$city'" : ",'$city'";
         //姓名城市总金额
-        $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money ,c.name as cityname ,d.disp_name as names
-				from sal_visit a force index (idx_visit_02), sal_visit_info b , security$suffix.sec_city c	,security$suffix.sec_user d	  
+        $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money ,c.name as cityname ,d.employee_name as names
+				from sal_visit a force index (idx_visit_02), sal_visit_info b , security$suffix.sec_city c	,hr$suffix.hr_binding d	  
 				where a.id=b.visit_id and b.field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') 
-				and a.visit_dt >= '$start_dt'and a.visit_dt <= '$end_dt' and  a.visit_obj like '%10%' and a.city in($city_allow) and a.city=c.code and a.username=d.username
+				and a.visit_dt >= '$start_dt'and a.visit_dt <= '$end_dt' and  a.visit_obj like '%10%' and a.city in($city_allow) and a.city=c.code and a.username=d.user_id
 				group by a.city, a.username
 			";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         //单数和id
         $models=array();
         foreach ($records as $code=>$people){
-            $sql1="select id  from sal_visit where username='".$people['username']."' and city='".$people['city']."' and  visit_dt >= '$start_dt'and visit_dt <= '$end_dt'";
+            $sql1="select id  from sal_visit where username='".$people['username']."' and city='".$people['city']."' and  visit_dt >= '$start_dt'and visit_dt <= '$end_dt' and visit_obj like '%10%'";
             $arr = Yii::app()->db->createCommand($sql1)->queryAll();
             $singular=count($arr);
             $people['singular']=$singular;
