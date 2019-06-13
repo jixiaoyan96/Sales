@@ -106,10 +106,14 @@ class ReportController extends Controller
         $model = new ReportVisitForm;
         if (isset($_POST['ReportVisitForm'])) {
             $model->attributes = $_POST['ReportVisitForm'];
-
         }
         $city=$model->city();
-
+        if(!empty(Yii::app()->session['index'])){
+            $model['start_dt']=Yii::app()->session['index']['start_dt'];
+            $model['end_dt']=Yii::app()->session['index']['end_dt'];
+            $model['city']=Yii::app()->session['index']['city'];
+            $model['sort']=Yii::app()->session['index']['sort'];
+        }
         $this->render('form_performance',array('model'=>$model,'city'=>$city));
     }
 
@@ -117,13 +121,13 @@ class ReportController extends Controller
         $this->function_id = self::$actions['performancelist'];
         Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
-
         if (isset($_POST['ReportVisitForm'])) {
             $post= $_POST['ReportVisitForm'];
+            Yii::app()->session['index'] = $post;
         }
         $array=$model->Summary($post);
 //        print_r('<pre/>');
-//        print_r($post);
+//        print_r( Yii::app()->session['index']);
         $this->render('performancelist',array('model'=>$model,'array'=>$array,'post'=>$post));
     }
 
