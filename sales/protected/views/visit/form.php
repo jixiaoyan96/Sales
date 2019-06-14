@@ -122,7 +122,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'visit_type',array('class'=>"col-sm-2 control-label")); ?>
-				<div class="col-sm-3">
+				<div class="col-sm-3" <?php if($model->isReadOnly() || $model->status=='Y'){echo "style='pointer-events:none;'";}?> >
 					<?php
 						$typelist = $model->getVisitTypeList();
 						if ($model->isReadOnly()) {
