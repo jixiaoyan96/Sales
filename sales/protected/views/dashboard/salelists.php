@@ -38,7 +38,7 @@
 		success: function(data) {
 			if (data !== undefined && data.length != 0) {
 				var line = '<table class="table table-bordered small">';
-                line += '<tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>人均签单金额</b></td></tr>';
+                line += '<tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>人数</b></td><td><b>人均签单金额</b></td></tr>';
 				
 				for (var i=0; i < data.length; i++) {
 					line += '<tr>';
@@ -49,7 +49,7 @@
 						case 2: style = 'style="color:#0000FF"'; break;
 					}
 					rank = i+1;
-					line += '<td '+style+'>'+rank+'</td><td '+style+'>'+data[i].city+'</td><td '+style+'>'+data[i].quyu+'</td><td '+style+'>'+data[i].money+'</td>';
+					line += '<td '+style+'>'+rank+'</td><td '+style+'>'+data[i].city+'</td><td '+style+'>'+data[i].quyu+'</td><td '+style+'>'+data[i].people+'</td><td '+style+'>'+data[i].money+'</td>';
 					line += '</tr>';
 				}	
 				

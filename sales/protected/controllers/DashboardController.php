@@ -110,7 +110,7 @@ class DashboardController extends Controller
                 //人均签单数
                 $sale=$sums/($peoples==0?1:$peoples);
                 $sale=round($sale,2);
-                $models[$code] = array('city'=>$name, 'renjun'=>$sale, 'quyu'=>$temp);
+                $models[$code] = array('city'=>$name, 'renjun'=>$sale, 'quyu'=>$temp,'people'=>$peoples);
 
             }
         }
@@ -166,7 +166,7 @@ foreach ($models as $key=>$item) {
                 }
                 $money=$money/($peoples==0?1:$peoples);
                 $money=round($money,2);
-                $models[$code] = array('city'=>$name, 'money'=>$money, 'quyu'=>$temp);
+                $models[$code] = array('city'=>$name, 'money'=>$money, 'quyu'=>$temp,'people'=>$peoples);
             }
         }
         foreach ($models as $key=>$item) {

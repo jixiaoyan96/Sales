@@ -196,7 +196,6 @@ class VisitList extends CListPageModel
 					: '';
 		$columns = $this->searchColumns();
 		$static = $this->staticSearchColumns();
-					
 		$uid = Yii::app()->user->id;
 		$now = date("Y-m-d H:i:s");
 		$rptdesc = Yii::t('app','Sales Visit List');
