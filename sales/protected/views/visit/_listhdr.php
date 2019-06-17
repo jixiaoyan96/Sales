@@ -44,7 +44,7 @@
 			;
 		?>
 	</th>
-	<th>
+	<th style="pointer-events:none;">
 		<?php echo TbHtml::link($this->getLabelName('quote').$this->drawOrderArrow('quote'),'#',$this->createOrderLink('visit-list','quote'))
 			;
 		?>
