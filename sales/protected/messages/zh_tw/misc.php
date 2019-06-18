@@ -78,10 +78,11 @@ return array(
 '<< Advanced >>'=>'<< 進階搜尋 >>',
 'Advanced'=>'進階',
 'Clear'=>'清除',
-
+'Asked redo'=>'要求重做',
 'Misc'=>'其他',
 'Status'=>'狀態',
 'Mark Read'=>'標記已讀',
+'Go Top'=>'往頁頂',
 );
 
 ?>

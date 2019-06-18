@@ -79,9 +79,12 @@ return array(
 	'Advanced'=>'进阶',
 	'Clear'=>'清除',
 	
+	'Asked redo'=>'要求重做',	
+	
 	'Misc'=>'其他',
 	'Status'=>'状态',
 	'Mark Read'=>'标记已读',
+	'Go Top'=>'往页顶',
 );
 
 ?>
