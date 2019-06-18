@@ -2387,7 +2387,7 @@ class ReportVisitForm extends CReportForm
         //单数和id
         $models=array();
         foreach ($records as $code=>$people){
-            $sqls="select a.name as cityname ,b.employee_name as names from security$suffix.sec_city a	,hr$suffix.hr_binding b	 ,sal_visit c where a.code='".$people['city']."' and b.user_id='".$people['username']."'";
+            $sqls="select a.name as cityname ,d.name as names from security$suffix.sec_city a	,hr$suffix.hr_binding b	 ,sal_visit c ,hr$suffix.hr_employee d where a.code='".$people['city']."' and b.user_id='".$people['username']."' and d.id=b.employee_id";
             $cname = Yii::app()->db->createCommand($sqls)->queryRow();
             $sql1="select id  from sal_visit where username='".$people['username']."' and city='".$people['city']."' and  visit_dt >= '$start_dt'and visit_dt <= '$end_dt' and visit_obj like '%10%'";
             $arr = Yii::app()->db->createCommand($sql1)->queryAll();
