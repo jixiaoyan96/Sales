@@ -14,6 +14,7 @@ return array(
 	'Information' => '信息',
 	'OK' => '确定',
 	'Password changed' => '密码更改完成',
+	'Option changed' => '选项更改完成',
 	'New password and confirm password not match' => '新密码与确认密码不匹配',
 	'Save' => '保存',
 	'Save Record' => '保存记录',
@@ -61,7 +62,8 @@ return array(
 	'Request Checking Done'=>'要求覆核完成',
 	'Checking and Submission Done'=>'覆核并提交完成',
 	'Reimbursement Returned'=>'报销单申请退回',
-    'Please check the assigned person and information'=>'请勾选指定的人员和信息',
-    'Data transfer successful'=>'数据转移成功',
+	'Exceeds file upload limit.'=>'超出文件上传限制。',
+	'Mark read for all selected records?'=>'列表上的所有记录标记为已读？',
+	'Mark Read Done'=>'标记已读完成',
 );
 ?>

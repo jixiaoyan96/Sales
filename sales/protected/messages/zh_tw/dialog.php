@@ -61,7 +61,8 @@ return array(
 'Request Checking Done'=>'要求覆核完成',
 'Checking and Submission Done'=>'覆核並提交完成',
 'Reimbursement Returned'=>'報銷單申請退回',
-'Please check the assigned person and information'=>'請勾選指定的人員和信息',
-'Data transfer successful'=>'數據轉移成功',
+'Exceeds file upload limit.'=>'超出文件上傳限制。 ',
+'Mark read for all selected records?'=>'列表上的所有記錄標記為已讀？',
+'Mark Read Done'=>'標記已讀完成',
 );
 ?>
