@@ -7,7 +7,10 @@ return array(
 'Old Password' => '舊密碼',
 'Confirm Password' => '確認密碼',
 'Change Password' => '更改密碼',
-
+'Asked redo'=>'要求重做',
+'Xiazai'=>'下載',
+'Batch allocation'=>'批量分配',
+'Distribution'=>'分配',
 'Add'=>'新增',
 'Add New'=>'新增',
 'Add Record'=>'新增紀錄',
