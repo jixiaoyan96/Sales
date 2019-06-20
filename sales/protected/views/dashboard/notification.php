@@ -13,7 +13,7 @@
 	$records = $notification->getNewMessageByTime($time_range);
 	echo TbHtml::hiddenField('notify_last_id',(empty($records) ? 0 : $records[0]['id']));
 ?>
-            <div class="box-body">
+            <div class="box-body" style="height: 270px;">
 				<div id='notify' class="direct-chat-messages">
 <?php
 	foreach ($records as $record) {
