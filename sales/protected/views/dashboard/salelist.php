@@ -38,7 +38,7 @@ $js = <<<EOF
 		success: function(data) {
 			if (data !== undefined && data.length != 0) {
 				var line = '<table class="table table-bordered small">';
-                line += '<tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>人数</b></td><td><b>人均签单量</b></td></tr>';
+                line += '<tr><td><b>排名</b></td><td><b>城市</b></td><td><b>区域</b></td><td><b>参与人数</b></td><td><b>人均签单量</b></td></tr>';
 				
 				for (var i=0; i < data.length; i++) {
 					line += '<tr>';
