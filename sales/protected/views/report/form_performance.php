@@ -88,7 +88,15 @@ $this->pageTitle=Yii::app()->name . ' - Report';
                 </div>
             </div>
 
-
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'销售人员',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3" style="width: 800px;">
+                    <label  style="width: 75px" ><input name="Fruit" type="checkbox" value="" id="all"/>全选 </label><br id="label"/>
+                    <?php foreach ($saleman as $v) {?>
+                        <label style="width: 75px" class="a"><input name="ReportVisitForm[sale][]" type="checkbox" value="<?php echo $v['user_id'];?>" /><?php echo $v['name'];?> </label>
+                    <?php }?>
+                </div>
+            </div>
 
             <div class="form-group">
                 <?php echo $form->labelEx($model,'sort',array('class'=>"col-sm-2 control-label")); ?>
@@ -122,13 +130,13 @@ $this->pageTitle=Yii::app()->name . ' - Report';
 <?php $this->renderPartial('//site/lookup'); ?>
 
 <?php
-$url=Yii::app()->createUrl('report/city');
+$url=Yii::app()->createUrl('report/citys');
 $js = <<<EOF
 $(document).ready(function(){
-   
+
       $(document).on("change","#ReportVisitForm_city",function () {   
-            txt=$(this).find("option:selected").val();
-      $.post('$url',{txt:txt},function(result){     
+            txt=$(this).find("option:selected").val();  
+      $.post('$url',{txt:txt},function(result){    
             $("label").remove(".a");
             var result=$.parseJSON( result)
             var dataLen = result.length ; //返回数组的长度

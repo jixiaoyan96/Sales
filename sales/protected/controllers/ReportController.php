@@ -13,6 +13,7 @@ class ReportController extends Controller
         'performance'=>'HA04',
         'performancelist'=>'HA04',
         'performancedown'=>'HA04',
+        'citys'=>'HA04',
         'overtimelist'=>'YB02',
         'pennantexlist'=>'YB05',
         'pennantculist'=>'YB06',
@@ -108,13 +109,18 @@ class ReportController extends Controller
             $model->attributes = $_POST['ReportVisitForm'];
         }
         $city=$model->city();
+        $saleman=$model->salepeople();
         if(!empty(Yii::app()->session['index'])){
             $model['start_dt']=Yii::app()->session['index']['start_dt'];
             $model['end_dt']=Yii::app()->session['index']['end_dt'];
             $model['city']=Yii::app()->session['index']['city'];
             $model['sort']=Yii::app()->session['index']['sort'];
+            $saleman=$model->salepeoples($model['city']);
         }
-        $this->render('form_performance',array('model'=>$model,'city'=>$city));
+
+//        print_r('<pre/>');
+//        print_r( $city);
+        $this->render('form_performance',array('model'=>$model,'city'=>$city,'saleman'=>$saleman));
     }
 
     public function actionPerformancelist() {
@@ -127,7 +133,7 @@ class ReportController extends Controller
         }
         $array=$model->Summary($post);
 //        print_r('<pre/>');
-//        print_r( Yii::app()->session['index']);
+//        print_r( $post);
         $this->render('performancelist',array('model'=>$model,'array'=>$array,'post'=>$post));
     }
 
@@ -161,6 +167,21 @@ class ReportController extends Controller
 //        $records=array_merge($records,$name);
         echo (json_encode($records,JSON_UNESCAPED_UNICODE));
 
+    }
+
+    public function actionCitys()
+    {
+        if (isset($_POST['txt'])) {
+            $city = $_POST['txt'];
+            $suffix = Yii::app()->params['envSuffix'];
+            $city_allow = City::model()->getDescendantList($city);
+            $city_allow .= (empty($city_allow)) ? "'$city'" : ",'$city'";
+            $sql="select a.name,b.user_id from hr$suffix.hr_employee a ,hr$suffix.hr_binding b 
+            WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND a.staff_status = 0 AND a.city in ($city_allow) AND a.id=b.employee_id";
+            $records = Yii::app()->db->createCommand($sql)->queryAll();
+        }
+//        $records=array_merge($records,$name);
+        echo (json_encode($records,JSON_UNESCAPED_UNICODE));
     }
 
     public function actionFenxi(){

@@ -76,6 +76,28 @@ class ReportVisitForm extends CReportForm
         return $records;
     }
 
+    public function salepeople(){
+        $suffix = Yii::app()->params['envSuffix'];
+        $city=Yii::app()->user->city();
+        $city_allow = City::model()->getDescendantList($city);
+        $city_allow .= (empty($city_allow)) ? "'$city'" : ",'$city'";
+        $sql="select a.name,b.user_id from hr$suffix.hr_employee a ,hr$suffix.hr_binding b 
+            WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND a.staff_status = 0 AND a.city in ($city_allow) AND a.id=b.employee_id";
+        $records = Yii::app()->db->createCommand($sql)->queryAll();
+        return $records;
+    }
+    public function salepeoples($city){
+        $suffix = Yii::app()->params['envSuffix'];
+        $city_allow = City::model()->getDescendantList($city);
+        $city_allow .= (empty($city_allow)) ? "'$city'" : ",'$city'";
+        $sql="select a.name,b.user_id from hr$suffix.hr_employee a ,hr$suffix.hr_binding b 
+            WHERE  position in (SELECT id FROM hr$suffix.hr_dept where dept_class='sales') AND a.staff_status = 0 AND a.city in ($city_allow) AND a.id=b.employee_id";
+        $records = Yii::app()->db->createCommand($sql)->queryAll();
+       // print_r('<pre>');
+        //print_r($records);
+        return $records;
+    }
+
     public function fenxi($model){
 	    $start_dt=str_replace("/","-",$model['start_dt']);
         $end_dt=str_replace("/","-",$model['end_dt']);
@@ -2373,23 +2395,27 @@ class ReportVisitForm extends CReportForm
         $start_dt=str_replace("/","-",$model['start_dt']);
         $end_dt=str_replace("/","-",$model['end_dt']);
         $suffix = Yii::app()->params['envSuffix'];
-        $city=$model['city'];
-        $city_allow = City::model()->getDescendantList($city);
-        $city_allow .= (empty($city_allow)) ? "'$city'" : ",'$city'";
-        //姓名城市总金额
-        $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money 
+        $models=array();
+        foreach ($model['sale'] as $code=>$peoples){
+            $people=array();
+            $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money 
 				from sal_visit a force index (idx_visit_02), sal_visit_info b   
 				where a.id=b.visit_id and b.field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') 
-				and a.visit_dt >= '$start_dt'and a.visit_dt <= '$end_dt' and  a.visit_obj like '%10%' and a.city in($city_allow) 
+				and a.visit_dt >= '$start_dt'and a.visit_dt <= '$end_dt' and  a.visit_obj like '%10%' and a.username ='$peoples' 
 				group by a.city, a.username 
 			";
-        $records = Yii::app()->db->createCommand($sql)->queryAll();
-        //单数和id
-        $models=array();
-        foreach ($records as $code=>$people){
-            $sqls="select a.name as cityname ,d.name as names from security$suffix.sec_city a	,hr$suffix.hr_binding b	 ,sal_visit c ,hr$suffix.hr_employee d where a.code='".$people['city']."' and b.user_id='".$people['username']."' and d.id=b.employee_id";
+            $records = Yii::app()->db->createCommand($sql)->queryAll();
+            if(empty($records[0]['money'])){
+                $people['money']=0;
+            }else{
+                $people['money']=$records[0]['money'];
+            }
+//            print_r('<pre/>');
+//            print_r($records);
+            $sqls="select a.name as cityname ,d.name as names from security$suffix.sec_city a	,hr$suffix.hr_binding b	 ,security$suffix.sec_user  c ,hr$suffix.hr_employee d 
+                where c.username='$peoples' and b.user_id='".$peoples."' and b.employee_id=d.id and c.city=a.code";
             $cname = Yii::app()->db->createCommand($sqls)->queryRow();
-            $sql1="select id  from sal_visit where username='".$people['username']."' and city='".$people['city']."' and  visit_dt >= '$start_dt'and visit_dt <= '$end_dt' and visit_obj like '%10%'";
+            $sql1="select id  from sal_visit where username='".$peoples."'  and  visit_dt >= '$start_dt'and visit_dt <= '$end_dt' and visit_obj like '%10%'";
             $arr = Yii::app()->db->createCommand($sql1)->queryAll();
             $singular=count($arr);
             $people['singular']=$singular;
@@ -2474,8 +2500,6 @@ class ReportVisitForm extends CReportForm
         }
         $arraycol = array_column($models,$model['sort']);
         array_multisort($arraycol,SORT_DESC,$models);
-//                print_r('<pre/>');
-//        print_r($models);
         return $models;
     }
 
