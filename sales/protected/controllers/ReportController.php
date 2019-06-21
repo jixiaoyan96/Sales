@@ -115,11 +115,12 @@ class ReportController extends Controller
             $model['end_dt']=Yii::app()->session['index']['end_dt'];
             $model['city']=Yii::app()->session['index']['city'];
             $model['sort']=Yii::app()->session['index']['sort'];
+            $model['sale']=Yii::app()->session['index']['sale'];
             $saleman=$model->salepeoples($model['city']);
         }
 
 //        print_r('<pre/>');
-//        print_r( $saleman);
+//        print_r(   $model['sale']);
         $this->render('form_performance',array('model'=>$model,'city'=>$city,'saleman'=>$saleman));
     }
 
@@ -153,7 +154,7 @@ class ReportController extends Controller
                 $model['all']=$model->Summary($arr);
                 $model->performanceDatas($model);
             }
-    
+
         }
 //        print_r('<pre/>');
 //        print_r($model);
