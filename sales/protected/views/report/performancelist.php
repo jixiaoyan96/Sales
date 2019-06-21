@@ -42,6 +42,9 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
             <input type="text" name="RptFive[start_dt]" value="<?php echo $post['start_dt']?>" style="display:none"/>
             <input type="text" name="RptFive[end_dt]" value="<?php echo $post['end_dt']?>" style="display:none"/>
             <input type="text" name="RptFive[sort]" value="<?php echo $post['sort']?>" style="display:none"/>
+            <?php if(!empty($post['sale'])){ foreach ($post['sale'] as $v){?>
+            <input name="RptFive[sale][]" type="checkbox" value="<?php echo $v ;?>" checked="checked" style="display:none"/>
+            <?php }}?>
 
             <table class="table table-bordered small" style="text-align: center;">
               <tbody>

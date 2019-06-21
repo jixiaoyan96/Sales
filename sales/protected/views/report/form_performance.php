@@ -88,12 +88,13 @@ $this->pageTitle=Yii::app()->name . ' - Report';
                 </div>
             </div>
 
+            <button name="btnSignQc2" id="btnSignQc2" class="btn btn-default" type="button" style="margin-left: 280px;">点击隐藏销售人员</button>
             <div class="form-group">
                 <?php echo $form->labelEx($model,'销售人员',array('class'=>"col-sm-2 control-label")); ?>
-                <div class="col-sm-3" style="width: 800px;">
+                <div class="col-sm-3" style="width: 800px;" id="show" style="display: block">
                     <label  style="width: 75px" ><input name="Fruit" type="checkbox" value="" id="all"/>全选 </label><br id="label"/>
                     <?php foreach ($saleman as $v) {?>
-                        <label style="width: 75px" class="a"><input name="ReportVisitForm[sale][]" type="checkbox" value="<?php echo $v['user_id'];?>" /><?php echo $v['name'];?> </label>
+                        <label style="width: 75px" class="a" style="display: none"><input name="ReportVisitForm[sale][]" type="checkbox" value="<?php echo $v['username'];?>" /><?php echo $v['name'];?> </label>
                     <?php }?>
                 </div>
             </div>
@@ -143,18 +144,25 @@ $(document).ready(function(){
             var i = 0 ; //声明数据从0开始循环   
             for (i;i<dataLen;i++){
             //循环一次 i加1                    
-            var uId = result[i].name ;           
+            var uId = result[i].username ;           
             var uName = result[i].name;         
-            var txt1="<label style='width: 75px' class='a'><input name='ReportVisitForm[sale][]' type='checkbox' value='"+uName+"' /> "+uName+"</label>";         
+            var txt1="<label style='width: 75px' class='a'><input name='ReportVisitForm[sale][]' type='checkbox' value='"+uId+"' /> "+uName+"</label>";         
             $("#label").after(txt1);       
         }         
       });
  
     });
+ $('#btnSignQc2').on('click',function(){
+    if($("#show").css("display")=='none'){//如果show是隐藏的
+        $("#show").css("display","block");//show的display属性设置为block（显示）
+    }else{//如果show是显示的
+        $("#show").css("display","none");//show的display属性设置为none（隐藏）
+    }
+});
   
         $("#all").on('click',function() {  
               $("input[name='ReportVisitForm[sale][]']").prop("checked", this.checked);  
-        });  
+        });     
             
         $("input[name='ReportVisitForm[sale][]']").on('click',function() {  
               var subs = $("input[name='ReportVisitForm[sale][]']");  
