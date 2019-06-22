@@ -94,7 +94,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
                 <div class="col-sm-3" style="width: 800px;" id="show" style="display: block">
                     <label  style="width: 75px" ><input name="Fruit" type="checkbox" value="" id="all" />全选 </label><br id="label"/>
                     <?php foreach ($saleman as $v) {?>
-                        <label style="width: 75px" class="a" style="display: none"><input name="ReportVisitForm[sale][]" type="checkbox" value="<?php echo $v['username'];?>" <?php if(in_array($v['username'], $model['sale'])){echo "checked='checked'";}?>/><?php echo $v['name'];?> </label>
+                        <label style="width: 75px" class="a" style="display: none"><input name="ReportVisitForm[sale][]" type="checkbox" value="<?php echo $v['username'];?>" <?php if(!empty($model['sale'])&&in_array($v['username'], $model['sale'])){echo "checked='checked'";}?>/><?php echo $v['name'];?> </label>
                     <?php }?>
                 </div>
             </div>
