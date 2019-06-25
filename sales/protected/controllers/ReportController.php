@@ -187,7 +187,7 @@ class ReportController extends Controller
             $city_allow .= (empty($city_allow)) ? "'$city'" : ",'$city'";
 
             $sql = "select a.name,d.username from hr$suffix.hr_employee a, hr$suffix.hr_binding b, security$suffix.sec_user_access c,security$suffix.sec_user d 
-        where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and c.a_read_write like '%HK01%' and c.username=d.username and d.status='A' and a.city in ($city_allow)";
+        where a.id=b.employee_id and b.user_id=c.username and c.system_id='sal' and c.a_read_write like '%HK01%' and c.username=d.username and d.status='A' and d.city in ($city_allow)";
 
             $records = Yii::app()->db->createCommand($sql)->queryAll();
         }
