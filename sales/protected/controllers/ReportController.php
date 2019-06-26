@@ -115,7 +115,10 @@ class ReportController extends Controller
             $model['end_dt']=Yii::app()->session['index']['end_dt'];
             $model['city']=Yii::app()->session['index']['city'];
             $model['sort']=Yii::app()->session['index']['sort'];
-            $model['sale']=Yii::app()->session['index']['sale'];
+            if(!empty(Yii::app()->session['index']['sale'])){
+                $model['sale']=Yii::app()->session['index']['sale'];
+            }
+
             $saleman=$model->salepeoples($model['city']);
         }
 
@@ -131,12 +134,14 @@ class ReportController extends Controller
         if (isset($_POST['ReportVisitForm'])) {
             $post= $_POST['ReportVisitForm'];
             Yii::app()->session['index'] = $post;
-        }
-        if(!empty($post['sale'])){
-            $array=$model->Summary($post);
+            if(!empty($post['sale'])){
+                $array=$model->Summary($post);
+            }
         }else{
+            $post=array();
             $array=array();
         }
+
 //
 //        print_r('<pre/>');
 //        print_r( $post);
@@ -154,7 +159,6 @@ class ReportController extends Controller
                 $model['all']=$model->Summary($arr);
                 $model->performanceDatas($model);
             }
-
         }
 //        print_r('<pre/>');
 //        print_r($model);

@@ -22,12 +22,13 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
                 ?>
 <!--                <input class="btn btn-default" type="button" name="Submit" onclick="javascript:history.back(-1);" value="返回">-->
             </div>
-
+            <?php if(!empty($post['sale'])){?>
             <div class="btn-group pull-right" role="group">
                 <?php echo TbHtml::button('<span class="fa fa-download"></span> '.Yii::t('misc','Xiazai'), array(
                     'submit'=>Yii::app()->createUrl('report/performancedown')));
                 ?>
             </div>
+            <?php }?>
         </div>
     </div>
 
@@ -38,13 +39,14 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
 //            echo $form->hiddenField($model, 'id');
 //            echo $form->hiddenField($model, 'city');
 //            ?>
+            <?php if(!empty($post)){?>
             <input type="text" name="RptFive[city]" value="<?php echo $post['city']?>" style="display:none"/>
             <input type="text" name="RptFive[start_dt]" value="<?php echo $post['start_dt']?>" style="display:none"/>
             <input type="text" name="RptFive[end_dt]" value="<?php echo $post['end_dt']?>" style="display:none"/>
             <input type="text" name="RptFive[sort]" value="<?php echo $post['sort']?>" style="display:none"/>
             <?php if(!empty($post['sale'])){ foreach ($post['sale'] as $v){?>
             <input name="RptFive[sale][]" type="checkbox" value="<?php echo $v ;?>" checked="checked" style="display:none"/>
-            <?php }}?>
+            <?php }}}?>
 
             <table class="table table-bordered small" style="text-align: center;">
               <tbody>

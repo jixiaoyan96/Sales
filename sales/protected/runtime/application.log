@@ -10244,3 +10244,1320 @@ Stack trace:
 REQUEST_URI=/sa-new/ajax/notify
 HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
 ---
+2019/06/25 09:39:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/25 09:39:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:03:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:03:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/
+---
+2019/06/26 09:03:26 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:03:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:03:28 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:03:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:03:29 [error] [php] Undefined index: sale (D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php:118)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): ReportController->runAction()
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterAccessControl()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceNoConcurrentLogin()
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceSessionExpiration()
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceRegisteredStation()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): ReportController->runActionWithFilters()
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): ReportController->run()
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-new\index.php(13): CWebApplication->run()
+REQUEST_URI=/sa-new/report/performance
+in D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php (118)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (75)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (100)
+2019/06/26 09:05:44 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:05:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:05:45 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:05:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:05:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:05:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:05:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:05:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:05:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:05:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:05:49 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:05:49 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:06:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:06:03 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:07:32 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:07:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:07:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:07:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:07:46 [error] [php] Undefined index: sale (D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php:119)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): ReportController->runAction()
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterAccessControl()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceNoConcurrentLogin()
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceSessionExpiration()
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceRegisteredStation()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): ReportController->runActionWithFilters()
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): ReportController->run()
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-new\index.php(13): CWebApplication->run()
+REQUEST_URI=/sa-new/report/performance
+in D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php (119)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (75)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (100)
+2019/06/26 09:07:50 [error] [php] Undefined index: sale (D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php:119)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): ReportController->runAction()
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterAccessControl()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceNoConcurrentLogin()
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceSessionExpiration()
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceRegisteredStation()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): ReportController->runActionWithFilters()
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): ReportController->run()
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-new\index.php(13): CWebApplication->run()
+REQUEST_URI=/sa-new/report/performance
+in D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php (119)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (75)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (100)
+2019/06/26 09:07:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:07:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:07:58 [error] [php] Undefined index: sale (D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php:119)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): ReportController->runAction()
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterAccessControl()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceNoConcurrentLogin()
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceSessionExpiration()
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceRegisteredStation()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): ReportController->runActionWithFilters()
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): ReportController->run()
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-new\index.php(13): CWebApplication->run()
+REQUEST_URI=/sa-new/report/performance
+in D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php (119)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (75)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (100)
+2019/06/26 09:09:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:09:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:09:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:09:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:16:22 [error] [php] Undefined index: city (D:\xampp\htdocs\sa-new\protected\views\report\performancelist.php:41)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\CController.php(870): ReportController->renderFile()
+#1 D:\xampp\htdocs\yii\framework\web\CController.php(783): ReportController->renderPartial()
+#2 D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php(149): ReportController->render()
+#3 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): ReportController->actionPerformancelist()
+#4 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): ReportController->runAction()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#8 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterAccessControl()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#10 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#11 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceNoConcurrentLogin()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#13 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#14 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceSessionExpiration()
+#15 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#16 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#17 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceRegisteredStation()
+#18 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#19 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#20 D:\xampp\htdocs\yii\framework\web\CController.php(266): ReportController->runActionWithFilters()
+#21 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): ReportController->run()
+#22 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#23 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#24 D:\xampp\htdocs\sa-new\index.php(13): CWebApplication->run()
+REQUEST_URI=/sa-new/report/performancelist
+in D:\xampp\htdocs\sa-new\protected\views\report\performancelist.php (41)
+in D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php (149)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (75)
+2019/06/26 09:18:46 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:18:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:19:05 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:19:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:20:27 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:20:27 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:21:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:21:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:21:22 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:21:22 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:22:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:22:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:22:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:22:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:22:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:22:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:22:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:22:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:26:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:26:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:26:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:26:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:26:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:26:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:26:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:26:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:32:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:32:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:32:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:32:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
+2019/06/26 09:32:32 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:32:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:33:32 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:33:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performance
+---
+2019/06/26 09:33:34 [error] [php] Undefined variable: array (D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php:148)
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): ReportController->runAction()
+#1 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterAccessControl()
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 D:\xampp\htdocs\sa-new\protected\components\Controller.php(75): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceNoConcurrentLogin()
+#7 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 D:\xampp\htdocs\sa-new\protected\components\Controller.php(100): CFilterChain->run()
+#9 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceSessionExpiration()
+#10 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#11 D:\xampp\htdocs\sa-new\protected\components\Controller.php(55): CFilterChain->run()
+#12 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): ReportController->filterEnforceRegisteredStation()
+#13 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#14 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#15 D:\xampp\htdocs\yii\framework\web\CController.php(266): ReportController->runActionWithFilters()
+#16 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): ReportController->run()
+#17 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController()
+#18 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 D:\xampp\htdocs\sa-new\index.php(13): CWebApplication->run()
+REQUEST_URI=/sa-new/report/performancelist
+in D:\xampp\htdocs\sa-new\protected\controllers\ReportController.php (148)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (75)
+in D:\xampp\htdocs\sa-new\protected\components\Controller.php (100)
+2019/06/26 09:33:59 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			.
+in D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php (125)
+in D:\xampp\htdocs\sa-new\index.php (13)
+2019/06/26 09:33:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'swoper_w.swo_notification' doesn't exist. The SQL statement executed was: select a.note_type, count(a.id) as num
+				from swoper_w.swo_notification a, swoper_w.swo_notification_user b 
+				where b.username='test' and a.system_id='sal'
+				and a.id=b.note_id and b.status<>'C'
+				group by a.note_type
+			' in D:\xampp\htdocs\yii\framework\db\CDbCommand.php:528
+Stack trace:
+#0 D:\xampp\htdocs\yii\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 D:\xampp\htdocs\sa-new\protected\controllers\AjaxController.php(125): CDbCommand->queryAll()
+#2 D:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): AjaxController->actionNotify()
+#3 D:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\yii\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 D:\xampp\htdocs\yii\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\yii\framework\web\CController.php(292): CFilterChain->run()
+#10 D:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(283): CController->run('notify')
+#12 D:\xampp\htdocs\yii\framework\web\CWebApplication.php(142): CWebApplication->runController('ajax/notify')
+#13 D:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\sa-new\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/sa-new/ajax/notify
+HTTP_REFERER=http://192.168.3.64/sa-new/report/performancelist
+---
