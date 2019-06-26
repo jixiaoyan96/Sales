@@ -136,6 +136,8 @@ class ReportController extends Controller
             Yii::app()->session['index'] = $post;
             if(!empty($post['sale'])){
                 $array=$model->Summary($post);
+            }else{
+                $array=array();
             }
         }else{
             $post=array();

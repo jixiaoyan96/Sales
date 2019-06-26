@@ -53,11 +53,11 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
                 <tr>
                     <td style="width: 9%;"><h4><b>姓名</b></h4></td><td style="width: 9%;"><h4><b>城市</b></h4></td style="width: 9%;"><td><h4><b>签单数量</b></h4></td><td style="width: 9%;"><h4><b>签单总金额</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>清洁</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>租赁机器</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>灭虫</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>飘盈香</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>	甲醛</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>纸品</b></h4></td><td style="background-color: #9acfea;width: 9%;text-align: center;" colspan="2"><h4><b>一次性售卖</b></h4></td>
                 </tr>
-                <?php foreach ($array as $a){ ?>
+                <?php if(!empty($array)){ foreach ($array as $a){ ?>
                 <tr>
                     <td><?php echo $a['names'];?></td> <td><?php echo $a['cityname'];?></td> <td><?php echo $a['singular'];?></td> <td><?php echo $a['money'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_A7'];?></td><td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_A7s'];?></td> <td style="background-color: #9acfea;"><?php echo $a['svc_B6'];?></td> <td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_B6s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_C7'];?></td> <td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_C7s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_D6'];?></td> <td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_D6s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_E7'];?></td><td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_E7s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_F4'];?></td> <td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_F4s'];?></td> <td style="background-color: #9acfea"><?php echo $a['svc_G3'];?></td><td style="background-color: #9acfea;width: 4%;"><?php echo $a['svc_G3s'];?></td>
                 </tr>
-                <?php }?>
+                <?php }}?>
               </tbody>
             </table>
 
