@@ -131,11 +131,28 @@ class ReportController extends Controller
         $this->function_id = self::$actions['performancelist'];
         Yii::app()->session['active_func'] = $this->function_id;
         $model = new ReportVisitForm;
+        $sum=array();
         if (isset($_POST['ReportVisitForm'])) {
             $post= $_POST['ReportVisitForm'];
             Yii::app()->session['index'] = $post;
             if(!empty($post['sale'])){
                 $array=$model->Summary($post);
+                $sum['money']= array_sum(array_map(create_function('$val', 'return $val["money"];'), $array));
+                $sum['singular']= array_sum(array_map(create_function('$val', 'return $val["singular"];'), $array));
+                $sum['svc_A7']= array_sum(array_map(create_function('$val', 'return $val["svc_A7"];'), $array));
+                $sum['svc_B6']= array_sum(array_map(create_function('$val', 'return $val["svc_B6"];'), $array));
+                $sum['svc_C7']= array_sum(array_map(create_function('$val', 'return $val["svc_C7"];'), $array));
+                $sum['svc_D6']= array_sum(array_map(create_function('$val', 'return $val["svc_D6"];'), $array));
+                $sum['svc_E7']= array_sum(array_map(create_function('$val', 'return $val["svc_E7"];'), $array));
+                $sum['svc_F4']= array_sum(array_map(create_function('$val', 'return $val["svc_F4"];'), $array));
+                $sum['svc_G3']= array_sum(array_map(create_function('$val', 'return $val["svc_G3"];'), $array));
+                $sum['svc_A7s']= array_sum(array_map(create_function('$val', 'return $val["svc_A7s"];'), $array));
+                $sum['svc_B6s']= array_sum(array_map(create_function('$val', 'return $val["svc_B6s"];'), $array));
+                $sum['svc_C7s']= array_sum(array_map(create_function('$val', 'return $val["svc_C7s"];'), $array));
+                $sum['svc_D6s']= array_sum(array_map(create_function('$val', 'return $val["svc_D6s"];'), $array));
+                $sum['svc_E7s']= array_sum(array_map(create_function('$val', 'return $val["svc_E7s"];'), $array));
+                $sum['svc_F4s']= array_sum(array_map(create_function('$val', 'return $val["svc_F4s"];'), $array));
+                $sum['svc_G3s']= array_sum(array_map(create_function('$val', 'return $val["svc_G3s"];'), $array));
             }else{
                 $array=array();
             }
@@ -146,8 +163,8 @@ class ReportController extends Controller
 
 //
 //        print_r('<pre/>');
-//        print_r( $post);
-        $this->render('performancelist',array('model'=>$model,'array'=>$array,'post'=>$post));
+//        print_r( $sum);
+        $this->render('performancelist',array('model'=>$model,'array'=>$array,'post'=>$post,'sum'=>$sum));
     }
 
 
