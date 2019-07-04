@@ -31,7 +31,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
     </div>
 
     <div class="box box-info">
-        <div class="box-body">
+        <div class="box-body" style=" overflow-x:auto; overflow-y:auto;">
             <?php
             echo $form->hiddenField($model, 'scenario');
             echo $form->hiddenField($model, 'id');
