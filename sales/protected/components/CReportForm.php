@@ -14,6 +14,7 @@ class CReportForm extends CFormModel
 	public $fields;
 	public $email;
 	public $emailcc;
+    public $date;
 	public $touser;
 	public $ccuser;
 	public $year;

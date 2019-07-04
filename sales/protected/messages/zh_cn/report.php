@@ -46,6 +46,7 @@ return array(
 	'Payment Receive Daily Report'=>'每日收款择要',
 	'No Record'=>'没有相关记录',
 	'Account Name'=>'账户名称',
+    'Sales ranking list'=>'销售排行榜历史记录查看',
 
     'Start_Dt'=>'入职日期',
     'Name'=>'员工名字',

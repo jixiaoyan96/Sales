@@ -39,6 +39,7 @@ return array(
 	'Sale Staff'=>'销售拜访数据汇总（个人）',
 	'Sales transfer'=>'离职销售人员数据转移	',
     'Sales lead'=>'销售签单业绩分类汇总	',
+    'Sales ranking list'=>'销售排行榜历史记录查看',
 	'Report'=>'报表',
 //	'Operation Daily Report'=>'每日营业择要报告',
 	'Report Manager'=>'报表管理员',

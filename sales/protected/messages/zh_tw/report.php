@@ -45,6 +45,7 @@ return array(
 'Payment Receive Daily Report'=>'每日收款擇要',
 'No Record'=>'沒有相關記錄',
 'Account Name'=>'賬戶名稱',
+'Sales ranking list'=>'銷售排行榜歷史記錄查看',
 
 'Start_Dt'=>'入職日期',
 'Name'=>'員工名字',

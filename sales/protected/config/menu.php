@@ -43,6 +43,10 @@ return array(
                 'access'=>'HA04',
                 'url'=>'/report/performance',
             ),
+            'Sales ranking list'=>array(
+                'access'=>'HA05',
+                'url'=>'/rankinglist/index',
+            ),
         ),
     ),
 
