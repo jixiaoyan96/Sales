@@ -67,12 +67,12 @@ class RankinglistController extends Controller
     {
         $model=new ReportRankinglistForm($_POST['ReportRankinglistForm']);
         $start=$model['scenario']['start_dt']."-".$model['scenario']['start_dt1']."-01";
-        $end=$model['scenario']['end_dt']."-".$model['scenario']['end_dt1']."-31";
+        $end=$model['scenario']['start_dt']."-".$model['scenario']['start_dt1']."-31";
         $peopel=$model->salepeople($start,$end);
         $list=$model->salelist($start,$end);
         $lists=$model->salelists($start,$end);
 //        print_r('<pre>');
-//        print_r($lists);
+//        print_r($start);
         $this->render('form',array('model'=>$model,'peopel'=>$peopel,'list'=>$list,'lists'=>$lists));
 
     }

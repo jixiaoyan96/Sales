@@ -42,7 +42,7 @@ $this->pageTitle=Yii::app()->name . ' - Month Report';
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">销售个人签单总金额排行榜</h3>
+                    <h3 class="box-title">销售个人签单总金额排行榜(<?php echo $model['scenario']['start_dt']."/".$model['scenario']['start_dt1'];?>)</h3>
                 </div>
                 <div class="box-body">
                     <div id="salepeople" class="direct-chat-messages" style="height: 250px;">
@@ -66,7 +66,7 @@ $this->pageTitle=Yii::app()->name . ' - Month Report';
         <div class="col-md-4">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">地区销售人均签单量排行榜</h3>
+                    <h3 class="box-title">地区销售人均签单量排行榜(<?php echo $model['scenario']['start_dt']."/".$model['scenario']['start_dt1'];?>)</h3>
                 </div>
                 <div class="box-body">
                     <div id="salelist" class="direct-chat-messages" style="height: 250px;">
@@ -85,7 +85,7 @@ $this->pageTitle=Yii::app()->name . ' - Month Report';
         <div class="col-md-4">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">地区销售人均签单金额排行榜</h3>
+                    <h3 class="box-title">地区销售人均签单金额排行榜(<?php echo $model['scenario']['start_dt']."/".$model['scenario']['start_dt1'];?>)</h3>
                 </div>
                 <div class="box-body">
                     <div id="salelists" class="direct-chat-messages" style="height: 250px;">

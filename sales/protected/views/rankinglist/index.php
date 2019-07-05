@@ -36,7 +36,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
 
 		<?php if ($model->showField('end_dt')): ?>
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'起止日期',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,'查看日期',array('class'=>"col-sm-2 control-label")); ?>
 				<div >
                     <select id="city" class="select" name="ReportRankinglistForm[start_dt]" style="width:80px;height: 35px">
                         <?php foreach ($model->date as $v){?>
@@ -56,27 +56,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
                                     <option value="10">10月</option>
                                     <option value="11">11月</option>
                                     <option value="12">12月</option>
-                                </select> --至--
-                    <select id="city" class="select" name="ReportRankinglistForm[end_dt]"  style="width:80px;height: 35px" id="year" onchange="test()">
-                        <?php foreach ($model->date as $v){?>
-                        <option value="<?php echo $v;?>" "><?php echo $v;?>年</option>
-                        <?php }?>
-                    </select>
-                    <select id="city" class="select" name="ReportRankinglistForm[end_dt1]" style="width:50px;height: 35px">
-                        <option value="1">1月</option>
-                        <option value="2">2月</option>
-                        <option value="3">3月</option>
-                        <option value="4">4月</option>
-                        <option value="5">5月</option>
-                        <option value="6">6月</option>
-                        <option value="7">7月</option>
-                        <option value="8">8月</option>
-                        <option value="9">9月</option>
-                        <option value="10">10月</option>
-                        <option value="11">11月</option>
-                        <option value="12">12月</option>
-                    </select>
-
+                                </select>
 				</div>
 			</div>
 		<?php else: ?>
