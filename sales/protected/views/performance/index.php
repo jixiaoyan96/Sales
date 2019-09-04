@@ -29,8 +29,8 @@ $this->pageTitle=Yii::app()->name . ' - Performance';
 	<?php $this->widget('ext.layout.ListPageWidget', array(
 			'title'=>Yii::t('code','Performance List'),
 			'model'=>$model,
-				'viewhdr'=>'//Performance/_listhdr',
-				'viewdtl'=>'//Performance/_listdtl',
+				'viewhdr'=>'//performance/_listhdr',
+				'viewdtl'=>'//performance/_listdtl',
 				'search'=>array(
 							'year',
 							'month',
