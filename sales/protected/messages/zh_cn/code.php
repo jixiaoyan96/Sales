@@ -6,6 +6,9 @@ return array(
 	'Code'=>'编号',
 	'Name'=>'名称',
 	'Type'=>'类别',
+    'Year'=>'年',
+    'Month'=>'月',
+    'Sum'=>'本月业绩目标单数',
 	
 	'Visit Type'=>'拜访类型',
 	'Visit Type List'=>'拜访类型列表',
@@ -22,5 +25,9 @@ return array(
 	'Customer District'=>'客户区域',
 	'Customer District List'=>'客户区域列表',
 	'Customer District Form'=>'客户区域表单',
+
+    'Performance'=>'跨区业绩目标',
+    'Performance List'=>'跨区业绩目标列表',
+    'Performance Form'=>'跨区业绩目标表单',
 );
 ?>

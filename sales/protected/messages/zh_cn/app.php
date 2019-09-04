@@ -44,6 +44,7 @@ return array(
 //	'Operation Daily Report'=>'每日营业择要报告',
 	'Report Manager'=>'报表管理员',
 	'Sales Visit List'=>'销售拜访报表',
+    'Performance Objectives'=>'跨区业绩目标',
 
 	'System Setting'=>'系统设置',
 	'Security'=>'保安',

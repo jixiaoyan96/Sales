@@ -20,6 +20,10 @@ return array(
 			'access'=>'HK03',
 				'url'=>'/fivestep/index',
 			),
+            'Performance Objectives'=>array(
+                'access'=>'HK04',
+                'url'=>'/performance/index',
+            ),
 		),
 	),
 
