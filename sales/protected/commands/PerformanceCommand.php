@@ -17,8 +17,8 @@ class PerformanceCommand extends CConsoleCommand
                 foreach ($rows as $row) {
                     $city = $row['code'];
                     $uid = 'admin';
-                    $sql = "insert into sales$suffix.sal_performance(city, year, month, sum, lcu, luu) 
-				values('$city', '$year', '$month', '0', '$uid', '$uid')
+                    $sql = "insert into sales$suffix.sal_performance(city, year, month, sum,sums, lcu, luu) 
+				values('$city', '$year', '$month', '0', '0','$uid', '$uid')
 			";
                     $command=Yii::app()->db->createCommand($sql)->execute();
                 }

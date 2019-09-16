@@ -9,6 +9,7 @@ class PerformanceForm extends CFormModel
 	public $type_group;
 	public $city;
     public $sum;
+    public $sums;
     public $year;
     public $month;
 
@@ -25,6 +26,7 @@ class PerformanceForm extends CFormModel
 			'city'=>Yii::t('sales','City'),
 			'type_group'=>Yii::t('code','Type'),
             'sum'=>Yii::t('code','Sum'),
+            'sums'=>Yii::t('code','Sums'),
             'year'=>Yii::t('code','Year'),
             'month'=>Yii::t('code','Month'),
 		);
@@ -37,7 +39,7 @@ class PerformanceForm extends CFormModel
 	{
 		return array(
 			array('','required'),
-			array('id,rpt_type','safe'), 
+			array('id,rpt_type,sums','safe'),
 		);
 	}
 
@@ -51,6 +53,7 @@ class PerformanceForm extends CFormModel
 			$this->year = $row['year'];
 			$this->month = $row['month'];
             $this->sum = $row['sum'];
+            $this->sums = $row['sums'];
 		}
 		return true;
 	}
@@ -83,7 +86,8 @@ class PerformanceForm extends CFormModel
 				break;
 			case 'edit':
 				$sql = "update sal_performance set 
-					sum = :sum, 				  
+					sum = :sum, 	
+					sums = :sums, 			  
 					luu = :luu
 					where id = :id";
 				break;
@@ -96,6 +100,8 @@ class PerformanceForm extends CFormModel
 			$command->bindParam(':id',$this->id,PDO::PARAM_INT);
 		if (strpos($sql,':sum')!==false)
 			$command->bindParam(':sum',$sum,PDO::PARAM_STR);
+        if (strpos($sql,':sums')!==false)
+            $command->bindParam(':sums',$this->sums,PDO::PARAM_STR);
 		if (strpos($sql,':type_group')!==false)
 			$command->bindParam(':type_group',$this->type_group,PDO::PARAM_INT);
 		if (strpos($sql,':rpt_type')!==false)

@@ -9,6 +9,7 @@ return array(
     'Year'=>'年',
     'Month'=>'月',
     'Sum'=>'本月业绩目标单数',
+    'Sums'=>'本月业绩目标金额',
 	
 	'Visit Type'=>'拜访类型',
 	'Visit Type List'=>'拜访类型列表',
