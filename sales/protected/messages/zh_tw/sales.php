@@ -3,6 +3,9 @@ return array(
 'Sales Visit'=>'銷售拜訪',
 'Visit List'=>'拜訪列表',
 'Sales Visit Form'=>'銷售拜訪表單',
+'Sales Performance Form'=>'銷售簽單業績分類匯總表',
+'Sales Fenxi Form'=>'銷售拜訪數據匯總表單',
+'Sales Visit one Form'=>'銷售拜訪數據匯總（個人）表單',
 
 'Visit Date'=>'拜訪日期',
 'Planned Visit Date'=>'計劃拜訪日期',
@@ -21,6 +24,7 @@ return array(
 'Qty'=>'數量',
 'Text'=>'描述',
 'Invalid value'=>'數值不正確',
+    'Quote'=>'報價',
 'Visited'=>'已拜訪',
 'Download Media'=>'下載媒體',
 'Role'=>'職務',
