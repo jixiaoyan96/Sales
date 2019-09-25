@@ -79,6 +79,22 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                     ); ?>
                 </div>
             </div>
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'spanning',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-2">
+                    <?php echo $form->numberField($model, 'spanning',
+                        array('size'=>4,'min'=>0,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+            </div>
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'otherspanning',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-2">
+                    <?php echo $form->numberField($model, 'otherspanning',
+                        array('size'=>4,'min'=>0,'readonly'=>($model->scenario=='view'))
+                    ); ?>
+                </div>
+            </div>
 		</div>
 	</div>
 </section>

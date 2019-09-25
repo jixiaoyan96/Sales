@@ -11,6 +11,8 @@ return array(
     'Month'=>'月',
     'Sum'=>'本月業績目標單數',
     'Sums'=>'本月業績目標金額',
+    'Spanning'=>'跨區提成比例',
+    'Otherspanning'=>'被跨區提成比例',
 
 'Visit Type'=>'拜訪類型',
 'Visit Type List'=>'拜訪類型列表',

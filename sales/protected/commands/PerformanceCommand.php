@@ -17,9 +17,23 @@ class PerformanceCommand extends CConsoleCommand
                 foreach ($rows as $row) {
                     $city = $row['code'];
                     $uid = 'admin';
-                    $sql = "insert into sales$suffix.sal_performance(city, year, month, sum,sums, lcu, luu) 
-				values('$city', '$year', '$month', '0', '0','$uid', '$uid')
+                    $lastmonth=$month-1;
+                    $lastyear=$year;
+                    if($lastmonth==0){
+                        $lastmonth=12;
+                        $lastyear=$year-1;
+                    }
+                    $sqls="select * from sales$suffix.sal_performance where city='$city' and year='$lastyear' and month='$lastmonth' ";
+                    $row = Yii::app()->db->createCommand($sqls)->queryRow();
+                    if(empty($row)){
+                        $sql = "insert into sales$suffix.sal_performance(city, year, month, sum,sums,spanning,otherspanning,lcu, luu) 
+				values('$city', '$year', '$month', '0', '0','0','0','$uid', '$uid')
 			";
+                    }else{
+                        $sql = "insert into sales$suffix.sal_performance(city, year, month, sum,sums,spanning,otherspanning,lcu, luu) 
+				values('$city', '$year', '$month', '".$row['sum']."', '".$row['sums']."','".$row['spanning']."','".$row['otherspanning']."','$uid', '$uid')
+			";
+                    }
                     $command=Yii::app()->db->createCommand($sql)->execute();
                 }
             }

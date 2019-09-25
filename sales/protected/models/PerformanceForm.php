@@ -12,6 +12,8 @@ class PerformanceForm extends CFormModel
     public $sums;
     public $year;
     public $month;
+    public $spanning;
+    public $otherspanning;
 
 	/**
 	 * Declares customized attribute labels.
@@ -29,6 +31,8 @@ class PerformanceForm extends CFormModel
             'sums'=>Yii::t('code','Sums'),
             'year'=>Yii::t('code','Year'),
             'month'=>Yii::t('code','Month'),
+            'spanning'=>Yii::t('code','Spanning'),
+            'otherspanning'=>Yii::t('code','Otherspanning'),
 		);
 	}
 
@@ -39,7 +43,7 @@ class PerformanceForm extends CFormModel
 	{
 		return array(
 			array('','required'),
-			array('id,rpt_type,sums','safe'),
+			array('id,rpt_type,sums,spanning,otherspanning','safe'),
 		);
 	}
 
@@ -54,6 +58,8 @@ class PerformanceForm extends CFormModel
 			$this->month = $row['month'];
             $this->sum = $row['sum'];
             $this->sums = $row['sums'];
+            $this->spanning = $row['spanning'];
+            $this->otherspanning = $row['otherspanning'];
 		}
 		return true;
 	}
@@ -87,7 +93,9 @@ class PerformanceForm extends CFormModel
 			case 'edit':
 				$sql = "update sal_performance set 
 					sum = :sum, 	
-					sums = :sums, 			  
+					sums = :sums, 	
+					spanning = :spanning,
+					otherspanning = :otherspanning,		  
 					luu = :luu
 					where id = :id";
 				break;
@@ -102,6 +110,10 @@ class PerformanceForm extends CFormModel
 			$command->bindParam(':sum',$sum,PDO::PARAM_STR);
         if (strpos($sql,':sums')!==false)
             $command->bindParam(':sums',$this->sums,PDO::PARAM_STR);
+        if (strpos($sql,':spanning')!==false)
+            $command->bindParam(':spanning',$this->spanning,PDO::PARAM_STR);
+        if (strpos($sql,':otherspanning')!==false)
+            $command->bindParam(':otherspanning',$this->otherspanning,PDO::PARAM_STR);
 		if (strpos($sql,':type_group')!==false)
 			$command->bindParam(':type_group',$this->type_group,PDO::PARAM_INT);
 		if (strpos($sql,':rpt_type')!==false)

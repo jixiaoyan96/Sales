@@ -10,6 +10,8 @@ return array(
     'Month'=>'月',
     'Sum'=>'本月业绩目标单数',
     'Sums'=>'本月业绩目标金额',
+    'Spanning'=>'跨区提成比例',
+    'Otherspanning'=>'被跨区提成比例',
 	
 	'Visit Type'=>'拜访类型',
 	'Visit Type List'=>'拜访类型列表',
