@@ -18,12 +18,13 @@ class DistrictList extends CListPageModel
 	public function retrieveDataByPage($pageNum=1)
 	{
 		$suffix = Yii::app()->params['envSuffix'];
+        $city_allow = Yii::app()->user->city_allow();
 		$sql1 = "select a.*, b.name as city_name
 				from sal_cust_district a, security$suffix.sec_city b
-				where a.city=b.code ";
+				where a.city=b.code and a.city in ($city_allow) ";
 		$sql2 = "select count(a.id)
 				from sal_cust_district a, security$suffix.sec_city b
-				where a.city=b.code ";
+				where a.city=b.code and a.city in ($city_allow) ";
 		$clause = "";
 		if (!empty($this->searchField) && !empty($this->searchValue)) {
 			$svalue = str_replace("'","\'",$this->searchValue);

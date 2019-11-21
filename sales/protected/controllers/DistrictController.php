@@ -85,6 +85,7 @@ class DistrictController extends Controller
 	public function actionNew()
 	{
 		$model = new DistrictForm('new');
+		$model->city = Yii::app()->user->city();
 		$this->render('form',array('model'=>$model,));
 	}
 	

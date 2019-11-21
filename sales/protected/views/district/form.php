@@ -49,8 +49,10 @@ $this->pageTitle=Yii::app()->name . ' - Customer District Form';
 				<?php echo $form->labelEx($model,'city',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-2">
 					<?php 
+						$city_allow = Yii::app()->user->city_allow();
+						$singlecity = strpos($city_allow,',')===false;
 						$list = $model->getCityList();
-						echo $form->dropDownList($model, 'city', $list, array('readonly'=>($model->scenario=='view'))); 
+						echo $form->dropDownList($model, 'city', $list, array('readonly'=>($model->scenario=='view'||$singlecity))); 
 					?>
 				</div>
 			</div>
