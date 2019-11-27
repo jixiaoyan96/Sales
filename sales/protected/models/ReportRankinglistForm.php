@@ -9,6 +9,7 @@ class ReportRankinglistForm extends CReportForm
     protected function labelsEx() {
         return array(
             'staffs'=>Yii::t('report','Staffs'),
+            'date'=>Yii::t('report','Date'),
         );
     }
 
