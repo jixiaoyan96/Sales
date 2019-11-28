@@ -9,6 +9,9 @@ class ReportH02Form extends CReportForm
 	protected function labelsEx() {
 		return array(
 				'staffs'=>Yii::t('report','Staffs'),
+            'start_dt'=>Yii::t('report','Start_Dt'),
+            'staffs_desc'=>Yii::t('report','Staffs_Desc'),
+            'five'=>Yii::t('report','Fivejieduan'),
 			);
 	}
 	

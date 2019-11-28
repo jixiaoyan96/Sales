@@ -111,7 +111,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 						}
 					?>
 				</div>
-				<div class="col-sm-5">		
+				<div class="col-sm-5">
 					<div class="box box-solid bg-gray"><div id="stepdescdiv" class="box-body"></div></div>
 				</div>
 			</div>

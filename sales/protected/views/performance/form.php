@@ -86,7 +86,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                         array('size'=>4,'min'=>0,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
-                <div style="color: red">例50%：0.5</div>
+                <div style="color: red"><?php echo Yii::t('report','li'); ?></div>
             </div>
             <div class="form-group">
                 <?php echo $form->labelEx($model,'otherspanning',array('class'=>"col-sm-2 control-label")); ?>

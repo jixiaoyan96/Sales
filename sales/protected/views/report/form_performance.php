@@ -90,7 +90,7 @@ $this->pageTitle=Yii::app()->name . ' - Report';
 
             <button name="btnSignQc2" id="btnSignQc2" class="btn btn-default" type="button" style="margin-left: 280px;"><?php echo Yii::t('report','yingcang');?></button>
             <div class="form-group">
-                <?php echo $form->labelEx($model,'销售人员',array('class'=>"col-sm-2 control-label")); ?>
+                <?php echo $form->labelEx($model,'sale',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3" style="width: 800px;" id="show" style="display: block">
                     <label  style="width: 75px" ><input name="Fruit" type="checkbox" value="" id="all" /><?php echo Yii::t('report','All');?> </label><br id="label"/>
                     <?php foreach ($saleman as $v) {?>
