@@ -189,5 +189,23 @@ return array(
 '合同金额'=>'Contract Amount',
 '一次性售卖'=>'One-off Sale',
 '种类'=>'Type',
+'销售讲稿演练'=>'Sales Script Drill',
+'视频'=>'Video',
+'把讲稿流畅背诵于镜头前'=>'Able to present the script smoothly in front of camera.',
+'应对套词技巧'=>'Conversation Skill',
+'音频'=>'Audio',
+'增加销售手中应对武器'=>'Empower the edge during sales conversation with customer.',
+'陪伴陌生拜访演练和总结'=>'First Time Visit Accompanied by Trainer',
+'拜访/音频'=>'Visit/Audio',
+'增加销售临场应对能力，总结回馈给销售，达到学习循环的效果'
+=>'Improve the ability during live sales conversation. Feedback to salesperson after the visit in order to achieve the learning cycle effect.',
+'教练培训演练'=>'Train the Trainer Drill',
+'主要是区域副总监或以上跟进地方培训者（老总/销售总监/销售经理/副经理），传授和确保承传的销售技巧原汁原味'
+=>'Mainly for Regional A.Director or above to follow up on skill of trainers(manager/sales director/sales manager), in order to maintain the quality of sales technique used in training.',
+'教练培训总结'=>'Train the Trainer Summary',
+'面谈/音频'=>'Interview/Audio',
+'主要观察培训者跟销售的陌拜和总结是否到位和加而优化这培训过程，主导者一般是区域总监或以上岗位'
+=>'By observing the performance of trainer during first time visit with trainee, Regional Director or above can summarize whether the training process is up to standard and able to improve.',
+'媒体'=>'Media',
 );
 ?>
