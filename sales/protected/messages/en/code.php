@@ -8,10 +8,10 @@ return array(
 //	'Type'=>'类别',
 //    'Year'=>'年',
 //    'Month'=>'月',
-    'Sum'=>'Mth. Target (No.)',		//'本月业绩目标单数',
-    'Sums'=>'Mth. Target ($)',		//'本月业绩目标金额',
-    'Spanning'=>'Cross-Region % (Active)',	//'跨区提成比例',
-    'Otherspanning'=>'Cross-Region % (Passive)',	//'被跨区提成比例',
+    'Sum'=>'Curr. Month Target (No.)',		//'本月业绩目标单数',
+    'Sums'=>'Curr. Month Target ($)',		//'本月业绩目标金额',
+    'Spanning'=>'Cross-Region Comm. % (Active)',	//'跨区提成比例',
+    'Otherspanning'=>'Cross-Region Comm. % (Passive)',	//'被跨区提成比例',
 	
 //	'Visit Type'=>'拜访类型',
 //	'Visit Type List'=>'拜访类型列表',
@@ -29,8 +29,8 @@ return array(
 //	'Customer District List'=>'客户区域列表',
 //	'Customer District Form'=>'客户区域表单',
 
-    'Performance'=>'Cross-Region Target',	//'跨区业绩目标',
-    'Performance List'=>'Cross-Region Target List',		//'跨区业绩目标列表',
-    'Performance Form'=>'Cross-Region Target Form',		//'跨区业绩目标表单',
+    'Performance'=>'Cross-Region Sales Target',	//'跨区业绩目标',
+    'Performance List'=>'Cross-Region Sales Target List',		//'跨区业绩目标列表',
+    'Performance Form'=>'Cross-Region Sales Target Form',		//'跨区业绩目标表单',
 );
 ?>

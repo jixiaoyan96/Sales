@@ -152,7 +152,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 				</div>
 			</div>
 			<div class="form-group">
-				<?php echo $form->labelEx($model,'客户名称（包括分店名）',array('class'=>"col-sm-2 control-label")); ?>
+				<?php echo $form->labelEx($model,Yii::t('sales','客户名称（包括分店名）'),array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-5">
 					<?php 
 						if ($model->isReadOnly() || $model->status=='Y') {
