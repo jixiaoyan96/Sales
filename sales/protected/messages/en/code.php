@@ -8,8 +8,8 @@ return array(
 //	'Type'=>'类别',
 //    'Year'=>'年',
 //    'Month'=>'月',
-    'Sum'=>'Mth. Target (No.)',		//'本月业绩目标单数',
-    'Sums'=>'Mth. Target ($)',		//'本月业绩目标金额',
+    'Sum'=>'Mth. Target (Cases)',		//'本月业绩目标单数',
+    'Sums'=>'Mth. Target (Amount)',		//'本月业绩目标金额',
     'Spanning'=>'Cross-Region % (Active)',	//'跨区提成比例',
     'Otherspanning'=>'Cross-Region % (Passive)',	//'被跨区提成比例',
 	

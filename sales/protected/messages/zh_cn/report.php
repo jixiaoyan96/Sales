@@ -115,5 +115,9 @@ return array(
     'quiyu'=>'区域',
     'sum'=>'参与人数',
     'renjun'=>'人均签单量',
+	
+	'Renewal Reminder Report'=>'续约提醒报表',
+	'Days Before Expiry'=>'到期前',
+	'days'=>'日',
 );
 ?>
