@@ -24,7 +24,7 @@ return array(
 
 //	'Data Entry'=>'数据输入',
 //	'Misc'=>'其他',
-    'Class'=>'Enquiry',	//'数据汇总',
+//    'Class'=>'数据汇总',
 
 //	'Import'=>'数据导入',
 //	'Import Manager'=>'数据导入管理员',
@@ -36,15 +36,15 @@ return array(
 //	'Visit Objective'=>'拜访目的',
 //	'Customer Type'=>'客户类别',
 //	'Customer District'=>'客户区域',
-	'Sale Staff'=>'Sales Visit (Individual) Enquiry',	//'销售拜访数据汇总（个人）',
+	'Sale Staff'=>'Sales Visit Enquiry',	//'销售拜访数据汇总（个人）',
 	'Sales transfer'=>'Resigned Sales Data Transfer', //'离职销售人员数据转移	',
-    'Sales lead'=>'Sales Performance Enquiry', //'销售签单业绩分类汇总	',
-    'Sales ranking list'=>'Sales Ranking History Enquiry', //'销售排行榜历史记录查看',
+    'Sales lead'=>'Sales Result Enquiry', //'销售签单业绩分类汇总	',
+    'Sales ranking list'=>'Sales Ranking Enquiry', //'销售排行榜历史记录查看',
 //	'Report'=>'报表',
 //	'Operation Daily Report'=>'每日营业择要报告',
 //	'Report Manager'=>'报表管理员',
 //	'Sales Visit List'=>'销售拜访报表',
-    'Performance Objectives'=>'Cross-Region Sales Target',	//'跨区业绩目标',
+    'Performance Objectives'=>'跨区业绩目标',
 
 //	'System Setting'=>'系统设置',
 //	'Security'=>'保安',
