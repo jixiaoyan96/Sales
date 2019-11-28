@@ -1,6 +1,6 @@
 <div class="box box-primary" >
     <div class="box-header with-border">
-        <h3 class="box-title"><?php echo Yii::t('report','List of regional sales per capita order signing volume');?>(<?php echo date('m', strtotime(date('Y-m-01') )); ?>月)</h3>
+        <h3 class="box-title"><?php echo Yii::t('report','List of regional sales per capita order signing volume');?>(<?php echo Yii::t('report',date('F', strtotime(date('Y-m-01') ))); ?>)</h3>
 
 
         <!--            <div class="box-tools pull-right">-->
