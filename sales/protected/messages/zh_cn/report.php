@@ -115,6 +115,7 @@ return array(
     'quiyu'=>'区域',
     'sum'=>'参与人数',
     'renjun'=>'人均签单量',
+<<<<<<< HEAD
     'Refresh data immediately when signing'=>'每出现签单时即时刷新数据',
     'li'=>'例 50%：0.5',
     'Fivejieduan'=>'部曲阶段',
@@ -131,5 +132,11 @@ return array(
     'October'=>'10月',
     'November'=>'11月',
     'December'=>'12月',
+=======
+	
+	'Renewal Reminder Report'=>'续约提醒报表',
+	'Days Before Expiry'=>'到期前',
+	'days'=>'日',
+>>>>>>> 238549ffbd15a4c55ccd9be77bcfa3c59fe37536
 );
 ?>
