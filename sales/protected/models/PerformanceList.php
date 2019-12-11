@@ -60,7 +60,7 @@ class PerformanceList extends CListPageModel
 			}
 			if ($this->orderType=='D') $order .= "desc ";
 		} else {
-            $order = " order by year_no desc, month_no desc";
+            $order = " order by year desc, month desc";
 		}
 
 		$sql = $sql2.$clause;
