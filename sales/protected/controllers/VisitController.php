@@ -250,7 +250,12 @@ class VisitController extends Controller
 		}
 		echo $rtn;
 	}
-	
+
+    public function actionListfile($docId) {
+        $d = new DocMan('VISIT',$docId,'VisitList');
+        echo $d->genFileListView();
+    }
+
 	public static function allowReadWrite() {
 		return Yii::app()->user->validRWFunction('HK01');
 	}

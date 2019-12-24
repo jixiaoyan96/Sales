@@ -47,6 +47,53 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit';
 	echo $form->hiddenField($model,'filter');
 ?>
 <?php $this->endWidget(); ?>
+<?php $this->renderPartial('//site/fileviewx',array('model'=>$model,
+    'form'=>$form,
+    'doctype'=>'VISIT',
+    'header'=>Yii::t('dialog','File Attachment'),
+
+));
+?>
+<?php
+Script::genFileDownload($model,$form->id,'VISIT');
+
+$js = Script::genTableRowClick();
+Yii::app()->clientScript->registerScript('rowClick',$js,CClientScript::POS_READY);
+
+$link = Yii::app()->createAbsoluteUrl("visit");
+$js = <<<EOF
+function showattm(docid) {
+	var data = "docId="+docid;
+	var link = "$link"+"/listfile";
+	$.ajax({
+		type: 'GET',
+		url: link,
+		data: data,
+		success: function(data) {
+	
+			$("#fileviewpayreq").html(data);
+			$('#fileuploadvisit').modal('show');
+		},
+		error: function(data) { // if error occured
+			alert("Error occured.please try again");
+		},
+		dataType:'html'
+	});
+}
+
+EOF;
+Yii::app()->clientScript->registerScript('fileview',$js,CClientScript::POS_HEAD);
+
+$js = "
+$('body').on('click','#chkboxAll',function() {
+	var val = $(this).prop('checked');
+	$('input[type=checkbox][name*=\"select\"]').prop('checked',val);
+});
+";
+Yii::app()->clientScript->registerScript('selectAll',$js,CClientScript::POS_READY);
+?>
+
+
 
 <?php
 $link = Yii::app()->createAbsoluteUrl("visit/updatevip");

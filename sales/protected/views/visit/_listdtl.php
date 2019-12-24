@@ -30,4 +30,14 @@
 <?php if (VisitForm::isReadAll()) : ?>
 	<td <?php echo $cls_str;?>><?php echo $this->record['staff']; if($this->record['shift']=='Y'){echo "(旧)";}?></td>
 <?php endif ?>
+    <td>
+        <?php
+        echo TbHtml::button($this->record['visitdoc'],
+            array(
+                'class'=>'btn-xs',
+                'onclick'=>'javascript:showattm('.$this->record['id'].');',
+            )
+        );
+        ?>
+    </td>
 </tr>

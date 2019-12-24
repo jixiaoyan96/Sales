@@ -396,7 +396,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 													'doctype'=>'VISIT',
 													'header'=>Yii::t('dialog','File Attachment'),
 													'ronly'=>($model->scenario=='view' || $model->isReadOnly()),
-													)); 
+													));
 ?>
 
 <?php

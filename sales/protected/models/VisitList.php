@@ -16,6 +16,7 @@ class VisitList extends CListPageModel
 			'cust_type'=>Yii::t('sales','Customer Type'),
 			'staff'=>Yii::t('sales','Staff'),
 			'cust_vip'=>Yii::t('sales','VIP').'('.Yii::t('sales','Star').')',
+            'visitdoc'=>Yii::t('misc','Attachment'),
 		);
 	}
 
@@ -51,6 +52,7 @@ class VisitList extends CListPageModel
 		$sql1 = "select a.*, b.name as city_name, concat(f.code,' - ',f.name) as staff,  
 				(select d.name from sal_visit_type d where a.visit_type = d.id) as visit_type_name,
 				g.name as cust_type_name,
+				docman$suffix.countdoc('visit',a.id) as visitdoc,
 				h.name as district_name, VisitObjDesc(a.visit_obj) as visit_obj_name, i.cust_vip
 				from sal_visit a force index (idx_visit_02)
 				inner join hr$suffix.hr_binding c on a.username = c.user_id 
@@ -181,6 +183,7 @@ class VisitList extends CListPageModel
 					'cust_name'=>$record['cust_name'],
 					'cust_vip'=>$record['cust_vip'],
                     'shift'=>$record['shift'],
+                    'visitdoc'=>$record['visitdoc'],
 				);
 			}
 		}
