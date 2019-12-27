@@ -31,7 +31,7 @@ class VisitController extends Controller
 				'expression'=>array('VisitController','allowReadWrite'),
 			),
 			array('allow', 
-				'actions'=>array('index','view','filedownload','report'),
+				'actions'=>array('index','view','filedownload','report','listfile'),
 				'expression'=>array('VisitController','allowReadOnly'),
 			),
 			array('deny',  // deny all users

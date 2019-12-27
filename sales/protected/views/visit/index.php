@@ -71,7 +71,7 @@ function showattm(docid) {
 		data: data,
 		success: function(data) {
 	
-			$("#fileviewpayreq").html(data);
+			$("#fileviewvisit").html(data);
 			$('#fileuploadvisit').modal('show');
 		},
 		error: function(data) { // if error occured
