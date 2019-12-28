@@ -66,5 +66,6 @@ return array(
 	'Mark read for all selected records?'=>'列表上的所有记录标记为已读？',
 	'Mark Read Done'=>'标记已读完成',
     'Please check the assigned person and information'=>'请选择人员或者单数',
+    'No visit Slip'=>'请上传附件',
 );
 ?>
