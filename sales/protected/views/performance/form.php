@@ -15,6 +15,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 </section>
 
 <section class="content">
+
 	<div class="box"><div class="box-body">
 	<div class="btn-group" role="group">
 <!--		--><?php //
@@ -39,7 +40,15 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 <?php endif ?>
 	</div>
 	</div></div>
-
+    <div class="box">
+        <div class="box-body">
+            <div class="btn-group text-info" role="group">
+                <p><b>注：</b></p>
+                <p style="text-indent: 15px;">1.未分商业和餐饮组的地区只需填写跨区和被跨区提成比例，商业和餐饮则填写为0</p>
+                <p style="text-indent: 15px;">2.分组的地区只需填写商业和餐饮跨区提成比例，跨区和被跨区则填写为0</p>
+            </div>
+        </div>
+    </div>
 	<div class="box box-info">
 		<div class="box-body">
 			<?php echo $form->hiddenField($model, 'scenario'); ?>
@@ -95,6 +104,42 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                         array('size'=>4,'min'=>0,'readonly'=>($model->scenario=='view'))
                     ); ?>
                 </div>
+            </div>
+
+            <div class="form-group">
+                    <?php echo $form->labelEx($model,'business_spanning',array('class'=>"col-sm-2 control-label")); ?>
+                    <div class="col-sm-2">
+                        <?php echo $form->numberField($model, 'business_spanning',
+                            array('size'=>4,'min'=>0,'readonly'=>($model->scenario=='view'))
+                        ); ?>
+                    </div>
+                    <div style="color: red"><?php echo Yii::t('report','li'); ?></div>
+                </div>
+                <div class="form-group">
+                    <?php echo $form->labelEx($model,'business_otherspanning',array('class'=>"col-sm-2 control-label")); ?>
+                    <div class="col-sm-2">
+                        <?php echo $form->numberField($model, 'business_otherspanning',
+                            array('size'=>4,'min'=>0,'readonly'=>($model->scenario=='view'))
+                        ); ?>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                        <?php echo $form->labelEx($model,'restaurant_spanning',array('class'=>"col-sm-2 control-label")); ?>
+                        <div class="col-sm-2">
+                            <?php echo $form->numberField($model, 'restaurant_spanning',
+                                array('size'=>4,'min'=>0,'readonly'=>($model->scenario=='view'))
+                            ); ?>
+                        </div>
+                        <div style="color: red"><?php echo Yii::t('report','li'); ?></div>
+                    </div>
+                    <div class="form-group">
+                        <?php echo $form->labelEx($model,'restaurant_otherspanning',array('class'=>"col-sm-2 control-label")); ?>
+                        <div class="col-sm-2">
+                            <?php echo $form->numberField($model, 'restaurant_otherspanning',
+                                array('size'=>4,'min'=>0,'readonly'=>($model->scenario=='view'))
+                            ); ?>
+                        </div>
             </div>
 		</div>
 	</div>
