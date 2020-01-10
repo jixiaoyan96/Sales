@@ -20,6 +20,14 @@ class VisitList extends CListPageModel
 		);
 	}
 
+
+    public function rules()
+    {
+        return array(
+            array('attr, pageNum, noOfItem, totalRow, searchField, searchValue, orderField, orderType, filter','safe',),
+        );
+    }
+
 	public function searchColumns() {
 		$suffix = Yii::app()->params['envSuffix'];
 		$search = array(
@@ -191,6 +199,18 @@ class VisitList extends CListPageModel
 		$session[$this->criteriaName()] = $this->getCriteria();
 		return true;
 	}
+
+    public function getCriteria() {
+        return array(
+            'searchField'=>$this->searchField,
+            'searchValue'=>$this->searchValue,
+            'orderField'=>$this->orderField,
+            'orderType'=>$this->orderType,
+            'noOfItem'=>$this->noOfItem,
+            'pageNum'=>$this->pageNum,
+            'filter'=>$this->filter,
+        );
+    }
 	
 	public function submitReport() {
 		$session = Yii::app()->session;
