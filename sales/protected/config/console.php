@@ -43,7 +43,7 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		'systemEmail'=>'it@lbsgroup.com.hk',
-		'webroot'=>'http://192.168.0.128/sa-new',
+		'webroot'=>'http://192.168.3.22/sa-new',
 		'envSuffix'=>'dev',
 		'systemId'=>'sal',
 		'onesignal'=>'3183638f-c26a-409c-a80a-00736ae8a772',

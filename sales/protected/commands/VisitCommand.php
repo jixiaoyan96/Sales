@@ -60,7 +60,8 @@ class VisitCommand extends CConsoleCommand
                         $description = $arr['start_dt']."-".$arr['end_dt'];
                         $sql_city="select name from security$suffix.sec_city where code='$k'";
                         $city = Yii::app()->db->createCommand($sql_city)->queryScalar();
-                        $url = Yii::app()->createAbsoluteUrl('visit/index',array('start'=>$arr['start_dt'],'end'=>$arr['end_dt'],'city'=>$city));
+                        $url = Yii::app()->params['webroot'];
+                        $url.= "/visit/index?start=".$arr['start_dt']."&end=".$arr['end_dt']."&city=".$city;
                         $message = <<<EOF
 <table cellpadding="10" cellspacing="1" style="color:#666;font:13px Arial;line-height:1.4em;width:100%;">
 	<tbody>
