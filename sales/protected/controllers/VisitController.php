@@ -51,8 +51,10 @@ class VisitController extends Controller
 				$criteria = $session[$model->criteriaName()];
                 if(!empty($_GET['start'])){
                     $arr=$_GET;
-                    $criteria['filter']='[{"field_id":"visit_dt","operator":">=","srchval":"'.$arr['start'].'"},{"field_id":"visit_dt","operator":"<=","srchval":"'.$arr['start'].'"},{"field_id":"visit_obj","operator":"like","srchval":"签单"},{"field_id":"city_name","operator":"=","srchval":"'.$arr['city'].'"},{"field_id":"staff","operator":"like","srchval":"'.$arr['sales'].'"}]';//这个是直接给session
+                    $criteria['filter']='[{"field_id":"visit_dt","operator":">=","srchval":"'.$arr['start'].'"},{"field_id":"visit_dt","operator":"<=","srchval":"'.$arr['end'].'"},{"field_id":"visit_obj","operator":"like","srchval":"签单"},{"field_id":"city_name","operator":"=","srchval":"'.$arr['city'].'"},{"field_id":"staff","operator":"like","srchval":"'.$arr['sales'].'"}]';//这个是直接给session
                 }
+//                $criteria['filter']='[{"field_id":"staff","operator":"like","srchval":"5"}]';
+//                print_r($criteria);
 				$model->setCriteria($criteria);
 			}
 		}

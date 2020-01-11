@@ -57,7 +57,7 @@ class VisitCommand extends CConsoleCommand
                         $from_addr = "it@lbsgroup.com.hk";
                         $to_addr = json_encode($Addressee['email']);
                         $subject = $Addressee['name'] . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
-                        $description = $arr['start_dt'] . "-" . $arr['end_dt'];
+                        $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
                         $sql_city = "select name from security$suffix.sec_city where code='$k'";
                         $city = Yii::app()->db->createCommand($sql_city)->queryScalar();
                         $url = Yii::app()->params['webroot'];
