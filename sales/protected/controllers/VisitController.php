@@ -51,15 +51,20 @@ class VisitController extends Controller
 				$criteria = $session[$model->criteriaName()];
                 if(!empty($_GET['start'])){
                     $arr=$_GET;
-                    $criteria['filter']='[{"field_id":"visit_dt","operator":">=","srchval":"'.$arr['start'].'"},{"field_id":"visit_dt","operator":"<=","srchval":"'.$arr['end'].'"},{"field_id":"visit_obj","operator":"like","srchval":"签单"},{"field_id":"city_name","operator":"=","srchval":"'.$arr['city'].'"},{"field_id":"staff","operator":"like","srchval":"'.$arr['sales'].'"}]';//这个是直接给session
-                }
-//                $criteria['filter']='[{"field_id":"staff","operator":"like","srchval":"5"}]';
-//                print_r($criteria);
+                 //   $criteria['filter']='[{"field_id":"visit_dt","operator":">=","srchval":"'.$arr['start'].'"},{"field_id":"visit_dt","operator":"<=","srchval":"'.$arr['end'].'"},{"field_id":"visit_obj","operator":"like","srchval":"签单"},{"field_id":"city_name","operator":"=","srchval":"'.$arr['city'].'"},{"field_id":"staff","operator":"like","srchval":"'.$arr['sales'].'"}]';//这个是直接给session
+                    $session['get']=$arr;
+                }//根据这个变化
+                //$criteria['filter']='[{"field_id":"staff","operator":"like","srchval":"5"}]';
 				$model->setCriteria($criteria);
 			}
 		}
-        $model->determinePageNum($pageNum);
-		$model->retrieveDataByPage($model->pageNum);
+		$model->determinePageNum($pageNum);
+        if(!empty($session['get'])){
+            $model->retrieveDataByPage_visit($model->pageNum,$session['get']);
+        }else{
+            $model->retrieveDataByPage($model->pageNum);
+        }
+       // print_r($session['get']);
 		$this->render('index',array('model'=>$model));
 	}
 
