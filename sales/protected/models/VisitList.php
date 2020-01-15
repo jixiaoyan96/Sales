@@ -205,6 +205,8 @@ class VisitList extends CListPageModel
         $suffix = Yii::app()->params['envSuffix'];
         $citylist = Yii::app()->user->city_allow();
         $user = Yii::app()->user->id;
+        $end=str_replace("/","-",$arr['end']);
+        $start=str_replace("/","-",$arr['start']);
         $sql1 = "select a.*, b.name as city_name, concat(f.code,' - ',f.name) as staff,  
 				(select d.name from sal_visit_type d where a.visit_type = d.id) as visit_type_name,
 				g.name as cust_type_name,
@@ -217,7 +219,7 @@ class VisitList extends CListPageModel
 				inner join sal_cust_district h on a.district = h.id
 				left outer join security$suffix.sec_city b on a.city=b.code
 				left outer join sal_custstar i on a.username=i.username and a.cust_name=i.cust_name
-			where b.name ='".$arr['city']."' and a.visit_dt <='".$arr['end']."' and  a.visit_dt <='".$arr['start']."' and a.visit_obj like '%10%' and f.name='".$arr['sales']."'
+			where b.name ='".$arr['city']."' and a.visit_dt <='".$end."' and  a.visit_dt <='".$start."' and a.visit_obj like '%10%' and f.name='".$arr['sales']."'
 			";
         $sql2 = "select count(a.id)
 				from sal_visit a force index (idx_visit_02)
@@ -227,7 +229,7 @@ class VisitList extends CListPageModel
 				inner join sal_cust_district h on a.district = h.id
 				left outer join security$suffix.sec_city b on a.city=b.code
 				left outer join sal_custstar i on a.username=i.username and a.cust_name=i.cust_name
-				where b.name ='".$arr['city']."' and a.visit_dt <='".$arr['end']."' and  a.visit_dt <='".$arr['start']."' and a.visit_obj like '%10%' and f.name='".$arr['sales']."'
+				where b.name ='".$arr['city']."' and a.visit_dt <='".$end."' and  a.visit_dt <='".$start."' and a.visit_obj like '%10%' and f.name='".$arr['sales']."'
 			";
         if (!(VisitForm::isReadAll())) {
             $x = " and a.username='$user' ";
