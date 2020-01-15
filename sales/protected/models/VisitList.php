@@ -219,7 +219,7 @@ class VisitList extends CListPageModel
 				inner join sal_cust_district h on a.district = h.id
 				left outer join security$suffix.sec_city b on a.city=b.code
 				left outer join sal_custstar i on a.username=i.username and a.cust_name=i.cust_name
-			where b.name ='".$arr['city']."' and a.visit_dt <='".$end."' and  a.visit_dt <='".$start."' and a.visit_obj like '%10%' and f.name='".$arr['sales']."'
+			where b.name ='".$arr['city']."' and a.visit_dt <='".$end."' and  a.visit_dt >='".$start."' and a.visit_obj like '%10%' and f.name='".$arr['sales']."'
 			";
         $sql2 = "select count(a.id)
 				from sal_visit a force index (idx_visit_02)
@@ -229,7 +229,7 @@ class VisitList extends CListPageModel
 				inner join sal_cust_district h on a.district = h.id
 				left outer join security$suffix.sec_city b on a.city=b.code
 				left outer join sal_custstar i on a.username=i.username and a.cust_name=i.cust_name
-				where b.name ='".$arr['city']."' and a.visit_dt <='".$end."' and  a.visit_dt <='".$start."' and a.visit_obj like '%10%' and f.name='".$arr['sales']."'
+				where b.name ='".$arr['city']."' and a.visit_dt <='".$end."' and  a.visit_dt >='".$start."' and a.visit_obj like '%10%' and f.name='".$arr['sales']."'
 			";
         if (!(VisitForm::isReadAll())) {
             $x = " and a.username='$user' ";
@@ -287,7 +287,6 @@ class VisitList extends CListPageModel
 //Yii::app()->end();
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         $list = array();
-
         $this->attr = array();
         if (count($records) > 0) {
             foreach ($records as $k=>$record) {
