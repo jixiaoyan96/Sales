@@ -19,10 +19,12 @@ class VisitCommand extends CConsoleCommand
             $model = new City();
             $record = $model->getDescendant($Addressee['city']);
             array_unshift($record, $Addressee['city']);
+            $i=0;
             foreach ($record as $k) {
                 $nocity = array('CN', 'CS', 'H-N', 'HB', 'HD', 'HD1', 'HK', 'HN', 'HN1', 'HN2', 'HX', 'HXHB', 'JMS', 'KS', 'MO', 'MY', 'RN', 'TC', 'TN', 'TP', 'TY', 'XM', 'ZS1', 'ZY');
                 $sql_city = "select name from security$suffix.sec_city where code='$k'";
                 $city = Yii::app()->db->createCommand($sql_city)->queryScalar();
+                $i=$i+1;
                 if (in_array($k, $nocity, true)) {
                 } else {
                     //需要的销售
@@ -58,7 +60,7 @@ class VisitCommand extends CConsoleCommand
                         //发送邮件
                         $from_addr = "it@lbsgroup.com.hk";
                         $to_addr = json_encode($Addressee['email']);
-                        $subject = $city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
+                        $subject = $i.$city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
                         $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
                         $url = Yii::app()->params['webroot'];
                         $url .= "/visit/index?start=" . $arr['start_dt'] . "&end=" . $arr['end_dt'] . "&city=" . $city;
@@ -177,7 +179,7 @@ EOF;
                         //发送邮件
                         $from_addr = "it@lbsgroup.com.hk";
                         $to_addr = json_encode($Addressee['email']);
-                        $subject = $city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
+                        $subject = $i.$city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
                         $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
                      //   $url = Yii::app()->params['webroot'];
                      //   $url .= "/visit/index?start=" . $arr['start_dt'] . "&end=" . $arr['end_dt'] . "&city=" . $city;
@@ -186,7 +188,7 @@ EOF;
 	<tbody>
 		<tr>
 			<td>&nbsp;
-			<table border="1" cellpadding="0" cellspacing="0" height="345" style="border-collapse:collapse;width:1300.28pt;" width="1559">
+			<table border="1" cellpadding="0" cellspacing="0" height="220" style="border-collapse:collapse;width:1300.28pt;" width="1559">
 				<colgroup>
 					<col span="3" style="width:75.75pt;" width="101" />
 					<col style="width:108.00pt;" width="132" />
