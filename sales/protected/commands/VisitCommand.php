@@ -59,7 +59,9 @@ class VisitCommand extends CConsoleCommand
                         $sum['svc_G3s'] = array_sum(array_map(create_function('$val', 'return $val["svc_G3s"];'), $arr_email));
                         //发送邮件
                         $from_addr = "it@lbsgroup.com.hk";
-                        $to_addr = json_encode($Addressee['email']);
+                        $email_addr=array();
+                        $email_addr[]=$Addressee['email'];
+                        $to_addr = json_encode($email_addr);
                         $subject = $i.$city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
                         $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
                         $url = Yii::app()->params['webroot'];
@@ -178,7 +180,9 @@ EOF;
                     }else{
                         //发送邮件
                         $from_addr = "it@lbsgroup.com.hk";
-                        $to_addr = json_encode($Addressee['email']);
+                        $email_addr=array();
+                        $email_addr[]=$Addressee['email'];
+                        $to_addr = json_encode($email_addr);
                         $subject = $i.$city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
                         $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
                      //   $url = Yii::app()->params['webroot'];
