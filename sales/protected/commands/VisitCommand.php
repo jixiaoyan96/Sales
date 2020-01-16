@@ -21,6 +21,8 @@ class VisitCommand extends CConsoleCommand
             array_unshift($record, $Addressee['city']);
             foreach ($record as $k) {
                 $nocity = array('CN', 'CS', 'H-N', 'HB', 'HD', 'HD1', 'HK', 'HN', 'HN1', 'HN2', 'HX', 'HXHB', 'JMS', 'KS', 'MO', 'MY', 'RN', 'TC', 'TN', 'TP', 'TY', 'XM', 'ZS1', 'ZY');
+                $sql_city = "select name from security$suffix.sec_city where code='$k'";
+                $city = Yii::app()->db->createCommand($sql_city)->queryScalar();
                 if (in_array($k, $nocity, true)) {
                 } else {
                     //需要的销售
@@ -56,10 +58,8 @@ class VisitCommand extends CConsoleCommand
                         //发送邮件
                         $from_addr = "it@lbsgroup.com.hk";
                         $to_addr = json_encode($Addressee['email']);
-                        $subject = $Addressee['name'] . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
+                        $subject = $city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
                         $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
-                        $sql_city = "select name from security$suffix.sec_city where code='$k'";
-                        $city = Yii::app()->db->createCommand($sql_city)->queryScalar();
                         $url = Yii::app()->params['webroot'];
                         $url .= "/visit/index?start=" . $arr['start_dt'] . "&end=" . $arr['end_dt'] . "&city=" . $city;
                         $message = <<<EOF
@@ -156,6 +156,101 @@ EOF;
 
 			<p><br />
 			<span style="color:rgb(119,119,119);"><span style="font-size:16px;">请点击员工姓名查看签单记录及合同附件等信息。</span></span></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+EOF;
+                        $lcu = "admin";
+                        $aaa = Yii::app()->db->createCommand()->insert("swoper$suffix.swo_email_queue", array(
+                            'request_dt' => date('Y-m-d H:i:s'),
+                            'from_addr' => $from_addr,
+                            'to_addr' => $to_addr,
+                            'subject' => $subject,//郵件主題
+                            'description' => $description,//郵件副題
+                            'message' => $message,//郵件內容（html）
+                            'status' => "P",
+                            'lcu' => $lcu,
+                            'lcd' => date('Y-m-d H:i:s'),
+                        ));
+                    }else{
+                        //发送邮件
+                        $from_addr = "it@lbsgroup.com.hk";
+                        $to_addr = json_encode($Addressee['email']);
+                        $subject = $city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
+                        $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
+                     //   $url = Yii::app()->params['webroot'];
+                     //   $url .= "/visit/index?start=" . $arr['start_dt'] . "&end=" . $arr['end_dt'] . "&city=" . $city;
+                        $message = <<<EOF
+<table cellpadding="10" cellspacing="1" style="color:#666;font:13px Arial;line-height:1.4em;width:100%;">
+	<tbody>
+		<tr>
+			<td>&nbsp;
+			<table border="1" cellpadding="0" cellspacing="0" height="345" style="border-collapse:collapse;width:1300.28pt;" width="1559">
+				<colgroup>
+					<col span="3" style="width:75.75pt;" width="101" />
+					<col style="width:108.00pt;" width="132" />
+					<col span="4" style="width:75.75pt;" width="101" />
+					<col span="10" style="width:54.00pt;" width="72" />
+				</colgroup>
+				<tbody>
+					<tr height="28" style="height:5px;">
+						<td class="et3" height="56" rowspan="2" style="height: 20px; width: 75.75pt; text-align: center;" width="101"><span style="color:#000000;"><span style="font-size:16px;"><strong><span style="font-size:18px;">姓名</span></strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="101"><span style="color:#000000;"><span style="font-size:18px;"><strong>地区</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="101"><span style="color:#000000;"><strong><span style="font-size:18px;">签单数量</span></strong></span></td>
+						<td class="et3" rowspan="2" style="width: 110pt; text-align: center;" width="132"><span style="color:#000000;"><strong><span style="font-size:18px;">服务签单总金额</span></strong></span></td>
+						<td class="et3" colspan="2" rowspan="2" style="width: 151.5pt; text-align: center;" width="202"><span style="color:#000000;"><strong><span style="font-size:18px;">清洁</span></strong></span></td>
+						<td class="et3" colspan="2" rowspan="2" style="width: 151.5pt; text-align: center;" width="202"><span style="color:#000000;"><span style="font-size:18px;"><strong>租赁机器</strong></span></span></td>
+						<td class="et3" colspan="2" rowspan="2" style="width: 108pt; text-align: center;" width="144"><span style="color:#000000;"><span style="font-size:18px;"><strong>灭虫</strong></span></span></td>
+						<td class="et3" colspan="2" rowspan="2" style="width: 108pt; text-align: center;" width="144"><span style="color:#000000;"><span style="font-size:18px;"><strong>飘盈香</strong></span></span></td>
+						<td class="et3" colspan="2" rowspan="2" style="width: 108pt; text-align: center;" width="144"><span style="color:#000000;"><span style="font-size:18px;"><strong>甲醛</strong></span></span></td>
+						<td class="et3" colspan="2" rowspan="2" style="width: 108pt; text-align: center;" width="144"><span style="color:#000000;"><span style="font-size:18px;"><strong>纸品</strong></span></span></td>
+						<td class="et3" colspan="2" rowspan="2" style="width: 108pt; text-align: center;" width="144"><span style="color:#000000;"><span style="font-size:18px;"><strong>一次性售卖</strong></span></span></td>
+					</tr>
+					<tr height="28" style="height: 21pt; text-align: center;">
+					</tr>
+					<tr height="28" style="height:5px;">
+						<td class="et3" colspan="2" height="56" rowspan="2" style="height: 20px; width: 151.5pt; text-align: center;" width="202"><span style="color:#000000;"><span style="font-size:16px;"><span style="font-size:18px;"><strong>总金额/总数量</strong></span></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="101"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 110pt; text-align: center;" width="132"><span style="color:#000000;"><span style="font-size:16px;"><span style="font-size:18px;"><strong>0</strong></span></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="101"><span style="color:#000000;"><span style="font-size:16px;"><span style="font-size:18px;"><strong>0</strong></span></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="101"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="101"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="101"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+						<td class="et3" rowspan="2" style="width: 75.75pt; text-align: center;" width="72"><span style="color:#000000;"><span style="font-size:18px;"><strong>0</strong></span></span></td>
+					</tr>
+					<tr height="28" style="height: 21pt; text-align: center;">
+					</tr>
+EOF;
+                        }
+
+                        $message.= <<<EOF
+                        </tbody>
+			</table>
+			<span style="color:#000000;"><!--[if !mso]>
+<style>
+</style>
+<![endif]--></span>
+			<table border="1" cellpadding="1" cellspacing="1" style="height:345px;border-collapse:collapse;width:1169.28pt;" width="1559">
+				<colgroup>
+					<col span="3" style="width:75.75pt;text-align:center;" width="101" />
+					<col style="width:99pt;text-align:center;" width="132" />
+					<col span="4" style="width:75.75pt;text-align:center;" width="101" />
+					<col span="10" style="width:54pt;text-align:center;" width="72" />
+				</colgroup>
+			</table>
+			<span style="color:#000000;"> &nbsp;</span>
+
+			<p><br />
 			</td>
 		</tr>
 	</tbody>
