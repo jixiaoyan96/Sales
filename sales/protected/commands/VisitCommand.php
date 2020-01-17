@@ -238,7 +238,6 @@ EOF;
 					</tr>
 EOF;
                         }
-
                         $message.= <<<EOF
                         </tbody>
 			</table>
