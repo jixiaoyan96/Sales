@@ -19,12 +19,10 @@ class VisitCommand extends CConsoleCommand
             $model = new City();
             $record = $model->getDescendant($Addressee['city']);
             array_unshift($record, $Addressee['city']);
-            $i=0;
             foreach ($record as $k) {
                 $nocity = array('CN', 'CS', 'H-N', 'HB', 'HD', 'HD1', 'HK', 'HN', 'HN1', 'HN2', 'HX', 'HXHB', 'JMS', 'KS', 'MO', 'MY', 'RN', 'TC', 'TN', 'TP', 'TY', 'XM', 'ZS1', 'ZY');
                 $sql_city = "select name from security$suffix.sec_city where code='$k'";
                 $city = Yii::app()->db->createCommand($sql_city)->queryScalar();
-                $i=$i+1;
                 if (in_array($k, $nocity, true)) {
                 } else {
                     //需要的销售
@@ -62,7 +60,7 @@ class VisitCommand extends CConsoleCommand
                         $email_addr=array();
                         $email_addr[]=$Addressee['email'];
                         $to_addr = json_encode($email_addr);
-                        $subject = $i.$city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
+                        $subject = $city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
                         $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
                         $url = Yii::app()->params['webroot'];
                         $url .= "/visit/index?start=" . $arr['start_dt'] . "&end=" . $arr['end_dt'] . "&city=" . $city;
@@ -183,7 +181,7 @@ EOF;
                         $email_addr=array();
                         $email_addr[]=$Addressee['email'];
                         $to_addr = json_encode($email_addr);
-                        $subject = $i.$city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
+                        $subject =$city . "地区签单明细" . $arr['start_dt'] . "-" . $arr['end_dt'];
                         $description = "</<br>".$arr['start_dt'] . "-" . $arr['end_dt'];
                      //   $url = Yii::app()->params['webroot'];
                      //   $url .= "/visit/index?start=" . $arr['start_dt'] . "&end=" . $arr['end_dt'] . "&city=" . $city;
@@ -237,7 +235,6 @@ EOF;
 					<tr height="28" style="height: 21pt; text-align: center;">
 					</tr>
 EOF;
-                        }
                         $message.= <<<EOF
                         </tbody>
 			</table>
@@ -273,6 +270,7 @@ EOF;
                             'lcu' => $lcu,
                             'lcd' => date('Y-m-d H:i:s'),
                         ));
+                        }
                     }
                 }
             }
