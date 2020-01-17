@@ -83,6 +83,7 @@ class VisitController extends Controller
                     $people = Yii::app()->db->createCommand($sql_people)->queryAll();
                     //邮件数据
                     if (!empty($people)) {
+                        print_r($i);
                         $people = array_unique($people, SORT_REGULAR);
                         $arr['sale'] = array_column($people, 'username');
                         $arr['sort'] = 'money';
@@ -224,6 +225,7 @@ EOF;
                             'lcd' => date('Y-m-d H:i:s'),
                         ));
                     }else{
+                        print_r($i);
                         //发送邮件
                         $from_addr = "it@lbsgroup.com.hk";
                         $email_addr=array();
