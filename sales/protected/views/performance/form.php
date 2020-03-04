@@ -44,8 +44,8 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
         <div class="box-body">
             <div class="btn-group text-info" role="group">
                 <p><b>注：</b></p>
-                <p style="text-indent: 15px;">1.未分商业和餐饮组的地区只需填写跨区和被跨区提成比例，商业和餐饮则填写为0</p>
-                <p style="text-indent: 15px;">2.分组的地区只需填写商业和餐饮跨区提成比例，跨区和被跨区则填写为0</p>
+                <p style="text-indent: 15px;"><?php echo Yii::t('dialog','Zhu1'); ?></p>
+                <p style="text-indent: 15px;"><?php echo Yii::t('dialog','Zhu2'); ?></p>
             </div>
         </div>
     </div>
