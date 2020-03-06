@@ -60,7 +60,7 @@ class DashboardController extends Controller
 			$temp['money']=$record['money'];
 
 
-			$sql = "select employee_name from hr$suffix.hr_binding where user_id='".$record['username']."'";
+            $sql = "select name from hr$suffix.hr_employee where user_id=(SELECT hr$suffix.employee_id from hr_binding WHERE user_id='".$record['username']."')";
 			$row = Yii::app()->db->createCommand($sql)->queryRow();
 			$temp['name']= $row!==false ? $row['employee_name'] : $record['username'];
 		
