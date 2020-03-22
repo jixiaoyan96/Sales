@@ -78,7 +78,7 @@ return array(
 	'less or equal'=>'小过或等于',
 	'less than'=>'小过',
 	'-- Advanced --'=>'-- 进阶 --',
-	'<< Advanced >>'=>'<< 进阶搜寻 >>',
+	'<< Advanced >>'=>'<< 高级搜寻 >>',
 	'Advanced'=>'进阶',
 	'Clear'=>'清除',
 	

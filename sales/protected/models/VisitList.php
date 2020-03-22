@@ -35,7 +35,7 @@ class VisitList extends CListPageModel
 			'visit_dt'=>"date_format(a.visit_dt,'%Y/%m/%d')",
 //			'status_dt'=>"date_format(a.status_dt,'%Y/%m/%d')",
 			'cust_name'=>'a.cust_name',
-//			'visit_type'=>'d.name',
+			'visit_type'=>'(select d.name from sal_visit_type d where a.visit_type = d.id)',
 			'visit_obj'=>'VisitObjDesc(a.visit_obj)',
 			'cust_type'=>'g.name',
 			'district'=>'h.name',
