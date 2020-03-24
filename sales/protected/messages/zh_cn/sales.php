@@ -154,6 +154,6 @@ return array(
     'Upload Error. (Please be reminded that file should not be larger than 30MB)'=>'上传错误(请注意，文件不应大于30MB)',
 	'Note: Please set searching criteria before pressing Report button, otherwise all data will be generated in the report.'=>
 	'注：直接生成报表将会导出所有拜访信息，请在右侧搜索栏设定所需条件后继续生成，如拜访时间段、目的、类别等',
-	'Example'=>'例子图片',
+	'Example'=>'点击可查看示例',
 );
 ?>
