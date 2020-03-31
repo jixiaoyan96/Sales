@@ -34,6 +34,7 @@ class RptVisitList extends CReport {
 			'svc_A6'=>array('label'=>Yii::t('sales','预估成交率').'(0-100%)','width'=>10,'align'=>'C'),
 			'svc_A7'=>array('label'=>Yii::t('sales','合同年金额'),'width'=>10,'align'=>'C'),
 			'svc_A8'=>array('label'=>Yii::t('sales','备注'),'width'=>30,'align'=>'L'),
+            'svc_A9'=>array('label'=>Yii::t('sales','雾化消毒'),'width'=>30,'align'=>'C'),
 			
 			'svc_B'=>array('label'=>Yii::t('sales','Monthly Amount'),'width'=>10,'align'=>'C'),
 			'svc_B1'=>array('label'=>Yii::t('sales','风扇机'),'width'=>10,'align'=>'C'),
@@ -50,6 +51,7 @@ class RptVisitList extends CReport {
 			'svc_C3'=>array('label'=>Yii::t('sales','蟑螂'),'width'=>10,'align'=>'C'),
 			'svc_C4'=>array('label'=>Yii::t('sales','果蝇'),'width'=>10,'align'=>'C'),
 			'svc_C5'=>array('label'=>Yii::t('sales','租灭蝇灯'),'width'=>10,'align'=>'C'),
+            'svc_C9'=>array('label'=>Yii::t('sales','焗雾'),'width'=>10,'align'=>'C'),
 			'svc_C6'=>array('label'=>Yii::t('sales','预估成交率').'(0-100%)','width'=>10,'align'=>'C'),
 			'svc_C7'=>array('label'=>Yii::t('sales','合同年金额'),'width'=>10,'align'=>'C'),
 			'svc_C8'=>array('label'=>Yii::t('sales','备注'),'width'=>30,'align'=>'L'),
@@ -118,6 +120,7 @@ class RptVisitList extends CReport {
 					'svc_A3',
 					'svc_A4',
 					'svc_A5',
+                    'svc_A9',
 					'svc_A6',
 					'svc_A7',
 					'svc_A8',
@@ -150,6 +153,7 @@ class RptVisitList extends CReport {
 					'svc_C6',
 					'svc_C7',
 					'svc_C8',
+                    'svc_C9',
 				),
 			),
 			
@@ -223,7 +227,8 @@ class RptVisitList extends CReport {
 		$this->searchValue = $criteria->searchValue;
 		$this->filter = json_decode($criteria->filter);
 	}
-		public function retrieveData() {
+	
+	public function retrieveData() {
 		$suffix = Yii::app()->params['envSuffix'];
 		$uid = $this->criteria['UID'];
 		
@@ -304,7 +309,8 @@ class RptVisitList extends CReport {
 			}
 		}
 		
-		return true;	}
+		return true;
+	}
 
 	public function getReportName() {
 		$city_name = isset($this->criteria) ? ' - '.General::getCityName($this->criteria['CITY']) : '';
