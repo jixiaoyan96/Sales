@@ -28,6 +28,15 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit';
 				'submit'=>Yii::app()->createUrl('visit/report')));
 		?>
 	</div>
+	<div class="btn-group" role="group">
+		<span class="text-red">
+			<?php 
+				echo Yii::t('sales','Note: Please set searching criteria before pressing Report button, otherwise all data will be generated in the report.'); 
+				echo CHtml::link(' ('.Yii::t('sales','Example').')','#',
+					array('onclick'=>'showHelp();return false;'));
+			?>
+		</span>
+	</div>
 	</div></div>
 	<?php 
 		$this->widget('ext.layout.ListPageWidget', array(
@@ -39,6 +48,9 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit';
 		));
 	?>
 </section>
+
+<?php $this->renderPartial('//visit/help'); ?>
+
 <?php
 	echo $form->hiddenField($model,'pageNum');
 	echo $form->hiddenField($model,'totalRow');
@@ -129,6 +141,13 @@ function star(id) {
 }
 EOF;
 Yii::app()->clientScript->registerScript('starClick',$js,CClientScript::POS_HEAD);
+
+$js = <<<EOF
+function showHelp() {
+	$('#helpdialog').modal('show');
+}
+EOF;
+Yii::app()->clientScript->registerScript('helpClick',$js,CClientScript::POS_HEAD);
 
 $js = Script::genTableRowClick();
 Yii::app()->clientScript->registerScript('rowClick',$js,CClientScript::POS_READY);
