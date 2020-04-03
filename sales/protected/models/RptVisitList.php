@@ -31,10 +31,11 @@ class RptVisitList extends CReport {
 			'svc_A3'=>array('label'=>Yii::t('sales','水盆'),'width'=>10,'align'=>'C'),
 			'svc_A4'=>array('label'=>Yii::t('sales','清新机'),'width'=>10,'align'=>'C'),
 			'svc_A5'=>array('label'=>Yii::t('sales','皂液机'),'width'=>10,'align'=>'C'),
+            'svc_A9'=>array('label'=>Yii::t('sales','雾化消毒'),'width'=>30,'align'=>'C'),
 			'svc_A6'=>array('label'=>Yii::t('sales','预估成交率').'(0-100%)','width'=>10,'align'=>'C'),
 			'svc_A7'=>array('label'=>Yii::t('sales','合同年金额'),'width'=>10,'align'=>'C'),
 			'svc_A8'=>array('label'=>Yii::t('sales','备注'),'width'=>30,'align'=>'L'),
-            'svc_A9'=>array('label'=>Yii::t('sales','雾化消毒'),'width'=>30,'align'=>'C'),
+
 			
 			'svc_B'=>array('label'=>Yii::t('sales','Monthly Amount'),'width'=>10,'align'=>'C'),
 			'svc_B1'=>array('label'=>Yii::t('sales','风扇机'),'width'=>10,'align'=>'C'),
@@ -150,10 +151,11 @@ class RptVisitList extends CReport {
 					'svc_C3',
 					'svc_C4',
 					'svc_C5',
+                    'svc_C9',
 					'svc_C6',
 					'svc_C7',
 					'svc_C8',
-                    'svc_C9',
+
 				),
 			),
 			

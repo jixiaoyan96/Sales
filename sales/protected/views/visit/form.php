@@ -489,6 +489,7 @@ $('#VisitForm_cust_name').on('change', function(){
 		    $('#VisitForm_service_svc_A3').val(data.svc_A3);
 		    $('#VisitForm_service_svc_A4').val(data.svc_A4);
 		    $('#VisitForm_service_svc_A5').val(data.svc_A5);
+		    $('#VisitForm_service_svc_A9').val(data.svc_A9);
 		    $('#VisitForm_service_svc_A6').val(data.svc_A6);
 		    $('#VisitForm_service_svc_A7').val(data.svc_A7);
 		    $('#VisitForm_service_svc_A8').val(data.svc_A8);
