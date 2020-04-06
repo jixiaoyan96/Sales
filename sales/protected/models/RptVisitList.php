@@ -301,7 +301,7 @@ class RptVisitList extends CReport {
 				$sqld = "select field_id, field_value from sal_visit_info where visit_id=".$row['id'];
 				$lines = Yii::app()->db->createCommand($sqld)->queryAll();
 				foreach ($lines as $line) {
-					if (strpos('svc_C2,svc_C3,svc_C4,svc_C5,',$line['field_id'].',')===false)
+					if (strpos('svc_C2,svc_C3,svc_C4,svc_C5,svc_C9,',$line['field_id'].',')===false)
 						$temp[$line['field_id']] = $line['field_value'];
 					else 
 						$temp[$line['field_id']] = $line['field_value']=='Y' ? 'Y' : '';
