@@ -101,6 +101,7 @@ class ReportRankinglistForm extends CReportForm
     public function salelist($start,$end) {
         $suffix = Yii::app()->params['envSuffix'];
         $models = array();
+        $sum_arr = array();
         $cities = General::getCityListWithNoDescendant();
        // $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         foreach ($cities as $code=>$name) {
@@ -120,7 +121,12 @@ class ReportRankinglistForm extends CReportForm
                 //总单数
                 $sql2="select id from sal_visit where city='$code' and  visit_obj like '%10%' and visit_dt >='".$start."'and visit_dt <='".$end."'";
                 $sum = Yii::app()->db->createCommand($sql2)->queryAll();
-                $sums=count($sum);
+                foreach ($sum as $id){
+                    $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') and field_value>'0' and visit_id='".$id['id']."'";
+                    $arr = Yii::app()->db->createCommand($sql2)->queryRow();
+                    $sum_arr[]=$arr['sum'];
+                }
+                $sums=array_sum($sum_arr);
                 //人均签单数
                 $sale=$sums/($peoples==0?1:$peoples);
                 $sale=round($sale,2);

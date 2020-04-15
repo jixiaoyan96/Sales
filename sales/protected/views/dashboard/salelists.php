@@ -35,7 +35,7 @@
  $city= Yii::t('report','city');
  $quyu= Yii::t('report','quyu');
  $sum= Yii::t('report','sum');
- $renjun= Yii::t('report','renjun');
+ $money= Yii::t('report','money');
  $js = <<<EOF
 	$.ajax({
 		type: 'GET',
@@ -43,7 +43,7 @@
 		success: function(data) {
 			if (data !== undefined && data.length != 0) {
 				var line = '<table class="table table-bordered small">';
-                line += '<tr><td><b>$paiming</b></td><td><b>$city</b></td><td><b>$quyu</b></td><td><b>$sum</b></td><td><b>$renjun</b></td></tr>';
+                line += '<tr><td><b>$paiming</b></td><td><b>$city</b></td><td><b>$quyu</b></td><td><b>$sum</b></td><td><b>$money</b></td></tr>';
 				
 				for (var i=0; i < data.length; i++) {
 					line += '<tr>';
