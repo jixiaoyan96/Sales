@@ -45,6 +45,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit';
 				'viewhdr'=>'//visit/_listhdr',
 				'viewdtl'=>'//visit/_listdtl',
 				'advancedSearch'=>true,
+				'hasDateButton'=>true,
 		));
 	?>
 </section>
