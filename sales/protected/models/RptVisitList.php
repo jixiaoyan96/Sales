@@ -275,12 +275,17 @@ class RptVisitList extends CReport {
 		if (count($rows) > 0) {
 			foreach ($rows as $row) {
 				$temp = $this->initTemp();
-				
+                if($row['shift']=='Y'){
+                    $row['shift']="(旧)";
+                }
+                if($row['shift']=='Z'){
+                    $row['shift']="(转)";
+                }
 				$temp['id'] = $row['id'];
 				$temp['visit_dt'] = General::toDate($row['visit_dt']);
 				$temp['username'] = $row['username'];
 				$stf = $this->getStaffInfo($row['username']);
-				$temp['staff'] = $stf['staff'];
+				$temp['staff'] = $stf['staff']. $row['shift'];
 				$temp['post_name'] = $stf['post_name'];
 				$temp['dept_name'] = $stf['dept_name'];
 				$temp['district'] = $row['district_name'];
