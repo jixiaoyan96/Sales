@@ -52,6 +52,7 @@ class ShiftForm extends CFormModel
                 'name'=>Yii::t('sales','清洁'),
                 'type'=>'annual',
                 'items'=>array(
+                    'A10'=>array('name'=>Yii::t('sales','安装费'),'type'=>'amount'),
                     'A1'=>array('name'=>Yii::t('sales','马桶'),'type'=>'qty'),
                     'A2'=>array('name'=>Yii::t('sales','尿斗'),'type'=>'qty'),
                     'A3'=>array('name'=>Yii::t('sales','水盆'),'type'=>'qty','eol'=>true),
@@ -80,6 +81,7 @@ class ShiftForm extends CFormModel
                 'name'=>Yii::t('sales','灭虫'),
                 'type'=>'annual',
                 'items'=>array(
+                    'C10'=>array('name'=>Yii::t('sales','安装费'),'type'=>'amount'),
                     'C1'=>array('name'=>Yii::t('sales','服务面积'),'type'=>'qty','eol'=>true),
                     'C2'=>array('name'=>Yii::t('sales','老鼠'),'type'=>'checkbox'),
                     'C3'=>array('name'=>Yii::t('sales','蟑螂'),'type'=>'checkbox'),

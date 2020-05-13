@@ -26,6 +26,7 @@ class RptVisitList extends CReport {
 			'remarks'=>array('label'=>Yii::t('sales','Remarks'),'width'=>30,'align'=>'L'),
 			
 			'svc_A'=>array('label'=>Yii::t('sales','Monthly Amount'),'width'=>10,'align'=>'C'),
+            'svc_A10'=>array('label'=>Yii::t('sales','安装费'),'width'=>10,'align'=>'C'),
 			'svc_A1'=>array('label'=>Yii::t('sales','马桶'),'width'=>10,'align'=>'C'),
 			'svc_A2'=>array('label'=>Yii::t('sales','尿斗'),'width'=>10,'align'=>'C'),
 			'svc_A3'=>array('label'=>Yii::t('sales','水盆'),'width'=>10,'align'=>'C'),
@@ -47,6 +48,7 @@ class RptVisitList extends CReport {
 			'svc_B7'=>array('label'=>Yii::t('sales','备注'),'width'=>30,'align'=>'L'),
 			
 			'svc_C'=>array('label'=>Yii::t('sales','Monthly Amount'),'width'=>10,'align'=>'C'),
+            'svc_C10'=>array('label'=>Yii::t('sales','安装费'),'width'=>10,'align'=>'C'),
 			'svc_C1'=>array('label'=>Yii::t('sales','服务面积'),'width'=>10,'align'=>'C'),
 			'svc_C2'=>array('label'=>Yii::t('sales','老鼠'),'width'=>10,'align'=>'C'),
 			'svc_C3'=>array('label'=>Yii::t('sales','蟑螂'),'width'=>10,'align'=>'C'),
@@ -116,6 +118,7 @@ class RptVisitList extends CReport {
 				'label'=>Yii::t('sales','清洁').Yii::t('sales','报价'),
 				'child'=>array(
 					'svc_A',
+                    'svc_A10',
 					'svc_A1',
 					'svc_A2',
 					'svc_A3',
@@ -146,6 +149,7 @@ class RptVisitList extends CReport {
 				'label'=>Yii::t('sales','灭虫').Yii::t('sales','报价'),
 				'child'=>array(
 					'svc_C',
+                    'svc_C10',
 					'svc_C1',
 					'svc_C2',
 					'svc_C3',
