@@ -123,7 +123,7 @@ class ReportRankinglistForm extends CReportForm
                 $sum = Yii::app()->db->createCommand($sql2)->queryAll();
                 foreach ($sum as $id){
                     $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') and field_value>'0' and visit_id='".$id['id']."'";
-                    $arr = Yii::app()->db->createCommand($sql2)->queryRow();
+                    $arr = Yii::app()->db->createCommand($sqlid)->queryRow();
                     $sum_arr[]=$arr['sum'];
                 }
                 $sums=array_sum($sum_arr);
