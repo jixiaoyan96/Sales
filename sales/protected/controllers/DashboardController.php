@@ -106,7 +106,7 @@ class DashboardController extends Controller
                 $peoples=count($people);
                 if(!empty($people)){
                     //总单数
-                    $sql2="select id from sal_visit where city='$code' and  visit_obj like '%10%' and visit_dt >='".$start."'and visit_dt <='".$end."'";
+                    $sql2="select id from sal_visit where city='$code' and  visit_obj like '%10%' and visit_dt >='".$time."'";
                     $sum = Yii::app()->db->createCommand($sql2)->queryAll();
                     foreach ($sum as $id){
                         $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') and field_value>'0' and visit_id='".$id['id']."'";
