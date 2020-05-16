@@ -87,10 +87,10 @@ class DashboardController extends Controller
     public function actionSalelist() {
         $suffix = Yii::app()->params['envSuffix'];
         $models = array();
-        $sum_arr = array();
         $cities = General::getCityListWithNoDescendant();
         $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         foreach ($cities as $code=>$name) {
+            $sum_arr = array();
             if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/","'".$code."'")===false) {
                 $sql = "select a.name as city_name, b.name as region_name 
 						from security$suffix.sec_city a
