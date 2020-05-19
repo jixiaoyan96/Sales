@@ -65,7 +65,7 @@ class ReportRankinglistForm extends CReportForm
        // $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money
 				from sal_visit a force index (idx_visit_02), sal_visit_info b
-				where a.id=b.visit_id and b.field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') 
+				where a.id=b.visit_id and b.field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') 
 				and a.visit_dt >= '$start'and a.visit_dt <= '$end' and  a.visit_obj like '%10%'
 				group by a.city, a.username
 			";
@@ -123,7 +123,7 @@ class ReportRankinglistForm extends CReportForm
                     $sql2="select id from sal_visit where city='$code' and  visit_obj like '%10%' and visit_dt >='".$start."'and visit_dt <='".$end."'";
                     $sum = Yii::app()->db->createCommand($sql2)->queryAll();
                     foreach ($sum as $id){
-                        $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') and field_value>'0' and visit_id='".$id['id']."'";
+                        $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and field_value>'0' and visit_id='".$id['id']."'";
                         $arr = Yii::app()->db->createCommand($sqlid)->queryRow();
                         $sum_arr[]=$arr['sum'];
                     }
