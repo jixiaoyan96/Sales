@@ -2116,7 +2116,11 @@ class ReportVisitForm extends CReportForm
                 $sum = Yii::app()->db->createCommand($sqlid)->queryRow();
                 $sum_arr[]=$sum['sum'];
             }
-            $sums=array_sum($sum_arr);
+            if(!empty($sum_arr)){
+                $sums=array_sum($sum_arr);
+            }else{
+                $sums=0;
+            }
             $people['singular']=$sums;
             $people['cityname']=$cname['cityname'];
             $people['names']=$cname['names'];
