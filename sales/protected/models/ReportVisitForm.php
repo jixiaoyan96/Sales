@@ -818,11 +818,12 @@ class ReportVisitForm extends CReportForm
 
     public function shul($sum,$records,$name,$names){
 	    $all=0;
+        $sum_arr=array();
         for($i=0;$i<count($records);$i++){
             if(strpos($records[$i][$name],$names)!==false&&(strpos($records[$i]['visit_obj_name'],'签单')!==false||strpos($records[$i]['visit_obj_name'],'续约')!==false)){
                 $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and field_value>'0' and visit_id='".$records[$i]['id']."'";
-                $sum = Yii::app()->db->createCommand($sqlid)->queryRow();
-                $sum_arr[]=$sum['sum'];
+                $model = Yii::app()->db->createCommand($sqlid)->queryRow();
+                $sum_arr[]=$model['sum'];
                 $sql="select * from sal_visit_info where visit_id = '".$records[$i]['id']."'";
                 $rows = Yii::app()->db->createCommand($sql)->queryAll();
                 foreach ($rows as $v){
@@ -849,14 +850,14 @@ class ReportVisitForm extends CReportForm
                 if(empty($arr['svc_G3'])){
                     $arr['svc_G3']=0;
                 }
-                $moneyone[]=$arr['svc_A7']+$arr['svc_B6']+$arr['svc_C7']+$arr['svc_D6']+$arr['svc_E7']+$arr['svc_F4']+$arr['svc_G3'];
+                $sum[]=$arr['svc_A7']+$arr['svc_B6']+$arr['svc_C7']+$arr['svc_D6']+$arr['svc_E7']+$arr['svc_F4']+$arr['svc_G3'];
             }
             if(strpos($records[$i][$name],$names)!==false){
                 $all=$all+1;
             }
         }
-        if(!empty($moneyone)){
-            $money=array_sum($moneyone);
+        if(!empty($sum)){
+            $money=array_sum($sum);
         }else{
             $money=0;
         }
@@ -871,11 +872,12 @@ class ReportVisitForm extends CReportForm
 
     public function shuls($sum,$records,$name,$names){
 	    $all=0;
+        $sum_arr=array();
         for($i=0;$i<count($records);$i++){
             if(strpos($records[$i][$name],$names)!==false&&(strpos($records[$i]['visit_obj_name'],'签单')!==false||strpos($records[$i]['visit_obj_name'],'续约')!==false)){
                 $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and field_value>'0' and visit_id='".$records[$i]['id']."'";
-                $sum = Yii::app()->db->createCommand($sqlid)->queryRow();
-                $sum_arr[]=$sum['sum'];
+                $model = Yii::app()->db->createCommand($sqlid)->queryRow();
+                $sum_arr[]=$model['sum'];
                 $sql="select * from sal_visit_info where visit_id = '".$records[$i]['id']."'";
                 $rows = Yii::app()->db->createCommand($sql)->queryAll();
                 foreach ($rows as $v){
@@ -902,14 +904,14 @@ class ReportVisitForm extends CReportForm
                 if(empty($arr['svc_G3'])){
                     $arr['svc_G3']=0;
                 }
-                $moneyone[]=$arr['svc_A7']+$arr['svc_B6']+$arr['svc_C7']+$arr['svc_D6']+$arr['svc_E7']+$arr['svc_F4']+$arr['svc_G3'];
+                $sum[]=$arr['svc_A7']+$arr['svc_B6']+$arr['svc_C7']+$arr['svc_D6']+$arr['svc_E7']+$arr['svc_F4']+$arr['svc_G3'];
             }
             if(strpos($records[$i][$name],$names)!==false){
                 $all=$all+1;
             }
         }
-        if(!empty($moneyone)){
-            $money=array_sum($moneyone);
+        if(!empty($sum)){
+            $money=array_sum($sum);
         }else{
             $money=0;
         }
@@ -927,11 +929,12 @@ class ReportVisitForm extends CReportForm
     public function moneys($records){
         $suffix = Yii::app()->params['envSuffix'];
         $a=0;
+        $sum_arr=array();
         for($i=0;$i<count($records);$i++){
 	        if(strpos($records[$i]['visit_obj_name'],'签单')!==false){
                 $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and field_value>'0' and visit_id='".$records[$i]['id']."'";
-                $sum = Yii::app()->db->createCommand($sqlid)->queryRow();
-                $sum_arr[]=$sum['sum'];
+                $model = Yii::app()->db->createCommand($sqlid)->queryRow();
+                $sum_arr[]=$model['sum'];
 	            $sql="select * from sal_visit_info where visit_id = '".$records[$i]['id']."'";
                 $rows = Yii::app()->db->createCommand($sql)->queryAll();
                foreach ($rows as $v){
@@ -2090,6 +2093,7 @@ class ReportVisitForm extends CReportForm
         $end_dt=str_replace("/","-",$model['end_dt']);
         $suffix = Yii::app()->params['envSuffix'];
         $models=array();
+        $sum_arr=array();
         foreach ($model['sale'] as $code=>$peoples){
             $people=array();
             $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money 
