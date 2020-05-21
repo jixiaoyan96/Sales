@@ -860,7 +860,11 @@ class ReportVisitForm extends CReportForm
         }else{
             $money=0;
         }
-        $sums=array_sum($sum_arr);
+        if(!empty($sum_arr)){
+            $sums=array_sum($sum_arr);
+        }else{
+            $sums=0;
+        }
         $messz=$all."/".$sums."/".$money;
         return $messz;
     }
@@ -909,7 +913,11 @@ class ReportVisitForm extends CReportForm
         }else{
             $money=0;
         }
-        $sums=array_sum($sum_arr);
+        if(!empty($sum_arr)){
+            $sums=array_sum($sum_arr);
+        }else{
+            $sums=0;
+        }
         $messz['sum']=$sums;
         $messz['money']=$money;
         $messz['all']=$all;
