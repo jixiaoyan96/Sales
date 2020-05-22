@@ -819,6 +819,7 @@ class ReportVisitForm extends CReportForm
     public function shul($sum,$records,$name,$names){
 	    $all=0;
         $sum_arr=array();
+        $sum=array();
         for($i=0;$i<count($records);$i++){
             if(strpos($records[$i][$name],$names)!==false&&(strpos($records[$i]['visit_obj_name'],'签单')!==false||strpos($records[$i]['visit_obj_name'],'续约')!==false)){
                 $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and field_value>'0' and visit_id='".$records[$i]['id']."'";
@@ -873,6 +874,7 @@ class ReportVisitForm extends CReportForm
     public function shuls($sum,$records,$name,$names){
 	    $all=0;
         $sum_arr=array();
+        $sum=array();
         for($i=0;$i<count($records);$i++){
             if(strpos($records[$i][$name],$names)!==false&&(strpos($records[$i]['visit_obj_name'],'签单')!==false||strpos($records[$i]['visit_obj_name'],'续约')!==false)){
                 $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and field_value>'0' and visit_id='".$records[$i]['id']."'";
@@ -2093,8 +2095,8 @@ class ReportVisitForm extends CReportForm
         $end_dt=str_replace("/","-",$model['end_dt']);
         $suffix = Yii::app()->params['envSuffix'];
         $models=array();
-        $sum_arr=array();
         foreach ($model['sale'] as $code=>$peoples){
+            $sum_arr=array();
             $people=array();
             $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money 
 				from sal_visit a force index (idx_visit_02), sal_visit_info b   
