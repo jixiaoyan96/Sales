@@ -9,4 +9,5 @@ return array(
     'Sales List'=>array('access'=>'CN06',),
     'Sale People'=>array('access'=>'CN07',),
     'Signature details email'=>array('access'=>'CN08',),
+    'Integarl (Read All)'=>array('access'=>'CN09',),
 );
