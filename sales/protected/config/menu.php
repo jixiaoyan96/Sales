@@ -51,6 +51,10 @@ return array(
                 'access'=>'HA05',
                 'url'=>'/rankinglist/index',
             ),
+            'Commission integral'=>array(
+                'access'=>'HA06',
+                'url'=>'/integral/index',
+            ),
         ),
     ),
 
