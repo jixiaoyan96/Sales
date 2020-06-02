@@ -14,7 +14,7 @@ class IntegralCommand extends CConsoleCommand
         if (count($rows) > 0) {
             foreach ($rows as $row) {
                 $city = $row['code'];
-                $sql1="select *,b.user_id from hr$suffix.employee a
+                $sql1="select *,b.user_id from hr$suffix.hr_employee a
                       inner join hr$suffix.hr_binding b on a.id=b.employee_id 
                       left join hr$suffix.hr_dept c on a.position=c.id 
                       where  a.city='$city'  and c.manager_type !='3'
