@@ -254,6 +254,9 @@ class IntegralForm extends CFormModel
        }elseif ($a==6){
            $row='每月';
        }
+       if(empty($a)){
+           $row='每个';
+       }
         return $row;
     }
 

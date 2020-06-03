@@ -6,7 +6,7 @@
 <tr>
 	<td width=3%>
 	<?php
-		$rw = Yii::app()->user->validRWFunction('HK01'); 
+		$rw = Yii::app()->user->validRWFunction('HK01');
 		$icon = $this->record['cust_vip']=='Y' ? 'fa fa-star' : 'fa fa-star-o';
 		$lnk = $rw ? "javascript:star(".$this->record['id'].");" : "#";
 		$aid = 'star_'.$this->record['id'];

@@ -38,7 +38,7 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit';
 		</span>
 	</div>
 	</div></div>
-	<?php 
+	<?php
 		$this->widget('ext.layout.ListPageWidget', array(
 			'title'=>Yii::t('sales','Visit List'),
 			'model'=>$model,

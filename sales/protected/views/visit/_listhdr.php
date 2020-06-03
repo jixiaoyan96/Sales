@@ -14,7 +14,7 @@
 	</th>
 <!--
 	<th>
-		<?php 
+		<?php
 //			echo TbHtml::link($this->getLabelName('status_dt').$this->drawOrderArrow('status_dt'),'#',$this->createOrderLink('visit-list','status_dt'));
 		?>
 	</th>

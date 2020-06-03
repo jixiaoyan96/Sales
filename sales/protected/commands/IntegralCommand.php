@@ -15,10 +15,10 @@ class IntegralCommand extends CConsoleCommand
         if (count($rows) > 0) {
             foreach ($rows as $row) {
                 $city = $row['code'];
-                $sql1="select *,b.user_id from hr$suffix.hr_employee a
-                      inner join hr$suffix.hr_binding b on a.id=b.employee_id 
+                $sql1="select a.*,b.user_id from hr$suffix.hr_employee a
+                     left join hr$suffix.hr_binding b on a.id=b.employee_id 
                       left join hr$suffix.hr_dept c on a.position=c.id 
-                      where  a.city='$city'  and c.manager_type !='3'
+                      where  a.city='$city'  and c.manager_type !='3' and  c.dept_class='Sales'
 ";
                 $row = Yii::app()->db->createCommand($sql1)->queryAll();
                 foreach ($row as $sale){

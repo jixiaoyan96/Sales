@@ -64,16 +64,16 @@ class IntegralList extends CListPageModel
 		if (!empty($this->orderField)) {
 			switch ($this->orderField) {
 				case 'year':
-					$order .= " order by year ";
+					$order .= " order by a.year ";
 					break;
 				case 'month':
-					$order .= " order by month ";
+					$order .= " order by a.month ";
 					break;
                 case 'city':
-                    $order .= " order by city ";
+                    $order .= " order by b.name ";
                     break;
                 case 'name':
-                    $order .= " order by name ";
+                    $order .= " order by c.employee_name ";
                     break;
 			}
 			if ($this->orderType=='D') $order .= "desc ";
