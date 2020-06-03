@@ -8,6 +8,7 @@ return array(
 	'Type'=>'类别',
     'Year'=>'年',
     'Month'=>'月',
+    'Sale_day'=>'上班天数',
     'Sum'=>'本月业绩目标单数',
     'Sums'=>'本月业绩目标金额',
     'Spanning'=>'跨区提成比例',
@@ -40,5 +41,9 @@ return array(
     'Integral'=>'销售提成积分',
     'Integral List'=>'销售提成积分列表',
     'Integral Form'=>'销售提成积分表单',
+
+    'Target'=>'销售目标',
+    'Target List'=>'销售目标列表',
+    'Target Form'=>'销售目标表单',
 );
 ?>

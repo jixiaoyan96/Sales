@@ -81,6 +81,7 @@ return array(
 'Sales lead'=>'銷售簽單業績分類匯總',
 'Sales ranking list'=>'銷售排行榜歷史記錄查看',
 'Performance Objectives'=>'跨區業績目標',
+'Sales Target'=>'銷售目標',
 
 'Pending'=>'等候',
 'In Progress'=>'進行中',

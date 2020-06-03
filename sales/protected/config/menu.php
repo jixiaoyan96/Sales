@@ -24,6 +24,10 @@ return array(
                 'access'=>'HK04',
                 'url'=>'/performance/index',
             ),
+            'Sales Target'=>array(
+                'access'=>'HK05',
+                'url'=>'/Target/index',
+            ),
 		),
 	),
 

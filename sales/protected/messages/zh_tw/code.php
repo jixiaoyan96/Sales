@@ -7,6 +7,7 @@ return array(
 'Name'=>'名稱',
 'Type'=>'類別',
 
+'Sale_day'=>'上班天數',
 'Year'=>'年',
 'Month'=>'月',
 'Sum'=>'本月業績目標單數',
