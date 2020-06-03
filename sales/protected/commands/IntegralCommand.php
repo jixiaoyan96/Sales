@@ -1,10 +1,11 @@
 <?php
 class IntegralCommand extends CConsoleCommand
 {
-    public function run()
+    public function run($args)
     {
-        $month=date('m');
-        $year=date('Y');
+        $date = empty($args) ? date("Y-m-d") : $args[0];
+        $month = date("m", strtotime($date));
+        $year = date("Y", strtotime($date));
         $suffix = Yii::app()->params['envSuffix'];
         $sql="select a.code
 				from security$suffix.sec_city a left outer join security$suffix.sec_city b on a.code=b.region 
