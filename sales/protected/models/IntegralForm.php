@@ -171,7 +171,7 @@ class IntegralForm extends CFormModel
         $sql_bf="select * from sal_visit       
                where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime'";
         $bf = Yii::app()->db->createCommand($sql_bf)->queryAll();
-        if(!empty($bf)&&(count($bf)/20)>15){
+        if(!empty($bf)&&(count($bf)/$row['sale_day'])>15){
             $this->cust_type_name['baifang15']['sum']=1;
             $this->cust_type_name['baifang15']['number']=1;
             $this->cust_type_name['baifang15']['fraction']=1;
@@ -182,7 +182,7 @@ class IntegralForm extends CFormModel
         }
 
         //拜访20
-        if(!empty($bf)&&(count($bf)/20)>201){
+        if(!empty($bf)&&(count($bf)/$row['sale_day'])>20){
             $this->cust_type_name['baifang20']['sum']=2;
             $this->cust_type_name['baifang20']['number']=1;
             $this->cust_type_name['baifang20']['fraction']=1;
@@ -196,6 +196,9 @@ class IntegralForm extends CFormModel
         $this->cust_type_name['fuwu_sum']=array_sum(array_map(create_function('$val', 'return $val["sum"];'), $this->cust_type_name['fuwu']));
         $this->cust_type_name['qita_sum']=$this->cust_type_name['zhuangji']['sum']+ $this->cust_type_name['yushou1']['sum']+ $this->cust_type_name['yushou3']['sum']+ $this->cust_type_name['baifang15']['sum']+ $this->cust_type_name['baifang20']['sum'];
         $this->cust_type_name['all_sum']= $this->cust_type_name['canpin_sum']+ $this->cust_type_name['fuwu_sum']+ $this->cust_type_name['qita_sum'];
+        if(count($bf)<200&&(count($bf)/10)<$row['sale_day']){
+            $this->cust_type_name['all_sum']=0;
+        }
         if($this->cust_type_name['all_sum']<= 10){
             $this->cust_type_name['point']=-0.01;
         }elseif ($this->cust_type_name['all_sum']<= 20){
@@ -206,10 +209,6 @@ class IntegralForm extends CFormModel
             $this->cust_type_name['point']=0.01;
         }elseif ($this->cust_type_name['all_sum']> 80){
             $this->cust_type_name['point']=0.02;
-        }
-
-        if(count($bf)<200&&(count($bf)/10)<201){
-            $this->cust_type_name['all_sum']=0;
         }
 		return true;
 	}
