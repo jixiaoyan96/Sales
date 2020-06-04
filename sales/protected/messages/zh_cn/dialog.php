@@ -69,5 +69,14 @@ return array(
     'No visit Slip'=>'请上传附件',
     'Zhu1'=>'1.未分商业和餐饮组的地区只需填写跨区和被跨区提成比例，商业和餐饮则填写为0',
     'Zhu2'=>'2.分组的地区只需填写商业和餐饮跨区提成比例，跨区和被跨区则填写为0',
+    'Zhu_Integral'=>'   <table>
+                    <tr><td>综合提成分数</td><td>服务/产品提成点数</td></tr>
+                    <tr><td><= 10</td><td>-1%</td></tr>
+                    <tr><td><= 20</td><td>-0.5%</td></tr>
+                    <tr><td><= 30</td><td>0%</td></tr>
+                    <tr><td><= 80</td><td>1%</td></tr>
+                    <tr><td>> 80</td><td>2%</td></tr>
+                </table>  ',
+
 );
 ?>

@@ -54,6 +54,9 @@ class IntegralForm extends CFormModel
         $row = Yii::app()->db->createCommand($sql)->queryRow();
         $startime=$row['year']."-".$row['month']."-01";
         $endtime=$row['year']."-".$row['month']."-31";
+        $this->id=$index;
+        $this->year=$row['year'];
+        $this->month=$row['month'];
         foreach ($this->cust_type_name['canpin'] as &$value){//产品的
             $sum_c=array();
             $sql1="select * from swoper$suffix.swo_service a
