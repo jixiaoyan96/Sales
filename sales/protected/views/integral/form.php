@@ -26,7 +26,7 @@ $this->pageTitle=Yii::app()->name . ' - Integral Form';
     <div class="box">
         <div class="box-body">
             <div class="btn-group text-info" role="group">
-                <p><b>注：</b></p>
+                <p><b><?php echo Yii::t('dialog','Zhu'); ?></b></p>
                 <p style="text-indent: 15px;"><?php echo Yii::t('dialog','Zhu_Integral'); ?></p>
 
             </div>
