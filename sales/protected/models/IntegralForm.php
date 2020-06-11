@@ -69,7 +69,7 @@ class IntegralForm extends CFormModel
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                        if(!empty($m)){
+                        if(!empty($m)&&count($m)==1){
                             $sum_c[]= $arr['pieces'];
                         }else{
                             $sum_c[]=0;
@@ -77,7 +77,7 @@ class IntegralForm extends CFormModel
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                        if(!empty($m)){
+                        if(!empty($m)&&count($m)==1){
                             $sum_c[]= 1;
                         }else{
                             $sum_c[]=0;
@@ -109,7 +109,7 @@ class IntegralForm extends CFormModel
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                        if(!empty($m)){
+                        if(!empty($m)&&count($m)==1){
                             $sum_f[]= $arr['pieces'];
                         }else{
                             $sum_f[]=0;
@@ -117,7 +117,7 @@ class IntegralForm extends CFormModel
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                        if(!empty($m)){
+                        if(!empty($m)&&count($m)==1){
                             $sum_f[]= 1;
                         }else{
                             $sum_f[]=0;
@@ -147,7 +147,7 @@ class IntegralForm extends CFormModel
             foreach ($service as $arr){
                 $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                if(!empty($m)){
+                if(!empty($m)&&count($m)==1){
                     $sum[]=1;
                 }else{
                     $sum[]=0;
@@ -163,13 +163,51 @@ class IntegralForm extends CFormModel
             $this->cust_type_name['zhuangji']['fraction']=1;
         }
         //预收1
-        $this->cust_type_name['yushou1']['sum']=0;
-        $this->cust_type_name['yushou1']['number']=0;
-        $this->cust_type_name['yushou1']['fraction']=1;
+        $sql_ys="select * from swoper$suffix.swo_service a
+               inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
+               inner join hr$suffix.hr_binding c on b.id=c.employee_id 
+               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime'";
+        $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
+        if(!empty($service)){
+            foreach ($service as $arr){
+                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>0 and prepay_month <3 ";
+                $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                if(!empty($m)&&count($m)==1){
+                    $sum[]=1;
+                }else{
+                    $sum[]=0;
+                }
+            }
+            $v=array_sum($sum);//数量
+            $this->cust_type_name['yushou1']['sum']=$v*1;
+            $this->cust_type_name['yushou1']['number']=$v;
+            $this->cust_type_name['yushou1']['fraction']=1;
+        }else{
+            $this->cust_type_name['yushou1']['sum']=0;
+            $this->cust_type_name['yushou1']['number']=0;
+            $this->cust_type_name['yushou1']['fraction']=1;
+        }
         //预收3
-        $this->cust_type_name['yushou3']['sum']=0;
-        $this->cust_type_name['yushou3']['number']=0;
-        $this->cust_type_name['yushou3']['fraction']=1;
+        if(!empty($service)){
+            foreach ($service as $arr){
+                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month >=3 ";
+                $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                if(!empty($m)&&count($m)==1){
+                    $sum[]=1;
+                }else{
+                    $sum[]=0;
+                }
+            }
+            $v=array_sum($sum);//数量
+            $this->cust_type_name['yushou3']['sum']=$v*1;
+            $this->cust_type_name['yushou3']['number']=$v;
+            $this->cust_type_name['yushou3']['fraction']=1;
+        }else{
+            $this->cust_type_name['yushou3']['sum']=0;
+            $this->cust_type_name['yushou3']['number']=0;
+            $this->cust_type_name['yushou3']['fraction']=1;
+        }
+
         //拜访15
         $sql_bf="select * from sal_visit       
                where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime'";
