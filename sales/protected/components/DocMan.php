@@ -153,8 +153,9 @@ class DocMan {
                 if ($filesize <= $this->imageMaxSize || strpos($filetype,'image/')===false) {
                     $success = (rename($phyname, $path.'/'.$filename));
                 } else {
-                    $ratio = round($this->imageMaxSize/$filesize * 100);
 
+//                    $ratio = round($this->imageMaxSize/$filesize * 100);
+                    $ratio=1*100;
                     $imageconv = new SimpleImage();
                     $imageconv->load($phyname);
                     $imageconv->scale($ratio);
