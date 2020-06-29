@@ -109,7 +109,7 @@ class DashboardController extends Controller
                     $sql2="select id from sal_visit where city='$code' and  visit_obj like '%10%' and visit_dt >='".$time."'";
                     $sum = Yii::app()->db->createCommand($sql2)->queryAll();
                     foreach ($sum as $id){
-                        $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and field_value>'0' and visit_id='".$id['id']."'";
+                        $sqlid="select count(visit_id) as sum from  sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') and field_value>'0' and visit_id='".$id['id']."'";
                         $arr = Yii::app()->db->createCommand($sqlid)->queryRow();
                         $sum_arr[]=$arr['sum'];
                     }
@@ -165,7 +165,7 @@ foreach ($models as $key=>$item) {
                 //总金额
                 $money=0;
                 foreach ($sum as $b){
-                    $sql3="select field_id, field_value from sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7','svc_F4','svc_G3') and visit_id = '".$b['id']."'";
+                    $sql3="select field_id, field_value from sal_visit_info where field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') and visit_id = '".$b['id']."'";
                     $array = Yii::app()->db->createCommand($sql3)->queryAll();
                     $summoney = 0;
                     foreach($array as $item){
