@@ -16,9 +16,9 @@ class IntegralCommand extends CConsoleCommand
             foreach ($rows as $row) {
                 $city = $row['code'];
                 $sql1="select a.*,b.user_id from hr$suffix.hr_employee a
-                     left join hr$suffix.hr_binding b on a.id=b.employee_id 
-                      left join hr$suffix.hr_dept c on a.position=c.id 
-                      where  a.city='$city'  and c.manager_type !='3' and  c.dept_class='Sales'
+                      inner join hr$suffix.hr_binding b on a.id=b.employee_id 
+                      inner join hr$suffix.hr_dept c on a.position=c.id 
+                      where  a.city='$city'  and c.manager_type !='3' and  c.dept_class='Sales' and a.staff_status='0'
 ";
                 $row = Yii::app()->db->createCommand($sql1)->queryAll();
                 foreach ($row as $sale){
