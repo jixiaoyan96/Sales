@@ -148,12 +148,12 @@ class IntegralForm extends CFormModel
                 $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
-                    $sum[]=1;
+                    $sum_z[]=1;
                 }else{
-                    $sum[]=0;
+                    $sum_z[]=0;
                 }
             }
-            $v=array_sum($sum);//数量
+            $v=array_sum($sum_z);//数量
             $this->cust_type_name['zhuangji']['sum']=$v*1;
             $this->cust_type_name['zhuangji']['number']=$v;
             $this->cust_type_name['zhuangji']['fraction']=1;//分数
@@ -170,15 +170,15 @@ class IntegralForm extends CFormModel
         $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>0 and prepay_month <6 ";
+                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6 ";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
-                    $sum[]=1;
+                    $sum_y3[]=1;
                 }else{
-                    $sum[]=0;
+                    $sum_y3[]=0;
                 }
             }
-            $v=array_sum($sum);//数量
+            $v=array_sum($sum_y3);//数量
             $this->cust_type_name['yushou3']['sum']=$v*2;
             $this->cust_type_name['yushou3']['number']=$v;
             $this->cust_type_name['yushou3']['fraction']=2;
@@ -193,12 +193,12 @@ class IntegralForm extends CFormModel
                 $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12 ";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
-                    $sum[]=1;
+                    $sum_y6[]=1;
                 }else{
-                    $sum[]=0;
+                    $sum_y6[]=0;
                 }
             }
-            $v=array_sum($sum);//数量
+            $v=array_sum($sum_y6);//数量
             $this->cust_type_name['yushou6']['sum']=$v*3;
             $this->cust_type_name['yushou6']['number']=$v;
             $this->cust_type_name['yushou6']['fraction']=3;
@@ -213,12 +213,12 @@ class IntegralForm extends CFormModel
                 $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month >=12 ";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
-                    $sum[]=1;
+                    $sum_y12[]=1;
                 }else{
-                    $sum[]=0;
+                    $sum_y12[]=0;
                 }
             }
-            $v=array_sum($sum);//数量
+            $v=array_sum($sum_y12);//数量
             $this->cust_type_name['yushou12']['sum']=$v*5;
             $this->cust_type_name['yushou12']['number']=$v;
             $this->cust_type_name['yushou12']['fraction']=5;
@@ -270,6 +270,9 @@ class IntegralForm extends CFormModel
         }elseif ($this->cust_type_name['all_sum']> 80){
             $this->cust_type_name['point']=0.02;
         }
+        $sql="select * from hr$suffix.hr_binding  where user_id='".$row['username']."' ";
+        $name = Yii::app()->db->createCommand($sql)->queryRow();
+        $this->name=$name['employee_name'];
 		return true;
 	}
 
