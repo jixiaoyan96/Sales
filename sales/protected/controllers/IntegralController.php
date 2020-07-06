@@ -44,8 +44,8 @@ class IntegralController extends Controller
 			$model->attributes = $_POST['IntegralList'];
 		} else {
 			$session = Yii::app()->session;
-			if (isset($session['criteria_hc03']) && !empty($session['criteria_hc03'])) {
-				$criteria = $session['criteria_hc03'];
+			if (isset($session['criteria_ha06']) && !empty($session['criteria_ha06'])) {
+				$criteria = $session['criteria_ha06'];
 				$model->setCriteria($criteria);
 			}
 		}
