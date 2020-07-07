@@ -141,7 +141,7 @@ class IntegralForm extends CFormModel
         $sql_zj="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
-               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime'";
+               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.amt_install<>0 and (a.cust_type=1 or a.cust_type=2)";
         $service = Yii::app()->db->createCommand($sql_zj)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
