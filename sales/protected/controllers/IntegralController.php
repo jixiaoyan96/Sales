@@ -24,7 +24,7 @@ class IntegralController extends Controller
 	{
 		return array(
 			array('allow', 
-				'actions'=>array('new','edit','delete','save'),
+				'actions'=>array('new','edit','delete','save','downs'),
 				'expression'=>array('IntegralController','allowReadWrite'),
 			),
 			array('allow', 
@@ -89,7 +89,13 @@ class IntegralController extends Controller
 		$model = new IntegralForm('new');
 		$this->render('form',array('model'=>$model,));
 	}
-	
+
+    public function actionDowns($index)
+    {
+        $model = new IntegralForm('new');
+        $model->retrieveData($index);
+        $model->downEx($model);
+    }
 //	public function actionEdit($index)
 //	{
 //		$model = new IntegralForm('edit');
