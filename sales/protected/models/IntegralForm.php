@@ -87,7 +87,7 @@ class IntegralForm extends CFormModel
                         }
                     }elseif($value['conditions']==1){
                         $sum_c[]= $arr['pieces'];
-                        $value['list'][]=$arr;
+                        $value['list'][0][]=$arr;
                     }
                 }
                 $value['number']=array_sum($sum_c);//数量
@@ -120,6 +120,7 @@ class IntegralForm extends CFormModel
                         }else{
                             $sum_f[]=0;
                         }
+
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
@@ -131,9 +132,10 @@ class IntegralForm extends CFormModel
                         }
                     }elseif($value['conditions']==1){
                         $sum_f[]= $arr['pieces'];
-                        $value['list'][]=$arr;
+                        $value['list'][0][]=$arr;
                     }
                 }
+
                 $value['number']=array_sum($sum_f);//数量
                 if((array_sum($sum_f)>$value['toplimit'])&&$value['toplimit']!=0){
                     $value['sum']=$value['toplimit']*$value['fraction'];
@@ -145,6 +147,7 @@ class IntegralForm extends CFormModel
                 $value['sum']=0;
             }
         }
+
         //装机
         $sql_zj="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
@@ -398,7 +401,7 @@ class IntegralForm extends CFormModel
                     $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
                     $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                     $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                    $objActSheet->setCellValue('F'.$o,$this->getCustTypeNameB($list[0]['cust_type_name'])) ;
+                    $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
                     $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
                     $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
                     $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
@@ -416,7 +419,7 @@ class IntegralForm extends CFormModel
                 $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
                 $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                 $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNameB($list[0]['cust_type_name'])) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
                 $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
                 $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
                 $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
@@ -431,7 +434,7 @@ class IntegralForm extends CFormModel
                 $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
                 $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                 $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNameB($list[0]['cust_type_name'])) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
                 $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
                 $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
                 $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
@@ -446,7 +449,7 @@ class IntegralForm extends CFormModel
                 $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
                 $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                 $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNameB($list[0]['cust_type_name'])) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
                 $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
                 $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
                 $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
@@ -461,7 +464,7 @@ class IntegralForm extends CFormModel
                 $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
                 $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                 $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNameB($list[0]['cust_type_name'])) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
                 $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
                 $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
                 $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
