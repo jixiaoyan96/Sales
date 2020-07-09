@@ -378,8 +378,8 @@ class IntegralForm extends CFormModel
                 foreach ($arr['list'] as $list){
                     $o=$o+1;
                     $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                    $objActSheet->setCellValue('B'.$o,$list[0]['status_dt']) ;
-                    $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
+                    $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                    $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
                     $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                     $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
                     $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
@@ -397,8 +397,8 @@ class IntegralForm extends CFormModel
                 foreach ($arr['list'] as $list){
                     $o=$o+1;
                     $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                    $objActSheet->setCellValue('B'.$o,$list[0]['status_dt']) ;
-                    $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
+                    $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                    $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
                     $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                     $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
                     $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
@@ -415,8 +415,8 @@ class IntegralForm extends CFormModel
             foreach ($this->cust_type_name['zhuangji']['list'] as $list){
                 $o=$o+1;
                 $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('B'.$o,$list[0]['status_dt']) ;
-                $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
+                $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
                 $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                 $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
                 $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
@@ -430,8 +430,8 @@ class IntegralForm extends CFormModel
             foreach ($this->cust_type_name['yushou3']['list'] as $list){
                 $o=$o+1;
                 $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('B'.$o,$list[0]['status_dt']) ;
-                $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
+                $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
                 $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                 $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
                 $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
@@ -445,8 +445,8 @@ class IntegralForm extends CFormModel
             foreach ($this->cust_type_name['yushou6']['list'] as $list){
                 $o=$o+1;
                 $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('B'.$o,$list[0]['status_dt']) ;
-                $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
+                $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
                 $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                 $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
                 $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
@@ -460,8 +460,8 @@ class IntegralForm extends CFormModel
             foreach ($this->cust_type_name['yushou12']['list'] as $list){
                 $o=$o+1;
                 $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('B'.$o,$list[0]['status_dt']) ;
-                $objActSheet->setCellValue('C'.$o,$list[0]['first_dt']) ;
+                $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
                 $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
                 $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
                 $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
