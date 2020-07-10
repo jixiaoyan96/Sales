@@ -57,9 +57,9 @@ class IntegralForm extends CFormModel
         $this->id=$index;
         $this->year=$row['year'];
         $this->month=$row['month'];
+        $i=0;
         foreach ($this->cust_type_name['canpin'] as &$value){//产品的
             $sum_c=array();
-            $value['list']=array();
             $sql1="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
@@ -87,7 +87,8 @@ class IntegralForm extends CFormModel
                         }
                     }elseif($value['conditions']==1){
                         $sum_c[]= $arr['pieces'];
-                        $value['list'][0][]=$arr;
+                        $value['list'][$i][]=$arr;
+                        $i=$i+1;
                     }
                 }
                 $value['number']=array_sum($sum_c);//数量
@@ -100,10 +101,11 @@ class IntegralForm extends CFormModel
                 $value['number']=0;
                 $value['sum']=0;
             }
+
         }
+        $f=0;
         foreach ($this->cust_type_name['fuwu'] as &$value){//服务的
             $sum_f=array();
-            $value['list']=array();
             $sql1="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
@@ -132,8 +134,9 @@ class IntegralForm extends CFormModel
                         }
                     }elseif($value['conditions']==1){
                         $sum_f[]= $arr['pieces'];
-                        $value['list'][0][]=$arr;
+                        $value['list'][$f][]=$arr;
                     }
+                    $f=$f+1;
                 }
 
                 $value['number']=array_sum($sum_f);//数量
@@ -146,8 +149,10 @@ class IntegralForm extends CFormModel
                 $value['number']=0;
                 $value['sum']=0;
             }
+//            print_r('<pre>');
+//            print_r($arr);
         }
-
+//        exit();exit
         //装机
         $sql_zj="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
@@ -372,103 +377,108 @@ class IntegralForm extends CFormModel
         $objPHPExcel->getSheet(0)->setTitle('积分表单');
         $objActSheet=$objPHPExcel->setActiveSheetIndex(1);
         //$objActSheet->setCellValue('A2', '啊沙雕哈市的你看的') ;
-        $o=1;
+        $o=2;
+        $objActSheet->setCellValue('A'.$o,'产品') ;
         foreach ($model['cust_type_name']['canpin'] as $arr ){
             if(!empty($arr['list'])){
                 foreach ($arr['list'] as $list){
                     $o=$o+1;
-                    $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                    $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                    $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                    $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
-                    $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                    $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                    $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
-                    $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
-                    $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
-                    $objActSheet->setCellValue('J'.$o,$list[0]['prepay_month']) ;
+                    $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
+                    $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                    $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
+                    $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
+                    $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
+                    $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
+                    $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
+                    $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
+                    $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
+                    $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
                 }
             }
 
         }
-
+        $o=$o+1;
+        $objActSheet->setCellValue('A'.$o,'服务') ;
         foreach ($model['cust_type_name']['fuwu'] as $arr ){
             if(!empty($arr['list'])){
                 foreach ($arr['list'] as $list){
                     $o=$o+1;
-                    $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                    $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                    $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                    $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
-                    $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                    $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                    $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
-                    $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
-                    $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
-                    $objActSheet->setCellValue('J'.$o,$list[0]['prepay_month']) ;
+                    $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
+                    $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                    $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
+                    $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
+                    $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
+                    $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
+                    $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
+                    $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
+                    $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
+                    $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
                 }
             }
 
         }
-
+        $o=$o+1;
+        $objActSheet->setCellValue('A'.$o,'装机') ;
         if(!empty($this->cust_type_name['zhuangji']['list'])){
             foreach ($this->cust_type_name['zhuangji']['list'] as $list){
                 $o=$o+1;
-                $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
-                $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
-                $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
-                $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
-                $objActSheet->setCellValue('J'.$o,$list[0]['prepay_month']) ;
+                $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
+                $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
+                $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
+                $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
+                $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
+                $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
+                $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
             }
         }
+        $o=$o+1;
+        $objActSheet->setCellValue('A'.$o,'预收') ;
         if(!empty($this->cust_type_name['yushou3']['list'])){
             foreach ($this->cust_type_name['yushou3']['list'] as $list){
                 $o=$o+1;
-                $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
-                $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
-                $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
-                $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
-                $objActSheet->setCellValue('J'.$o,$list[0]['prepay_month']) ;
+                $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
+                $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
+                $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
+                $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
+                $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
+                $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
+                $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
             }
         }
         if(!empty($this->cust_type_name['yushou6']['list'])){
             foreach ($this->cust_type_name['yushou6']['list'] as $list){
                 $o=$o+1;
-                $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
-                $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
-                $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
-                $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
-                $objActSheet->setCellValue('J'.$o,$list[0]['prepay_month']) ;
+                $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
+                $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
+                $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
+                $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
+                $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
+                $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
+                $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
             }
         }
         if(!empty($this->cust_type_name['yushou12']['list'])){
             foreach ($this->cust_type_name['yushou12']['list'] as $list){
                 $o=$o+1;
-                $objActSheet->setCellValue('A'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('B'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('C'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('D'.$o,$list[0]['company_name']) ;
-                $objActSheet->setCellValue('E'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                $objActSheet->setCellValue('G'.$o,$list[0]['pieces']) ;
-                $objActSheet->setCellValue('H'.$o,$list[0]['amt_install']) ;
-                $objActSheet->setCellValue('I'.$o,$list[0]['salesman']) ;
-                $objActSheet->setCellValue('J'.$o,$list[0]['prepay_month']) ;
+                $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
+                $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
+                $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
+                $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
+                $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
+                $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
+                $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
             }
         }
         $objPHPExcel->setActiveSheetIndex(0);
