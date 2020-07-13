@@ -161,7 +161,7 @@ class IntegralForm extends CFormModel
         $service = Yii::app()->db->createCommand($sql_zj)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
+                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."'  and salesman='".$arr['salesman']."' and amt_install<>0  and (cust_type=1 or cust_type=2)";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
                     $sum_z[]=1;
