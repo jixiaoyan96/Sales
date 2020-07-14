@@ -63,12 +63,12 @@ class IntegralForm extends CFormModel
             $sql1="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
-               where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and status_dt<='$endtime'";
+               where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and status_dt<='$endtime' and a.status_desc='N'";
             $service = Yii::app()->db->createCommand($sql1)->queryAll();
             if(!empty($service)){
                 foreach ($service as $arr){
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status_desc='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(!empty($m)&&count($m)==1){
                             $sum_c[]= $arr['pieces'];
@@ -77,7 +77,7 @@ class IntegralForm extends CFormModel
                             $sum_c[]=0;
                         }
                     }elseif($value['conditions']==2){
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status_desc='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(!empty($m)&&count($m)==1){
                             $sum_c[]= 1;
@@ -109,12 +109,12 @@ class IntegralForm extends CFormModel
             $sql1="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
-               where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and a.status_dt<='$endtime'";
+               where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status_desc='N'";
             $service = Yii::app()->db->createCommand($sql1)->queryAll();
             if(!empty($service)){
                 foreach ($service as $arr){
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status_desc='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(!empty($m)&&count($m)==1){
                             $sum_f[]= $arr['pieces'];
@@ -124,7 +124,7 @@ class IntegralForm extends CFormModel
                         }
 
                     }elseif($value['conditions']==2){
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status_desc='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(!empty($m)&&count($m)==1){
                             $sum_f[]= 1;
@@ -157,11 +157,11 @@ class IntegralForm extends CFormModel
         $sql_zj="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
-               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.amt_install<>0 and (a.cust_type=1 or a.cust_type=2)";
+               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.amt_install<>0 and (a.cust_type=1 or a.cust_type=2) and a.status_desc='N'";
         $service = Yii::app()->db->createCommand($sql_zj)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."'  and salesman='".$arr['salesman']."' and amt_install<>0  and cust_type='".$arr['cust_type']."'";
+                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."'  and salesman='".$arr['salesman']."' and amt_install<>0  and cust_type='".$arr['cust_type']."'  and status_desc='N'";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
                     $sum_z[]=1;
@@ -183,11 +183,11 @@ class IntegralForm extends CFormModel
         $sql_ys="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
-               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime'";
+               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status_desc='N'";
         $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6 ";
+                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6   and status_desc='N'";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
                     $sum_y3[]=1;
@@ -208,7 +208,7 @@ class IntegralForm extends CFormModel
         //预收6
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12 ";
+                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12   and status_desc='N'";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
                     $sum_y6[]=1;
@@ -229,7 +229,7 @@ class IntegralForm extends CFormModel
         //预收12
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month >=12 ";
+                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month >=12   and status_desc='N'";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
                     $sum_y12[]=1;
