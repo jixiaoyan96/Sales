@@ -265,11 +265,11 @@ class IntegralForm extends CFormModel
         if(!empty($bf)&&(count($bf)/$row['sale_day'])>20){
             $this->cust_type_name['baifang20']['sum']=2;
             $this->cust_type_name['baifang20']['number']=1;
-            $this->cust_type_name['baifang20']['fraction']=1;
+            $this->cust_type_name['baifang20']['fraction']=2;
         }else{
             $this->cust_type_name['baifang20']['sum']=0;
             $this->cust_type_name['baifang20']['number']=0;
-            $this->cust_type_name['baifang20']['fraction']=1;
+            $this->cust_type_name['baifang20']['fraction']=2;
         }
 
         $this->cust_type_name['canpin_sum']=array_sum(array_map(create_function('$val', 'return $val["sum"];'), $this->cust_type_name['canpin']));
