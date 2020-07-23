@@ -72,30 +72,43 @@ class IntegralForm extends CFormModel
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(!empty($m)&&count($m)==1){
                             $sum_c[]= $arr['pieces'];
+                            if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
+                                $sum_s[]=$value['toplimit'];
+                            }else{
+                                $sum_s[]=$arr['pieces'];
+                            }
                             $value['list'][]=$m;
                         }else{
                             $sum_c[]=0;
+                            $sum_s[]=0;
                         }
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(!empty($m)&&count($m)==1){
                             $sum_c[]= 1;
+                            $sum_s[]=1;
                             $value['list'][]=$m;
                         }else{
                             $sum_c[]=0;
+                            $sum_s[]=0;
                         }
                     }elseif($value['conditions']==1){
                         $sum_c[]= $arr['pieces'];
+                        if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
+                            $sum_s[]=$value['toplimit'];
+                        }else{
+                            $sum_s[]=$arr['pieces'];
+                        }
                         $value['list'][$i][]=$arr;
                         $i=$i+1;
                     }
                 }
                 $value['number']=array_sum($sum_c);//数量
-                if((array_sum($sum_c)>$value['toplimit'])&&$value['toplimit']!=0){
+                if((array_sum($sum_s)>$value['toplimit'])&&$value['toplimit']!=0){
                     $value['sum']=$value['toplimit']*$value['fraction'];
                 }else{
-                    $value['sum']=$value['number']*$value['fraction'];
+                    $value['sum']=array_sum($sum_s)*$value['fraction'];
                 }
             }else{
                 $value['number']=0;
@@ -118,9 +131,15 @@ class IntegralForm extends CFormModel
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(!empty($m)&&count($m)==1){
                             $sum_f[]= $arr['pieces'];
+                            if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
+                                $sum_ff[]=$value['toplimit'];
+                            }else{
+                                $sum_ff[]=$arr['pieces'];
+                            }
                             $value['list'][]=$m;
                         }else{
                             $sum_f[]=0;
+                            $sum_ff[]=0;
                         }
 
                     }elseif($value['conditions']==2){
@@ -129,21 +148,28 @@ class IntegralForm extends CFormModel
                         if(!empty($m)&&count($m)==1){
                             $sum_f[]= 1;
                             $value['list'][]=$m;
+                            $sum_ff[]=1;
                         }else{
                             $sum_f[]=0;
+                            $sum_ff[]=0;
                         }
                     }elseif($value['conditions']==1){
                         $sum_f[]= $arr['pieces'];
+                        if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
+                            $sum_ff[]=$value['toplimit'];
+                        }else{
+                            $sum_ff[]=$arr['pieces'];
+                        }
                         $value['list'][$f][]=$arr;
                     }
                     $f=$f+1;
                 }
 
                 $value['number']=array_sum($sum_f);//数量
-                if((array_sum($sum_f)>$value['toplimit'])&&$value['toplimit']!=0){
+                if((array_sum($sum_ff)>$value['toplimit'])&&$value['toplimit']!=0){
                     $value['sum']=$value['toplimit']*$value['fraction'];
                 }else{
-                    $value['sum']=$value['number']*$value['fraction'];
+                    $value['sum']=array_sum($sum_ff)*$value['fraction'];
                 }
             }else{
                 $value['number']=0;
@@ -187,8 +213,13 @@ class IntegralForm extends CFormModel
         $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6   and status='N'";
-                $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                if(empty($arr['cust_type_name'])){
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6   and status='N'";
+
+                }else{
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6   and status='N'";
+                }
+               $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
                     $sum_y3[]=1;
                     $this->cust_type_name['yushou3']['list'][]=$m;
@@ -208,7 +239,12 @@ class IntegralForm extends CFormModel
         //预收6
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12   and status='N'";
+                if(empty($arr['cust_type_name'])){
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12   and status='N'";
+
+                }else{
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12   and status='N'";
+                }
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
                     $sum_y6[]=1;
@@ -229,7 +265,12 @@ class IntegralForm extends CFormModel
         //预收12
         if(!empty($service)){
             foreach ($service as $arr){
-                $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month >=12   and status='N'";
+                if(empty($arr['cust_type_name'])){
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month >=12   and status='N'";
+
+                }else{
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month >=12   and status='N'";
+                }
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
                     $sum_y12[]=1;
