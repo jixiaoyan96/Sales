@@ -60,6 +60,7 @@ class IntegralForm extends CFormModel
         $i=0;
         foreach ($this->cust_type_name['canpin'] as &$value){//产品的
             $sum_c=array();
+            $sum_s=array();
             $sql1="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
@@ -115,6 +116,7 @@ class IntegralForm extends CFormModel
         $f=0;
         foreach ($this->cust_type_name['fuwu'] as &$value){//服务的
             $sum_f=array();
+            $sum_ff=array();
             $sql1="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
