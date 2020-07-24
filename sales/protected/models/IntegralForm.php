@@ -105,11 +105,7 @@ class IntegralForm extends CFormModel
                     }
                 }
                 $value['number']=array_sum($sum_c);//数量
-                if((array_sum($sum_s)>$value['toplimit'])&&$value['toplimit']!=0){
-                    $value['sum']=$value['toplimit']*$value['fraction'];
-                }else{
-                    $value['sum']=array_sum($sum_s)*$value['fraction'];
-                }
+                $value['sum']=array_sum($sum_s)*$value['fraction'];
             }else{
                 $value['number']=0;
                 $value['sum']=0;
@@ -166,11 +162,7 @@ class IntegralForm extends CFormModel
                 }
 
                 $value['number']=array_sum($sum_f);//数量
-                if((array_sum($sum_ff)>$value['toplimit'])&&$value['toplimit']!=0){
-                    $value['sum']=$value['toplimit']*$value['fraction'];
-                }else{
-                    $value['sum']=array_sum($sum_ff)*$value['fraction'];
-                }
+                $value['sum']=array_sum($sum_ff)*$value['fraction'];
             }else{
                 $value['number']=0;
                 $value['sum']=0;
