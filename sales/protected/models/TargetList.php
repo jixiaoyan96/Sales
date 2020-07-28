@@ -28,15 +28,17 @@ class TargetList extends CListPageModel
 		$suffix = Yii::app()->params['envSuffix'];
         $citylist = Yii::app()->user->city_allow();
         $user = Yii::app()->user->id;
-        $sql1 = "select a.* ,b.name as city_name,c.employee_name as name
+        $sql1 = "select a.* ,b.name as city_name,d.name as name
 				from sal_integral	a
 				left outer join security$suffix.sec_city b on a.city=b.code
 				inner join  hr$suffix.hr_binding c on a.username = c.user_id		  
+				inner join  hr$suffix.hr_employee d on c.employee_id = d.id  
 					where a.city in ($citylist)";
         $sql2 = "select count(a.id)
 				from sal_integral	a
 				left outer join security$suffix.sec_city b on a.city=b.code	
 				inner join hr$suffix.hr_binding c on a.username = c.user_id	  
+				inner join  hr$suffix.hr_employee d on c.employee_id = d.id  
 			   	where a.city in ($citylist)";
 		$clause = "";
         if (!(IntegralForm::isReadAll())) {
@@ -72,7 +74,7 @@ class TargetList extends CListPageModel
                     $order .= " order by  b.name ";
                     break;
                 case 'name':
-                    $order .= " order by c.employee_name ";
+                    $order .= " order by d.name ";
                     break;
             }
             if ($this->orderType=='D') $order .= "desc ";
