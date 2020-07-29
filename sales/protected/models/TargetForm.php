@@ -27,15 +27,16 @@ class TargetForm extends CFormModel
 	public function retrieveData($index)
 	{
 		$suffix = Yii::app()->params['envSuffix'];
-		$sql = "select a.*	,b.employee_name	
+		$sql = "select a.*	,c.name	
 				from sal_integral a 
 				left outer join hr$suffix.hr_binding b on a.username=b.user_id 
+					inner join  hr$suffix.hr_employee c on b.employee_id = c.id  
 				where a.id=$index";
 		$rows = Yii::app()->db->createCommand($sql)->queryRow();
 		if (count($rows) > 0)
 		{
 				$this->id = $rows['id'];
-				$this->employee_name = $rows['employee_name'];
+				$this->employee_name = $rows['name'];
 				$this->sale_day = $rows['sale_day'];
 		}
 		return true;

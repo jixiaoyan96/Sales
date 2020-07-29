@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 
 <section class="content-header">
 	<h1>
-		<strong><?php echo Yii::t('code','Performance Form'); ?></strong>
+		<strong><?php echo Yii::t('code','Target Form'); ?></strong>
 	</h1>
 </section>
 
