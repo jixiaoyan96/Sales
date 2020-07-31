@@ -68,7 +68,7 @@ class IntegralForm extends CFormModel
             $service = Yii::app()->db->createCommand($sql1)->queryAll();
             if(!empty($service)){
                 foreach ($service as $arr){
-                    $arr['company_name']=str_replace("\'","\'\'",$arr['company_name']);
+              $arr['company_name']=str_replace("'","''",$arr['company_name']);
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
@@ -125,7 +125,7 @@ class IntegralForm extends CFormModel
             $service = Yii::app()->db->createCommand($sql1)->queryAll();
             if(!empty($service)){
                 foreach ($service as $arr){
-                    $arr['company_name']=str_replace("\'","\'\'",$arr['company_name']);
+                    $arr['company_name']=str_replace("'","''",$arr['company_name']);
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
@@ -183,7 +183,7 @@ class IntegralForm extends CFormModel
         $service = Yii::app()->db->createCommand($sql_zj)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
-                $arr['company_name']=str_replace("\'","\'\'",$arr['company_name']);
+          $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."'  and salesman='".$arr['salesman']."' and amt_install<>0  and cust_type='".$arr['cust_type']."'  and status='N'";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
@@ -210,7 +210,7 @@ class IntegralForm extends CFormModel
         $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
-                $arr['company_name']=str_replace("\'","\'\'",$arr['company_name']);
+          $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
                     $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6   and status='N'";
 
@@ -237,7 +237,7 @@ class IntegralForm extends CFormModel
         //预收6
         if(!empty($service)){
             foreach ($service as $arr){
-                $arr['company_name']=str_replace("\'","\'\'",$arr['company_name']);
+          $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
                     $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12   and status='N'";
 
@@ -264,7 +264,7 @@ class IntegralForm extends CFormModel
         //预收12
         if(!empty($service)){
             foreach ($service as $arr){
-                $arr['company_name']=str_replace("\'","\'\'",$arr['company_name']);
+          $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
                     $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month >=12   and status='N'";
 
