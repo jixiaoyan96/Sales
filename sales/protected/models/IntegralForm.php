@@ -284,7 +284,7 @@ class IntegralForm extends CFormModel
         }
         //拜访15
         $sql_bf="select * from sal_visit       
-               where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime'";
+               where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime' and shift!='Y'";
         $bf = Yii::app()->db->createCommand($sql_bf)->queryAll();
         if(!empty($bf)&&(count($bf)/$row['sale_day'])>15){
             $this->cust_type_name['baifang15']['sum']=1;
