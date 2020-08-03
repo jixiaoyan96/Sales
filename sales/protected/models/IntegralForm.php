@@ -121,48 +121,70 @@ class IntegralForm extends CFormModel
             $sql1="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
-               where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N'";
+               where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and a.status_dt<='$endtime' and (a.status='N' or a.status='A')";
             $service = Yii::app()->db->createCommand($sql1)->queryAll();
             if(!empty($service)){
                 foreach ($service as $arr){
                     $arr['company_name']=str_replace("'","''",$arr['company_name']);
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
-                        $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                        if(!empty($m)&&count($m)==1){
-                            $sum_f[]= $arr['pieces'];
-                            if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
-                                $sum_ff[]=$value['toplimit'];
+                        if($arr['status']=='N'){
+                            $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                            $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                            if(!empty($m)&&count($m)==1){
+                                $sum_f[]= $arr['pieces'];
+                                if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
+                                    $sum_ff[]=$value['toplimit'];
+                                }else{
+                                    $sum_ff[]=$arr['pieces'];
+                                }
+                                $value['list'][]=$m;
                             }else{
-                                $sum_ff[]=$arr['pieces'];
+                                $sum_f[]=0;
+                                $sum_ff[]=0;
                             }
-                            $value['list'][]=$m;
-                        }else{
-                            $sum_f[]=0;
-                            $sum_ff[]=0;
                         }
-
                     }elseif($value['conditions']==2){
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
-                        $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                        if(!empty($m)&&count($m)==1){
-                            $sum_f[]= 1;
-                            $value['list'][]=$m;
-                            $sum_ff[]=1;
-                        }else{
-                            $sum_f[]=0;
-                            $sum_ff[]=0;
+                        if($arr['status']=='N'){
+                            $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                            $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                            if(!empty($m)&&count($m)==1){
+                                $sum_f[]= 1;
+                                $value['list'][]=$m;
+                                $sum_ff[]=1;
+                            }else{
+                                $sum_f[]=0;
+                                $sum_ff[]=0;
+                            }
                         }
                     }elseif($value['conditions']==1){
-                        $sum_f[]= $arr['pieces'];
-                        if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
-                            $sum_ff[]=$value['toplimit'];
-                        }else{
-                            $sum_ff[]=$arr['pieces'];
+                        if($arr['status']=='N'){
+                            $sum_f[]= $arr['pieces'];
+                            if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
+                                $sum_f[]=$value['toplimit'];
+                            }else{
+                                $sum_f[]=$arr['pieces'];
+                            }
+                            $value['list'][$f][]=$arr;
+
                         }
-                        $value['list'][$f][]=$arr;
+                        if($arr['status']=='A'){
+                            $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                            $m = Yii::app()->db->createCommand($sql_calculation)->queryRow();
+                            if(!empty($m)){
+                                if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
+                                    $v=$value['toplimit'];
+                                }else{
+                                    $v=$arr['pieces'];
+                                }
+                                $a=$v-$m['pieces'];
+                                if($a>0){
+                                    $sum_s[]=$a;
+                                    $value['list'][$f][]=$arr;
+                                }
+                            }
+                        }
+                        $f=$f+1;
                     }
-                    $f=$f+1;
                 }
 
                 $value['number']=array_sum($sum_f);//数量
