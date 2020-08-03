@@ -121,7 +121,7 @@ class IntegralForm extends CFormModel
             $sql1="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
-               where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and a.status_dt<='$endtime' and (a.status='N' or a.status='A')";
+               where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and a.status_dt<='$endtime' and (a.status='N' or a.status='A' or a.status='C')";
             $service = Yii::app()->db->createCommand($sql1)->queryAll();
             if(!empty($service)){
                 foreach ($service as $arr){
@@ -165,7 +165,6 @@ class IntegralForm extends CFormModel
                                 $sum_ff[]=$arr['pieces'];
                             }
                             $value['list'][$f][]=$arr;
-
                         }
                         if($arr['status']=='A'){
                             $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
@@ -184,6 +183,24 @@ class IntegralForm extends CFormModel
                                 }
                             }
                         }
+                        if($arr['status']=='C'){
+                            $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and （status='N' or status='A'） order by  a.id desc";
+                            $m = Yii::app()->db->createCommand($sql_calculation)->queryRow();
+                            if(!empty($m)){
+                                if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
+                                    $v=$value['toplimit'];
+                                }else{
+                                    $v=$arr['pieces'];
+                                }
+                                $a=$v-$m['pieces'];
+                                if($a>0){
+                                    $sum_f[]=$a;
+                                    $sum_ff[]=$a;
+                                    $value['list'][$f][]=$arr;
+                                }
+                            }
+                        }
+
                         $f=$f+1;
                     }
                 }
