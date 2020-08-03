@@ -160,9 +160,9 @@ class IntegralForm extends CFormModel
                         if($arr['status']=='N'){
                             $sum_f[]= $arr['pieces'];
                             if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
-                                $sum_f[]=$value['toplimit'];
+                                $sum_ff[]=$value['toplimit'];
                             }else{
-                                $sum_f[]=$arr['pieces'];
+                                $sum_ff[]=$arr['pieces'];
                             }
                             $value['list'][$f][]=$arr;
 
@@ -178,7 +178,8 @@ class IntegralForm extends CFormModel
                                 }
                                 $a=$v-$m['pieces'];
                                 if($a>0){
-                                    $sum_s[]=$a;
+                                    $sum_f[]=$a;
+                                    $sum_ff[]=$a;
                                     $value['list'][$f][]=$arr;
                                 }
                             }
