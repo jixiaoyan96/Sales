@@ -184,7 +184,7 @@ class IntegralForm extends CFormModel
                             }
                         }
                         if($arr['status']=='C'){
-                            $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and （status='N' or status='A'） order by  id desc";
+                            $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and (status='N' or status='A') order by  id desc";
                             $m = Yii::app()->db->createCommand($sql_calculation)->queryRow();
                             if(!empty($m)){
                                 if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
