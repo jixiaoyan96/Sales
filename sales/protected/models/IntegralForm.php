@@ -366,8 +366,10 @@ class IntegralForm extends CFormModel
             $this->cust_type_name['baifang20']['fraction']=2;
         }
         if($this->cust_type_name['baifang20']['sum']==0){
+            $this->cust_type_name['baifang20']['sum']=0;
             $baifang= $this->cust_type_name['baifang15']['sum'];
         }else{
+            $this->cust_type_name['baifang15']['sum']=0;
             $baifang= $this->cust_type_name['baifang20']['sum'];
         }
 
