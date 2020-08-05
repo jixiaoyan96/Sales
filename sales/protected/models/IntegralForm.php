@@ -170,16 +170,29 @@ class IntegralForm extends CFormModel
                             $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                             $m = Yii::app()->db->createCommand($sql_calculation)->queryRow();
                             if(!empty($m)){
-                                if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
-                                    $v=$value['toplimit'];
+                                if($m['paid_type']=='M'){
+                                    $n_money=$m['ctrt_period']*$m['amt_paid'];
                                 }else{
-                                    $v=$arr['pieces'];
+                                    $n_money=$m['amt_paid'];
                                 }
-                                $a=$v-$m['pieces'];
-                                if($a>0){
-                                    $sum_f[]=$a;
-                                    $sum_ff[]=$a;
-                                    $value['list'][$f][]=$arr;
+                                if($arr['paid_type']=='M'){
+                                    $a_money=$arr['ctrt_period']*$arr['amt_paid'];
+                                }else{
+                                    $a_money=$arr['amt_paid'];
+                                }
+                                if($a_money>$n_money){
+                                    $pieces=$arr['pieces']+$m['pieces'];
+                                    if(($pieces>$value['toplimit'])&&$value['toplimit']!=0){
+                                        $v=$value['toplimit'];
+                                    }else{
+                                        $v=$pieces;
+                                    }
+                                    $a=$v-$m['pieces'];
+                                    if($a>0){
+                                        $sum_f[]=$a;
+                                        $sum_ff[]=$a;
+                                        $value['list'][$f][]=$arr;
+                                    }
                                 }
                             }
                         }
