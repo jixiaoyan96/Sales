@@ -49,7 +49,8 @@ $this->pageTitle=Yii::app()->name . ' - Integral Form';
                 .tftable tr {background-color:white;}
                 .tftable td {font-size:12px;color:#171515;border-width: 1px;padding: 8px;border-style: solid;border-color: #686767;}
             </style>
-            <p><b><?php echo Yii::t('dialog','Date'); echo $model['year']."/".$model['month'];?></b></p><p><?php echo $model['name'];?></p>
+            <p><b><?php echo Yii::t('dialog','Date'); echo $model['year']."/".$model['month'];?></b>  <b> &nbsp; &nbsp; &nbsp;拜访总数量</b><b><?php echo $model['sum'];?><b/></p><p><?php echo $model['name'];?></p>
+
             <table class="tftable" border="1">
                 <tr><th>产品</th><th>类别</th><th>单位</th><th>条件</th><th>分数</th><th style="width: 70px;">当月数量</th><th>当月分数</th><th>备注</th></tr>
                 <?php foreach ($model['cust_type_name']['canpin'] as $arr) {?>

@@ -392,6 +392,7 @@ class IntegralForm extends CFormModel
         $sql="select * from hr$suffix.hr_binding  where user_id='".$row['username']."' ";
         $name = Yii::app()->db->createCommand($sql)->queryRow();
         $this->name=$name['employee_name'];
+        $this->sum=count($bf);
 		return true;
 	}
 
