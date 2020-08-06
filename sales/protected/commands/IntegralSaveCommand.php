@@ -1,10 +1,11 @@
 <?php
 class IntegralSaveCommand extends CConsoleCommand
 {
-    public function run()
+    public function run($args)
     {
-        $month=date('m');
-        $year=date('Y');
+        $date = empty($args) ? date("Y-m-d") : $args[0];
+        $month = date("m", strtotime($date));
+        $year = date("Y",strtotime($date));
         $model = new IntegralForm('view');
         $sql="select * from sal_integral where year='$year' and month='$month'";
         $row = Yii::app()->db->createCommand($sql)->queryAll();

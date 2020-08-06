@@ -180,6 +180,7 @@ class IntegralForm extends CFormModel
                                 }else{
                                     $a_money=$arr['amt_paid'];
                                 }
+
                                 if($a_money>$n_money){
                                     $pieces=$arr['pieces']+$m['pieces'];
                                     if(($pieces>$value['toplimit'])&&$value['toplimit']!=0){
