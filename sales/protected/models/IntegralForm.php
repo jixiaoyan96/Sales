@@ -46,7 +46,6 @@ class IntegralForm extends CFormModel
 
 	public function retrieveData($index)
 	{
-		$city = Yii::app()->user->city();
         $suffix = Yii::app()->params['envSuffix'];
         $this->cust_type_name['canpin']=$this->custTypeNameA(9);//产品买卖
         $this->cust_type_name['fuwu']=$this->custTypeNameB(9);//产品买卖之外的全部
