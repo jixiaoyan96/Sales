@@ -11,7 +11,7 @@ class IntegralSaveCommand extends CConsoleCommand
         $row = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($row as $id){
             $model->retrieveData($id['id']);
-            $sql1="update sal_integral set point='".$model['cust_type_name']['point']."' where id='".$id['id']."'";
+            $sql1="update sal_integral set point='".$model['cust_type_name']['point']."',all_sum='".$model['cust_type_name']['all_sum']."' where id='".$id['id']."'";
             $command=Yii::app()->db->createCommand($sql1)->execute();
         }
     }

@@ -14,6 +14,7 @@ class IntegralList extends CListPageModel
 			'month'=>Yii::t('code','Month'),
 			'name'=>Yii::t('code','Name'),
 			'city'=>Yii::t('sales','City'),
+            'all_sum'=>Yii::t('sales','All Sum'),
 		);
 	}
 	
@@ -25,8 +26,8 @@ class IntegralList extends CListPageModel
 		$sql1 = "select a.* ,b.name as city_name,d.name as name
 				from sal_integral	a
 				left outer join security$suffix.sec_city b on a.city=b.code
-				inner join  hr$suffix.hr_binding c on a.username = c.user_id		
-				inner join  hr$suffix.hr_employee d on c.employee_id = d.id  
+				left outer join   hr$suffix.hr_binding c on a.username = c.user_id		
+				left outer join   hr$suffix.hr_employee d on c.employee_id = d.id  
 					where a.city in ($citylist)";
 		$sql2 = "select count(a.id)
 				from sal_integral	a
@@ -59,6 +60,9 @@ class IntegralList extends CListPageModel
                 case 'name':
                     $clause .= General::getSqlConditionClause('c.employee_name',$svalue);
                     break;
+                case 'all_sum':
+                    $clause .= General::getSqlConditionClause('a.all_sum',$svalue);
+                    break;
 			}
 		}
 		
@@ -77,6 +81,9 @@ class IntegralList extends CListPageModel
                 case 'name':
                     $order .= " order by c.employee_name ";
                     break;
+                case 'all_sum':
+                    $order .= " order by a.all_sum ";
+                    break;
 			}
 			if ($this->orderType=='D') $order .= "desc ";
 		} else {
@@ -89,7 +96,6 @@ class IntegralList extends CListPageModel
 		$sql = $sql1.$clause.$order;
 		$sql = $this->sqlWithPageCriteria($sql, $this->pageNum);
 		$records = Yii::app()->db->createCommand($sql)->queryAll();
-		
 		$list = array();
 		$this->attr = array();
 		if (count($records) > 0) {
@@ -100,6 +106,7 @@ class IntegralList extends CListPageModel
                         'month'=>$record['month'],
                         'name'=>$record['name'],
 						'city'=>$record['city_name'],
+                	    'all_sum'=>$record['all_sum'],
 					);
 			}
 		}

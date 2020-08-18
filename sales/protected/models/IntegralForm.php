@@ -378,17 +378,19 @@ class IntegralForm extends CFormModel
         $this->cust_type_name['qita_sum']=$this->cust_type_name['zhuangji']['sum']+ $this->cust_type_name['yushou3']['sum']+ $this->cust_type_name['yushou6']['sum']+ $this->cust_type_name['yushou12']['sum']+$baifang;
         $this->cust_type_name['all_sum']= $this->cust_type_name['canpin_sum']+ $this->cust_type_name['fuwu_sum']+ $this->cust_type_name['qita_sum'];
         if(count($bf)<200&&(count($bf)/10)<$row['sale_day']){
-            $this->cust_type_name['all_sum']=0;
+            $this->cust_type_name['sale_day']=0;
+        }else{
+            $this->cust_type_name['sale_day']=1;
         }
-        if($this->cust_type_name['all_sum']<= 10){
+        if($this->cust_type_name['all_sum']<= 10|| $this->cust_type_name['sale_day']==0){
             $this->cust_type_name['point']=-0.01;
-        }elseif ($this->cust_type_name['all_sum']<= 20){
+        }elseif ($this->cust_type_name['all_sum']<= 20&& $this->cust_type_name['sale_day']==1){
             $this->cust_type_name['point']=-0.005;
-        }elseif ($this->cust_type_name['all_sum']<= 30){
+        }elseif ($this->cust_type_name['all_sum']<= 30&& $this->cust_type_name['sale_day']==1){
             $this->cust_type_name['point']=0;
-        }elseif ($this->cust_type_name['all_sum']<= 80){
+        }elseif ($this->cust_type_name['all_sum']<= 80&& $this->cust_type_name['sale_day']==1){
             $this->cust_type_name['point']=0.01;
-        }elseif ($this->cust_type_name['all_sum']> 80){
+        }elseif ($this->cust_type_name['all_sum']> 80&& $this->cust_type_name['sale_day']==1){
             $this->cust_type_name['point']=0.02;
         }
         $sql="select * from hr$suffix.hr_binding  where user_id='".$row['username']."' ";

@@ -20,4 +20,9 @@
 			;
 		?>
 	</th>
+    <th>
+        <?php echo TbHtml::link($this->getLabelName('all_sum').$this->drawOrderArrow('all_sum'),'#',$this->createOrderLink('Integral-list','all_sum'))
+        ;
+        ?>
+    </th>
 </tr>

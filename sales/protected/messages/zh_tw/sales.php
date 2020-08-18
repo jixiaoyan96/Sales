@@ -158,5 +158,6 @@ return array(
 'Example'=>'點擊可查看示例',
 
 'Employee_name'=>'員工',
+'All Sum'=>'分數'
 );
 ?>

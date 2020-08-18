@@ -70,7 +70,7 @@ $this->pageTitle=Yii::app()->name . ' - Integral Form';
                 <tr><td> 销售拜访表平均每天15条</td><td> 其他</td><td> </td><td> 每月</td><td> <?php echo $model['cust_type_name']['baifang15']['fraction'];?></td><td> <?php echo $model['cust_type_name']['baifang15']['number'];?></td><td> <?php echo $model['cust_type_name']['baifang15']['sum'];?></td><td> </td></tr>
                 <tr><td> 销售拜访表平均每天20条</td><td> 其他</td><td> </td><td> 每月</td><td> <?php echo $model['cust_type_name']['baifang20']['fraction'];?></td><td> <?php echo $model['cust_type_name']['baifang20']['number'];?></td><td> <?php echo $model['cust_type_name']['baifang20']['sum'];?></td><td> </td></tr>
                 <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td style="background-color: #9acfea"> 小计</td><td style="background-color: #9acfea"> <?php echo $model['cust_type_name']['qita_sum'];?></td><td> </td></tr>
-                <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td style="background-color: #ff2222"> 总计</td><td style="background-color: #ff2222"> <?php echo $model['cust_type_name']['all_sum'];?></td><td> </td></tr>
+                <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td style="background-color: <?php if($model['cust_type_name']['sale_day']==1){echo '#ff2222';}else{echo '';}?>"> 总计</td><td style="background-color:<?php if($model['cust_type_name']['sale_day']==1){echo '#ff2222';}else{echo '';}?> "> <?php echo $model['cust_type_name']['all_sum'];?></td><td> </td></tr>
                 <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td style="background-color: #ff2222"> 最终点数</td><td style="background-color: #ff2222"> <?php echo $model['cust_type_name']['point']*100;echo "%";?></td><td> </td></tr>
             </table>
         </div>

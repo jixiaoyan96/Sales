@@ -4,5 +4,6 @@
     <td><?php echo $this->record['name']; ?></td>
 	<td><?php echo $this->record['year']; ?></td>
 	<td><?php echo $this->record['month']; ?></td>
+    <td><?php echo $this->record['all_sum']; ?></td>
 </tr>
 
