@@ -71,12 +71,12 @@ class IntegralForm extends CFormModel
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                         $sql_calculation="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryScalar();
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime' and status_dt<='$endtime'";
                         $list = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(empty($m)){
                             $m=0;
                         }
-//                        print_r('<pre>'); print_r($value['toplimit']);
+                      //  print_r('<pre>'); print_r($list);
                         if($value['toplimit']>0){
                             if($m<$value['toplimit']){
                                 $sum_c[]=$arr['pieces'];
@@ -102,7 +102,7 @@ class IntegralForm extends CFormModel
                         }
 
                     }elseif($value['conditions']==2){
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' ";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(!empty($m)&&count($m)==1){
                             $sum_c[]= 1;
@@ -146,7 +146,7 @@ class IntegralForm extends CFormModel
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                             $sql_calculation="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                             $m = Yii::app()->db->createCommand($sql_calculation)->queryScalar();
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime' and status_dt<='$endtime'";
                         $list = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(empty($m)){
                             $m=0;
