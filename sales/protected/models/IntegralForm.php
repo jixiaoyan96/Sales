@@ -60,7 +60,7 @@ class IntegralForm extends CFormModel
         foreach ($this->cust_type_name['canpin'] as &$value){//产品的
             $sum_c=array();
             $sum_s=array();
-            $sql1="select * from swoper$suffix.swo_service a
+            $sql1="select a.* from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
                where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and status_dt<='$endtime' and a.status='N'";
@@ -71,26 +71,36 @@ class IntegralForm extends CFormModel
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                         $sql_calculation="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryScalar();
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                        $list = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(empty($m)){
                             $m=0;
                         }
-                        if($m<$value['toplimit']){
+//                        print_r('<pre>'); print_r($value['toplimit']);
+                        if($value['toplimit']>0){
+                            if($m<$value['toplimit']){
+                                $sum_c[]=$arr['pieces'];
+                                $sum_s[]=$arr['pieces'];
+                                $value['list'][]=$list;
+                            }elseif ($m>$value['toplimit']){
+                                if(($m-$arr['pieces'])<$value['toplimit']){
+                                    $sum_c[]=$arr['pieces'];
+                                    $sum_s[]=$value['toplimit']-($m-$arr['pieces']);
+                                    $value['list'][]=$list;
+                                }else{
+                                    $sum_c[]=0;
+                                    $sum_s[]=0;
+                                }
+                            }else{
+                                $sum_c[]=0;
+                                $sum_s[]=0;
+                            }
+                        }else{
                             $sum_c[]=$arr['pieces'];
                             $sum_s[]=$arr['pieces'];
-                            $value['list'][]=$arr;
-                        }elseif ($m>$value['toplimit']){
-                            if(($m-$arr['pieces'])<$value['toplimit']){
-                                $sum_c[]=$arr['pieces'];
-                                $sum_s[]=$value['toplimit']-($m-$arr['pieces']);
-                                $value['list'][]=$arr;
-                            }else{
-                            $sum_c[]=0;
-                            $sum_s[]=0;
-                              }
-                        }else{
-                            $sum_c[]=0;
-                            $sum_s[]=0;
+                            $value['list'][]=$list;
                         }
+
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
@@ -135,26 +145,34 @@ class IntegralForm extends CFormModel
                     $arr['company_name']=str_replace("'","''",$arr['company_name']);
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                             $sql_calculation="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
-                            $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                            $m = Yii::app()->db->createCommand($sql_calculation)->queryScalar();
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                        $list = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(empty($m)){
                             $m=0;
                         }
-                        if($m<$value['toplimit']){
-                            $sum_f[]=$arr['pieces'];
-                            $sum_ff[]=$arr['pieces'];
-                            $value['list'][]=$arr;
-                        }elseif ($m>$value['toplimit']){
-                            if(($m-$arr['pieces'])<$value['toplimit']){
+                        if($value['toplimit']>0){
+                            if($m<$value['toplimit']){
                                 $sum_f[]=$arr['pieces'];
-                                $sum_ff[]=$value['toplimit']-($m-$arr['pieces']);
-                                $value['list'][]=$arr;
+                                $sum_ff[]=$arr['pieces'];
+                                $value['list'][]=$list;
+                            }elseif ($m>$value['toplimit']){
+                                if(($m-$arr['pieces'])<$value['toplimit']){
+                                    $sum_f[]=$arr['pieces'];
+                                    $sum_ff[]=$value['toplimit']-($m-$arr['pieces']);
+                                    $value['list'][]=$list;
+                                }else{
+                                    $sum_f[]=0;
+                                    $sum_ff[]=0;
+                                }
                             }else{
                                 $sum_f[]=0;
                                 $sum_ff[]=0;
                             }
                         }else{
-                            $sum_f[]=0;
-                            $sum_ff[]=0;
+                            $sum_f[]=$arr['pieces'];
+                            $sum_ff[]=$arr['pieces'];
+                            $value['list'][]=$list;
                         }
                     }elseif($value['conditions']==2){
                         if($arr['status']=='N'){
@@ -501,6 +519,7 @@ class IntegralForm extends CFormModel
             if(!empty($arr['list'])){
                 foreach ($arr['list'] as $list){
                     $o=$o+1;
+                  //  print_r('<pre>');print_r($list);exit();
                     $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
                     $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
                     $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
