@@ -54,12 +54,12 @@ $this->pageTitle=Yii::app()->name . ' - Integral Form';
             <table class="tftable" border="1">
                 <tr><th>产品</th><th>类别</th><th>单位</th><th>条件</th><th>分数</th><th style="width: 70px;">当月数量</th><th>当月分数</th><th>备注</th></tr>
                 <?php foreach ($model['cust_type_name']['canpin'] as $arr) {?>
-                <tr><td><?php echo $arr['cust_type_name'];?></td><td> <?php echo IntegralForm::getCustTypeName($arr['cust_type_id']); ?></td><td>  </td><td> <?php echo IntegralForm::getConditionsName($arr['conditions']);?></td><td> <?php echo $arr['fraction'];?></td><td> <?php echo $arr['number'];?></td><td> <?php echo $arr['sum'];?></td><td> <?php if($arr['toplimit']!=0){echo "上限为".$arr['toplimit']."(上限为0时，表示没有限制)" ;}?></td></tr>
+                <tr><td><?php echo $arr['cust_type_name'];?></td><td> <?php echo IntegralForm::getCustTypeName($arr['cust_type_id']); ?></td><td>  </td><td> <?php echo IntegralForm::getConditionsName($arr['conditions']);?></td><td> <?php echo $arr['fraction'];?></td><td> <?php echo $arr['number'];?></td><td> <?php echo $arr['sum'];?></td><td> <?php if($arr['toplimit']!=0){echo "上限为".$arr['toplimit'] ;}?></td></tr>
                 <?php }?>
                 <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td style="background-color: #9acfea"> 小计</td><td style="background-color: #9acfea"> <?php echo $model['cust_type_name']['canpin_sum'];?></td><td> </td></tr>
                 <tr><th>服务</th><th>类别</th><th>单位</th><th>条件</th><th>分数</th><th>当月数量</th><th>当月分数</th><th>备注</th></tr>
                 <?php foreach ($model['cust_type_name']['fuwu'] as $arr) {?>
-                    <tr><td><?php echo $arr['cust_type_name'];?></td><td> <?php echo IntegralForm::getCustTypeName($arr['cust_type_id']); ?></td><td>  </td><td> <?php echo IntegralForm::getConditionsName($arr['conditions']);?></td><td> <?php echo $arr['fraction'];?></td><td> <?php echo $arr['number'];?></td><td> <?php echo $arr['sum'];?></td><td> <?php if($arr['toplimit']!=0){echo "上限为".$arr['toplimit']."(上限为0时，表示没有限制)" ;}?></td></tr>
+                    <tr><td><?php echo $arr['cust_type_name'];?></td><td> <?php echo IntegralForm::getCustTypeName($arr['cust_type_id']); ?></td><td>  </td><td> <?php echo IntegralForm::getConditionsName($arr['conditions']);?></td><td> <?php echo $arr['fraction'];?></td><td> <?php echo $arr['number'];?></td><td> <?php echo $arr['sum'];?></td><td> <?php if($arr['toplimit']!=0){echo "上限为".$arr['toplimit'] ;}?></td></tr>
                 <?php }?>
                 <tr><td> </td><td> </td><td> </td><td> </td><td> </td><td style="background-color: #9acfea"> 小计</td><td style="background-color: #9acfea"> <?php echo $model['cust_type_name']['fuwu_sum'];?></td><td> </td></tr>
                 <tr><th>其他</th><th>类别</th><th>单位</th><th>条件</th><th>分数</th><th>当月数量</th><th>当月分数</th><th>备注</th></tr>
