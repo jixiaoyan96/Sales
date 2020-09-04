@@ -19,6 +19,7 @@ return array(
     'Quiz'=>'培训测验系统',
     'Academic Credit'=>'学分系统',
 	'Online Library'=>'网上文库',
+	'Charitable Credit'=>'慈善分系统',
 
 	'System Use'=>'系统使用',
 
