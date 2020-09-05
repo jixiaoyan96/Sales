@@ -60,15 +60,15 @@ class IntegralForm extends CFormModel
         foreach ($this->cust_type_name['canpin'] as &$value){//产品的
             $sum_c=array();
             $sum_s=array();
-            $two=0;//判断本月同一家公司有几条
             $sql1="select a.* from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
                where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and status_dt<='$endtime' and a.status='N'";
             $service = Yii::app()->db->createCommand($sql1)->queryAll();
             if(!empty($service)){
+                $two=0;//判断本月同一家公司有几条
                 foreach ($service as $arr){
-              $arr['company_name']=str_replace("'","''",$arr['company_name']);
+                     $arr['company_name']=str_replace("'","''",$arr['company_name']);
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                         $sql_calculation="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<='$startime'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryScalar();
@@ -100,7 +100,7 @@ class IntegralForm extends CFormModel
                             }else{
                                 $sum_c[]=0;
                                 $sum_s[]=0;
-                                if($two>0){
+                                if(!empty($list[$two])){
                                     $value['list'][][0]=$list[$two];
                                 }
                             }
@@ -154,6 +154,7 @@ class IntegralForm extends CFormModel
                where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and a.status_dt<='$endtime' and (a.status='N' or a.status='A' or a.status='C')";
             $service = Yii::app()->db->createCommand($sql1)->queryAll();
             if(!empty($service)){
+                $two=0;//判断本月同一家公司有几条
                 foreach ($service as $arr){
                     $arr['company_name']=str_replace("'","''",$arr['company_name']);
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
@@ -186,7 +187,7 @@ class IntegralForm extends CFormModel
                             }else{
                                 $sum_f[]=0;
                                 $sum_ff[]=0;
-                                if($two>0){
+                                if(!empty($list[$two])){
                                     $value['list'][][0]=$list[$two];
                                 }
                             }
