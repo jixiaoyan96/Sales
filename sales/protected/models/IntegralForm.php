@@ -79,37 +79,40 @@ class IntegralForm extends CFormModel
                         if(empty($m)){
                             $m=0;
                         }
-                       //  print_r('<pre>'); print_r($list);
+                      //  print_r('<pre>'); print_r($arr['company_name']);
                         if($value['toplimit']>0){
                             if(($m<$value['toplimit'])&&$two==0){
                                 if($s>$value['toplimit']){
                                     $sum_c[]=$s;
                                     $sum_s[]=$value['toplimit']-$m;
-                                    $value['list'][$two][]=$arr;
+                                    $value['list'][]=$list;
                                 }else{
                                     if(($m+$s)<=$value['toplimit']){
                                         $sum_c[]=$s;
                                         $sum_s[]=$s;
-                                        $value['list'][$two][]=$arr;
+                                        $value['list'][]=$list;;
                                     }else{
                                         $sum_c[]=$s;
                                         $sum_s[]=$value['toplimit']-$m;
-                                        $value['list'][$two][]=$arr;
+                                        $value['list'][]=$list;
                                     }
                                 }
                             }else{
                                 $sum_c[]=0;
                                 $sum_s[]=0;
-                                $value['list'][$two][]=$arr;
+                                if(!empty($list[$two])){
+                                    $value['list'][][0]=$list[$two];
+                                }
                             }
                         }else{
                             $sum_c[]=$arr['pieces'];
                             $sum_s[]=$arr['pieces'];
-                            $value['list'][$two][]=$arr;
+                            $value['list'][]=$list;
                         }
                         if(count($list)>1){
                             $two=$two+1;
                         }
+//                     /print_r('<pre>');   print_r($value['list']);
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' ";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
@@ -134,7 +137,7 @@ class IntegralForm extends CFormModel
                 }
                 $value['number']=array_sum($sum_c);//数量
 //                print_r('<pre>');
-//                print_r( $value['list']);
+//                print_r( $sum_c);
                 $value['sum']=array_sum($sum_s)*$value['fraction'];
             }else{
                 $value['number']=0;
@@ -170,16 +173,16 @@ class IntegralForm extends CFormModel
                                 if($s>$value['toplimit']){
                                     $sum_f[]=$s;
                                     $sum_ff[]=$value['toplimit']-$m;
-                                    $value['list'][]=$list;
+                                    $value['list'][]=$list;;
                                 }else{
                                     if(($m+$s)<=$value['toplimit']){
                                         $sum_f[]=$s;
                                         $sum_ff[]=$s;
-                                        $value['list'][]=$list;
+                                        $value['list'][]=$list;;
                                     }else{
                                         $sum_f[]=$s;
                                         $sum_ff[]=$value['toplimit']-$m;
-                                        $value['list'][]=$list;
+                                        $value['list'][]=$list;;
                                     }
                                 }
                             }else{
@@ -192,7 +195,7 @@ class IntegralForm extends CFormModel
                         }else{
                             $sum_c[]=$arr['pieces'];
                             $sum_s[]=$arr['pieces'];
-                            $value['list'][]=$list;
+                            $value['list'][]=$list;;
                         }
                         if(count($list)>1){
                             $two=$two+1;
@@ -542,7 +545,7 @@ class IntegralForm extends CFormModel
             if(!empty($arr['list'])){
                 foreach ($arr['list'] as $list){
                     $o=$o+1;
-                  //  print_r('<pre>');print_r($list);exit();
+              //      print_r('<pre>');print_r($list);
                     $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
                     $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
                     $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
