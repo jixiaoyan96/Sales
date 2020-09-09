@@ -72,15 +72,14 @@ class IntegralForm extends CFormModel
                     if($value['conditions']==3||$value['conditions']==4||$value['conditions']==5){
                         $sql="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<'$startime'";
                         $m = Yii::app()->db->createCommand($sql)->queryScalar();
-                        $sql="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime'";
+                        $sql="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime' and status_dt<='$endtime'";
                         $s = Yii::app()->db->createCommand($sql)->queryScalar();
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime' and status_dt<='$endtime'";
                         $list = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         if(empty($m)){
                             $m=0;
                         }
-//                        print_r('<pre>');
-                        print_r($arr['id']);  print_r('；');
+//                        print_r('<pre>');print_r($arr['id']);
                         if($value['toplimit']>0){
                             if(($m<$value['toplimit'])&&$two==0){
                                 if($s>$value['toplimit']){
@@ -113,7 +112,7 @@ class IntegralForm extends CFormModel
                         if(count($list)>1){
                             $two=$two+1;
                         }
-                     print_r('<pre>');   print_r($sum_s);
+                    // print_r('<pre>');   print_r($sum_s);
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' ";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
