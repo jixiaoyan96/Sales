@@ -79,7 +79,8 @@ class IntegralForm extends CFormModel
                         if(empty($m)){
                             $m=0;
                         }
-                      //  print_r('<pre>'); print_r($arr['company_name']);
+//                        print_r('<pre>');
+                        print_r($arr['id']);  print_r('；');
                         if($value['toplimit']>0){
                             if(($m<$value['toplimit'])&&$two==0){
                                 if($s>$value['toplimit']){
@@ -112,7 +113,7 @@ class IntegralForm extends CFormModel
                         if(count($list)>1){
                             $two=$two+1;
                         }
-//                     /print_r('<pre>');   print_r($value['list']);
+                     print_r('<pre>');   print_r($sum_s);
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' ";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
