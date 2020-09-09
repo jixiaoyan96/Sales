@@ -149,7 +149,7 @@ class IntegralForm extends CFormModel
         foreach ($this->cust_type_name['fuwu'] as &$value){//服务的
             $sum_f=array();
             $sum_ff=array();
-            $sql1="select * from swoper$suffix.swo_service a
+            $sql1="select a.* from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
                where c.user_id='".$row['username']."' and a.cust_type_name='".$value['id']."' and a.status_dt>='$startime' and a.status_dt<='$endtime' and (a.status='N' or a.status='A' or a.status='C')";
@@ -224,8 +224,10 @@ class IntegralForm extends CFormModel
                             $value['list'][$f][]=$arr;
                         }
                         if($arr['status']=='A'){
-                            $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
-                            $m = Yii::app()->db->createCommand($sql_calculation)->queryRow();
+                            $sql_calculation="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and (status='N' or status='C') and status_dt<='".$arr['status_dt']."'";
+                            $sum = Yii::app()->db->createCommand($sql_calculation)->queryScalar();
+                            $sql="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and (status='N' or status='C') and status_dt<='".$arr['status_dt']."' order by  id desc";
+                            $m = Yii::app()->db->createCommand($sql)->queryRow();
                             if(!empty($m)){
                                 if($m['paid_type']=='M'){
                                     $n_money=$m['ctrt_period']*$m['amt_paid'];
@@ -237,38 +239,43 @@ class IntegralForm extends CFormModel
                                 }else{
                                     $a_money=$arr['amt_paid'];
                                 }
-
                                 if($a_money>$n_money){
-                                    $pieces=$arr['pieces']+$m['pieces'];
-                                    if(($pieces>$value['toplimit'])&&$value['toplimit']!=0){
-                                        $v=$value['toplimit'];
-                                    }else{
-                                        $v=$pieces;
+                                    if(($sum<$value['toplimit'])&&$value['toplimit']!=0){
+                                        $cha=$value['toplimit']-$sum;
+                                        if($arr['pieces']>=$cha){
+                                            $sum_f[]=$cha;
+                                            $sum_ff[]=$cha;
+                                            $value['list'][$f][]=$arr;
+                                        }else{
+                                            $sum_f[]=$arr['pieces'];
+                                            $sum_ff[]=$arr['pieces'];
+                                            $value['list'][$f][]=$arr;
+                                        }
                                     }
-                                    $a=$v-$m['pieces'];
-                                    if($a>0){
-                                        $sum_f[]=$a;
-                                        $sum_ff[]=$a;
-                                        $value['list'][$f][]=$arr;
-                                    }
+                                   // print_r('<pre>');print_r($sum);
                                 }
                             }
                         }
                         if($arr['status']=='C'){
-                            $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and (status='N' or status='A') order by  id desc";
-                            $m = Yii::app()->db->createCommand($sql_calculation)->queryRow();
+                            $sql_calculation="select sum(pieces) as sumpieces from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and (status='N' or status='A') and status_dt<='".$arr['status_dt']."'";
+                            $sum = Yii::app()->db->createCommand($sql_calculation)->queryScalar();
+                            $sql="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and (status='N' or status='A') and status_dt<='".$arr['status_dt']."' order by  id desc";
+                            $m = Yii::app()->db->createCommand($sql)->queryRow();
+
                             if(!empty($m)){
-                                if(($arr['pieces']>$value['toplimit'])&&$value['toplimit']!=0){
-                                    $v=$value['toplimit'];
-                                }else{
-                                    $v=$arr['pieces'];
+                                if(($sum<$value['toplimit'])&&$value['toplimit']!=0){
+                                    $cha=$value['toplimit']-$sum;
+                                    if($arr['pieces']>=$cha){
+                                        $sum_f[]=$cha;
+                                        $sum_ff[]=$cha;
+                                        $value['list'][$f][]=$arr;
+                                    }else{
+                                        $sum_f[]=$arr['pieces'];
+                                        $sum_ff[]=$arr['pieces'];
+                                        $value['list'][$f][]=$arr;
+                                    }
                                 }
-                                $a=$v-$m['pieces'];
-                                if($a>0){
-                                    $sum_f[]=$a;
-                                    $sum_ff[]=$a;
-                                    $value['list'][$f][]=$arr;
-                                }
+                            //    print_r('<pre>');print_r($arr['pieces']);
                             }
                         }
 
