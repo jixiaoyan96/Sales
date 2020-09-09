@@ -7,7 +7,12 @@ class IntegralSaveCommand extends CConsoleCommand
         $month = date("m", strtotime($date));
         $year = date("Y",strtotime($date));
         $model = new IntegralForm('view');
-        $sql="select * from sal_integral where year='$year' and month='$month'";
+        $months=$month-2;
+        if($months<=0){
+            $months=$months+12;
+            $year=$year-1;
+        }
+        $sql="select * from sal_integral where year='$year' and month>='$month' and month<='$months'";
         $row = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($row as $id){
             $model->retrieveData($id['id']);
