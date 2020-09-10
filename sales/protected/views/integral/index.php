@@ -35,6 +35,7 @@ $this->pageTitle=Yii::app()->name . ' - Integral';
 							'year',
 							'month',
 							'city',
+                            'name',
 						),
 		));
 	?>
