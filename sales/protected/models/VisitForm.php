@@ -630,6 +630,10 @@ class VisitForm extends CFormModel
 									$svcmsg_tw .= (($svcmsg_tw=="") ? "" : "，")."服務類型：$svctype ，合同金額：$amount";
 									$svcmsg_en .= (($svcmsg_en=="") ? "" : ",")."Service Type: $svctype , Amount: $amount";
 								}
+							} elseif ($k == 'A10' || $k == 'C10') {
+								$svcmsg_cn .= (($svcmsg_cn=="") ? "" : "，")."服务类型：$svctype ，安装费：$amount";
+								$svcmsg_tw .= (($svcmsg_tw=="") ? "" : "，")."服務類型：$svctype ，安装费：$amount";
+								$svcmsg_en .= (($svcmsg_en=="") ? "" : ",")."Service Type: $svctype , Installed Amount: $amount";
 							} else {
 								$svcmsg_cn .= (($svcmsg_cn=="") ? "" : "，")."服务类型：$svctype ，合同年金额：$amount";
 								$svcmsg_tw .= (($svcmsg_tw=="") ? "" : "，")."服務類型：$svctype ，合同年金額：$amount";
