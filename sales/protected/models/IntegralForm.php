@@ -713,11 +713,11 @@ class IntegralForm extends CFormModel
        }elseif ($a==2){
 	       $row='每个新客户';
        }elseif ($a==3){
-           $row='每个客户订购一包';
+           $row='每个新客户订购一包';
        }elseif ($a==4){
-           $row='每个客户每桶';
+           $row='每个新客户每桶';
        }elseif ($a==5){
-           $row='每个客户每箱';
+           $row='每个新客户每箱';
        }elseif ($a==6){
            $row='每月';
        }
