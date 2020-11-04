@@ -21,7 +21,7 @@ class IntegralCommand extends CConsoleCommand
                       where  a.city='$city'  and (c.manager_type ='1' or c.manager_type ='2') and a.staff_status='0'
 ";
                 $row = Yii::app()->db->createCommand($sql1)->queryAll();
-                $sql2="select username from sales$suffix.sal_integral where year='$year' and month='$month' city='$city'";
+                $sql2="select username from sales$suffix.sal_integral where year='$year' and month='$month' and  city='$city'";
                 $arr = Yii::app()->db->createCommand($sql2)->queryAll();
                 $color = array_udiff($row,$arr,create_function(
                         '$a,$b','return strcmp(implode("",$a),implode("",$b));')
