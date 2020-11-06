@@ -116,7 +116,9 @@ class IntegralForm extends CFormModel
                     }elseif($value['conditions']==2){
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<='$startime'";
                         $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                        if(!empty($m)&&count($m)==1){
+                        $sql="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime' and status_dt<='$endtime'";
+                        $s = Yii::app()->db->createCommand($sql)->queryAll();
+                        if(empty($m)&&!empty($s)){
                             $sum_c[]= 1;
                             $sum_s[]=1;
                             $value['list'][]=$m;
@@ -204,7 +206,9 @@ class IntegralForm extends CFormModel
                         if($arr['status']=='N'){
                             $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<='$startime'";
                             $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                            if(!empty($m)&&count($m)==1){
+                            $sql="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime' and status_dt<='$endtime'";
+                            $s = Yii::app()->db->createCommand($sql)->queryAll();
+                            if(!empty($m)&&!empty($s)){
                                 $sum_f[]= 1;
                                 $value['list'][]=$m;
                                 $sum_ff[]=1;
