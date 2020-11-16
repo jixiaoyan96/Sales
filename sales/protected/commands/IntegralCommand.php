@@ -28,14 +28,48 @@ class IntegralCommand extends CConsoleCommand
                 );
                 if(!empty($color)){
                     foreach ($color as $sale){
-                        $sql = "insert into sales$suffix.sal_integral(city, year, month, username) 
+                        $a=$this->getEmployee($sale['user_id'],$year,$month);
+                        if($a==1){
+                            $sql = "insert into sales$suffix.sal_integral(city, year, month, username) 
 				values('$city', '$year', '$month', '".$sale['user_id']."')
 			";
-                        $command=Yii::app()->db->createCommand($sql)->execute();
+                            $command=Yii::app()->db->createCommand($sql)->execute();
+                        }
                     }
                 }
 
             }
         }
+    }
+
+    public  function getEmployee($user_id,$year,$month){
+        $suffix = Yii::app()->params['envSuffix'];
+        $sql="select d.code from hr$suffix.hr_employee d                     
+              left outer join hr$suffix.hr_binding e on  d.id=e.employee_id
+              where e.user_id='$user_id'
+";
+        $records = Yii::app()->db->createCommand($sql)->queryRow();
+        $sql="select entry_time from hr$suffix.hr_employee where code= '".$records['code']."' ";
+        $record = Yii::app()->db->createCommand($sql)->queryScalar();
+        $timestraps=strtotime($record);
+        $entry_time_year=date('Y',$timestraps);
+        $entry_time_month=date('m',$timestraps);
+        if($entry_time_year==$year&&$entry_time_month==$month){
+            $sql1="select visit_dt from sales$suffix.sal_visit   where username='$user_id' order by visit_dt
+";
+            $record = Yii::app()->db->createCommand($sql1)->queryRow();
+            $timestrap=strtotime($record['visit_dt']);
+            $years=date('Y',$timestrap);
+            $months=date('m',$timestrap);
+//        print_r($record);exit();
+            if($years==$year&&$months==$month){
+                $a=1;
+            }else{
+                $a=2;
+            }
+        }else{
+            $a=1;
+        }
+        return $a;
     }
 }
