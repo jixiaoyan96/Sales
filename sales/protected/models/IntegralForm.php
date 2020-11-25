@@ -121,7 +121,7 @@ class IntegralForm extends CFormModel
                         if(empty($m)&&!empty($s)){
                             $sum_c[]= 1;
                             $sum_s[]=1;
-                            $value['list'][]=$m;
+                            $value['list'][]=$s;
                         }else{
                             $sum_c[]=0;
                             $sum_s[]=0;
@@ -210,7 +210,7 @@ class IntegralForm extends CFormModel
                             $s = Yii::app()->db->createCommand($sql)->queryAll();
                             if(empty($m)&&!empty($s)){
                                 $sum_f[]= 1;
-                                $value['list'][]=$m;
+                                $value['list'][]=$s;
                                 $sum_ff[]=1;
                             }else{
                                 $sum_f[]=0;
