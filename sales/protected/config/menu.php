@@ -62,6 +62,21 @@ return array(
         ),
     ),
 
+    'Sales segment query'=>array(
+        'access'=>'HD',
+        'icon'=>'fa-edit',
+        'items'=>array(
+            'Sales segment details query'=>array(
+                'access'=>'HD01',
+                'url'=>'/rank/index',
+            ),
+            'Sales history segment query'=>array(
+                'access'=>'HD02',
+                'url'=>'/rankhistory/index',
+            ),
+        ),
+    ),
+
 	'Report'=>array(
 		'access'=>'HB',
 		'icon'=>'fa-file-text-o',
@@ -101,6 +116,11 @@ return array(
 				'url'=>'/district/index',
 				'tag'=>'@',
 			),
+            'Sales Rank'=>array(
+                'access'=>'HC05',
+                'url'=>'/level/index',
+                'tag'=>'@',
+            ),
 		),
 	),
 

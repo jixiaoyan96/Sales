@@ -97,5 +97,7 @@ return array(
 'Transaction Type'=>'交易類別',
 'Account'=>'賬戶',
 'Delegation'=>'授權',
+
+
 );
 ?>

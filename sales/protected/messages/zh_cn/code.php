@@ -45,5 +45,14 @@ return array(
     'Target'=>'销售目标',
     'Target List'=>'销售目标列表',
     'Target Form'=>'销售目标表单',
+    'Sale Rank'=>'销售段位',
+    'Sale Rank List'=>'销售段位列表',
+
+    'Level'=>'段位',
+    'New Level'=>'新赛季段位',
+    'Start Fraction'=>'下限金额',
+    'End Fraction'=>'上限金额',
+    'New Fraction'=>'新赛季金额',
+    'Reward'=>'奖励',
 );
 ?>

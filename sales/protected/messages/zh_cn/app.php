@@ -97,5 +97,11 @@ return array(
 	'Transaction Type'=>'交易类别',
 	'Account'=>'账户',
 	'Delegation'=>'授权',
+
+	'Sales segment query'=>'销售段位查询',
+	'Sales segment details query'=>'销售段位明细查询',
+    'Sales history segment query'=>'销售历史段位查询',
+	'Sales Rank'=>'销售段位设置',
+
 );
 ?>
