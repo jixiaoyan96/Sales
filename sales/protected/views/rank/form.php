@@ -25,11 +25,11 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 //			}
 //		?>
 		<?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
-				'submit'=>Yii::app()->createUrl('target/index')));
+				'submit'=>Yii::app()->createUrl('rank/index_s')));
 		?>
 <?php if ($model->scenario!='view'): ?>
 			<?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Save'), array(
-				'submit'=>Yii::app()->createUrl('target/save')));
+				'submit'=>Yii::app()->createUrl('rank/save')));
 			?>
 <?php endif ?>
 <?php if ($model->scenario=='edit'): ?>
