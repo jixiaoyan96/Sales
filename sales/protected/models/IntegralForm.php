@@ -79,12 +79,8 @@ class IntegralForm extends CFormModel
                         if(empty($m)){
                             $m=0;
                         }
-
-                        if($arr['cust_type_name']==39){
-                            print_r('<pre>');print_r($m);print_r('-');print_r($s);print_r($sql_calculation);print_r($list);
-                        }
                         if($value['toplimit']>0){//有上限
-                            if(($m<$value['toplimit'])&&$two==0){
+                            if((($m<$value['toplimit'])&&$two==0)||(($m<$value['toplimit'])&&count($list)==1)){
                                 if($s>$value['toplimit']){
                                     $sum_c[]=$s;
                                     $sum_s[]=$value['toplimit']-$m;
