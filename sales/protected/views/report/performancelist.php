@@ -47,7 +47,7 @@ $this->pageTitle=Yii::app()->name . ' - performance Form';
             <?php if(!empty($post['sale'])){ foreach ($post['sale'] as $v){?>
             <input name="RptFive[sale][]" type="checkbox" value="<?php echo $v ;?>" checked="checked" style="display:none"/>
             <?php }}}?>
-
+            <h3><?php echo $post['start_dt']?>--<?php echo $post['end_dt']?></h3>
             <table class="table table-bordered small" style="text-align: center;">
               <tbody>
                 <tr>
