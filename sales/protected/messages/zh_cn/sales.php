@@ -157,6 +157,7 @@ return array(
 	'Example'=>'点击可查看示例',
 
     'Employee_name'=>'員工',
-    'All Sum'=>'分数'
+    'All Sum'=>'分数',
+    'Service Type'=>'服务类型',
 );
 ?>

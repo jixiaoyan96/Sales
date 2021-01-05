@@ -178,6 +178,22 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 					?>
 				</div>
 			</div>
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'service_type',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-8" <?php if($model->isReadOnly() || $model->status=='Y'){echo "style='pointer-events:none;'";}?>>
+                    <?php
+                    $typelist = $model->getServiceTypeList();
+                    //						if ($model->isReadOnly() || $model->status=='Y') {
+                    //							echo $form->hiddenField($model, 'visit_obj');
+                    //							echo TbHtml::textField('visit_obj_name', $typelist[$model->visit_obj], array('readonly'=>true));
+                    //						} else {
+                    echo $form->dropDownList($model, 'service_type', $typelist,
+                        array('class'=>'select2','multiple'=>'multiple','disabled'=>'disabled')
+                    );
+                    //						}
+                    ?>
+                </div>
+            </div>
 
 <!--			<div class="form-group">-->
 <!--				--><?php //echo $form->labelEx($model,'cust_alt_name',array('class'=>"col-sm-2 control-label")); ?>
@@ -423,6 +439,16 @@ $('#VisitForm_visit_obj').select2({
 	disabled: $disabled,
 	templateSelection: formatState
 });
+$('#VisitForm_service_type').select2({
+	tags: false,
+	multiple: true,
+	maximumInputLength: 0,
+	maximumSelectionLength: 10,
+	allowClear: true,
+	language: '$lang',
+	disabled: $disabled,
+	templateSelection: formatState
+});
 
 function formatState(state) {
 	var rtn = $('<span style="color:black">'+state.text+'</span>');
@@ -430,7 +456,11 @@ function formatState(state) {
 }
 
 
-$('#VisitForm_visit_obj').on('select2:opening select2:closing', function( event ) {
+$('#VisitForm_service_type').on('select2:opening select2:closing', function( event ) {
+    var searchfield = $(this).parent().find('.select2-search__field');
+    searchfield.prop('disabled', true);
+});
+$('#VisitForm_service_type').on('select2:opening select2:closing', function( event ) {
     var searchfield = $(this).parent().find('.select2-search__field');
     searchfield.prop('disabled', true);
 });
