@@ -2041,7 +2041,7 @@ class ReportVisitForm extends CReportForm
             );
             $a=$i-4;
             $objPHPExcel->getActiveSheet()->getStyle('A'.$a.':F'.$i)->applyFromArray($styleArray);
-            $i=$i+1;
+            $i=$i+2;
         }
 //        print_r('<pre/>');
 //        print_r($model['all']);
