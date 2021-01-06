@@ -102,6 +102,7 @@ return array(
 	'Sales segment details query'=>'销售段位明细查询',
     'Sales history segment query'=>'销售历史段位查询',
 	'Sales Rank'=>'销售段位设置',
+	'Sales Turnover'=>'销售成交率报表',
 
 );
 ?>

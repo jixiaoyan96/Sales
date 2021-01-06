@@ -51,6 +51,10 @@ return array(
                 'access'=>'HA04',
                 'url'=>'/report/performance',
             ),
+            'Sales Turnover'=>array(
+                'access'=>'HA07',
+                'url'=>'/report/turnover',
+            ),
             'Sales ranking list'=>array(
                 'access'=>'HA05',
                 'url'=>'/rankinglist/index',

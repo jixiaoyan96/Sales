@@ -98,6 +98,10 @@ return array(
 'Account'=>'賬戶',
 'Delegation'=>'授權',
 
-
+'Sales segment query'=>'銷售段位查詢',
+'Sales segment details query'=>'銷售段位明細查詢',
+'Sales history segment query'=>'銷售歷史段位查詢',
+'Sales Rank'=>'銷售段位設置',
+'Sales Turnover'=>'銷售成交率報表',
 );
 ?>
