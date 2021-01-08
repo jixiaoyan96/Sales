@@ -327,16 +327,16 @@ class IntegralForm extends CFormModel
         $sql_ys="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
-               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N'";
+               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N' and  prepay_month>=3 and prepay_month <6 ";
         $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
           $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6   and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."'  and status='N'";
 
                 }else{
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=3 and prepay_month <6   and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                 }
                $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
@@ -356,14 +356,19 @@ class IntegralForm extends CFormModel
             $this->cust_type_name['yushou3']['fraction']=2;
         }
         //预收6
+        $sql_ys="select * from swoper$suffix.swo_service a
+               inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
+               inner join hr$suffix.hr_binding c on b.id=c.employee_id 
+               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N' and  prepay_month>=6 and prepay_month <12 ";
+        $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
           $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12   and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."'   and status='N'";
 
                 }else{
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month>=6 and prepay_month <12   and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
                 }
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
@@ -383,14 +388,19 @@ class IntegralForm extends CFormModel
             $this->cust_type_name['yushou6']['fraction']=3;
         }
         //预收12
+        $sql_ys="select * from swoper$suffix.swo_service a
+               inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
+               inner join hr$suffix.hr_binding c on b.id=c.employee_id 
+               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N' and  prepay_month >=12  ";
+        $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
           $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."' and  prepay_month >=12   and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."'  and status='N'";
 
                 }else{
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."' and  prepay_month >=12   and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'   and status='N'";
                 }
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
