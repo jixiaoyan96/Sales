@@ -445,6 +445,9 @@ class IntegralForm extends CFormModel
         $this->cust_type_name['fuwu_sum']=array_sum(array_map(create_function('$val', 'return $val["sum"];'), $this->cust_type_name['fuwu']));
         $this->cust_type_name['qita_sum']=$this->cust_type_name['zhuangji']['sum']+ $this->cust_type_name['yushou3']['sum']+ $this->cust_type_name['yushou6']['sum']+ $this->cust_type_name['yushou12']['sum']+$baifang;
         $this->cust_type_name['all_sum']= $this->cust_type_name['canpin_sum']+ $this->cust_type_name['fuwu_sum']+ $this->cust_type_name['qita_sum'];
+        if(empty($this->cust_type_name['all_sum'])){
+            $this->cust_type_name['all_sum']=0;
+        }
         if(count($bf)<200&&(count($bf)/10)<$row['sale_day']){
             $this->cust_type_name['sale_day']=0;
         }else{
