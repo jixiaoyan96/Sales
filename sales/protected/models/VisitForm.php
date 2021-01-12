@@ -467,8 +467,9 @@ class VisitForm extends CFormModel
 		if (strpos($sql,':visit_type')!==false)
 			$command->bindParam(':visit_type',$this->visit_type,PDO::PARAM_INT);
 		if (strpos($sql,':visit_obj')!==false) {
-			$value = json_encode($this->visit_obj);
-			$command->bindParam(':visit_obj',$value,PDO::PARAM_STR);
+			$values = json_encode($this->visit_obj);
+			//print_r($value);exit();
+			$command->bindParam(':visit_obj',$values,PDO::PARAM_STR);
 		}
         if (strpos($sql,':service_type')!==false) {
             $value = json_encode($this->service_type);
