@@ -17,6 +17,7 @@ class VisitList extends CListPageModel
 			'staff'=>Yii::t('sales','Staff'),
 			'cust_vip'=>Yii::t('sales','VIP').'('.Yii::t('sales','Star').')',
             'visitdoc'=>Yii::t('misc','Attachment'),
+            'quotation'=>Yii::t('sales','Quotation judgment'),
 		);
 	}
 
@@ -31,7 +32,8 @@ class VisitList extends CListPageModel
 			'visit_obj'=>'VisitObjDesc(a.visit_obj)',
 			'cust_type'=>'g.name',
 			'district'=>'h.name',
-			'street'=>'a.street',
+			//'street'=>'a.street',
+            'quotation'=>'a.quotation',
 		);
 		if (!Yii::app()->user->isSingleCity()) $search['city_name'] = 'b.name';
 		if (VisitForm::isReadAll()) {
@@ -162,6 +164,10 @@ class VisitList extends CListPageModel
                 }
                 if(!empty($list['svc_G3'])){
                     $quote.=$list['svc_G3']."(一次性售卖) / -";
+                }
+                if(!empty($quote)){
+                    $sqls="update sal_visit set quotation='是' where id='".$record['id']."'";
+                    $rows = Yii::app()->db->createCommand($sqls)->execute();
                 }
                 $quote = substr($quote,0,strlen($quote)-3);
                 $quote = explode("-", $quote);

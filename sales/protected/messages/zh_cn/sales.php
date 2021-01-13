@@ -159,5 +159,9 @@ return array(
     'Employee_name'=>'員工',
     'All Sum'=>'分数',
     'Service Type'=>'服务类型',
+    'Quotation'=>'报价',
+    'Quotations'=>'已报价',
+    'No Quotation'=>'未报价',
+    'Quotation judgment'=>'是否报价（是/否）'
 );
 ?>

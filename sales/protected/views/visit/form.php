@@ -134,7 +134,18 @@ $this->pageTitle=Yii::app()->name . ' - Sales Visit Form';
 					?>
 				</div>
 			</div>
-
+            <div class="form-group">
+                <?php echo $form->labelEx($model,'quotation',array('class'=>"col-sm-2 control-label")); ?>
+                <div class="col-sm-3" >
+                    <?php
+                    $quotation = array(
+                            '否'=>Yii::t('sales','No Quotation'),
+                            '是'=>Yii::t('sales','Quotations'),
+                    );
+                        echo $form->dropDownList($model, 'quotation', $quotation, array('readonly'=>''));
+                    ?>
+                </div>
+            </div>
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'visit_obj',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-8" <?php if($model->isReadOnly() || $model->status=='Y'){echo "style='pointer-events:none;'";}?>>

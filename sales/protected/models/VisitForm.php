@@ -25,6 +25,7 @@ class VisitForm extends CFormModel
 	public $longitude;
 	public $deal = 'N';
 	public $service_type;
+	public $quotation='N';
 
 	public $service = array();
 	protected $dynamic_fields = array('latitude', 'longitude', 'deal');
@@ -185,6 +186,7 @@ class VisitForm extends CFormModel
 			'street'=>Yii::t('sales','Street'),
             'service_type'=>Yii::t('sales','Service Type'),
 			'cust_alt_name'=>Yii::t('sales','Branch Name (if any)'),
+            'quotation'=>Yii::t('sales','Quotation'),
 		);
 		
 		$services = $this->serviceDefinition();
@@ -205,7 +207,7 @@ class VisitForm extends CFormModel
 			array('visit_dt, username, district, visit_type, visit_obj,service_type, cust_type, cust_type_group, cust_name','required'),
 			array('service','validateServiceAmount'),
 			array('service','validateServices'),
-			array('id, city, city_name, remarks, staff, dept_name, post_name, street, cust_person, cust_person_role, cust_vip, 
+			array('id, city, city_name, remarks, staff, dept_name, post_name, street, cust_person, cust_person_role, cust_vip,quotation,
 				cust_tel, cust_alt_name, status, status_dt, latitude, longitude, deal, cust_type_group','safe'),
 			array('files, removeFileId, docMasterId, no_of_attm','safe'),
             array ('no_of_attm','validateTaxSlip'),
@@ -347,6 +349,7 @@ class VisitForm extends CFormModel
 			$this->status_dt = $row['status_dt'];
 			$this->cust_type_group = $row['type_group'];
 			$this->no_of_attm['visit'] = $row['visitcountdoc'];
+            $this->quotation = $row['quotation'];
 		}
 		
 		$sql = "select * from sal_visit_info where visit_id = $index";
@@ -421,11 +424,11 @@ class VisitForm extends CFormModel
 				break;
 			case 'new':
 				$sql = "insert into sal_visit(
-							username, visit_dt, visit_type, visit_obj, cust_type, cust_name, cust_person_role,service_type,
+							username, visit_dt, visit_type, visit_obj, cust_type, cust_name, cust_person_role,service_type,quotation,
 							cust_alt_name, cust_person, cust_tel, district, street, remarks, status, status_dt,
 							city, luu, lcu
 						) values (
-							:username, :visit_dt, :visit_type, :visit_obj, :cust_type, :cust_name, :cust_person_role,:service_type,
+							:username, :visit_dt, :visit_type, :visit_obj, :cust_type, :cust_name, :cust_person_role,:service_type,:quotation,
 							:cust_alt_name, :cust_person, :cust_tel, :district, :street, :remarks, :status, :status_dt,
 							:city, :luu, :lcu
 						)";
@@ -437,6 +440,7 @@ class VisitForm extends CFormModel
 					visit_type = :visit_type, 
 					visit_obj = :visit_obj, 
 					service_type=:service_type,
+					quotation=:quotation,
 					cust_type = :cust_type, 
 					cust_name = :cust_name, 
 					cust_alt_name = :cust_alt_name, 
@@ -479,6 +483,8 @@ class VisitForm extends CFormModel
 			$command->bindParam(':cust_type',$this->cust_type,PDO::PARAM_INT);
 		if (strpos($sql,':cust_name')!==false)
 			$command->bindParam(':cust_name',$this->cust_name,PDO::PARAM_STR);
+        if (strpos($sql,':quotation')!==false)
+            $command->bindParam(':quotation',$this->quotation,PDO::PARAM_STR);
 		if (strpos($sql,':cust_alt_name')!==false)
 			$command->bindParam(':cust_alt_name',$this->cust_alt_name,PDO::PARAM_STR);
 		if (strpos($sql,':cust_person')!==false)
