@@ -31,7 +31,7 @@ class VisitCommand extends CConsoleCommand
                               inner join  security$suffix.sec_user_access c on b.user_id=c.username  
                               inner join  security$suffix.sec_user d on c.username=d.username 
                               inner join  sales$suffix.sal_visit e on b.user_id=e.username
-        where  c.system_id='sal' and c.a_read_write like '%HK01%' and  d.status='A' and a.city='$k' and   e.visit_dt >= '" . $arr['start_dt'] . "'and e.visit_dt <= '" . $arr['end_dt'] . "' a.staff_status =0";
+        where  c.system_id='sal' and c.a_read_write like '%HK01%' and  d.status='A' and a.city='$k' and   e.visit_dt >= '" . $arr['start_dt'] . "'and e.visit_dt <= '" . $arr['end_dt'] . "' and  a.staff_status =0";
                     $people = Yii::app()->db->createCommand($sql_people)->queryAll();
                     //邮件数据
                     if (!empty($people)) {
