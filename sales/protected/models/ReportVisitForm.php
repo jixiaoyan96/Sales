@@ -2065,14 +2065,19 @@ class ReportVisitForm extends CReportForm
     }
 
     public function TurnoverDate($man,$a,$start_dt,$end_dt){
+        $att=array();
         $sql1="select count(cust_name) as sum  from sal_visit  where username='$man' and service_type like '%$a%'  and visit_dt >= '$start_dt'and visit_dt <= '$end_dt' group by cust_name";
-        $a = Yii::app()->db->createCommand($sql1)->queryScalar();
-        if(empty($a)){$a=0;}
+        $ai = Yii::app()->db->createCommand($sql1)->queryScalar();
+        if(empty($ai)){$ai=0;}
         $sql2="select count(cust_name) as sum  from sal_visit  where username='$man' and service_type like '%$a%' and visit_obj like '%10%'  and visit_dt >= '$start_dt'and visit_dt <= '$end_dt' group by cust_name";
         $b = Yii::app()->db->createCommand($sql2)->queryScalar();
         if(empty($b)){$b=0;}
-        $c=$b/($a==0?1:$a);
-        $att['visit']=$a;
+        if($ai==0){
+            $c=0;
+        }else{
+            $c=$b/$ai;
+        }
+        $att['visit']=$ai;
         $att['sign']=$b;
         $att['turnover']=(round($c,2)*100)."%";
         return $att;
