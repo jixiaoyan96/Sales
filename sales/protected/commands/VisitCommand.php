@@ -4,8 +4,8 @@ class VisitCommand extends CConsoleCommand
     public function run()
     {
         $suffix = Yii::app()->params['envSuffix'];
-        $firstDay = date("Y/m/d");
-        $arr['start_dt'] = date("Y/m/d", strtotime("$firstDay - 6 day"));
+        $firstDay = date("Y-m-d");
+        $arr['start_dt'] = date("Y-m-d", strtotime("$firstDay - 6 day"));
         $arr['end_dt'] = $firstDay;
         //收件人
         $sql = "select a.username,a.email,a.city,c.name from  security$suffix.sec_user a 
@@ -37,10 +37,8 @@ class VisitCommand extends CConsoleCommand
                     if (!empty($people)) {
                         $people = array_unique($people, SORT_REGULAR);
                         $arr['sale'] = array_column($people, 'username');
-                        $arr['sort'] = 'money';
+                        $arr['sort'] = 'singular';
                         $arr_email = ReportVisitForm::Summary($arr);
-                        $arraycol = array_column($arr_email,'singular');
-                        array_multisort($arraycol,SORT_DESC,$arr_email);
                         $sum['money'] = array_sum(array_map(create_function('$val', 'return $val["money"];'), $arr_email));
                         $sum['visit'] = array_sum(array_map(create_function('$val', 'return $val["visit"];'), $arr_email));
                         $sum['singular'] = array_sum(array_map(create_function('$val', 'return $val["singular"];'), $arr_email));
