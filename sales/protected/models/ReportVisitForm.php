@@ -1808,7 +1808,7 @@ class ReportVisitForm extends CReportForm
             $sql = "select a.city, a.username, sum(convert(b.field_value, decimal(12,2))) as money 
 				from sal_visit a force index (idx_visit_02), sal_visit_info b   
 				where a.id=b.visit_id and b.field_id in ('svc_A7','svc_B6','svc_C7','svc_D6','svc_E7') 
-				and a.visit_dt >= '$start_dt'and a.visit_dt <= '$end_dt'  and a.username ='$peoples' 
+				and a.visit_dt >= '$start_dt'and a.visit_dt <= '$end_dt' and  a.visit_obj like '%10%' and a.username ='$peoples' 
 				group by a.city, a.username 
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
@@ -1817,6 +1817,7 @@ class ReportVisitForm extends CReportForm
             }else{
                 $people['money']=$records[0]['money'];
             }
+            print_r( $people['money']);
 //            print_r('<pre/>');
 //            print_r($records);
             $sqls="select a.name as cityname ,d.name as names from security$suffix.sec_city a	,hr$suffix.hr_binding b	 ,security$suffix.sec_user  c ,hr$suffix.hr_employee d 
