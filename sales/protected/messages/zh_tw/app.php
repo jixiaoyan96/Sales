@@ -103,5 +103,6 @@ return array(
 'Sales history segment query'=>'銷售歷史段位查詢',
 'Sales Rank'=>'銷售段位設置',
 'Sales Turnover'=>'銷售成交率報表',
+    'Sales segment coefficient'=>'销售段位係數設置'
 );
 ?>

@@ -163,6 +163,15 @@ return array(
 'Quotation'=>'報價',
 'Quotations'=>'已報價',
 'No Quotation'=>'未報價',
-'Quotation judgment'=>'是否報價（是/否）'
+'Quotation judgment'=>'是否報價（是/否）',
+
+'Coefficient'=>'銷售段位係數',
+'Coefficient List'=>'銷售段位係數列表',
+'Coefficient Form'=>'銷售段位係數表單',
+'Criterion'=>'準則',
+'Bonus'=>'得分',
+'Coefficients'=>'係數',
+'Sign'=>'符號',
+'Start Date'=>'日期',
 );
 ?>

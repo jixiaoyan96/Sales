@@ -162,6 +162,15 @@ return array(
     'Quotation'=>'报价',
     'Quotations'=>'已报价',
     'No Quotation'=>'未报价',
-    'Quotation judgment'=>'是否报价（是/否）'
+    'Quotation judgment'=>'是否报价（是/否）',
+
+    'Coefficient'=>'销售段位系数',
+    'Coefficient List'=>'销售段位系数列表',
+    'Coefficient Form'=>'销售段位系数表单',
+    'Criterion'=>'准则',
+    'Bonus'=>'得分',
+    'Coefficients'=>'系数',
+    'Sign'=>'符号',
+    'Start Date'=>'日期',
 );
 ?>

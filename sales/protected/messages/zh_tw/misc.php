@@ -91,6 +91,10 @@ return array(
 '3 months'=>'3個月內',
 '6 months'=>'6個月內',
 '1 year'=>'1年內',
+'Insecticidal'=>'滅蟲',
+'Restroom'=>'洗手間',
+'Third'=>'第三部曲',
+'Five Type'=>'五部曲類型',
 );
 
 ?>

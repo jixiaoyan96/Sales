@@ -95,6 +95,7 @@ return array(
 			),
 		),
 	),
+
 	
 	'System Setting'=>array(
 		'access'=>'HC',
@@ -123,6 +124,11 @@ return array(
             'Sales Rank'=>array(
                 'access'=>'HC05',
                 'url'=>'/level/index',
+                'tag'=>'@',
+            ),
+            'Sales segment coefficient'=>array(
+                'access'=>'HC06',
+                'url'=>'/coefficient/index',
                 'tag'=>'@',
             ),
 		),

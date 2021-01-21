@@ -28,6 +28,7 @@ class FivestepForm extends CFormModel
 	public $mgr_score_user;
 	public $dir_score_user;
 	public $remarks;
+	public $five_type;
 	
 	protected $dir_score_flag = false;
 	protected $mgr_score_flag = false;
@@ -71,12 +72,13 @@ class FivestepForm extends CFormModel
 			'mgr_score_user'=>Yii::t('sales','Manager Score User'),
 			'dir_score_user'=>Yii::t('sales','Director Score User'),
 			'sup_score_user'=>Yii::t('sales','Supervisor Score User'),
+            'five_type'=>Yii::t('misc','Five Type'),
 		);
 	}
 
 	public function rules() {
 		return array(
-			array('rec_dt, username, step','required'),
+			array('rec_dt, username, step,five_type','required'),
 			array('filename', 'file', 'types'=>'mp4, m4a, mp3, 3gp, mov, wav', 'allowEmpty'=>false, 'on'=>'new'),
 			array('sup_score, mgr_score, dir_score','numerical','allowEmpty'=>true,'integerOnly'=>true),
 			array('sup_score, mgr_score, dir_score','in','range'=>range(-1,100)),
@@ -141,6 +143,7 @@ class FivestepForm extends CFormModel
 			$this->remarks = $row['remarks'];
 			$this->filename = $row['filename'];
 			$this->filetype = $row['filetype'];
+			$this->five_type = $row['five_type'];
 		}
 		return true;
 	}
@@ -204,11 +207,12 @@ class FivestepForm extends CFormModel
 				break;
 			case 'new':
 				$sql = "insert into sal_fivestep(
-						username, rec_dt, step, filename, filetype, status, city, luu, lcu) values (
-						:username, :rec_dt, :step, :filename, :filetype, :status, :city, :luu, :lcu)";
+						five_type,username, rec_dt, step, filename, filetype, status, city, luu, lcu) values (
+						:five_type,:username, :rec_dt, :step, :filename, :filetype, :status, :city, :luu, :lcu)";
 				break;
 			case 'edit':
 				$sql = "update sal_fivestep set 
+                    five_type=:five_type,
 					username = :username, 
 					rec_dt = :rec_dt,
 					step = :step,
@@ -229,8 +233,10 @@ class FivestepForm extends CFormModel
 			$command->bindParam(':username',$this->username,PDO::PARAM_STR);
 		if (strpos($sql,':rec_dt')!==false)
 			$command->bindParam(':rec_dt',$dt,PDO::PARAM_STR);
-		if (strpos($sql,':step')!==false)
-			$command->bindParam(':step',$this->step,PDO::PARAM_STR);
+		if (strpos($sql,':five_type')!==false)
+			$command->bindParam(':five_type',$this->five_type,PDO::PARAM_STR);
+        if (strpos($sql,':step')!==false)
+            $command->bindParam(':step',$this->step,PDO::PARAM_STR);
 		if (strpos($sql,':filename')!==false)
 			$command->bindParam(':filename',$this->filename,PDO::PARAM_STR);
 		if (strpos($sql,':filetype')!==false)

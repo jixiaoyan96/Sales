@@ -99,7 +99,7 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'step',array('class'=>"col-sm-2 control-label")); ?>
-				<div class="col-sm-4">
+				<div class="col-sm-1">
 					<?php
 						$typelist = $model->getStepList();
 						$scoreright = ($model->isManagerRight() || $model->isDirectorRight()); 
@@ -111,11 +111,29 @@ $this->pageTitle=Yii::app()->name . ' - Five Steps Form';
 						}
 					?>
 				</div>
+<!--                <div class="form-group">-->
+                    <?php echo $form->labelEx($model,'five_type',array('class'=>"col-sm-2 control-label")); ?>
+                    <div class="col-sm-1">
+                        <?php
+                        $typelist = array(
+                            0=>Yii::t('misc','Insecticidal'),
+                            1=>Yii::t('misc','Restroom'),
+                            2=>Yii::t('misc','Third'),
+                        );
+                        $scoreright = ($model->isManagerRight() || $model->isDirectorRight());
+                        if ($model->isReadOnly() ||  $model->username!=Yii::app()->user->id || !empty($model->mgr_score) || !empty($model->dir_score)) {
+                            echo $form->hiddenField($model, 'five_type');
+                            echo TbHtml::textField('five_type', $typelist[$model->five_type], array('readonly'=>true));
+                        } else {
+                            echo $form->dropDownList($model, 'five_type', $typelist);
+                        }
+                        ?>
+                    </div>
+<!--                </div>-->
 				<div class="col-sm-5">
 					<div class="box box-solid bg-gray"><div id="stepdescdiv" class="box-body"></div></div>
 				</div>
 			</div>
-
 			<div class="form-group">
 				<?php echo $form->labelEx($model,'sup_score',array('class'=>"col-sm-2 control-label")); ?>
 				<div class="col-sm-2">
