@@ -57,21 +57,21 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
             <table class="tftable" border="1">
                 <tr><th>当前段位</th><th>白银1段</th><th>当前赛季累计到上月分数</th><th>9230</th></tr>
                 <tr><td>当月数据 ：</td><td></td><td>当月数据对应得分 ：</td><td></td></tr>
-                <tr><td>销售每月平均每天拜访记录</td><td>9条</td><td>销售每月平均每天拜访记录分数</td><td>500</td></tr>
-                <tr><td>销售每月IA，IB签单单数 (A)</td><td>23张</td><td>销售每月IA，IB签单得分</td><td>24156.00</td></tr>
-                <tr><td>销售每月IA，IB签单金额</td><td>165000</td><td></td><td></td></tr>
-                <tr><td>销售每月飘盈香签单单数 (B)</td><td>4张</td><td>销售每月飘盈香签单得分</td><td>11130.00</td></tr>
-                <tr><td>销售每月飘盈香签单金额</td><td>35000</td><td></td><td></td></tr>
-                <tr><td>销售每月产品（不包括洗地易）签单 (C)</td><td>8张</td><td>销售每月产品（不包括洗地易）签单得分</td><td>3146.4</td></tr>
-                <tr><td>销售每月产品（不包括洗地易）签单金额</td><td>3800</td><td></td><td></td></tr>
-                <tr><td>销售每月洗地易/甲醛签单单数 (D)</td><td>3张</td><td>销售每月洗地易/甲醛签单得分</td><td>1222</td></tr>
-                <tr><td>销售每月洗地易/甲醛签单金额</td><td>2400</td><td></td><td></td></tr>
-                <tr><td>每月销售龙虎榜销售排名</td><td>2</td><td>每月销售龙虎榜销售得分</td><td>2000</td></tr>
-                <tr><td>每月销售龙虎榜城市人均签单量排名</td><td>4</td><td>每月销售龙虎榜城市人均签单量排名</td><td>0</td></tr>
-                <tr><td>每月销售龙虎榜城市人均签单金额排名</td><td>19</td><td>每月销售龙虎榜城市人均签单金额排名</td><td>-2000</td></tr>
-                <tr><td>地方销售人员/整体区比例</td><td>0.4</td><td>地方销售人员/整体区比例效果</td><td>0.7</td></tr>
-                <tr><td>销售组别类型（餐饮组/商业组</td><td>餐饮组（或没分）</td><td>销售组别类型（餐饮组/商业组）效果</td><td>1</td></tr>
-                <tr><td>销售岗位级别</td><td>1.2</td><td>销售每月平均每天拜访记录</td><td>0.9</td></tr>
+                <tr><td>销售每月平均每天拜访记录</td><td><?php echo $model->visit['sum'];?>条</td><td>销售每月平均每天拜访记录分数</td><td><?php echo $model->visit['score'];?></td></tr>
+                <tr><td>销售每月IA，IB签单单数 (A)</td><td><?php echo $model->ia['sum'];?>张</td><td>销售每月IA，IB签单得分</td><td><?php echo $model->ia['score'];?></td></tr>
+                <tr><td>销售每月IA，IB签单金额</td><td><?php echo $model->ia['money'];?></td><td></td><td></td></tr>
+                <tr><td>销售每月飘盈香签单单数 (B)</td><td><?php echo $model->pyx['sum'];?>张</td><td>销售每月飘盈香签单得分</td><td><?php echo $model->pyx['score'];?></td></tr>
+                <tr><td>销售每月飘盈香签单金额</td><td><?php echo $model->pyx['money'];?></td><td></td><td></td></tr>
+                <tr><td>销售每月产品（不包括洗地易）签单 (C)</td><td><?php echo $model->cp['sum'];?>张</td><td>销售每月产品（不包括洗地易）签单得分</td><td><?php echo $model->cp['score'];?></td></tr>
+                <tr><td>销售每月产品（不包括洗地易）签单金额</td><td><?php echo $model->cp['money'];?></td><td></td><td></td></tr>
+                <tr><td>销售每月洗地易/甲醛签单单数 (D)</td><td><?php echo $model->jq['sum'];?>张</td><td>销售每月洗地易/甲醛签单得分</td><td><?php echo $model->jq['score'];?></td></tr>
+                <tr><td>销售每月洗地易/甲醛签单金额</td><td><?php echo $model->jq['money'];?></td><td></td><td></td></tr>
+                <tr><td>每月销售龙虎榜销售排名</td><td><?php echo $model->lhmoney['sum'];?></td><td>每月销售龙虎榜销售得分</td><td><?php echo $model->lhmoney['score'];?></td></tr>
+                <tr><td>每月销售龙虎榜城市人均签单量排名</td><td><?php echo $model->lhcity['sum'];?></td><td>每月销售龙虎榜城市人均签单量得分</td><td><?php echo $model->lhcity['score'];?></td></tr>
+                <tr><td>每月销售龙虎榜城市人均签单金额排名</td><td><?php echo $model->lhsum['sum'];?></td><td>每月销售龙虎榜城市人均签单金额得分</td><td><?php echo $model->lhsum['score'];?></td></tr>
+                <tr><td>地方销售人员/整体区比例</td><td><?php echo $model->sales['sum'];?></td><td>地方销售人员/整体区比例效果</td><td><?php echo $model->sales['score'];?></td></tr>
+                <tr><td>销售组别类型（餐饮组/商业组)</td><td><?php echo $model->food['name'];?></td><td>销售组别类型（餐饮组/商业组）效果</td><td><?php echo $model->food['score'];?></td></tr>
+                <tr><td>销售岗位级别</td><td><?php echo $model->fjl;?></td><td>销售每月平均每天拜访记录</td><td><?php echo $model->visit['coefficient'];?></td></tr>
                 <tr><td>当月所有得分</td><td>12313 </td><td>当前赛季累计到今月应得分数</td><td>401694</td></tr>
                 <tr><td>当月得分对应段位</td><td>白银1段</td><td>当前赛季累计到今月实得得分</td><td>401694</td></tr>
             </table>

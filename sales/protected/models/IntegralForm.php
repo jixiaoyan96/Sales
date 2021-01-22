@@ -333,7 +333,7 @@ class IntegralForm extends CFormModel
             foreach ($service as $arr){
           $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."'  and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'  and status='N'";
 
                 }else{
                     $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
@@ -365,7 +365,7 @@ class IntegralForm extends CFormModel
             foreach ($service as $arr){
           $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."'   and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'   and status='N'";
 
                 }else{
                     $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
@@ -397,7 +397,7 @@ class IntegralForm extends CFormModel
             foreach ($service as $arr){
           $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and salesman='".$arr['salesman']."'  and status='N'";
+                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'  and status='N'";
 
                 }else{
                     $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'   and status='N'";
