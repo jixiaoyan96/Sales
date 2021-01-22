@@ -77,7 +77,7 @@ class  CoefficientForm extends CFormModel
 			$this->id = $row['id'];
 			$this->start_dt = General::toDate($row['start_dt']);
 
-			$sql = "select * from sal_coefficient_dtl where hdr_id=$index order by operator desc, criterion";
+			$sql = "select * from sal_coefficient_dtl where hdr_id=$index order by name,operator desc, criterion";
 			$rows = Yii::app()->db->createCommand($sql)->queryAll();
 			if (count($rows) > 0) {
 				$this->detail = array();
@@ -229,8 +229,8 @@ class  CoefficientForm extends CFormModel
 				if (strpos($sql,':operator')!==false)
 					$command->bindParam(':operator',$row['operator'],PDO::PARAM_STR);
 				if (strpos($sql,':criterion')!==false) {
-					$amt = General::toMyNumber($row['criterion']);
-					$command->bindParam(':criterion',$amt,PDO::PARAM_STR);
+//					$amt = General::toMyNumber($row['criterion']);
+					$command->bindParam(':criterion',$row['criterion'],PDO::PARAM_STR);
 				}
 				if (strpos($sql,':bonus')!==false) {
 					$command->bindParam(':bonus',$row['bonus'],PDO::PARAM_STR);

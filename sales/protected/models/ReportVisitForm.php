@@ -1817,7 +1817,6 @@ class ReportVisitForm extends CReportForm
             }else{
                 $people['money']=$records[0]['money'];
             }
-            print_r( $people['money']);
 //            print_r('<pre/>');
 //            print_r($records);
             $sqls="select a.name as cityname ,d.name as names from security$suffix.sec_city a	,hr$suffix.hr_binding b	 ,security$suffix.sec_user  c ,hr$suffix.hr_employee d 
