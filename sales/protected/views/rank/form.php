@@ -55,7 +55,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
             </style>
 
             <table class="tftable" border="1">
-                <tr><th>当前段位</th><th>白银1段</th><th>当前赛季累计到上月分数</th><th>9230</th></tr>
+                <tr><th>当前段位</th><th><?php echo $model->rank_name;?></th><th>当前赛季累计到上月分数</th><th><?php echo $model->rank;?></th></tr>
                 <tr><td>当月数据 ：</td><td></td><td>当月数据对应得分 ：</td><td></td></tr>
                 <tr><td>销售每月平均每天拜访记录</td><td><?php echo $model->visit['sum'];?>条</td><td>销售每月平均每天拜访记录分数</td><td><?php echo $model->visit['score'];?></td></tr>
                 <tr><td>销售每月IA，IB签单单数 (A)</td><td><?php echo $model->ia['sum'];?>张</td><td>销售每月IA，IB签单得分</td><td><?php echo $model->ia['score'];?></td></tr>
@@ -72,8 +72,8 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 <tr><td>地方销售人员/整体区比例</td><td><?php echo $model->sales['sum'];?></td><td>地方销售人员/整体区比例效果</td><td><?php echo $model->sales['score'];?></td></tr>
                 <tr><td>销售组别类型（餐饮组/商业组)</td><td><?php echo $model->food['name'];?></td><td>销售组别类型（餐饮组/商业组）效果</td><td><?php echo $model->food['score'];?></td></tr>
                 <tr><td>销售岗位级别</td><td><?php echo $model->fjl;?></td><td>销售每月平均每天拜访记录</td><td><?php echo $model->visit['coefficient'];?></td></tr>
-                <tr><td>当月所有得分</td><td>12313 </td><td>当前赛季累计到今月应得分数</td><td>401694</td></tr>
-                <tr><td>当月得分对应段位</td><td>白银1段</td><td>当前赛季累计到今月实得得分</td><td>401694</td></tr>
+                <tr><td>当月所有得分</td><td><?php echo $model->now;?> </td><td>当前赛季累计到今月应得分数</td><td><?php echo $model->now_all;?></td></tr>
+                <tr><td>当月得分对应段位</td><td><?php echo $model->rank_name;?></td><td>当前赛季累计到今月实得得分</td><td><?php echo $model->now_all;?></td></tr>
             </table>
 
 

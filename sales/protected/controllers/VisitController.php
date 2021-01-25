@@ -42,7 +42,7 @@ class VisitController extends Controller
 
 	public function actionIndex($pageNum=0) 
 	{
-		$model = new VisitList;
+       $model = new VisitList;
 		if (isset($_POST['VisitList'])) {
 			$model->attributes = $_POST['VisitList'];
 		} else {

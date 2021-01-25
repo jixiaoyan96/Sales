@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2021-01-21 16:09:17
+Date: 2021-01-25 10:39:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,8 +29,9 @@ CREATE TABLE `sal_coefficient_hdr` (
   `lcd` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `lud` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sal_coefficient_hdr
 -- ----------------------------
+INSERT INTO `sal_coefficient_hdr` VALUES ('24', '0', '', '2018-10-02 00:00:00', 'test', 'test', '2021-01-22 09:54:25', '2021-01-22 09:54:25');
