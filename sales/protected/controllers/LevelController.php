@@ -103,14 +103,9 @@ class LevelController extends Controller
 		$model = new LevelForm('delete');
 		if (isset($_POST['LevelForm'])) {
 			$model->attributes = $_POST['LevelForm'];
-			if ($model->isOccupied($model->id)) {
-				Dialog::message(Yii::t('dialog','Warning'), Yii::t('dialog','This record is already in use'));
-				$this->redirect(Yii::app()->createUrl('level/edit',array('index'=>$model->id)));
-			} else {
-				$model->saveData();
-				Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Record Deleted'));
-				$this->redirect(Yii::app()->createUrl('level/index'));
-			}
+            $model->saveData();
+            Dialog::message(Yii::t('dialog','Information'), Yii::t('dialog','Record Deleted'));
+            $this->redirect(Yii::app()->createUrl('level/index'));
 		}
 	}
 	

@@ -65,7 +65,7 @@ class LevelForm extends CFormModel
 		}
 		catch(Exception $e) {
 			$transaction->rollback();
-			throw new CHttpException(404,'Cannot update.');
+			throw new CHttpException(404,'Cannot update.'.$e->getMessage());
 		}
 	}
 
@@ -85,7 +85,7 @@ class LevelForm extends CFormModel
 				$sql = "update sal_level set 
 					level = :level, 
 					new_level = :new_level,
-					start_fraction = :start_fraction
+					start_fraction = :start_fraction,
 					end_fraction = :end_fraction, 
 					new_fraction = :new_fraction,
 					reward = :reward

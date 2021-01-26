@@ -102,7 +102,7 @@ $this->pageTitle=Yii::app()->name . ' - Level Form';
 <?php $this->renderPartial('//site/removedialog'); ?>
 
 <?php
-$js = Script::genDeleteData(Yii::app()->createUrl('district/delete'));
+$js = Script::genDeleteData(Yii::app()->createUrl('level/delete'));
 Yii::app()->clientScript->registerScript('deleteRecord',$js,CClientScript::POS_READY);
 
 $js = Script::genReadonlyField();
