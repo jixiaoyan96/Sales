@@ -15,34 +15,29 @@ class  CoefficientList extends CListPageModel
 	{
 		$suffix = Yii::app()->params['envSuffix'];
 		$citylist = Yii::app()->user->city_allow();
-		$sql1 = "select a.id, a.city, a.start_dt, b.name as city_name 
-				from sal_coefficient_hdr a
-				left outer join security$suffix.sec_city b on a.city=b.code						  
+		$sql1 = "select * 
+				from sal_coefficient_hdr 							
 			";
-		$sql2 = "select count(a.id)
-				from sal_coefficient_hdr a
-				left outer join security$suffix.sec_city b on a.city=b.code		  		  
+		$sql2 = "select count(id)
+				from sal_coefficient_hdr 
+		  		  
 			";
 		$clause = "";
 		if (!empty($this->searchField) && !empty($this->searchValue)) {
 			$svalue = str_replace("'","\'",$this->searchValue);
 			switch ($this->searchField) {
 				case 'start_dt':
-					$clause .= General::getSqlConditionClause('a.start_dt',$svalue);
+					$clause .= General::getSqlConditionClause('start_dt',$svalue);
 					break;
 			}
 		}
 		
 		$order = "";
 		if (!empty($this->orderField)) {
-			switch ($this->orderField) {
-				case 'city_name': $orderf = 'b.name'; break;
-				default: $orderf = $this->orderField; break;
-			}
-			$order .= " order by ".$orderf." ";
+
 			if ($this->orderType=='D') $order .= "desc ";
 		} else {
-			$order = " order by  a.start_dt desc";
+			$order = " order by  start_dt desc";
 		}
 
 		$sql = $sql2.$clause;
