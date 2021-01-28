@@ -78,7 +78,7 @@ class RankCommand extends CConsoleCommand
                            }
                        }
                     }
-
+                    
 
                 }
             }

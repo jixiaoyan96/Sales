@@ -550,7 +550,6 @@ class RankForm extends CFormModel
             }
         }else{
             $chiStr = $chiNum[$num_str[0]];
-
         }
         return $chiStr;
     }

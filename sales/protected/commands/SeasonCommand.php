@@ -7,14 +7,12 @@ class SeasonCommand extends CConsoleCommand
         $sql_season="select season from sales$suffix.sal_season order by id desc";
         $season = Yii::app()->db->createCommand($sql_season)->queryScalar();
         if(empty($season)){
-            $sql="UPDATE sales$suffix.sal_season
-              set season=1          
+            $sql="insert into sales$suffix.sal_season (season) value ('1')                   
              ";
             $command=Yii::app()->db->createCommand($sql)->execute();
         }else{
             $season=$season+1;
-            $sql="UPDATE sales$suffix.sal_season
-              set season='$season'          
+            $sql="insert into sales$suffix.sal_season (season) value ('$season')       
              ";
             $command=Yii::app()->db->createCommand($sql)->execute();
         }
