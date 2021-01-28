@@ -507,7 +507,7 @@ class RankForm extends CFormModel
     }
 
     public function season(){
-        $sql = "select season from sal_rank group by season";
+        $sql = "select season from sal_season group by season";
         $row= Yii::app()->db->createCommand($sql)->queryAll();
         $season=array();
         foreach ($row as $a){
@@ -550,6 +550,7 @@ class RankForm extends CFormModel
             }
         }else{
             $chiStr = $chiNum[$num_str[0]];
+
         }
         return $chiStr;
     }

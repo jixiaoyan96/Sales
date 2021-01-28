@@ -61,7 +61,7 @@ class RankCommand extends CConsoleCommand
 			                        ";
                            $command=Yii::app()->db->createCommand($sql)->execute();
                        }else{
-                           $sql="select count(id) as a from sales$suffix.sal_rank where season='".$rankfraction['season']."'";
+                           $sql="select count(id) as a from sales$suffix.sal_rank where season='".$rankfraction['season']."' and username='".$records['username']."'";
                            $season = Yii::app()->db->createCommand($sql)->queryRow();
                            if($season['a']==1){
                                $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
