@@ -8,7 +8,7 @@ class SeasonCommand extends CConsoleCommand
         $season = Yii::app()->db->createCommand($sql_season)->queryScalar();
         if(empty($season)){
             $sql="UPDATE sales$suffix.sal_season
-              set season=0          
+              set season=1          
              ";
             $command=Yii::app()->db->createCommand($sql)->execute();
         }else{
@@ -18,6 +18,5 @@ class SeasonCommand extends CConsoleCommand
              ";
             $command=Yii::app()->db->createCommand($sql)->execute();
         }
-
     }
 }
