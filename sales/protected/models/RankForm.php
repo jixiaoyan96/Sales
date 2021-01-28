@@ -289,6 +289,9 @@ class RankForm extends CFormModel
         $visit= Yii::app()->db->createCommand($sql_visit)->queryScalar();
         $sql_day="select sale_day from sal_integral  where username='".$rows['username']."' and year='$year' and month='$month'";
         $day= Yii::app()->db->createCommand($sql_day)->queryScalar();
+        if(empty($day)||$day==0){
+            $day=1;
+        }
         $sales_visit=$visit/$day;
         $amount_visit=$this->getAmount('5',$star_time,$sales_visit);//本单产品提成比例
         $score_all=($score_all+$amount_visit['bonus'])*$amount_visit['coefficient'];
@@ -307,6 +310,9 @@ class RankForm extends CFormModel
         $sales_people= Yii::app()->db->createCommand($sql_sales)->queryScalar();
         $sql_city="select count(id) from sales$suffix.sal_cust_district where city='$city'";
         $sales_city= Yii::app()->db->createCommand($sql_city)->queryScalar();
+        if(empty($sales_city)||$sales_city==0){
+            $sales_city=1;
+        }
         $people=$sales_people/$sales_city;
         $this->sales['sum']=round($people,2);
         if($people<0.25){
@@ -399,7 +405,6 @@ class RankForm extends CFormModel
     public  function getAmount( $cust_type, $start_dt, $sales_amt) {
         //城市，类别，时间，总金额
         $rtn = array();
-
         if (isset($cust_type) && !empty($start_dt) && isset($sales_amt)) {
             $suffix = Yii::app()->params['envSuffix'];
             //客户类别
@@ -418,6 +423,7 @@ class RankForm extends CFormModel
                         order by criterion limit 1
                     ";
                 $row = Yii::app()->db->createCommand($sql)->queryRow();
+
                 if ($row!==false) {
                     $rtn['bonus'] =$row['bonus'];
                     $rtn['coefficient'] =$row['coefficient'];
