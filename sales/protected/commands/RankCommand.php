@@ -71,6 +71,9 @@ class RankCommand extends CConsoleCommand
                            }else{
                                $sql1="select * from sales$suffix.sal_level where start_fraction>='".$rankfraction['new_rank']."' and end_fraction<='".$rankfraction['new_rank']."'";
                                $record=Yii::app()->db->createCommand($sql1)->queryRow();
+                               if(empty($record)){
+                                   $record['new_fraction']=0;
+                               }
                                $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
 				                  values('$season_s', '$month', '".$records['username']."', '$city','".$record['new_fraction']."','0')
 			                        ";
@@ -78,7 +81,7 @@ class RankCommand extends CConsoleCommand
                            }
                        }
                     }
-                    
+
 
                 }
             }
