@@ -18,6 +18,7 @@ class RankForm extends CFormModel
     public $food=array();
     public $fjl;
     public $now_all;
+    public $all;
     public $now;
     public $rank;
     public $rank_name;
@@ -239,6 +240,7 @@ class RankForm extends CFormModel
         }else{
             $salepeople_money=0;
         }
+        $salepeople_money=empty($salepeople_money)?0:$salepeople_money;
         $this->lhmoney['score']=$salepeople_money;
         //五部曲分数
         $sql_entry="select a.entry_time from hr$suffix.hr_employee a
@@ -374,6 +376,7 @@ class RankForm extends CFormModel
             $this->fjl=1.2;
         }
         //当前赛季总分（继承后）
+        $this->all=$score_all;
         $this->now_all=round($score_all+$this->rank,2);
         //上赛季段位
         $sql_rank_name="select * from sal_level where start_fraction <='".$this->now_all."' and end_fraction >='".$this->now_all."'";
@@ -389,13 +392,13 @@ class RankForm extends CFormModel
         if(!empty($retern)){
             $score_five_xishouj=1500;
         }else{
-            $five_time_end = date("m-d", strtotime("$five_time1 +7 day" ));
+            $five_time_end = date("Y-m-d", strtotime("$five_time1 +7 day" ));
             $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='$five_type'";
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
             if(!empty($retern)){
                 $score_five_xishouj=1000;
             }else{
-                $five_time_end = date("m-d", strtotime("$five_time1 +30 day" ));
+                $five_time_end = date("Y-m-d", strtotime("$five_time1 +30 day" ));
                 $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='$five_type'";
                 $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
                 if(!empty($retern)){
