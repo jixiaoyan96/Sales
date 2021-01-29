@@ -81,7 +81,7 @@ class RankForm extends CFormModel
             }
             $ia+=$amt_paid_year_a;
         }
-        $ia_A=count($rows);
+        $ia_A=count($rows_ia);
         $amount_ia=$this->getAmount('1',$star_time,$ia);//本单产品提成比例
         $score_ia= $ia * $amount_ia['coefficient'] * (1+0.01*($ia_A-1));
         $this->ia['sum']=$ia_A;
@@ -212,27 +212,28 @@ class RankForm extends CFormModel
         if(empty($this->lhmoney['sum'])){
             $this->lhmoney['sum']='无';
         }
-        print_r($rows['username']);print_r($salepeople);
         if(!empty($salepeople)){
             for ($a=0;$a<count($salepeople);$a++){
-                if($a==0&&$salepeople[$a]['user']==$rows['username']){
-                    $salepeople_money=5000;
-                }elseif ($a==1&&$salepeople[$a]['user']==$rows['username']){
-                    $salepeople_money=3000;
-                }elseif ($a==2&&$salepeople[$a]['user']==$rows['username']){
-                    $salepeople_money=1500;
-                }elseif ($a>2&&$a<10&&$salepeople[$a]['user']==$rows['username']){
-                    $salepeople_money=500;
-                }elseif ($a>=10&&$a<15&&$salepeople[$a]['user']==$rows['username']){
-                    $salepeople_money=300;
-                }elseif ($a>=15&&$a<20&&$salepeople[$a]['user']==$rows['username']){
-                    $salepeople_money=100;
-                }elseif ($a>=15&&$a<20&&$salepeople[$a]['user']==$rows['username']){
-                    $salepeople_money=100;
-                }elseif ($a>=(count($salepeople)-10)&&$a<count($salepeople)&&$salepeople[$a]['user']==$rows['username']){
-                    $salepeople_money=-500;
-                }else{
-                    $salepeople_money=0;
+                if($salepeople[$a]['user']==$rows['username']){
+                    if($a==0){
+                        $salepeople_money=5000;
+                    }elseif ($a==1){
+                        $salepeople_money=3000;
+                    }elseif ($a==2){
+                        $salepeople_money=1500;
+                    }elseif ($a>2){
+                        $salepeople_money=500;
+                    }elseif ($a>=10){
+                        $salepeople_money=300;
+                    }elseif ($a>=15){
+                        $salepeople_money=100;
+                    }elseif ($a>=15){
+                        $salepeople_money=100;
+                    }elseif ($a>=(count($salepeople)-10)&&$a<count($salepeople)){
+                        $salepeople_money=-500;
+                    }else{
+                        $salepeople_money=0;
+                    }
                 }
             }
         }else{
@@ -240,7 +241,7 @@ class RankForm extends CFormModel
         }
         $this->lhmoney['score']=$salepeople_money;
         //五部曲分数
-        $sql_entry="select entry_time from hr$suffix.hr_employee a
+        $sql_entry="select a.entry_time from hr$suffix.hr_employee a
                     left outer join hr$suffix.hr_binding b  on a.id=b.employee_id 
                     where b.user_id= '".$rows['username']."'
                     ";
@@ -255,9 +256,10 @@ class RankForm extends CFormModel
             //滅蟲分數
             $score_mc=$this->getFive($five_time1,$rows['username'],0);
             //第三部曲分數
-            $five_time_end = date("m-d", strtotime("$five_time1 +15 day" ));
-            $sql_five="select * from sal_fivestep where username='".$rows['username']."' and rec_dt>=$five_time1 and rec_dt<=$five_time_end and five_type='2'";
+            $five_time_end = date("Y-m-d", strtotime("$five_time1 +15 day" ));
+            $sql_five="select * from sal_fivestep where username='".$rows['username']."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='2'";
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
+
             if(empty($retern)){
                 $score_3bq=0;
             }else{
@@ -266,12 +268,12 @@ class RankForm extends CFormModel
             $score_five=$score_xsj+$score_mc+$score_3bq;
         }elseif($month==date("m", strtotime($five_time2))){
             //洗手間分數
-            $score_xsj=$this->getFive($five_time1,$rows['username'],1);
+            $score_xsj=$this->getFive($five_time2,$rows['username'],1);
             //滅蟲分數
-            $score_mc=$this->getFive($five_time1,$rows['username'],0);
+            $score_mc=$this->getFive($five_time2,$rows['username'],0);
             //第三部曲分數
-            $five_time_end = date("m-d", strtotime("$five_time1 +15 day" ));
-            $sql_five="select * from sal_fivestep where username='".$rows['username']."' and rec_dt>=$five_time1 and rec_dt<=$five_time_end and five_type='2'";
+            $five_time_end = date("m-d", strtotime("$five_time2 +15 day" ));
+            $sql_five="select * from sal_fivestep where username='".$rows['username']."' and rec_dt>=$five_time2 and rec_dt<=$five_time_end and five_type='2'";
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
             if(empty($retern)){
                 $score_3bq=0;
@@ -294,19 +296,22 @@ class RankForm extends CFormModel
             $day=22;
         }
         $sales_visit=$visit/$day;
-        $amount_visit=$this->getAmount('5',$star_time,$sales_visit);//本单产品提成比例
+        $amount_visit=$this->getAmount('0',$star_time,$sales_visit);//本单产品提成比例
         $score_all=($score_all+$amount_visit['bonus'])*$amount_visit['coefficient'];
         $this->visit['sum']=round($sales_visit,0);
         $this->visit['score']=$amount_visit['bonus'];
-        $this->visit['coefficient']=round($amount_visit['coefficient'],2);;
+        $this->visit['coefficient']=round($amount_visit['coefficient'],2);
 //        print_r($sales_visit);exit();
 
         //地方销售人员/整体区比例
         $sql_sales = "select count(a.username)	
-				from security$suffix.sec_user a 
+				from security$suffix.sec_user a  
 				left outer join security$suffix.sec_city b on a.city=b.code 			  
-				left outer join security$suffix.sec_user_access c on a.username=c.username 			
-				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'
+				left outer join security$suffix.sec_user_access c on a.username=c.username 	
+				left outer join hr$suffix.hr_binding d  on a.username=d.user_id
+				left outer join hr$suffix.hr_employee e  on d.employee_id=e.id		
+                left outer join hr$suffix.hr_dept f  on e.position=f.id		
+				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and  f.name !='地方管理层'
 			";
         $sales_people= Yii::app()->db->createCommand($sql_sales)->queryScalar();
         $sql_city="select count(id) from sales$suffix.sal_cust_district where city='$city'";
@@ -378,20 +383,20 @@ class RankForm extends CFormModel
 	}
 
     public function getFive($five_time1,$username,$five_type){//獲得五部曲分數
-        $five_time_end = date("m-d", strtotime("$five_time1 +3 day" ));
-        $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>=$five_time1 and rec_dt<=$five_time_end and five_type='$five_type'";
+        $five_time_end = date("Y-m-d", strtotime("$five_time1 +3 day" ));
+        $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='$five_type'";
         $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
         if(!empty($retern)){
             $score_five_xishouj=1500;
         }else{
             $five_time_end = date("m-d", strtotime("$five_time1 +7 day" ));
-            $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>=$five_time1 and rec_dt<=$five_time_end and five_type='$five_type'";
+            $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='$five_type'";
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
             if(!empty($retern)){
                 $score_five_xishouj=1000;
             }else{
                 $five_time_end = date("m-d", strtotime("$five_time1 +30 day" ));
-                $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>=$five_time1 and rec_dt<=$five_time_end and five_type='$five_type'";
+                $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='$five_type'";
                 $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
                 if(!empty($retern)){
                     $score_five_xishouj=500;
