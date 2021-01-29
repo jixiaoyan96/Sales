@@ -212,6 +212,7 @@ class RankForm extends CFormModel
         if(empty($this->lhmoney['sum'])){
             $this->lhmoney['sum']='无';
         }
+        print_r($rows['username']);print_r($salepeople);
         if(!empty($salepeople)){
             for ($a=0;$a<count($salepeople);$a++){
                 if($a==0&&$salepeople[$a]['user']==$rows['username']){
@@ -290,7 +291,7 @@ class RankForm extends CFormModel
         $sql_day="select sale_day from sal_integral  where username='".$rows['username']."' and year='$year' and month='$month'";
         $day= Yii::app()->db->createCommand($sql_day)->queryScalar();
         if(empty($day)||$day==0){
-            $day=1;
+            $day=22;
         }
         $sales_visit=$visit/$day;
         $amount_visit=$this->getAmount('5',$star_time,$sales_visit);//本单产品提成比例
