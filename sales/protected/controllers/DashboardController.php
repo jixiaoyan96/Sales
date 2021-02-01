@@ -24,7 +24,7 @@ class DashboardController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('notify','salepeople','Salelist','Salelists'),
+				'actions'=>array('notify','salepeople','Salelist','Salelists','Ranklist'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -189,6 +189,47 @@ foreach ($models as $key=>$item) {
 //print_r($result);
         echo json_encode($result);
     }
+
+
+    public function Ranklist(){
+        $suffix = Yii::app()->params['envSuffix'];
+        $models = array();
+        $time= date('Y-m-d', strtotime(date('Y-m-01') ));
+        $sql = "select city, username,rank
+				from sal_rank  
+				where 
+				 month >= '$time'
+                order by rank desc
+			";
+        $records = Yii::app()->db->createCommand($sql)->queryAll();
+        foreach ($records as $record) {
+            $temp = array();
+            $temp['user']=$record['username'];
+            $sql = "select name from hr$suffix.hr_employee where id=(SELECT employee_id from hr$suffix.hr_binding WHERE user_id='".$record['username']."')";
+            $row = Yii::app()->db->createCommand($sql)->queryRow();
+            $temp['name']= $row!==false ? $row['name'] : $record['username'];
+            $temp['rank']= $record['rank'];
+            $sql = "select a.name as city_name, b.name as region_name 
+					from security$suffix.sec_city a
+					left outer join security$suffix.sec_city b on a.region=b.code
+					where a.code='".$record['city']."'
+				";
+            $row = Yii::app()->db->createCommand($sql)->queryRow();
+            $temp['city'] = $row!==false ? $row['city_name'] : $record['city'];
+            $temp['quyu'] = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
+
+            $sql="select * from sal_level where start_fraction <='".$record['rank']."' and end_fraction >='".$record['rank']."'";
+            $rank_name= Yii::app()->db->createCommand($sql)->queryRow();
+            $temp['level']=$rank_name['level'];
+            $models[] = $temp;
+        }
+        $last_names = array_column($models,'rank');
+        array_multisort($last_names,SORT_DESC,$models);
+        $models = array_slice($models, 0, 20);
+        echo json_encode($models);
+    }
+
+
 }
 
 ?>

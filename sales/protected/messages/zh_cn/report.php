@@ -134,5 +134,7 @@ return array(
     'Renewal Reminder Report'=>'续约提醒报表',
     'Days Before Expiry'=>'到期前',
     'days'=>'日',
+    'level'=>'段位',
+    'Sales ranking'=>'销售个人段位排行榜',
 );
 ?>
