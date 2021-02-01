@@ -195,7 +195,6 @@ foreach ($models as $key=>$item) {
         $suffix = Yii::app()->params['envSuffix'];
         $models = array();
         $time= date('Y-m-d', strtotime(date('Y-m-01') ));
-        $time= '2021-01-01';
         $suffix = Yii::app()->params['envSuffix'];
         $models = array();
         $sql = "select a.city, a.username,a.rank,c.name
