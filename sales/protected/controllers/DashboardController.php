@@ -24,7 +24,7 @@ class DashboardController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('notify','salepeople','Salelist','Salelists','Ranklist'),
+				'actions'=>array('notify','salepeople','Salelist','Salelists','ranklist'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -191,23 +191,29 @@ foreach ($models as $key=>$item) {
     }
 
 
-    public function Ranklist(){
+    public function actionRanklist(){
         $suffix = Yii::app()->params['envSuffix'];
         $models = array();
         $time= date('Y-m-d', strtotime(date('Y-m-01') ));
-        $sql = "select city, username,rank
-				from sal_rank  
+        $time= '2021-01-01';
+        $suffix = Yii::app()->params['envSuffix'];
+        $models = array();
+        $sql = "select a.city, a.username,a.rank,c.name
+				from sal_rank  a
+				left outer join  hr$suffix.hr_binding b on a.username=b.user_id
+				left outer join  hr$suffix.hr_employee c on b.employee_id=c.id
 				where 
-				 month >= '$time'
-                order by rank desc
+				a.month >= '$time' 
+                order by a.rank desc
 			";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($records as $record) {
             $temp = array();
             $temp['user']=$record['username'];
-            $sql = "select name from hr$suffix.hr_employee where id=(SELECT employee_id from hr$suffix.hr_binding WHERE user_id='".$record['username']."')";
-            $row = Yii::app()->db->createCommand($sql)->queryRow();
-            $temp['name']= $row!==false ? $row['name'] : $record['username'];
+//            $sql = "select name from hr$suffix.hr_employee where id=(SELECT employee_id from hr$suffix.hr_binding WHERE user_id='".$record['username']."')";
+//            $row = Yii::app()->db->createCommand($sql)->queryRow();
+//            $temp['name']= $row!==false ? $row['name'] : $record['username'];
+            $temp['name']=$record['name'];
             $temp['rank']= $record['rank'];
             $sql = "select a.name as city_name, b.name as region_name 
 					from security$suffix.sec_city a

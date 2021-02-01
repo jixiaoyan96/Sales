@@ -312,7 +312,7 @@ class RankForm extends CFormModel
 				left outer join security$suffix.sec_user_access c on a.username=c.username 	
 				left outer join hr$suffix.hr_binding d  on a.username=d.user_id
 				left outer join hr$suffix.hr_employee e  on d.employee_id=e.id		
-                left outer join hr$suffix.hr_dept f  on e.position=f.id		
+                left outer join hr$suffix.hr_dept f  on e.department=f.id		
 				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and  f.name !='地方管理层'
 			";
         $sales_people= Yii::app()->db->createCommand($sql_sales)->queryScalar();
@@ -345,7 +345,7 @@ class RankForm extends CFormModel
         $food= Yii::app()->db->createCommand($sql_food)->queryScalar();
         if($food==0||$food==2){
             $score_all=$score_all*1;//餐饮组（或没分）
-            $this->food['name']='餐饮组（或没分）';
+            $this->food['name']='餐饮组';
             $this->food['score']=1;
         }else{
             $score_all=$score_all*1.3;
@@ -376,7 +376,7 @@ class RankForm extends CFormModel
             $this->fjl=1.2;
         }
         //当前赛季总分（继承后）
-        $this->all=$score_all;
+        $this->all=round($score_all,2);
         $this->now_all=round($score_all+$this->rank,2);
         //上赛季段位
         $sql_rank_name="select * from sal_level where start_fraction <='".$this->now_all."' and end_fraction >='".$this->now_all."'";

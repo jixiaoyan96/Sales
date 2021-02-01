@@ -71,9 +71,10 @@ class RankinglistController extends Controller
         $peopel=$model->salepeople($start,$end);
         $list=$model->salelist($start,$end);
         $lists=$model->salelists($start,$end);
+        $rank=$model->ranklist($start,$end);
 //        print_r('<pre>');
 //        print_r($start);
-        $this->render('form',array('model'=>$model,'peopel'=>$peopel,'list'=>$list,'lists'=>$lists));
+        $this->render('form',array('model'=>$model,'peopel'=>$peopel,'list'=>$list,'lists'=>$lists,'rank'=>$rank));
 
     }
 

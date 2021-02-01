@@ -40,7 +40,7 @@ $js = <<<EOF
 			var line = '<table class="table table-bordered small">';
 			line += '<tr><td><b>$paiming</b></td><td><b>$city</b></td><td><b>$quyu</b></td><td><b>$sum</b></td><td><b>$jine</b></td></tr>';
 			if (data !== undefined && data.length != 0) {
-				
+			//console.log(data);
 				for (var i=0; i < data.length; i++) {
 					line += '<tr>';
 					style = '';
@@ -56,7 +56,7 @@ $js = <<<EOF
 				
 			}
 			line += '</table>';
-			$('#salepeople').html(line);
+			$('#ranklist').html(line);
 		},
 		error: function(xhr, status, error) { // if error occured
 			var err = eval("(" + xhr.responseText + ")");

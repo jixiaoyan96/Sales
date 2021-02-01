@@ -101,6 +101,25 @@ $this->pageTitle=Yii::app()->name . ' - Month Report';
                 </div>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title"><?php echo Yii::t('report','List of regional sales per capita signed amount');?>(<?php echo $model['scenario']['start_dt']."/".$model['scenario']['start_dt1'];?>)</h3>
+                </div>
+                <div class="box-body">
+                    <div id="salelists" class="direct-chat-messages" style="height: 250px;">
+                        <table class="table table-bordered small">
+                            <tbody>
+                            <tr><td><b><?php echo Yii::t('report','ranking');?></b></td><td><b><?php echo Yii::t('report','city');?></b></td><td><b><?php echo Yii::t('report','quyu');?></b></td><td><b><?php echo Yii::t('report','name');?></b></td><td><b><?php echo Yii::t('report','level');?></b></td></tr>
+                            <?php for ($i=0;$i<count($rank);$i++){ ?>
+                                <tr <?php if($i==0){ echo "style='color:#FF0000'";}if($i==1){ echo "style='color:#871F78'";}if($i==2){ echo "style='color:#0000FF'";}?>><td><?php echo $i+1;?></td><td><?php echo $rank[$i]['city'];?></td><td><?php echo $rank[$i]['quyu'];?></td><td><?php echo $rank[$i]['name'];?></td><td><?php echo $rank[$i]['level'];?></td></tr>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

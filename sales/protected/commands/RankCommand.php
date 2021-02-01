@@ -23,7 +23,7 @@ class RankCommand extends CConsoleCommand
 				left outer join security$suffix.sec_user_access c on a.username=c.username 	
 				left outer join hr$suffix.hr_binding d  on a.username=d.user_id
 				left outer join hr$suffix.hr_employee e  on d.employee_id=e.id		
-                left outer join hr$suffix.hr_dept f  on e.position=f.id		
+                left outer join hr$suffix.hr_dept f  on e.department=f.id		
 				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and  f.name !='地方管理层'
 			";
                     $rows = Yii::app()->db->createCommand($sql1)->queryAll();
