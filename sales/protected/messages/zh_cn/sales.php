@@ -172,5 +172,8 @@ return array(
     'Coefficients'=>'系数',
     'Sign'=>'符号',
     'Start Date'=>'日期',
+    'Season'=>'赛季',
+    'Rank'=>'段位',
+    'Rank sales Form'=>'销售个人段位表单',
 );
 ?>

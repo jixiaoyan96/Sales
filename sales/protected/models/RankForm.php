@@ -22,14 +22,15 @@ class RankForm extends CFormModel
     public $now;
     public $rank;
     public $rank_name;
+    public $name;
 
 
 	
 	public function attributeLabels()
 	{
 		return array(
-            'sale_day'=>Yii::t('code','Sale_day'),
-            'employee_name'=>Yii::t('sales','Employee_name'),
+            'season'=>Yii::t('sales','Season'),
+            'city'=>Yii::t('sales','City'),
 		);
 	}
 
@@ -63,6 +64,11 @@ class RankForm extends CFormModel
         $end_time=date("Y-m-31", strtotime($rows['month']));//当前赛季結束时间
         //上赛季分数
         $this->rank=$rows['rank'];
+        //销售人员名称
+        $sql_name="select a.* from hr$suffix.hr_binding a
+                    left outer join  hr$suffix.hr_employee b on  a.employee_id=b.id where a.user_id='".$rows['username']."'";
+        $name = Yii::app()->db->createCommand($sql_name)->queryRow();
+        $this->name=$name['employee_name'];
         // 銷售每月签单得分
         //IAIB
         $sql_ia="select a.* from swoper$suffix.swo_service a
@@ -502,7 +508,9 @@ class RankForm extends CFormModel
     public function city(){
         $suffix = Yii::app()->params['envSuffix'];
         $model = new City();
-        $city=Yii::app()->user->city();
+        $id=Yii::app()->user->id;
+        $sql="select city from security$suffix.sec_user where username='$id'";
+        $city = Yii::app()->db->createCommand($sql)->queryScalar();
         $records=$model->getDescendant($city);
         array_unshift($records,$city);
         $cityname=array();

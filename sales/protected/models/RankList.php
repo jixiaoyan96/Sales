@@ -7,9 +7,10 @@ class RankList extends CListPageModel
 		return array(
             'year'=>Yii::t('code','Year'),
             'month'=>Yii::t('code','Month'),
-            'city'=>Yii::t('sales','chengs'),
+            'city'=>Yii::t('sales','City'),
             'employee_name'=>Yii::t('sales','Employee_name'),
-            'sale_day'=>Yii::t('code','Sale_day'),
+            'season'=>Yii::t('sales','Season'),
+            'rank'=>Yii::t('sales','Rank'),
 		);
 	}
 
@@ -77,13 +78,15 @@ class RankList extends CListPageModel
 		$this->attr = array();
 		if (count($records) > 0) {
 			foreach ($records as $k=>$record) {
+                $sql_rank_name="select * from sal_level where start_fraction <='".$record['new_rank']."' and end_fraction >='".$record['new_rank']."'";
+                $rank_name= Yii::app()->db->createCommand($sql_rank_name)->queryRow();
 				$this->attr[] = array(
 					'id'=>$record['id'],
 					'month'=>date("m", strtotime($record['month'])),
 					'city'=>$record['city_name'],
                     'employee_name'=>$record['name'],
                     'season'=>$record['season'],
-                    'new_rank'=>$record['new_rank'],
+                    'new_rank'=>$rank_name['level'],
 
                 );
 			}

@@ -11,7 +11,7 @@ $this->pageTitle=Yii::app()->name . ' - commission Report';
 
 <section class="content-header">
 	<h1>
-		<strong><?php echo Yii::t('app','Sales Commission'); ?></strong>
+		<strong><?php echo Yii::t('report','Sales Rank'); ?></strong>
 	</h1>
 <!--
 	<ol class="breadcrumb">
@@ -23,6 +23,13 @@ $this->pageTitle=Yii::app()->name . ' - commission Report';
 </section>
 
 <section class="content">
+    <div class="box"><div class="box-body">
+            <div class="btn-group" role="group">
+                <?php echo TbHtml::button(Yii::t('misc','Back'), array(
+                    'submit'=>Yii::app()->createUrl('rank/index')));
+                ?>
+            </div>
+        </div></div>
     <input type="hidden" name="city" value="<?php echo $a['city'];?>">
     <input type="hidden" name="season" value="<?php echo $a['season'];?>">
 	<?php
@@ -33,7 +40,7 @@ $this->pageTitle=Yii::app()->name . ' - commission Report';
         'user_name',
     );
     $this->widget('ext.layout.ListPageWidget', array(
-			'title'=>Yii::t('app','sale commission man'),
+			'title'=>Yii::t('report','Sales Rank man'),
 			'model'=>$model,
 				'viewhdr'=>'//rank/_listhdr',
 				'viewdtl'=>'//rank/_listdtl',

@@ -10,7 +10,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 
 <section class="content-header">
 	<h1>
-		<strong><?php echo Yii::t('code','Target Form'); ?></strong>
+		<strong><?php echo Yii::t('sales','Rank sales Form'); ?></strong>
 	</h1>
 </section>
 
@@ -55,7 +55,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
             </style>
 
             <table class="tftable" border="1">
-                <tr><th>当前段位</th><th><?php echo $model->rank_name;?></th><th>当前赛季累计到上月分数</th><th><?php echo $model->rank;?></th></tr>
+                <tr><th><?php echo $model->name;?> - 当前段位：<?php echo $model->rank_name;?></th><th></th><th>当前赛季累计到上月分数</th><th><?php echo $model->rank;?></th></tr>
                 <tr><td>当月数据 ：</td><td></td><td>当月数据对应得分 ：</td><td></td></tr>
                 <tr><td>销售每月平均每天拜访记录</td><td><?php echo $model->visit['sum'];?>条</td><td>销售每月平均每天拜访记录分数</td><td><?php echo $model->visit['score'];?></td></tr>
                 <tr><td>销售每月IA，IB签单单数 (A)</td><td><?php echo $model->ia['sum'];?>张</td><td>销售每月IA，IB签单得分</td><td><?php echo $model->ia['score'];?></td></tr>
