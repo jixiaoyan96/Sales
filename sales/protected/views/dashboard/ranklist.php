@@ -10,7 +10,7 @@
     <!-- /.box-header -->
 
     <div class="box-body">
-        <div id='salepeople' class="direct-chat-messages" style="height: 250px;">
+        <div id='ranklist' class="direct-chat-messages" style="height: 250px;">
             <div class="overlay">
               <i class="fa fa-refresh fa-spin"></i>
             </div>

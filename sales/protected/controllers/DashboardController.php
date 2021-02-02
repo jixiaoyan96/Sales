@@ -24,7 +24,7 @@ class DashboardController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('notify','salepeople','Salelist','Salelists','ranklist'),
+				'actions'=>array('notify','salepeople','Salelist','Salelists','ranklist',),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users

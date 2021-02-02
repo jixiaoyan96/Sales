@@ -104,7 +104,7 @@ $this->pageTitle=Yii::app()->name . ' - Month Report';
         <div class="col-md-4">
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title"><?php echo Yii::t('report','List of regional sales per capita signed amount');?>(<?php echo $model['scenario']['start_dt']."/".$model['scenario']['start_dt1'];?>)</h3>
+                    <h3 class="box-title"><?php echo Yii::t('report','Sales ranking');?>(<?php echo $model['scenario']['start_dt']."/".$model['scenario']['start_dt1'];?>)</h3>
                 </div>
                 <div class="box-body">
                     <div id="salelists" class="direct-chat-messages" style="height: 250px;">
