@@ -73,6 +73,8 @@ class RankCommand extends CConsoleCommand
                                $record=Yii::app()->db->createCommand($sql1)->queryRow();
                                if(empty($record)){
                                    $record['new_fraction']=0;
+                               }elseif($rankfraction['new_rank']<10000){
+                                   $record['new_fraction']=$rankfraction['new_rank'];
                                }
                                $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
 				                  values('$season_s', '$month', '".$records['username']."', '$city','".$record['new_fraction']."','0')

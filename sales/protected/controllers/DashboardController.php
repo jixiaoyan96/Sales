@@ -197,7 +197,7 @@ foreach ($models as $key=>$item) {
         $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         $suffix = Yii::app()->params['envSuffix'];
         $models = array();
-        $sql = "select a.city, a.username,a.rank,c.name
+        $sql = "select a.city, a.username,a.rank,c.name,a.id
 				from sal_rank  a
 				left outer join  hr$suffix.hr_binding b on a.username=b.user_id
 				left outer join  hr$suffix.hr_employee c on b.employee_id=c.id
@@ -222,10 +222,12 @@ foreach ($models as $key=>$item) {
             $row = Yii::app()->db->createCommand($sql)->queryRow();
             $temp['city'] = $row!==false ? $row['city_name'] : $record['city'];
             $temp['quyu'] = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
-
-            $sql="select * from sal_level where start_fraction <='".$record['rank']."' and end_fraction >='".$record['rank']."'";
-            $rank_name= Yii::app()->db->createCommand($sql)->queryRow();
-            $temp['level']=$rank_name['level'];
+            $model = new RankForm('view');
+            $model->retrieveData($record['id']);
+            $temp['level']=$model['rank_name'];
+//            $sql="select * from sal_level where start_fraction <='".$record['rank']."' and end_fraction >='".$record['rank']."'";
+//            $rank_name= Yii::app()->db->createCommand($sql)->queryRow();
+//            $temp['level']=$rank_name['level'];
             $models[] = $temp;
         }
         $last_names = array_column($models,'rank');
