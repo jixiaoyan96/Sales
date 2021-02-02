@@ -23,8 +23,8 @@ class RankCommand extends CConsoleCommand
 				left outer join security$suffix.sec_user_access c on a.username=c.username 	
 				left outer join hr$suffix.hr_binding d  on a.username=d.user_id
 				left outer join hr$suffix.hr_employee e  on d.employee_id=e.id		
-                left outer join hr$suffix.hr_dept f  on e.department=f.id		
-				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and  f.name !='地方管理层'
+                left outer join hr$suffix.hr_dept f  on e.position=f.id 	
+				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and  (f.manager_type ='1' or f.manager_type ='2')
 			";
                     $rows = Yii::app()->db->createCommand($sql1)->queryAll();
                     foreach ($rows as $records){
@@ -73,7 +73,7 @@ class RankCommand extends CConsoleCommand
                                $record=Yii::app()->db->createCommand($sql1)->queryRow();
                                if(empty($record)){
                                    $record['new_fraction']=0;
-                               }elseif($rankfraction['new_rank']<10000){
+                               }elseif($rankfraction['new_rank']<20000){
                                    $record['new_fraction']=$rankfraction['new_rank'];
                                }
                                $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
