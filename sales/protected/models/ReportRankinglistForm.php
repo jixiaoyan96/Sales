@@ -217,26 +217,28 @@ class ReportRankinglistForm extends CReportForm
 			";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($records as $record) {
-            $temp = array();
-            $temp['user']=$record['username'];
+            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/'WL'/'HN1'/","'".$record['city']."'")===false) {
+                $temp = array();
+                $temp['user'] = $record['username'];
 //            $sql = "select name from hr$suffix.hr_employee where id=(SELECT employee_id from hr$suffix.hr_binding WHERE user_id='".$record['username']."')";
 //            $row = Yii::app()->db->createCommand($sql)->queryRow();
 //            $temp['name']= $row!==false ? $row['name'] : $record['username'];
-            $temp['name']=$record['name'];
-            $temp['rank']= $record['rank'];
-            $sql = "select a.name as city_name, b.name as region_name 
+                $temp['name'] = $record['name'];
+                $temp['rank'] = $record['rank'];
+                $sql = "select a.name as city_name, b.name as region_name 
 					from security$suffix.sec_city a
 					left outer join security$suffix.sec_city b on a.region=b.code
-					where a.code='".$record['city']."'
+					where a.code='" . $record['city'] . "'
 				";
-            $row = Yii::app()->db->createCommand($sql)->queryRow();
-            $temp['city'] = $row!==false ? $row['city_name'] : $record['city'];
-            $temp['quyu'] = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
+                $row = Yii::app()->db->createCommand($sql)->queryRow();
+                $temp['city'] = $row !== false ? $row['city_name'] : $record['city'];
+                $temp['quyu'] = $row !== false ? str_replace(array('1', '2', '3', '4', '5', '6', '7', '8', '9', '0'), '', $row['region_name']) : '空';
 
-            $sql="select * from sal_level where start_fraction <='".$record['rank']."' and end_fraction >='".$record['rank']."'";
-            $rank_name= Yii::app()->db->createCommand($sql)->queryRow();
-            $temp['level']=$rank_name['level'];
-            $models[] = $temp;
+                $sql = "select * from sal_level where start_fraction <='" . $record['rank'] . "' and end_fraction >='" . $record['rank'] . "'";
+                $rank_name = Yii::app()->db->createCommand($sql)->queryRow();
+                $temp['level'] = $rank_name['level'];
+                $models[] = $temp;
+            }
         }
         $last_names = array_column($models,'rank');
         array_multisort($last_names,SORT_DESC,$models);
