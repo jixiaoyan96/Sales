@@ -24,7 +24,7 @@ class RankController extends Controller
 	{
 		return array(
 			array('allow', 
-				'actions'=>array('new','edit','delete','save','index_s','fileremove'),
+				'actions'=>array('new','edit','delete','save','index_s','fileremove','excel'),
 				'expression'=>array('RankController','allowReadWrite'),
 			),
 			array('allow', 
@@ -108,6 +108,16 @@ class RankController extends Controller
 			$this->render('form',array('model'=>$model,));
 		}
 	}
+
+    public function actionExcel()
+    {
+        $model = new RankForm('view');
+        if (!$model->readExcel()) {
+            throw new CHttpException(404,'The requested page does not exist.');
+        } else {
+            $this->render('form',array('model'=>$model,));
+        }
+    }
 
 	
 //	public function actionEdit($index)

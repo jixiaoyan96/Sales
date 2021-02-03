@@ -64,6 +64,8 @@ class RankForm extends CFormModel
         $end_time=date("Y-m-31", strtotime($rows['month']));//当前赛季結束时间
         //上赛季分数
         $this->rank=$rows['rank'];
+        //赛季
+        $this->season=$this->numToWord($rows['season']);
         //销售人员名称
         $sql_name="select a.* from hr$suffix.hr_binding a
                     left outer join  hr$suffix.hr_employee b on  a.employee_id=b.id where a.user_id='".$rows['username']."'";
@@ -569,6 +571,36 @@ class RankForm extends CFormModel
             $chiStr = $chiNum[$num_str[0]];
         }
         return $chiStr;
+    }
+
+    public function readExcel(){
+        Yii::$enableIncludePath = false;
+        $phpExcelPath = Yii::getPathOfAlias('ext.phpexcel');
+        spl_autoload_unregister(array('YiiBase','autoload'));
+        include($phpExcelPath . DIRECTORY_SEPARATOR . 'PHPExcel.php');
+        $objPHPExcel = new PHPExcel;
+        $objReader  = PHPExcel_IOFactory::createReader('Excel2007');
+        $path = Yii::app()->basePath.'/commands/template/readexcel.xlsx';
+        $objPHPExcel = $objReader->load($path);
+//print_r("<pre>");
+//        print_r(count($model->record));
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+        ob_start();
+        $objWriter->save('php://output');
+        $output = ob_get_clean();
+        spl_autoload_register(array('YiiBase','autoload'));
+        $time=time();
+        $str="templates/销售段位得分规则.xlsx";
+        header("Pragma: public");
+        header("Expires: 0");
+        header("Cache-Control:must-revalidate, post-check=0, pre-check=0");
+        header("Content-Type:application/force-download");
+        header("Content-Type:application/vnd.ms-execl");
+        header("Content-Type:application/octet-stream");
+        header("Content-Type:application/download");;
+        header('Content-Disposition:attachment;filename="'.$str.'"');
+        header("Content-Transfer-Encoding:binary");
+        echo $output;
     }
 
 

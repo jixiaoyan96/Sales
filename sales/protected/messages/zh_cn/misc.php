@@ -98,6 +98,7 @@ return array(
     'Restroom'=>'洗手间',
     'Third'=>'第三部曲',
     'Five Type'=>'五部曲类型',
+    'Click to download and view the segment calculation rule report.'=>'点击可下载查看段位得分规则报表',
 );
 
 ?>
