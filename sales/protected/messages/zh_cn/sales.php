@@ -175,5 +175,8 @@ return array(
     'Season'=>'赛季',
     'Rank'=>'段位',
     'Rank sales Form'=>'销售个人段位表单',
+    'Rank sales history Form'=>'销售个人历史段位表单',
+    'Sales Rank history'=>'销售个人段位历史查询',
+    'Sales Rank history man'=>'销售个人段位历史查询人员',
 );
 ?>
