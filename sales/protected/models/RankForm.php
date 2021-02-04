@@ -516,11 +516,13 @@ class RankForm extends CFormModel
         $records=$model->getDescendant($city);
         array_unshift($records,$city);
         $cityname=array();
-        foreach ($records as $k) {
+        foreach ($records as $v=>&$k) {
             if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'KH'/'ZY'/'MO'/'RN'/'MY'/'WL'/'HN1'/","'".$k."'")===false) {
                 $sql = "select name from security$suffix.sec_city where code='" . $k . "'";
                 $name = Yii::app()->db->createCommand($sql)->queryAll();
                 $cityname[] = $name[0]['name'];
+            }else{
+                unset($records[$v]);
             }
         }
         $city=array_combine($records,$cityname);
