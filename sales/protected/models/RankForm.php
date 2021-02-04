@@ -230,13 +230,11 @@ class RankForm extends CFormModel
                         $salepeople_money=3000;
                     }elseif ($a==2){
                         $salepeople_money=1500;
-                    }elseif ($a>2){
+                    }elseif ($a>2&&$a<10){
                         $salepeople_money=500;
-                    }elseif ($a>=10){
+                    }elseif ($a>=10&&$a<15){
                         $salepeople_money=300;
-                    }elseif ($a>=15){
-                        $salepeople_money=100;
-                    }elseif ($a>=15){
+                    }elseif ($a>=15&&$a<=20){
                         $salepeople_money=100;
                     }elseif ($a>=(count($salepeople)-10)&&$a<count($salepeople)){
                         $salepeople_money=-500;
@@ -444,7 +442,10 @@ class RankForm extends CFormModel
                 if ($row!==false) {
                     $rtn['bonus'] =$row['bonus'];
                     $rtn['coefficient'] =$row['coefficient'];
-            }
+                }else{
+                    $rtn['bonus'] =0;
+                    $rtn['coefficient'] =0;
+                }
             }
         }
         // }
