@@ -53,7 +53,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 .tftable tr:hover {background-color:#ffff99;}
             </style>
             <h3>第<?php echo $model->season;?>赛季 - <?php echo $model->name;?></h3>
-            <table class="tftable" border="1" style="width: 1000px;" ">
+            <table class="tftable" border="1" style="width: 1000px;">
                 <tr><th>当前段位：</th><th><?php echo $model->rank_name;?></th><th>当前赛季累计到上月分数</th><th><?php echo $model->rank;?></th></tr>
                 <tr><td><b>当月数据 ：</b></td><td></td><td><b>当月数据对应得分 ：</b></td><td></td></tr>
                 <tr><td>销售每月平均每天拜访数量</td><td><?php echo $model->visit['sum'];?>条</td><td>销售每月平均每天拜访数量得分</td><td><?php echo $model->visit['score'];?></td></tr>
@@ -73,7 +73,8 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 <tr><td>地方销售人员/整体区比例</td><td><?php echo $model->sales['sum'];?></td><td>地方销售人员/整体区比例对应倍数</td><td><?php echo $model->sales['score'];?></td></tr>
                 <tr><td>销售组别类型（餐饮组/商业组)</td><td><?php echo $model->food['name'];?></td><td>销售组别类型（餐饮组/商业组）对应倍数</td><td><?php echo $model->food['score'];?></td></tr>
                 <tr><td>销售岗位级别对应倍数</td><td><?php echo $model->fjl;?></td><td>销售每月平均每天拜访数量对应倍数</td><td><?php echo $model->visit['coefficient'];?></td></tr>
-                <tr><td><b>当前赛季累计到今月应得分数</b></td><td><b><?php echo $model->all;?></b> </td><td><b>当月得分对应段位</b></td><td><b><?php echo $model->rank_name;?></b></td></tr>
+                <tr><td><b>当前赛季累计到今月应得分数</b></td><td><b><?php echo $model->all;?></b> </td><td><b>当月赛季累积到今月实得分</b></td><td><b><?php echo $model->now_all;?></b></td></tr>
+                 <tr><td><b>当月得分对应段位</b></td><td colspan="3"><b><?php echo $model->rank_name;?></b></td></tr>
             </table>
 
 
