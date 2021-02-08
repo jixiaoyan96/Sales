@@ -32,7 +32,7 @@ class RankHistoryList extends CListPageModel
 			left outer join security$suffix.sec_city c on a.city=c.code	
 			inner join  sal_rank d on a.user_id = d.username
 			where a.city ='".$a['city']."' ";
-        $sql2 = "select count(a.id)
+        $sql2 = "select count(*) count from (select count(*)
 				 from  hr$suffix.hr_binding a
 			inner join  hr$suffix.hr_employee b on a.employee_id = b.id   
 			left outer join security$suffix.sec_city c on a.city=c.code	
@@ -64,10 +64,10 @@ class RankHistoryList extends CListPageModel
             $order = " order by a.employee_name desc";
         }
 
-		$sql = $sql2.$clause."group by employee_name ";;
+		$sql = $sql2.$clause."group by employee_name,a.id,c.name) temp ";;
 		$this->totalRow = Yii::app()->db->createCommand($sql)->queryScalar();
 
-		$sql = $sql1.$clause." group by  a.employee_name".$order;
+		$sql = $sql1.$clause." group by  a.employee_name,a.id,c.name".$order;
 		$sql = $this->sqlWithPageCriteria($sql, $this->pageNum);
 		$records = Yii::app()->db->createCommand($sql)->queryAll();
 
