@@ -33,10 +33,10 @@ class RankHistoryList extends CListPageModel
 			inner join  sal_rank d on a.user_id = d.username
 			where a.city ='".$a['city']."' ";
         $sql2 = "select count(a.id)
-				from sal_rank	a
-				left outer join security$suffix.sec_city b on a.city=b.code	
-				inner join hr$suffix.hr_binding c on a.username = c.user_id	  
-				inner join  hr$suffix.hr_employee d on c.employee_id = d.id  
+				 from  hr$suffix.hr_binding a
+			inner join  hr$suffix.hr_employee b on a.employee_id = b.id   
+			left outer join security$suffix.sec_city c on a.city=c.code	
+			inner join  sal_rank d on a.user_id = d.username
 			 where a.city ='".$a['city']."' ";
 		$clause = "";
 		if (!empty($this->searchField) && (!empty($this->searchValue) || $this->isAdvancedSearch())) {
@@ -53,15 +53,15 @@ class RankHistoryList extends CListPageModel
         if (!empty($this->orderField)) {
             switch ($this->orderField) {
                 case 'city':
-                    $order .= " order by  b.name ";
+                    $order .= " order by  c.name ";
                     break;
                 case 'name':
-                    $order .= " order by d.name ";
+                    $order .= " order by a.employee_name";
                     break;
             }
             if ($this->orderType=='D') $order .= "desc ";
         } else {
-            $order = " order by a.id desc";
+            $order = " order by a.employee_name desc";
         }
 
 		$sql = $sql2.$clause."group by employee_name ";;

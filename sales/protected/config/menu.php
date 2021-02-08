@@ -76,7 +76,7 @@ return array(
             ),
             'Sales history segment query'=>array(
                 'access'=>'HD02',
-                'url'=>'/historyrank/index',
+                'url'=>'/rankhistory/index',
             ),
         ),
     ),
