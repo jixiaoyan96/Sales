@@ -1,6 +1,6 @@
 <?php
 
-class RankHistoryController extends Controller
+class RankhistoryController extends Controller
 {
 	public $function_id='HD02';
 
