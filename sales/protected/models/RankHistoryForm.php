@@ -39,7 +39,7 @@ class RankHistoryForm extends CFormModel
 	public function retrieveData($index)
 	{
 		$suffix = Yii::app()->params['envSuffix'];
-		$sql="select a.* from sal_rank a
+		$sql="select a.*,b.employee_name from sal_rank a
               left outer join hr$suffix.hr_binding b on b.user_id=a.username
               where b.id='$index' and a.city=b.city
               ";

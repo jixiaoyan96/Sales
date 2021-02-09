@@ -33,7 +33,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 
 	<div class="box box-info">
 		<div class="box-body">
-            <div> <h1>销售历程</h1>
+            <div> <h3>销售历程- <?php echo $model['rank'][0]['employee_name'];?></h3>
                 <h5 ><?php echo $model['lic'];?></h5>
             </div>
 
