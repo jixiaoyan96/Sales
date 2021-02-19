@@ -11,15 +11,13 @@ class RankList extends CListPageModel
             'employee_name'=>Yii::t('sales','Employee_name'),
             'season'=>Yii::t('sales','Season'),
             'rank'=>Yii::t('sales','Rank'),
+            'name'=>Yii::t('sales','Staff'),
 		);
 	}
 
 	public function searchColumns() {
 		$search = array(
-				'year'=>"a.year",
-				'month'=>'a.month',
-				'city'=>'b.name',
-				'name'=>'c.employee_name',
+				'name'=>'d.name',
 		);
 		return $search;
 	}
@@ -43,15 +41,13 @@ class RankList extends CListPageModel
 			 where a.city ='".$a['city']."' and a.season ='".$a['season']."'";
 		$clause = "";
 		if (!empty($this->searchField) && (!empty($this->searchValue) || $this->isAdvancedSearch())) {
-			if ($this->isAdvancedSearch()) {
-				$clause = $this->buildSQLCriteria();
-			} else {
-				$svalue = str_replace("'","\'",$this->searchValue);
-				$columns = $this->searchColumns();
-				$clause .= General::getSqlConditionClause($columns[$this->searchField],$svalue);
-			}
+            $svalue = str_replace("'","\'",$this->searchValue);
+            switch ($this->searchField) {
+                case 'name':
+                    $clause .= General::getSqlConditionClause('d.name',$svalue);
+                    break;
+            }
 		}
-
 		$order = "";
         if (!empty($this->orderField)) {
             switch ($this->orderField) {
@@ -69,7 +65,6 @@ class RankList extends CListPageModel
 
 		$sql = $sql2.$clause;
 		$this->totalRow = Yii::app()->db->createCommand($sql)->queryScalar();
-
 		$sql = $sql1.$clause.$order;
 		$sql = $this->sqlWithPageCriteria($sql, $this->pageNum);
 		$records = Yii::app()->db->createCommand($sql)->queryAll();
@@ -87,7 +82,6 @@ class RankList extends CListPageModel
                     'employee_name'=>$record['name'],
                     'season'=>$record['season'],
                     'new_rank'=>$rank_name['level'],
-
                 );
 			}
 		}
