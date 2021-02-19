@@ -41,7 +41,8 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 			<?php echo $form->hiddenField($model, 'id'); ?>
             <?php  foreach ($model['rank'] as $a){?>
             <div style="width: 230px;text-align: center;float: left;">
-                <img src="../images/<?php echo $a['rank'].'.png'?>">
+<!--                <img src="../images/--><?php //echo $a['rank'].'.png'?><!--">-->
+                <img src="<?php echo Yii::app()->baseUrl."/images/".$a['rank'].".png";?>">
                     <h2 style="margin-top: 0px;">第<?php echo $a['season'];?>赛季</h2>
                 <span><?php $b=$a['month'];echo $start=date('Y-m', strtotime("$b -1 month")).'至'.date('Y-m', strtotime("$b"));?></span>
             </div>
