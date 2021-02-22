@@ -315,13 +315,13 @@ class IntegralForm extends CFormModel
                 }
             }
             $v=array_sum($sum_z);//数量
-            $this->cust_type_name['zhuangji']['sum']=$v*1;
+            $this->cust_type_name['zhuangji']['sum']=$v*2;
             $this->cust_type_name['zhuangji']['number']=$v;
-            $this->cust_type_name['zhuangji']['fraction']=1;//分数
+            $this->cust_type_name['zhuangji']['fraction']=2;//分数
         }else{
             $this->cust_type_name['zhuangji']['sum']=0;
             $this->cust_type_name['zhuangji']['number']=0;
-            $this->cust_type_name['zhuangji']['fraction']=1;
+            $this->cust_type_name['zhuangji']['fraction']=2;
         }
         //预收3
         $sql_ys="select * from swoper$suffix.swo_service a
@@ -424,30 +424,30 @@ class IntegralForm extends CFormModel
                where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime' and  shift is null ";
         $bf = Yii::app()->db->createCommand($sql_bf)->queryAll();
         if(!empty($bf)&&(count($bf)/$row['sale_day'])>15){
-            $this->cust_type_name['baifang15']['sum']=1;
+            $this->cust_type_name['baifang15']['sum']=3;
             $this->cust_type_name['baifang15']['number']=1;
-            $this->cust_type_name['baifang15']['fraction']=1;
+            $this->cust_type_name['baifang15']['fraction']=3;
         }else{
             $this->cust_type_name['baifang15']['sum']=0;
             $this->cust_type_name['baifang15']['number']=0;
-            $this->cust_type_name['baifang15']['fraction']=1;
+            $this->cust_type_name['baifang15']['fraction']=3;
         }
 
         //拜访20
         if(!empty($bf)&&(count($bf)/$row['sale_day'])>20){
-            $this->cust_type_name['baifang20']['sum']=2;
+            $this->cust_type_name['baifang20']['sum']=6;
             $this->cust_type_name['baifang20']['number']=1;
-            $this->cust_type_name['baifang20']['fraction']=2;
+            $this->cust_type_name['baifang20']['fraction']=6;
         }else{
             $this->cust_type_name['baifang20']['sum']=0;
             $this->cust_type_name['baifang20']['number']=0;
-            $this->cust_type_name['baifang20']['fraction']=2;
+            $this->cust_type_name['baifang20']['fraction']=6;
         }
         if($this->cust_type_name['baifang20']['sum']==0){
             $this->cust_type_name['baifang20']['sum']=0;
-            $baifang= $this->cust_type_name['baifang15']['sum'];
+            $baifang= $this->cust_type_name['baifang20']['sum'];
         }else{
-            $this->cust_type_name['baifang15']['sum']=0;
+            $this->cust_type_name['baifang20']['sum']=0;
             $baifang= $this->cust_type_name['baifang20']['sum'];
         }
 
