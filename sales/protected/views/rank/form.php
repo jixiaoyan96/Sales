@@ -70,10 +70,10 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 <tr><td>每月销售龙虎榜城市人均签单金额排名</td><td><?php echo $model->lhsum['sum'];?></td><td>每月销售龙虎榜城市人均签单金额排名分数</td><td><?php echo $model->lhsum['score'];?></td></tr>
                 <tr><td><b>当月所有得分</b></td><td><b><?php echo $model->now;?> </b></td><td></td><td></td></tr>
                 <tr><th colspan="4">当月数据对应分数倍数（当月所有得分*以下倍数）：</th></tr>
-                <tr><td>地方销售人员/整体区比例</td><td><?php echo $model->sales['sum'];?></td><td>地方销售人员/整体区比例对应倍数</td><td><?php echo $model->sales['score'];?></td></tr>
+                <tr><td>地方销售人员/地方区域个数</td><td><?php echo $model->sales['sum'];?></td><td>地方销售人员/地方区域个数对应倍数</td><td><?php echo $model->sales['score'];?></td></tr>
                 <tr><td>销售组别类型（餐饮组/商业组)</td><td><?php echo $model->food['name'];?></td><td>销售组别类型（餐饮组/商业组）对应倍数</td><td><?php echo $model->food['score'];?></td></tr>
                 <tr><td>销售岗位级别对应倍数</td><td><?php echo $model->fjl;?></td><td>销售每月平均每天拜访数量对应倍数</td><td><?php echo $model->visit['coefficient'];?></td></tr>
-                <tr><td><b>当前赛季累计到今月应得分数</b></td><td><b><?php echo $model->all;?></b> </td><td><b>当月赛季累积到今月实得分</b></td><td><b><?php echo $model->now_all;?></b></td></tr>
+                <tr><td><b>当月所有得分乘以倍数后</b></td><td><b><?php echo $model->all;?></b> </td><td><b>当前赛季总分</b></td><td><b><?php echo $model->now_all;?></b></td></tr>
                  <tr><td><b>当月得分对应段位</b></td><td colspan="3"><b><?php echo $model->rank_name;?></b></td></tr>
             </table>
 

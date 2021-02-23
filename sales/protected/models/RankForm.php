@@ -535,8 +535,17 @@ class RankForm extends CFormModel
         $sql = "select season from sal_season group by season";
         $row= Yii::app()->db->createCommand($sql)->queryAll();
         $season=array();
+        $i=1;
         foreach ($row as $a){
-            $season[$a['season']]='第'.$this->numToWord($a['season']).'赛季';
+            $b=$i+1;
+            if($i==12){
+                $b=1;
+            }
+            $season[$a['season']]='第'.$this->numToWord($a['season']).'赛季('.$i.'-'.$b.'月)';
+            $i=$i+2;
+            if($i==13){
+                $i=1;
+            }
         }
         return $season;
     }
