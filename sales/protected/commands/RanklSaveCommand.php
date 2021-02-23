@@ -12,7 +12,7 @@ class RanklSaveCommand extends CConsoleCommand
         $row = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($row as $id){
             $model->retrieveData($id['id']);
-            $sql1="update sal_rank set rank='".$model['now_all']."' where id='".$id['id']."'";
+            $sql1="update sal_rank set new_rank='".$model['now_all']."' where id='".$id['id']."'";
             $command=Yii::app()->db->createCommand($sql1)->execute();
         }
     }
