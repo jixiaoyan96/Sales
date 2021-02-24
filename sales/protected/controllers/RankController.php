@@ -41,12 +41,34 @@ class RankController extends Controller
     public function actionIndex($pageNum=0)
     {
         $model = new RankForm;
-        $city=$model->city();
+        $city=$this->city();
         $season=$model->season();
         //     $model->retrieveDatas($model);
 //        print_r('<$city>');
       //  print_r($season);
         $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,));
+    }
+
+    public function city(){
+        $suffix = Yii::app()->params['envSuffix'];
+        $model = new City();
+        $id=Yii::app()->user->id;
+        $sql="select city from security$suffix.sec_user where username='$id'";
+        $city = Yii::app()->db->createCommand($sql)->queryScalar();
+        $records=$model->getDescendant($city);
+        array_unshift($records,$city);
+        $cityname=array();
+        foreach ($records as $v=>&$k) {
+            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'ZY'/'MO'/'RN'/'MY'/'WL'/'HN2'/'JMS'/'RW'/'HN1'/'HXHB'/'HD'/'HN'/'HD1'/'CN'/'HX'/'HB'/","'".$k."'")===false) {
+                $sql = "select name from security$suffix.sec_city where code='" . $k . "'";
+                $name = Yii::app()->db->createCommand($sql)->queryAll();
+                $cityname[] = $name[0]['name'];
+            }else{
+                unset($records[$v]);
+            }
+        }
+        $city=array_combine($records,$cityname);
+        return $city;
     }
 
 	public function actionIndex_s($pageNum=0)

@@ -43,7 +43,7 @@ class RankForm extends CFormModel
 	}
 
     public function init() {
-        $this->city =Yii::app()->user->city();
+        $this->city ='';
         $this->season="";
 //        $this->month=date("m");
 //        $this->year=date("Y");
@@ -56,7 +56,7 @@ class RankForm extends CFormModel
 		$suffix = Yii::app()->params['envSuffix'];
         $sql="select * from sales$suffix.sal_rank where id='$index'";
 		$rows = Yii::app()->db->createCommand($sql)->queryRow();
-        $city = Yii::app()->user->city();
+        $city = $rows['city'];
         $cityname=$this->cityname($city);
         $year = date("Y", strtotime($rows['month']));//当前赛季时间年
         $month = date("m", strtotime($rows['month']));//当前赛季时间月
@@ -509,27 +509,7 @@ class RankForm extends CFormModel
 	    return $name;
     }
 
-    public function city(){
-        $suffix = Yii::app()->params['envSuffix'];
-        $model = new City();
-        $id=Yii::app()->user->id;
-        $sql="select city from security$suffix.sec_user where username='$id'";
-        $city = Yii::app()->db->createCommand($sql)->queryScalar();
-        $records=$model->getDescendant($city);
-        array_unshift($records,$city);
-        $cityname=array();
-        foreach ($records as $v=>&$k) {
-            if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'ZY'/'MO'/'RN'/'MY'/'WL'/'HN2'/'JMS'/'RW'/'HN1'/'HXHB'/'HD'/'HN'/'HD1'/'CN'/'HX'/'HB'/","'".$k."'")===false) {
-                $sql = "select name from security$suffix.sec_city where code='" . $k . "'";
-                $name = Yii::app()->db->createCommand($sql)->queryAll();
-                $cityname[] = $name[0]['name'];
-            }else{
-                unset($records[$v]);
-            }
-        }
-        $city=array_combine($records,$cityname);
-        return $city;
-    }
+
 
     public function season(){
         $sql = "select season from sal_season group by season";
