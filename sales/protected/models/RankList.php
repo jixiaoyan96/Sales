@@ -81,8 +81,8 @@ class RankList extends CListPageModel
 					'city'=>$record['city_name'],
                     'employee_name'=>$record['name'],
                     'season'=>$record['season'],
-                    //'new_rank'=>$rank_name['level'],
-                    'new_rank'=>$record['new_rank'],
+                    'new_rank'=>$rank_name['level'],
+                    //'new_rank'=>$record['new_rank'],
                 );
 			}
 		}
