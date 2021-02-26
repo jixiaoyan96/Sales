@@ -61,7 +61,7 @@ class RankHistoryForm extends CFormModel
             $end=date('Y-m', strtotime("$a"));
             $end_s=$this->numToWord($value['season']);
             $value['season']=$this->numToWord($value['season']);
-            $sql_rank_name="select level from sal_level where start_fraction <='".$value['rank']."' and end_fraction >='".$value['rank']."'";
+            $sql_rank_name="select level from sal_level where start_fraction <='".$value['new_rank']."' and end_fraction >='".$value['new_rank']."'";
             $level= Yii::app()->db->createCommand($sql_rank_name)->queryScalar();
             $value['rank']=$level;
             $i=$i+1;
