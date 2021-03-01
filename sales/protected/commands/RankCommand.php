@@ -57,7 +57,7 @@ class RankCommand extends CConsoleCommand
                            $rank=$rank+$ruzhi+$five;
                            //第几赛季，具体时间，用户，城市，初始分数或上赛季分数，当前赛季分数
                            $sql = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
-				                  values('$season_s', '$month', '".$records['username']."', '$city','$rank','0')
+				                  values('$season_s', '$month', '".$records['username']."', '$city','$rank','1')
 			                        ";
                            $command=Yii::app()->db->createCommand($sql)->execute();
                        }else{
@@ -65,7 +65,7 @@ class RankCommand extends CConsoleCommand
                            $season = Yii::app()->db->createCommand($sql)->queryAll();
                            if(count($season)==1){
                                $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
-				                  values('$season_s', '$month', '".$records['username']."', '$city','".$rankfraction['new_rank']."','0')
+				                  values('$season_s', '$month', '".$records['username']."', '$city','".$rankfraction['new_rank']."','2')
 			                        ";
                                $command=Yii::app()->db->createCommand($sql2)->execute();
                            }else{
@@ -77,7 +77,7 @@ class RankCommand extends CConsoleCommand
                                    $record['new_fraction']=$rankfraction['new_rank'];
                                }
                                $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
-				                  values('$season_s', '$month', '".$records['username']."', '$city','".$record['new_fraction']."','0')
+				                  values('$season_s', '$month', '".$records['username']."', '$city','".$record['new_fraction']."','3')
 			                        ";
                                $command=Yii::app()->db->createCommand($sql2)->execute();
                            }
