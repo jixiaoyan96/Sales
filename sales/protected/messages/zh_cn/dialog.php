@@ -82,5 +82,7 @@ return array(
 1. 销售拜访表平均低于每月200条, 当月总积分视为0分。即当月最终提成点数扣1%。<br/>
 2. 参与同事为副经理和以下级别的销售部同事。
 ',
+    'RankScoreForm'=>'销售段位总分榜',
+    'You can only select one of them separately to view season data and annual data'=>'查看赛季数据和查看年度数据只能单独选择其中一项',
 );
 ?>

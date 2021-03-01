@@ -79,6 +79,8 @@ return array(
 1. 銷售拜訪表平均低於每月200條,當月總積分視為0分。即當月最終提成點數扣1%。<br/>
 2. 參與同事為副經理和以下級別的銷售部同事。
 ',
+    'RankScoreForm'=>'段位總分榜',
+    'You can only select one of them separately to view season data and annual data'=>'查看賽季數據和查看年度數據只能單獨選擇其中一項',
 );
 
 ?>

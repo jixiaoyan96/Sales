@@ -101,6 +101,7 @@ return array(
 	'Sales segment query'=>'销售段位查询',
 	'Sales segment details query'=>'销售段位明细查询',
     'Sales history segment query'=>'销售历史段位查询',
+    'Total rank score'=>'销售段位总分榜',
 	'Sales Rank'=>'销售段位设置',
 	'Sales Turnover'=>'销售成交率报表',
 	'Sales segment coefficient'=>'销售段位系数设置'

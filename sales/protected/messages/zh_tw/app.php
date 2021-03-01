@@ -101,8 +101,9 @@ return array(
 'Sales segment query'=>'銷售段位查詢',
 'Sales segment details query'=>'銷售段位明細查詢',
 'Sales history segment query'=>'銷售歷史段位查詢',
+'Total rank score'=>'銷售段位總分榜',
 'Sales Rank'=>'銷售段位設置',
 'Sales Turnover'=>'銷售成交率報表',
-    'Sales segment coefficient'=>'销售段位係數設置'
+'Sales segment coefficient'=>'销售段位係數設置'
 );
 ?>

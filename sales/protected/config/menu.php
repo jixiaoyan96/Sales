@@ -78,6 +78,10 @@ return array(
                 'access'=>'HD02',
                 'url'=>'/rankhistory/index',
             ),
+           'Total rank score'=>array(
+            'access'=>'HD03',
+            'url'=>'/rankscore/index',
+        ),
         ),
     ),
 
