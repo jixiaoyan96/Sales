@@ -79,8 +79,6 @@ class RankForm extends CFormModel
                   where a.status_dt>='$star_time' and a.status_dt<='$end_time' and a.status='N' and (a.cust_type='1' or a.cust_type='2') and c.user_id='".$rows['username']."' and a.city='$city'
                   ";
         $rows_ia = Yii::app()->db->createCommand($sql_ia)->queryAll();
-        print_r('<pre>');
-        print_r($rows_ia);
         $ia=0;
         foreach ($rows_ia as $row){
             if($row['paid_type']=='M'){
