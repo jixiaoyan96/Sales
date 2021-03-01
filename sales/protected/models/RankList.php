@@ -39,36 +39,9 @@ class RankList extends CListPageModel
 				inner join hr$suffix.hr_binding c on a.username = c.user_id	  
 				inner join  hr$suffix.hr_employee d on c.employee_id = d.id  
 			 where a.city ='".$a['city']."' and a.season ='".$a['season']."'";
-		$clause = "";
-		if (!empty($this->searchField) && (!empty($this->searchValue) || $this->isAdvancedSearch())) {
-            $svalue = str_replace("'","\'",$this->searchValue);
-            switch ($this->searchField) {
-                case 'name':
-                    $clause .= General::getSqlConditionClause('d.name',$svalue);
-                    break;
-            }
-		}
-		$order = "";
-        if (!empty($this->orderField)) {
-            switch ($this->orderField) {
-                case 'city':
-                    $order .= " order by  b.name ";
-                    break;
-                case 'name':
-                    $order .= " order by d.name ";
-                    break;
-            }
-            if ($this->orderType=='D') $order .= "desc ";
-        } else {
-            $order = " order by id desc";
-        }
-
-		$sql = $sql2.$clause;
-		$this->totalRow = Yii::app()->db->createCommand($sql)->queryScalar();
-		$sql = $sql1.$clause.$order;
-		$sql = $this->sqlWithPageCriteria($sql, $this->pageNum);
+		$this->totalRow = Yii::app()->db->createCommand($sql2)->queryScalar();
+		$sql = $this->sqlWithPageCriteria($sql1, $this->pageNum);
 		$records = Yii::app()->db->createCommand($sql)->queryAll();
-
 		$list = array();
 		$this->attr = array();
 		if (count($records) > 0) {

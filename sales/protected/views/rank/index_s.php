@@ -48,7 +48,8 @@ $this->pageTitle=Yii::app()->name . ' - commission Report';
 				'height'=>'600',
                 'hasNavBar'=>false,
                 'hasPageBar'=>false,
-				'search'=>$search,
+                'hasSearchBar'=>false,
+
 		));
     echo TBhtml::button('dummyButtin',array('style'=>'display:none','disabled'=>true,'submit'=>'#',))
 	?>
