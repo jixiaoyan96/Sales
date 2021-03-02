@@ -46,5 +46,12 @@ return array(
 'Target'=>'銷售目標',
 'Target List'=>'銷售目標列表',
 'Target Form'=>'銷售目標表單',
+
+'Level'=>'段位',
+'New Level'=>'新賽季段位',
+'Start Fraction'=>'下限分數',
+'End Fraction'=>'上限分數',
+'New Fraction'=>'新賽季分數',
+'Reward'=>'獎勵',
 );
 ?>

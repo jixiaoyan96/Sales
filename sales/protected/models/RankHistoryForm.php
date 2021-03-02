@@ -46,7 +46,7 @@ class RankHistoryForm extends CFormModel
         $rows = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($rows as $v) {
             $month=date('m', strtotime( $v['month']));
-            if (strpos("010305070911", $month) === false) {
+            if (strpos("02.04.06.08.10.12", $month) === false) {
                 $this->rank[] = $v;
             }
         }

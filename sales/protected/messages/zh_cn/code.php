@@ -50,9 +50,9 @@ return array(
 
     'Level'=>'段位',
     'New Level'=>'新赛季段位',
-    'Start Fraction'=>'下限金额',
-    'End Fraction'=>'上限金额',
-    'New Fraction'=>'新赛季金额',
+    'Start Fraction'=>'下限分数',
+    'End Fraction'=>'上限分数',
+    'New Fraction'=>'新赛季分数',
     'Reward'=>'奖励',
 );
 ?>

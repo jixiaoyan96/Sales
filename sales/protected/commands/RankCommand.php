@@ -69,7 +69,7 @@ class RankCommand extends CConsoleCommand
 			                        ";
                                $command=Yii::app()->db->createCommand($sql2)->execute();
                            }else{
-                               $sql1="select * from sales$suffix.sal_level where start_fraction>='".$rankfraction['new_rank']."' and end_fraction<='".$rankfraction['new_rank']."'";
+                               $sql1="select * from sales$suffix.sal_level where start_fraction<='".$rankfraction['new_rank']."' and end_fraction>='".$rankfraction['new_rank']."'";
                                $record=Yii::app()->db->createCommand($sql1)->queryRow();
                                if(empty($record)){
                                    $record['new_fraction']=0;
