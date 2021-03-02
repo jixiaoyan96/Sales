@@ -135,8 +135,8 @@ class RankForm extends CFormModel
         }
         $cp_A=count($rows_cp);
         $amount_cp=$this->getAmount('3',$star_time,$cp);//本单产品提成比例
-        $score_cp=$cp * $amount_cp['coefficient'] * (1+0.005*(($cp_A)-1));
-        $this->cp['sum']=$cp_A;
+        $score_cp=$cp * $amount_cp['coefficient'];
+       // $this->cp['sum']=$cp_A;
         $this->cp['money']=$cp;
         $this->cp['score']=round($score_cp,2);
         //洗涤易
@@ -355,9 +355,9 @@ class RankForm extends CFormModel
             $this->food['name']='餐饮组';
             $this->food['score']=1;
         }else{
-            $score_all=$score_all*1.3;
+            $score_all=$score_all*1.2;
             $this->food['name']='商业组';
-            $this->food['score']=1.3;
+            $this->food['score']=1.2;
         }
         //销售岗位级别
         $sql_jl="select * from hr$suffix.hr_employee a

@@ -61,8 +61,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 <tr><td>销售每月IA，IB签单金额</td><td><?php echo $model->ia['money'];?></td><td></td><td></td></tr>
                 <tr><td>销售每月飘盈香签单单数 (B)</td><td><?php echo $model->pyx['sum'];?>张</td><td>销售每月飘盈香签单得分</td><td><?php echo $model->pyx['score'];?></td></tr>
                 <tr><td>销售每月飘盈香签单金额</td><td><?php echo $model->pyx['money'];?></td><td></td><td></td></tr>
-                <tr><td>销售每月产品（不包括洗地易）签单单数 (C)</td><td><?php echo $model->cp['sum'];?>张</td><td>销售每月产品（不包括洗地易）签单得分</td><td><?php echo $model->cp['score'];?></td></tr>
-                <tr><td>销售每月产品（不包括洗地易）签单得分</td><td><?php echo $model->cp['money'];?></td><td></td><td></td></tr>
+                <tr><td>销售每月产品（不包括洗地易）签单金額</td><td><?php echo $model->cp['money'];?></td>  <td>销售每月产品（不包括洗地易）签单得分</td><td><?php echo $model->cp['score'];?></td></tr>
                 <tr><td>销售每月洗地易/甲醛签单单数 (D)</td><td><?php echo $model->jq['sum'];?>张</td><td>销售每月洗地易/甲醛签单得分</td><td><?php echo $model->jq['score'];?></td></tr>
                 <tr><td>销售每月洗地易/甲醛签单金额</td><td><?php echo $model->jq['money'];?></td><td></td><td></td></tr>
                 <tr><td>每月销售龙虎榜销售排名</td><td><?php echo $model->lhmoney['sum'];?></td><td>每月销售龙虎榜销售得分</td><td><?php echo $model->lhmoney['score'];?></td></tr>
