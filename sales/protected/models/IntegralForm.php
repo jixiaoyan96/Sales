@@ -445,10 +445,10 @@ class IntegralForm extends CFormModel
         }
         if($this->cust_type_name['baifang20']['sum']==0){
             $this->cust_type_name['baifang20']['sum']=0;
-            $baifang= $this->cust_type_name['baifang20']['sum'];
+            $baifang= $this->cust_type_name['baifang20']['sum']+$this->cust_type_name['baifang15']['sum'];
         }else{
             $this->cust_type_name['baifang20']['sum']=0;
-            $baifang= $this->cust_type_name['baifang20']['sum'];
+            $baifang= $this->cust_type_name['baifang20']['sum']+$this->cust_type_name['baifang15']['sum'];
         }
 
         $this->cust_type_name['canpin_sum']=array_sum(array_map(create_function('$val', 'return $val["sum"];'), $this->cust_type_name['canpin']));
