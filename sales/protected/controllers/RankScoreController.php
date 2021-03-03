@@ -1,6 +1,6 @@
 <?php
 
-class RankScoreController extends Controller
+class RankscoreController extends Controller
 {
 	public $function_id='HD03';
 
@@ -25,11 +25,11 @@ class RankScoreController extends Controller
 		return array(
 			array('allow', 
 				'actions'=>array('new','edit','delete','save','index_s','fileremove','excel'),
-				'expression'=>array('RankScoreController','allowReadWrite'),
+				'expression'=>array('RankscoreController','allowReadWrite'),
 			),
 			array('allow', 
 				'actions'=>array('index','view','filedownload'),
-				'expression'=>array('RankScoreController','allowReadOnly'),
+				'expression'=>array('RankscoreController','allowReadOnly'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
