@@ -46,11 +46,14 @@ class RankHistoryForm extends CFormModel
         $rows = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($rows as $v) {
             $month=date('m', strtotime( $v['month']));
-            if (strpos("02.04.06.08.10.12", $month) === false) {
+            if (strpos("01.03.05.07.09.12", $month) === false) {
+                $this->rank[] = $v;
+            }if(end($rows)==$v&&count($rows)%2==1){
                 $this->rank[] = $v;
             }
         }
         $i=1;
+
         foreach ($this->rank as &$value){
             $a=$value['month'];
             if($i==1){
@@ -63,10 +66,10 @@ class RankHistoryForm extends CFormModel
             $value['season']=$this->numToWord($value['season']);
             $sql_rank_name="select level from sal_level where start_fraction <='".$value['new_rank']."' and end_fraction >='".$value['new_rank']."'";
             $level= Yii::app()->db->createCommand($sql_rank_name)->queryScalar();
+
             $value['rank']=$level;
             $i=$i+1;
         }
-
         $this->lic=$start.'至'.$end.'（第'.$stat_s.'赛季）-（第'.$end_s.'赛季）';
 
 //        print_r('<pre>');
