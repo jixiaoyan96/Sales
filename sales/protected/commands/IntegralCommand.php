@@ -62,13 +62,13 @@ class IntegralCommand extends CConsoleCommand
             $years=date('Y',$timestrap);
             $months=date('m',$timestrap);
 //        print_r($record);exit();
-            if($years==$year&&$months==$month&&date('d',$timestrap)>1){
+            if($years==$year&&$months==$month&&date('d',$timestrap)=='01'){
                 $a=1;
             }else{
                 $a=2;
             }
         }else{
-            $a=1;
+            $a=2;
         }
         return $a;
     }
