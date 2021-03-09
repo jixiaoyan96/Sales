@@ -49,12 +49,6 @@ class IntegralCommand extends CConsoleCommand
               where e.user_id='$user_id'
 ";
         $records = Yii::app()->db->createCommand($sql)->queryRow();
-        $sql="select entry_time from hr$suffix.hr_employee where code= '".$records['code']."' ";
-        $record = Yii::app()->db->createCommand($sql)->queryScalar();
-        $timestraps=strtotime($record);
-        $entry_time_year=date('Y',$timestraps);
-        $entry_time_month=date('m',$timestraps);
-        if($entry_time_year==$year&&$entry_time_month==$month){
             $sql1="select visit_dt from sales$suffix.sal_visit   where username='$user_id' order by visit_dt
 ";
             $record = Yii::app()->db->createCommand($sql1)->queryRow();
@@ -62,13 +56,19 @@ class IntegralCommand extends CConsoleCommand
             $years=date('Y',$timestrap);
             $months=date('m',$timestrap);
 //        print_r($record);exit();
-            if($years==$year&&$months==$month&&date('d',$timestrap)=='01'){
-                $a=1;
+        if(date('d',$timestrap)=='01'){
+            if($years==$year&&$months==$month){
+                $a=1;//不加入东成西就
             }else{
                 $a=2;
             }
         }else{
-            $a=2;
+            $next=$months-1;
+            if(($years==$year&&$months==$month)||($years==$year&&$next==$month)){
+                $a=1;//不加入东成西就
+            }else{
+                $a=2;
+            }
         }
         return $a;
     }
