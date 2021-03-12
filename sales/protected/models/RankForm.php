@@ -17,13 +17,22 @@ class RankForm extends CFormModel
     public $sales=array();
     public $food=array();
     public $fjl;
-    public $now_all;
-    public $all;
-    public $now;
-    public $rank;
+    public $now;//当月获得
+    public $all_score;//当月所有得分乘以倍数后
+    public $now_score;//当月总分(所有加起来)
+    public $last_score;//上赛季分数
+    public $initial_score;//初始分数
     public $rank_name;
     public $name;
-
+    public $score_xsj;
+    public $score_xsj_day;
+    public $score_mc;
+    public $score_mc_day;
+    public $score_3bq;
+    public $score_3bq_day;
+    public $score_five;
+    public $ruzhi;
+    public $ruzhi_day;
 
 	
 	public function attributeLabels()
@@ -63,7 +72,7 @@ class RankForm extends CFormModel
         $star_time=date("Y-m-01", strtotime($rows['month']));//当前赛季開始时间
         $end_time=date("Y-m-31", strtotime($rows['month']));//当前赛季結束时间
         //上赛季分数
-        $this->rank=$rows['rank'];
+        $this->last_score=$rows['last_score'];
         //赛季
         $this->season=$this->numToWord($rows['season']);
         //销售人员名称
@@ -261,39 +270,68 @@ class RankForm extends CFormModel
         if($month==date("m", strtotime($five_time1))){
             //洗手間分數
             $score_xsj=$this->getFive($five_time1,$rows['username'],1);
+            $this->score_xsj= $score_xsj['score'];
+            $this->score_xsj_day= $score_xsj['score_day'];
             //滅蟲分數
             $score_mc=$this->getFive($five_time1,$rows['username'],0);
+            $this->score_mc= $score_mc['score'];
+            $this->score_mc_day= $score_mc['score_day'];
             //第三部曲分數
             $five_time_end = date("Y-m-d", strtotime("$five_time1 +15 day" ));
             $sql_five="select * from sal_fivestep where username='".$rows['username']."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='2'";
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
-
             if(empty($retern)){
-                $score_3bq=0;
+                $this->score_3bq=0;
+                $this->score_3bq_day='/';
             }else{
-                $score_3bq=1500;
+                $this->score_3bq=1500;
+                $this->score_3bq_day='15天';
             }
-            $score_five=$score_xsj+$score_mc+$score_3bq;
+            $this->score_five=$this->score_xsj+$this->score_mc+$this->score_3bq;
         }elseif($month==date("m", strtotime($five_time2))){
             //洗手間分數
             $score_xsj=$this->getFive($five_time2,$rows['username'],1);
+            $this->score_xsj= $score_xsj['score'];
+            $this->score_xsj_day= $score_xsj['score_day'];
             //滅蟲分數
             $score_mc=$this->getFive($five_time2,$rows['username'],0);
+            $this->score_mc= $score_mc['score'];
+            $this->score_mc_day= $score_mc['score_day'];
             //第三部曲分數
             $five_time_end = date("m-d", strtotime("$five_time2 +15 day" ));
             $sql_five="select * from sal_fivestep where username='".$rows['username']."' and rec_dt>=$five_time2 and rec_dt<=$five_time_end and five_type='2'";
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
             if(empty($retern)){
-                $score_3bq=0;
+                $this->score_3bq=0;
+                $this->score_3bqs='/';
             }else{
-                $score_3bq=1500;
+                $this->score_3bq=1500;
+                $this->score_3bqs='15天';
             }
-            $score_five=$score_xsj+$score_mc+$score_3bq;
+            $this->score_five=$this->score_xsj+$this->score_mc+$this->score_3bq;
         }else{
-            $score_five=0;
+            $this->score_five=0;
         }
+        //入职时间積分
+        $sql_entry_time="select a.* from hr$suffix.hr_employee a left outer join hr$suffix.hr_binding b on a.id=b.employee_id where b.user_id='".$rows['username']."'";
+        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
+        $date=date("Y-m-d");
+        $time1 = date("Y-m-d", strtotime("$date -1 month"));
+        $time2 = date("Y-m-d", strtotime("$date -3 month"));
+        if($time2>=$entry_time['entry_time']){
+            $this->ruzhi=2500;
+            $this->ruzhi_day='3个月';
+        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1){
+            $this->ruzhi=1000;
+            $this->ruzhi_day='1个月';
+        }else{
+            $this->ruzhi=0;
+            $this->ruzhi_day='/';
+        }
+        //初始分数
+        $this->initial_score=$this->score_five+$this->ruzhi;
         //总分数
-        $score_all=$score_ia+$score_pyx+$score_cp+$score_xdy+$score_jq+$score_sales_one+$score_sales_two+$score_salemoney_one+$score_salemoney_two+$salepeople_money+$score_five;
+        $score_all=$score_ia+$score_pyx+$score_cp+$score_xdy+$score_jq+$score_sales_one+$score_sales_two+$score_salemoney_one+$score_salemoney_two+$salepeople_money+$this->initial_score;
         //销售每月平均每天拜访记录  比例
         $sql_visit="select count(id) as sums from sal_visit where username='".$rows['username']."' and visit_dt>='$star_time'  and visit_dt<='$end_time'";
         $visit= Yii::app()->db->createCommand($sql_visit)->queryScalar();
@@ -382,11 +420,12 @@ class RankForm extends CFormModel
             $score_all=$score_all*1.2;
             $this->fjl=1.2;
         }
+        //当前赛季总分
+        $this->all_score=round($score_all,2);
         //当前赛季总分（继承后）
-        $this->all=round($score_all,2);
-        $this->now_all=round($score_all+$this->rank,2);
+        $this->now_score=round($score_all+$this->last_score,2);
         //上赛季段位
-        $sql_rank_name="select * from sal_level where start_fraction <='".$this->now_all."' and end_fraction >='".$this->now_all."'";
+        $sql_rank_name="select * from sal_level where start_fraction <='".$this->now_score."' and end_fraction >='".$this->now_score."'";
         $rank_name= Yii::app()->db->createCommand($sql_rank_name)->queryRow();
         $this->rank_name=$rank_name['level'];
 		return true;
@@ -397,25 +436,29 @@ class RankForm extends CFormModel
         $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='$five_type'";
         $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
         if(!empty($retern)){
-            $score_five_xishouj=1500;
+            $arr['score']=1500;
+            $arr['score_day']='3天';
         }else{
             $five_time_end = date("Y-m-d", strtotime("$five_time1 +7 day" ));
             $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='$five_type'";
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
             if(!empty($retern)){
-                $score_five_xishouj=1000;
+                $arr['score']=1000;
+                $arr['score_day']='7天';
             }else{
                 $five_time_end = date("Y-m-d", strtotime("$five_time1 +30 day" ));
                 $sql_five="select * from sal_fivestep where username='".$username."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='$five_type'";
                 $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
                 if(!empty($retern)){
-                    $score_five_xishouj=500;
+                    $arr['score']=500;
+                    $arr['score_day']='30天';
                 }else{
-                    $score_five_xishouj=0;
+                    $arr['score']=0;
+                    $arr['score_day']='/';
                 }
             }
         }
-        return $score_five_xishouj;
+        return $arr;
     }
 
     public  function getAmount( $cust_type, $start_dt, $sales_amt) {

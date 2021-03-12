@@ -43,7 +43,7 @@ class RankScoreForm extends CFormModel
             $this->season='年度总分排行榜';
             $start=$data['year'].'-01-01';
             $end=$data['year'].'-12-31';
-            $sql = "select a.city, a.username,sum(a.rank) as ranks
+            $sql = "select a.city, a.username,sum(a.all_score) as ranks
 				from sal_rank  a
 				where   city='".$data['city']."'  and month<='$end' and month>='$start'   
 			  	group by a.city, a.username   
@@ -52,7 +52,7 @@ class RankScoreForm extends CFormModel
 
         }else{
             $this->season='赛季总分排行榜';
-            $sql = "select a.city, a.username,sum(a.rank) as ranks
+            $sql = "select a.city, a.username,sum(a.all_score) as ranks
 				from sal_rank  a
 				where   city='".$data['city']."'    and  season='".$data['season']."'
 			  	group by a.city, a.username   

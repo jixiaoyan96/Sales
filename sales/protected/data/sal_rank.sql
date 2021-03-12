@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2021-01-25 10:56:55
+Date: 2021-03-12 10:45:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,16 +25,18 @@ CREATE TABLE `sal_rank` (
   `month` datetime DEFAULT NULL COMMENT '月份',
   `username` varchar(20) DEFAULT NULL,
   `city` varchar(11) DEFAULT NULL,
-  `rank` int(20) DEFAULT NULL COMMENT '初始分数',
-  `new_rank` int(20) DEFAULT NULL COMMENT '本赛季分数',
+  `all_score` int(20) DEFAULT NULL COMMENT '当月所有得分乘以倍数后',
+  `last_score` int(20) DEFAULT NULL COMMENT '上赛季分数',
+  `now_score` int(20) DEFAULT NULL COMMENT '当月总分',
+  `initial_score` int(20) DEFAULT NULL COMMENT '初始分数',
   `lcd` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `lud` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1219 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sal_rank
 -- ----------------------------
-INSERT INTO `sal_rank` VALUES ('1', '1', '2019-07-02 10:42:46', 'test', 'SH', '0', '0', '2021-01-11 10:43:20', '2021-01-11 10:43:20');
-INSERT INTO `sal_rank` VALUES ('2', '1', '2019-08-02 10:43:23', 'test', 'SH', '2147483647', '0', '2021-01-11 10:44:04', '2021-01-11 10:44:04');
-INSERT INTO `sal_rank` VALUES ('3', '2', '2019-09-01 10:43:35', 'test', 'SH', '2147483647', null, '2021-01-11 10:43:50', '2021-01-11 10:43:50');
+INSERT INTO `sal_rank` VALUES ('292', '1', '2021-01-29 00:00:00', 'test', 'SH', '1792', '1', '1793', '4000', '2021-03-12 10:11:47', '2021-03-12 10:11:47');
+INSERT INTO `sal_rank` VALUES ('293', '1', '2021-02-11 11:29:00', 'test', 'SH', '256', '1793', '2049', '1000', '2021-03-12 10:13:14', '2021-03-12 10:13:14');
+INSERT INTO `sal_rank` VALUES ('1218', '2', '2021-03-01 00:00:00', 'test', 'SH', null, '1800', null, '1000', '2021-03-12 10:14:52', '2021-03-12 10:14:52');

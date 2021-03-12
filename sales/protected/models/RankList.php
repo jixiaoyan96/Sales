@@ -46,7 +46,7 @@ class RankList extends CListPageModel
 		$this->attr = array();
 		if (count($records) > 0) {
 			foreach ($records as $k=>$record) {
-                $sql_rank_name="select * from sal_level where start_fraction <='".$record['new_rank']."' and end_fraction >='".$record['new_rank']."'";
+                $sql_rank_name="select * from sal_level where start_fraction <='".$record['now_score']."' and end_fraction >='".$record['now_score']."'";
                 $rank_name= Yii::app()->db->createCommand($sql_rank_name)->queryRow();
 				$this->attr[] = array(
 					'id'=>$record['id'],

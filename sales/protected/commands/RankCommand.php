@@ -33,51 +33,51 @@ class RankCommand extends CConsoleCommand
                         $span="select * from sales$suffix.sal_rank where city='$city' and  username='".$records['username']."' order by id desc";
                         $rankfraction = Yii::app()->db->createCommand($span)->queryRow();
                         //入职时间積分
-                        $sql_entry_time="select a.* from hr$suffix.hr_employee a left outer join hr$suffix.hr_binding b on a.id=b.employee_id where b.user_id='".$records['username']."'";
-                        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
-                        $time1 = date("Y-m-d", strtotime("$date -1 month"));
-                        $time2 = date("Y-m-d", strtotime("$date -3 month"));
-                        if($time2>=$entry_time['entry_time']){
-                            $ruzhi=2500;
-                        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1){
-                            $ruzhi=1000;
-                        }else{
-                            $ruzhi=0;
-                        }
+//                        $sql_entry_time="select a.* from hr$suffix.hr_employee a left outer join hr$suffix.hr_binding b on a.id=b.employee_id where b.user_id='".$records['username']."'";
+//                        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
+//                        $time1 = date("Y-m-d", strtotime("$date -1 month"));
+//                        $time2 = date("Y-m-d", strtotime("$date -3 month"));
+//                        if($time2>=$entry_time['entry_time']){
+//                            $ruzhi=2500;
+//                        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1){
+//                            $ruzhi=1000;
+//                        }else{
+//                            $ruzhi=0;
+//                        }
                         //老员工五部曲分数
-                        $sql_five="select * from sales$suffix.sal_fivestep where username='".$records['username']."' and rec_dt<=$month ";
-                        $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
-                        if(empty($retern)){
-                            $five=0;
-                        }else{
-                            $five=4500;
-                        }
-                        $rank=0;
+//                        $sql_five="select * from sales$suffix.sal_fivestep where username='".$records['username']."' and rec_dt<=$month ";
+//                        $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
+//                        if(empty($retern)){
+//                            $five=0;
+//                        }else{
+//                            $five=4500;
+//                        }
+
                        if(empty($rankfraction)){
-                           $rank=$rank+$ruzhi+$five;
+                         //  $rank=$rank+$ruzhi+$five;
                            //第几赛季，具体时间，用户，城市，初始分数或上赛季分数，当前赛季分数
-                           $sql = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
-				                  values('$season_s', '$month', '".$records['username']."', '$city','$rank','1')
+                           $sql = "insert into sales$suffix.sal_rank(season, month, username, city) 
+				                  values('$season_s', '$month', '".$records['username']."', '$city')
 			                        ";
                            $command=Yii::app()->db->createCommand($sql)->execute();
                        }else{
                            $sql="select * from sales$suffix.sal_rank where season='".$rankfraction['season']."' and username='".$records['username']."' and city='$city'";
                            $season = Yii::app()->db->createCommand($sql)->queryAll();
                            if(count($season)==1){
-                               $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
-				                  values('$season_s', '$month', '".$records['username']."', '$city','".$rankfraction['new_rank']."','2')
+                               $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,last_score) 
+				                  values('$season_s', '$month', '".$records['username']."', '$city','".$rankfraction['now_score']."')
 			                        ";
                                $command=Yii::app()->db->createCommand($sql2)->execute();
                            }else{
-                               $sql1="select * from sales$suffix.sal_level where start_fraction<='".$rankfraction['new_rank']."' and end_fraction>='".$rankfraction['new_rank']."'";
+                               $sql1="select * from sales$suffix.sal_level where start_fraction<='".$rankfraction['now_score']."' and end_fraction>='".$rankfraction['now_score']."'";
                                $record=Yii::app()->db->createCommand($sql1)->queryRow();
                                if(empty($record)){
                                    $record['new_fraction']=0;
                                }elseif($rankfraction['new_rank']<20000){
                                    $record['new_fraction']=$rankfraction['new_rank'];
                                }
-                               $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,rank,new_rank) 
-				                  values('$season_s', '$month', '".$records['username']."', '$city','".$record['new_fraction']."','3')
+                               $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,last_score) 
+				                  values('$season_s', '$month', '".$records['username']."', '$city','".$record['new_fraction']."')
 			                        ";
                                $command=Yii::app()->db->createCommand($sql2)->execute();
                            }

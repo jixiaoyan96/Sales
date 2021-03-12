@@ -32,22 +32,37 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 	</div></div>
 
 	<div class="box box-info">
-		<div class="box-body">
+        <style>
+            .lists{
+                overflow-y:hidden;
+                overflow-x:auto;
+                white-space: nowrap;
+            }
+            .cardlist{
+                display: inline-table;
+                vertical-align: top;
+                width:230px;
+                text-align: center;
+            }
+        </style>
+		<div class="box-body" style="overflow:auto; ">
             <div> <h3>销售历程- <?php echo $model['rank'][0]['employee_name'];?></h3>
                 <h5 ><?php echo $model['lic'];?></h5>
             </div>
 
 			<?php echo $form->hiddenField($model, 'scenario'); ?>
 			<?php echo $form->hiddenField($model, 'id'); ?>
-            <?php  foreach ($model['rank'] as $a){?>
-            <div style="width: 230px;text-align: center;float: left;">
-<!--                <img src="../images/--><?php //echo $a['rank'].'.png'?><!--">-->
-                <img src="<?php echo Yii::app()->baseUrl."/images/".$a['rank'].".png";?>">
-                    <h2 style="margin-top: 0px;">第<?php echo $a['season'];?>赛季</h2>
-                <p><?php echo $a['rank'];?></p>
-                <span><?php $b=$a['month'];echo $start=date('Y-m', strtotime("$b -1 month")).'至'.date('Y-m', strtotime("$b"));?></span>
+            <div class="lists">
+                <?php  foreach ($model['rank'] as $a){?>
+                    <div class="cardlist">
+                        <!--                <img src="../images/--><?php //echo $a['rank'].'.png'?><!--">-->
+                        <img src="<?php echo Yii::app()->baseUrl."/images/".$a['rank'].".png";?>">
+                        <h2 style="margin-top: 0px;">第<?php echo $a['season'];?>赛季</h2>
+                        <p><?php echo $a['rank'];?></p>
+                        <span><?php $b=$a['month'];echo $start=date('Y-m', strtotime("$b -1 month")).'至'.date('Y-m', strtotime("$b"));?></span>
+                    </div>
+                <?php }?>
             </div>
-            <?php }?>
 
 		</div>
 	</div>

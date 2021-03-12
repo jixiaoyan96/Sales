@@ -41,7 +41,7 @@ class RankHistoryForm extends CFormModel
 		$suffix = Yii::app()->params['envSuffix'];
 		$sql="select a.*,b.employee_name from sal_rank a
               left outer join hr$suffix.hr_binding b on b.user_id=a.username
-              where b.id='$index' and a.city=b.city
+              where b.id='$index' and a.city=b.city 
               ";
         $rows = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($rows as $v) {
@@ -64,13 +64,14 @@ class RankHistoryForm extends CFormModel
             $end=date('Y-m', strtotime("$a"));
             $end_s=$this->numToWord($value['season']);
             $value['season']=$this->numToWord($value['season']);
-            $sql_rank_name="select level from sal_level where start_fraction <='".$value['new_rank']."' and end_fraction >='".$value['new_rank']."'";
+            $sql_rank_name="select level from sal_level where start_fraction <='".$value['now_score']."' and end_fraction >='".$value['now_score']."'";
             $level= Yii::app()->db->createCommand($sql_rank_name)->queryScalar();
 
             $value['rank']=$level;
             $i=$i+1;
         }
         $this->lic=$start.'至'.$end.'（第'.$stat_s.'赛季）-（第'.$end_s.'赛季）';
+        $this->rank=array_reverse($this->rank);
 
 //        print_r('<pre>');
       //  print_r($this->rank);
