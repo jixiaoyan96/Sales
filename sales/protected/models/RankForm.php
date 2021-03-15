@@ -11,6 +11,7 @@ class RankForm extends CFormModel
     public $pyx=array();
     public $cp=array();
     public $jq=array();
+    public $xdy=array();
     public $lhcity=array();
     public $lhsum=array();
     public $lhmoney=array();
@@ -72,6 +73,9 @@ class RankForm extends CFormModel
         $star_time=date("Y-m-01", strtotime($rows['month']));//当前赛季開始时间
         $end_time=date("Y-m-31", strtotime($rows['month']));//当前赛季結束时间
         //上赛季分数
+        if($rows['last_score']<0){
+            $rows['last_score']=0;
+        }
         $this->last_score=$rows['last_score'];
         //赛季
         $this->season=$this->numToWord($rows['season']);
@@ -163,6 +167,9 @@ class RankForm extends CFormModel
         $xdy_A=count($rows_xdy);
         $amount_xdy=$this->getAmount('4',$star_time,$xdy);//本单产品提成比例
         $score_xdy=$xdy * $amount_xdy['coefficient'] * (1+0.02*(($xdy_A)-1));
+        $this->xdy['sum']=$xdy_A;
+        $this->xdy['money']=$xdy;
+        $this->xdy['score']=round($score_xdy,2);
         //甲醛
         $sql_jq="select a.* from swoper$suffix.swo_service a
                   left outer join  hr$suffix.hr_employee b on  concat(b.name, ' (', b.code, ')')=a.salesman
@@ -183,11 +190,11 @@ class RankForm extends CFormModel
 
         }
         $jq_A=count($rows_jq);
-        $amount_jq=$this->getAmount('4',$star_time,$jq);//本单产品提成比例
+        $amount_jq=$this->getAmount('6',$star_time,$jq);//本单产品提成比例
         $score_jq= $jq * $amount_jq['coefficient'] * (1+0.02*($jq_A-1));
-        $this->jq['sum']=$jq_A+$xdy_A;
-        $this->jq['money']=$jq+$xdy;
-        $this->jq['score']=round($score_jq+$score_xdy,2);
+        $this->jq['sum']=$jq_A;
+        $this->jq['money']=$jq;
+        $this->jq['score']=round($score_jq,2);
         //每月销售龙虎榜城市人均签单量排名
         $sales=ReportRankinglistForm::salelist($star_time,$end_time);
         $sales_copy=$sales;
@@ -315,18 +322,23 @@ class RankForm extends CFormModel
         //入职时间積分
         $sql_entry_time="select a.* from hr$suffix.hr_employee a left outer join hr$suffix.hr_binding b on a.id=b.employee_id where b.user_id='".$rows['username']."'";
         $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
-        $date=date("Y-m-d");
-        $time1 = date("Y-m-d", strtotime("$date -1 month"));
-        $time2 = date("Y-m-d", strtotime("$date -3 month"));
-        if($time2>=$entry_time['entry_time']){
+//        print_r($entry_time['rank_day']);
+//        $date=date("Y-m-d");
+//        $time1 = date("Y-m-d", strtotime("$date -1 month"));
+//        $time2 = date("Y-m-d", strtotime("$date -3 month"));
+        if($entry_time['rank_day']==3){
             $this->ruzhi=2500;
             $this->ruzhi_day='3个月';
-        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1){
+        }elseif($entry_time['rank_day']==1){
             $this->ruzhi=1000;
             $this->ruzhi_day='1个月';
-        }else{
+        }elseif($entry_time['rank_day']==4){
             $this->ruzhi=0;
             $this->ruzhi_day='/';
+        }elseif($entry_time['rank_day']==2){
+            $this->ruzhi=1500;
+            $this->ruzhi_day='3个月';
+
         }
         //初始分数
         $this->initial_score=$this->score_five+$this->ruzhi;

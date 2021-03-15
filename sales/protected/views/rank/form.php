@@ -52,7 +52,10 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
                 .tftable tr:hover {background-color:#ffff99;}
             </style>
-            <h3>第<?php echo $model->season;?>赛季 - <?php echo $model->name;?></h3>
+            <div style="width: 1000px;">
+                <div style="display:inline;font-size: 30px;">第<?php echo $model->season;?>赛季 - <?php echo $model->name;?></div>
+                <div style="display:inline;float: right;"><img style="width: 40px;height: 40px;" src="<?php echo Yii::app()->baseUrl."/images/".$model->rank_name.".png";?>"></div>
+            </div>
             <table class="tftable" border="1" style="width: 1000px;">
                 <tr><td colspan="2"></td><td style="background-color: #FFBD9D"><b>继承分数 </b></td><td style="background-color: #FFBD9D"><?php echo $model->last_score;?></td></tr>
                 <?php if($model->initial_score!=0){?>
@@ -70,8 +73,10 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 <tr><td>销售每月飘盈香签单单数 (B)</td><td><?php echo $model->pyx['sum'];?>张</td><td>销售每月飘盈香签单得分</td><td><?php echo $model->pyx['score'];?></td></tr>
                 <tr><td>销售每月飘盈香签单金额</td><td><?php echo $model->pyx['money'];?></td><td></td><td></td></tr>
                 <tr><td>销售每月产品（不包括洗地易）签单金額</td><td><?php echo $model->cp['money'];?></td>  <td>销售每月产品（不包括洗地易）签单得分</td><td><?php echo $model->cp['score'];?></td></tr>
-                <tr><td>销售每月洗地易/甲醛签单单数 (D)</td><td><?php echo $model->jq['sum'];?>张</td><td>销售每月洗地易/甲醛签单得分</td><td><?php echo $model->jq['score'];?></td></tr>
-                <tr><td>销售每月洗地易/甲醛签单金额</td><td><?php echo $model->jq['money'];?></td><td></td><td></td></tr>
+                <tr><td>销售每月洗地易签单单数 (D)</td><td><?php echo $model->xdy['sum'];?>张</td><td>销售每月洗地易签单得分</td><td><?php echo $model->xdy['score'];?></td></tr>
+                <tr><td>销售每月洗地易签单金额</td><td><?php echo $model->xdy['money'];?></td><td></td><td></td></tr>
+                <tr><td>销售每月甲醛签单单数 (D)</td><td><?php echo $model->jq['sum'];?>张</td><td>销售每月甲醛签单得分</td><td><?php echo $model->jq['score'];?></td></tr>
+                <tr><td>销售每月甲醛签单金额</td><td><?php echo $model->jq['money'];?></td><td></td><td></td></tr>
                 <tr><td>每月销售龙虎榜销售排名</td><td><?php echo $model->lhmoney['sum'];?></td><td>每月销售龙虎榜销售得分</td><td><?php echo $model->lhmoney['score'];?></td></tr>
                 <tr><td>每月销售龙虎榜城市人均签单量排名</td><td><?php echo $model->lhcity['sum'];?></td><td>每月销售龙虎榜城市人均签单量排名分数</td><td><?php echo $model->lhcity['score'];?></td></tr>
                 <tr><td>每月销售龙虎榜城市人均签单金额排名</td><td><?php echo $model->lhsum['sum'];?></td><td>每月销售龙虎榜城市人均签单金额排名分数</td><td><?php echo $model->lhsum['score'];?></td></tr>

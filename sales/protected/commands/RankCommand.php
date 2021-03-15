@@ -32,18 +32,32 @@ class RankCommand extends CConsoleCommand
                         //判断是否为新入职的，空是新的、、最新赛季分数
                         $span="select * from sales$suffix.sal_rank where city='$city' and  username='".$records['username']."' order by id desc";
                         $rankfraction = Yii::app()->db->createCommand($span)->queryRow();
-                        //入职时间積分
-//                        $sql_entry_time="select a.* from hr$suffix.hr_employee a left outer join hr$suffix.hr_binding b on a.id=b.employee_id where b.user_id='".$records['username']."'";
-//                        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
-//                        $time1 = date("Y-m-d", strtotime("$date -1 month"));
-//                        $time2 = date("Y-m-d", strtotime("$date -3 month"));
-//                        if($time2>=$entry_time['entry_time']){
-//                            $ruzhi=2500;
-//                        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1){
-//                            $ruzhi=1000;
-//                        }else{
-//                            $ruzhi=0;
-//                        }
+                       // 入职时间積分
+                        $sql_entry_time="select a.* from hr$suffix.hr_employee a left outer join hr$suffix.hr_binding b on a.id=b.employee_id where b.user_id='".$records['username']."'";
+                        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
+                        $time1 = date("Y-m-d", strtotime("$date -1 month"));
+                        $time2 = date("Y-m-d", strtotime("$date -3 month"));
+                        if($time2>=$entry_time['entry_time']&&$entry_time['rank_day']==0){
+//                            $this->ruzhi=2500;
+//                            $this->ruzhi_day='3个月';
+                            $sql_rank_day="update hr$suffix.hr_employee set rank_day=3";
+                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&$entry_time['rank_day']==0){
+//                            $this->ruzhi=1000;
+//                            $this->ruzhi_day='1个月';
+                            $sql_rank_day="update hr$suffix.hr_employee set rank_day=1";
+                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                        }elseif($time2>=$entry_time['entry_time']&&($entry_time['rank_day']==3||$entry_time['rank_day']==2)){
+//                            $this->ruzhi=0;
+//                            $this->ruzhi_day='/';
+                            $sql_rank_day="update hr$suffix.hr_employee set rank_day=4";
+                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                        }elseif($time2>=$entry_time['entry_time']&&$entry_time['rank_day']==1){
+//                            $this->ruzhi=1500;
+//                            $this->ruzhi_day='3个月';
+                            $sql_rank_day="update hr$suffix.hr_employee set rank_day=2";
+                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                        }
                         //老员工五部曲分数
 //                        $sql_five="select * from sales$suffix.sal_fivestep where username='".$records['username']."' and rec_dt<=$month ";
 //                        $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
