@@ -33,29 +33,37 @@ class RankCommand extends CConsoleCommand
                         $span="select * from sales$suffix.sal_rank where city='$city' and  username='".$records['username']."' order by id desc";
                         $rankfraction = Yii::app()->db->createCommand($span)->queryRow();
                        // 入职时间積分
-                        $sql_entry_time="select a.* from hr$suffix.hr_employee a left outer join hr$suffix.hr_binding b on a.id=b.employee_id where b.user_id='".$records['username']."'";
+                        $sql_entry_time="select a.*,c.rank_day from hr$suffix.hr_employee a 
+                                          left outer join hr$suffix.hr_binding b on a.id=b.employee_id 
+                                          left outer join sal_rankday c on a.id=c.employee_id
+                                          where b.user_id='".$records['username']."'
+                                          ";
                         $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
                         $time1 = date("Y-m-d", strtotime("$date -1 month"));
                         $time2 = date("Y-m-d", strtotime("$date -3 month"));
-                        if($time2>=$entry_time['entry_time']&&$entry_time['rank_day']==0){
-//                            $this->ruzhi=2500;
-//                            $this->ruzhi_day='3个月';
-                            $sql_rank_day="update hr$suffix.hr_employee set rank_day=3";
+                        if($time2>=$entry_time['entry_time']&&($entry_time['rank_day']==0||empty($entry_time['rank_day']))){
+//
+                            if(empty($entry_time['rank_day'])){
+                                $sql_rank_day="insert into sal_rankday (employee_id,ranl_day) value ('".$entry_time['id']."',3)";
+                            }else{
+                                $sql_rank_day="update sal_rankday set rank_day=3";
+                            }
                             $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&$entry_time['rank_day']==0){
-//                            $this->ruzhi=1000;
-//                            $this->ruzhi_day='1个月';
-                            $sql_rank_day="update hr$suffix.hr_employee set rank_day=1";
+                        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&($entry_time['rank_day']==0||empty($entry_time['rank_day']))){
+//
+                            if(empty($entry_time['rank_day'])){
+                                $sql_rank_day="insert into sal_rankday (employee_id,ranl_day) value ('".$entry_time['id']."',1)";
+                            }else{
+                                $sql_rank_day="update sal_rankday set rank_day=1";
+                            }
                             $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
                         }elseif($time2>=$entry_time['entry_time']&&($entry_time['rank_day']==3||$entry_time['rank_day']==2)){
-//                            $this->ruzhi=0;
-//                            $this->ruzhi_day='/';
-                            $sql_rank_day="update hr$suffix.hr_employee set rank_day=4";
+//
+                            $sql_rank_day="update sal_rankday set rank_day=4";
                             $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
                         }elseif($time2>=$entry_time['entry_time']&&$entry_time['rank_day']==1){
-//                            $this->ruzhi=1500;
-//                            $this->ruzhi_day='3个月';
-                            $sql_rank_day="update hr$suffix.hr_employee set rank_day=2";
+//
+                            $sql_rank_day="update sal_rankday set rank_day=2";
                             $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
                         }
                         //老员工五部曲分数
@@ -66,7 +74,6 @@ class RankCommand extends CConsoleCommand
 //                        }else{
 //                            $five=4500;
 //                        }
-
                        if(empty($rankfraction)){
                          //  $rank=$rank+$ruzhi+$five;
                            //第几赛季，具体时间，用户，城市，初始分数或上赛季分数，当前赛季分数

@@ -320,7 +320,11 @@ class RankForm extends CFormModel
             $this->score_five=0;
         }
         //入职时间積分
-        $sql_entry_time="select a.* from hr$suffix.hr_employee a left outer join hr$suffix.hr_binding b on a.id=b.employee_id where b.user_id='".$rows['username']."'";
+        $sql_entry_time="select a.*,c.rank_day from hr$suffix.hr_employee a 
+                                          left outer join hr$suffix.hr_binding b on a.id=b.employee_id 
+                                          left outer join sal_rankday c on a.id=c.employee_id
+                                          where b.user_id='".$rows['username']."'
+                                          ";
         $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
 //        print_r($entry_time['rank_day']);
 //        $date=date("Y-m-d");
