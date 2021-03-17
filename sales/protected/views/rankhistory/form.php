@@ -59,7 +59,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                         <img src="<?php echo Yii::app()->baseUrl."/images/".$a['rank'].".png";?>">
                         <h2 style="margin-top: 0px;">第<?php echo $a['season'];?>赛季</h2>
                         <p><?php echo $a['rank'];?></p>
-                        <span><?php $b=$a['month'];echo $start=date('Y-m', strtotime("$b -1 month")).'至'.date('Y-m', strtotime("$b"));?></span>
+                        <span><?php $b=$a['month'];if(date('m', strtotime("$b"))%2==1){$b=date('Y-m', strtotime("$b +1 month"));}echo date('Y-m', strtotime("$b -1 month")).'至'.date('Y-m', strtotime("$b"));?></span>
                     </div>
                 <?php }?>
             </div>

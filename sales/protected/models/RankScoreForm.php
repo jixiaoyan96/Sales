@@ -7,6 +7,8 @@ class RankScoreForm extends CFormModel
     public $city;
     public $year;
     public $ranking;
+    public $month;
+    public $all;
 
 
 	
@@ -16,6 +18,8 @@ class RankScoreForm extends CFormModel
             'season'=>Yii::t('rank','Season'),
             'city'=>Yii::t('sales','City'),
             'year'=>Yii::t('rank','Year'),
+            'month'=>Yii::t('rank','Month'),
+            'all'=>Yii::t('rank','All'),
 		);
 	}
 
@@ -39,26 +43,44 @@ class RankScoreForm extends CFormModel
 	public function retrieveData($data)
 	{
         $suffix = Yii::app()->params['envSuffix'];
-        if($data['season']==0){
+        if($data['year']>0){
             $this->season='年度总分排行榜';
             $start=$data['year'].'-01-01';
             $end=$data['year'].'-12-31';
-            $sql = "select a.city, a.username,sum(a.all_score) as ranks
+            $sql = "select a.city, a.username,sum(a.all_score) as ranks,now_score
 				from sal_rank  a
 				where   city='".$data['city']."'  and month<='$end' and month>='$start'   
 			  	group by a.city, a.username   
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
 
-        }else{
+        }elseif($data['season']>0){
             $this->season='赛季总分排行榜';
-            $sql = "select a.city, a.username,sum(a.all_score) as ranks
+            $sql = "select a.city, a.username,sum(a.all_score) as ranks,now_score
 				from sal_rank  a
 				where   city='".$data['city']."'    and  season='".$data['season']."'
 			  	group by a.city, a.username   
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
+        }elseif($data['month']>0){
+            $this->season='月度排行榜';
+            $sql = "select a.city, a.username,sum(a.all_score) as ranks,now_score
+				from sal_rank  a
+				where   city='".$data['city']."'  and MONTH(month)='".$data['month']."'
+			  	group by a.city, a.username   
+			";
+            $records = Yii::app()->db->createCommand($sql)->queryAll();
+        }else{
+            $this->season='总分排行榜';
+            $sql = "select a.city, a.username,sum(a.all_score) as ranks,now_score
+				from sal_rank  a
+				where   city='".$data['city']."' 
+			  	group by a.city, a.username   
+			";
+            $records = Yii::app()->db->createCommand($sql)->queryAll();
         }
+
+
         foreach ($records as $record) {
             if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'ZY'/'MO'/'RN'/'MY'/'WL'/'HN2'/'JMS'/'RW'/'HN1'/'HXHB'/'HD'/'HN'/'HD1'/'CN'/'HX'/'HB'/","'".$record['city']."'")===false) {
                 $temp = array();
@@ -82,7 +104,7 @@ class RankScoreForm extends CFormModel
                 $temp['name'] = $name['name'];
                 $temp['city'] = $row !== false ? $row['city_name'] : $record['city'];
                // $temp['quyu'] = $row !== false ? str_replace(array('1', '2', '3', '4', '5', '6', '7', '8', '9', '0'), '', $row['region_name']) : '空';
-                $sql = "select * from sal_level where start_fraction <='" . $record['ranks'] . "' and end_fraction >='" . $record['ranks'] . "'";
+                $sql = "select * from sal_level where start_fraction <='" . $record['now_score'] . "' and end_fraction >='" . $record['now_score'] . "'";
                 $rank_name = Yii::app()->db->createCommand($sql)->queryRow();
               //  $temp['level'] = $rank_name['level'];
                 $this->ranking[] = $temp;

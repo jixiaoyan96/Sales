@@ -44,11 +44,26 @@ class RankscoreController extends Controller
         $city=$this->city();
         $season=$model->season();
         $year=$this->year();
+        $month=$this->month();
+        $all=array(
+            0=>'否',
+            1=>'是',
+        );
         //     $model->retrieveDatas($model);
 //        print_r('<$city>');
       //  print_r($season);
-        $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,'year'=>$year,));
+        $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,'year'=>$year,'month'=>$month,'all'=>$all,));
     }
+    public function month(){
+        $sql = "select distinct  MONTH(month) as month from sal_rank group by month";
+        $row= Yii::app()->db->createCommand($sql)->queryAll();
+        $month[]='无';
+        foreach ($row as $a){
+            $month[]=$a['month'].'月';
+        }
+      return $month;
+    }
+
 
     public function city(){
         $suffix = Yii::app()->params['envSuffix'];
@@ -111,7 +126,16 @@ class RankscoreController extends Controller
 		$model = new RankScoreForm('view');
         if (isset($_POST['RankScoreForm'])) {
             $post = $_POST['RankScoreForm'];
-		if(($post['season']==0&&$post['year']==0)||($post['season']>0&&$post['year']>0)){
+            //判断选项有几个
+            $i = 0;
+            $j = sizeof( $post );
+            foreach ( $post as $value ) {
+                if ( $value > 0 ) {
+                    $i++; //
+                }
+            }
+            if ( $i != 1 ) {//不是1个的时候
+		//if(($post['season']==0&&$post['year']==0&&$post['month']==0&&$post['all']==0)||($post['season']>0&&$post['year']>0&&$post['month']>0&&$post['all']>0)||($post['season']>0&&$post['year']>0&&$post['month']>0&&$post['all']>0)){
             Dialog::message(Yii::t('dialog','RankScoreForm'), Yii::t('dialog','You can only select one of them separately to view season data and annual data'));
             $this->redirect(Yii::app()->createUrl('rankscore/index',array('index'=>$model->id)));
         }else{
