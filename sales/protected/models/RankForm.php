@@ -70,6 +70,7 @@ class RankForm extends CFormModel
         $cityname=$this->cityname($city);
         $year = date("Y", strtotime($rows['month']));//当前赛季时间年
         $month = date("m", strtotime($rows['month']));//当前赛季时间月
+        $this->date=$month;
         $star_time=date("Y-m-01", strtotime($rows['month']));//当前赛季開始时间
         $end_time=date("Y-m-31", strtotime($rows['month']));//当前赛季結束时间
         //上赛季分数
@@ -342,7 +343,6 @@ class RankForm extends CFormModel
         }elseif($entry_time['rank_day']==2){
             $this->ruzhi=1500;
             $this->ruzhi_day='3个月';
-
         }
         //初始分数
         $this->initial_score=$this->score_five+$this->ruzhi;
@@ -367,15 +367,17 @@ class RankForm extends CFormModel
 //        print_r($sales_visit);exit();
 
         //地方销售人员/整体区比例
-        $sql_sales = "select count(a.username)	
-				from security$suffix.sec_user a  
-				left outer join security$suffix.sec_city b on a.city=b.code 			  
-				left outer join security$suffix.sec_user_access c on a.username=c.username 	
-				left outer join hr$suffix.hr_binding d  on a.username=d.user_id
-				left outer join hr$suffix.hr_employee e  on d.employee_id=e.id		
-                left outer join hr$suffix.hr_dept f  on e.department=f.id		
-				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and   (f.manager_type ='1' or f.manager_type ='2')
-			";
+//        $sql_sales = "select count(a.username)
+//				from security$suffix.sec_user a
+//				left outer join security$suffix.sec_city b on a.city=b.code
+//				left outer join security$suffix.sec_user_access c on a.username=c.username
+//				left outer join hr$suffix.hr_binding d  on a.username=d.user_id
+//				left outer join hr$suffix.hr_employee e  on d.employee_id=e.id
+//                left outer join hr$suffix.hr_dept f  on e.department=f.id
+//				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and   (f.manager_type ='1' or f.manager_type ='2')
+//			";
+//        $sales_people= Yii::app()->db->createCommand($sql_sales)->queryScalar();
+        $sql_sales="select data_value from swoper$suffix.swo_monthly_dtl where data_field='00061' and hdr_id=(select id from swoper$suffix.swo_monthly_hdr where city='$city' and year_no='$year' and month_no='$month')";
         $sales_people= Yii::app()->db->createCommand($sql_sales)->queryScalar();
         $sql_city="select count(id) from sales$suffix.sal_cust_district where city='$city'";
         $sales_city= Yii::app()->db->createCommand($sql_city)->queryScalar();

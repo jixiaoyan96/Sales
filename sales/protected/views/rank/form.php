@@ -53,7 +53,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 .tftable tr:hover {background-color:#ffff99;}
             </style>
             <div style="width: 1000px;">
-                <div style="display:inline;font-size: 30px;">第<?php echo $model->season;?>赛季 - <?php echo $model->name;?></div>
+                <div style="display:inline;font-size: 30px;">第<?php echo $model->season;?>赛季 <?php echo $model->date;?>月- <?php echo $model->name;?></div>
                 <div style="display:inline;float: right;"><img style="width: 40px;height: 40px;" src="<?php echo Yii::app()->baseUrl."/images/".$model->rank_name.".png";?>"></div>
             </div>
             <table class="tftable" border="1" style="width: 1000px;">
