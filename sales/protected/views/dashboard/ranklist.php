@@ -49,9 +49,9 @@ $js = <<<EOF
 						case 1: style = 'style="color:#871F78"'; break;
 						case 2: style = 'style="color:#0000FF"'; break;
 					}
-					rank = i+1;
+					now_score = i+1;
 					style1 = 'style="winth=20px;height=10px"';
-					line += '<td '+style+'>'+rank+'</td><td '+style+'><img src="images/'+data[i].level+'.png" width="20px;">'+data[i].level+'</td><td '+style+'>'+data[i].name+'</td><td '+style+'>'+data[i].city+'</td><td '+style+'>'+data[i].quyu+'</td>';
+					line += '<td '+style+'>'+now_score+'</td><td '+style+'><img src="images/'+data[i].level+'.png" width="20px;">'+data[i].level+'</td><td '+style+'>'+data[i].name+'</td><td '+style+'>'+data[i].city+'</td><td '+style+'>'+data[i].quyu+'</td>';
 					line += '</tr>';
 				}	
 				

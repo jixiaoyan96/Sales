@@ -49,13 +49,12 @@ class RankscoreController extends Controller
             0=>'否',
             1=>'是',
         );
-        //     $model->retrieveDatas($model);
 //        print_r('<$city>');
       //  print_r($season);
         $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,'year'=>$year,'month'=>$month,'all'=>$all,));
     }
     public function month(){
-        $sql = "select distinct  MONTH(month) as month from sal_rank group by month";
+        $sql = "select distinct  MONTH(month) as month from sal_rank ";
         $row= Yii::app()->db->createCommand($sql)->queryAll();
         $month[]='无';
         foreach ($row as $a){

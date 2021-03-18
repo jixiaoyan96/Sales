@@ -197,13 +197,13 @@ foreach ($models as $key=>$item) {
         $time= date('Y-m-d', strtotime(date('Y-m-01') ));
         $suffix = Yii::app()->params['envSuffix'];
         $models = array();
-        $sql = "select a.city, a.username,a.rank,c.name,a.id
+        $sql = "select a.city, a.username,a.now_score,c.name,a.id
 				from sal_rank  a
 				left outer join  hr$suffix.hr_binding b on a.username=b.user_id
 				left outer join  hr$suffix.hr_employee c on b.employee_id=c.id
 				where 
 				a.month >= '$time' 
-                order by a.rank desc
+                order by a.now_score desc
 			";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($records as $record) {
@@ -214,7 +214,7 @@ foreach ($models as $key=>$item) {
 //            $row = Yii::app()->db->createCommand($sql)->queryRow();
 //            $temp['name']= $row!==false ? $row['name'] : $record['username'];
                 $temp['name'] = $record['name'];
-                $temp['rank'] = $record['rank'];
+                $temp['now_score'] = $record['now_score'];
                 $sql = "select a.name as city_name, b.name as region_name 
 					from security$suffix.sec_city a
 					left outer join security$suffix.sec_city b on a.region=b.code
@@ -232,7 +232,7 @@ foreach ($models as $key=>$item) {
                 $models[] = $temp;
             }
         }
-        $last_names = array_column($models,'rank');
+        $last_names = array_column($models,'now_score');
         array_multisort($last_names,SORT_DESC,$models);
         $models = array_slice($models, 0, 20);
         echo json_encode($models);

@@ -374,7 +374,7 @@ class RankForm extends CFormModel
 				left outer join hr$suffix.hr_binding d  on a.username=d.user_id
 				left outer join hr$suffix.hr_employee e  on d.employee_id=e.id		
                 left outer join hr$suffix.hr_dept f  on e.department=f.id		
-				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and  f.name !='地方管理层'
+				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and   (f.manager_type ='1' or f.manager_type ='2')
 			";
         $sales_people= Yii::app()->db->createCommand($sql_sales)->queryScalar();
         $sql_city="select count(id) from sales$suffix.sal_cust_district where city='$city'";
@@ -409,9 +409,9 @@ class RankForm extends CFormModel
             $this->food['name']='餐饮组';
             $this->food['score']=1;
         }else{
-            $score_all=$score_all*1.2;
+            $score_all=$score_all*1.1;
             $this->food['name']='商业组';
-            $this->food['score']=1.2;
+            $this->food['score']=1.1;
         }
         //销售岗位级别
         $sql_jl="select * from hr$suffix.hr_employee a

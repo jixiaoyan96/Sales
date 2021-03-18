@@ -207,13 +207,13 @@ class ReportRankinglistForm extends CReportForm
     public function Ranklist($start,$end){
         $suffix = Yii::app()->params['envSuffix'];
         $models = array();
-        $sql = "select a.city, a.username,a.rank,c.name
+        $sql = "select a.city, a.username,a.now_score,c.name
 				from sal_rank  a
 				left outer join  hr$suffix.hr_binding b on a.username=b.user_id
 				left outer join  hr$suffix.hr_employee c on b.employee_id=c.id
 				where 
 				a.month >= '$start' and  a.month <= '$end' 
-                order by a.rank desc
+                order by a.now_score desc
 			";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         foreach ($records as $record) {
@@ -224,7 +224,7 @@ class ReportRankinglistForm extends CReportForm
 //            $row = Yii::app()->db->createCommand($sql)->queryRow();
 //            $temp['name']= $row!==false ? $row['name'] : $record['username'];
                 $temp['name'] = $record['name'];
-                $temp['rank'] = $record['rank'];
+                $temp['now_score'] = $record['now_score'];
                 $sql = "select a.name as city_name, b.name as region_name 
 					from security$suffix.sec_city a
 					left outer join security$suffix.sec_city b on a.region=b.code
@@ -234,13 +234,13 @@ class ReportRankinglistForm extends CReportForm
                 $temp['city'] = $row !== false ? $row['city_name'] : $record['city'];
                 $temp['quyu'] = $row !== false ? str_replace(array('1', '2', '3', '4', '5', '6', '7', '8', '9', '0'), '', $row['region_name']) : '空';
 
-                $sql = "select * from sal_level where start_fraction <='" . $record['rank'] . "' and end_fraction >='" . $record['rank'] . "'";
+                $sql = "select * from sal_level where start_fraction <='" . $record['now_score'] . "' and end_fraction >='" . $record['now_score'] . "'";
                 $rank_name = Yii::app()->db->createCommand($sql)->queryRow();
                 $temp['level'] = $rank_name['level'];
                 $models[] = $temp;
             }
         }
-        $last_names = array_column($models,'rank');
+        $last_names = array_column($models,'now_score');
         array_multisort($last_names,SORT_DESC,$models);
         $models = array_slice($models, 0, 20);
         return $models;
