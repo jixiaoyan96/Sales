@@ -70,7 +70,7 @@ $this->pageTitle=Yii::app()->name . ' - rankscore';
                 <?php echo $form->labelEx($model,'month',array('class'=>"col-sm-2 control-label")); ?>
                 <div class="col-sm-3">
                     <?php echo $form->dropDownList($model, 'month',
-                        $month,
+                        $months,
                         array('disabled'=>($model->scenario=='view'))
                     ); ?>
                 </div>

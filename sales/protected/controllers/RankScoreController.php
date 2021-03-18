@@ -51,7 +51,7 @@ class RankscoreController extends Controller
         );
 //        print_r('<$city>');
       //  print_r($season);
-        $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,'year'=>$year,'month'=>$month,'all'=>$all,));
+        $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,'year'=>$year,'months'=>$month,'all'=>$all,));
     }
     public function month(){
         $sql = "select distinct  MONTH(month) as month from sal_rank ";

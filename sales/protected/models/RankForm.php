@@ -310,10 +310,10 @@ class RankForm extends CFormModel
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
             if(empty($retern)){
                 $this->score_3bq=0;
-                $this->score_3bqs='/';
+                $this->score_3bq_day='/';
             }else{
                 $this->score_3bq=1500;
-                $this->score_3bqs='15天';
+                $this->score_3bq_day='15天';
             }
             $this->score_five=$this->score_xsj+$this->score_mc+$this->score_3bq;
         }else{
