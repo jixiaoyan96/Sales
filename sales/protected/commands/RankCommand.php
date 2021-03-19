@@ -44,7 +44,7 @@ class RankCommand extends CConsoleCommand
                         if($time2>=$entry_time['entry_time']&&($entry_time['rank_day']==0||empty($entry_time['rank_day']))){
 //
                             if(empty($entry_time['rank_day'])){
-                                $sql_rank_day="insert into sal_rankday (employee_id,ranl_day) value ('".$entry_time['id']."',3)";
+                                $sql_rank_day="insert into sal_rankday (employee_id,rank_day) value ('".$entry_time['id']."',3)";
                             }else{
                                 $sql_rank_day="update sal_rankday set rank_day=3";
                             }
@@ -52,7 +52,7 @@ class RankCommand extends CConsoleCommand
                         }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&($entry_time['rank_day']==0||empty($entry_time['rank_day']))){
 //
                             if(empty($entry_time['rank_day'])){
-                                $sql_rank_day="insert into sal_rankday (employee_id,ranl_day) value ('".$entry_time['id']."',1)";
+                                $sql_rank_day="insert into sal_rankday (employee_id,rank_day) value ('".$entry_time['id']."',1)";
                             }else{
                                 $sql_rank_day="update sal_rankday set rank_day=1";
                             }
