@@ -74,7 +74,7 @@ class RankForm extends CFormModel
         $star_time=date("Y-m-01", strtotime($rows['month']));//当前赛季開始时间
         $end_time=date("Y-m-31", strtotime($rows['month']));//当前赛季結束时间
         //上赛季分数
-        if($rows['last_score']<0){
+        if($rows['last_score']<0||empty($rows['last_score'])){
             $rows['last_score']=0;
         }
         $this->last_score=$rows['last_score'];
