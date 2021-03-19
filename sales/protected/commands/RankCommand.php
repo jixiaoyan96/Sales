@@ -95,7 +95,7 @@ class RankCommand extends CConsoleCommand
                                if(empty($record)){
                                    $record['new_fraction']=0;
                                }elseif($rankfraction['now_score']<5000){
-                                   $record['new_fraction']=$rankfraction['new_rank'];
+                                   $record['new_fraction']=$rankfraction['now_score'];
                                }
                                $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,last_score) 
 				                  values('$season_s', '$month', '".$records['username']."', '$city','".$record['new_fraction']."')
