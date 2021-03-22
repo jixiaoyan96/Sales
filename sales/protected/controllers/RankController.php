@@ -43,6 +43,7 @@ class RankController extends Controller
         $model = new RankForm;
         $city=$this->city();
         $season=$model->season();
+        $season=array_reverse($season);
         //     $model->retrieveDatas($model);
 //        print_r('<$city>');
       //  print_r($season);

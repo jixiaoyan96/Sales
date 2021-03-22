@@ -61,7 +61,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 <?php if($model->initial_score!=0){?>
                 <tr><th>初始数据</th><th></th><th>初始数据对应得分</th><th></th></tr>
                 <tr><td>入职满1/3月销售 </td><td><?php echo $model->ruzhi_day;?></td><td>入职满1/3月销售得分</td><td><?php echo $model->ruzhi;?></td></tr>
-                <tr><td>3/7/30天内上传洗手间5步曲</td><td><?php echo $model->score_xsj_day;?>条</td><td>3/7/30天内上传洗手间5步曲得分</td><td><?php echo $model->score_xsj;?></td></tr>
+                <tr><td>3/7/30天内上传洗手间5步曲</td><td><?php echo $model->score_xsj_day;?></td><td>3/7/30天内上传洗手间5步曲得分</td><td><?php echo $model->score_xsj;?></td></tr>
                 <tr><td>3/7/30天内上传灭虫5步曲</td><td><?php echo $model->score_mc_day;?></td><td>3/7/30天内上传灭虫5步曲得分</td><td><?php echo $model->score_mc;?></td></tr>
                 <tr><td>15天内上传第3步曲视频</td><td><?php echo $model->score_3bq_day;?></td><td>15天内上传第3步曲视频得分</td><td><?php echo $model->score_3bq;?></td></tr>
                 <tr><td></td><td></td><td style="background-color: #FFBD9D"><b>初始总分：</b></td><td style="background-color: #FFBD9D"><b><?php echo $model->initial_score;?></b></td></tr>
@@ -85,6 +85,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 <tr><td>地方销售人员/地方区域个数</td><td><?php echo $model->sales['sum'];?></td><td>地方销售人员/地方区域个数对应倍数</td><td><?php echo $model->sales['score'];?></td></tr>
                 <tr><td>销售组别类型（餐饮组/商业组)</td><td><?php echo $model->food['name'];?></td><td>销售组别类型（餐饮组/商业组）对应倍数</td><td><?php echo $model->food['score'];?></td></tr>
                 <tr><td>销售岗位级别对应倍数</td><td><?php echo $model->fjl;?></td><td>销售每月平均每天拜访数量对应倍数</td><td><?php echo $model->visit['coefficient'];?></td></tr>
+                <tr><td>城市规模级别</td><td><?php echo $model->city_jb;?></td><td>城市规模级别对应倍数</td><td><?php echo $model->city_xs;?></td></tr>
                 <tr><td></td><td></td><td style="background-color: #FFBD9D"><b>当月所有得分乘以倍数后</b></td><td style="background-color: #FFBD9D"><b><?php echo $model->all_score;?></b> </td></tr>
                  <tr><td style="background-color: #FFBD9D"><b>当月得分对应段位</b></td><td style="background-color: #FFBD9D"><b><?php echo $model->rank_name;?></b></td><td style="background-color: #FFBD9D"><b>当前赛季总分</b></td><td style="background-color: #FFBD9D"><b><?php echo $model->now_score;?></b></td></tr>
             </table>

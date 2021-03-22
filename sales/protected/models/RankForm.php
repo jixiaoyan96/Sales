@@ -18,6 +18,8 @@ class RankForm extends CFormModel
     public $sales=array();
     public $food=array();
     public $fjl;
+    public $city_xs;
+    public $city_jb;
     public $now;//当月获得
     public $all_score;//当月所有得分乘以倍数后
     public $now_score;//当月总分(所有加起来)
@@ -438,6 +440,17 @@ class RankForm extends CFormModel
             $score_all=$score_all*1.2;
             $this->fjl=1.2;
         }
+        //城市规模级别
+        $year_no=$year-1;
+        $sql_city="select sum(a.data_value) as data_value 
+                    from swoper$suffix.swo_monthly_dtl a
+                    left outer join swoper$suffix.swo_monthly_hdr b on a.hdr_id=b.id
+                  where a.data_field='00002' and  b.city='$city' and b.year_no='$year_no'";
+        $sales_city= Yii::app()->db->createCommand($sql_city)->queryScalar();
+        $amount_city=$this->getAmount('7',$star_time,$sales_city);//城市规模级别
+        $this->city_xs=$amount_city['coefficient'];
+        $this->city_jb=$amount_city['bonus'];
+        $score_all=$score_all* $this->city_xs;
         //当前赛季总分
         $this->all_score=round($score_all,2);
         //当前赛季总分（继承后）
@@ -509,6 +522,9 @@ class RankForm extends CFormModel
                     $rtn['coefficient'] =0;
                 }
             }
+        }else{
+            $rtn['bonus'] =0;
+            $rtn['coefficient'] =0;
         }
         // }
 //        print_r('<pre>');
