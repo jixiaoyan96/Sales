@@ -604,6 +604,7 @@ class RankForm extends CFormModel
                 $i=1;
             }
         }
+        $season=array_reverse($season,true );
         return $season;
     }
 

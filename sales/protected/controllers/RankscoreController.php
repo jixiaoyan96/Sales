@@ -41,7 +41,9 @@ class RankscoreController extends Controller
     public function actionIndex($pageNum=0)
     {
         $model = new RankScoreForm;
+        $session = Yii::app()->session;
         $city=$this->city();
+
         $season=$model->season();
         $year=$this->year();
         $month=$this->month();

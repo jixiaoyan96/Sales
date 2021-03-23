@@ -43,13 +43,19 @@ class RankScoreForm extends CFormModel
 	public function retrieveData($data)
 	{
         $suffix = Yii::app()->params['envSuffix'];
+        $cities = City::model()->getDescendantList($data['city']);
+        if(empty($cities)){
+            $cities.="'".$data['city']."'";
+        }else{
+            $cities.=",'".$data['city']."'";
+        }
         if($data['year']>0){
             $this->season='年度总分排行榜';
             $start=$data['year'].'-01-01';
             $end=$data['year'].'-12-31';
             $sql = "select city, username,sum(all_score) as ranks
 				from sal_rank  
-				where   city='".$data['city']."'  and month<='$end' and month>='$start'   
+				where   city in ($cities)  and month<='$end' and month>='$start'   
 			  	group by city, username
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
@@ -58,7 +64,7 @@ class RankScoreForm extends CFormModel
             $this->season='赛季总分排行榜';
             $sql = "select city, username,sum(all_score) as ranks
 				from sal_rank  
-				where   city='".$data['city']."'    and  season='".$data['season']."'
+				where  city in ($cities)    and  season='".$data['season']."'
 			  	group by city, username   
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
@@ -66,7 +72,7 @@ class RankScoreForm extends CFormModel
             $this->season='月度排行榜';
             $sql = "select city, username,sum(all_score) as ranks
 				from sal_rank  
-				where   city='".$data['city']."'  and MONTH(month)='".$data['month']."'
+				where   city in ($cities)  and MONTH(month)='".$data['month']."'
 			  	group by city, username   
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
@@ -74,13 +80,11 @@ class RankScoreForm extends CFormModel
             $this->season='总分排行榜';
             $sql = "select city, username,sum(all_score) as ranks
 				from sal_rank  
-				where   city='".$data['city']."' 
+				where   city in ($cities)
 			  	group by city, username   
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
         }
-
-
         foreach ($records as $record) {
             if (strpos("/'CS'/'H-N'/'HK'/'TC'/'ZS1'/'TP'/'TY'/'KS'/'TN'/'XM'/'ZY'/'MO'/'RN'/'MY'/'WL'/'JMS'/'RW'/","'".$record['city']."'")===false) {
                 $temp = array();
