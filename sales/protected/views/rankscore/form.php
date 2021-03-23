@@ -42,7 +42,7 @@ $this->pageTitle=Yii::app()->name . ' - RankScore Form';
                 .tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}
                 .tftable tr:hover {background-color:#ffff99;}
             </style>
-            <h3><?php echo $model->season;?></h3>
+            <h3><?php echo $model->season;?>  <?php echo $model->message;?></h3>
             <table class="tftable" border="1" style="width: 1000px;">
                 <tr><th>排名</th><th>地区</th><th>员工</th><th>总分</th></tr>
                 <?php $i=1; foreach ($model->ranking as $a){?>

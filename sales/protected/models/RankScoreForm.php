@@ -9,6 +9,7 @@ class RankScoreForm extends CFormModel
     public $ranking;
     public $month;
     public $all;
+    public $message;
 
 
 	
@@ -59,7 +60,7 @@ class RankScoreForm extends CFormModel
 			  	group by city, username
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
-
+            $this->message='-'.$data['year'].'年';
         }elseif($data['season']>0){
             $this->season='赛季总分排行榜';
             $sql = "select city, username,sum(all_score) as ranks
@@ -68,6 +69,7 @@ class RankScoreForm extends CFormModel
 			  	group by city, username   
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
+            $this->message='- 第'.$this->numToWord($data['season']).'赛季';
         }elseif($data['month']>0){
             $this->season='月度排行榜';
             $sql = "select city, username,sum(all_score) as ranks
@@ -76,6 +78,7 @@ class RankScoreForm extends CFormModel
 			  	group by city, username   
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
+            $this->message='- '.$data['month'].'月';
         }else{
             $this->season='总分排行榜';
             $sql = "select city, username,sum(all_score) as ranks
