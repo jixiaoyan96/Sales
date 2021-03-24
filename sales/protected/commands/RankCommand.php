@@ -39,8 +39,8 @@ class RankCommand extends CConsoleCommand
                                           where b.user_id='".$records['username']."'
                                           ";
                         $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
-                        $time1 = date("Y-m-d", strtotime("$date -1 month"));
-                        $time2 = date("Y-m-d", strtotime("$date -3 month"));
+                        $time1 = date("Y/m/d", strtotime("$date -1 month"));
+                        $time2 = date("Y/m/d", strtotime("$date -3 month"));
                         if($time2>=$entry_time['entry_time']&&($entry_time['rank_day']==0||empty($entry_time['rank_day']))){
 //
                             if(empty($entry_time['rank_day'])){
