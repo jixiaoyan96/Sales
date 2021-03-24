@@ -135,6 +135,11 @@ return array(
                 'url'=>'/coefficient/index',
                 'tag'=>'@',
             ),
+            'Sales points other settings'=>array(
+                'access'=>'HC07',
+                'url'=>'/points/index',
+                'tag'=>'@',
+            ),
 		),
 	),
 

@@ -52,7 +52,7 @@ $this->pageTitle=Yii::app()->name . ' - Customer District Form';
 						$city_allow = Yii::app()->user->city_allow();
 						$singlecity = strpos($city_allow,',')===false;
 						$list = $model->getCityList();
-						echo $form->dropDownList($model, 'city', $list, array('readonly'=>($model->scenario=='view'||$singlecity))); 
+						echo $form->dropDownList($model, 'city', $list, array('readonly'=>($model->scenario=='view'||$singlecity)));
 					?>
 				</div>
 			</div>

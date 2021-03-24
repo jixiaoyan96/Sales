@@ -104,7 +104,9 @@ return array(
     'Total rank score'=>'销售段位总分榜',
 	'Sales Rank'=>'销售段位设置',
 	'Sales Turnover'=>'销售成交率报表',
-	'Sales segment coefficient'=>'销售段位系数设置'
-
+	'Sales segment coefficient'=>'销售段位系数设置',
+	'Sales points other settings'=>'销售积分其他设置',
+    'Sales points other settings List'=>'销售积分其他设置列表',
+    'Sales points other settings Form'=>'销售积分其他设置表单',
 );
 ?>

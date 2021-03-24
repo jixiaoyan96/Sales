@@ -297,6 +297,7 @@ class IntegralForm extends CFormModel
         }
 //        exit();exit
         //装机
+        $zhuangji=$this->points(1);//产品买卖
         $sql_zj="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
@@ -304,7 +305,7 @@ class IntegralForm extends CFormModel
         $service = Yii::app()->db->createCommand($sql_zj)->queryAll();
         if(!empty($service)){
             foreach ($service as $arr){
-          $arr['company_name']=str_replace("'","''",$arr['company_name']);
+                $arr['company_name']=str_replace("'","''",$arr['company_name']);
                 $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."'  and salesman='".$arr['salesman']."' and amt_install<>0  and cust_type='".$arr['cust_type']."'  and status='N'";
                 $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                 if(!empty($m)&&count($m)==1){
@@ -315,145 +316,176 @@ class IntegralForm extends CFormModel
                 }
             }
             $v=array_sum($sum_z);//数量
-            $this->cust_type_name['zhuangji']['sum']=$v*2;
+            $this->cust_type_name['zhuangji']['sum']=$v*$zhuangji[0]['fraction'];
             $this->cust_type_name['zhuangji']['number']=$v;
-            $this->cust_type_name['zhuangji']['fraction']=2;//分数
+            $this->cust_type_name['zhuangji']['fraction']=$zhuangji[0]['fraction'];//分数
         }else{
             $this->cust_type_name['zhuangji']['sum']=0;
             $this->cust_type_name['zhuangji']['number']=0;
-            $this->cust_type_name['zhuangji']['fraction']=2;
+            $this->cust_type_name['zhuangji']['fraction']=$zhuangji[0]['fraction'];
         }
+
+
         //预收3
-        $sql_ys="select * from swoper$suffix.swo_service a
+        $this->cust_type_name['yushou']=$this->points(2);//预收3
+        foreach ($this->cust_type_name['yushou'] as &$value){
+            if($value['toplimit']==3){
+                $sql_ys="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
                where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N' and  prepay_month>=3 and prepay_month <6 ";
-        $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
-        if(!empty($service)){
-            foreach ($service as $arr){
-          $arr['company_name']=str_replace("'","''",$arr['company_name']);
-                if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'  and status='N'";
-
-                }else{
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
-                }
-               $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                if(!empty($m)&&count($m)==1){
-                    $sum_y3[]=1;
-                    $this->cust_type_name['yushou3']['list'][]=$m;
-                }else{
-                    $sum_y3[]=0;
-                }
-            }
-            $v=array_sum($sum_y3);//数量
-            $this->cust_type_name['yushou3']['sum']=$v*2;
-            $this->cust_type_name['yushou3']['number']=$v;
-            $this->cust_type_name['yushou3']['fraction']=2;
-        }else{
-            $this->cust_type_name['yushou3']['sum']=0;
-            $this->cust_type_name['yushou3']['number']=0;
-            $this->cust_type_name['yushou3']['fraction']=2;
-        }
-        //预收6
-        $sql_ys="select * from swoper$suffix.swo_service a
+            }elseif ($value['toplimit']==6){
+                $sql_ys="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
                where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N' and  prepay_month>=6 and prepay_month <12 ";
-        $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
-        if(!empty($service)){
-            foreach ($service as $arr){
-          $arr['company_name']=str_replace("'","''",$arr['company_name']);
-                if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'   and status='N'";
-
-                }else{
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
-                }
-                $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                if(!empty($m)&&count($m)==1){
-                    $sum_y6[]=1;
-                    $this->cust_type_name['yushou6']['list'][]=$m;
-                }else{
-                    $sum_y6[]=0;
-                }
-            }
-            $v=array_sum($sum_y6);//数量
-            $this->cust_type_name['yushou6']['sum']=$v*3;
-            $this->cust_type_name['yushou6']['number']=$v;
-            $this->cust_type_name['yushou6']['fraction']=3;
-        }else{
-            $this->cust_type_name['yushou6']['sum']=0;
-            $this->cust_type_name['yushou6']['number']=0;
-            $this->cust_type_name['yushou6']['fraction']=3;
-        }
-        //预收12
-        $sql_ys="select * from swoper$suffix.swo_service a
+            }elseif ($value['toplimit']==12){
+                $sql_ys="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
                inner join hr$suffix.hr_binding c on b.id=c.employee_id 
                where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N' and  prepay_month >=12  ";
-        $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
-        if(!empty($service)){
-            foreach ($service as $arr){
-          $arr['company_name']=str_replace("'","''",$arr['company_name']);
-                if(empty($arr['cust_type_name'])){
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'  and status='N'";
-
-                }else{
-                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'   and status='N'";
-                }
-                $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
-                if(!empty($m)&&count($m)==1){
-                    $sum_y12[]=1;
-                    $this->cust_type_name['yushou12']['list'][]=$m;
-                }else{
-                    $sum_y12[]=0;
-                }
             }
-            $v=array_sum($sum_y12);//数量
-            $this->cust_type_name['yushou12']['sum']=$v*5;
-            $this->cust_type_name['yushou12']['number']=$v;
-            $this->cust_type_name['yushou12']['fraction']=5;
-        }else{
-            $this->cust_type_name['yushou12']['sum']=0;
-            $this->cust_type_name['yushou12']['number']=0;
-            $this->cust_type_name['yushou12']['fraction']=5;
+            $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
+            if(!empty($service)){
+                foreach ($service as $arr){
+                    $arr['company_name']=str_replace("'","''",$arr['company_name']);
+                    if(empty($arr['cust_type_name'])){
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'  and status='N'";
+
+                    }else{
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+                    }
+                    $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                    if(!empty($m)&&count($m)==1){
+                        $sum_y3[]=1;
+                        $value['list'][]=$m;
+                    }else{
+                        $sum_y3[]=0;
+                    }
+                }
+                $v=array_sum($sum_y3);//数量
+                $value['sum']=$v*$value['fraction'];
+                $value['number']=$v;
+            }else{
+                $value['sum']=0;
+                $value['number']=0;
+            }
         }
+        //预收6
+//        $sql_ys="select * from swoper$suffix.swo_service a
+//               inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
+//               inner join hr$suffix.hr_binding c on b.id=c.employee_id
+//               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N' and  prepay_month>=6 and prepay_month <12 ";
+//        $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
+//        if(!empty($service)){
+//            foreach ($service as $arr){
+//          $arr['company_name']=str_replace("'","''",$arr['company_name']);
+//                if(empty($arr['cust_type_name'])){
+//                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'   and status='N'";
+//
+//                }else{
+//                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N'";
+//                }
+//                $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+//                if(!empty($m)&&count($m)==1){
+//                    $sum_y6[]=1;
+//                    $this->cust_type_name['yushou6']['list'][]=$m;
+//                }else{
+//                    $sum_y6[]=0;
+//                }
+//            }
+//            $v=array_sum($sum_y6);//数量
+//            $this->cust_type_name['yushou6']['sum']=$v*3;
+//            $this->cust_type_name['yushou6']['number']=$v;
+//            $this->cust_type_name['yushou6']['fraction']=3;
+//        }else{
+//            $this->cust_type_name['yushou6']['sum']=0;
+//            $this->cust_type_name['yushou6']['number']=0;
+//            $this->cust_type_name['yushou6']['fraction']=3;
+//        }
+        //预收12
+//        $sql_ys="select * from swoper$suffix.swo_service a
+//               inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
+//               inner join hr$suffix.hr_binding c on b.id=c.employee_id
+//               where c.user_id='".$row['username']."'  and a.status_dt>='$startime' and a.status_dt<='$endtime' and a.status='N' and  prepay_month >=12  ";
+//        $service = Yii::app()->db->createCommand($sql_ys)->queryAll();
+//        if(!empty($service)){
+//            foreach ($service as $arr){
+//          $arr['company_name']=str_replace("'","''",$arr['company_name']);
+//                if(empty($arr['cust_type_name'])){
+//                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'  and status='N'";
+//
+//                }else{
+//                    $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'   and status='N'";
+//                }
+//                $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+//                if(!empty($m)&&count($m)==1){
+//                    $sum_y12[]=1;
+//                    $this->cust_type_name['yushou12']['list'][]=$m;
+//                }else{
+//                    $sum_y12[]=0;
+//                }
+//            }
+//            $v=array_sum($sum_y12);//数量
+//            $this->cust_type_name['yushou12']['sum']=$v*5;
+//            $this->cust_type_name['yushou12']['number']=$v;
+//            $this->cust_type_name['yushou12']['fraction']=5;
+//        }else{
+//            $this->cust_type_name['yushou12']['sum']=0;
+//            $this->cust_type_name['yushou12']['number']=0;
+//            $this->cust_type_name['yushou12']['fraction']=5;
+//        }
         //拜访15
-        $sql_bf="select * from sal_visit       
+//        $sql_bf="select * from sal_visit
+//               where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime' and  shift is null ";
+//        $bf = Yii::app()->db->createCommand($sql_bf)->queryAll();
+//        if(!empty($bf)&&(count($bf)/$row['sale_day'])>15){
+//            $this->cust_type_name['baifang15']['sum']=3;
+//            $this->cust_type_name['baifang15']['number']=1;
+//            $this->cust_type_name['baifang15']['fraction']=3;
+//        }else{
+//            $this->cust_type_name['baifang15']['sum']=0;
+//            $this->cust_type_name['baifang15']['number']=0;
+//            $this->cust_type_name['baifang15']['fraction']=3;
+//        }
+///
+        $this->cust_type_name['baifang']=$this->points(3);//拜访
+        foreach ($this->cust_type_name['baifang'] as &$value){
+            $sql_bf="select * from sal_visit       
                where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime' and  shift is null ";
-        $bf = Yii::app()->db->createCommand($sql_bf)->queryAll();
-        if(!empty($bf)&&(count($bf)/$row['sale_day'])>15){
-            $this->cust_type_name['baifang15']['sum']=3;
-            $this->cust_type_name['baifang15']['number']=1;
-            $this->cust_type_name['baifang15']['fraction']=3;
-        }else{
-            $this->cust_type_name['baifang15']['sum']=0;
-            $this->cust_type_name['baifang15']['number']=0;
-            $this->cust_type_name['baifang15']['fraction']=3;
+            $bf = Yii::app()->db->createCommand($sql_bf)->queryAll();
+            if(!empty($bf)&&(count($bf)/$row['sale_day'])>$value['toplimit']){
+                $value['sum']=$value['fraction'];
+                $value['number']=1;
+            }else{
+                $value['sum']=0;
+                $value['number']=0;
+            }
         }
 
         //拜访20
-        if(!empty($bf)&&(count($bf)/$row['sale_day'])>20){
-            $this->cust_type_name['baifang20']['sum']=6;
-            $this->cust_type_name['baifang20']['number']=1;
-            $this->cust_type_name['baifang20']['fraction']=6;
-        }else{
-            $this->cust_type_name['baifang20']['sum']=0;
-            $this->cust_type_name['baifang20']['number']=0;
-            $this->cust_type_name['baifang20']['fraction']=6;
-        }
-        if($this->cust_type_name['baifang20']['sum']==0){
-            $this->cust_type_name['baifang20']['sum']=0;
-            $baifang= $this->cust_type_name['baifang20']['sum']+$this->cust_type_name['baifang15']['sum'];
-        }else{
-            $this->cust_type_name['baifang20']['sum']=0;
-            $baifang= $this->cust_type_name['baifang20']['sum']+$this->cust_type_name['baifang15']['sum'];
-        }
+//        if(!empty($bf)&&(count($bf)/$row['sale_day'])>20){
+//            $this->cust_type_name['baifang20']['sum']=6;
+//            $this->cust_type_name['baifang20']['number']=1;
+//            $this->cust_type_name['baifang20']['fraction']=6;
+//        }else{
+//            $this->cust_type_name['baifang20']['sum']=0;
+//            $this->cust_type_name['baifang20']['number']=0;
+//            $this->cust_type_name['baifang20']['fraction']=6;
+//        }
+//        if($this->cust_type_name['baifang20']['sum']==0){
+//            $this->cust_type_name['baifang20']['sum']=0;
+//            $baifang= $this->cust_type_name['baifang20']['sum']+$this->cust_type_name['baifang15']['sum'];
+//        }else{
+//            $this->cust_type_name['baifang20']['sum']=0;
+//            $baifang= $this->cust_type_name['baifang20']['sum']+$this->cust_type_name['baifang15']['sum'];
+//        }
 
         $this->cust_type_name['canpin_sum']=array_sum(array_map(create_function('$val', 'return $val["sum"];'), $this->cust_type_name['canpin']));
         $this->cust_type_name['fuwu_sum']=array_sum(array_map(create_function('$val', 'return $val["sum"];'), $this->cust_type_name['fuwu']));
-        $this->cust_type_name['qita_sum']=$this->cust_type_name['zhuangji']['sum']+ $this->cust_type_name['yushou3']['sum']+ $this->cust_type_name['yushou6']['sum']+ $this->cust_type_name['yushou12']['sum']+$baifang;
+        $this->cust_type_name['yushou_sum']=array_sum(array_map(create_function('$val', 'return $val["sum"];'), $this->cust_type_name['yushou']));
+        $this->cust_type_name['baifang_sum']=array_sum(array_map(create_function('$val', 'return $val["sum"];'), $this->cust_type_name['baifang']));
+        $this->cust_type_name['qita_sum']=$this->cust_type_name['zhuangji']['sum']+ $this->cust_type_name['yushou_sum']+$this->cust_type_name['baifang_sum'];
         $this->cust_type_name['all_sum']= $this->cust_type_name['canpin_sum']+ $this->cust_type_name['fuwu_sum']+ $this->cust_type_name['qita_sum'];
         if(empty($this->cust_type_name['all_sum'])){
             $this->cust_type_name['all_sum']=0;
@@ -698,6 +730,13 @@ class IntegralForm extends CFormModel
 	public function custTypeNameA($id){
         $suffix = Yii::app()->params['envSuffix'];
         $sql = "select * from swoper$suffix.swo_customer_type_twoname where cust_type_id='$id'";
+        $row = Yii::app()->db->createCommand($sql)->queryAll();
+        return $row;
+    }
+
+    public function points($id){
+        $suffix = Yii::app()->params['envSuffix'];
+        $sql = "select * from sal_points_type_twoname where cust_type_id=(select id from sal_points_type where rpt_cat='$id')";
         $row = Yii::app()->db->createCommand($sql)->queryAll();
         return $row;
     }

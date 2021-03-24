@@ -53,6 +53,10 @@ return array(
     'Start Fraction'=>'下限分数',
     'End Fraction'=>'上限分数',
     'New Fraction'=>'新赛季分数',
-    'Reward'=>'奖励',
+    'Cust Type Name'=>'名称',
+    'Condition'=>'条件',
+    'Fractiony'=>'单个分数',
+    'Toplimit'=>'限制',
+    'Category'=>'类别',
 );
 ?>
