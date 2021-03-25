@@ -33,7 +33,7 @@ class RankCommand extends CConsoleCommand
                         $span="select * from sales$suffix.sal_rank where city='$city' and  username='".$records['username']."' order by id desc";
                         $rankfraction = Yii::app()->db->createCommand($span)->queryRow();
                        // 入职时间積分
-                        $sql_entry_time="select a.*,c.rank_day from hr$suffix.hr_employee a 
+                        $sql_entry_time="select a.*,c.rank_day,c.five_rank from hr$suffix.hr_employee a 
                                           left outer join hr$suffix.hr_binding b on a.id=b.employee_id 
                                           left outer join sal_rankday c on a.id=c.employee_id
                                           where b.user_id='".$records['username']."'
@@ -74,6 +74,12 @@ class RankCommand extends CConsoleCommand
 //                        }else{
 //                            $five=4500;
 //                        }
+                        if($entry_time['five_rank']==1){
+                            $sql_rank_five="update sal_rankday set five_rank=2";
+                            $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                        }
+
+
                        if(empty($rankfraction)){
                          //  $rank=$rank+$ruzhi+$five;
                            //第几赛季，具体时间，用户，城市，初始分数或上赛季分数，当前赛季分数
