@@ -66,7 +66,7 @@ class VisitCommand extends CConsoleCommand
                         $url = Yii::app()->params['webroot'];
                         $url .= "/visit/index?start=" . $arr['start_dt'] . "&end=" . $arr['end_dt'] . "&city=" . $city;
                         $message = <<<EOF
-                        <h2>{$arr['start_dt']} - {$arr['end_dt']}</h2>
+                       
 <table cellpadding="10" cellspacing="1" style="color:#666;font:13px Arial;line-height:1.4em;width:100%;">
 	<tbody>
 		<tr>

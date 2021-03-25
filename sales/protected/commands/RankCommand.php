@@ -24,7 +24,7 @@ class RankCommand extends CConsoleCommand
 				left outer join hr$suffix.hr_binding d  on a.username=d.user_id
 				left outer join hr$suffix.hr_employee e  on d.employee_id=e.id		
                 left outer join hr$suffix.hr_dept f  on e.position=f.id 	
-				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'  and a.status='A'  and  (f.manager_type ='1' or f.manager_type ='2' or f.manager_type ='3')
+				where a.city='$city'  and c.system_id='sal'  and c.a_read_write like '%HK01%'    and  (f.manager_type ='1' or f.manager_type ='2' or f.manager_type ='3') and e.staff_status = 0
 			";
                     $rows = Yii::app()->db->createCommand($sql1)->queryAll();
                     foreach ($rows as $records){
