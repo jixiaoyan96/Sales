@@ -44,7 +44,7 @@ $this->pageTitle=Yii::app()->name . ' - RankScore Form';
             </style>
             <h3><?php echo $model->season;?>  <?php echo $model->message;?></h3>
             <table class="tftable" border="1" style="width: 1000px;">
-                <tr><th>排名</th><th>地区</th><th>员工</th><th>战斗力</th></tr>
+                <tr><th>排名</th><th>地区</th><th>员工</th><th>战斗值</th></tr>
                 <?php $i=1; foreach ($model->ranking as $a){?>
                 <tr><td><?php echo $i;?></td><td><?php echo $a['city'];?></td><td><?php echo $a['name'];?></td><td><?php echo $a['rank'];?></td></tr>
                 <?php $i=$i+1;}?>
