@@ -54,7 +54,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
             </style>
             <div style="width: 1000px;">
                 <div style="display:inline;font-size: 30px;">第<?php echo $model->season;?>赛季 <?php echo $model->date;?>月- <?php echo $model->name;?></div>
-                <div style="display:inline;float: right;"><img style="width: 40px;height: 40px;" src="<?php echo Yii::app()->baseUrl."/images/".$model->rank_name.".png";?>"></div>
+                <div style="display:inline;float: right;"><img style="width: 40px;height: 40px;" src="<?php echo Yii::app()->baseUrl."/images/".$model->rank_name.".png";?>"> <?php echo $model->rank_name;?></div>
             </div>
             <table class="tftable" border="1" style="width: 1000px;">
                 <tr><td colspan="2"></td><td style="background-color: #FFBD9D"><b>继承分数 </b></td><td style="background-color: #FFBD9D"><?php echo $model->last_score;?></td></tr>
@@ -86,7 +86,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
                 <tr><td>销售组别类型（餐饮组/商业组)</td><td><?php echo $model->food['name'];?></td><td>销售组别类型（餐饮组/商业组）对应倍数</td><td><?php echo $model->food['score'];?></td></tr>
                 <tr><td>销售岗位级别对应倍数</td><td><?php echo $model->fjl;?></td><td>销售每月平均每天拜访数量对应倍数</td><td><?php echo $model->visit['coefficient'];?></td></tr>
                 <tr><td>城市规模级别</td><td><?php echo $model->city_jb;?></td><td>城市规模级别对应倍数</td><td><?php echo $model->city_xs;?></td></tr>
-                <tr><td></td><td></td><td style="background-color: #FFBD9D"><b>当月所有得分乘以倍数后</b></td><td style="background-color: #FFBD9D"><b><?php echo $model->all_score;?></b> </td></tr>
+                <tr><td></td><td></td><td style="background-color: #FFBD9D"><b>当月所有得分乘以倍数后（若当月所有得分为负数则不会乘以以上倍数）</b></td><td style="background-color: #FFBD9D"><b><?php echo $model->all_score;?></b> </td></tr>
                  <tr><td style="background-color: #FFBD9D"><b>当月得分对应段位</b></td><td style="background-color: #FFBD9D"><b><?php echo $model->rank_name;?></b></td><td style="background-color: #FFBD9D"><b>当前赛季总分</b></td><td style="background-color: #FFBD9D"><b><?php echo $model->now_score;?></b></td></tr>
             </table>
 		</div>

@@ -359,6 +359,7 @@ class RankForm extends CFormModel
         $this->initial_score=$this->score_five+$this->ruzhi;
         //总分数
         $score_all=$score_ia+$score_pyx+$score_cp+$score_xdy+$score_jq+$score_sales_one+$score_sales_two+$score_salemoney_one+$score_salemoney_two+$salepeople_money+$this->initial_score;
+        $score_all_fs=$score_all;
         //销售每月平均每天拜访记录  比例
         $sql_visit="select count(id) as sums from sal_visit where username='".$rows['username']."' and visit_dt>='$star_time'  and visit_dt<='$end_time'";
         $visit= Yii::app()->db->createCommand($sql_visit)->queryScalar();
@@ -462,6 +463,9 @@ class RankForm extends CFormModel
         $score_all=$score_all* $this->city_xs;
         //当前赛季总分
         $this->all_score=round($score_all,2);
+        if($score_all_fs<0){
+            $this->all_score=round($score_all_fs,2);
+        }
         //当前赛季总分（继承后）
         $this->now_score=round($score_all+$this->last_score,2);
         //上赛季段位
