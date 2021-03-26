@@ -407,7 +407,7 @@ class RankForm extends CFormModel
         }elseif ($people>=0.5&&$people<0.75){
             $score_all=$score_all*1;
             $this->sales['score']=1;
-        }elseif ($people>=0.75&&$people<1){
+        }elseif ($people>=0.75&&$people<=1){
             $score_all=$score_all*1.1;
             $this->sales['score']=1.1;
         }
