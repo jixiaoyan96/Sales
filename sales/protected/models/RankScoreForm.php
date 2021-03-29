@@ -110,10 +110,11 @@ class RankScoreForm extends CFormModel
                 $name = Yii::app()->db->createCommand($sql_name)->queryRow();
                 $temp['name'] = $name['name'];
                 $temp['city'] = $row !== false ? $row['city_name'] : $record['city'];
-               // $temp['quyu'] = $row !== false ? str_replace(array('1', '2', '3', '4', '5', '6', '7', '8', '9', '0'), '', $row['region_name']) : '空';
-//                $sql = "select * from sal_level where start_fraction <='" . $record['now_score'] . "' and end_fraction >='" . $record['now_score'] . "'";
-//                $rank_name = Yii::app()->db->createCommand($sql)->queryRow();
-              //  $temp['level'] = $rank_name['level'];
+                $sql_level="select now_score from sal_rank  where username='".$record['username']."' order by id desc";
+                $level = Yii::app()->db->createCommand($sql_level)->queryRow();
+                $sql = "select * from sal_level where start_fraction <='" . $level['now_score'] . "' and end_fraction >='" . $level['now_score'] . "'";
+                $rank_name = Yii::app()->db->createCommand($sql)->queryRow();
+                $temp['level'] = $rank_name['level'];
                 $this->ranking[] = $temp;
             }
         }

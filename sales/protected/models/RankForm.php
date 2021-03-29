@@ -359,7 +359,6 @@ class RankForm extends CFormModel
         $this->initial_score=$this->score_five+$this->ruzhi;
         //总分数
         $score_all=$score_ia+$score_pyx+$score_cp+$score_xdy+$score_jq+$score_sales_one+$score_sales_two+$score_salemoney_one+$score_salemoney_two+$salepeople_money+$this->initial_score;
-        $score_all_fs=$score_all;
         //销售每月平均每天拜访记录  比例
         $sql_visit="select count(id) as sums from sal_visit where username='".$rows['username']."' and visit_dt>='$star_time'  and visit_dt<='$end_time'";
         $visit= Yii::app()->db->createCommand($sql_visit)->queryScalar();
@@ -371,6 +370,7 @@ class RankForm extends CFormModel
         $sales_visit=$visit/$day;
         $amount_visit=$this->getAmount('0',$star_time,$sales_visit);//本单产品提成比例
         $score_all=$score_all+$amount_visit['bonus'];
+        $score_all_fs=$score_all;//判断负数的
         $this->now=round($score_all,2);
         $score_all=$score_all*$amount_visit['coefficient'];
         $this->visit['sum']=round($sales_visit,0);
