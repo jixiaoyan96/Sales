@@ -30,56 +30,10 @@ class RankCommand extends CConsoleCommand
                     foreach ($rows as $records){
                       //  $city = $records['city'];
                         //判断是否为新入职的，空是新的、、最新赛季分数
-                        $span="select * from sales$suffix.sal_rank where city='$city' and  username='".$records['username']."' order by id desc";
+                        $span="select a.*,c.rank_day,c.five_rank  from sales$suffix.sal_rank 
+                                  left outer join sal_rankday c on a.id=c.rank_id
+                                  where city='$city' and  username='".$records['username']."' order by id desc";
                         $rankfraction = Yii::app()->db->createCommand($span)->queryRow();
-                       // 入职时间積分
-                        $sql_entry_time="select a.*,c.rank_day,c.five_rank from hr$suffix.hr_employee a 
-                                          left outer join hr$suffix.hr_binding b on a.id=b.employee_id 
-                                          left outer join sal_rankday c on a.id=c.employee_id
-                                          where b.user_id='".$records['username']."'
-                                          ";
-                        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
-                        $time1 = date("Y/m/d", strtotime("$date -1 month"));
-                        $time2 = date("Y/m/d", strtotime("$date -3 month"));
-                        if($time2>=$entry_time['entry_time']&&($entry_time['rank_day']==0||empty($entry_time['rank_day']))){
-//
-                            if(empty($entry_time['rank_day'])){
-                                $sql_rank_day="insert into sal_rankday (employee_id,rank_day) value ('".$entry_time['id']."',3)";
-                            }else{
-                                $sql_rank_day="update sal_rankday set rank_day=3";
-                            }
-                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&($entry_time['rank_day']==0||empty($entry_time['rank_day']))){
-//
-                            if(empty($entry_time['rank_day'])){
-                                $sql_rank_day="insert into sal_rankday (employee_id,rank_day) value ('".$entry_time['id']."',1)";
-                            }else{
-                                $sql_rank_day="update sal_rankday set rank_day=1";
-                            }
-                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                        }elseif($time2>=$entry_time['entry_time']&&($entry_time['rank_day']==3||$entry_time['rank_day']==2)){
-//
-                            $sql_rank_day="update sal_rankday set rank_day=4";
-                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                        }elseif($time2>=$entry_time['entry_time']&&$entry_time['rank_day']==1){
-//
-                            $sql_rank_day="update sal_rankday set rank_day=2";
-                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                        }
-                        //老员工五部曲分数
-//                        $sql_five="select * from sales$suffix.sal_fivestep where username='".$records['username']."' and rec_dt<=$month ";
-//                        $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
-//                        if(empty($retern)){
-//                            $five=0;
-//                        }else{
-//                            $five=4500;
-//                        }
-                        if($entry_time['five_rank']==1){
-                            $sql_rank_five="update sal_rankday set five_rank=2";
-                            $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
-                        }
-
-
                        if(empty($rankfraction)){
                          //  $rank=$rank+$ruzhi+$five;
                            //第几赛季，具体时间，用户，城市，初始分数或上赛季分数，当前赛季分数
@@ -100,7 +54,7 @@ class RankCommand extends CConsoleCommand
                                $record=Yii::app()->db->createCommand($sql1)->queryRow();
                                if(empty($record)){
                                    $record['new_fraction']=0;
-                               }elseif($rankfraction['now_score']<5000){
+                               }elseif($rankfraction['now_score']<9000){
                                    $record['new_fraction']=$rankfraction['now_score'];
                                }
                                $sql2 = "insert into sales$suffix.sal_rank(season, month, username, city,last_score) 
@@ -109,6 +63,33 @@ class RankCommand extends CConsoleCommand
                                $command=Yii::app()->db->createCommand($sql2)->execute();
                            }
                        }
+                        // 入职时间積分
+                        $sql_entry_time="select a.*from hr$suffix.hr_employee a 
+                                          left outer join hr$suffix.hr_binding b on a.id=b.employee_id                                 
+                                          where b.user_id='".$records['username']."'
+                                          ";
+                        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
+                        $time1 = date("Y/m/d", strtotime("$date -1 month"));
+                        $time2 = date("Y/m/d", strtotime("$date -3 month"));
+                        $rank_id=Yii::app()->db->getLastInsertID();
+                        if($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==0||empty($rankfraction['rank_day']))){
+                            $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',3,'$rank_id')";
+                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                        }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&($rankfraction['rank_day']==0||empty($rankfraction['rank_day']))){
+                            $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',1,'$rank_id')";
+                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                        }elseif($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==3||$rankfraction['rank_day']==2)){
+                            $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',4,'$rank_id')";
+                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                        }elseif($time2>=$entry_time['entry_time']&&$rankfraction['rank_day']==1){
+                            $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',2,'$rank_id')";
+                            $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                        }
+                        //老员工五部曲分数
+                        if($rankfraction['five_rank']==1){
+                            $sql_rank_five="update sal_rankday set five_rank=2 where rank_id='$rank_id'";
+                            $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                        }
                     }
                 }
             }

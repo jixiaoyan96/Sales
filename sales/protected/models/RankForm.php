@@ -66,7 +66,9 @@ class RankForm extends CFormModel
 	public function retrieveData($index)
 	{
 		$suffix = Yii::app()->params['envSuffix'];
-        $sql="select * from sales$suffix.sal_rank where id='$index'";
+        $sql="select a.*,b.rank_day,b.five_rank from sales$suffix.sal_rank a
+              left outer join  sal_rankday b on  a.id=b.rank_id
+              where a.id='$index'";
 		$rows = Yii::app()->db->createCommand($sql)->queryRow();
         $city = $rows['city'];
         $cityname=$this->cityname($city);
@@ -268,9 +270,8 @@ class RankForm extends CFormModel
         $salepeople_money=empty($salepeople_money)?0:$salepeople_money;
         $this->lhmoney['score']=$salepeople_money;
         //五部曲分数
-        $sql_entry="select a.*,c.five_rank from hr$suffix.hr_employee a 
-                                          left outer join hr$suffix.hr_binding b on a.id=b.employee_id 
-                                          left outer join sal_rankday c on a.id=c.employee_id
+        $sql_entry="select a.* from hr$suffix.hr_employee a 
+                                          left outer join hr$suffix.hr_binding b on a.id=b.employee_id                                      
                                           where b.user_id='".$rows['username']."'
                                           ";
         $entry_time= Yii::app()->db->createCommand($sql_entry)->queryRow();
@@ -279,7 +280,7 @@ class RankForm extends CFormModel
 //        $five_time1=$year."-".$five_time1;
 //        $five_time2=$year."-".$five_time2;
 //        if($month==date("m", strtotime($five_time1))){
-        if(empty($entry_time['five_rank'])||$entry_time['five_rank']==1){
+        if(empty($rows['five_rank'])||$rows['five_rank']==1){
             //洗手間分數
             $score_xsj=$this->getFive($five_time1,$rows['username'],1);
             $this->score_xsj= $score_xsj['score'];
@@ -300,7 +301,7 @@ class RankForm extends CFormModel
                 $this->score_3bq_day='15天';
             }
             $this->score_five=$this->score_xsj+$this->score_mc+$this->score_3bq;
-            $sql_rank_day="update sal_rankday set five_rank=1";
+            $sql_rank_day="update sal_rankday set five_rank=1 where rank_id='$index'";
             $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
         }else{
             $this->score_five=0;
@@ -332,26 +333,26 @@ class RankForm extends CFormModel
 //            $this->score_five=0;
 //        }
         //入职时间積分
-        $sql_entry_time="select a.*,c.rank_day from hr$suffix.hr_employee a 
-                                          left outer join hr$suffix.hr_binding b on a.id=b.employee_id 
-                                          left outer join sal_rankday c on a.id=c.employee_id
-                                          where b.user_id='".$rows['username']."'
-                                          ";
-        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
+//        $sql_entry_time="select a.*,c.rank_day from hr$suffix.hr_employee a
+//                                          left outer join hr$suffix.hr_binding b on a.id=b.employee_id
+//                                          left outer join sal_rankday c on a.id=c.employee_id
+//                                          where b.user_id='".$rows['username']."'
+//                                          ";
+//        $entry_time = Yii::app()->db->createCommand($sql_entry_time)->queryRow();
 //        print_r($entry_time['rank_day']);
 //        $date=date("Y-m-d");
 //        $time1 = date("Y-m-d", strtotime("$date -1 month"));
 //        $time2 = date("Y-m-d", strtotime("$date -3 month"));
-        if($entry_time['rank_day']==3){
+        if($rows['rank_day']==3){
             $this->ruzhi=2500;
             $this->ruzhi_day='3个月';
-        }elseif($entry_time['rank_day']==1){
+        }elseif($rows['rank_day']==1){
             $this->ruzhi=1000;
             $this->ruzhi_day='1个月';
-        }elseif($entry_time['rank_day']==4){
+        }elseif($rows['rank_day']==4){
             $this->ruzhi=0;
             $this->ruzhi_day='/';
-        }elseif($entry_time['rank_day']==2){
+        }elseif($rows['rank_day']==2){
             $this->ruzhi=1500;
             $this->ruzhi_day='3个月';
         }
@@ -466,6 +467,7 @@ class RankForm extends CFormModel
         if($score_all_fs<0){
             $this->all_score=round($score_all_fs,2);
         }
+        print_r($score_all);
         //当前赛季总分（继承后）
         $this->now_score=round($score_all+$this->last_score,2);
         //上赛季段位
