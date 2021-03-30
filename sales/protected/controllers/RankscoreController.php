@@ -40,23 +40,6 @@ class RankscoreController extends Controller
 
     public function actionIndex($pageNum=0)
     {
-        $date = '2021-03-30';
-        $start = date("Y-m-01", strtotime($date));
-        $end = date("Y-m-31",strtotime($date));
-        $model = new RankForm('view');
-        $sql="select * from sal_rank  where month>='$start' and month<='$end'";
-        $row = Yii::app()->db->createCommand($sql)->queryAll();
-        print_r('<pre>');
-        foreach ($row as $id){
-            $model->retrieveData($id['id']);
-            $sql1="update sal_rank set all_score='".$model['all_score']."',last_score='".$model['last_score']."',now_score='".$model['now_score']."',initial_score='".$model['initial_score']."' where id='".$id['id']."'";
-//            $command=Yii::app()->db->createCommand($sql1)->execute();
-            if($id['city']=='TJ'){
-                print_r($sql1);
-            }
-
-        }
-exit();
         $model = new RankScoreForm;
         $session = Yii::app()->session;
         $city=$this->city();
