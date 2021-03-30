@@ -55,6 +55,7 @@
 			<div class="navbar-custom-menu">
 				<ul class="nav navbar-nav">
 				<?php
+					if (Yii::app()->params['systemId']=='sal' && Yii::app()->params['showRank']=='on') $this->widget('ext.layout.RankLabelWidget');
 					$this->widget('ext.layout.NoticeWidget');
 					$this->widget('ext.layout.UserMenuWidget');
 				?>
