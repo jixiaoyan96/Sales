@@ -86,8 +86,16 @@ class RankCommand extends CConsoleCommand
                             $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
                         }
                         //老员工五部曲分数
-                        if($rankfraction['five_rank']==1){
+                        if($rankfraction['five_rank']==1||$rankfraction['five_rank']==2){
                             $sql_rank_five="update sal_rankday set five_rank=2 where rank_id='$rank_id'";
+                            $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                        }
+                        if($rankfraction['mie_rank']==1||$rankfraction['mie_rank']==2){
+                            $sql_rank_five="update sal_rankday set mie_rank=2 where rank_id='$rank_id'";
+                            $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                        }
+                        if($rankfraction['three_rank']==1||$rankfraction['three_rank']==2){
+                            $sql_rank_five="update sal_rankday set three_rank=2 where rank_id='$rank_id'";
                             $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
                         }
                     }

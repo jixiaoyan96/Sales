@@ -280,16 +280,25 @@ class RankForm extends CFormModel
 //        $five_time1=$year."-".$five_time1;
 //        $five_time2=$year."-".$five_time2;
 //        if($month==date("m", strtotime($five_time1))){
-        if(empty($rows['five_rank'])||$rows['five_rank']==1){
+
             //洗手間分數
+        if(empty($rows['five_rank'])||$rows['five_rank']==1){
             $score_xsj=$this->getFive($five_time1,$rows['username'],1);
             $this->score_xsj= $score_xsj['score'];
             $this->score_xsj_day= $score_xsj['score_day'];
+        }else{
+            $this->score_xsj=0;
+        }
             //滅蟲分數
+        if(empty($rows['mie_rank'])||$rows['mie_rank']==1){
             $score_mc=$this->getFive($five_time1,$rows['username'],0);
             $this->score_mc= $score_mc['score'];
             $this->score_mc_day= $score_mc['score_day'];
+        }else{
+            $this->score_mc=0;
+        }
             //第三部曲分數
+        if(empty($rows['three_rank'])||$rows['three_rank']==1){
             $five_time_end = date("Y-m-d", strtotime("$five_time1 +15 day" ));
             $sql_five="select * from sal_fivestep where username='".$rows['username']."' and rec_dt>='$five_time1' and rec_dt<='$five_time_end' and five_type='2'";
             $retern= Yii::app()->db->createCommand($sql_five)->queryAll();
@@ -300,12 +309,13 @@ class RankForm extends CFormModel
                 $this->score_3bq=1500;
                 $this->score_3bq_day='15天';
             }
+        }else{
+            $this->score_3bq=0;
+        }
             $this->score_five=$this->score_xsj+$this->score_mc+$this->score_3bq;
             $sql_rank_day="update sal_rankday set five_rank=1 where rank_id='$index'";
             $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-        }else{
-            $this->score_five=0;
-        }
+
 
 
 //        }elseif($month==date("m", strtotime($five_time2))){
@@ -473,6 +483,8 @@ class RankForm extends CFormModel
         $sql_rank_name="select * from sal_level where start_fraction <='".$this->now_score."' and end_fraction >='".$this->now_score."'";
         $rank_name= Yii::app()->db->createCommand($sql_rank_name)->queryRow();
         $this->rank_name=$rank_name['level'];
+        $sql1="update sal_rank set all_score='".$this->all_score."',last_score='".$this->last_score."',now_score='".$this->now_score."',initial_score='".$this->initial_score."' where id='".$index."'";
+        $command=Yii::app()->db->createCommand($sql1)->execute();
 		return true;
 	}
 
