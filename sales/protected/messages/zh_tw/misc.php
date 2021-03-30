@@ -95,6 +95,7 @@ return array(
 'Restroom'=>'洗手間',
 'Third'=>'第三部曲',
 'Five Type'=>'五部曲類型',
+'Your ranking is:'=>'你當前的段位為:',
 );
 
 ?>
