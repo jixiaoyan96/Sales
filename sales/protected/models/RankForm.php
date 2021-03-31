@@ -63,7 +63,7 @@ class RankForm extends CFormModel
     }
 
 
-	public function retrieveData($index)
+	public function retrieveData($index,$a=0)
 	{
 		$suffix = Yii::app()->params['envSuffix'];
         $sql="select a.*,b.rank_day,b.five_rank from sales$suffix.sal_rank a
@@ -484,8 +484,11 @@ class RankForm extends CFormModel
         $sql_rank_name="select * from sal_level where start_fraction <='".$this->now_score."' and end_fraction >='".$this->now_score."'";
         $rank_name= Yii::app()->db->createCommand($sql_rank_name)->queryRow();
         $this->rank_name=$rank_name['level'];
-//        $sql1="update sal_rank set all_score='".$this->all_score."',last_score='".$this->last_score."',now_score='".$this->now_score."',initial_score='".$this->initial_score."' where id='".$index."'";
-      //  $command=Yii::app()->db->createCommand($sql1)->execute();
+        if($a==1){
+            print_r(1);
+            $sql1="update sal_rank set all_score='".$this->all_score."',last_score='".$this->last_score."',now_score='".$this->now_score."',initial_score='".$this->initial_score."' where id='".$index."'";
+            $command=Yii::app()->db->createCommand($sql1)->execute();
+        }
 		return true;
 	}
 
