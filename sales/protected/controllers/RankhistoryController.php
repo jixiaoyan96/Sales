@@ -41,7 +41,7 @@ class RankhistoryController extends Controller
     public function actionIndex($pageNum=0)
     {
         $model = new RankForm('view');
-        $sql="select * from sal_rank  where month>='2021-03-01' and month<='2021-03-31' where city='TJ'";
+        $sql="select * from sal_rank  where month>='2021-03-01' and month<='2021-03-31' and city='TJ'";
         $row = Yii::app()->db->createCommand($sql)->queryAll();
         print_r('<pre>');
         print_r($row);
