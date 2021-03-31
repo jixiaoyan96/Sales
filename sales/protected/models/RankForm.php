@@ -70,6 +70,7 @@ class RankForm extends CFormModel
               left outer join  sal_rankday b on  a.id=b.rank_id
               where a.id='$index'";
 		$rows = Yii::app()->db->createCommand($sql)->queryRow();
+        $this->id=$index;
         $city = $rows['city'];
         $cityname=$this->cityname($city);
         $year = date("Y", strtotime($rows['month']));//当前赛季时间年
