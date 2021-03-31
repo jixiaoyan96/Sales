@@ -485,7 +485,6 @@ class RankForm extends CFormModel
         $rank_name= Yii::app()->db->createCommand($sql_rank_name)->queryRow();
         $this->rank_name=$rank_name['level'];
         if($a==1){
-            print_r(1);
             $sql1="update sal_rank set all_score='".$this->all_score."',last_score='".$this->last_score."',now_score='".$this->now_score."',initial_score='".$this->initial_score."' where id='".$index."'";
             $command=Yii::app()->db->createCommand($sql1)->execute();
         }

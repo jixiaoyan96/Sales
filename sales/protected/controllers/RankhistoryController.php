@@ -40,32 +40,10 @@ class RankhistoryController extends Controller
 
     public function actionIndex($pageNum=0)
     {
-        $suffix = Yii::app()->params['envSuffix'];
-//        $start = date("Y-m-01", strtotime($date));
-//        $end = date("Y-m-31",strtotime($date));
-        $sql="select a.code
-            from security$suffix.sec_city a left outer join security$suffix.sec_city b on a.code=b.region 
-            where b.code is null 
-            order by a.code";
-        $rows = Yii::app()->db->createCommand($sql)->queryAll();
-        if (count($rows) > 0) {
-            foreach ($rows as $row) {
-                $city = $row['code'];
-                $model = new RankForm('view');
-                $sql="select * from sal_rank  where  city='$city'";
-                $row = Yii::app()->db->createCommand($sql)->queryAll();
-                foreach ($row as $id){
-                    $a=1;
-                    $model->retrieveData($id['id'],$a);
-                }
-            }
-        }
-
-
-//        $model = new RankHistoryForm;
-//        $city=$model->city();
-//        $season=$model->season();
-//        $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,));
+        $model = new RankHistoryForm;
+        $city=$model->city();
+        $season=$model->season();
+        $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,));
     }
 
 	public function actionIndex_s($pageNum=0)
