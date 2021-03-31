@@ -43,9 +43,6 @@ class RankController extends Controller
         $model = new RankForm;
         $city=$this->city();
         $season=$model->season();
-        //     $model->retrieveDatas($model);
-//        print_r('<$city>');
-      //  print_r($season);
         $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,));
     }
 
