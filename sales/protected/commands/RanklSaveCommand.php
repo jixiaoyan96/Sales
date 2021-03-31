@@ -5,15 +5,26 @@ class RanklSaveCommand extends CConsoleCommand
     public function run($args)
     {
         $date = empty($args) ? date("Y-m-d") : $args[0];
+        $suffix = Yii::app()->params['envSuffix'];
         $start = date("Y-m-01", strtotime($date));
         $end = date("Y-m-31",strtotime($date));
-        $model = new RankForm('view');
-        $sql="select * from sal_rank  where month>='$start' and month<='$end'";
-        $row = Yii::app()->db->createCommand($sql)->queryAll();
-        foreach ($row as $id){
-            $model->retrieveData($id['id']);
-            $sql1="update sal_rank set all_score='".$model['all_score']."',last_score='".$model['last_score']."',now_score='".$model['now_score']."',initial_score='".$model['initial_score']."' where id='".$id['id']."'";
-            $command=Yii::app()->db->createCommand($sql1)->execute();
+        $sql="select a.code
+            from security$suffix.sec_city a left outer join security$suffix.sec_city b on a.code=b.region 
+            where b.code is null 
+            order by a.code";
+        $rows = Yii::app()->db->createCommand($sql)->queryAll();
+        if (count($rows) > 0) {
+            foreach ($rows as $row) {
+                $city = $row['code'];
+                $model = new RankForm('view');
+                $sql="select * from sal_rank  where month>='$start' and month<='$end' and city='$city'";
+                $row = Yii::app()->db->createCommand($sql)->queryAll();
+                foreach ($row as $id){
+                    $model->retrieveData($id['id']);
+                    $sql1="update sal_rank set all_score='".$model['all_score']."',last_score='".$model['last_score']."',now_score='".$model['now_score']."',initial_score='".$model['initial_score']."' where id='".$id['id']."' and city='$city'";
+                    $command=Yii::app()->db->createCommand($sql1)->execute();
+                }
+            }
         }
     }
 }

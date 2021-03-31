@@ -40,27 +40,13 @@ class RankhistoryController extends Controller
 
     public function actionIndex($pageNum=0)
     {
-        $model = new RankForm('view');
-        $sql="select * from sal_rank  where month>='2021-03-01' and month<='2021-03-31' and city='TJ'";
-        $row = Yii::app()->db->createCommand($sql)->queryAll();
-        print_r('<pre>');
-        print_r($row);
-        foreach ($row as $id){
-            $model->retrieveData($id['id']);
-            $sql1="update sal_rank set all_score='".$model['all_score']."',last_score='".$model['last_score']."',now_score='".$model['now_score']."',initial_score='".$model['initial_score']."' where id='".$id['id']."'";
-          //  $command=Yii::app()->db->createCommand($sql1)->execute();
-            print_r($sql1);
-        }
-
-
-
-//        $model = new RankHistoryForm;
-//        $city=$model->city();
-//        $season=$model->season();
-//        //     $model->retrieveDatas($model);
-////        print_r('<$city>');
-//      //  print_r($season);
-//        $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,));
+        $model = new RankHistoryForm;
+        $city=$model->city();
+        $season=$model->season();
+        //     $model->retrieveDatas($model);
+//        print_r('<$city>');
+      //  print_r($season);
+        $this->render('index',array('model'=>$model,'city'=>$city,'season'=>$season,));
     }
 
 	public function actionIndex_s($pageNum=0)
