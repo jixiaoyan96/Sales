@@ -30,7 +30,7 @@ class RankCommand extends CConsoleCommand
                     foreach ($rows as $records){
                       //  $city = $records['city'];
                         //判断是否为新入职的，空是新的、、最新赛季分数
-                        $span="select a.*,c.rank_day,c.five_rank  from sales$suffix.sal_rank a
+                        $span="select a.*,c.rank_day,c.five_rank ,c.mie_rank ,c.three_rank  from sales$suffix.sal_rank a
                                   left outer join sal_rankday c on a.id=c.rank_id
                                   where city='$city' and  username='".$records['username']."' order by id desc";
                         $rankfraction = Yii::app()->db->createCommand($span)->queryRow();
