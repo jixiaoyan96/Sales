@@ -112,7 +112,7 @@ $this->pageTitle=Yii::app()->name . ' - Month Report';
                             <tbody>
                             <tr><td><b><?php echo Yii::t('report','ranking');?></b></td><td><b><?php echo Yii::t('report','level');?></b></td><td><b><?php echo Yii::t('report','name');?></b></td><td><b><?php echo Yii::t('report','city');?></b></td><td><b><?php echo Yii::t('report','quyu');?></b></td></tr>
                             <?php for ($i=0;$i<count($rank);$i++){ ?>
-                                <tr <?php if($i==0){ echo "style='color:#FF0000'";}if($i==1){ echo "style='color:#871F78'";}if($i==2){ echo "style='color:#0000FF'";}?>><td><?php echo $i+1;?></td><td> <img src="<?php echo Yii::app()->baseUrl."/images/".$rank[$i]['now_score'].".png";?>" width="20px;"><?php echo $rank[$i]['level'];?></td><td><?php echo $rank[$i]['name'];?></td><td><?php echo $rank[$i]['city'];?></td><td><?php echo $rank[$i]['quyu'];?></td></tr>
+                                <tr <?php if($i==0){ echo "style='color:#FF0000'";}if($i==1){ echo "style='color:#871F78'";}if($i==2){ echo "style='color:#0000FF'";}?>><td><?php echo $i+1;?></td><td> <img src="<?php echo Yii::app()->baseUrl."/images/".$rank[$i]['level'].".png";?>" width="20px;"><?php echo $rank[$i]['level'];?></td><td><?php echo $rank[$i]['name'];?></td><td><?php echo $rank[$i]['city'];?></td><td><?php echo $rank[$i]['quyu'];?></td></tr>
                             <?php }?>
                             </tbody>
                         </table>
