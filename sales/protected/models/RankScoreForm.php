@@ -54,7 +54,7 @@ class RankScoreForm extends CFormModel
             $this->season='年度总分排行榜';
             $start=$data['year'].'-01-01';
             $end=$data['year'].'-12-31';
-            $sql = "select city, username,sum(all_score) as ranks
+            $sql = "select city, username
 				from sal_rank  
 				where   city in ($cities)  and month<='$end' and month>='$start'   
 			  	group by city, username
@@ -63,7 +63,7 @@ class RankScoreForm extends CFormModel
             $this->message='-'.$data['year'].'年';
         }elseif($data['season']>0){
             $this->season='赛季总分排行榜';
-            $sql = "select city, username,sum(all_score) as ranks
+            $sql = "select city, username
 				from sal_rank  
 				where  city in ($cities)    and  season='".$data['season']."'
 			  	group by city, username   
@@ -72,7 +72,7 @@ class RankScoreForm extends CFormModel
             $this->message='- 第'.$this->numToWord($data['season']).'赛季';
         }elseif($data['month']>0){
             $this->season='月度排行榜';
-            $sql = "select city, username,sum(all_score) as ranks
+            $sql = "select city, username
 				from sal_rank  
 				where   city in ($cities)  and MONTH(month)='".$data['month']."'
 			  	group by city, username   
@@ -81,7 +81,7 @@ class RankScoreForm extends CFormModel
             $this->message='- '.$data['month'].'月';
         }else{
             $this->season='总分排行榜';
-            $sql = "select city, username,sum(all_score) as ranks
+            $sql = "select city, username
 				from sal_rank  
 				where   city in ($cities)
 			  	group by city, username   
@@ -95,7 +95,6 @@ class RankScoreForm extends CFormModel
 //            $sql = "select name from hr$suffix.hr_employee where id=(SELECT employee_id from hr$suffix.hr_binding WHERE user_id='".$record['username']."')";
 //            $row = Yii::app()->db->createCommand($sql)->queryRow();
 //            $temp['name']= $row!==false ? $row['name'] : $record['username'];
-                $temp['rank'] = $record['ranks'];
                 $sql = "select a.name as city_name, b.name as region_name 
 					from security$suffix.sec_city a
 					left outer join security$suffix.sec_city b on a.region=b.code
@@ -110,10 +109,16 @@ class RankScoreForm extends CFormModel
                 $name = Yii::app()->db->createCommand($sql_name)->queryRow();
                 $temp['name'] = $name['name'];
                 $temp['city'] = $row !== false ? $row['city_name'] : $record['city'];
-                $sql_level="select now_score from sal_rank  where username='".$record['username']."' order by id desc";
-                $level = Yii::app()->db->createCommand($sql_level)->queryRow();
-                $sql = "select * from sal_level where start_fraction <='" . $level['now_score'] . "' and end_fraction >='" . $level['now_score'] . "'";
+                $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."' order by id desc";
+                $level = Yii::app()->db->createCommand($sql_level)->queryAll();
+                $sql = "select * from sal_level where start_fraction <='" . $level[0]['now_score'] . "' and end_fraction >='" . $level[0]['now_score'] . "'";
                 $rank_name = Yii::app()->db->createCommand($sql)->queryRow();
+                $rank=0;
+                foreach ($level as $a){
+                    $rank+=$a['all_score'];
+                    print_r($a['all_score']); print_r('--');
+                }
+                $temp['rank']= $rank;
                 $temp['level'] = $rank_name['level'];
                 $this->ranking[] = $temp;
             }
