@@ -96,7 +96,7 @@ class RankController extends Controller
             $a['season']=$session['season'];
         }
 		$model->determinePageNum($pageNum);
-		$model->retrieveDataByPage($model->pageNum,$a);
+		$model->retrieveDataByPage($model->pageNum);
 		$this->render('index_s',array('model'=>$model,'a'=>$a));
 	}
 

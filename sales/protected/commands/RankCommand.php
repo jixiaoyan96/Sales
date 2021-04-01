@@ -42,6 +42,9 @@ class RankCommand extends CConsoleCommand
 			                        ";
                            $command=Yii::app()->db->createCommand($sql)->execute();
                        }else{
+                           if(empty($rankfraction['now_score'])){
+                               $rankfraction['now_score']=0;
+                           }
                            $sql="select * from sales$suffix.sal_rank where season='".$rankfraction['season']."' and username='".$records['username']."' and city='$city'";
                            $season = Yii::app()->db->createCommand($sql)->queryAll();
                            if(count($season)==1){

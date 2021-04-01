@@ -20,8 +20,7 @@ class RanklSaveCommand extends CConsoleCommand
                 $sql="select * from sal_rank  where month>='$start' and month<='$end' and city='$city'";
                 $row = Yii::app()->db->createCommand($sql)->queryAll();
                 foreach ($row as $id){
-                    $a=1;
-                    $model->retrieveData($id['id'],$a);
+                    $model->retrieveData($id['id']);
                 }
             }
         }
