@@ -109,14 +109,36 @@ class RankScoreForm extends CFormModel
                 $name = Yii::app()->db->createCommand($sql_name)->queryRow();
                 $temp['name'] = $name['name'];
                 $temp['city'] = $row !== false ? $row['city_name'] : $record['city'];
-                $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."' order by id desc";
-                $level = Yii::app()->db->createCommand($sql_level)->queryAll();
+
+
+
+                if($data['year']>0){
+                    $this->season='年度总分排行榜';
+                    $start=$data['year'].'-01-01';
+                    $end=$data['year'].'-12-31';
+                    $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."' and month<='$end' and month>='$start'   order by id desc";
+                    $level = Yii::app()->db->createCommand($sql_level)->queryAll();
+                    $this->message='-'.$data['year'].'年';
+                }elseif($data['season']>0){
+                    $this->season='赛季总分排行榜';
+                    $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."' and season='".$data['season']."'   order by id desc";
+                    $level = Yii::app()->db->createCommand($sql_level)->queryAll();
+                    $this->message='- 第'.$this->numToWord($data['season']).'赛季';
+                }elseif($data['month']>0){
+                    $this->season='月度排行榜';
+                    $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."' and MONTH(month)='".$data['month']."'   order by id desc";
+                    $level = Yii::app()->db->createCommand($sql_level)->queryAll();
+                    $this->message='- '.$data['month'].'月';
+                }else{
+                    $this->season='总分排行榜';
+                    $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."'   order by id desc";
+                    $level = Yii::app()->db->createCommand($sql_level)->queryAll();
+                }
                 $sql = "select * from sal_level where start_fraction <='" . $level[0]['now_score'] . "' and end_fraction >='" . $level[0]['now_score'] . "'";
                 $rank_name = Yii::app()->db->createCommand($sql)->queryRow();
                 $rank=0;
                 foreach ($level as $a){
                     $rank+=$a['all_score'];
-                    print_r($a['all_score']); print_r('--');
                 }
                 $temp['rank']= $rank;
                 $temp['level'] = $rank_name['level'];
