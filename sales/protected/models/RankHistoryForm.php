@@ -8,6 +8,7 @@ class RankHistoryForm extends CFormModel
 	public $date;
     public $rank=array();
     public $lic;
+    public $zhi_dt='2021-01-01';
 
 
 	
