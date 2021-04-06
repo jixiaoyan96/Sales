@@ -81,7 +81,8 @@ class RankCommand extends CConsoleCommand
                             $time1 = date("Y/m/d", strtotime("$date -1 month"));
                             $time2 = date("Y/m/d", strtotime("$date -3 month"));
                             $rank_id=Yii::app()->db->getLastInsertID();
-                            if($entry_time['entry_time']<'2020/10/01'){
+                            $entry = date("Y/m/d", strtotime($entry_time['entry_time']));
+                            if($entry<'2020/10/01'){
                                 $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',4,'$rank_id')";
                                 $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
                                 $sql_rank_five="update sal_rankday set five_rank=2 where rank_id='$rank_id'";
@@ -97,7 +98,7 @@ class RankCommand extends CConsoleCommand
                                 }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&($rankfraction['rank_day']==0||empty($rankfraction['rank_day']))){
                                     $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',1,'$rank_id')";
                                     $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                                }elseif($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==3||$rankfraction['rank_day']==2)){
+                                }elseif($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==3||$rankfraction['rank_day']==2||$rankfraction['rank_day']==4)){
                                     $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',4,'$rank_id')";
                                     $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
                                 }elseif($time2>=$entry_time['entry_time']&&$rankfraction['rank_day']==1){
