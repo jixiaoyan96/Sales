@@ -73,7 +73,7 @@ class RankCommand extends CConsoleCommand
                                 }
                             }
                             // 入职时间積分
-                            $sql_entry_time="select a.*from hr$suffix.hr_employee a 
+                            $sql_entry_time="select a.* from hr$suffix.hr_employee a 
                                           left outer join hr$suffix.hr_binding b on a.id=b.employee_id                                 
                                           where b.user_id='".$records['username']."'
                                           ";
@@ -81,33 +81,47 @@ class RankCommand extends CConsoleCommand
                             $time1 = date("Y/m/d", strtotime("$date -1 month"));
                             $time2 = date("Y/m/d", strtotime("$date -3 month"));
                             $rank_id=Yii::app()->db->getLastInsertID();
-                            if($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==0||empty($rankfraction['rank_day']))){
-                                $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',3,'$rank_id')";
-                                $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                            }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&($rankfraction['rank_day']==0||empty($rankfraction['rank_day']))){
-                                $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',1,'$rank_id')";
-                                $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                            }elseif($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==3||$rankfraction['rank_day']==2)){
+                            if($entry_time['entry_time']<'2020/10/01'){
                                 $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',4,'$rank_id')";
                                 $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                            }elseif($time2>=$entry_time['entry_time']&&$rankfraction['rank_day']==1){
-                                $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',2,'$rank_id')";
-                                $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
-                            }
-                            //老员工五部曲分数
-                            if($rankfraction['five_rank']==1||$rankfraction['five_rank']==2){
                                 $sql_rank_five="update sal_rankday set five_rank=2 where rank_id='$rank_id'";
                                 $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
-                            }
-                            if($rankfraction['mie_rank']==1||$rankfraction['mie_rank']==2){
                                 $sql_rank_five="update sal_rankday set mie_rank=2 where rank_id='$rank_id'";
                                 $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
-                            }
-                            if($rankfraction['three_rank']==1||$rankfraction['three_rank']==2){
                                 $sql_rank_five="update sal_rankday set three_rank=2 where rank_id='$rank_id'";
                                 $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                            }else{
+                                if($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==0||empty($rankfraction['rank_day']))){
+                                    $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',3,'$rank_id')";
+                                    $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                                }elseif($time2<$entry_time['entry_time']&&$entry_time['entry_time']<=$time1&&($rankfraction['rank_day']==0||empty($rankfraction['rank_day']))){
+                                    $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',1,'$rank_id')";
+                                    $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                                }elseif($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==3||$rankfraction['rank_day']==2)){
+                                    $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',4,'$rank_id')";
+                                    $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                                }elseif($time2>=$entry_time['entry_time']&&$rankfraction['rank_day']==1){
+                                    $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',2,'$rank_id')";
+                                    $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
+                                }
+                                //老员工五部曲分数
+                                if($rankfraction['five_rank']==1||$rankfraction['five_rank']==2){
+                                    $sql_rank_five="update sal_rankday set five_rank=2 where rank_id='$rank_id'";
+                                    $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                                }
+                                if($rankfraction['mie_rank']==1||$rankfraction['mie_rank']==2){
+                                    $sql_rank_five="update sal_rankday set mie_rank=2 where rank_id='$rank_id'";
+                                    $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                                }
+                                if($rankfraction['three_rank']==1||$rankfraction['three_rank']==2){
+                                    $sql_rank_five="update sal_rankday set three_rank=2 where rank_id='$rank_id'";
+                                    $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                                }
                             }
-                        }
+                            }
+
+
+
                     }
                 }
             }

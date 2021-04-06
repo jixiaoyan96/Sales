@@ -321,7 +321,7 @@ class RankForm extends CFormModel
         }
             $this->score_five=$this->score_xsj+$this->score_mc+$this->score_3bq;
 
-
+        //入职分数
         if($rows['rank_day']==3){
             $this->ruzhi=2500;
             $this->ruzhi_day='3个月';
