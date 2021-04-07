@@ -446,7 +446,7 @@ class RankForm extends CFormModel
             $this->all_score=round($score_all_fs,2);
         }
         //当前赛季总分（继承后）
-        $this->now_score=round($score_all+$this->last_score,2);
+        $this->now_score=round( $this->all_score+$this->last_score,2);
         //上赛季段位
         $sql_rank_name="select * from sal_level where start_fraction <='".$this->now_score."' and end_fraction >='".$this->now_score."'";
         $rank_name= Yii::app()->db->createCommand($sql_rank_name)->queryRow();
