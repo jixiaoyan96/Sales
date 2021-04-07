@@ -149,10 +149,10 @@ class RankzhixingController extends Controller
                             $rankday=Yii::app()->db->createCommand($sql_rank_day)->execute();
                             $sql_rank_five="update sal_rankday set five_rank=2 where rank_id='$rank_id'";
                             $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
-                            $sql_rank_five="update sal_rankday set mie_rank=2 where rank_id='$rank_id'";
-                            $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
-                            $sql_rank_five="update sal_rankday set three_rank=2 where rank_id='$rank_id'";
-                            $rankfive=Yii::app()->db->createCommand($sql_rank_five)->execute();
+                            $sql_rank_mie="update sal_rankday set mie_rank=2 where rank_id='$rank_id'";
+                            $rankmie=Yii::app()->db->createCommand($sql_rank_mie)->execute();
+                            $sql_rank_three="update sal_rankday set three_rank=2 where rank_id='$rank_id'";
+                            $rankthree=Yii::app()->db->createCommand($sql_rank_three)->execute();
                         }else{
                             if($time2>=$entry_time['entry_time']&&($rankfraction['rank_day']==0||empty($rankfraction['rank_day']))){
                                 $sql_rank_day="insert into sal_rankday (employee_id,rank_day,rank_id) value ('".$entry_time['id']."',3,'$rank_id')";
