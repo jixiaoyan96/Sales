@@ -66,7 +66,7 @@ class RankForm extends CFormModel
 	public function retrieveData($index)
 	{
 		$suffix = Yii::app()->params['envSuffix'];
-        $sql="select a.*,b.rank_day,b.five_rank from sales$suffix.sal_rank a
+        $sql="select a.*,b.* from sales$suffix.sal_rank a
               left outer join  sal_rankday b on  a.id=b.rank_id
               where a.id='$index'";
 		$rows = Yii::app()->db->createCommand($sql)->queryRow();
@@ -281,7 +281,8 @@ class RankForm extends CFormModel
 //        $five_time1=$year."-".$five_time1;
 //        $five_time2=$year."-".$five_time2;
 //        if($month==date("m", strtotime($five_time1))){
-
+        print_r('<pre>');
+        print_r($rows);
             //洗手間分數
         if(empty($rows['five_rank'])||$rows['five_rank']==1){
             $score_xsj=$this->getFive($five_time1,$rows['username'],1);
