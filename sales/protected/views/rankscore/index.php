@@ -53,7 +53,7 @@ $this->pageTitle=Yii::app()->name . ' - rankscore';
                 <div class="col-sm-3">
                     <?php echo $form->dropDownList($model, 'season',
                         $season,
-                        array('disabled'=>($model->scenario=='view'))
+                        array('disabled'=>($model->scenario=='view'),'onclick'=>"javascript:doit(this);")
                     ); ?>
                 </div>
             </div>
@@ -62,7 +62,7 @@ $this->pageTitle=Yii::app()->name . ' - rankscore';
                 <div class="col-sm-3">
                     <?php echo $form->dropDownList($model, 'year',
                         $year,
-                        array('disabled'=>($model->scenario=='view'))
+                        array('disabled'=>($model->scenario=='view'),'onclick'=>"javascript:doit(this);")
                     ); ?>
                 </div>
             </div>
@@ -71,7 +71,7 @@ $this->pageTitle=Yii::app()->name . ' - rankscore';
                 <div class="col-sm-3">
                     <?php echo $form->dropDownList($model, 'month',
                         $months,
-                        array('disabled'=>($model->scenario=='view'))
+                        array('disabled'=>($model->scenario=='view'),'onclick'=>"javascript:doit(this);")
                     ); ?>
                 </div>
             </div>
@@ -80,7 +80,7 @@ $this->pageTitle=Yii::app()->name . ' - rankscore';
                 <div class="col-sm-3">
                     <?php echo $form->dropDownList($model, 'all',
                         $all,
-                        array('disabled'=>($model->scenario=='view'))
+                        array('disabled'=>($model->scenario=='view'),'onclick'=>"javascript:doit(this);")
                     ); ?>
                 </div>
             </div>
@@ -92,11 +92,67 @@ $this->pageTitle=Yii::app()->name . ' - rankscore';
 <?php
 $url=Yii::app()->createUrl('report/city');
 $js = <<<EOF
+$(document).ready(function(){
+
+      $(document).on("change","#RankScoreForm_season",function () {   
+            txt=$(this).find("option:selected").val();                  
+            if(txt>0){           
+              $("#RankScoreForm_year").attr("disabled","disabled");
+              $("#RankScoreForm_month").attr("disabled","disabled");
+              $("#RankScoreForm_all").attr("disabled","disabled");
+            }
+            if(txt==0){           
+             $("#RankScoreForm_year").removeAttr("disabled","disabled");
+              $("#RankScoreForm_month").removeAttr("disabled","disabled");
+              $("#RankScoreForm_all").removeAttr("disabled","disabled");
+            }
+    });
+          $(document).on("change","#RankScoreForm_year",function () {   
+            txt=$(this).find("option:selected").val();                  
+            if(txt>0){           
+              $("#RankScoreForm_season").attr("disabled","disabled");
+              $("#RankScoreForm_month").attr("disabled","disabled");
+              $("#RankScoreForm_all").attr("disabled","disabled");
+            }
+            if(txt==0){           
+             $("#RankScoreForm_season").removeAttr("disabled","disabled");
+              $("#RankScoreForm_month").removeAttr("disabled","disabled");
+              $("#RankScoreForm_all").removeAttr("disabled","disabled");
+            }
+    });
+              $(document).on("change","#RankScoreForm_month",function () {   
+            txt=$(this).find("option:selected").val();                  
+            if(txt>0){           
+              $("#RankScoreForm_season").attr("disabled","disabled");
+              $("#RankScoreForm_year").attr("disabled","disabled");
+              $("#RankScoreForm_all").attr("disabled","disabled");
+            }
+            if(txt==0){           
+             $("#RankScoreForm_season").removeAttr("disabled","disabled");
+              $("#RankScoreForm_year").removeAttr("disabled","disabled");
+              $("#RankScoreForm_all").removeAttr("disabled","disabled");
+            }
+    });
+            $(document).on("change","#RankScoreForm_all",function () {   
+            txt=$(this).find("option:selected").val();                  
+            if(txt>0){           
+              $("#RankScoreForm_season").attr("disabled","disabled");
+              $("#RankScoreForm_year").attr("disabled","disabled");
+              $("#RankScoreForm_month").attr("disabled","disabled");
+            }
+            if(txt==0){           
+             $("#RankScoreForm_season").removeAttr("disabled","disabled");
+              $("#RankScoreForm_year").removeAttr("disabled","disabled");
+              $("#RankScoreForm_month").removeAttr("disabled","disabled");
+            }
+    });
+                  
+});
 
 EOF;
 ?>
 <?php
-Yii::app()->clientScript->registerScript('changestyle',$js,CClientScript::POS_READY);
+Yii::app()->clientScript->registerScript('calculate',$js,CClientScript::POS_READY);
 $js = Script::genLookupSearchEx();
 Yii::app()->clientScript->registerScript('lookupSearch',$js,CClientScript::POS_READY);
 
