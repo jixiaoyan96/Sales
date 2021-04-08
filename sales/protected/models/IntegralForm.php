@@ -350,10 +350,10 @@ class IntegralForm extends CFormModel
                 foreach ($service as $arr){
                     $arr['company_name']=str_replace("'","''",$arr['company_name']);
                     if(empty($arr['cust_type_name'])){
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'  and status='N' and status_dt<'$startime'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type='".$arr['cust_type']."' and cust_type_name=' ' and salesman='".$arr['salesman']."'  and status='N' and status_dt<'$endtime'";
 
                     }else{
-                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<'$startime'";
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<'$endtime'";
                     }
                     $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                     if(!empty($m)&&count($m)==1){
