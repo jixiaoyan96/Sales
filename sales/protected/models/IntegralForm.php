@@ -456,12 +456,11 @@ class IntegralForm extends CFormModel
                where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime' and  shift is null ";
             $bf = Yii::app()->db->createCommand($sql_bf)->queryAll();
             if(!empty($bf)&&(count($bf)/$row['sale_day'])>=$value['toplimit']){
-                if($o==0&&(count($bf)/$row['sale_day'])<20&&(count($bf)/$row['sale_day'])>=15){
+                $value['sum']=$value['fraction'];
+                $value['number']=1;
+                if($o==0&&(count($bf)/$row['sale_day'])>20){
                     $value['sum']=0;
                     $value['number']=0;
-                }else{
-                    $value['sum']=$value['fraction'];
-                    $value['number']=1;
                 }
             }else{
                 $value['sum']=0;
