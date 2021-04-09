@@ -56,24 +56,28 @@ class IntegralCommand extends CConsoleCommand
             $years=date('Y',$timestrap);
             $months=date('m',$timestrap);
 //        print_r($record);exit();
-        if(date('d',$timestrap)=='01'){
             if($years==$year&&$months==$month){
-                $a=1;//不加入东成西就
-            }else{
+                if(date('d',$timestrap)=='01'){
+                $a=1;//加入积分
+                 }else{
                 $a=2;
+                 }
+              }else{
+                $a=1;//加入积分
             }
-        }else{
-            $next=$months+1;
-            if($next==13){
-                $next=1;
-                $years=$years+1;
-            }
-            if(($years==$year&&$months==$month)||($years==$year&&$next==$month)){
-                $a=1;//不加入东成西就
-            }else{
-                $a=2;
-            }
-        }
+
+//        }else{
+//            $next=$months+1;
+//            if($next==13){
+//                $next=1;
+//                $years=$years+1;
+//            }
+//            if(($years==$year&&$months==$month)||($years==$year&&$next==$month)){
+//                $a=1;//不加入东成西就
+//            }else{
+//                $a=2;
+//            }
+//        }
         return $a;
     }
 }
