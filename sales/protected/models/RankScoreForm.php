@@ -50,7 +50,7 @@ class RankScoreForm extends CFormModel
         }else{
             $cities.=",'".$data['city']."'";
         }
-        if($data['year']>0){
+        if(!empty($data['year'])&&$data['year']>0){
             $this->season='年度总分排行榜';
             $start=$data['year'].'-01-01';
             $end=$data['year'].'-12-31';
@@ -61,7 +61,7 @@ class RankScoreForm extends CFormModel
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
             $this->message='-'.$data['year'].'年';
-        }elseif($data['season']>0){
+        }elseif(!empty($data['season'])&&$data['season']>0){
             $this->season='赛季总分排行榜';
             $sql = "select city, username
 				from sal_rank  
@@ -70,7 +70,7 @@ class RankScoreForm extends CFormModel
 			";
             $records = Yii::app()->db->createCommand($sql)->queryAll();
             $this->message='- 第'.$this->numToWord($data['season']).'赛季';
-        }elseif($data['month']>0){
+        }elseif(!empty($data['month'])&&$data['month']>0){
             $this->season='月度排行榜';
             $sql = "select city, username
 				from sal_rank  
@@ -112,19 +112,19 @@ class RankScoreForm extends CFormModel
 
 
 
-                if($data['year']>0){
+                if(!empty($data['year'])&&$data['year']>0){
                     $this->season='年度总分排行榜';
                     $start=$data['year'].'-01-01';
                     $end=$data['year'].'-12-31';
                     $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."' and month<='$end' and month>='$start'   order by id desc";
                     $level = Yii::app()->db->createCommand($sql_level)->queryAll();
                     $this->message='-'.$data['year'].'年';
-                }elseif($data['season']>0){
+                }elseif(!empty($data['season'])&&$data['season']>0){
                     $this->season='赛季总分排行榜';
                     $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."' and season='".$data['season']."'   order by id desc";
                     $level = Yii::app()->db->createCommand($sql_level)->queryAll();
                     $this->message='- 第'.$this->numToWord($data['season']).'赛季';
-                }elseif($data['month']>0){
+                }elseif(!empty($data['month'])&&$data['month']>0){
                     $this->season='月度排行榜';
                     $sql_level="select now_score,all_score from sal_rank  where username='".$record['username']."' and MONTH(month)='".$data['month']."'   order by id desc";
                     $level = Yii::app()->db->createCommand($sql_level)->queryAll();
