@@ -358,7 +358,7 @@ class IntegralForm extends CFormModel
                     $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                     if(!empty($m)&&count($m)==1){
                         $sum_y3[]=1;
-                        $value['list'][]=$m;
+                        $value['list'][]=$m[0];
                     }else{
                         $sum_y3[]=0;
                     }
@@ -450,17 +450,24 @@ class IntegralForm extends CFormModel
 //        }
 ///
         $this->cust_type_name['baifang']=$this->points(3);//拜访
+        $o=0;
         foreach ($this->cust_type_name['baifang'] as &$value){
             $sql_bf="select * from sal_visit       
                where username='".$row['username']."'  and visit_dt>='$startime' and visit_dt<='$endtime' and  shift is null ";
             $bf = Yii::app()->db->createCommand($sql_bf)->queryAll();
-            if(!empty($bf)&&(count($bf)/$row['sale_day'])>$value['toplimit']){
-                $value['sum']=$value['fraction'];
-                $value['number']=1;
+            if(!empty($bf)&&(count($bf)/$row['sale_day'])>=$value['toplimit']){
+                if($o==0&&(count($bf)/$row['sale_day'])<20&&(count($bf)/$row['sale_day'])>=15){
+                    $value['sum']=0;
+                    $value['number']=0;
+                }else{
+                    $value['sum']=$value['fraction'];
+                    $value['number']=1;
+                }
             }else{
                 $value['sum']=0;
                 $value['number']=0;
             }
+            $o=$o+1;
         }
 
         //拜访20
@@ -567,22 +574,42 @@ class IntegralForm extends CFormModel
         $i=$i+3;
         $objActSheet->setCellValue('F'.$i, $model['cust_type_name']['zhuangji']['number']) ;
         $objActSheet->setCellValue('G'.$i, $model['cust_type_name']['zhuangji']['sum']) ;
-        $i=$i+1;
-        $objActSheet->setCellValue('F'.$i, $model['cust_type_name']['yushou3']['number']) ;
-        $objActSheet->setCellValue('G'.$i, $model['cust_type_name']['yushou3']['sum']) ;
-        $i=$i+1;
-        $objActSheet->setCellValue('F'.$i, $model['cust_type_name']['yushou6']['number']) ;
-        $objActSheet->setCellValue('G'.$i, $model['cust_type_name']['yushou6']['sum']) ;
-        $i=$i+1;
-        $objActSheet->setCellValue('F'.$i, $model['cust_type_name']['yushou12']['number']) ;
-        $objActSheet->setCellValue('G'.$i, $model['cust_type_name']['yushou12']['sum']) ;
-        $i=$i+1;
-        $objActSheet->setCellValue('F'.$i, $model['cust_type_name']['baifang15']['number']) ;
-        $objActSheet->setCellValue('G'.$i, $model['cust_type_name']['baifang15']['sum']) ;
-        $i=$i+1;
-        $objActSheet->setCellValue('F'.$i, $model['cust_type_name']['baifang20']['number']) ;
-        $objActSheet->setCellValue('G'.$i, $model['cust_type_name']['baifang20']['sum']) ;
-        $i=$i+1;
+        foreach ($model['cust_type_name']['yushou'] as $arr ){
+            $i=$i+1;
+            $objWorksheet = $objActSheet;
+            $objWorksheet->insertNewRowBefore($i + 1, 1);
+            $objActSheet->setCellValue('A'.$i, $arr['cust_type_name']) ;
+            $objActSheet->setCellValue('B'.$i, '其他') ;
+            $objActSheet->setCellValue('D'.$i, $this->getConditionsName($arr['conditions'])) ;
+            $objActSheet->setCellValue('E'.$i, $arr['fraction']) ;
+            $objActSheet->setCellValue('F'.$i, $arr['number']) ;
+            $objActSheet->setCellValue('G'.$i, $arr['sum']) ;
+            if($arr['toplimit']!=0){
+                $toplimit= $arr['toplimit'].'个月' ;
+            }else{
+                $toplimit="";
+            }
+            $objActSheet->setCellValue('H'.$i, $toplimit) ;
+        }
+        foreach ($model['cust_type_name']['baifang'] as $arr ){
+            $i=$i+1;
+            $objWorksheet = $objActSheet;
+            $objWorksheet->insertNewRowBefore($i + 1, 1);
+            $objActSheet->setCellValue('A'.$i, $arr['cust_type_name']) ;
+            $objActSheet->setCellValue('B'.$i, '其他') ;
+            $objActSheet->setCellValue('D'.$i, $this->getConditionsName($arr['conditions'])) ;
+            $objActSheet->setCellValue('E'.$i, $arr['fraction']) ;
+            $objActSheet->setCellValue('F'.$i, $arr['number']) ;
+            $objActSheet->setCellValue('G'.$i, $arr['sum']) ;
+            if($arr['toplimit']!=0){
+                $toplimit= $arr['toplimit'].'条' ;
+            }else{
+                $toplimit="";
+            }
+            $objActSheet->setCellValue('H'.$i, $toplimit) ;
+        }
+
+        $i=$i+2;
         $objActSheet->setCellValue('G'.$i, $model['cust_type_name']['qita_sum']) ;
         $i=$i+3;
         $objActSheet->setCellValue('G'.$i, $model['cust_type_name']['all_sum']) ;
@@ -654,51 +681,24 @@ class IntegralForm extends CFormModel
         }
         $o=$o+1;
         $objActSheet->setCellValue('A'.$o,'预收') ;
-        if(!empty($this->cust_type_name['yushou3']['list'])){
-            foreach ($this->cust_type_name['yushou3']['list'] as $list){
+        //print_r('<pre>');print_r($this->cust_type_name['yushou'][0]);exit();
+        if(!empty($this->cust_type_name['yushou'][0]['list'])){
+            foreach ($this->cust_type_name['yushou'][0]['list'] as $list){
                 $o=$o+1;
-                $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
-                $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
-                $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
-                $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
+
+                $objActSheet->setCellValue('B'.$o,$this->getStatusName($list['status'])) ;
+                $objActSheet->setCellValue('C'.$o,	date_format(date_create($list['status_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('D'.$o,date_format(date_create($list['first_dt']),"Y/m/d")) ;
+                $objActSheet->setCellValue('E'.$o,$list['company_name']) ;
+                $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list['cust_type'])) ;
+                $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list['cust_type_name'])) ;
+                $objActSheet->setCellValue('H'.$o,$list['pieces']) ;
+                $objActSheet->setCellValue('I'.$o,$list['amt_install']) ;
+                $objActSheet->setCellValue('J'.$o,$list['salesman']) ;
+                $objActSheet->setCellValue('K'.$o,$list['prepay_month']) ;
             }
         }
-        if(!empty($this->cust_type_name['yushou6']['list'])){
-            foreach ($this->cust_type_name['yushou6']['list'] as $list){
-                $o=$o+1;
-                $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
-                $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
-                $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
-                $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
-            }
-        }
-        if(!empty($this->cust_type_name['yushou12']['list'])){
-            foreach ($this->cust_type_name['yushou12']['list'] as $list){
-                $o=$o+1;
-                $objActSheet->setCellValue('B'.$o,$this->getStatusName($list[0]['status'])) ;
-                $objActSheet->setCellValue('C'.$o,	date_format(date_create($list[0]['status_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('D'.$o,date_format(date_create($list[0]['first_dt']),"Y/m/d")) ;
-                $objActSheet->setCellValue('E'.$o,$list[0]['company_name']) ;
-                $objActSheet->setCellValue('F'.$o,$this->getCustTypeName($list[0]['cust_type'])) ;
-                $objActSheet->setCellValue('G'.$o,$this->getCustTypeNamec($list[0]['cust_type_name'])) ;
-                $objActSheet->setCellValue('H'.$o,$list[0]['pieces']) ;
-                $objActSheet->setCellValue('I'.$o,$list[0]['amt_install']) ;
-                $objActSheet->setCellValue('J'.$o,$list[0]['salesman']) ;
-                $objActSheet->setCellValue('K'.$o,$list[0]['prepay_month']) ;
-            }
-        }
+
         $objPHPExcel->setActiveSheetIndex(0);
 //        print_r("<pre>");
 //        print_r($model);
