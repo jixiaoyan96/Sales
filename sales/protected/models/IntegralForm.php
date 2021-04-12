@@ -329,6 +329,7 @@ class IntegralForm extends CFormModel
         //预收3
         $this->cust_type_name['yushou']=$this->points(2);//预收3
         foreach ($this->cust_type_name['yushou'] as &$value){
+            $sum_y3=array();
             if($value['toplimit']==3){
                 $sql_ys="select * from swoper$suffix.swo_service a
                inner join hr$suffix.hr_employee b on a.salesman=concat(b.name, ' (', b.code, ')')
