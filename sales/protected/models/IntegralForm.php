@@ -357,9 +357,11 @@ class IntegralForm extends CFormModel
                         $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<'$endtime'";
                     }
                     $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                    $sql_list="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime' and status_dt<='$endtime'";
+                    $list = Yii::app()->db->createCommand($sql_list)->queryAll();
                     if(!empty($m)&&count($m)==1){
                         $sum_y3[]=1;
-                        $value['list'][]=$m[0];
+                        $value['list'][]=$list[0];
                     }else{
                         $sum_y3[]=0;
                     }
