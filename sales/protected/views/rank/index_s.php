@@ -28,6 +28,9 @@ $this->pageTitle=Yii::app()->name . ' - commission Report';
                 <?php echo TbHtml::button(Yii::t('misc','Back'), array(
                     'submit'=>Yii::app()->createUrl('rank/index')));
                 ?>
+                <?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Xiazai'), array(
+                    'submit'=>Yii::app()->createUrl('rank/excel')));
+                ?>
             </div>
         </div></div>
     <input type="hidden" name="city" value="<?php echo $a['city'];?>">

@@ -27,9 +27,6 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 		<?php echo TbHtml::button('<span class="fa fa-reply"></span> '.Yii::t('misc','Back'), array(
 				'submit'=>Yii::app()->createUrl('rank/index_s')));
 		?>
-        <?php echo TbHtml::button('<span class="fa fa-upload"></span> '.Yii::t('misc','Xiazai'), array(
-            'submit'=>Yii::app()->createUrl('rank/excel')));
-        ?>
 	</div>
         <div class="btn-group" role="group">
     <span class="text-red">
