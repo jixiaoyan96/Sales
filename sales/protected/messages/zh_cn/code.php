@@ -58,5 +58,6 @@ return array(
     'Fractiony'=>'单个分数',
     'Toplimit'=>'限制',
     'Category'=>'类别',
+    'Reward'=>'奖励',
 );
 ?>

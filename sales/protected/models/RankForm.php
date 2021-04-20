@@ -119,7 +119,7 @@ class RankForm extends CFormModel
         $sql_pyx="select a.* from swoper$suffix.swo_service a
                   left outer join  hr$suffix.hr_employee b on  concat(b.name, ' (', b.code, ')')=a.salesman
                  left outer join  hr$suffix.hr_binding c on  c.employee_id=b.id
-                  where a.status_dt>='$star_time' and a.status_dt<='$end_time' and a.status='N' and (a.cust_type='5' or a.cust_type_name='24') and c.user_id='".$rows['username']."' and a.city='$city'
+                  where a.status_dt>='$star_time' and a.status_dt<='$end_time' and a.status='N' and (a.cust_type='5' or a.cust_type_name='50') and c.user_id='".$rows['username']."' and a.city='$city'
                   ";
         $rows_pyx = Yii::app()->db->createCommand($sql_pyx)->queryAll();
         $pyx=0;
@@ -377,16 +377,16 @@ class RankForm extends CFormModel
         }
         $people=$sales_people/$sales_city;
         $this->sales['sum']=round($people,2);
-        if($people<0.25){
+        if($people<=0.25){
             $score_all=$score_all*0.4;
             $this->sales['score']=0.4;
-        }elseif ($people>=0.25&&$people<0.5){
+        }elseif ($people>0.25&&$people<=0.5){
             $score_all=$score_all*0.7;
             $this->sales['score']=0.7;
-        }elseif ($people>=0.5&&$people<0.75){
+        }elseif ($people>0.5&&$people<=0.75){
             $score_all=$score_all*1;
             $this->sales['score']=1;
-        }elseif ($people>=0.75&&$people<=1){
+        }elseif ($people>0.75&&$people<=1){
             $score_all=$score_all*1.1;
             $this->sales['score']=1.1;
         }
