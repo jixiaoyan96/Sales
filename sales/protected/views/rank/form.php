@@ -28,13 +28,7 @@ $this->pageTitle=Yii::app()->name . ' - Performance Form';
 				'submit'=>Yii::app()->createUrl('rank/index_s')));
 		?>
 	</div>
-        <div class="btn-group" role="group">
-    <span class="text-red">
-        <?php
-        echo Yii::t('misc','Click to download and view the segment calculation rule report.');
-        ?>
-    </span>
-        </div>
+
 	</div></div>
 
 	<div class="box box-info">

@@ -32,6 +32,13 @@ $this->pageTitle=Yii::app()->name . ' - commission Report';
                     'submit'=>Yii::app()->createUrl('rank/excel')));
                 ?>
             </div>
+            <div class="btn-group" role="group">
+    <span class="text-red">
+        <?php
+        echo Yii::t('misc','Click to download and view the segment calculation rule report.');
+        ?>
+    </span>
+            </div>
         </div></div>
     <input type="hidden" name="city" value="<?php echo $a['city'];?>">
     <input type="hidden" name="season" value="<?php echo $a['season'];?>">
