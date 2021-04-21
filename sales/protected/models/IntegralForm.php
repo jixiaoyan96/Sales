@@ -113,11 +113,11 @@ class IntegralForm extends CFormModel
                         }
                     // print_r('<pre>');   print_r($sum_s);
                     }elseif($value['conditions']==2){
-//                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<'$startime'";
-//                        $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
+                        $sql_calculation="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt<'$startime'";
+                        $m = Yii::app()->db->createCommand($sql_calculation)->queryAll();
                         $sql="select * from swoper$suffix.swo_service where company_name='".$arr['company_name']."' and cust_type_name='".$arr['cust_type_name']."' and salesman='".$arr['salesman']."'  and status='N' and status_dt>='$startime' and status_dt<='$endtime'";
                         $s = Yii::app()->db->createCommand($sql)->queryAll();
-                        if(!empty($s)){
+                        if(empty($m)&&!empty($s)){
                             $sum_c[]= 1;
                             $sum_s[]=1;
                             $value['list'][]=$s;
