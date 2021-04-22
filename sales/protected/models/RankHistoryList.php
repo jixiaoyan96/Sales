@@ -38,6 +38,15 @@ class RankHistoryList extends CListPageModel
 			left outer join security$suffix.sec_city c on a.city=c.code	
 			inner join  sal_rank d on a.user_id = d.username
 			 where a.city ='".$a['city']."' ";
+        if (!(RankForm::isReadAll())) {
+            $x = " and d.username='$user' order by month desc";
+            $sql1 .= $x;
+            $sql2 .= $x;
+        } else {
+            $x = " and d.username is not null order by month desc";
+            $sql1 .= $x;
+            $sql2 .= $x;
+        }
 		$clause = "";
 		if (!empty($this->searchField) && (!empty($this->searchValue) || $this->isAdvancedSearch())) {
 			if ($this->isAdvancedSearch()) {

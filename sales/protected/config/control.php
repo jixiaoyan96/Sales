@@ -10,4 +10,5 @@ return array(
     'Sale People'=>array('access'=>'CN07',),
     'Signature details email'=>array('access'=>'CN08',),
     'Integarl (Read All)'=>array('access'=>'CN09',),
+    'Rank (Read All)'=>array('access'=>'CN10',),
 );

@@ -683,4 +683,8 @@ class RankForm extends CFormModel
 //		return ($this->scenario=='view'||$this->status=='V'||$this->posted||!empty($this->req_ref_no)||!empty($this->t3_doc_no));
 		return ($this->scenario!='new'||$this->status=='V'||$this->posted||!empty($this->req_ref_no)||!empty($this->t3_doc_no));
 	}
+
+    public function isReadAll() {
+        return Yii::app()->user->validFunction('CN10');
+    }
 }

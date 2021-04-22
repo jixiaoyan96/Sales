@@ -65,6 +65,7 @@ return array(
     'Sale People'=>'销售个人总金额排行榜',
     'Signature details email'=>'签单明细电邮',
     'Integarl (Read All)'=>'积分表 (全部阅读)',
+    'Rank (Read All)'=>'段位人员(全部阅读) ',
 
 	'User'=>'帐户',
 	'Group'=>'群组',
