@@ -30,7 +30,8 @@ $link = Yii::app()->createAbsoluteUrl("dashboard/salepeople");
 $paiming= Yii::t('report','ranking');
 $city= Yii::t('report','city');
 $quyu= Yii::t('report','quyu');
-$sum= Yii::t('report','sum');
+$sum= Yii::t('report','name');
+$level= Yii::t('report','level');
 $jine= Yii::t('report','fuwumoney');
 $js = <<<EOF
 	$.ajax({
@@ -38,7 +39,7 @@ $js = <<<EOF
 		url: '$link',
 		success: function(data) {
 			var line = '<table class="table table-bordered small">';
-			line += '<tr><td><b>$paiming</b></td><td><b>$city</b></td><td><b>$quyu</b></td><td><b>$sum</b></td><td><b>$jine</b></td></tr>';
+			line += '<tr><td><b>$paiming</b></td><td><b>$city</b></td><td><b>$quyu</b></td><td><b>$sum</b></td><td><b>$level</b></td></td><td><b>$jine</b></td></tr>';
 			if (data !== undefined && data.length != 0) {
 				
 				for (var i=0; i < data.length; i++) {
@@ -50,7 +51,7 @@ $js = <<<EOF
 						case 2: style = 'style="color:#0000FF"'; break;
 					}
 					rank = i+1;
-					line += '<td '+style+'>'+rank+'</td><td '+style+'>'+data[i].city+'</td><td '+style+'>'+data[i].quyu+'</td><td '+style+'>'+data[i].name+'</td><td '+style+'>'+data[i].money+'</td>';
+					line += '<td '+style+'>'+rank+'</td><td '+style+'>'+data[i].city+'</td><td '+style+'>'+data[i].quyu+'</td><td '+style+'>'+data[i].name+'</td><td '+style+'><img src="images/'+data[i].level+'.png" width="20px;">'+data[i].level+'</td><td '+style+'>'+data[i].money+'</td>';
 					line += '</tr>';
 				}	
 				

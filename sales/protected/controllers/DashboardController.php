@@ -72,7 +72,12 @@ class DashboardController extends Controller
 			$row = Yii::app()->db->createCommand($sql)->queryRow();
 			$temp['city'] = $row!==false ? $row['city_name'] : $record['city'];
 			$temp['quyu'] = $row!==false ? str_replace(array('1','2','3','4','5','6','7','8','9','0'),'',$row['region_name']) : '空';
-
+			$sql_rank="select id from rank where month>= '$time' and user_name='".$record['username']."'";
+            $rank = Yii::app()->db->createCommand($sql_rank)->queryRow();
+            $model = new RankForm('view');
+            $model->retrieveData($rank['id']);
+            $temp['level'] = $model['rank_name'];
+            $temp['rank'] = $model['now_score'];
 			$models[] = $temp;
 		}
 		$last_names = array_column($models,'money');
@@ -226,6 +231,7 @@ foreach ($models as $key=>$item) {
                 $model = new RankForm('view');
                 $model->retrieveData($record['id']);
                 $temp['level'] = $model['rank_name'];
+                $temp['rank'] = $model['now_score'];
 //            $sql="select * from sal_level where start_fraction <='".$record['rank']."' and end_fraction >='".$record['rank']."'";
 //            $rank_name= Yii::app()->db->createCommand($sql)->queryRow();
 //            $temp['level']=$rank_name['level'];

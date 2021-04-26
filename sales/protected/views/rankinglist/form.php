@@ -48,9 +48,9 @@ $this->pageTitle=Yii::app()->name . ' - Month Report';
                     <div id="salepeople" class="direct-chat-messages" style="height: 250px;">
                         <table class="table table-bordered small">
                             <tbody>
-                            <tr><td><b><?php echo Yii::t('report','ranking');?></b></td><td><b><?php echo Yii::t('report','city');?></b></td><td><b><?php echo Yii::t('report','quyu');?></b></td><td><b><?php echo Yii::t('report','name');?></b></td><td><b><?php echo Yii::t('report','fuwumoney');?></b></td></tr>
+                            <tr><td><b><?php echo Yii::t('report','ranking');?></b></td><td><b><?php echo Yii::t('report','city');?></b></td><td><b><?php echo Yii::t('report','quyu');?></b></td><td><b><?php echo Yii::t('report','name');?></b></td><td><b><?php echo Yii::t('report','level');?></b></td><td><b><?php echo Yii::t('report','fuwumoney');?></b></td></tr>
                             <?php for ($i=0;$i<count($peopel);$i++){ ?>
-                            <tr <?php if($i==0){ echo "style='color:#FF0000'";}if($i==1){ echo "style='color:#871F78'";}if($i==2){ echo "style='color:#0000FF'";}?>><td><?php echo $i+1;?></td><td><?php echo $peopel[$i]['city'];?></td><td><?php echo $peopel[$i]['quyu'];?></td><td><?php echo $peopel[$i]['name'];?></td><td><?php echo $peopel[$i]['money'];?></td></tr>
+                            <tr <?php if($i==0){ echo "style='color:#FF0000'";}if($i==1){ echo "style='color:#871F78'";}if($i==2){ echo "style='color:#0000FF'";}?>><td><?php echo $i+1;?></td><td><?php echo $peopel[$i]['city'];?></td><td><?php echo $peopel[$i]['quyu'];?></td><td><?php echo $peopel[$i]['name'];?></td><td> <img src="<?php echo Yii::app()->baseUrl."/images/".$peopel[$i]['level'].".png";?>" width="20px;"><?php echo $peopel[$i]['level'];?></td><td><?php echo $peopel[$i]['money'];?></td></tr>
                             <?php }?>
                             </tbody>
                         </table>
@@ -110,9 +110,9 @@ $this->pageTitle=Yii::app()->name . ' - Month Report';
                     <div id="salelists" class="direct-chat-messages" style="height: 250px;">
                         <table class="table table-bordered small">
                             <tbody>
-                            <tr><td><b><?php echo Yii::t('report','ranking');?></b></td><td><b><?php echo Yii::t('report','level');?></b></td><td><b><?php echo Yii::t('report','name');?></b></td><td><b><?php echo Yii::t('report','city');?></b></td><td><b><?php echo Yii::t('report','quyu');?></b></td></tr>
+                            <tr><td><b><?php echo Yii::t('report','ranking');?></b></td><td><b><?php echo Yii::t('report','level');?></b></td><td><b><?php echo Yii::t('report','name');?></b></td><td><b><?php echo Yii::t('report','rank');?></b></td><td><b><?php echo Yii::t('report','city');?></b></td><td><b><?php echo Yii::t('report','quyu');?></b></td></tr>
                             <?php for ($i=0;$i<count($rank);$i++){ ?>
-                                <tr <?php if($i==0){ echo "style='color:#FF0000'";}if($i==1){ echo "style='color:#871F78'";}if($i==2){ echo "style='color:#0000FF'";}?>><td><?php echo $i+1;?></td><td> <img src="<?php echo Yii::app()->baseUrl."/images/".$rank[$i]['level'].".png";?>" width="20px;"><?php echo $rank[$i]['level'];?></td><td><?php echo $rank[$i]['name'];?></td><td><?php echo $rank[$i]['city'];?></td><td><?php echo $rank[$i]['quyu'];?></td></tr>
+                                <tr <?php if($i==0){ echo "style='color:#FF0000'";}if($i==1){ echo "style='color:#871F78'";}if($i==2){ echo "style='color:#0000FF'";}?>><td><?php echo $i+1;?></td><td> <img src="<?php echo Yii::app()->baseUrl."/images/".$rank[$i]['level'].".png";?>" width="20px;"><?php echo $rank[$i]['level'];?></td><td><?php echo $rank[$i]['name'];?></td><td><?php echo $rank[$i]['rank'];?></td><td><?php echo $rank[$i]['city'];?></td><td><?php echo $rank[$i]['quyu'];?></td></tr>
                             <?php }?>
                             </tbody>
                         </table>

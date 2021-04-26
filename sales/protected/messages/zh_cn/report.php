@@ -47,7 +47,7 @@ return array(
 	'No Record'=>'没有相关记录',
 	'Account Name'=>'账户名称',
     'Sales ranking list'=>'销售排行榜历史记录查看',
-
+    'rank'=>'战斗值',
     'Start_Dt'=>'入职日期',
     'Name'=>'员工名字',
     'GanWwei'=>'员工岗位',
