@@ -1916,7 +1916,9 @@ class ReportVisitForm extends CReportForm
             $people['svc_E7s']=$svc_E7;
             $people['svc_F4s']=$svc_F4;
             $people['svc_G3s']=$svc_G3;
-            $people['rank']=$rank['now_score'];
+            $sql_rank_name="select * from sal_level where start_fraction <='".$rank['now_score']."' and end_fraction >='".$rank['now_score']."'";
+            $rank_name= Yii::app()->db->createCommand($sql_rank_name)->queryRow();
+            $people['rank']=$rank_name['level'];
             $models[$code]=$people;
 
         }

@@ -7,7 +7,7 @@ class RankemailCommand extends CConsoleCommand {
         $firstDay = date("Y-m-01");
         $endDay = date("Y-m-31");
         $month=date("m");
-        $sql="select * from rank            
+        $sql="select * from sal_rank            
               WHERE  month<='$endDay' and month>='$firstDay'";
         $records = Yii::app()->db->createCommand($sql)->queryAll();
         if (count($records) > 0) {
