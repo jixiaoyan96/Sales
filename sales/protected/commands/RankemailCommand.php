@@ -17,7 +17,7 @@ class RankemailCommand extends CConsoleCommand {
                 $sql2 = "SELECT a.name,c.name as cityname FROM hr$suffix.hr_employee a 
                         inner join hr$suffix.hr_binding b on a.id = b.employee_id
                         left outer join security$suffix.sec_city c on c.code=a.city
-                        WHERE user_name='".$record['username']."'";
+                        WHERE b.user_id='".$record['username']."'";
                 $name = Yii::app()->db->createCommand($sql2)->queryRow();
                 $from_addr = "it@lbsgroup.com.hk";
                 $to_addr = "[\"" .$rs[0]['email']."\"]";
