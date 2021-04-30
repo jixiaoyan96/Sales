@@ -169,7 +169,7 @@ class RankScoreForm extends CFormModel
         $sql = "select season from sal_season group by season";
         $row= Yii::app()->db->createCommand($sql)->queryAll();
         $season[0]='无';
-        $i=1;
+        $i=5;
         foreach ($row as $a){
             $b=$i+1;
             if($i==12){

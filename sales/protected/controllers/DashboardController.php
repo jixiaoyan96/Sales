@@ -232,6 +232,10 @@ foreach ($models as $key=>$item) {
                 $sql = "select * from sal_level where start_fraction <='" . $record['now_score'] . "' and end_fraction >='" . $record['now_score'] . "'";
                 $rank_name = Yii::app()->db->createCommand($sql)->queryRow();
                 $temp['level'] = $rank_name['level'];
+                if(empty($record['now_score'])){
+                    $record['now_score']=0;
+                }
+
                 $temp['rank'] = $record['now_score'];
                 $models[] = $temp;
             }
