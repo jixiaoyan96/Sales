@@ -54,7 +54,7 @@ class RankemailCommand extends CConsoleCommand {
 			<td style="text-align: center;" x:str=""><span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;">{$name['name']}</span></span></td>
 			<td style="text-align: center;" x:str=""><span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;">第{$saiji}赛季</span></span></td>
 			<td style="text-align: center;" x:str=""><span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;">{$month}月</span></span></td>
-			<td style="text-align: center;" x:str=""><span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;"><img height="46" src="{$pip}" width="" />{$rank_name['level']}</span></span></td>
+			<td style="text-align: center;" x:str=""><span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;">{$rank_name['level']}</span></span></td>
 			<td style="text-align: center;" x:num="2500"><span style="font-size:16px;"><span style="font-family:arial,helvetica,sans-serif;">{$record['now_score']}</span></span></td>
 		</tr>
 	</tbody>
